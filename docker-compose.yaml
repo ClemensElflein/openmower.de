@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+
+  site:
+    image: klakegg/hugo:ext-ubuntu
+    build:
+      context: .
+    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install && hugo server"
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src

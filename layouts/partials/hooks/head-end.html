@@ -1,0 +1,18 @@
+<script type="text/javascript" src="/js/medium-zoom.min.js"></script>
+<script type="text/javascript" src="/js/asciinema-player.min.js"></script>
+<link rel="stylesheet" href="/css/asciinema-player.css">
+
+<script>
+    $(function () {
+    const images = Array.from(document.querySelectorAll("img"));
+    console.log(images);
+    images.forEach(img => {
+        mediumZoom(img, {
+            margin: 80, /* The space outside the zoomed image */
+            container: null, /* The viewport to render the zoom in */
+            template: null, /* The template element to display on zoom */
+            background: "#fff"
+        });
+    });
+    });
+</script>

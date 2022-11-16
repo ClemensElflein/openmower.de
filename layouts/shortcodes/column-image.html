@@ -1,0 +1,31 @@
+{{ $image := $.Page.Resources.GetMatch (.Get "path") }}
+
+{{ if eq $image nil }}
+{{ $image = resources.GetMatch (.Get "path") }}
+{{ end }}
+
+{{ $options := .Get "options"}}
+{{ $method := .Get "method" }}
+
+{{ if eq $method "Fill" }}
+{{ .Scratch.Set "modified-image" ($image.Fill $options) }}
+{{ else if eq $method "Fit" }}
+{{ .Scratch.Set "modified-image" ($image.Fit $options) }}
+{{ else if eq $method "Resize" }}
+{{ .Scratch.Set "modified-image" ($image.Resize $options) }}
+{{ else }}
+{{ .Scratch.Set "modified-image" ($image) }}
+{{ end }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            {{.Inner | markdownify }}
+        </div>
+        <div class="col-sm">
+            <figure>
+                <img src='{{ (.Scratch.Get "modified-image").Permalink }}' alt='{{ .Get "alt" }}'  class="img-thumbnail">
+            </figure>
+        </div>
+    </div>
+</div>
