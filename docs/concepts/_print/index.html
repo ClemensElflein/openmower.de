@@ -17,18 +17,18 @@
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
 <title>Concepts | Open Mower</title>
-<meta name=description content="What does your user need to understand about your project in order to use it - or potentially contribute to it? 
+<meta name=description content="This chapter introduces concepts used in the Open Mower project. 
 ">
 <meta property="og:title" content="Concepts">
-<meta property="og:description" content="What does your user need to understand about your project in order to use it - or potentially contribute to it? 
+<meta property="og:description" content="This chapter introduces concepts used in the Open Mower project. 
 ">
 <meta property="og:type" content="website">
 <meta property="og:url" content="/docs/concepts/"><meta property="og:site_name" content="Open Mower">
 <meta itemprop=name content="Concepts">
-<meta itemprop=description content="What does your user need to understand about your project in order to use it - or potentially contribute to it? 
+<meta itemprop=description content="This chapter introduces concepts used in the Open Mower project. 
 "><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Concepts">
-<meta name=twitter:description content="What does your user need to understand about your project in order to use it - or potentially contribute to it? 
+<meta name=twitter:description content="This chapter introduces concepts used in the Open Mower project. 
 ">
 <link rel=preload href=/scss/main.min.def2cdda5cfcd95d9660c969a68946395435ad5fc75402be473d9995c7e926b3.css as=style>
 <link href=/scss/main.min.def2cdda5cfcd95d9660c969a68946395435ad5fc75402be473d9995c7e926b3.css rel=stylesheet integrity>
@@ -72,15 +72,17 @@ This is the multi-page printable view of this section.
 </p>
 </div>
 <h1 class=title>Concepts</h1>
-<div class=lead>What does your user need to understand about your project in order to use it - or potentially contribute to it?</div>
+<div class=lead>This chapter introduces concepts used in the Open Mower project.</div>
 <ul>
 </ul>
 <div class=content>
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page that shows you how to use this template site.</p>
-</div>
-<p>For many projects, users may not need much information beyond the information in the <a href=/docs/overview/>Overview</a>, so this section is <strong>optional</strong>. However if there are areas where your users will need a more detailed understanding of a given term or feature in order to do anything useful with your project (or to not make mistakes when using it) put that information in this section. For example, you may want to add some conceptual pages if you have a large project with many components and a complex architecture.</p>
-<p>Remember to focus on what the user needs to know, not just what you think is interesting about your project! If they don’t need to understand your original design decisions to use or contribute to the project, don’t put them in, or include your design docs in your repo and link to them. Similarly, most users will probably need to know more about how features work when in use rather than how they are implemented. Consider a separate architecture page for more detailed implementation and system design information that potential project contributors can consult.</p>
+<h2 id=positioning--coordinate-system>Positioning / Coordinate System</h2>
+<p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means, that the robot&rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.</p>
+<p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.</p>
+<p>Open Mower uses a right-handed ENU coordinate system.</p>
+<h2 id=the-map>The Map</h2>
+<p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive <strong>(= Navigation Area)</strong>, which areas need to be mowed <strong>(= Mowing Area)</strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.</p>
+<p>Each area consists of <strong>one outline</strong> and <strong>multiple obstalces</strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.</p>
 </div>
 </div>
 </main>
