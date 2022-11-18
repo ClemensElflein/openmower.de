@@ -179,12 +179,12 @@ enable = false
   name = "Discord"
   url = "https://discord.gg/jE7QNaSxW7"
   icon = "fab fa-discord"
-  desc = "Chat with other project developers"
+  desc = "Chat with project developers and users."
 [[params.links.developer]]
   name = "Support on Patreon"
   url = "https://patreon.com/ClemensElflein"
   icon = "fa-brands fa-patreon"
-  desc = "Discuss development issues around the project"
+  desc = "Support the project!"
 
 # hugo module configuration
 
