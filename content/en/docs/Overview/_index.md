@@ -21,7 +21,7 @@ If you want to see a quick overview, you can check out this video:
 Let's be honest: The current generation of robotic lawn mowers sucks. Basically all of these bots drive in a random direction until they hit the border of the lawn, rotate for a randomized duration and repeat. **I think we can do better!**
 
 
-Therefore, we have disassembled the cheapest off-the-shelf robotic mower  we could find (YardForce Classic 500) and were surprised that the hardware itself is actually quite decent:
+Therefore, we have disassembled the cheapest off-the-shelf robotic mower  we could find ([YardForce Classic 500](https://amzn.to/3NWgIxk)) and were surprised that the hardware itself is actually quite decent:
 - Geared sensored brushless motors for the wheels
 - A sensored brushless motor for the mower motor itself
 - The whole construction seems robust, waterproof and all in all thought through
