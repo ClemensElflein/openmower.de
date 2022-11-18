@@ -1,0 +1,16 @@
+---
+title: "Prepare the Mainboard"
+linkTitle: "Prepare the Mainboard"
+weight: 30
+description: If the mainboard does not have any firmware, you need to install it for the first use
+---
+
+{{% alert title="Info" color="info" %}}
+If you have bought the hardware kit, the mainboard already has the latest firmware, and you don't need to do this step.
+{{% /alert %}}
+
+
+
+If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is, because without the firmware, the main Raspberry Pi won't turn on.
+
+For this, follow the [Manual Firmware Installation](/docs/knowledge-base/manual-firmware-installation/) guide.
