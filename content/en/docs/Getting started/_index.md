@@ -1,14 +1,10 @@
 ---
 title: "Getting Started"
 linkTitle: "Getting Started"
-weight: 2
+weight: 10
 description: >
   How to get started with the Open Mower project.
 ---
-
-{{% alert title="Warning" color="warning" %}}
-Note that this project is still in an early stage. You will need time to get the robot running! You will encounter bugs! No guarantees for anything!
-{{% /alert %}}
 
 
 ## Prerequisites
