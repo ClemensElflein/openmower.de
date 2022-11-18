@@ -30,13 +30,7 @@ the previously downloaded configuration file &lt;code>Robot.txt&lt;/code> by ope
 &lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Save Settings to Flash">&lt;/p>
 &lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View &amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
 &lt;h3 id="step-4-done-">Step 4: Done 🎉&lt;/h3>
-&lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p></description></item><item><title>Docs: Prepare the Robot</title><link>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</guid><description>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Info&lt;/h4>
-There is a tutorial video available for this step of the process! &lt;br/>
-Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
-(time 16:21 - 17:15)
-&lt;/div></description></item><item><title>Docs: Prepare the SD Card</title><link>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</guid><description>
+&lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p></description></item><item><title>Docs: Prepare the SD Card</title><link>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</guid><description>
 &lt;p>We have created a Docker image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step we flash the image and do some basic setup for your mower.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to follow this guide, you will need:&lt;/p>
@@ -149,7 +143,13 @@ The configurations in the file might change with the Open Mower release, that&am
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_AUTOMATIC_START&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">false&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.05
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>
-&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
+&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.&lt;/p></description></item><item><title>Docs: Prepare the Robot</title><link>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+There is a tutorial video available for this step of the process! &lt;br/>
+Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+(time 16:21 - 17:15)
+&lt;/div></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 If you have bought the hardware kit, the mainboard already has the latest firmware, and you don&amp;rsquo;t need to do this step.
