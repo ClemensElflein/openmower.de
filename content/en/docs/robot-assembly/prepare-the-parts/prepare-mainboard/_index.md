@@ -1,7 +1,7 @@
 ---
 title: "Prepare the Mainboard"
 linkTitle: "Prepare the Mainboard"
-weight: 30
+weight: 40
 description: If the mainboard does not have any firmware, you need to install it for the first use
 ---
 

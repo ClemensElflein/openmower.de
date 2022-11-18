@@ -1,7 +1,7 @@
 ---
 title: "Prepare the Robot"
 linkTitle: "Prepare the Robot"
-weight: 1
+weight: 30
 description: >
   Disassemble the robot, remove the existing mainboard and add a USB connector.
 ---
