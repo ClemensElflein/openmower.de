@@ -5,5 +5,3 @@ weight: 1
 resources:
 - src: "**.png"
 ---
-
-
