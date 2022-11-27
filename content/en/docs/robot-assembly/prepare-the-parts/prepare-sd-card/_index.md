@@ -40,6 +40,8 @@ export OM_VERSION="beta"
 #### /boot/mower_config.sh
 This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that's why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.
+
+{{< spoiler text="Click to see annotated config code" id="mower_config_example">}}
 ```bash
 ################################
 ## Hardware Specific Settings ##
@@ -84,10 +86,10 @@ export OM_MOWER_GAMEPAD="xbox360"
 # For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it's also more compatible overall.
 export OM_USE_RELATIVE_POSITION=False
 
-# If needed, uncomment and set to coordinates near you (these default coordinates are somewhere in Germany).
+# If OM_USE_RELATIVE_POSITION is set to False, uncomment and set to coordinates near you, around to docking station
 # This will be your map origin!
-# export OM_DATUM_LAT=48.13724720055111
-# export OM_DATUM_LONG=11.575605219552623
+# export OM_DATUM_LAT=99.CHANGEME
+# export OM_DATUM_LONG=11.CHANGEME
 
 # NTRIP Settings
 # Set to False if using external radio plugged into the Ardusimple board.
@@ -141,7 +143,7 @@ export OM_AUTOMATIC_START=false
 
 export OM_OUTLINE_OFFSET=0.05
 ```
-
+{{< /spoiler >}}
 
 ## Step 3: Done :tada:
 You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.
