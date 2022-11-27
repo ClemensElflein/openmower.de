@@ -5,7 +5,7 @@
   "main": "none.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "_prepare:docsy": "cd themes/docsy && npm install",
+    "_prepare:docsy": "cd themes/docsy && npm install --no-bin-links",
     "prepare": "npm run _prepare:docsy"
   },
   "repository": {
