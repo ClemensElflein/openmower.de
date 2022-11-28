@@ -4,9 +4,7 @@ services:
 
   site:
     image: klakegg/hugo:ext-ubuntu
-    build:
-      context: .
-    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install && hugo server"
+    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install --no-bin-links && hugo server --poll 5s"
     ports:
       - "1313:1313"
     volumes:
