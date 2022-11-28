@@ -16,7 +16,68 @@ This will open in the browser. Use CTRL+S to download the file.&lt;/li>
 &lt;h3 id="step-1-open-u-center-and-connect-to-your-gps">Step 1: Open u-center and connect to your GPS&lt;/h3>
 &lt;h2 id="prepare-your-sd-card">Prepare your SD Card&lt;/h2>
 &lt;h2 id="prepare-the-mainboard">Prepare the Mainboard&lt;/h2>
-&lt;h2 id="configure-the-motor-controllers">Configure the motor controllers&lt;/h2></description></item><item><title>Docs: Neopixel LED Colors</title><link>/docs/knowledge-base/neopixel-led-colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/neopixel-led-colors/</guid><description/></item><item><title>Docs: GPS / Coordinate System</title><link>/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-gps/</guid><description>
+&lt;h2 id="configure-the-motor-controllers">Configure the motor controllers&lt;/h2></description></item><item><title>Docs: Neopixel LED Colors</title><link>/docs/knowledge-base/neopixel-led-colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/neopixel-led-colors/</guid><description>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
+&lt;img class="card-img-top" src="/docs/knowledge-base/neopixel-led-colors/neopixel-status-led_hu70ef149a4bb48905604289e195ae28e0_38939_250x0_resize_q75_catmullrom.jpg" width="250" height="188">
+&lt;/figure>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Color&lt;/th>
+&lt;th>Meaning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>boot sequence&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dim red&lt;/td>
+&lt;td>firmware booted&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>bright red&lt;/td>
+&lt;td>RPi powered on&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blinking blue&lt;/td>
+&lt;td>halt, IMU not found&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>turquoise (blue+green)&lt;/td>
+&lt;td>starting sound initialization&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blue&lt;/td>
+&lt;td>setting sound volume&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>brown (red+green)&lt;/td>
+&lt;td>sound volume is set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blinking blue&lt;/td>
+&lt;td>warning, sound not available&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>end of boot sequence&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>orange - red flashing&lt;/td>
+&lt;td>emergency mode and ros is disconnected&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>green - red flashing&lt;/td>
+&lt;td>emergency mode and ros is connected&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>steady green&lt;/td>
+&lt;td>ros is connected and no emergency mode is detected&lt;br/>(all voltages are OK, wheels aren&amp;rsquo;t lifted, emergency button is not pressed)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: GPS / Coordinate System</title><link>/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-gps/</guid><description>
 &lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
 &lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means, that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>

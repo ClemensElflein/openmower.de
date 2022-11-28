@@ -63,7 +63,18 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="bootmower_configsh">/boot/mower_config.sh&lt;/h4>
 &lt;p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;div class="spoiler panel panel-default "
+>
+&lt;div class="panel-heading">
+&lt;a class="collapsed" data-toggle="collapse"
+style="display:block;"
+href="#mower_config_example" >
+Click to see annotated config code
+&lt;/a>
+&lt;/div>
+&lt;div class="panel-collapse collapse "
+id="mower_config_example">
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">## Hardware Specific Settings ##&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># The type of mower you&amp;#39;re using, used to get some hardware parameters automatically&lt;/span>
@@ -99,10 +110,10 @@ The configurations in the file might change with the Open Mower release, that&am
 &lt;span style="color:#8f5902;font-style:italic"># This makes your base station the map origin&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it&amp;#39;s also more compatible overall.&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_RELATIVE_POSITION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
-&lt;span style="color:#8f5902;font-style:italic"># If needed, uncomment and set to coordinates near you (these default coordinates are somewhere in Germany).&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION is set to False, uncomment and set to coordinates near you, around to docking station&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># This will be your map origin!&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># export OM_DATUM_LAT=48.13724720055111&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># export OM_DATUM_LONG=11.575605219552623&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># export OM_DATUM_LAT=99.CHANGEME&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># export OM_DATUM_LONG=11.CHANGEME&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># NTRIP Settings&lt;/span>
 &lt;span style="color:#8f5902;font-style:italic"># Set to False if using external radio plugged into the Ardusimple board.&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_NTRIP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>True
@@ -142,7 +153,10 @@ The configurations in the file might change with the Open Mower release, that&am
 &lt;span style="color:#8f5902;font-style:italic"># True to start mowing automatically. If this is false, you need to start manually by pressing the start button&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_AUTOMATIC_START&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">false&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.05
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>
 &lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.&lt;/p></description></item><item><title>Docs: Prepare the Robot</title><link>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>

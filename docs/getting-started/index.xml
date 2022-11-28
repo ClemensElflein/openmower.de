@@ -19,35 +19,35 @@ Note that this project is still in an early stage. You will need time to get the
 &lt;td>Mower&lt;br />(Yardforce Classic 500)&lt;/td>
 &lt;td>The mower to modify.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3NWgIxk">https://amzn.to/3NWgIxk&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Open Mower Hardware Kit&lt;/td>
 &lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://shop.devops.care/openmower/25-openmower-010x-assembled-board.html">https://shop.devops.care/openmower/25-openmower-010x-assembled-board.html&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://shop.devops.care/10-openmower">Vermut&amp;rsquo;s shop&lt;/a>&lt;/td>
 &lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
 &lt;td>Positioning system for the robot&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi 4&lt;/td>
 &lt;td>The brain of the robot.&lt;br />&lt;br />Use 2GB + model for running the software&lt;br />&lt;br />Use 8GB model for development&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">https://rpilocator.com/?cat=PI4&amp;amp;instock&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
 &lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>SD Card (16 GB+)&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3EeWBXj">https://amzn.to/3EeWBXj&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon&lt;/a> or your local hardware store&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -79,14 +79,14 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;td>Raspberry Pi&lt;br />+ SD Card&lt;br />+ Power Supply&lt;/td>
 &lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">https://rpilocator.com/?cat=PI4&amp;amp;instock&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
 &lt;td>Positioning system for the robot&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
