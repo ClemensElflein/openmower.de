@@ -51,7 +51,7 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;/ul>
 &lt;h2 id="step-2-configure-open-mower">Step 2: Configure Open Mower&lt;/h2>
 &lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it&amp;rsquo;s mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
-&lt;h4 id="bootom_versionsh">/boot/om_version.sh&lt;/h4>
+&lt;h4 id="bootopenmoweropenmower_versiontxt">/boot/openmower/openmower_version.txt&lt;/h4>
 &lt;p>This file selects the Open Mower version to use. You can choose the following:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>testing:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/li>
@@ -59,8 +59,9 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;li>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/li>
 &lt;/ul>
 &lt;p>An example:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="bootmower_configsh">/boot/mower_config.sh&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> OM_VERSION
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="bootopenmowermower_configtxt">/boot/openmower/mower_config.txt&lt;/h4>
 &lt;p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
 &lt;div class="spoiler panel panel-default "

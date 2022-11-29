@@ -189,7 +189,7 @@ You can download it in the <code>Assets</code> section. You don&rsquo;t need to 
 </ul>
 <h2 id=step-2-configure-open-mower>Step 2: Configure Open Mower</h2>
 <p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the <code>boot</code> partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it&rsquo;s mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.</p>
-<h4 id=bootom_versionsh>/boot/om_version.sh</h4>
+<h4 id=bootopenmoweropenmower_versiontxt>/boot/openmower/openmower_version.txt</h4>
 <p>This file selects the Open Mower version to use. You can choose the following:</p>
 <ul>
 <li><strong>testing:</strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.</li>
@@ -197,8 +197,10 @@ You can download it in the <code>Assets</code> section. You don&rsquo;t need to 
 <li><strong>beta (recommended):</strong> This one is the <em>most stable</em> one of the three. I try to keep this as stable as possible.</li>
 </ul>
 <p>An example:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#204a87>export</span> <span style=color:#000>OM_VERSION</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;beta&#34;</span>
-</code></pre></div><h4 id=bootmower_configsh>/boot/mower_config.sh</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#000>OM_VERSION</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;beta&#34;</span>
+
+<span style=color:#204a87>export</span> OM_VERSION
+</code></pre></div><h4 id=bootopenmowermower_configtxt>/boot/openmower/mower_config.txt</h4>
 <p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.</p>
 <div class="spoiler panel panel-default">
@@ -315,7 +317,7 @@ Click to see annotated config code
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 27, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/294e97c0f3c39a059af822f91b4f09acbd2fb0a8>feat: wrap config in spoiler, elaborate DATUM (294e97c)</a>
+Last modified November 29, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/9d81f3ba71c79b0c03f261dd1e78b473dd1d8df0>Update Prepare SD Card (9d81f3b)</a>
 </div>
 </div>
 </main>
