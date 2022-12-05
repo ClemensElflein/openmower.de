@@ -48,7 +48,7 @@ If you have an electronic load, you can also use that. We are looking for a cons
 {{% /alert %}}
 
 
-Connect the multimeter as shown in the image below. Then connect the power supply again and insert the *turned on* mower into the docking station. It is important that the mower is turned on so that the module can actually charge the battery.
+Connect the multimeter as shown in the image below. You will need to disconnect the positive charging terminal for this. Then connect the power supply again and insert the *turned on* mower into the docking station. It is important that the mower is turned on so that the module can actually charge the battery.
 
 ![Setting the Current](setting_the_current.jpg)
  
@@ -63,4 +63,4 @@ If you can't reach 1.2A of charging current, your battery is charged too much. D
 Once you have set the current **turn off the mower and disconnect the power supply**.
 
 ## Step 6: Assemble the Dock
-Now that you have set the voltage and the current, you can reassemble the docking station, and it is ready for use.
+Now that you have set the voltage and the current, you can reassemble the docking station, and it is ready for use. **Don't forget to connect the positive terminal we disconnected earlier!**
