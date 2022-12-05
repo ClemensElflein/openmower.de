@@ -29,10 +29,16 @@ Therefore, we have disassembled the cheapest off-the-shelf robotic mower  we cou
 
 The bottom line is: The bot itself is surprisingly high quality and doesn't need to be changed at all. **We just need some better software in there**.
 
+## Important Information
+
+OpenMower is an early stage open source project, **and not a finished product!**
+
+This basically means: I’m just documenting a project of mine here for free and I don’t have the time and resources to check that devices built using this information will be safe to use, legal to use or even work as intended. You will need technical know-how to use this project and I’m not liable for any direct or indirect damages your actions do to anyone or anything. [More Info](/docs/getting-started/#important-info)
+
 
 ## Project Goals / Current State
 
-The basic mowing function finally works! As you can see in the video, map teaching and mowing work as expected. It even returns to the docking station automatically as soon as the battery gets low and continues once it's recharged.  Of course we don't want to stop there and we want to provide some more great features.
+The basic mowing function finally works! As you can see in the video, map teaching and mowing work as expected. It even returns to the docking station automatically as soon as the battery gets low and continues once it's recharged. Of course we don't want to stop there and we want to provide some more great features.
 
 **Here is a rough overview of what works and what's planned for the future:**
 

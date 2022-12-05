@@ -7,7 +7,7 @@ description: >
 ---
 
 {{% alert title="Warning" color="warning" %}}
-Note that this project is still in an early stage. You will need time to get the robot running! You will encounter bugs! You might break stuff! You might spend the money and don't get it to work! No guarantees for anything!
+Read this first: [Important Info](/docs/getting-started/#important-info)
 {{% /alert %}}
 
 ## Parts for the Robot and the Charging Station
