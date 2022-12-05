@@ -29,6 +29,9 @@ This assumes that you are using the Ardusimple F9P GPS board. Support for other 
   :link:&nbsp;<a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/main/configs/GPSConfig/Robot.txt" target="_blank">Robot.txt</a><br/>
   This will open in the browser. Use CTRL+S to download the file.
 
+### Step 0: Update Firmware
+Update the firmware of your Ardusimple board to version `ZED-F9P HPG 1.32`. There's a guide on the [Ardusimple Website](https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/).
+
 ### Step 1: Open u-center and connect to your GPS
 After installing u-center, connect your Ardusimple board using the "Power+GPS" USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software. 

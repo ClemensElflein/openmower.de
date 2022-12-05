@@ -26,7 +26,7 @@ In order to follow this guide, you will need:
 ## Step 2: Configure Open Mower
 For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the `boot` partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it's mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.
 
-#### /boot/openmower/openmower_version.txt
+#### /openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)
 This file selects the Open Mower version to use. You can choose the following:
 - **testing:** This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.
 - **alpha:** For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it, if you want to be among the first people to get new features, but prepare to have issues.
@@ -39,7 +39,7 @@ OM_VERSION="beta"
 export OM_VERSION
 ```
 
-#### /boot/openmower/mower_config.txt
+#### /openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)
 This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that's why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.
 
