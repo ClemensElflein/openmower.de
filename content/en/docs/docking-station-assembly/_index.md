@@ -19,9 +19,14 @@ In this section we modify the docking station. This is needed in order to add a 
 The first step is to desolder the screw terminals from the CC/CV module. This way we can mount it onto our carrier PCB. It is important that the through-hole connections don't get damaged during desoldering. Therefore you should use **much heat and no force** during the desoldering process. Clear the through holes using a solder sucker.
 
 ## Step 2: Mount the CC/CV module to the PCB
+{{% alert title="Info" color="info" %}}
+If you don't have standoffs or wires you can connect the PCB using a standard pin-header. These will be shorter, so you can use nuts as spacers (or no spacers at all, make sure to not screw too tightly in order to keep the silkscreen in tact).
+{{% /alert %}}
+
 ![Mounted Module](cc_cv_carrier.jpg)
 
 The next step is to mount the desoldered CC/CV module onto the PCB and populate the fuse, the screw terminal and optionally the pin header on the back of the board and a 3.3k resistor. You will need the resistor and pin header if you want to have the LED on the back of the dock light up, if power is available. If you don't care about the LED, you don't need to populate these parts.
+
 
 ## Step 3: Mount the assembly inside the docking station
 ![Module Mounted inside Dock](cc_cv_module_mounted.jpg)
