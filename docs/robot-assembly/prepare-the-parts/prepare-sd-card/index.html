@@ -105,6 +105,27 @@
 <label for=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-mainboard/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard><span>Prepare the Mainboard</span></a></label>
 </li>
 </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyassemble-the-robot-li>
+<input type=checkbox id=m-docsrobot-assemblyassemble-the-robot-check>
+<label for=m-docsrobot-assemblyassemble-the-robot-check><a href=/docs/robot-assembly/assemble-the-robot/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robot><span>Assemble the Robot</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyfirst-startup-li>
+<input type=checkbox id=m-docsrobot-assemblyfirst-startup-check>
+<label for=m-docsrobot-assemblyfirst-startup-check><a href=/docs/robot-assembly/first-startup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyfirst-startup><span>First Startup</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdocking-station-assembly-li>
+<input type=checkbox id=m-docsdocking-station-assembly-check>
+<label for=m-docsdocking-station-assembly-check><a href=/docs/docking-station-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocking-station-assembly><span>Docking Station Assembly</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docssoftware-setup-li>
+<input type=checkbox id=m-docssoftware-setup-check>
+<label for=m-docssoftware-setup-check><a href=/docs/software-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setup><span>Software Setup</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setupconfiguring-wifi-li>
+<input type=checkbox id=m-docssoftware-setupconfiguring-wifi-check>
+<label for=m-docssoftware-setupconfiguring-wifi-check><a href=/docs/software-setup/configuring-wifi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setupconfiguring-wifi><span>Configuring WiFi</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setuprecord-a-map-li>
+<input type=checkbox id=m-docssoftware-setuprecord-a-map-check>
+<label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsknowledge-base-li>
@@ -189,7 +210,7 @@ You can download it in the <code>Assets</code> section. You don&rsquo;t need to 
 </ul>
 <h2 id=step-2-configure-open-mower>Step 2: Configure Open Mower</h2>
 <p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the <code>boot</code> partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it&rsquo;s mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.</p>
-<h4 id=bootopenmoweropenmower_versiontxt>/boot/openmower/openmower_version.txt</h4>
+<h4 id=openmoweropenmower_versiontxt-on-linux-bootopenmoweropenmower_versiontxt>/openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)</h4>
 <p>This file selects the Open Mower version to use. You can choose the following:</p>
 <ul>
 <li><strong>testing:</strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.</li>
@@ -200,7 +221,7 @@ You can download it in the <code>Assets</code> section. You don&rsquo;t need to 
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#000>OM_VERSION</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;beta&#34;</span>
 
 <span style=color:#204a87>export</span> OM_VERSION
-</code></pre></div><h4 id=bootopenmowermower_configtxt>/boot/openmower/mower_config.txt</h4>
+</code></pre></div><h4 id=openmowermower_configtxt-on-linux-bootopenmowermower_configtxt>/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)</h4>
 <p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.</p>
 <div class="spoiler panel panel-default">
@@ -317,7 +338,7 @@ Click to see annotated config code
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 29, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/9d81f3ba71c79b0c03f261dd1e78b473dd1d8df0>Update Prepare SD Card (9d81f3b)</a>
+Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/7d2a3747b938f53d0e1606b5943c02be92a93347>Robot Assembly (7d2a374)</a>
 </div>
 </div>
 </main>

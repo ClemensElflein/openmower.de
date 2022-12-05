@@ -1,0 +1,26 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Software Setup</title><link>/docs/software-setup/</link><description>Recent content in Software Setup on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/software-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring WiFi</title><link>/docs/software-setup/configuring-wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/configuring-wifi/</guid><description>
+&lt;h2 id="step-1-search-the-hotspot">Step 1: Search the Hotspot&lt;/h2>
+&lt;p>Your robot is now powered on and the Raspberry Pi is booting. The next step is to connect the Robot to your WiFi network. This way it can download and install the latest OpenMower software.&lt;/p>
+&lt;p>In order to do this, take any mobile device and search for WiFi networks. Your robot should have opened a hotspot with the credentials you set earlier.&lt;/p>
+&lt;p>The default credentials are as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>SSID:&lt;/strong> openmower-somenumber&lt;/li>
+&lt;li>&lt;strong>Password:&lt;/strong> openmower&lt;/li>
+&lt;/ul>
+&lt;p>Connect to the hotspot and the mobile device should ask you to &lt;em>sign into the network&lt;/em>.&lt;/p>
+&lt;h4 id="if-no-website-is-shown">If no website is shown:&lt;/h4>
+&lt;p>If the mobile device does not automatically open the sign in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/&lt;/p>
+&lt;h2 id="step-2-enter-your-wifi-credentials">Step 2: Enter your WiFi Credentials&lt;/h2>
+&lt;p>On the screen select your home WiFi connection and enter your password. Then click connect. Your robot will connect to your network and the hotspot will disappear. If the connection fails, the hotspot will reopen.&lt;/p>
+&lt;h2 id="step-3-optional-check-connection">Step 3 (Optional): Check Connection&lt;/h2>
+&lt;p>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively you can check if the device is connected by logging into your router.&lt;/p>
+&lt;h2 id="step-4-wait">Step 4: Wait&lt;/h2>
+&lt;p>If the connection is successful, the Raspberry Pi will download and install the latest OpenMower software automatically.&lt;/p>
+&lt;p>&lt;strong>This will take some time! Depending on your SD card and your internet connection give it up to 30 minutes!&lt;/strong>&lt;/p>
+&lt;p>You know that the process was successful by looking at the RGB LED on your mainboard. It will either switch to &lt;em>RED-GREEN blinking&lt;/em> or a &lt;em>SOLID GREEN&lt;/em>.&lt;/p></description></item><item><title>Docs: Record a Map</title><link>/docs/software-setup/record-a-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/record-a-map/</guid><description>
+&lt;p>In this section we actually try the robot by driving it around.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>The mower should be configured, charged and assembled (for the first tests you can have the top shell open if the weather allows it)&lt;/li>
+&lt;li>The docking station needs to be modified to work with the OpenMower and needs to be connected to power&lt;/li>
+&lt;/ul></description></item></channel></rss>

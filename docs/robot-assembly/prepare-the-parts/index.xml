@@ -18,6 +18,8 @@ Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
 🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/main/configs/GPSConfig/Robot.txt" target="_blank">Robot.txt&lt;/a>&lt;br/>
 This will open in the browser. Use CTRL+S to download the file.&lt;/li>
 &lt;/ul>
+&lt;h3 id="step-0-update-firmware">Step 0: Update Firmware&lt;/h3>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;code>ZED-F9P HPG 1.32&lt;/code>. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
 &lt;h3 id="step-1-open-u-center-and-connect-to-your-gps">Step 1: Open u-center and connect to your GPS&lt;/h3>
 &lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software.&lt;/p>
@@ -51,7 +53,7 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;/ul>
 &lt;h2 id="step-2-configure-open-mower">Step 2: Configure Open Mower&lt;/h2>
 &lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it&amp;rsquo;s mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
-&lt;h4 id="bootopenmoweropenmower_versiontxt">/boot/openmower/openmower_version.txt&lt;/h4>
+&lt;h4 id="openmoweropenmower_versiontxt-on-linux-bootopenmoweropenmower_versiontxt">/openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)&lt;/h4>
 &lt;p>This file selects the Open Mower version to use. You can choose the following:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>testing:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/li>
@@ -61,7 +63,7 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;p>An example:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> OM_VERSION
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="bootopenmowermower_configtxt">/boot/openmower/mower_config.txt&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
 &lt;p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
 &lt;div class="spoiler panel panel-default "
@@ -159,12 +161,25 @@ id="mower_config_example">
 &lt;/div>
 &lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>
 &lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.&lt;/p></description></item><item><title>Docs: Prepare the Robot</title><link>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</guid><description>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Info&lt;/h4>
-There is a tutorial video available for this step of the process! &lt;br/>
-Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
-(time 16:21 - 17:15)
-&lt;/div></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>YardForce Classic 500&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Some basic screwdrivers&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-open-the-robot">Step 1: Open The Robot&lt;/h3>
+&lt;p>The first step is to open up the robot. This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is: 2:25 - 5:08.&lt;/p>
+&lt;h3 id="step-2-remove-stock-electronics">Step 2: Remove Stock Electronics&lt;/h3>
+&lt;p>You will need to remove these stock electronics:&lt;/p>
+&lt;ul>
+&lt;li>Mainboard&lt;/li>
+&lt;li>Perimeter Sensor (slim PCB in the front of the robot).&lt;/li>
+&lt;li>All cables in the orange cover (emergency stop).&lt;/li>
+&lt;/ul>
+&lt;p>Keep the battery in place.&lt;/p>
+&lt;h3 id="step-3-optional-modify-usb-socket">Step 3 &lt;strong>Optional&lt;/strong>: Modify USB Socket&lt;/h3>
+&lt;p>The YardForce classic has an USB socket on the back of the robot. Unfortunately for us this socket has some non-standard connector on the inside.&lt;/p>
+&lt;p>If you want to use this USB socket on the back of the robot (for example for controlling the robot using a gamepad like shown in the first video), you will need to add a USB A plug to the USB cable and plug it into the Raspberry Pi.&lt;/p>
+&lt;p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 If you have bought the hardware kit, the mainboard already has the latest firmware, and you don&amp;rsquo;t need to do this step.

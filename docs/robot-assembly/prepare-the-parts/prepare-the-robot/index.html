@@ -16,18 +16,18 @@
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
 <title>Prepare the Robot | Open Mower</title>
-<meta name=description content="Disassemble the robot, remove the existing mainboard and add a USB connector.
+<meta name=description content="Disassemble the robot, remove the existing mainboard and add optionally a USB connector.
 ">
 <meta property="og:title" content="Prepare the Robot">
-<meta property="og:description" content="Disassemble the robot, remove the existing mainboard and add a USB connector.
+<meta property="og:description" content="Disassemble the robot, remove the existing mainboard and add optionally a USB connector.
 ">
 <meta property="og:type" content="website">
 <meta property="og:url" content="/docs/robot-assembly/prepare-the-parts/prepare-the-robot/"><meta property="og:site_name" content="Open Mower">
 <meta itemprop=name content="Prepare the Robot">
-<meta itemprop=description content="Disassemble the robot, remove the existing mainboard and add a USB connector.
+<meta itemprop=description content="Disassemble the robot, remove the existing mainboard and add optionally a USB connector.
 "><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Prepare the Robot">
-<meta name=twitter:description content="Disassemble the robot, remove the existing mainboard and add a USB connector.
+<meta name=twitter:description content="Disassemble the robot, remove the existing mainboard and add optionally a USB connector.
 ">
 <link rel=preload href=/scss/main.min.adb64bbe2f1baaf31b3cfef7cb8c8cccf604c94b8199b8770f2ed117ba219481.css as=style>
 <link href=/scss/main.min.adb64bbe2f1baaf31b3cfef7cb8c8cccf604c94b8199b8770f2ed117ba219481.css rel=stylesheet integrity>
@@ -105,6 +105,27 @@
 <label for=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-mainboard/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard><span>Prepare the Mainboard</span></a></label>
 </li>
 </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyassemble-the-robot-li>
+<input type=checkbox id=m-docsrobot-assemblyassemble-the-robot-check>
+<label for=m-docsrobot-assemblyassemble-the-robot-check><a href=/docs/robot-assembly/assemble-the-robot/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robot><span>Assemble the Robot</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyfirst-startup-li>
+<input type=checkbox id=m-docsrobot-assemblyfirst-startup-check>
+<label for=m-docsrobot-assemblyfirst-startup-check><a href=/docs/robot-assembly/first-startup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyfirst-startup><span>First Startup</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdocking-station-assembly-li>
+<input type=checkbox id=m-docsdocking-station-assembly-check>
+<label for=m-docsdocking-station-assembly-check><a href=/docs/docking-station-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocking-station-assembly><span>Docking Station Assembly</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docssoftware-setup-li>
+<input type=checkbox id=m-docssoftware-setup-check>
+<label for=m-docssoftware-setup-check><a href=/docs/software-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setup><span>Software Setup</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setupconfiguring-wifi-li>
+<input type=checkbox id=m-docssoftware-setupconfiguring-wifi-check>
+<label for=m-docssoftware-setupconfiguring-wifi-check><a href=/docs/software-setup/configuring-wifi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setupconfiguring-wifi><span>Configuring WiFi</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setuprecord-a-map-li>
+<input type=checkbox id=m-docssoftware-setuprecord-a-map-check>
+<label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsknowledge-base-li>
@@ -166,19 +187,32 @@
 </nav>
 <div class=td-content>
 <h1>Prepare the Robot</h1>
-<div class=lead>Disassemble the robot, remove the existing mainboard and add a USB connector.</div>
+<div class=lead>Disassemble the robot, remove the existing mainboard and add optionally a USB connector.</div>
 <header class=article-meta>
 </header>
-<div class="alert alert-info" role=alert>
-<h4 class=alert-heading>Info</h4>
-There is a tutorial video available for this step of the process! <br>
-Check my YouTube video here: <a href="https://youtu.be/_bImqD-pQSA?t=981"><i class="fa fa-brands fa-youtube"></i> Video</a>
-(time 16:21 - 17:15)
-</div>
+<h3 id=prerequisites>Prerequisites</h3>
+<ul>
+<li><strong>YardForce Classic 500</strong></li>
+<li><strong>Some basic screwdrivers</strong></li>
+</ul>
+<h3 id=step-1-open-the-robot>Step 1: Open The Robot</h3>
+<p>The first step is to open up the robot. This is a bit tricky in some parts, so I recommend you checking my YouTube video here: <a href="https://youtu.be/_bImqD-pQSA?t=148"><i class="fa fa-brands fa-youtube"></i> YouTube Video</a>. The relevant time is: 2:25 - 5:08.</p>
+<h3 id=step-2-remove-stock-electronics>Step 2: Remove Stock Electronics</h3>
+<p>You will need to remove these stock electronics:</p>
+<ul>
+<li>Mainboard</li>
+<li>Perimeter Sensor (slim PCB in the front of the robot).</li>
+<li>All cables in the orange cover (emergency stop).</li>
+</ul>
+<p>Keep the battery in place.</p>
+<h3 id=step-3-optional-modify-usb-socket>Step 3 <strong>Optional</strong>: Modify USB Socket</h3>
+<p>The YardForce classic has an USB socket on the back of the robot. Unfortunately for us this socket has some non-standard connector on the inside.</p>
+<p>If you want to use this USB socket on the back of the robot (for example for controlling the robot using a gamepad like shown in the first video), you will need to add a USB A plug to the USB cable and plug it into the Raspberry Pi.</p>
+<p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 18, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/516e9110407833f0f8996377955c63733d174ed6>readme (516e911)</a>
+Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/7d2a3747b938f53d0e1606b5943c02be92a93347>Robot Assembly (7d2a374)</a>
 </div>
 </div>
 </main>

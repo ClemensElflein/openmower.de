@@ -105,6 +105,27 @@
 <label for=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-mainboard/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard><span>Prepare the Mainboard</span></a></label>
 </li>
 </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyassemble-the-robot-li>
+<input type=checkbox id=m-docsrobot-assemblyassemble-the-robot-check>
+<label for=m-docsrobot-assemblyassemble-the-robot-check><a href=/docs/robot-assembly/assemble-the-robot/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robot><span>Assemble the Robot</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyfirst-startup-li>
+<input type=checkbox id=m-docsrobot-assemblyfirst-startup-check>
+<label for=m-docsrobot-assemblyfirst-startup-check><a href=/docs/robot-assembly/first-startup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyfirst-startup><span>First Startup</span></a></label>
+</li>
+</ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdocking-station-assembly-li>
+<input type=checkbox id=m-docsdocking-station-assembly-check>
+<label for=m-docsdocking-station-assembly-check><a href=/docs/docking-station-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocking-station-assembly><span>Docking Station Assembly</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docssoftware-setup-li>
+<input type=checkbox id=m-docssoftware-setup-check>
+<label for=m-docssoftware-setup-check><a href=/docs/software-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setup><span>Software Setup</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setupconfiguring-wifi-li>
+<input type=checkbox id=m-docssoftware-setupconfiguring-wifi-check>
+<label for=m-docssoftware-setupconfiguring-wifi-check><a href=/docs/software-setup/configuring-wifi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setupconfiguring-wifi><span>Configuring WiFi</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setuprecord-a-map-li>
+<input type=checkbox id=m-docssoftware-setuprecord-a-map-check>
+<label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsknowledge-base-li>
@@ -163,19 +184,31 @@
 <div class=lead>How to get started with the Open Mower project.</div>
 <header class=article-meta>
 </header>
+<h2 id=important-info>Important Info</h2>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Read Before Starting</h4>
+<ul>
+<li><strong>This project is still in an early stage</strong>: You will need time to get the robot running! You will encounter bugs! You might break stuff! You might spend the money and don&rsquo;t get it to work! No guarantees for anything!</li>
+<li><strong>DO NOT</strong> use the stock charger with the OpenMower mainboard!</li>
+<li><strong>Lithium Batteries can be dangerous:</strong> You will be building your own charger. Make sure you are comfortable doing that and understand the dangers of working with Lithium batteries.</li>
+<li><strong>Read</strong> the whole documentation and <strong>get a high level overview</strong>: Understand every step involved in the build before actually doing anything.</li>
+<li><strong>You are responsible for your own actions</strong>: Be sure that you know what you are doing!</li>
+<li><strong>This documentation is work in progress</strong>: There might be errors and missing steps. If you have questions <strong>ask on Discord</strong>.</li>
+</ul>
+</div>
 <h2 id=prerequisites>Prerequisites</h2>
 <p>Read this paragraph thoroughly in order to understand <em>which</em> components you will need for the Open Mower project and <em>why</em> you will need them. This prevents you from buying expensive stuff and later noticing that you will need even more expensive stuff in order to finish the project.</p>
 <h3 id=required-knowledge>Required Knowledge</h3>
 <ul>
 <li><strong>Linux</strong>: You should be comfortable using a Linux PC and you should know how to install a Raspberry Pi. This is important, because at the moment the Open Mower doesn&rsquo;t have a graphical user interface. It is started in an ssh terminal!</li>
-<li><strong>Very Basic Electronics</strong>: You should be comfortable handling PCBs and have some basic soldering skills. If you have worked with an Arduino before, you should be fine.</li>
+<li><strong>Electronics</strong>: You should be comfortable handling PCBs and have some soldering skills. You should be capable of understanding each step you are about to perform.</li>
 </ul>
 <h3 id=required-parts>Required Parts</h3>
 <p>The Open Mower project consists of multiple parts:</p>
 <ul>
 <li><strong>The Robot</strong>: The robot is a modified lawn-mowing robot. The robot is built by using the case and motors of an off-the-shelf lawn mowing robot and replacing the electronics with custom electronics. You will either need to buy the custom electronics or get the parts and solder it yourself.</li>
 <li><strong>RTK GPS</strong>: The robot needs to know where <em>exactly</em> it is inside your property in order to mow with high precision. This is achieved by a technology called RTK GPS. This type of GPS uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot via some radio link. This way, the robot is able to position with centimeter accuracy. This can be done using WiFi or some other long range radio. <em>Hint: There are also cloud services available for RTK error corrections. Some are free and some are paid</em></li>
-<li><strong>Docking Station</strong>: The robot needs to recharge in a docking station. Unfortunately the battery charging electronics is not part of the original docking station. That&rsquo;s why we will replace the electronics inside the original docking station as well.</li>
+<li><strong>Docking Station</strong>: The robot needs to recharge in a docking station. Unfortunately the battery charging electronics is not part of the original docking station. That&rsquo;s why we will replace the electronics inside the original docking station as well. <strong>Do not use the stock docking station with the modified robot</strong></li>
 </ul>
 <p>If you are ready and want to get shopping, check out the <a href=/docs/getting-started/shopping-list>Shopping List</a></p>
 <h2 id=next-steps>Next Steps</h2>
@@ -190,7 +223,7 @@
 </div>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 18, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/0191f6c9bd014096bb95258a747562df23ad9124>added getting started (0191f6c)</a>
+Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/cc62aa32f0d382e63809bc28ab54665532a19a0d>Added some important information (cc62aa3)</a>
 </div>
 </div>
 </main>
