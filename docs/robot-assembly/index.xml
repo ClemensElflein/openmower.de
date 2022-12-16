@@ -12,6 +12,12 @@ The three motor controllers have different configurations. Make sure you plug th
 &lt;p>Don&amp;rsquo;t forget to plug the SD card into the Raspberry Pi&lt;/p>
 &lt;h2 id="step-3-install-gps-antenna">Step 3: Install GPS Antenna&lt;/h2>
 &lt;p>&lt;img src="gps_antenna.jpg" alt="Gps Antenna Mount">&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+&lt;p>GPS ground plane, GPS 3D printed mount and 15mm bolts with nuts are included in the kits v0.10 and later.&lt;/p>
+&lt;p>3D part is fragile and can get broken during shipping despite our best efforts. Superglue should fix it.&lt;/p>
+&lt;p>v0.10: holes on holder are smaller that bolts provided. Widen it with 3mm drill.&lt;/p>
+&lt;/div>
 &lt;p>In order to improve the reception of the GPS antenna, we put a ground plane below it. This can be any metal plate, but we are using a PCB with a solid copper layer for this.&lt;/p>
 &lt;p>First put the GPS antenna&amp;rsquo;s cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3d printed holder. Roll the rest of the antenna cable up so that it&amp;rsquo;s easy to stow inside the robot.&lt;/p>
 &lt;p>Once the antenna is fixed to the holder, you can plug it into the front of your robot (you will need to remove two white plastic cable holders) and fixate it using a screw.&lt;/p>
@@ -45,4 +51,5 @@ Don&amp;rsquo;t close the lid of the mower yet. Do the software setup and the fi
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Don&amp;rsquo;t run the mower for too long, you &lt;strong>cannot recharge it with the unmodified docking station!&lt;/strong>
 &lt;/div>
-&lt;p>If everything seems healthy &lt;strong>turn off the mower&lt;/strong> and proceed to the next section: &lt;a href="/docs/docking-station-assembly/">Docking Station Assembly&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;p>If everything seems healthy &lt;strong>turn off the mower&lt;/strong> and proceed to the next section: &lt;a href="/docs/docking-station-assembly/">Docking Station Assembly&lt;/a>.
+Otherwise, refer to &lt;a href="/docs/troubleshooting/">Troubleshooting&lt;/a>.&lt;/p></description></item></channel></rss>

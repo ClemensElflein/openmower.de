@@ -1,0 +1,102 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Troubleshooting Guides</title><link>/docs/troubleshooting/</link><description>Recent content in Troubleshooting Guides on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Troubleshooting GPS-RTK</title><link>/docs/troubleshooting/gps-rtk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/gps-rtk/</guid><description>
+&lt;p>We assume that you at least followed &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>. If mower is already assembled - open the top cover.&lt;/p>
+&lt;p>Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration).&lt;/p>
+&lt;p>Make sure that &lt;code>Protocol of received messages&lt;/code> in bottom status bar right shows &lt;code>UBX&lt;/code>, not &lt;code>NMEA&lt;/code>. If not - upload configuration again. Then disconnect/connect power of GPS and make sure it stayed &lt;code>UBX&lt;/code>.&lt;/p>
+&lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If mower is already assembled and antenna is plugged in - just take it outside with the mower.
+Even indoors next to the windows with antenna connected you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
+&lt;p>Deviation map (&lt;code>View-&amp;gt;Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File-&amp;gt;Database clean&lt;/code>.&lt;/p>
+&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145">NTRIP node somewhere nearby&lt;/a> (&amp;lt;30km) or running your own &lt;a href="/docs/rtk-base-setup/">base station&lt;/a>.&lt;/p>
+&lt;p>Go to &lt;code>Receiver-&amp;gt;NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">configuration file later&lt;/a>.
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
+&lt;img class="card-img-top" src="/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png" width="500" height="460">
+&lt;/figure>
+&lt;/p>
+&lt;p>NTRIP client should display green connection in status bar. Deviation map (&lt;code>View-&amp;gt;Deviation Map, F12&lt;/code>) should stay dead center. &lt;code>No RTK&lt;/code> led will start blinking or go away completely.
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 810px">
+&lt;img class="card-img-top" src="/docs/troubleshooting/gps-rtk/gps-fix-and-deviation_hu6cbd1643a4df8dcd346344c082d9a5e1_47047_800x0_resize_catmullrom_3.png" width="800" height="484">
+&lt;/figure>
+&lt;/p>
+&lt;h2 id="test-gps-on-mainboard">Test GPS on Mainboard&lt;/h2>
+&lt;p>We have checked that GPS works alone, let&amp;rsquo;s see if it would together with mainboard. Plug GPS into mainboard. Everything should light up and start flashing. Wait until you are GREEN or RED/GREEN.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">🔋 Powering the mainboard&lt;/h4>
+If you don&amp;rsquo;t have dock station assembled and want to save the power in the main mower battery, you can power it from the Pico Dev board MicroUSB port, right below the GPS board. Use a 1A+ power bank, computer USB port&amp;rsquo;s 500mA might be not enough.
+&lt;/div>
+&lt;p>Then SSH into OpenMower console. In the home directory there&amp;rsquo;s do &lt;code>./start_ros_bash.sh&lt;/code> which should take you to a bash inside the docker, then you can do &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo -c -w 5 /xbot_driver_gps/xb_pose&lt;/code> to look at the GPS data. There&amp;rsquo;s a position and some accuracy number in meters.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">seq&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">318&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">frame_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gps&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_vector_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">position_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.021&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># this is good&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3.141&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Raspberry Pi 4</title><link>/docs/troubleshooting/raspberry-pi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/raspberry-pi/</guid><description>
+&lt;p>Follow the &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/">SD Card preparation step&lt;/a> and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.&lt;/p>
+&lt;p>Then follow the &lt;a href="/docs/software-setup/configuring-wifi/">Wifi Configuration&lt;/a>.&lt;/p>
+&lt;p>Board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
+While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">🔑 Default SSH credentials&lt;/h4>
+Username: &lt;code>pi&lt;/code>, password: &lt;code>openmower&lt;/code>.
+&lt;/div>
+&lt;p>Running &lt;code>sudo systemctl status --no-pager -l -n 99999 openmower&lt;/code> should display something reassuring.
+&lt;div class="spoiler panel panel-default "
+>
+&lt;div class="panel-heading">
+&lt;a class="collapsed" data-toggle="collapse"
+style="display:block;"
+href="#openmower_status_log" >
+Click to see sample cold start startup log
+&lt;/a>
+&lt;/div>
+&lt;div class="panel-collapse collapse "
+id="openmower_status_log">
+&lt;div class="panel-body">&lt;pre tabindex="0">&lt;code>● openmower.service - OpenMower service
+Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
+Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
+Main PID: 1539 (start_open_mowe)
+Tasks: 9 (limit: 4164)
+CPU: 295ms
+CGroup: /system.slice/open-mower.service
+├─1539 /bin/bash /root/start_open_mower.sh
+└─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
+Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
+Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
+Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
+Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
+Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
+Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
+Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
+Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
+Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
+Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
+Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
+Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
+Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
+Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
+Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
+Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
+Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
+Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
+....
+Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
+Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
+Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
+Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
+Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
+Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
+Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
+Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
+Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
+Dec 11 17:52:19 openmower bash[3156]:
+Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
+Dec 11 17:52:20 openmower bash[3156]:
+Dec 11 17:52:20 openmower bash[3156]: SUMMARY
+....
+bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>If you are lazy, just wait 5-10 minutes and check that http://&amp;lt;openmower IP&amp;gt;:8080/ is accessible. If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl -fu openmower&lt;/code>. Usually problem would be bad config file.&lt;/p>
+&lt;p>If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.&lt;/p></description></item></channel></rss>

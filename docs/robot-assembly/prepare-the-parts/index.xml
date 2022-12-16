@@ -185,4 +185,13 @@ id="mower_config_example">
 If you have bought the hardware kit, the mainboard already has the latest firmware, and you don&amp;rsquo;t need to do this step.
 &lt;/div>
 &lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is, because without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
-&lt;p>For this, follow the &lt;a href="/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item></channel></rss>
+&lt;p>For this, follow the &lt;a href="/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: Miscellaneous parts</title><link>/docs/robot-assembly/prepare-the-parts/misc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/misc/</guid><description>
+&lt;h3 id="dfplayer">DFPlayer&lt;/h3>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+SDCard (128Mb) and DFPlayer Mini are included in the kit.
+&lt;/div>
+&lt;p>Take a SD card (different from the one you are using for RPi), format as FAT, copy &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
+&lt;h3 id="xesc-boards">xESC boards&lt;/h3>
+&lt;p>Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
+&lt;p>Configuring xESCs is beyond the scope of this doc.&lt;/p></description></item></channel></rss>

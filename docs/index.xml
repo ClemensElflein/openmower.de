@@ -57,6 +57,13 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>&lt;/td>
 &lt;td>Check for Linux Support&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>Left-Angle USB adapter (Optional)&lt;/td>
+&lt;td>If you want to keep WiFi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if WiFi dongle is waterproof.&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
@@ -84,7 +91,7 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;/tr>
 &lt;tr>
 &lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
-&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>Positioning system for the base station&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
 &lt;td>&lt;/td>
