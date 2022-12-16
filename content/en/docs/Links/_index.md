@@ -2,7 +2,7 @@
 title: "Links"
 linkTitle: "Links"
 date: 2017-01-05
-weight: 98
+weight: 400
 description: >
   A list of links to the parts of the Open Mower project.
 ---
