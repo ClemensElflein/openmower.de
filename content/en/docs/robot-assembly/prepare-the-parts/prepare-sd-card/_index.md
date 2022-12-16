@@ -1,6 +1,6 @@
 ---
 title: "Prepare the SD Card"
-linkTitle: "Prepare the SD Card"
+linkTitle: SD Card
 weight: 20
 description: >
   In this step we will install the SD card and configure the basic settings for our mower.
