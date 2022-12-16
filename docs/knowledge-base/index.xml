@@ -1,22 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Knowledge Base</title><link>/docs/knowledge-base/</link><description>Recent content in Knowledge Base on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/knowledge-base/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configure the motor controllers</title><link>/docs/knowledge-base/configure-motor-controllers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/configure-motor-controllers/</guid><description>
-&lt;p>Now that you have all the parts available, you will need to configure some of them, so that they will work together in the end.&lt;/p>
-&lt;h2 id="configure-the-gps-board">Configure the GPS board&lt;/h2>
-&lt;p>This assumes that you are using the Ardusimple F9P GPS board.&lt;/p>
-&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>Latest version of the u-center software:&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
-Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
-&lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/main/configs/GPSConfig/Robot.txt" target="_blank">Robot.txt&lt;/a>&lt;br/>
-This will open in the browser. Use CTRL+S to download the file.&lt;/li>
-&lt;/ul>
-&lt;h3 id="step-1-open-u-center-and-connect-to-your-gps">Step 1: Open u-center and connect to your GPS&lt;/h3>
-&lt;h2 id="prepare-your-sd-card">Prepare your SD Card&lt;/h2>
-&lt;h2 id="prepare-the-mainboard">Prepare the Mainboard&lt;/h2>
-&lt;h2 id="configure-the-motor-controllers">Configure the motor controllers&lt;/h2></description></item><item><title>Docs: Neopixel LED Colors</title><link>/docs/knowledge-base/neopixel-led-colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/neopixel-led-colors/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Knowledge Base</title><link>/docs/knowledge-base/</link><description>Recent content in Knowledge Base on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/knowledge-base/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Neopixel LED Colors</title><link>/docs/knowledge-base/neopixel-led-colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/neopixel-led-colors/</guid><description>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
 &lt;img class="card-img-top" src="/docs/knowledge-base/neopixel-led-colors/neopixel-status-led_hu70ef149a4bb48905604289e195ae28e0_38939_250x0_resize_q75_catmullrom.jpg" width="250" height="188">
 &lt;/figure>
@@ -196,4 +178,96 @@ You can get the latest version here: 🔗 &lt;a href="https://github.com/Clemen
 &lt;p>In order to not draw too much current from your computer&amp;rsquo;s USB port, make sure that no modules (Raspberry Pi, GPS, ESCs) are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro USB cable to your PC.&lt;/p>
 &lt;p>Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;h2 id="step-4-done-">Step 4: Done 🎉&lt;/h2>
-&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item></channel></rss>
+&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>/docs/knowledge-base/shopping-list/</link><pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/shopping-list/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Read this first: &lt;a href="/docs/getting-started/#important-info">Important Info&lt;/a>
+&lt;/div>
+&lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mower&lt;br />(Yardforce Classic 500)&lt;/td>
+&lt;td>The mower to modify.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Open Mower Hardware Kit&lt;/td>
+&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://shop.devops.care/10-openmower">Vermut&amp;rsquo;s shop&lt;/a>&lt;/td>
+&lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Raspberry Pi 4&lt;/td>
+&lt;td>The brain of the robot.&lt;br />&lt;br />Use 2GB + model for running the software&lt;br />&lt;br />Use 8GB model for development&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SD Card (16 GB+)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>USB WiFi Dongle (Optional)&lt;/td>
+&lt;td>For better WiFi reception&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Check for Linux Support&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+You only need a GPS base station if you don&amp;rsquo;t have access to an external NTRIP service. There are multiple free services available, so check before buying this.
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raspberry Pi&lt;br />+ SD Card&lt;br />+ Power Supply&lt;/td>
+&lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>

@@ -70,15 +70,9 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
 <input type=checkbox id=m-docsoverview-check>
 <label for=m-docsoverview-check><a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsgetting-started-li>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-started-li>
 <input type=checkbox id=m-docsgetting-started-check>
 <label for=m-docsgetting-started-check><a href=/docs/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsgetting-started><span>Getting Started</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-startedshopping-list-li>
-<input type=checkbox id=m-docsgetting-startedshopping-list-check>
-<label for=m-docsgetting-startedshopping-list-check><a href=/docs/getting-started/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsgetting-startedshopping-list><span>Shopping List</span></a></label>
-</li>
-</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assembly-li>
 <input type=checkbox id=m-docsrobot-assembly-check>
 <label for=m-docsrobot-assembly-check><a href=/docs/robot-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assembly><span>Robot Assembly</span></a></label>
@@ -128,10 +122,7 @@
 <input type=checkbox id=m-docsknowledge-base-check>
 <label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseconfigure-motor-controllers-li>
-<input type=checkbox id=m-docsknowledge-baseconfigure-motor-controllers-check>
-<label for=m-docsknowledge-baseconfigure-motor-controllers-check><a href=/docs/knowledge-base/configure-motor-controllers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseconfigure-motor-controllers><span>Configure the motor controllers</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
 <input type=checkbox id=m-docsknowledge-baseneopixel-led-colors-check>
 <label for=m-docsknowledge-baseneopixel-led-colors-check><a href=/docs/knowledge-base/neopixel-led-colors/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseneopixel-led-colors><span>Neopixel LED Colors</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-gps-li>
@@ -146,6 +137,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
 <input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
 <label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li>
+<input type=checkbox id=m-docsknowledge-baseshopping-list-check>
+<label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslinks-li>
@@ -182,8 +176,13 @@
 <h1>Configuring WiFi</h1>
 <header class=article-meta>
 </header>
+<h2 id=step-0-charge-the-robot>Step 0: Charge the Robot</h2>
+<p>Make sure that the robot is turned on and fully charged, since the software installation will take some time. You can also do this step while the mower is charging in the docking station.</p>
 <h2 id=step-1-search-the-hotspot>Step 1: Search the Hotspot</h2>
-<p>Your robot is now powered on and the Raspberry Pi is booting. The next step is to connect the Robot to your WiFi network. This way it can download and install the latest OpenMower software.</p>
+<div class="container-fluid m-0 p-0">
+<div class=row>
+<div class=col>
+<p>Turn your mower on and wait for the Raspberry Pi to boot. The next step is to connect the Robot to your WiFi network. This way it can download and install the latest OpenMower software.</p>
 <p>In order to do this, take any mobile device and search for WiFi networks. Your robot should have opened a hotspot with the credentials you set earlier.</p>
 <p>The default credentials are as follows:</p>
 <ul>
@@ -191,10 +190,25 @@
 <li><strong>Password:</strong> openmower</li>
 </ul>
 <p>Connect to the hotspot and the mobile device should ask you to <em>sign into the network</em>.</p>
+</div>
+<div class=col-3>
+<div><img src=connect_wifi_screen_1.png width=250></div>
+</div>
+</div>
+</div>
 <h4 id=if-no-website-is-shown>If no website is shown:</h4>
 <p>If the mobile device does not automatically open the sign in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/</p>
 <h2 id=step-2-enter-your-wifi-credentials>Step 2: Enter your WiFi Credentials</h2>
+<div class="container-fluid m-0 p-0">
+<div class=row>
+<div class=col>
 <p>On the screen select your home WiFi connection and enter your password. Then click connect. Your robot will connect to your network and the hotspot will disappear. If the connection fails, the hotspot will reopen.</p>
+</div>
+<div class=col-3>
+<div><img src=connect_wifi_screen_2.png width=250></div>
+</div>
+</div>
+</div>
 <h2 id=step-3-optional-check-connection>Step 3 (Optional): Check Connection</h2>
 <p>Check the connection by using any other PC in your network and <code>ping openmower.local</code>. This should be working. Alternatively you can check if the device is connected by logging into your router.</p>
 <h2 id=step-4-wait>Step 4: Wait</h2>
@@ -204,7 +218,7 @@
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/8cae40f3129631fc430bb1aa4eaff613a4fa2166>Connecting Wifi (8cae40f)</a>
+Last modified December 16, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/968c0cdfa763d40866bc6d320cbd32b80c15f2ca>Added software setup, added app info, added some more details, added flow chart (968c0cd)</a>
 </div>
 </div>
 </main>

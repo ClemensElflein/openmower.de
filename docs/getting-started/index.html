@@ -74,15 +74,9 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
 <input type=checkbox id=m-docsoverview-check>
 <label for=m-docsoverview-check><a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsgetting-started-li>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsgetting-started-li>
 <input type=checkbox id=m-docsgetting-started-check checked>
 <label for=m-docsgetting-started-check><a href=/docs/getting-started/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-docsgetting-started><span class=td-sidebar-nav-active-item>Getting Started</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-startedshopping-list-li>
-<input type=checkbox id=m-docsgetting-startedshopping-list-check>
-<label for=m-docsgetting-startedshopping-list-check><a href=/docs/getting-started/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsgetting-startedshopping-list><span>Shopping List</span></a></label>
-</li>
-</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assembly-li>
 <input type=checkbox id=m-docsrobot-assembly-check>
 <label for=m-docsrobot-assembly-check><a href=/docs/robot-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assembly><span>Robot Assembly</span></a></label>
@@ -132,10 +126,7 @@
 <input type=checkbox id=m-docsknowledge-base-check>
 <label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseconfigure-motor-controllers-li>
-<input type=checkbox id=m-docsknowledge-baseconfigure-motor-controllers-check>
-<label for=m-docsknowledge-baseconfigure-motor-controllers-check><a href=/docs/knowledge-base/configure-motor-controllers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseconfigure-motor-controllers><span>Configure the motor controllers</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
 <input type=checkbox id=m-docsknowledge-baseneopixel-led-colors-check>
 <label for=m-docsknowledge-baseneopixel-led-colors-check><a href=/docs/knowledge-base/neopixel-led-colors/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseneopixel-led-colors><span>Neopixel LED Colors</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-gps-li>
@@ -150,6 +141,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
 <input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
 <label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li>
+<input type=checkbox id=m-docsknowledge-baseshopping-list-check>
+<label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslinks-li>
@@ -200,7 +194,7 @@
 <p>Read this paragraph thoroughly in order to understand <em>which</em> components you will need for the Open Mower project and <em>why</em> you will need them. This prevents you from buying expensive stuff and later noticing that you will need even more expensive stuff in order to finish the project.</p>
 <h3 id=required-knowledge>Required Knowledge</h3>
 <ul>
-<li><strong>Linux</strong>: You should be comfortable using a Linux PC and you should know how to install a Raspberry Pi. This is important, because at the moment the Open Mower doesn&rsquo;t have a graphical user interface. It is started in an ssh terminal!</li>
+<li><strong>Linux</strong>: You should be comfortable using a Linux PC and you should know how to install a Raspberry Pi. Although there is the Open Mower app available, you will need to change some settings and probably do some debugging to get it working.</li>
 <li><strong>Electronics</strong>: You should be comfortable handling PCBs and have some soldering skills. You should be capable of understanding each step you are about to perform.</li>
 </ul>
 <h3 id=required-parts>Required Parts</h3>
@@ -210,20 +204,21 @@
 <li><strong>RTK GPS</strong>: The robot needs to know where <em>exactly</em> it is inside your property in order to mow with high precision. This is achieved by a technology called RTK GPS. This type of GPS uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot via some radio link. This way, the robot is able to position with centimeter accuracy. This can be done using WiFi or some other long range radio. <em>Hint: There are also cloud services available for RTK error corrections. Some are free and some are paid</em></li>
 <li><strong>Docking Station</strong>: The robot needs to recharge in a docking station. Unfortunately the battery charging electronics is not part of the original docking station. That&rsquo;s why we will replace the electronics inside the original docking station as well. <strong>Do not use the stock docking station with the modified robot</strong></li>
 </ul>
-<p>If you are ready and want to get shopping, check out the <a href=/docs/getting-started/shopping-list>Shopping List</a></p>
-<h2 id=next-steps>Next Steps</h2>
+<p>If you are ready and want to get shopping, check out the <a href=/docs/knowledge-base/shopping-list>Shopping List</a></p>
+<h2 id=build-steps>Build Steps</h2>
+<p><img src=flow_chart.jpg alt="Open Mower Build Overview"></p>
+<p>It&rsquo;s important to build the components in the correct order:</p>
+<ul>
+<li>The first step is to modify the robot by follwing the <a href=/docs/robot-assembly>Robot Assembly</a> steps. Don&rsquo;t let the mower powered on for too long, because <strong>you cannot charge it using the unmodified docking station</strong>.</li>
+<li>With the modified robot it&rsquo;s time to modify the docking station by following the <a href=/docs/docking-station-assembly>Docking Station Assembly</a> section. <strong>Now you are able to charge the battery with the new docking station.</strong></li>
+<li>The next step is to setup the software. Since this might take some time and therefore drain the battery, it&rsquo;s important that you do this step after finishing the docking station assembly. This step connects the robot to your WiFi, downloads the OpenMower software and you will do some general configuration.</li>
+<li>Finally with the software running, you can use the Open Mower App to record your mowing areas and navigation areas and finally mow.</li>
+</ul>
 <p>If you have the parts and are ready to assemble the robot, read the <a href=/docs/robot-assembly>Robot Assembly</a> docs.</p>
 <div class=section-index>
-<hr class=panel-line>
-<div class=entry>
-<h5>
-<a href=/docs/getting-started/shopping-list/>Shopping List</a>
-</h5>
-<p>A shopping list for your Open Mower build.</p>
-</div>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/cc62aa32f0d382e63809bc28ab54665532a19a0d>Added some important information (cc62aa3)</a>
+Last modified December 16, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/968c0cdfa763d40866bc6d320cbd32b80c15f2ca>Added software setup, added app info, added some more details, added flow chart (968c0cd)</a>
 </div>
 </div>
 </main>

@@ -70,15 +70,9 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
 <input type=checkbox id=m-docsoverview-check>
 <label for=m-docsoverview-check><a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsgetting-started-li>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-started-li>
 <input type=checkbox id=m-docsgetting-started-check>
 <label for=m-docsgetting-started-check><a href=/docs/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsgetting-started><span>Getting Started</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-startedshopping-list-li>
-<input type=checkbox id=m-docsgetting-startedshopping-list-check>
-<label for=m-docsgetting-startedshopping-list-check><a href=/docs/getting-started/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsgetting-startedshopping-list><span>Shopping List</span></a></label>
-</li>
-</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assembly-li>
 <input type=checkbox id=m-docsrobot-assembly-check>
 <label for=m-docsrobot-assembly-check><a href=/docs/robot-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assembly><span>Robot Assembly</span></a></label>
@@ -128,10 +122,7 @@
 <input type=checkbox id=m-docsknowledge-base-check>
 <label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseconfigure-motor-controllers-li>
-<input type=checkbox id=m-docsknowledge-baseconfigure-motor-controllers-check>
-<label for=m-docsknowledge-baseconfigure-motor-controllers-check><a href=/docs/knowledge-base/configure-motor-controllers/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseconfigure-motor-controllers><span>Configure the motor controllers</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
 <input type=checkbox id=m-docsknowledge-baseneopixel-led-colors-check>
 <label for=m-docsknowledge-baseneopixel-led-colors-check><a href=/docs/knowledge-base/neopixel-led-colors/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseneopixel-led-colors><span>Neopixel LED Colors</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-gps-li>
@@ -146,6 +137,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
 <input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
 <label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li>
+<input type=checkbox id=m-docsknowledge-baseshopping-list-check>
+<label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslinks-li>
@@ -182,16 +176,86 @@
 <h1>Record a Map</h1>
 <header class=article-meta>
 </header>
-<p>In this section we actually try the robot by driving it around.</p>
+<p>In this section we finally drive the robot around and test if everything works as expected. Then we will record a map and you can see the magic happen.</p>
 <h2 id=prerequisites>Prerequisites</h2>
 <ul>
-<li>The mower should be configured, charged and assembled (for the first tests you can have the top shell open if the weather allows it)</li>
-<li>The docking station needs to be modified to work with the OpenMower and needs to be connected to power</li>
+<li>A smartphone or PC</li>
+<li>Modified robot connected to your network</li>
+<li>OpenMower software running on the robot</li>
+<li>Docking station modified and powered up</li>
+<li>Mower fully charged</li>
 </ul>
+<h2 id=step-1-check-the-gps>Step 1: Check the GPS</h2>
+<p><img src=gps_quality_indicator.jpg alt="GPS Quality Indicator"></p>
+<p>For this step put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.</p>
+<p>It is important that the mower is out in the open for the RTK GPS to work. Don&rsquo;t try this indoors and don&rsquo;t cover the mower.</p>
+<p>Open the OpenMower web app with any device by opening a browser and going to the following URL: <a href=http://openmower.local:8080>http://openmower.local:8080</a>. If that doesn&rsquo;t work, replace <code>openmower.local</code> with your mower&rsquo;s IP address.</p>
+<p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).</p>
+<p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.</p>
+<p><strong>You need to have RTK Fixed</strong> for the following to work. If you don&rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.</p>
+<h2 id=step-2-initialize-the-orientation>Step 2: Initialize the Orientation</h2>
+<p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&rsquo;s orientation is derived from its movement.
+In order to initialize the orientation, you need to drive the robot.</p>
+<p>You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.</p>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Warning</h4>
+Don&rsquo;t pick up the mower or the orientation will be lost again!
+</div>
+<p>Now drive the mower for at least 50m, do some straight lines and some figure eight patterns. Currently, the robot does not know the quality of its orientation estimate, but you can judge by driving and looking at the app.</p>
+<p>The orientation is initialized correctly if:</p>
+<ul>
+<li>When driving a straight line, the visualization also drives a straight line (no jumps)</li>
+<li>When rotating in place, the visualization stays in place and doesn&rsquo;t jump</li>
+</ul>
+<h2 id=step-3-record-a-simple-map>Step 3: Record a Simple Map</h2>
+<p>In this step we will record a simple map. Keep it simple for the first tests and record your map as soon as you&rsquo;re confident that everything works as expected.</p>
+<p>The map for the mower consists of three parts: the <strong>docking position</strong>, at least one <strong>mowing area</strong> and optionally <strong>navigation areas</strong>.</p>
+<ul>
+<li><strong>Mowing Areas</strong> are the areas which will be mowed. Each mowing area has a single outline and optionally areas to exclude (e.g. static obstacles).</li>
+<li><strong>Docking Position</strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.</li>
+<li><strong>Navigation Areas</strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but <strong>won&rsquo;t mow</strong>. Use these areas to connect mowing areas. Also if your docking station is not close to a mowing are, you can use a navigation area to allow the robot to drive to the docking station.</li>
+</ul>
+<p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture you can see an example.</p>
+<h3 id=record-outline>Record Outline</h3>
+<p><img src=record_outline.jpg alt="Record Outline"></p>
+<ul>
+<li>Drive the robot to the outline. Make sure that the robot is facing in <strong>counterclockwise direction</strong>.</li>
+<li>Start the recording by pressing <strong>Start Recording</strong>.</li>
+<li>Drive around the mowing area. Make sure that the GPS position stays fixed at all times.</li>
+<li>Stop the recording using <strong>Stop Recording</strong>.</li>
+<li>The outline should now turn green. This means it&rsquo;s done recording, and you can move on to recording exclusions.</li>
+</ul>
+<h3 id=optional-record-exclusions>Optional: Record Exclusions</h3>
+<p><img src=record_obstacle.jpg alt="Record Obstacle"></p>
+<p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:</p>
+<ul>
+<li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in <strong>clockwise direction</strong>.</li>
+<li>Start the recording by pressing <strong>Start Recording</strong>.</li>
+<li>Drive around the area to exclude. Make sure that the GPS position stays fixed at all times.</li>
+<li>Stop the recording using <strong>Stop Recording</strong>.</li>
+<li>The outline should now turn red. This means it&rsquo;s done recording, and you can move on to recording more exclusions.</li>
+</ul>
+<h3 id=save-area>Save Area</h3>
+<p><img src=save_mowing_area.jpg alt="Save Area"></p>
+<p>If you are happy with your recording, you can save the area. In order to do this, click the <strong>Finish Area</strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively you can also discard the recording.</p>
+<p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.</p>
+<h3 id=record-docking-position>Record Docking Position</h3>
+<p><img src=record_docking_position.jpg alt="Record Docking Position"></p>
+<p>In order to record the docking position, do the following:</p>
+<ul>
+<li>Drive to a location about 2 m in front of your docking station.</li>
+<li>Make sure you have a GPS fix and press the <strong>Record Docking</strong> button.</li>
+<li>Now drive close to the docking station. The front wheels of the robot should be at the edge of the docking station. <strong>Don&rsquo;t fully drive into the docking station!</strong>.</li>
+<li>Make sure you have a GPS fix and press the <strong>Record Docking</strong> button.</li>
+<li>The app should move the <strong>home</strong> icon to your current location. Now you can fully drive into the docking station.</li>
+</ul>
+<h3 id=finish-recording>Finish Recording</h3>
+<p><img src=start_mowing.jpg alt="Start Mowing"></p>
+<p>Finish the process by pressing <strong>Exit Recording</strong>. Now the mower should go to <strong>IDLE</strong> mode. You should be able to start mowing by pressing the <strong>Start</strong> button. The mower will undock, wait for GPS and mow the area.</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 5, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/8cae40f3129631fc430bb1aa4eaff613a4fa2166>Connecting Wifi (8cae40f)</a>
+Last modified December 16, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/968c0cdfa763d40866bc6d320cbd32b80c15f2ca>Added software setup, added app info, added some more details, added flow chart (968c0cd)</a>
 </div>
 </div>
 </main>

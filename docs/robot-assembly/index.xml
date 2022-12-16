@@ -11,6 +11,7 @@ The three motor controllers have different configurations. Make sure you plug th
 &lt;/div>
 &lt;p>Don&amp;rsquo;t forget to plug the SD card into the Raspberry Pi&lt;/p>
 &lt;h2 id="step-3-install-gps-antenna">Step 3: Install GPS Antenna&lt;/h2>
+&lt;p>&lt;img src="gps_antenna.jpg" alt="Gps Antenna Mount">&lt;/p>
 &lt;p>In order to improve the reception of the GPS antenna, we put a ground plane below it. This can be any metal plate, but we are using a PCB with a solid copper layer for this.&lt;/p>
 &lt;p>First put the GPS antenna&amp;rsquo;s cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3d printed holder. Roll the rest of the antenna cable up so that it&amp;rsquo;s easy to stow inside the robot.&lt;/p>
 &lt;p>Once the antenna is fixed to the holder, you can plug it into the front of your robot (you will need to remove two white plastic cable holders) and fixate it using a screw.&lt;/p>
@@ -18,6 +19,10 @@ The three motor controllers have different configurations. Make sure you plug th
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Either make sure that the power connector gets connected last and that the switch is turned off before connecting it.
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+Don&amp;rsquo;t close the lid of the mower yet. Do the software setup and the first tests without the top cover. You&amp;rsquo;ll probably need to access the hardware again.
 &lt;/div>
 &lt;p>Now that you have installed all your electronics, it&amp;rsquo;s time to connect everything up like shown in the picture below:
 &lt;img src="mainboard_connections.jpg" alt="Mainboard Connections">&lt;/p></description></item><item><title>Docs: First Startup</title><link>/docs/robot-assembly/first-startup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/first-startup/</guid><description>
