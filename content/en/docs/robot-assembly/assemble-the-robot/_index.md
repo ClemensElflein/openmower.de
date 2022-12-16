@@ -19,6 +19,14 @@ The three motor controllers have different configurations. Make sure you plug th
 Don't forget to plug the SD card into the Raspberry Pi
 
 ## Step 3: Install GPS Antenna
+{{% alert title="🧰" %}}
+GPS ground plane, GPS 3D printed mount and 15mm bolts with nuts are included in the kits v0.10 and later.
+
+3D part is fragile and can get broken during shipping despite our best efforts. Superglue should fix it.
+
+v0.10: holes on holder are smaller that bolts provided. Widen it with 3mm drill.
+{{% /alert %}}
+
 In order to improve the reception of the GPS antenna, we put a ground plane below it. This can be any metal plate, but we are using a PCB with a solid copper layer for this.
 
 First put the GPS antenna's cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3d printed holder. Roll the rest of the antenna cable up so that it's easy to stow inside the robot. 
