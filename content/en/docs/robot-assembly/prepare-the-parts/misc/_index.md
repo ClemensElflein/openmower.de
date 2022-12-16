@@ -17,4 +17,4 @@ Take a SD card (different from the one you are using for RPi), format as FAT, co
 ### xESC boards
 Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.
 
-[Configuring xESCs]({{< relref "/docs/knowledge-base/configure-motor-controllers" >}}) is beyond the scope of this doc. 
+Configuring xESCs is beyond the scope of this doc. 
