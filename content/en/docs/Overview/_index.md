@@ -65,6 +65,12 @@ The basic mowing function finally works! As you can see in the video, map teachi
 :wrench: **Support More Mowers:** Currently the only mower officially supported is the YardForce Classic 500. This is, because the current mainboard revision fits in this mower. The goal is to create modular hardware which can be used in other mower models as well (with an adaptor of course).
 
 
+## Open Mower App 
+
+![Open Mower App 1](open_mower_app_1.jpg)
+![Open Mower App 2](open_mower_app_2.jpg)
+
+
 
 ## Where should I go next?
 

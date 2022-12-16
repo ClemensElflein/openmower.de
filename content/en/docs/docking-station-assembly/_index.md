@@ -69,3 +69,6 @@ Once you have set the current **turn off the mower and disconnect the power supp
 
 ## Step 6: Assemble the Dock
 Now that you have set the voltage and the current, you can reassemble the docking station, and it is ready for use. **Don't forget to connect the positive terminal we disconnected earlier!**
+
+## Step 7: Done :tada:
+Continue with [Software Setup](/docs/software-setup/).
