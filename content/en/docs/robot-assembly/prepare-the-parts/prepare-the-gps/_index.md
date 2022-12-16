@@ -1,9 +1,10 @@
 ---
 title: "Prepare the GPS"
-linkTitle: "Prepare the GPS"
+linkTitle: GPS
 weight: 1
 description: >
   You will need to do some preparation before starting the assembly.
+tags: [gps, gps-rtk, simplertk2b, zed-f9p, ntrip]
 ---
 
 {{% alert title="Info" color="info" %}}

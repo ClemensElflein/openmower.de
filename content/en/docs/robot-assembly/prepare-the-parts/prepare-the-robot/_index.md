@@ -1,6 +1,6 @@
 ---
 title: "Prepare the Robot"
-linkTitle: "Prepare the Robot"
+linkTitle: Chassis
 weight: 30
 description: >
   Disassemble the robot, remove the existing mainboard and add optionally a USB connector.

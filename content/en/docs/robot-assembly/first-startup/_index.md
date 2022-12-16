@@ -32,3 +32,4 @@ Don't run the mower for too long, you **cannot recharge it with the unmodified d
 {{% /alert %}}
 
 If everything seems healthy **turn off the mower** and proceed to the next section: [Docking Station Assembly](/docs/docking-station-assembly/).
+Otherwise, refer to [Troubleshooting](/docs/troubleshooting/).
