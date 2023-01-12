@@ -15,7 +15,7 @@ While waiting, I recommend figuring out IP of the mower from router DHCP leases 
 
 
 {{% alert title="🔑 Default SSH credentials" color="info" %}}
-Username: `pi`, password: `openmower`.
+Username: `openmower`, password: `openmower`.
 {{% /alert %}}
 
 
