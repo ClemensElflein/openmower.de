@@ -5,7 +5,7 @@
 While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">🔑 Default SSH credentials&lt;/h4>
-Username: &lt;code>pi&lt;/code>, password: &lt;code>openmower&lt;/code>.
+Username: &lt;code>openmower&lt;/code>, password: &lt;code>openmower&lt;/code>.
 &lt;/div>
 &lt;p>Running &lt;code>sudo systemctl status --no-pager -l -n 99999 openmower&lt;/code> should display something reassuring.
 &lt;div class="spoiler panel panel-default "
