@@ -57,6 +57,8 @@ export OM_MOWER="YardForce500"
 
 # Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://www.openmower.de/docs) for the firmware versions.
 # Supported values as of today:
+# 0_12_X_LSM6DSO: Use this if you have an LSM6DSOTR and have a 0.12.x mainboard.
+# 0_11_X_WT901: Use this if you have an WT901 and have a 0.11.x mainboard.
 # 0_10_X_WT901: Use this if you have an WT901 and have a 0.10.x mainboard.
 # 0_10_X_MPU9250: Use this if you have an MPU9250 and have a 0.10.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).
 # 0_9_X_WT901_INSTEAD_OF_SOUND: Use this if you have soldered the WT901 in the sound module's slot and have a 0.9.x mainboard.
@@ -90,8 +92,8 @@ export OM_USE_RELATIVE_POSITION=False
 
 # If OM_USE_RELATIVE_POSITION is set to False, uncomment and set to coordinates near you, around to docking station
 # This will be your map origin!
-# export OM_DATUM_LAT=99.CHANGEME
-# export OM_DATUM_LONG=11.CHANGEME
+export OM_DATUM_LAT=99.CHANGEME
+export OM_DATUM_LONG=11.CHANGEME
 
 # NTRIP Settings
 # Set to False if using external radio plugged into the Ardusimple board.
