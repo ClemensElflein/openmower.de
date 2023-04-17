@@ -76,5 +76,4 @@ The basic mowing function finally works! As you can see in the video, map teachi
 
 If you are interested in joining the Open Mower project, you can build your own by checking the following pages:
 * [Getting Started](/docs/getting-started/): Read this if you want to start building quickly
-* [FAQ](/faq/): Frequently asked questions
 * [Links](/links): Links to more information, the repositories and the shop.
