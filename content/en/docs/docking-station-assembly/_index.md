@@ -14,6 +14,41 @@ description: >
 
 In this section we modify the docking station. This is needed in order to add a constant current / constant voltage module which will charge the Lipo battery. In order to fit the CC/CV module inside the docking station, I'm using a PCB as carrier board. Additionally this PCB adds a fuse to protect the module from overcurrent. 
 
+# Disassemble YF500 docking station
+## Step 1: Remove screws on the bottom
+![step1-dockingstation](https://user-images.githubusercontent.com/8736835/235942318-b45aaf86-42a4-4a73-80ef-35e127a39a39.png)
+
+First turn the whole docking station upside down.
+
+Remove the 6 screws (red) that hold the docking part. Remove the other 5 screws (yellow) that holds the bottom plate to the docking station.
+The docking unit should now come apart from the bottom plate with 2 green wires still attached.
+
+## Step 2: Remove plastic tabs
+![remove-plastic-tab-dock](https://user-images.githubusercontent.com/8736835/235950902-1d07f2c7-d466-4ee1-8a9f-46541d10f58b.png)
+
+
+Go to the back of the docking unit and locate the 2 plastic tabs.
+
+
+Stick a plastic removal tool/wedge or flathead screwdriver on the bottom of the plastic (see red arrow).
+
+
+Push down till you hear a click, you should now be able to remove the top plastic part.
+
+## Step 3: Remove orange plastic on top of the docking station
+![remove-orange-part](https://user-images.githubusercontent.com/8736835/235943502-fef49edc-3323-4fdb-a6d2-13b858405bda.png)
+
+Using your fingers you can easily remove the orange plastic, just press down and it should come off.
+
+## Step 4: Remove the back side
+![remove-back-of-docking](https://user-images.githubusercontent.com/8736835/235947104-b8e4ed2a-f256-4649-8709-796cc8e736a4.png)
+
+Remove the 7 screws on the back of the docking unit.
+
+You should now be able to pull apart the docking station.
+
+# Docking station assembly
+
 ## Step 1: Desolder the original CC/CV module
 ![Desoldered Module](desoldered_module.jpg)
 The first step is to desolder the screw terminals from the CC/CV module. This way we can mount it onto our carrier PCB. It is important that the through-hole connections don't get damaged during desoldering. Therefore you should use **much heat and no force** during the desoldering process. Clear the through holes using a solder sucker.
