@@ -16,7 +16,7 @@ In this section we modify the docking station. This is needed in order to add a 
 
 # Disassemble YF500 docking station
 ## Step 1: Remove screws on the bottom
-![step1-dockingstation](https://user-images.githubusercontent.com/8736835/235942318-b45aaf86-42a4-4a73-80ef-35e127a39a39.png)
+![step1-dockingstation](remove-bottom-dockingstation.png)
 
 First turn the whole docking station upside down.
 
@@ -24,26 +24,26 @@ Remove the 6 screws (red) that hold the docking part. Remove the other 5 screws 
 The docking unit should now come apart from the bottom plate with 2 green wires still attached.
 
 ## Step 2: Remove plastic tabs
-![remove-plastic-tab-dock](https://user-images.githubusercontent.com/8736835/235950902-1d07f2c7-d466-4ee1-8a9f-46541d10f58b.png)
+![remove-plastic-tab-dock](remove-plastic-tab-dock.png)
 
 
 Go to the back of the docking unit and locate the 2 plastic tabs.
 
 
-Stick a plastic removal tool/wedge or flathead screwdriver on the bottom of the plastic (see red arrow).
+Stick a plastic removal tool/wedge or flathead screwdriver on the bottom of the plastic (see red arrows).
 
 
 Push down till you hear a click, you should now be able to remove the top plastic part.
 
 ## Step 3: Remove orange plastic on top of the docking station
-![remove-orange-part](https://user-images.githubusercontent.com/8736835/235943502-fef49edc-3323-4fdb-a6d2-13b858405bda.png)
+![remove-orange-part](remove-orange-part.png)
 
 Using your fingers you can easily remove the orange plastic, just press down and it should come off.
 
 ## Step 4: Remove the back side
-![remove-back-of-docking](https://user-images.githubusercontent.com/8736835/235947104-b8e4ed2a-f256-4649-8709-796cc8e736a4.png)
+![remove-back-of-docking](remove-back-of-docking.png)
 
-Remove the 7 screws on the back of the docking unit.
+Remove the 7 screws (red) on the back of the docking unit.
 
 You should now be able to pull apart the docking station.
 
