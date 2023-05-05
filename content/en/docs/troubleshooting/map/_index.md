@@ -1,8 +1,6 @@
 ---
 title: Troubleshoot mapping/recording areas
 linkTitle: Map
-description: >
-    You don't get `RED/GREEN` or `GREEN`, webapp is not opening, cannot move mower via controller. We go step by step.
 tags: [map, mapping, maps]
 resources:
     - src: "**.png"
