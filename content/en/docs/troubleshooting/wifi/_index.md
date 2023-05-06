@@ -34,3 +34,12 @@ rtw_vht_enable=1
 rtw_power_mgnt=0
 rtw_enusbss=0
 ```
+
+# Wifi openmower-xx shows up after wlan1 is being used
+
+change /etc/comitup.conf
+```
+enable_appliance_mode: false
+primary_wifi_device: wlan1
+```
+reboot and wlan0 does not use comitup ip address
