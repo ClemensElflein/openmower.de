@@ -184,9 +184,11 @@ id="mower_config_example">
 &lt;p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-If you have bought the hardware kit, the mainboard already has the latest firmware, and you don&amp;rsquo;t need to do this step.
+If you have bought the hardware kit, the mainboard already has firmware installed, but it&amp;rsquo;s a good idea to &lt;a href="/docs/knowledge-base/firmware-update">update it to
+latest version&lt;/a> anyway.
 &lt;/div>
-&lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is, because without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
+&lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is, because
+without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
 &lt;p>For this, follow the &lt;a href="/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: Miscellaneous parts</title><link>/docs/robot-assembly/prepare-the-parts/misc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/misc/</guid><description>
 &lt;h3 id="dfplayer">DFPlayer&lt;/h3>
 &lt;div class="alert alert-primary" role="alert">
