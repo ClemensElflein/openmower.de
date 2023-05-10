@@ -4,7 +4,7 @@ linkTitle: "Record a Map"
 weight: 30
 ---
 
-In this section we finally drive the robot around and test if everything works as expected. Then we will record a map and you can see the magic happen.
+In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.
 
 ## Prerequisites
 - A smartphone or PC
@@ -17,7 +17,7 @@ In this section we finally drive the robot around and test if everything works a
 
 ![GPS Quality Indicator](gps_quality_indicator.jpg)
 
-For this step put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.
+For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.
 
 It is important that the mower is out in the open for the RTK GPS to work. Don't try this indoors and don't cover the mower.
 
@@ -48,14 +48,14 @@ The orientation is initialized correctly if:
 - When rotating in place, the visualization stays in place and doesn't jump
 
 ## Step 3: Record a Simple Map
-In this step we will record a simple map. Keep it simple for the first tests and record your map as soon as you're confident that everything works as expected.
+In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you're confident that everything works as expected.
 
 The map for the mower consists of three parts: the **docking position**, at least one **mowing area** and optionally **navigation areas**.
-- **Mowing Areas** are the areas which will be mowed. Each mowing area has a single outline and optionally areas to exclude (e.g. static obstacles).
+- **Mowing Areas** are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).
 - **Docking Position** is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.
-- **Navigation Areas** are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but **won't mow**. Use these areas to connect mowing areas. Also if your docking station is not close to a mowing are, you can use a navigation area to allow the robot to drive to the docking station.
+- **Navigation Areas** are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but **won't mow**. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.
 
-Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture you can see an example.
+Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.
 
 ### Record Outline
 ![Record Outline](record_outline.jpg)
@@ -80,7 +80,7 @@ If your area has zones you want to exclude (e.g. static obstacles), you can reco
 ### Save Area
 ![Save Area](save_mowing_area.jpg)
 
-If you are happy with your recording, you can save the area. In order to do this, click the **Finish Area** button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively you can also discard the recording.
+If you are happy with your recording, you can save the area. In order to do this, click the **Finish Area** button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.
 
 As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.
 

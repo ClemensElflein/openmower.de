@@ -12,7 +12,7 @@ description: >
 - Errors during this step might damage your battery or even cause fires.
 {{% /alert %}}
 
-In this section we modify the docking station. This is needed in order to add a constant current / constant voltage module which will charge the Lipo battery. In order to fit the CC/CV module inside the docking station, I'm using a PCB as carrier board. Additionally this PCB adds a fuse to protect the module from overcurrent. 
+In this section, we modify the docking station. This is needed in order to add a constant current / constant voltage module which will charge the Lipo battery. In order to fit the CC/CV module inside the docking station, I'm using a PCB as carrier board. Additionally, this PCB adds a fuse to protect the module from over-current. 
 
 # Disassemble YF500 docking station
 ## Step 1: Remove screws on the bottom
@@ -38,7 +38,7 @@ Push down till you hear a click, you should now be able to remove the top plasti
 ## Step 3: Remove orange plastic on top of the docking station
 ![remove-orange-part](remove-orange-part.png)
 
-Using your fingers you can easily remove the orange plastic, just press down and it should come off.
+Using your fingers, you can easily remove the orange plastic, just press down, and it should come off.
 
 ## Step 4: Remove the back side
 ![remove-back-of-docking](remove-back-of-docking.png)
@@ -51,16 +51,16 @@ You should now be able to pull apart the docking station.
 
 ## Step 1: Desolder the original CC/CV module
 ![Desoldered Module](desoldered_module.jpg)
-The first step is to desolder the screw terminals from the CC/CV module. This way we can mount it onto our carrier PCB. It is important that the through-hole connections don't get damaged during desoldering. Therefore you should use **much heat and no force** during the desoldering process. Clear the through holes using a solder sucker.
+The first step is to desolder the screw terminals from the CC/CV module. This way we can mount it onto our carrier PCB. It is important that the through-hole connections don't get damaged during desoldering. Therefore, you should use **much heat and no force** during the desoldering process. Clear the through holes using a solder sucker.
 
 ## Step 2: Mount the CC/CV module to the PCB
 {{% alert title="Info" color="info" %}}
-If you don't have standoffs or wires you can connect the PCB using a standard pin-header. These will be shorter, so you can use nuts as spacers (or no spacers at all, make sure to not screw too tightly in order to keep the silkscreen in tact).
+If you don't have standoffs or wires, you can connect the PCB using a standard pin-header. These will be shorter, so you can use nuts as spacers (or no spacers at all, make sure to not screw too tightly in order to keep the silkscreen in tact).
 {{% /alert %}}
 
 ![Mounted Module](cc_cv_carrier.jpg)
 
-The next step is to mount the desoldered CC/CV module onto the PCB and populate the fuse, the screw terminal and optionally the pin header on the back of the board and a 3.3k resistor. You will need the resistor and pin header if you want to have the LED on the back of the dock light up, if power is available. If you don't care about the LED, you don't need to populate these parts.
+The next step is to mount the desoldered CC/CV module onto the PCB and populate the fuse, the screw terminal and optionally the pin header on the back of the board and a 3.3k resistor. You will need the resistor and pin header if you want to have the LED on the back of the dock light up if power is available. If you don't care about the LED, you don't need to populate these parts.
 
 
 ## Step 3: Mount the assembly inside the docking station
@@ -71,7 +71,7 @@ Now you can mount the whole assembly inside the docking station. Connect the mod
 ## Step 4: Set Voltage
 ![Setting the Voltage](setting_the_voltage.jpg)
 
-Connect a multimater as shown in the picture and connect the power supply. Set the voltage to 29.2V and the current to a minimum by turning it all the way counter-clockwise (this is important for the next step!). You should hear a clicking sound as soon as the limit is reached. If not, turn at least 20 turns.
+Connect a multimeter as shown in the picture and connect the power supply. Set the voltage to 29.2V and the current to a minimum by turning it all the way counter-clockwise (this is important for the next step!). You should hear a clicking sound as soon as the limit is reached. If not, turn at least 20 turns.
 
 **Disconnect the power supply.**
 
@@ -79,8 +79,8 @@ Connect a multimater as shown in the picture and connect the power supply. Set t
 
 {{% alert title="Warning" color="warning" %}}
 - Disconnect the power supply prior to changing the connections.
-- We can't set the module current's by shorting it with the multimeter, because _some of the modules_ are not working well in a short circuit condition.
-- We are using the robot's battery as load to set the charging current. That's why it is important that the charging current is set as low as possible.
+- We can't set the module current by shorting it with the multimeter, because _some modules_ are not working well in a short circuit condition.
+- We are using the robot's battery as a load to set the charging current. That's why it is important that the charging current is set as low as possible.
 {{% /alert %}}
 
 {{% alert title="Info" color="info" %}}

@@ -7,7 +7,7 @@ weight: 20
 Now that you have prepared the parts, assembling the robot should be easy.
 
 ## Step 1: Install the OpenMower mainboard into the robot
-Insert the OpenMower mainboard into the robot the same way the original board was mounted. The board is held in place in the rear by two plastic parts and on the front it is held in place by two screws.
+Insert the OpenMower mainboard into the robot the same way the original board was mounted. The board is held in place in the rear by two plastic parts, and on the front it is held in place by two screws.
 
 ## Step 2: Plug the modules together
 After installing the modules, plug the modules into the main board as shown in the following picture:
@@ -31,7 +31,7 @@ v0.10: holes on holder are smaller that bolts provided. Widen it with 3mm drill.
 
 In order to improve the reception of the GPS antenna, we put a ground plane below it. This can be any metal plate, but we are using a PCB with a solid copper layer for this.
 
-First put the GPS antenna's cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3d printed holder. Roll the rest of the antenna cable up so that it's easy to stow inside the robot. 
+First put the GPS antenna's cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3D-printed holder. Roll the rest of the antenna cable up so that it's easy to stow inside the robot. 
 
 Once the antenna is fixed to the holder, you can plug it into the front of your robot (you will need to remove two white plastic cable holders) and fixate it using a screw.
 
