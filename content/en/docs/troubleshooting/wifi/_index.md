@@ -1,19 +1,19 @@
 ---
-title: Troubleshoot WiFi
-linkTitle: WiFi
+title: Troubleshoot Wi-Fi
+linkTitle: Wi-Fi
 description: >
-    Issues with WiFi like disconnects.
-tags: [wifi, wireless, usb]
+    Issues with Wi-Fi like disconnects.
+tags: [Wi-Fi, wireless, usb]
 resources:
     - src: "**.png"
 ---
 
 
-# WiFi Disconnects and unstable WiFi with external dongle
+# Wi-Fi Disconnects and unstable Wi-Fi with external dongle
 
-The Raspberry Pi tries to powersave on the WiFi which causes high latency or even packet loss on the WiFi connections.
+The Raspberry Pi tries to powersave on the Wi-Fi, which causes high latency or even packet loss on the Wi-Fi connections.
 
-Please check which chipset your WiFi dongle uses.
+Please check which chipset your Wi-Fi dongle uses.
 You can solve this by editing the modprobe as following:
 
 ## Realtek RTL8192cu
