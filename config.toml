@@ -19,6 +19,9 @@ enableGitInfo = true
 # disableKinds = ["taxonomy", "taxonomyTerm"]
 enableEmoji = true
 
+# Enough for processing big images
+timeout = "600s"
+
 # You can add your own taxonomies
 [taxonomies]
 tag = "tags"
