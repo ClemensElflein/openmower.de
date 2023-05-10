@@ -22,10 +22,11 @@ You will need to remove these stock electronics:
 Keep the battery in place.
 
 ### Step 3 **Optional**: Modify USB Socket
-
 {{% alert title="🧰" %}}
 The kit includes compatible USB socket adapter starting version 0.12.
 {{% /alert %}}
+
+The YardForce classic has a USB socket on the back of the robot. Unfortunately for us, this socket has some non-standard connector on the inside.
 
 If you want to use this USB socket on the back of the robot (for example for controlling the robot using a gamepad like shown in the first video), you will need to add a USB A plug to the USB cable and plug it into the Raspberry Pi.
 

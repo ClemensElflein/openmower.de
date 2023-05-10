@@ -14,7 +14,7 @@ Check my YouTube video here: [<i class="fa fa-brands fa-youtube"></i> Video](htt
 {{% /alert %}}
 
 ## Configure the GPS board
-This assumes that you are using the Ardusimple F9P GPS board. Support for other GPS receivers is work in progress.
+This assumes that you are using the Ardusimple F9P GPS board. Support for other GPS receivers is a work in progress.
 
 
 
