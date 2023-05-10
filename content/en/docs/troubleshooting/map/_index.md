@@ -15,15 +15,15 @@ The default location of the map can be found under
 /root/ros_home/.ros/map.bag
 ```
 
-You can always backup your current map by logging in via SSH and copying the .bag file.
+You can always back up your current map by logging in via SSH and copying the .bag file.
 
-If you want to retrieve the file you can use an SFTP client like WinSCP or Cyberduck.
+If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.
 
 ```bash
 sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
 ```
 
-To delete the 
+To delete the map
 
 ```bash
 # stop the openmower service so that it doesnt access the map anymore
@@ -37,6 +37,6 @@ sudo service openmower start
 ```
 # Map Editor
 
-There's a WIP map editor made by Nekraus, JavaBoon and Eddi using Python which you can try and use to fix your map or add in obstacles.
+There's a WIP map editor made by Nekraus, JavaBoon and Eddi using Python, which you can try and use to fix your map or add in obstacles.
 
 [Map editor](https://github.com/0815eddi/OpenMower/blob/main/utils/map/mowareareader.py)

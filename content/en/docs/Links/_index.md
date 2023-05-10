@@ -7,7 +7,7 @@ description: >
   A list of links to the parts of the Open Mower project.
 ---
 
-Since the Open Mower project is quite complex, the parts are splitted among multiple websites and repositories. This page gives an overview of all important resources.
+Since the Open Mower project is quite complex, the parts are split among multiple websites and repositories. This page gives an overview of all important resources.
 
 ## Information Sources
 
@@ -68,4 +68,4 @@ Some profits of each sale are going to me, so you do support the project by gett
 ### Patreon :heart:
 :link:&nbsp;[https://patreon.com/ClemensElflein](https://patreon.com/ClemensElflein)
 
-Working on the Open Mower project takes *a lot of time*. Since I'm self-employed I really don't have too much time to spare. So if you want to enable me to work on the Open Mower project more, you can support me on Patreon! Thank you for helping me keeping this project alive.
+Working on the Open Mower project takes *a lot of time*. Since I'm self-employed, I really don't have too much time to spare. So if you want to enable me to work on the Open Mower project more, you can support me on Patreon! Thank you for helping me keep this project alive.

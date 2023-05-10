@@ -8,11 +8,11 @@ description: >
 
 ## Patents, Local Laws, Liability
 Before building a robot based on the designs published here, please make sure that you are allowed to do so in your specific regions.
-There may be patents and / or laws prohibiting you of doing so.
+There may be patents and / or laws prohibiting you from doing so.
 
 The code/schematics/PCB files are distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-This basically means: I'm just documenting a project of mine here for free and I don't have the time and resources to check that devices built using this information will be safe to use, legal to use or even work as intended. You will need technical know-how to use this project and I'm not liable for any damages your devices do to anyone or anything.
+This basically means: I'm just documenting a project of mine here for free, and I don't have the time and resources to check that devices built using this information will be safe to use, legal to use or even work as intended. You will need technical know-how to use this project, and I'm not liable for any damages your devices do to anyone or anything.
 
 ## License
 
