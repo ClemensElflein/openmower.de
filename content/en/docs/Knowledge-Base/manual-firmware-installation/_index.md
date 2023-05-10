@@ -45,6 +45,7 @@ The version of your mainboard is printed on the lower left side of your mainboar
 |----------|--------------------------------------|
 | WT901    | <img src='wt-901.jpg' width=200 />   |
 | MPU9250  | <img src='mpu-9250.jpg' width=200 /> |
+| LSM6DSO  | <img src='lsm6dso.jpg' width=200 />  |
 
 ### 3.3: Select Firmware:
 
