@@ -3,7 +3,7 @@ title: Disassembling the YardForce Classic 500
 linkTitle: Photo Guide
 description: >
   Disassembling the robot prior to mounting Vermut's 0.13.x kit. 
-tags: [ photo guide, disassembly ]
+tags: [ photo guide, disassembly, 0_13_x ]
 ---
 
 ### Unscrew top cover
