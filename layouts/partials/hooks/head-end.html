@@ -4,9 +4,8 @@
 
 <script>
     $(function () {
-    const images = Array.from(document.querySelectorAll("img"));
-    console.log(images);
-    images.forEach(img => {
+    const images = Array.from(document.querySelectorAll("img:not(.nozoom)"));
+        images.forEach(img => {
         mediumZoom(img, {
             margin: 80, /* The space outside the zoomed image */
             container: null, /* The viewport to render the zoom in */
