@@ -8,7 +8,7 @@ tags: [docker, rpi, raspberry, docker, ssh]
 
 Follow the [SD Card preparation step]({{< relref "/docs/robot-assembly/prepare-the-parts/prepare-sd-card" >}}) and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.
 
-Then follow the [Wi-Fi Configuration]({{< relref "/docs/software-setup/configuring-Wi-Fi" >}}).
+Then follow the [Wi-Fi Configuration]({{< relref "/docs/software-setup/configuring-wifi" >}}).
 
 The board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
 While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.
