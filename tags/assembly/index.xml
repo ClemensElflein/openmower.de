@@ -1,0 +1,250 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – assembly</title><link>/tags/assembly/</link><description>Recent content in assembly on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/tags/assembly/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Assembling the YardForce Classic 500</title><link>/docs/robot-assembly/assemble-the-robot/photo-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/assemble-the-robot/photo-guide/</guid><description>
+&lt;h3 id="connect-bottom-wires">Connect bottom wires&lt;/h3>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-bottom-wires/1%20Plug%20in%20wheel%20hall%20sensor%20wires_hu817002810ec78e91a59b1be4d2780f6f_1634053_1600x1600_fit_q50_catmullrom.jpg" title="1 Plug in wheel hall sensor wires" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-bottom-wires/1%20Plug%20in%20wheel%20hall%20sensor%20wires_hu817002810ec78e91a59b1be4d2780f6f_1634053_300x300_fill_q50_catmullrom_smart1.jpg" alt="1 Plug in wheel hall sensor wires" title="1 Plug in wheel hall sensor wires">
+&lt;span title="1 Plug in wheel hall sensor wires">1 Plug in wheel hall sensor wires&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-bottom-wires/2%20Find%20external%20USB%20socket%20cable_hucfd372325bfe43408bf5c01b78535ccb_1743801_1600x1600_fit_q50_catmullrom.jpg" title="2 Find external USB socket cable" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-bottom-wires/2%20Find%20external%20USB%20socket%20cable_hucfd372325bfe43408bf5c01b78535ccb_1743801_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Find external USB socket cable" title="2 Find external USB socket cable">
+&lt;span title="2 Find external USB socket cable">2 Find external USB socket cable&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-bottom-wires/3%20Connect%20RPi%20USB%20adapter_hub7b993c9d8f02bd5c612bb155dec0da4_1754826_1600x1600_fit_q50_catmullrom.jpg" title="3 Connect RPi USB adapter" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-bottom-wires/3%20Connect%20RPi%20USB%20adapter_hub7b993c9d8f02bd5c612bb155dec0da4_1754826_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Connect RPi USB adapter" title="3 Connect RPi USB adapter">
+&lt;span title="3 Connect RPi USB adapter">3 Connect RPi USB adapter&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-bottom-wires/4%20Well%20done%21_hu00443b47d164e086a71a3f8a7ce79b14_1444968_1600x1600_fit_q50_catmullrom.jpg" title="4 Well done!" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-bottom-wires/4%20Well%20done%21_hu00443b47d164e086a71a3f8a7ce79b14_1444968_300x300_fill_q50_catmullrom_smart1.jpg" alt="4 Well done!" title="4 Well done!">
+&lt;span title="4 Well done!">4 Well done!&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="install-gps-antenna">Install GPS antenna&lt;/h3>
+&lt;p>The second picture is not perfect, the screw is out of the frame, yellow arrow pointing at it. Also, the GPS plane
+itself is
+historic from 0.9.3, yours will be green and shiny.&lt;/p>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/install-gps-antenna/_hu817002810ec78e91a59b1be4d2780f6f_1644055_f4c3e3b0bb86ff9aa2a7c28457086e1c.jpg" title="1 Organize the cables, free the mounting holes, unscrew central screw" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/install-gps-antenna/_hu817002810ec78e91a59b1be4d2780f6f_1644055_20ccc9653ab71eb7b5fa4cc8f2d58ae5.jpg" alt="1 Organize the cables, free the mounting holes, unscrew central screw" title="1 Organize the cables, free the mounting holes, unscrew central screw">
+&lt;span title="1 Organize the cables, free the mounting holes, unscrew central screw">1 Organize the cables, free the mounting holes, unscrew central screw&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/install-gps-antenna/_hu817002810ec78e91a59b1be4d2780f6f_1499540_bdc78de93f69a5f546c2e117a9ba3610.jpg" title="2 Install the GPS antenna assembly, screw the central screw" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/install-gps-antenna/_hu817002810ec78e91a59b1be4d2780f6f_1499540_2bff28f862fadf8f744a5a0a4338b4a0.jpg" alt="2 Install the GPS antenna assembly, screw the central screw" title="2 Install the GPS antenna assembly, screw the central screw">
+&lt;span title="2 Install the GPS antenna assembly, screw the central screw">2 Install the GPS antenna assembly, screw the central screw&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/install-gps-antenna/3%20Organize%20excess%20cable,%20connect%20it%20to%20GPS%20board_hu4510349c65d5f1b1081363edb107e31d_1662555_1600x1600_fit_q50_catmullrom.jpg" title="3 Organize excess cable, connect it to GPS board" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/install-gps-antenna/3%20Organize%20excess%20cable,%20connect%20it%20to%20GPS%20board_hu4510349c65d5f1b1081363edb107e31d_1662555_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Organize excess cable, connect it to GPS board" title="3 Organize excess cable, connect it to GPS board">
+&lt;span title="3 Organize excess cable, connect it to GPS board">3 Organize excess cable, connect it to GPS board&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="install-external-wi-fi-adapter-optional">Install external Wi-Fi adapter (optional)&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">🔧&lt;/h4>
+This is optional and will vary with the size and shape of your adapter, because right now there is no &amp;ldquo;official&amp;rdquo;
+external adapter and people are installing all kinds of stuff. Depicted is &lt;code>Alfa USB Adapter AWUS036NHV&lt;/code>, on the
+&lt;code>rtl8188eu&lt;/code> chip using &lt;a href="https://github.com/aircrack-ng/rtl8188eus">custom driver&lt;/a>.
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/install-external-wifi-adapter/External%20WiFi%20USB%20adapter_hu817002810ec78e91a59b1be4d2780f6f_2091013_1600x1600_fit_q50_catmullrom.jpg" title="External WiFi USB adapter" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/install-external-wifi-adapter/External%20WiFi%20USB%20adapter_hu817002810ec78e91a59b1be4d2780f6f_2091013_300x300_fill_q50_catmullrom_smart1.jpg" alt="External WiFi USB adapter" title="External WiFi USB adapter">
+&lt;span title="External WiFi USB adapter">External WiFi USB adapter&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="assemble-mainboard">Assemble mainboard&lt;/h3>
+&lt;p>This step assumes that you did all previous configuration steps from the documentation.&lt;/p>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/assemble-mainboard/1%20Plug%20all%20the%20components%20in_hucf7ddfef5d0ec1d511b55a6238cecbdb_1698852_1600x1600_fit_q50_catmullrom.jpg" title="1 Plug all the components in" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/assemble-mainboard/1%20Plug%20all%20the%20components%20in_hucf7ddfef5d0ec1d511b55a6238cecbdb_1698852_300x300_fill_q50_catmullrom_smart1.jpg" alt="1 Plug all the components in" title="1 Plug all the components in">
+&lt;span title="1 Plug all the components in">1 Plug all the components in&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/assemble-mainboard/2%20Side%20view%20showing%20RPi%20spacers_hu00443b47d164e086a71a3f8a7ce79b14_1323944_1600x1600_fit_q50_catmullrom.jpg" title="2 Side view showing RPi spacers" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/assemble-mainboard/2%20Side%20view%20showing%20RPi%20spacers_hu00443b47d164e086a71a3f8a7ce79b14_1323944_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Side view showing RPi spacers" title="2 Side view showing RPi spacers">
+&lt;span title="2 Side view showing RPi spacers">2 Side view showing RPi spacers&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="connect-and-screw-mainboard">Connect and screw mainboard&lt;/h3>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-and-screw-mainboard/_hucfd372325bfe43408bf5c01b78535ccb_1968277_9424c3592b08b6466ec415130e106cea.jpg" title="1 Put the board in place, make sure bottom holders are in" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-and-screw-mainboard/_hucfd372325bfe43408bf5c01b78535ccb_1968277_cb1e2524cda3d949397f9058017d634f.jpg" alt="1 Put the board in place, make sure bottom holders are in" title="1 Put the board in place, make sure bottom holders are in">
+&lt;span title="1 Put the board in place, make sure bottom holders are in">1 Put the board in place, make sure bottom holders are in&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-and-screw-mainboard/2%20Connect%20the%20cables_hu817002810ec78e91a59b1be4d2780f6f_2241837_1600x1600_fit_q50_catmullrom.jpg" title="2 Connect the cables" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-and-screw-mainboard/2%20Connect%20the%20cables_hu817002810ec78e91a59b1be4d2780f6f_2241837_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Connect the cables" title="2 Connect the cables">
+&lt;span title="2 Connect the cables">2 Connect the cables&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-and-screw-mainboard/3%20Close-up%20of%20motor%20sensor%20cable_hu00443b47d164e086a71a3f8a7ce79b14_1201615_1600x1600_fit_q50_catmullrom.jpg" title="3 Close-up of motor sensor cable" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-and-screw-mainboard/3%20Close-up%20of%20motor%20sensor%20cable_hu00443b47d164e086a71a3f8a7ce79b14_1201615_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Close-up of motor sensor cable" title="3 Close-up of motor sensor cable">
+&lt;span title="3 Close-up of motor sensor cable">3 Close-up of motor sensor cable&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-and-screw-mainboard/4%20Fasten%20the%20board%20with%202%20screws%20in%20top_hu817002810ec78e91a59b1be4d2780f6f_2096524_1600x1600_fit_q50_catmullrom.jpg" title="4 Fasten the board with 2 screws in top" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-and-screw-mainboard/4%20Fasten%20the%20board%20with%202%20screws%20in%20top_hu817002810ec78e91a59b1be4d2780f6f_2096524_300x300_fill_q50_catmullrom_smart1.jpg" alt="4 Fasten the board with 2 screws in top" title="4 Fasten the board with 2 screws in top">
+&lt;span title="4 Fasten the board with 2 screws in top">4 Fasten the board with 2 screws in top&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="modify-rain-sensor-cable-kit-version-specific">Modify rain sensor cable (kit version specific)&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">🔧&lt;/h4>
+Kits till mid-2023 included incorrect rain sensor cable that has female connectors on both sides. This is a hacky
+example of how this can be fixed. Alternatively, you can cut them and just solder together.
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header_hu00443b47d164e086a71a3f8a7ce79b14_1046188_1600x1600_fit_q50_catmullrom.jpg" title="1 Take pin header" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header_hu00443b47d164e086a71a3f8a7ce79b14_1046188_300x300_fill_q50_catmullrom_smart1.jpg" alt="1 Take pin header" title="1 Take pin header">
+&lt;span title="1 Take pin header">1 Take pin header&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness_hucf7ddfef5d0ec1d511b55a6238cecbdb_963093_1600x1600_fit_q50_catmullrom.jpg" title="2 Pry 2 pins from harness" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness_hucf7ddfef5d0ec1d511b55a6238cecbdb_963093_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Pry 2 pins from harness" title="2 Pry 2 pins from harness">
+&lt;span title="2 Pry 2 pins from harness">2 Pry 2 pins from harness&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector_hucf7ddfef5d0ec1d511b55a6238cecbdb_1065498_1600x1600_fit_q50_catmullrom.jpg" title="3 Insert them to smaller connector" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector_hucf7ddfef5d0ec1d511b55a6238cecbdb_1065498_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Insert them to smaller connector" title="3 Insert them to smaller connector">
+&lt;span title="3 Insert them to smaller connector">3 Insert them to smaller connector&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side_hucf7ddfef5d0ec1d511b55a6238cecbdb_1064497_1600x1600_fit_q50_catmullrom.jpg" title="4 Plug it to rain sensor connector either side" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side_hucf7ddfef5d0ec1d511b55a6238cecbdb_1064497_300x300_fill_q50_catmullrom_smart1.jpg" alt="4 Plug it to rain sensor connector either side" title="4 Plug it to rain sensor connector either side">
+&lt;span title="4 Plug it to rain sensor connector either side">4 Plug it to rain sensor connector either side&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="assemble-cover">Assemble cover&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">🔧&lt;/h4>
+This section assumes that you are completely replacing the stock UI board with custom one. There is an experimental
+option to reuse stock board with custom firmware. If you are going to go this path - everything that is cover-related
+would be different for you. You can find more information in Discord, as of now it&amp;rsquo;s work in progress.
+&lt;/div>
+&lt;p>On the photos you see an old patched version of rain sensor cable (see above). Yours might just fit in normally.&lt;/p>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/assemble-cover/_huf88699778faf3199b25afc7b6fcf1ad1_1193324_4ad37b5c62947f1460fb61ac5c4f941c.jpg" title="1 Carefully align button and leds with holes, screw the board" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/assemble-cover/_huf88699778faf3199b25afc7b6fcf1ad1_1193324_77dc77a802a3d14323e429f0c0ff8e4d.jpg" alt="1 Carefully align button and leds with holes, screw the board" title="1 Carefully align button and leds with holes, screw the board">
+&lt;span title="1 Carefully align button and leds with holes, screw the board">1 Carefully align button and leds with holes, screw the board&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/assemble-cover/2%20Connect%20stop%20button%20hall%20sensor%20wires_hucfd372325bfe43408bf5c01b78535ccb_1499514_1600x1600_fit_q50_catmullrom.jpg" title="2 Connect stop button hall sensor wires" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/assemble-cover/2%20Connect%20stop%20button%20hall%20sensor%20wires_hucfd372325bfe43408bf5c01b78535ccb_1499514_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Connect stop button hall sensor wires" title="2 Connect stop button hall sensor wires">
+&lt;span title="2 Connect stop button hall sensor wires">2 Connect stop button hall sensor wires&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/assemble-cover/3%20Connect%20UI%20wire%20and%20rain%20sensor%20wire_hu817002810ec78e91a59b1be4d2780f6f_1530624_1600x1600_fit_q50_catmullrom.jpg" title="3 Connect UI wire and rain sensor wire" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/assemble-cover/3%20Connect%20UI%20wire%20and%20rain%20sensor%20wire_hu817002810ec78e91a59b1be4d2780f6f_1530624_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Connect UI wire and rain sensor wire" title="3 Connect UI wire and rain sensor wire">
+&lt;span title="3 Connect UI wire and rain sensor wire">3 Connect UI wire and rain sensor wire&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="connect-cover-to-bottom">Connect cover to bottom&lt;/h3>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-cover-to-bottom/1%20Plug%20UI,%20rain%20and%20stop%20sensor%20button%20wires_hub7b993c9d8f02bd5c612bb155dec0da4_1735630_1600x1600_fit_q50_catmullrom.jpg" title="1 Plug UI, rain and stop sensor button wires" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-cover-to-bottom/1%20Plug%20UI,%20rain%20and%20stop%20sensor%20button%20wires_hub7b993c9d8f02bd5c612bb155dec0da4_1735630_300x300_fill_q50_catmullrom_smart1.jpg" alt="1 Plug UI, rain and stop sensor button wires" title="1 Plug UI, rain and stop sensor button wires">
+&lt;span title="1 Plug UI, rain and stop sensor button wires">1 Plug UI, rain and stop sensor button wires&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-cover-to-bottom/2%20Side%20view%201_hucf7ddfef5d0ec1d511b55a6238cecbdb_1340099_1600x1600_fit_q50_catmullrom.jpg" title="2 Side view 1" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-cover-to-bottom/2%20Side%20view%201_hucf7ddfef5d0ec1d511b55a6238cecbdb_1340099_300x300_fill_q50_catmullrom_smart1.jpg" alt="2 Side view 1" title="2 Side view 1">
+&lt;span title="2 Side view 1">2 Side view 1&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/vermut-0.13/connect-cover-to-bottom/3%20Side%20view%202_hu4510349c65d5f1b1081363edb107e31d_1341159_1600x1600_fit_q50_catmullrom.jpg" title="3 Side view 2" class="lightbox-image">
+&lt;img src="/photo-guide/vermut-0.13/connect-cover-to-bottom/3%20Side%20view%202_hu4510349c65d5f1b1081363edb107e31d_1341159_300x300_fill_q50_catmullrom_smart1.jpg" alt="3 Side view 2" title="3 Side view 2">
+&lt;span title="3 Side view 2">3 Side view 2&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="close-the-cover">Close the cover&lt;/h3>
+&lt;p>Alight cutting height knob with mower motor, close the cover, push where needed to snap the latches. Or even leave it
+lying on while you testing the setup, maybe you&amp;rsquo;ll need to open it again.&lt;/p></description></item></channel></rss>

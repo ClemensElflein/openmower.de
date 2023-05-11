@@ -2,8 +2,8 @@
 &lt;p>We assume that you at least followed &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>. If mower is already assembled - open the top cover.&lt;/p>
 &lt;p>Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration).&lt;/p>
 &lt;p>Make sure that &lt;code>Protocol of received messages&lt;/code> in bottom status bar right shows &lt;code>UBX&lt;/code>, not &lt;code>NMEA&lt;/code>. If not - upload configuration again. Then disconnect/connect power of GPS and make sure it stayed &lt;code>UBX&lt;/code>.&lt;/p>
-&lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If mower is already assembled and antenna is plugged in - just take it outside with the mower.
-Even indoors next to the windows with antenna connected you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
+&lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If the mower is already assembled and an antenna is plugged in - just take it outside with the mower.
+Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
 &lt;p>Deviation map (&lt;code>View-&amp;gt;Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File-&amp;gt;Database clean&lt;/code>.&lt;/p>
 &lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145">NTRIP node somewhere nearby&lt;/a> (&amp;lt;30km) or running your own &lt;a href="/docs/rtk-base-setup/">base station&lt;/a>.&lt;/p>
 &lt;p>Go to &lt;code>Receiver-&amp;gt;NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">configuration file later&lt;/a>.
@@ -11,7 +11,7 @@ Even indoors next to the windows with antenna connected you should see satellite
 &lt;img class="card-img-top" src="/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png" width="500" height="460">
 &lt;/figure>
 &lt;/p>
-&lt;p>NTRIP client should display green connection in status bar. Deviation map (&lt;code>View-&amp;gt;Deviation Map, F12&lt;/code>) should stay dead center. &lt;code>No RTK&lt;/code> led will start blinking or go away completely.
+&lt;p>NTRIP client should display green connection in the status bar. Deviation map (&lt;code>View-&amp;gt;Deviation Map, F12&lt;/code>) should stay dead center. &lt;code>No RTK&lt;/code> led will start blinking or go away completely.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 810px">
 &lt;img class="card-img-top" src="/docs/troubleshooting/gps-rtk/gps-fix-and-deviation_hu6cbd1643a4df8dcd346344c082d9a5e1_47047_800x0_resize_catmullrom_3.png" width="800" height="484">
 &lt;/figure>
@@ -20,7 +20,7 @@ Even indoors next to the windows with antenna connected you should see satellite
 &lt;p>We have checked that GPS works alone, let&amp;rsquo;s see if it would together with mainboard. Plug GPS into mainboard. Everything should light up and start flashing. Wait until you are GREEN or RED/GREEN.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">🔋 Powering the mainboard&lt;/h4>
-If you don&amp;rsquo;t have dock station assembled and want to save the power in the main mower battery, you can power it from the Pico Dev board MicroUSB port, right below the GPS board. Use a 1A+ power bank, computer USB port&amp;rsquo;s 500mA might be not enough.
+If you don&amp;rsquo;t have dock station assembled and want to save the power in the main mower battery, you can power it from the Pico Dev board MicroUSB port, right below the GPS board. Use a 1A+ power bank, because computer USB port&amp;rsquo;s 500mA might be not enough.
 &lt;/div>
 &lt;p>Then SSH into OpenMower console. In the home directory there&amp;rsquo;s do &lt;code>./start_ros_bash.sh&lt;/code> which should take you to a bash inside the docker, then you can do &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo -c -w 5 /xbot_driver_gps/xb_pose&lt;/code> to look at the GPS data. There&amp;rsquo;s a position and some accuracy number in meters.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -35,10 +35,10 @@ If you don&amp;rsquo;t have dock station assembled and want to save the power in
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/root/ros_home/.ros/map.bag
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always backup your current map by logging in via SSH and copying the .bag file.&lt;/p>
-&lt;p>If you want to retrieve the file you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
+&lt;p>If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
 sudo service openmower stop
 &lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
@@ -48,11 +48,11 @@ sudo rm /root/ros_home/.ros/map.bag
 &lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
 sudo service openmower start
 &lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="map-editor">Map Editor&lt;/h1>
-&lt;p>There&amp;rsquo;s a WIP map editor made by Nekraus, JavaBoon and Eddi using Python which you can try and use to fix your map or add in obstacles.&lt;/p>
+&lt;p>There&amp;rsquo;s a WIP map editor made by Nekraus, JavaBoon and Eddi using Python, which you can try and use to fix your map or add in obstacles.&lt;/p>
 &lt;p>&lt;a href="https://github.com/0815eddi/OpenMower/blob/main/utils/map/mowareareader.py">Map editor&lt;/a>&lt;/p></description></item><item><title>Docs: Raspberry Pi 4</title><link>/docs/troubleshooting/raspberry-pi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/raspberry-pi/</guid><description>
 &lt;p>Follow the &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/">SD Card preparation step&lt;/a> and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.&lt;/p>
-&lt;p>Then follow the &lt;a href="/docs/software-setup/configuring-wifi/">Wifi Configuration&lt;/a>.&lt;/p>
-&lt;p>Board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
+&lt;p>Then follow the &lt;a href="/docs/software-setup/configuring-wifi/">Wi-Fi Configuration&lt;/a>.&lt;/p>
+&lt;p>The board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
 While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">🔑 Default SSH credentials&lt;/h4>
@@ -117,11 +117,11 @@ bunch of PARAMETERS/NODES and view exception due to missing literally all the ha
 &lt;/div>
 &lt;/div>
 &lt;/p>
-&lt;p>If you are lazy, just wait 5-10 minutes and check that http://&amp;lt;openmower IP&amp;gt;:8080/ is accessible. If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl -fu openmower&lt;/code>. Usually problem would be bad config file.&lt;/p>
-&lt;p>If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.&lt;/p></description></item><item><title>Docs: Troubleshoot WiFi</title><link>/docs/troubleshooting/wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/wifi/</guid><description>
-&lt;h1 id="wifi-disconnects-and-unstable-wifi-with-external-dongle">WiFi Disconnects and unstable WiFi with external dongle&lt;/h1>
-&lt;p>The Raspberry Pi tries to powersave on the WiFi which causes high latency or even packet loss on the WiFi connections.&lt;/p>
-&lt;p>Please check which chipset your WiFi dongle uses.
+&lt;p>If you are lazy, just wait 5-10 minutes and check that http://&amp;lt;openmower IP&amp;gt;:8080/ is accessible. If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl -fu openmower&lt;/code>. Usually a problem would be bad config file.&lt;/p>
+&lt;p>If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.&lt;/p></description></item><item><title>Docs: Troubleshoot Wi-Fi</title><link>/docs/troubleshooting/wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/wifi/</guid><description>
+&lt;h1 id="wi-fi-disconnects-and-unstable-wi-fi-with-external-dongle">Wi-Fi Disconnects and unstable Wi-Fi with external dongle&lt;/h1>
+&lt;p>The Raspberry Pi tries to powersave on the Wi-Fi, which causes high latency or even packet loss on the Wi-Fi connections.&lt;/p>
+&lt;p>Please check which chipset your Wi-Fi dongle uses.
 You can solve this by editing the modprobe as following:&lt;/p>
 &lt;h2 id="realtek-rtl8192cu">Realtek RTL8192cu&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/modprobe.d/8192cu.conf

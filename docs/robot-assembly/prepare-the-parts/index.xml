@@ -6,7 +6,7 @@ Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt
 (time 16:21 - 17:15)
 &lt;/div>
 &lt;h2 id="configure-the-gps-board">Configure the GPS board&lt;/h2>
-&lt;p>This assumes that you are using the Ardusimple F9P GPS board. Support for other GPS receivers is work in progress.&lt;/p>
+&lt;p>This assumes that you are using the Ardusimple F9P GPS board. Support for other GPS receivers is a work in progress.&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
@@ -33,7 +33,7 @@ the previously downloaded configuration file &lt;code>Robot.txt&lt;/code> by ope
 &lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View &amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
 &lt;h3 id="step-4-done-">Step 4: Done 🎉&lt;/h3>
 &lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p></description></item><item><title>Docs: Prepare the SD Card</title><link>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</guid><description>
-&lt;p>We have created a Docker image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step we flash the image and do some basic setup for your mower.&lt;/p>
+&lt;p>We have created a Docker image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to follow this guide, you will need:&lt;/p>
 &lt;ul>
@@ -52,12 +52,12 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;li>Select &lt;code>WRITE&lt;/code> and wait for the process to finish&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-2-configure-open-mower">Step 2: Configure Open Mower&lt;/h2>
-&lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files in Windows or Linux without any additional steps (it&amp;rsquo;s mounted as mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
+&lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files on Windows or Linux without any additional steps (it&amp;rsquo;s mounted as a mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
 &lt;h4 id="openmoweropenmower_versiontxt-on-linux-bootopenmoweropenmower_versiontxt">/openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)&lt;/h4>
 &lt;p>This file selects the Open Mower version to use. You can choose the following:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>testing:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/li>
-&lt;li>&lt;strong>alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it, if you want to be among the first people to get new features, but prepare to have issues.&lt;/li>
+&lt;li>&lt;strong>alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.&lt;/li>
 &lt;li>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/li>
 &lt;/ul>
 &lt;p>An example:&lt;/p>
@@ -179,15 +179,19 @@ id="mower_config_example">
 &lt;/ul>
 &lt;p>Keep the battery in place.&lt;/p>
 &lt;h3 id="step-3-optional-modify-usb-socket">Step 3 &lt;strong>Optional&lt;/strong>: Modify USB Socket&lt;/h3>
-&lt;p>The YardForce classic has an USB socket on the back of the robot. Unfortunately for us this socket has some non-standard connector on the inside.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+The kit includes compatible USB socket adapter starting version 0.12.
+&lt;/div>
+&lt;p>The YardForce classic has a USB socket on the back of the robot. Unfortunately for us, this socket has some non-standard connector on the inside.&lt;/p>
 &lt;p>If you want to use this USB socket on the back of the robot (for example for controlling the robot using a gamepad like shown in the first video), you will need to add a USB A plug to the USB cable and plug it into the Raspberry Pi.&lt;/p>
 &lt;p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 If you have bought the hardware kit, the mainboard already has firmware installed, but it&amp;rsquo;s a good idea to &lt;a href="/docs/knowledge-base/firmware-update">update it to
-latest version&lt;/a> anyway.
+the latest version&lt;/a> anyway.
 &lt;/div>
-&lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is, because
+&lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is because
 without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
 &lt;p>For this, follow the &lt;a href="/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: Miscellaneous parts</title><link>/docs/robot-assembly/prepare-the-parts/misc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/misc/</guid><description>
 &lt;h3 id="dfplayer">DFPlayer&lt;/h3>
@@ -195,7 +199,7 @@ without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
 &lt;h4 class="alert-heading">🧰&lt;/h4>
 SDCard (128Mb) and DFPlayer Mini are included in the kit.
 &lt;/div>
-&lt;p>Take a SD card (different from the one you are using for RPi), format as FAT, copy &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
+&lt;p>Take an SD card (different from the one you are using for RPi), format as FAT, copy &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
 &lt;h3 id="xesc-boards">xESC boards&lt;/h3>
-&lt;p>Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
+&lt;p>The Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
 &lt;p>Configuring xESCs is beyond the scope of this doc.&lt;/p></description></item></channel></rss>

@@ -4,7 +4,7 @@
 &lt;h4 class="alert-heading">🧰&lt;/h4>
 SDCard (128Mb) and DFPlayer Mini are included in the kit.
 &lt;/div>
-&lt;p>Take a SD card (different from the one you are using for RPi), format as FAT, copy &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
+&lt;p>Take an SD card (different from the one you are using for RPi), format as FAT, copy &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
 &lt;h3 id="xesc-boards">xESC boards&lt;/h3>
-&lt;p>Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
+&lt;p>The Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
 &lt;p>Configuring xESCs is beyond the scope of this doc.&lt;/p></description></item></channel></rss>

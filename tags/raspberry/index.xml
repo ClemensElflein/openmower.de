@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – raspberry</title><link>/tags/raspberry/</link><description>Recent content in raspberry on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/tags/raspberry/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Raspberry Pi 4</title><link>/docs/troubleshooting/raspberry-pi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/raspberry-pi/</guid><description>
 &lt;p>Follow the &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/">SD Card preparation step&lt;/a> and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.&lt;/p>
-&lt;p>Then follow the &lt;a href="/docs/software-setup/configuring-wifi/">Wifi Configuration&lt;/a>.&lt;/p>
-&lt;p>Board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
+&lt;p>Then follow the &lt;a href="/docs/software-setup/configuring-wifi/">Wi-Fi Configuration&lt;/a>.&lt;/p>
+&lt;p>The board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
 While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">🔑 Default SSH credentials&lt;/h4>
@@ -66,5 +66,5 @@ bunch of PARAMETERS/NODES and view exception due to missing literally all the ha
 &lt;/div>
 &lt;/div>
 &lt;/p>
-&lt;p>If you are lazy, just wait 5-10 minutes and check that http://&amp;lt;openmower IP&amp;gt;:8080/ is accessible. If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl -fu openmower&lt;/code>. Usually problem would be bad config file.&lt;/p>
+&lt;p>If you are lazy, just wait 5-10 minutes and check that http://&amp;lt;openmower IP&amp;gt;:8080/ is accessible. If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl -fu openmower&lt;/code>. Usually a problem would be bad config file.&lt;/p>
 &lt;p>If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.&lt;/p></description></item></channel></rss>

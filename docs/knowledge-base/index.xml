@@ -61,12 +61,13 @@
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: GPS / Coordinate System</title><link>/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-gps/</guid><description>
 &lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
-&lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means, that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
+&lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
 &lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: The Map</title><link>/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/the-map/</guid><description>
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
-&lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstalces&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
+&lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
+&lt;p>The map is stored in the map.bag file that is located on the mower at /root/ros_home/.ros&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>This update guide assumes that you have the following:&lt;/p>
 &lt;ul>
@@ -99,16 +100,15 @@ document.getElementById('player'),
 &lt;p>That&amp;rsquo;s everything you need to do.&lt;/p></description></item><item><title>Docs: Manual Firmware Installation</title><link>/docs/knowledge-base/manual-firmware-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/manual-firmware-installation/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-You only need to do this, if there is no firmware in your mainboard yet. If you have the mower already running or have
+You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
 received the hardware kit, you should be able to automatically update the firmware. Check the guide
 here: &lt;a href="/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
 &lt;/div>
-&lt;p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&amp;rsquo;t worry, the process is very
-simple.&lt;/p>
+&lt;p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&amp;rsquo;t worry, the process is straightforward.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 It&amp;rsquo;s very important that you get the correct firmware for your hardware version. Using the wrong firmware will cause the
-device to malfunction and in the worst case destroy the hardware.
+device to malfunction and in the worst case, destroy the hardware.
 &lt;/div>
 &lt;h2 id="step-1-download-the-latest-firmware-bundle">Step 1: Download the Latest Firmware Bundle&lt;/h2>
 &lt;figure>
@@ -139,6 +139,10 @@ You can get the latest version here: 🔗
 &lt;tr>
 &lt;td>MPU9250&lt;/td>
 &lt;td>&lt;img src='mpu-9250.jpg' width=200 />&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LSM6DSO&lt;/td>
+&lt;td>&lt;img src='lsm6dso.jpg' width=200 />&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -269,18 +273,18 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>USB WiFi Dongle (Optional)&lt;/td>
-&lt;td>For better WiFi reception&lt;/td>
+&lt;td>USB Wi-Fi Dongle (Optional)&lt;/td>
+&lt;td>For better Wi-Fi reception&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Check for Linux Support&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Left-Angle USB adapter (Optional)&lt;/td>
-&lt;td>If you want to keep WiFi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
-&lt;td>The kit contains the wire to connect external USB port. That may be enough if WiFi dongle is waterproof.&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

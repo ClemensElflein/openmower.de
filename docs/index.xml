@@ -51,18 +51,18 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>USB WiFi Dongle (Optional)&lt;/td>
-&lt;td>For better WiFi reception&lt;/td>
+&lt;td>USB Wi-Fi Dongle (Optional)&lt;/td>
+&lt;td>For better Wi-Fi reception&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Check for Linux Support&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Left-Angle USB adapter (Optional)&lt;/td>
-&lt;td>If you want to keep WiFi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
-&lt;td>The kit contains the wire to connect external USB port. That may be enough if WiFi dongle is waterproof.&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

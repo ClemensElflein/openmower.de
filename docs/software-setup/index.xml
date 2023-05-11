@@ -1,44 +1,44 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Software Setup</title><link>/docs/software-setup/</link><description>Recent content in Software Setup on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/software-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring WiFi</title><link>/docs/software-setup/configuring-wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/configuring-wifi/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Software Setup</title><link>/docs/software-setup/</link><description>Recent content in Software Setup on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/software-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring Wi-Fi</title><link>/docs/software-setup/configuring-wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/configuring-wifi/</guid><description>
 &lt;h2 id="step-0-charge-the-robot">Step 0: Charge the Robot&lt;/h2>
 &lt;p>Make sure that the robot is turned on and fully charged, since the software installation will take some time. You can also do this step while the mower is charging in the docking station.&lt;/p>
 &lt;h2 id="step-1-search-the-hotspot">Step 1: Search the Hotspot&lt;/h2>
 &lt;div class="container-fluid m-0 p-0">
 &lt;div class="row">
 &lt;div class="col">
-&lt;p>Turn your mower on and wait for the Raspberry Pi to boot. The next step is to connect the Robot to your WiFi network. This way it can download and install the latest OpenMower software.&lt;/p>
-&lt;p>In order to do this, take any mobile device and search for WiFi networks. Your robot should have opened a hotspot with the credentials you set earlier.&lt;/p>
+&lt;p>Turn your mower on and wait for the Raspberry Pi to boot. The next step is to connect the Robot to your Wi-Fi network. This way it can download and install the latest OpenMower software.&lt;/p>
+&lt;p>In order to do this, take any mobile device and search for Wi-Fi networks. Your robot should have opened a hotspot with the credentials you set earlier.&lt;/p>
 &lt;p>The default credentials are as follows:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>SSID:&lt;/strong> openmower-somenumber&lt;/li>
 &lt;li>&lt;strong>Password:&lt;/strong> openmower&lt;/li>
 &lt;/ul>
-&lt;p>Connect to the hotspot and the mobile device should ask you to &lt;em>sign into the network&lt;/em>.&lt;/p>
+&lt;p>Connect to the hotspot and the mobile device should ask you to &lt;em>sign-in into the network&lt;/em>.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
-&lt;div>&lt;img src='connect_wifi_screen_1.png' width=250 />&lt;/div>
+&lt;div>&lt;img src='connect_Wi-Fi_screen_1.png' width=250 />&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h4 id="if-no-website-is-shown">If no website is shown:&lt;/h4>
-&lt;p>If the mobile device does not automatically open the sign in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/&lt;/p>
-&lt;h2 id="step-2-enter-your-wifi-credentials">Step 2: Enter your WiFi Credentials&lt;/h2>
+&lt;p>If the mobile device does not automatically open the sign-in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/&lt;/p>
+&lt;h2 id="step-2-enter-your-wi-fi-credentials">Step 2: Enter your Wi-Fi Credentials&lt;/h2>
 &lt;div class="container-fluid m-0 p-0">
 &lt;div class="row">
 &lt;div class="col">
-&lt;p>On the screen select your home WiFi connection and enter your password. Then click connect. Your robot will connect to your network and the hotspot will disappear. If the connection fails, the hotspot will reopen.&lt;/p>
+&lt;p>On the screen, select your home Wi-Fi connection and enter your password. Then click connect. Your robot will connect to your network and the hotspot will disappear. If the connection fails, the hotspot will reopen.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
-&lt;div>&lt;img src='connect_wifi_screen_2.png' width=250 />&lt;/div>
+&lt;div>&lt;img src='connect_Wi-Fi_screen_2.png' width=250 />&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="step-3-optional-check-connection">Step 3 (Optional): Check Connection&lt;/h2>
-&lt;p>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively you can check if the device is connected by logging into your router.&lt;/p>
+&lt;p>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively, you can check if the device is connected by logging into your router.&lt;/p>
 &lt;h2 id="step-4-wait">Step 4: Wait&lt;/h2>
 &lt;p>If the connection is successful, the Raspberry Pi will download and install the latest OpenMower software automatically.&lt;/p>
 &lt;p>&lt;strong>This will take some time! Depending on your SD card and your internet connection give it up to 30 minutes!&lt;/strong>&lt;/p>
 &lt;p>You know that the process was successful by looking at the RGB LED on your mainboard. It will either switch to &lt;em>RED-GREEN blinking&lt;/em> or a &lt;em>SOLID GREEN&lt;/em>.&lt;/p></description></item><item><title>Docs: Record a Map</title><link>/docs/software-setup/record-a-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/record-a-map/</guid><description>
-&lt;p>In this section we finally drive the robot around and test if everything works as expected. Then we will record a map and you can see the magic happen.&lt;/p>
+&lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>A smartphone or PC&lt;/li>
@@ -49,7 +49,7 @@
 &lt;/ul>
 &lt;h2 id="step-1-check-the-gps">Step 1: Check the GPS&lt;/h2>
 &lt;p>&lt;img src="gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
-&lt;p>For this step put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
+&lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
 &lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080">http://openmower.local:8080&lt;/a>. If that doesn&amp;rsquo;t work, replace &lt;code>openmower.local&lt;/code> with your mower&amp;rsquo;s IP address.&lt;/p>
 &lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
@@ -70,14 +70,14 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>When rotating in place, the visualization stays in place and doesn&amp;rsquo;t jump&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-3-record-a-simple-map">Step 3: Record a Simple Map&lt;/h2>
-&lt;p>In this step we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
+&lt;p>In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
 &lt;p>The map for the mower consists of three parts: the &lt;strong>docking position&lt;/strong>, at least one &lt;strong>mowing area&lt;/strong> and optionally &lt;strong>navigation areas&lt;/strong>.&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optionally areas to exclude (e.g. static obstacles).&lt;/li>
+&lt;li>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/li>
 &lt;li>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/li>
-&lt;li>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also if your docking station is not close to a mowing are, you can use a navigation area to allow the robot to drive to the docking station.&lt;/li>
+&lt;li>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/li>
 &lt;/ul>
-&lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture you can see an example.&lt;/p>
+&lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
 &lt;h3 id="record-outline">Record Outline&lt;/h3>
 &lt;p>&lt;img src="record_outline.jpg" alt="Record Outline">&lt;/p>
 &lt;ul>
@@ -99,7 +99,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/ul>
 &lt;h3 id="save-area">Save Area&lt;/h3>
 &lt;p>&lt;img src="save_mowing_area.jpg" alt="Save Area">&lt;/p>
-&lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively you can also discard the recording.&lt;/p>
+&lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
 &lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
 &lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
 &lt;p>&lt;img src="record_docking_position.jpg" alt="Record Docking Position">&lt;/p>

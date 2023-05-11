@@ -2,7 +2,7 @@
 &lt;p>Now that you have all the parts available, you will need to configure some of them, so that they will work together in the end.&lt;/p></description></item><item><title>Docs: Assemble the Robot</title><link>/docs/robot-assembly/assemble-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/assemble-the-robot/</guid><description>
 &lt;p>Now that you have prepared the parts, assembling the robot should be easy.&lt;/p>
 &lt;h2 id="step-1-install-the-openmower-mainboard-into-the-robot">Step 1: Install the OpenMower mainboard into the robot&lt;/h2>
-&lt;p>Insert the OpenMower mainboard into the robot the same way the original board was mounted. The board is held in place in the rear by two plastic parts and on the front it is held in place by two screws.&lt;/p>
+&lt;p>Insert the OpenMower mainboard into the robot the same way the original board was mounted. The board is held in place in the rear by two plastic parts, and on the front it is held in place by two screws.&lt;/p>
 &lt;h2 id="step-2-plug-the-modules-together">Step 2: Plug the modules together&lt;/h2>
 &lt;p>After installing the modules, plug the modules into the main board as shown in the following picture:&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
@@ -19,7 +19,7 @@ The three motor controllers have different configurations. Make sure you plug th
 &lt;p>v0.10: holes on holder are smaller that bolts provided. Widen it with 3mm drill.&lt;/p>
 &lt;/div>
 &lt;p>In order to improve the reception of the GPS antenna, we put a ground plane below it. This can be any metal plate, but we are using a PCB with a solid copper layer for this.&lt;/p>
-&lt;p>First put the GPS antenna&amp;rsquo;s cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3d printed holder. Roll the rest of the antenna cable up so that it&amp;rsquo;s easy to stow inside the robot.&lt;/p>
+&lt;p>First put the GPS antenna&amp;rsquo;s cable through the large hole of the PCB and then screw the antenna with the ground plane PCB to the 3D-printed holder. Roll the rest of the antenna cable up so that it&amp;rsquo;s easy to stow inside the robot.&lt;/p>
 &lt;p>Once the antenna is fixed to the holder, you can plug it into the front of your robot (you will need to remove two white plastic cable holders) and fixate it using a screw.&lt;/p>
 &lt;h2 id="step-4-connect-cables">Step 4: Connect Cables&lt;/h2>
 &lt;div class="alert alert-warning" role="alert">
@@ -32,7 +32,7 @@ Don&amp;rsquo;t close the lid of the mower yet. Do the software setup and the fi
 &lt;/div>
 &lt;p>Now that you have installed all your electronics, it&amp;rsquo;s time to connect everything up like shown in the picture below:
 &lt;img src="mainboard_connections.jpg" alt="Mainboard Connections">&lt;/p></description></item><item><title>Docs: First Startup</title><link>/docs/robot-assembly/first-startup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/first-startup/</guid><description>
-&lt;p>Congratulations that you have made it this far. Now comes the fun part - starting it all up!&lt;/p>
+&lt;p>Congratulations that you have made it this far. Now comes the fun part — starting it all up!&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>If you see / smell anything unexpected, turn the switch off &lt;strong>immediately!&lt;/strong>&lt;/p>
@@ -46,10 +46,10 @@ Don&amp;rsquo;t close the lid of the mower yet. Do the software setup and the fi
 &lt;p>It&amp;rsquo;s time to power the robot up by hitting the switch at the back of the robot.&lt;/p>
 &lt;p>Once turned on, the RGB LED on your mainboard should go through some colors starting with RED and ending with RED - ORANGE blinking.&lt;/p>
 &lt;p>This shows that the mower is in emergency mode and that ROS is not connected to the mainboard.&lt;/p>
-&lt;p>&lt;strong>This is expected, because our Raspberry Pi has no OpenMower software yet, just the basic operating system&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>This is expected because our Raspberry Pi has no OpenMower software yet, just the basic operating system&lt;/strong>.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Don&amp;rsquo;t run the mower for too long, you &lt;strong>cannot recharge it with the unmodified docking station!&lt;/strong>
 &lt;/div>
-&lt;p>If everything seems healthy &lt;strong>turn off the mower&lt;/strong> and proceed to the next section: &lt;a href="/docs/docking-station-assembly/">Docking Station Assembly&lt;/a>.
+&lt;p>If everything seems healthy, &lt;strong>turn off the mower&lt;/strong> and proceed to the next section: &lt;a href="/docs/docking-station-assembly/">Docking Station Assembly&lt;/a>.
 Otherwise, refer to &lt;a href="/docs/troubleshooting/">Troubleshooting&lt;/a>.&lt;/p></description></item></channel></rss>
