@@ -10,6 +10,7 @@ description: >
 {{% alert title="Warning" color="warning" %}}
 - Don't use the unmodified docking station with the OpenMower mainboard!
 - Errors during this step might damage your battery or even cause fires.
+- Do not rely on the polarity of the original yardforce cable
 {{% /alert %}}
 
 In this section, we modify the docking station. This is needed in order to add a constant current / constant voltage module which will charge the Lipo battery. In order to fit the CC/CV module inside the docking station, I'm using a PCB as carrier board. Additionally, this PCB adds a fuse to protect the module from over-current. 
