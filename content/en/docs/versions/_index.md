@@ -1,16 +1,15 @@
 ---
-title: Version history
-linkTitle: Versions
+title: Hardware Versions / Known Issues
+linkTitle: Hardware Versions
 weight: 200
 description: >
-  Version history, release notes and known errors
+  Version History, Release Notes and Known Errors
 resources:
   - src: "**.jpg"
 
 ---
 
 # 0.13.0 - Red
-The first batch was mistakenly labeled "latest."
 {{< imgproc 0_13_a Resize "400x q99" />}}
 
 #### Notable changes:
@@ -18,9 +17,10 @@ The first batch was mistakenly labeled "latest."
  * Dropped support for dfPlayer sound module 
 
 #### Known issues:
- * [outdated firmware]({{< relref "/docs/Knowledge-Base/issues/outdated-firmware" >}})
- * [IC2 chip is wrong]({{< relref "/docs/Knowledge-Base/issues/ic2-is-wrong" >}})
- * [rain sensor cable is female, but needs to be male]({{< relref "/docs/Knowledge-Base/issues/wrong-rain-sensor-cable" >}}) (fixed in batch #6)
+ * The first batch of 0.13 boards was mistakenly labeled "latest". No action needed.
+ * [Outdated Firmware]({{< relref "/docs/versions/errata/outdated-firmware" >}})
+ * [IC2 chip is wrong]({{< relref "/docs/versions/errata/ic2-is-wrong" >}})
+ * [rain sensor cable is female, but needs to be male]({{< relref "/docs/versions/errata/wrong-rain-sensor-cable" >}}) (fixed in batch #6)
 
 
 # 0.12.0 - Black
@@ -30,10 +30,10 @@ The first batch was mistakenly labeled "latest."
  * IMU: LSM6DSO instead of WT901
 
 #### Known issues:
- * SPI tracks from Pico were misplaced, fixed in firmware.
-* [outdated firmware]({{< relref "outdated-firmware" >}})
-* [IC2 chip is wrong]({{< relref "outdated-firmware" >}})
-* [rain sensor cable is female, but needs to be male]({{< relref "wrong-rain-sensor-cable" >}})
+ * SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.
+ * [Outdated Firmware]({{< relref "/docs/versions/errata/outdated-firmware" >}})
+ * [IC2 chip is wrong]({{< relref "/docs/versions/errata/ic2-is-wrong" >}})
+ * [rain sensor cable is female, but needs to be male]({{< relref "wrong-rain-sensor-cable" >}})
 
 # 0.11.0 - Purple
 {{< imgproc 0_11_x Resize "400x q99" />}}
