@@ -59,10 +59,10 @@ with
 
 For mainstream kit versions, we prepared this already. Just update your mower_version in `/boot/mower_config.txt` to use the firmware without charging current.
 
-| Existing mower_version | Update to  |
+| Existing Version | Change to  |
 |------------------------|------------|
-| 0_13_X                 | 0_13_X_IGNORE_CHARGING_ERRORS |
-| 0_12_X                 | 0_12_X_IGNORE_CHARGING_ERRORS |
-| 0_11_X_WT901           | 0_11_X_IGNORE_CHARGING_ERRORS |
-| 0_10_X_WT901           | 0_10_X_IGNORE_CHARGING_ERRORS |
-| 0_9_X_WT901            | 0_9_X__IGNORE_CHARGING_ERRORS |
+| 0_13_X                 | 0_13_X_IGNORE_CHARGING_CURRENT |
+| 0_12_X                 | 0_12_X_IGNORE_CHARGING_CURRENT |
+| 0_11_X_WT901           | 0_11_X_IGNORE_CHARGING_CURRENT |
+| 0_10_X_WT901           | 0_10_X_IGNORE_CHARGING_CURRENT |
+| 0_9_X_WT901            | 0_9_X__IGNORE_CHARGING_CURRENT |
