@@ -279,7 +279,7 @@ Replace</p>
                 <span style=color:#000;font-weight:700>(</span><span style=color:#204a87;font-weight:700>float</span><span style=color:#000;font-weight:700>)</span> <span style=color:#000>analogRead</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>PIN_ANALOG_CHARGE_CURRENT</span><span style=color:#000;font-weight:700>)</span> <span style=color:#ce5c00;font-weight:700>*</span> <span style=color:#000;font-weight:700>(</span><span style=color:#0000cf;font-weight:700>3.3f</span> <span style=color:#ce5c00;font-weight:700>/</span> <span style=color:#0000cf;font-weight:700>4096.0f</span><span style=color:#000;font-weight:700>)</span> <span style=color:#ce5c00;font-weight:700>/</span> <span style=color:#000;font-weight:700>(</span><span style=color:#000>CURRENT_SENSE_GAIN</span> <span style=color:#ce5c00;font-weight:700>*</span> <span style=color:#000>R_SHUNT</span><span style=color:#000;font-weight:700>);</span>
 </code></pre></div><p>with</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c>        <span style=color:#000>status_message</span><span style=color:#000;font-weight:700>.</span><span style=color:#000>charging_current</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#ce5c00;font-weight:700>-</span><span style=color:#0000cf;font-weight:700>1.0</span>
-</code></pre></div><p>For mainstream kit versions, we prepared this already. Just update your mower_version in <code>/boot/mower_config.txt</code> to use the firmware without charging current.</p>
+</code></pre></div><p>For mainstream kit versions, we prepared this already. Just update your mower_version in <code>/boot/mower_config.txt</code> to use the firmware without charging current control.</p>
 <table>
 <thead>
 <tr>
@@ -306,14 +306,14 @@ Replace</p>
 </tr>
 <tr>
 <td>0_9_X_WT901</td>
-<td>0_9_X__IGNORE_CHARGING_CURRENT</td>
+<td>0_9_X_IGNORE_CHARGING_CURRENT</td>
 </tr>
 </tbody>
 </table>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified May 26, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/c2ac54629fae6b3ee9177dc53165c05285d8e6db>fix: correct platformio target specified (c2ac546)</a>
+Last modified May 27, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/cc1dde223288cdde2cdb7747111a038154c4c5a9>fix: fw version typo (cc1dde2)</a>
 </div>
 </div>
 </main>
