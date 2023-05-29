@@ -251,11 +251,25 @@
 <img class=card-img-top src=/docs/versions/errata/ic2-is-wrong/burnt_vermut_hu7f8f8190ad90f61fee8dbc523d26e37a_88562_300x0_resize_q99_catmullrom.jpg width=300 height=225>
 </figure>
 </p>
-<h1 id=solutions>Solutions:</h1>
+<h2 id=determining-if-you-are-affected>Determining if you are affected</h2>
+<p>INA180A3IDBVR has marking <code>1A9D</code>. If you see that - you are affected. Good chip TSC101CILT is marked <code>0106</code>.</p>
+<p>
+<figure>
+<img src=/docs/versions/errata/ic2-is-wrong/INA180A3IDBVR.png alt="Wrong INA180A3IDBVR"> <figcaption>
+<p>Wrong INA180A3IDBVR</p>
+</figcaption>
+</figure>
+<figure>
+<img src=/docs/versions/errata/ic2-is-wrong/TSC101CILT.png alt="Good TSC101CILT"> <figcaption>
+<p>Good TSC101CILT</p>
+</figcaption>
+</figure>
+</p>
+<h2 id=solutions>Solutions</h2>
 <p>First, for many people, it&rsquo;s just working. So if your mower worked for a couple of weeks, it might survive. In that case you don&rsquo;t have to take any action. If your robot does not charge anymore, there are two options: Fixing the hardware or ignoring the error in software.</p>
 <p>I recommend replacing the IC to fix this issue.</p>
 <h3 id=option-1>Option 1</h3>
-<p>Replace IC2 with TSC101CILT (DigiKey 497-6947-1-ND).</p>
+<p>Replace IC2 with TSC101CILT (DigiKey <code>497-6947-1-ND</code>, Mouser <code>511-TSC101CILT</code>, TME <code>TSC101CILT</code> or other major distributor).</p>
 <p>The process is pretty simple to do with a normal soldering iron.
 Disconnect all modules and power from the mainboard before starting the replacement.</p>
 <p>For replacement, follow these steps:</p>
@@ -313,7 +327,7 @@ Replace</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified May 27, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/cc1dde223288cdde2cdb7747111a038154c4c5a9>fix: fw version typo (cc1dde2)</a>
+Last modified May 29, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/204f509f5aa2d1a9dce407a472c9d8ff7caaa579>feat: more details about IC2 (204f509)</a>
 </div>
 </div>
 </main>

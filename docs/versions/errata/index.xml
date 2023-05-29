@@ -17,11 +17,27 @@
 &lt;img class="card-img-top" src="/docs/versions/errata/ic2-is-wrong/burnt_vermut_hu7f8f8190ad90f61fee8dbc523d26e37a_88562_300x0_resize_q99_catmullrom.jpg" width="300" height="225">
 &lt;/figure>
 &lt;/p>
-&lt;h1 id="solutions">Solutions:&lt;/h1>
+&lt;h2 id="determining-if-you-are-affected">Determining if you are affected&lt;/h2>
+&lt;p>INA180A3IDBVR has marking &lt;code>1A9D&lt;/code>. If you see that - you are affected. Good chip TSC101CILT is marked &lt;code>0106&lt;/code>.&lt;/p>
+&lt;p>
+&lt;figure>
+&lt;img src="/docs/versions/errata/ic2-is-wrong/INA180A3IDBVR.png"
+alt="Wrong INA180A3IDBVR"/> &lt;figcaption>
+&lt;p>Wrong INA180A3IDBVR&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+&lt;img src="/docs/versions/errata/ic2-is-wrong/TSC101CILT.png"
+alt="Good TSC101CILT"/> &lt;figcaption>
+&lt;p>Good TSC101CILT&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;/p>
+&lt;h2 id="solutions">Solutions&lt;/h2>
 &lt;p>First, for many people, it&amp;rsquo;s just working. So if your mower worked for a couple of weeks, it might survive. In that case you don&amp;rsquo;t have to take any action. If your robot does not charge anymore, there are two options: Fixing the hardware or ignoring the error in software.&lt;/p>
 &lt;p>I recommend replacing the IC to fix this issue.&lt;/p>
 &lt;h3 id="option-1">Option 1&lt;/h3>
-&lt;p>Replace IC2 with TSC101CILT (DigiKey 497-6947-1-ND).&lt;/p>
+&lt;p>Replace IC2 with TSC101CILT (DigiKey &lt;code>497-6947-1-ND&lt;/code>, Mouser &lt;code>511-TSC101CILT&lt;/code>, TME &lt;code>TSC101CILT&lt;/code> or other major distributor).&lt;/p>
 &lt;p>The process is pretty simple to do with a normal soldering iron.
 Disconnect all modules and power from the mainboard before starting the replacement.&lt;/p>
 &lt;p>For replacement, follow these steps:&lt;/p>

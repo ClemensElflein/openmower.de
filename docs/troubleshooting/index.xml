@@ -70,7 +70,7 @@ Click to see sample cold start startup log
 &lt;/div>
 &lt;div class="panel-collapse collapse "
 id="openmower_status_log">
-&lt;div class="panel-body">&lt;pre tabindex="0">&lt;code>● openmower.service - OpenMower service
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">● openmower.service - OpenMower service
 Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
 Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
 Main PID: 1539 (start_open_mowe)
@@ -113,7 +113,7 @@ Dec 11 17:52:20 openmower bash[3156]:
 Dec 11 17:52:20 openmower bash[3156]: SUMMARY
 ....
 bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/p>
