@@ -81,7 +81,11 @@ weight = 1
     # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
     style = "tango"
     # Uncomment if you want your chosen highlight style used for code blocks without a specified language
-    # guessSyntax = "true"
+    guessSyntax = "true"
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
 
 # Everything below this are Site Params
 
