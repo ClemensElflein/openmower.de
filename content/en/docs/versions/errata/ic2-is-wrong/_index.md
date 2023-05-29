@@ -13,10 +13,17 @@ Symptoms:
 * mower status topic reports 10A charging current, makes no sense with 2A fuses
 * IC2 breaks (black residue on the PCB)
 
-{{< imgproc burnt_tomm Resize "300x q99" />}}{{< imgproc burnt_vermut Resize "300x q99" />}}
+{{< imgproc burnt_tomm Resize "300x q99" />}}
+{{< imgproc burnt_vermut Resize "300x q99" />}}
+
+## Determining if you are affected
+INA180A3IDBVR has marking `1A9D`. If you see that - you are affected. Good chip TSC101CILT is marked `0106`.
+
+{{< figure src=INA180A3IDBVR caption="Wrong INA180A3IDBVR" >}}
+{{< figure src=TSC101CILT caption="Good TSC101CILT" >}}
 
 
-# Solutions:
+## Solutions
 
 First, for many people, it's just working. So if your mower worked for a couple of weeks, it might survive. In that case you don't have to take any action. If your robot does not charge anymore, there are two options: Fixing the hardware or ignoring the error in software.
 
@@ -24,7 +31,7 @@ I recommend replacing the IC to fix this issue.
 
 ### Option 1
 
-Replace IC2 with TSC101CILT (DigiKey 497-6947-1-ND).
+Replace IC2 with TSC101CILT (DigiKey `497-6947-1-ND`, Mouser `511-TSC101CILT`, TME `TSC101CILT` or other major distributor).
 
 The process is pretty simple to do with a normal soldering iron.
 Disconnect all modules and power from the mainboard before starting the replacement.
