@@ -152,14 +152,23 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
 <input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
 <label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-base-setup-li>
+<input type=checkbox id=m-docsknowledge-basertk-base-setup-check>
+<label for=m-docsknowledge-basertk-base-setup-check><a href=/docs/knowledge-base/rtk-base-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-base-setup><span>GPS Base Setup</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li>
 <input type=checkbox id=m-docsknowledge-baseshopping-list-check>
 <label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrtk-base-setup-li>
-<input type=checkbox id=m-docsrtk-base-setup-check>
-<label for=m-docsrtk-base-setup-check><a href=/docs/rtk-base-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrtk-base-setup><span>GPS Base Setup</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docscontributions-li>
+<input type=checkbox id=m-docscontributions-check>
+<label for=m-docscontributions-check><a href=/docs/contributions/ title="User Contributions" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributions><span>Contributions</span></a></label>
+<ul class="ul-2 foldable">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscontributionsincrease-mower-motor-current-li>
+<input type=checkbox id=m-docscontributionsincrease-mower-motor-current-check>
+<label for=m-docscontributionsincrease-mower-motor-current-check><a href=/docs/contributions/increase-mower-motor-current/ title="Increase mower motor to 6A" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributionsincrease-mower-motor-current><span>Mower motor to 6A</span></a></label>
+</li>
+</ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversions-li>
 <input type=checkbox id=m-docsversions-check>
 <label for=m-docsversions-check><a href=/docs/versions/ title="Hardware Versions / Known Issues" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversions><span>Hardware Versions</span></a></label>
@@ -246,7 +255,7 @@
 <p>Connect the antenna to the board and go outside to check if general GPS is working. If the mower is already assembled and an antenna is plugged in - just take it outside with the mower.
 Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes <code>GPS Fix</code> led will start blinking on GPS board.</p>
 <p>Deviation map (<code>View->Deviation Map, F12</code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via <code>File->Database clean</code>.</p>
-<p>Now let&rsquo;s connect NTRIP. We assume that you either found a suitable <a href=https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145>NTRIP node somewhere nearby</a> (&lt;30km) or running your own <a href=/docs/rtk-base-setup/>base station</a>.</p>
+<p>Now let&rsquo;s connect NTRIP. We assume that you either found a suitable <a href=https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145>NTRIP node somewhere nearby</a> (&lt;30km) or running your own <a href=/docs/knowledge-base/rtk-base-setup/>base station</a>.</p>
 <p>Go to <code>Receiver->NTRIP Client...</code> and configure your NTRIP settings. This will be the same settings that you will use in <a href=/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt>configuration file later</a>.
 <figure class="card rounded p-2 td-post-card mb-4 mt-4" style=max-width:510px>
 <img class=card-img-top src=/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png width=500 height=460>
@@ -275,7 +284,7 @@ If you don&rsquo;t have dock station assembled and want to save the power in the
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified May 10, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/ef620e582547b9d1d7c243082c0675189c6c230e>docs: proofreading (ef620e5)</a>
+Last modified May 31, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/3f6319de7389748e5e0b0705ae114e45d5dd240e>feat: start the contributions section, more empty RTK base (3f6319d)</a>
 </div>
 </div>
 </main>

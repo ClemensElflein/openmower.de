@@ -220,7 +220,11 @@ are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro
 &lt;p>Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
 Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;h2 id="step-4-done-">Step 4: Done 🎉&lt;/h2>
-&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>/docs/knowledge-base/shopping-list/</link><pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/shopping-list/</guid><description>
+&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-base-setup/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+This part of the documentation is work in progress. There are many ways of setting up the RTK base, I&amp;rsquo;d like to show a few options. For now, please use the documentation provided by Ardusimple.
+&lt;/div></description></item><item><title>Docs: Shopping List</title><link>/docs/knowledge-base/shopping-list/</link><pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/shopping-list/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Read this first: &lt;a href="/docs/getting-started/#important-info">Important Info&lt;/a>

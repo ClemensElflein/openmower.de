@@ -3,7 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=alternate type=application/rss+xml href=/docs/knowledge-base/manual-firmware-installation/index.xml>
+<link rel=alternate type=application/rss+xml href=/docs/contributions/increase-mower-motor-current/index.xml>
 <meta name=robots content="index, follow">
 <link rel="shortcut icon" href=/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,19 +15,19 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Manual Firmware Installation | Open Mower</title>
-<meta name=description content="This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.
+<title>Increase mower motor to 6A | Open Mower</title>
+<meta name=description content="Updating motor configuration for more mowing power.
 ">
-<meta property="og:title" content="Manual Firmware Installation">
-<meta property="og:description" content="This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.
+<meta property="og:title" content="Increase mower motor to 6A">
+<meta property="og:description" content="Updating motor configuration for more mowing power.
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="/docs/knowledge-base/manual-firmware-installation/"><meta property="og:site_name" content="Open Mower">
-<meta itemprop=name content="Manual Firmware Installation">
-<meta itemprop=description content="This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.
+<meta property="og:url" content="/docs/contributions/increase-mower-motor-current/"><meta property="og:site_name" content="Open Mower">
+<meta itemprop=name content="Increase mower motor to 6A">
+<meta itemprop=description content="Updating motor configuration for more mowing power.
 "><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Manual Firmware Installation">
-<meta name=twitter:description content="This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.
+<meta name=twitter:title content="Increase mower motor to 6A">
+<meta name=twitter:description content="Updating motor configuration for more mowing power.
 ">
 <link rel=preload href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css as=style>
 <link href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css rel=stylesheet integrity>
@@ -137,8 +137,8 @@
 <label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsknowledge-base-li>
-<input type=checkbox id=m-docsknowledge-base-check checked>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsknowledge-base-li>
+<input type=checkbox id=m-docsknowledge-base-check>
 <label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
@@ -153,9 +153,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basefirmware-update-li>
 <input type=checkbox id=m-docsknowledge-basefirmware-update-check>
 <label for=m-docsknowledge-basefirmware-update-check><a href=/docs/knowledge-base/firmware-update/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basefirmware-update><span>Firmware Update</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsknowledge-basemanual-firmware-installation-li>
-<input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check checked>
-<label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span class=td-sidebar-nav-active-item>Manual Firmware Installation</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
+<input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
+<label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-base-setup-li>
 <input type=checkbox id=m-docsknowledge-basertk-base-setup-check>
 <label for=m-docsknowledge-basertk-base-setup-check><a href=/docs/knowledge-base/rtk-base-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-base-setup><span>GPS Base Setup</span></a></label>
@@ -164,13 +164,13 @@
 <label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docscontributions-li>
-<input type=checkbox id=m-docscontributions-check>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docscontributions-li>
+<input type=checkbox id=m-docscontributions-check checked>
 <label for=m-docscontributions-check><a href=/docs/contributions/ title="User Contributions" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributions><span>Contributions</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscontributionsincrease-mower-motor-current-li>
-<input type=checkbox id=m-docscontributionsincrease-mower-motor-current-check>
-<label for=m-docscontributionsincrease-mower-motor-current-check><a href=/docs/contributions/increase-mower-motor-current/ title="Increase mower motor to 6A" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributionsincrease-mower-motor-current><span>Mower motor to 6A</span></a></label>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docscontributionsincrease-mower-motor-current-li>
+<input type=checkbox id=m-docscontributionsincrease-mower-motor-current-check checked>
+<label for=m-docscontributionsincrease-mower-motor-current-check><a href=/docs/contributions/increase-mower-motor-current/ title="Increase mower motor to 6A" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-docscontributionsincrease-mower-motor-current><span class=td-sidebar-nav-active-item>Mower motor to 6A</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversions-li>
@@ -232,145 +232,28 @@
 <a href=/docs/>Documentation</a>
 </li>
 <li class=breadcrumb-item>
-<a href=/docs/knowledge-base/>Knowledge Base</a>
+<a href=/docs/contributions/>Contributions</a>
 </li>
 <li class="breadcrumb-item active" aria-current=page>
-<a href=/docs/knowledge-base/manual-firmware-installation/ aria-disabled=true class="btn-link disabled">Manual Firmware Installation</a>
+<a href=/docs/contributions/increase-mower-motor-current/ aria-disabled=true class="btn-link disabled">Mower motor to 6A</a>
 </li>
 </ol>
 </nav>
 <div class=td-content>
-<h1>Manual Firmware Installation</h1>
-<div class=lead>This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.</div>
+<h1>Increase mower motor to 6A</h1>
+<div class=lead>Updating motor configuration for more mowing power.</div>
 <header class=article-meta>
 </header>
-<div class="alert alert-info" role=alert>
-<h4 class=alert-heading>Info</h4>
-You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
-received the hardware kit, you should be able to automatically update the firmware. Check the guide
-here: <a href=/docs/knowledge-base/firmware-update>Firmware Update</a>
-</div>
-<p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&rsquo;t worry, the process is straightforward.</p>
-<div class="alert alert-warning" role=alert>
-<h4 class=alert-heading>Warning</h4>
-It&rsquo;s very important that you get the correct firmware for your hardware version. Using the wrong firmware will cause the
-device to malfunction and in the worst case, destroy the hardware.
-</div>
-<h2 id=step-1-download-the-latest-firmware-bundle>Step 1: Download the Latest Firmware Bundle</h2>
-<figure>
-<img src=/docs/knowledge-base/manual-firmware-installation/firmware-download.png alt="Firmware Download" class=img-thumbnail>
-</figure>
-<p>The first step is to download and extract the latest firmware bundle. The zip file contains all the firmwares supported
-by the OpenMower project.
-You can get the latest version here: 🔗
- <a href=https://github.com/ClemensElflein/OpenMower/releases>https://github.com/ClemensElflein/OpenMower/releases</a></p>
-<h2 id=step-2-find-the-firmware>Step 2: Find the Firmware</h2>
-<p>In order to find the correct firmware file, you will need two pieces of information:</p>
-<h3 id=21-the-hardware-version-of-your-mainboard>2.1: The hardware version of your mainboard</h3>
-<p>The version of your mainboard is printed on the lower left side of your mainboard:</p>
-<div><img src=mainboard-version.jpg width=400></div>
-<h3 id=22-the-type-of-imu-you-are-using>2.2: The type of IMU you are using:</h3>
-<table>
-<thead>
-<tr>
-<th>IMU Name</th>
-<th>Image</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WT901</td>
-<td><img src=wt-901.jpg width=200></td>
-</tr>
-<tr>
-<td>MPU9250</td>
-<td><img src=mpu-9250.jpg width=200></td>
-</tr>
-<tr>
-<td>LSM6DSO</td>
-<td><img src=lsm6dso.jpg width=200></td>
-</tr>
-</tbody>
-</table>
-<h3 id=33-select-firmware>3.3: Select Firmware:</h3>
-<p>Now you can select the firmware according to this table:</p>
-<table>
-<thead>
-<tr>
-<th>Mainboard Version</th>
-<th>IMU</th>
-<th>Firmware File</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.13.x</td>
-<td>LSM6DSO</td>
-<td>0_13_X/firmware.uf2</td>
-<td>If you have bought the 0.13.x kit in Vermut&rsquo;s shop, this is your version.</td>
-</tr>
-<tr>
-<td>0.12.x</td>
-<td>LSM6DSO</td>
-<td>0_12_X/firmware.uf2</td>
-<td>If you have bought the 0.12.x kit in Vermut&rsquo;s shop, this is your version.</td>
-</tr>
-<tr>
-<td>0.11.x</td>
-<td>MPU9250</td>
-<td>0_11_X_MPU9250/firmware.uf2</td>
-<td></td>
-</tr>
-<tr>
-<td>0.11.x</td>
-<td>WT901</td>
-<td>0_11_X_WT901/firmware.uf2</td>
-<td>If you have bought the 0.11.x kit in Vermut&rsquo;s shop, this is your version.</td>
-</tr>
-<tr>
-<td>0.10.x</td>
-<td>MPU9250</td>
-<td>0_10_X_MPU9250/firmware.uf2</td>
-<td></td>
-</tr>
-<tr>
-<td>0.10.x</td>
-<td>WT901</td>
-<td>0_10_X_WT901/firmware.uf2</td>
-<td>If you have bought the 0.10.x kit in Vermut&rsquo;s shop, this is your version.</td>
-</tr>
-<tr>
-<td>0.9.x</td>
-<td>MPU9250</td>
-<td>0_9_X_MPU9250/firmware.uf2</td>
-<td></td>
-</tr>
-<tr>
-<td>0.9.x</td>
-<td>WT901</td>
-<td>0_9_X_WT901_INSTEAD_OF_SOUND/firmware.uf2</td>
-<td>WT901 gets soldered instead of the sound module, since this mainboard does not have a WT901 header</td>
-</tr>
-<tr>
-<td>0.9.x</td>
-<td>WT901</td>
-<td>0_9_X_WT901/firmware.uf2</td>
-<td>IMU Connected on the MPU9250 Slot using SerialPIO</td>
-</tr>
-</tbody>
-</table>
-<h2 id=step-3-install-firmware>Step 3: Install Firmware</h2>
-<p>In order to not draw too much current from your computer&rsquo;s USB port, make sure that no modules (Raspberry Pi, GPS, ESCs)
-are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro USB cable to your PC.</p>
-<p>Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
-Pico to reboot. The process takes about 10 seconds.</p>
-<h2 id=step-4-done->Step 4: Done 🎉</h2>
-<p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.</p>
+<p>Author: ow@discord</p>
+<p>YardForce Classic Mower Motor: <a href=https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66>https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66</a>
+Alternative config was made by Tomm: <a href=https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698>https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698</a></p>
+<p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.</p>
+<p>Instructions:
+Open cover, replace fuse, upload central xESC config with <a href=https://vesc-project.com/vesc_tool>VESC-TOOL</a>.</p>
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified May 8, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/54b73a6b75df331f184f353f10a5be76decd7bea>docs: add picture of LSM6DSO (54b73a6)</a>
+Last modified May 31, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/3f6319de7389748e5e0b0705ae114e45d5dd240e>feat: start the contributions section, more empty RTK base (3f6319d)</a>
 </div>
 </div>
 </main>
@@ -381,10 +264,10 @@ Last modified May 8, 2023: <a href=https://github.com/ClemensElflein/openmower.d
 <div class=row>
 <div class="col-6 col-sm-4 text-xs-center order-sm-2">
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href=https://github.com/ClemensElflein/openmower.de/tree/main/content/en/docs/Knowledge-Base/manual-firmware-installation/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
-<a href=https://github.com/ClemensElflein/openmower.de/edit/main/content/en/docs/Knowledge-Base/manual-firmware-installation/_index.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-<a href="https://github.com/ClemensElflein/openmower.de/new/main/content/en/docs/Knowledge-Base/manual-firmware-installation/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
-<a href="https://github.com/ClemensElflein/openmower.de/issues/new?title=Manual%20Firmware%20Installation" class=td-page-meta--issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/ClemensElflein/openmower.de/tree/main/content/en/docs/contributions/increase-mower-motor-current/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+<a href=https://github.com/ClemensElflein/openmower.de/edit/main/content/en/docs/contributions/increase-mower-motor-current/_index.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+<a href="https://github.com/ClemensElflein/openmower.de/new/main/content/en/docs/contributions/increase-mower-motor-current/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+<a href="https://github.com/ClemensElflein/openmower.de/issues/new?title=Increase%20mower%20motor%20to%206A" class=td-page-meta--issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
 <a href=https://github.com/ClemensElflein/OpenMower/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
 </div>
 </div>
