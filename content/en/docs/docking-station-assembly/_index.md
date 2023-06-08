@@ -74,6 +74,8 @@ Now you can mount the whole assembly inside the docking station. Connect the mod
 
 Connect a multimeter as shown in the picture and connect the power supply. Set the voltage to 29.2V and the current to a minimum by turning it all the way counter-clockwise (this is important for the next step!). You should hear a clicking sound as soon as the limit is reached. If not, turn at least 20 turns.
 
+Note that when you turn the current screw all the way counter-clockwise the voltage will be limited too. After turning it counter-clockwise all the way, make sure you give it a small nudge clockwise so you can still accurately measure the voltage.
+
 **Disconnect the power supply.**
 
 ## Step 5: Set Current
