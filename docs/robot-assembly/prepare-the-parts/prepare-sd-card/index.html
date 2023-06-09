@@ -289,24 +289,47 @@ Click to see annotated config code
 </div>
 <div class="panel-collapse collapse" id=mower_config_example>
 <div class=panel-body><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#8f5902;font-style:italic>################################</span>
-<span style=color:#8f5902;font-style:italic>## Hardware Specific Settings ##</span>
+<span style=color:#8f5902;font-style:italic>##     Important Settings     ##</span>
 <span style=color:#8f5902;font-style:italic>################################</span>
 
-<span style=color:#8f5902;font-style:italic># The type of mower you&#39;re using, used to get some hardware parameters automatically</span>
-<span style=color:#8f5902;font-style:italic># Currently supported:</span>
-<span style=color:#8f5902;font-style:italic># YardForce500</span>
-<span style=color:#8f5902;font-style:italic># CUSTOM (put your configs in ~/mower_params/)</span>
-<span style=color:#204a87>export</span> <span style=color:#000>OM_MOWER</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;YardForce500&#34;</span>
+<span style=color:#8f5902;font-style:italic># Most of the time you must modify those settings, so they are moved to the beginning of document from their respective sections</span>
+<span style=color:#8f5902;font-style:italic># Refer to documentation for more info: https://openmower.de/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#step-2-configure-open-mower</span>
 
-<span style=color:#8f5902;font-style:italic># Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://www.openmower.de/docs) for the firmware versions.</span>
+<span style=color:#8f5902;font-style:italic># Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://openmower.de/docs/versions/) for the firmware versions.</span>
 <span style=color:#8f5902;font-style:italic># Supported values as of today:</span>
+<span style=color:#8f5902;font-style:italic># 0_13_X: Use this if you have 0.13.x mainboard with LSM6DSOTR (default).</span>
 <span style=color:#8f5902;font-style:italic># 0_12_X_LSM6DSO: Use this if you have an LSM6DSOTR and have a 0.12.x mainboard.</span>
 <span style=color:#8f5902;font-style:italic># 0_11_X_WT901: Use this if you have an WT901 and have a 0.11.x mainboard.</span>
 <span style=color:#8f5902;font-style:italic># 0_10_X_WT901: Use this if you have an WT901 and have a 0.10.x mainboard.</span>
 <span style=color:#8f5902;font-style:italic># 0_10_X_MPU9250: Use this if you have an MPU9250 and have a 0.10.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).</span>
 <span style=color:#8f5902;font-style:italic># 0_9_X_WT901_INSTEAD_OF_SOUND: Use this if you have soldered the WT901 in the sound module&#39;s slot and have a 0.9.x mainboard.</span>
 <span style=color:#8f5902;font-style:italic># 0_9_X_MPU9250: Use this if you have an MPU9250 and have a 0.9.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).</span>
-<span style=color:#204a87>export</span> <span style=color:#000>OM_HARDWARE_VERSION</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;&#34;</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_HARDWARE_VERSION</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;0_13_X&#34;</span>
+
+<span style=color:#8f5902;font-style:italic># Uncomment and set to coordinates near your future docking station, this will be your map origin.</span>
+<span style=color:#8f5902;font-style:italic># There might be a case that you don&#39;t need those if you using OM_USE_RELATIVE_POSITION=True</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_DATUM_LAT</span><span style=color:#ce5c00;font-weight:700>=</span>48.CHANGEME
+<span style=color:#204a87>export</span> <span style=color:#000>OM_DATUM_LONG</span><span style=color:#ce5c00;font-weight:700>=</span>11.CHANGEME
+
+<span style=color:#8f5902;font-style:italic># NTRIP Settings</span>
+<span style=color:#8f5902;font-style:italic># Set to False if using external radio plugged into the Ardusimple board.</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_USE_NTRIP</span><span style=color:#ce5c00;font-weight:700>=</span>True
+<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_HOSTNAME</span><span style=color:#ce5c00;font-weight:700>=</span>192.168.178.55
+<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_PORT</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>2101</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_USER</span><span style=color:#ce5c00;font-weight:700>=</span>gps
+<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_PASSWORD</span><span style=color:#ce5c00;font-weight:700>=</span>gps
+<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_ENDPOINT</span><span style=color:#ce5c00;font-weight:700>=</span>BASE1
+
+<span style=color:#8f5902;font-style:italic>################################</span>
+<span style=color:#8f5902;font-style:italic>## Hardware Specific Settings ##</span>
+<span style=color:#8f5902;font-style:italic>################################</span>
+
+<span style=color:#8f5902;font-style:italic># The type of mower you&#39;re using, used to get some hardware parameters automatically</span>
+<span style=color:#8f5902;font-style:italic># Currently supported:</span>
+<span style=color:#8f5902;font-style:italic># YardForce500</span>
+<span style=color:#8f5902;font-style:italic># YardForceSA650</span>
+<span style=color:#8f5902;font-style:italic># CUSTOM (put your configs in ~/mower_params/)</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_MOWER</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;YardForce500&#34;</span>
 
 <span style=color:#8f5902;font-style:italic># Select your ESC type</span>
 <span style=color:#8f5902;font-style:italic># Supported values as of today:</span>
@@ -315,7 +338,7 @@ Click to see annotated config code
 <span style=color:#204a87>export</span> <span style=color:#000>OM_MOWER_ESC_TYPE</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;xesc_mini&#34;</span>
 
 <span style=color:#8f5902;font-style:italic># Select your gamepad</span>
-<span style=color:#8f5902;font-style:italic># Currently supported: ps3, xbox360</span>
+<span style=color:#8f5902;font-style:italic># Currently supported: ps3, steam_stick, steam_touch, xbox360</span>
 <span style=color:#204a87>export</span> <span style=color:#000>OM_MOWER_GAMEPAD</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#4e9a06>&#34;xbox360&#34;</span>
 
 <span style=color:#8f5902;font-style:italic># Set to true to record your session.</span>
@@ -333,19 +356,8 @@ Click to see annotated config code
 <span style=color:#8f5902;font-style:italic># For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it&#39;s also more compatible overall.</span>
 <span style=color:#204a87>export</span> <span style=color:#000>OM_USE_RELATIVE_POSITION</span><span style=color:#ce5c00;font-weight:700>=</span>False
 
-<span style=color:#8f5902;font-style:italic># If OM_USE_RELATIVE_POSITION is set to False, uncomment and set to coordinates near you, around to docking station</span>
-<span style=color:#8f5902;font-style:italic># This will be your map origin!</span>
-<span style=color:#204a87>export</span> <span style=color:#000>OM_DATUM_LAT</span><span style=color:#ce5c00;font-weight:700>=</span>99.CHANGEME
-<span style=color:#204a87>export</span> <span style=color:#000>OM_DATUM_LONG</span><span style=color:#ce5c00;font-weight:700>=</span>11.CHANGEME
-
-<span style=color:#8f5902;font-style:italic># NTRIP Settings</span>
-<span style=color:#8f5902;font-style:italic># Set to False if using external radio plugged into the Ardusimple board.</span>
-<span style=color:#204a87>export</span> <span style=color:#000>OM_USE_NTRIP</span><span style=color:#ce5c00;font-weight:700>=</span>True
-<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_HOSTNAME</span><span style=color:#ce5c00;font-weight:700>=</span>192.168.178.55
-<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_PORT</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>2101</span>
-<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_USER</span><span style=color:#ce5c00;font-weight:700>=</span>gps
-<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_PASSWORD</span><span style=color:#ce5c00;font-weight:700>=</span>gps
-<span style=color:#204a87>export</span> <span style=color:#000>OM_NTRIP_ENDPOINT</span><span style=color:#ce5c00;font-weight:700>=</span>BASE1
+<span style=color:#8f5902;font-style:italic># GPS protocol. Use UBX for u-blox chipsets and NMEA for everything else</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_GPS_PROTOCOL</span><span style=color:#ce5c00;font-weight:700>=</span>UBX
 
 <span style=color:#8f5902;font-style:italic># If you want to use F9R&#39;s sensor fusion, set this to true (you will also need to set DATUM_LAT and DATUM_LONG.</span>
 <span style=color:#8f5902;font-style:italic># Consider this option unstable, since I don&#39;t have the F9R anymore, so I&#39;m not able to test this.</span>
@@ -364,6 +376,10 @@ Click to see annotated config code
 
 <span style=color:#8f5902;font-style:italic># How many outlines should the mover drive. It&#39;s not recommended to set this below 4.</span>
 <span style=color:#204a87>export</span> <span style=color:#000>OM_OUTLINE_COUNT</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>4</span>
+
+<span style=color:#8f5902;font-style:italic># Mowing angle offset -180 deg - +180 deg, 0 = east, -90 = north. If mowing angle offset is not absolute it gets added to the auto detected angle which is set by the first 2 m of recorded outline.</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_MOWING_ANGLE_OFFSET</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#0000cf;font-weight:700>0</span>
+<span style=color:#204a87>export</span> <span style=color:#000>OM_MOWING_ANGLE_OFFSET_IS_ABSOLUTE</span><span style=color:#ce5c00;font-weight:700>=</span>False
 
 <span style=color:#8f5902;font-style:italic># The width of mowing paths.</span>
 <span style=color:#8f5902;font-style:italic># Choose it smaller than your actual mowing tool in order to have some overlap.</span>
@@ -389,6 +405,10 @@ Click to see annotated config code
 <span style=color:#204a87>export</span> <span style=color:#000>OM_AUTOMATIC_START</span><span style=color:#ce5c00;font-weight:700>=</span><span style=color:#204a87>false</span>
 
 <span style=color:#204a87>export</span> <span style=color:#000>OM_OUTLINE_OFFSET</span><span style=color:#ce5c00;font-weight:700>=</span>0.05
+
+<span style=color:#8f5902;font-style:italic># source the default values for the hardware platform.</span>
+<span style=color:#8f5902;font-style:italic># you only need this line on non-docker installs. in the docker, it will be done automatically.</span>
+<span style=color:#8f5902;font-style:italic># source $(rospack find open_mower)/params/hardware_specific/$OM_MOWER/default_environment.sh</span>
 </code></pre></div></div>
 </div>
 </div>
@@ -397,7 +417,7 @@ Click to see annotated config code
 <div class=section-index>
 </div>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified May 10, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/ef620e582547b9d1d7c243082c0675189c6c230e>docs: proofreading (ef620e5)</a>
+Last modified June 9, 2023: <a href=https://github.com/ClemensElflein/openmower.de/commit/f4bf9777d57a60bcb2227be338a82b840586d888>fix: sync config with repo version (f4bf977)</a>
 </div>
 </div>
 </main>
