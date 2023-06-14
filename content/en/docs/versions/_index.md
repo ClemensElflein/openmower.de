@@ -19,10 +19,11 @@ resources:
  * Dropped support for dfPlayer sound module 
 
 #### Known issues:
+ * 2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.
  * The first batch of 0.13 boards was mistakenly labeled "latest". No action needed.
- * [Outdated Firmware]({{< relref "/docs/versions/errata/outdated-firmware" >}}). Affect kits shipped pre-May'23.
- * [IC2 chip is wrong]({{< relref "/docs/versions/errata/ic2-is-wrong" >}}). Affect kits shipped pre-May'23.
- * [rain sensor cable is female, but needs to be male]({{< relref "/docs/versions/errata/wrong-rain-sensor-cable" >}}). Affect kits shipped pre-May'23.
+ * [Outdated Firmware]({{< relref "/docs/versions/errata/outdated-firmware" >}}). Affect kits shipped before May'23.
+ * [IC2 chip is wrong]({{< relref "/docs/versions/errata/ic2-is-wrong" >}}). Affect kits shipped before May'23.
+ * [rain sensor cable is female, but needs to be male]({{< relref "/docs/versions/errata/wrong-rain-sensor-cable" >}}). Affect kits shipped before May'23.
 
 
 ## 0.12.0 - Black
