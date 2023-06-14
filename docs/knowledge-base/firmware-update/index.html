@@ -1,325 +1,62 @@
-<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.91.2">
-<link rel=alternate type=application/rss+xml href=/docs/knowledge-base/firmware-update/index.xml>
-<meta name=robots content="index, follow">
-<link rel="shortcut icon" href=/favicons/favicon.ico>
-<link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180>
-<link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16>
-<link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32>
-<link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36>
-<link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48>
-<link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72>
-<link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
-<link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
-<link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>Firmware Update | Open Mower</title>
-<meta name=description content="This guide shows you how to update the firmware on your Open Mower.
-">
-<meta property="og:title" content="Firmware Update">
-<meta property="og:description" content="This guide shows you how to update the firmware on your Open Mower.
-">
-<meta property="og:type" content="website">
-<meta property="og:url" content="/docs/knowledge-base/firmware-update/"><meta property="og:site_name" content="Open Mower">
-<meta itemprop=name content="Firmware Update">
-<meta itemprop=description content="This guide shows you how to update the firmware on your Open Mower.
-"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Firmware Update">
-<meta name=twitter:description content="This guide shows you how to update the firmware on your Open Mower.
-">
-<link rel=preload href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css as=style>
-<link href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css rel=stylesheet integrity>
-<link href=/css/fonts.css rel=stylesheet>
-<script src=/js/jquery-3.6.0.min.js></script>
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.111.3"><link rel=alternate type=application/rss+xml href=/docs/knowledge-base/firmware-update/index.xml><meta name=robots content="index, follow"><link rel="shortcut icon" href=/favicons/favicon.ico><link rel=apple-touch-icon href=/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192><title>Firmware Update | Open Mower</title><meta name=description content="This guide shows you how to update the firmware on your Open Mower.
+"><meta property="og:title" content="Firmware Update"><meta property="og:description" content="This guide shows you how to update the firmware on your Open Mower.
+"><meta property="og:type" content="website"><meta property="og:url" content="/docs/knowledge-base/firmware-update/"><meta property="og:site_name" content="Open Mower"><meta itemprop=name content="Firmware Update"><meta itemprop=description content="This guide shows you how to update the firmware on your Open Mower.
+"><meta name=twitter:card content="summary"><meta name=twitter:title content="Firmware Update"><meta name=twitter:description content="This guide shows you how to update the firmware on your Open Mower.
+"><link rel=preload href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css as=style><link href=/scss/main.min.78d295cbd75914dee2bf2f22125ce2db83cc2726fe52406a5dd9fa025e7ee47e.css rel=stylesheet integrity><link href=/css/fonts.css rel=stylesheet><script src=/js/jquery-3.6.0.min.js></script>
 <script type=text/javascript src=/js/medium-zoom.min.js></script>
 <script type=text/javascript src=/js/asciinema-player.min.js></script>
-<link rel=stylesheet href=/css/asciinema-player.css>
-<script>$(function(){const a=Array.from(document.querySelectorAll("img:not(.nozoom)"));a.forEach(a=>{mediumZoom(a,{margin:80,container:null,template:null,background:"#fff"})})})</script>
-</head>
-<body class=td-section>
-<header>
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-<a class=navbar-brand href=/><span class="navbar-brand__logo navbar-logo"><svg width="100%" height="100%" viewBox="0 0 1603 272" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(1,0,0,1,-1803.38,-592.875)"><g transform="matrix(1,0,0,1,1803.38,592.875)"><rect id="Page-6" serif:id="Page 6" x="0" y="0" width="1603" height="272" style="fill:none"/><g id="Page-61" serif:id="Page 6"><g id="Layer-2" serif:id="Layer 2"/><g id="Layer-1" serif:id="Layer 1"><g transform="matrix(1,0,0,1,682.34,135.614)"><path d="M0 .001c0-26.444-20.203-47.93-46.647-47.93-26.627.0-46.828 21.486-46.828 47.93s20.201 47.93 46.828 47.93C-20.203 47.931.0 26.445.0.001m-108.715.0c0-34.157 26.627-61.336 62.068-61.336 35.259.0 61.887 27.179 61.887 61.336.0 34.158-26.628 61.335-61.887 61.335-35.441.0-62.068-27.177-62.068-61.335" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,793.816,174.547)"><path d="M0-24.241C0-43.155-13.222-57.112-31.036-57.112c-17.077.0-30.483 14.14-30.483 32.871.0 18.73 13.406 33.055 30.483 33.055C-13.222 8.814.0-5.142.0-24.241M-75.477-68.865h13.406v15.426c6.613-11.57 19.651-17.263 34.158-17.263 24.791.0 42.236 20.384 42.236 46.461.0 26.076-17.445 46.644-42.236 46.644-14.141.0-26.997-5.877-33.606-17.446V46.461H-75.477V-68.865z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,898.311,155.997)"><path d="M0-11.199C-1.469-27.727-14.139-39.665-29.751-39.665c-15.239.0-27.729 11.753-29.747 28.466H0zM-74.006-5.507c0-25.893 19.464-46.645 44.992-46.645 23.874.0 42.788 20.568 42.788 46.093C13.774-3.487 13.406-.733 13.406-.549H-59.498c2.202 17.814 15.977 29.016 32.503 29.016 10.102.0 20.202-3.49 27.547-9.551L6.613 29.2c-9.551 7.53-21.488 11.753-33.79 11.753-25.343.0-46.829-18.18-46.829-46.46" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,931.924,193.277)"><path d="M0-87.595H13.955v15.242C20.2-83.188 31.768-89.432 44.99-89.432c22.405.0 32.321 13.59 32.321 37.096V1.837H63.356V-50.501c0-16.526-6.06-25.341-22.221-25.341-15.976.0-27.18 12.487-27.18 27.363V1.837H0V-87.595z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1033.48,195.115)"><path d="M0-118.999H13.04L42.054-78.598c6.245 8.815 19.283 27.545 19.283 27.545S74.375-69.599 80.619-78.414l29.014-40.585h13.039V0H107.98V-94.208S104.858-88.515 99.166-80.618L61.337-27.363 23.324-80.986c-5.328-7.529-8.633-13.222-8.633-13.222V0H0V-118.999z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1257.71,150.305)"><path d="M0 .185C0-18.73-14.143-32.87-32.689-32.87S-65.378-18.73-65.378.185c0 18.73 14.143 32.871 32.689 32.871S0 18.915.0.185m-79.701.0c0-26.078 20.752-46.645 47.012-46.645 26.26.0 47.012 20.567 47.012 46.645.0 25.892-20.752 46.46-47.012 46.46S-79.701 26.077-79.701.185" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1278.65,195.665)"><path d="M0-89.983H13.774l20.2 58.947c2.021 6.061 3.122 13.04 3.122 13.04S37.829-24.975 39.666-30.852L57.848-89.983H70.886L89.248-30.852C91.085-24.975 91.822-17.996 91.822-17.996S92.739-24.975 94.944-31.036l20.2-58.947h13.77L98.063.0H85.945L67.396-59.131C65.742-64.273 64.457-72.17 64.457-72.17S63.356-64.273 61.703-59.131L42.789.0H30.852L0-89.983z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1488.01,155.997)"><path d="M0-11.199C-1.469-27.727-14.139-39.665-29.747-39.665c-15.243.0-27.729 11.753-29.751 28.466H0zM-74.005-5.507c0-25.893 19.467-46.645 44.991-46.645 23.874.0 42.788 20.568 42.788 46.093C13.774-3.487 13.406-.733 13.406-.549H-59.498c2.202 17.814 15.977 29.016 32.505 29.016 10.1.0 20.2-3.49 27.545-9.551L6.613 29.2c-9.551 7.53-21.485 11.753-33.79 11.753-25.343.0-46.828-18.18-46.828-46.46" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1521.62,193.277)"><path d="M0-87.595H13.958v18.914c5.141-11.752 16.709-20.751 34.523-20.751V-74.19c-20.932.0-34.523 11.753-34.523 33.607V1.837H0V-87.595z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,443.663,215.024)"><path d="M0-168.764c-20.152-7.619-55.244-16.164-111.279-16.164-131.42.0-216.297 69.461-220.007 78.844h84.164l40.032-40.032h75.709C-129.37-150.874-124.58-154.172-119.043-153.961-112.428-153.71-106.953-148.236-106.702-141.621-106.423-134.295-112.28-128.269-119.543-128.269-124.869-128.269-129.437-131.508-131.387-136.124h-71.564l-30.04 30.04h29.184c2.179-5.15899999999999 7.631-8.599 13.754-7.717C-184.355-112.98-179.828-108.277-179.194-102.555-178.335-94.801-184.383-88.237-191.964-88.237-197.289-88.237-201.857-91.476-203.807-96.092h-140.98C-355.74-90.576-365.733-85.284-374.561-80.449h37.022l24.976 24.976h64.275C-246.108-60.633-240.657-64.072-234.534-63.19-228.836-62.369-224.309-57.667-223.675-51.945-222.816-44.191-228.863-37.626-236.444-37.626-241.77-37.626-246.338-40.866-248.288-45.481h-68.415l-24.975-24.976h-50.658C-396.539-68.031-400.269-65.832-403.474-63.913-410.95-59.437-413.042-49.556-408.027-42.43l15.924 22.63-14.593 27.139C-408.842 11.329-405.952 16.164-401.422 16.164h280.591c6.404-11.907 7.75-14.41 14.154-26.316C-116.396-25.067-122.044-42.877-122.044-62.006c0-51.71 41.245-94.442 92.65-95.1C-23.568-157.181-12.548-157.189-2.134-157.175 4.528-157.166 6.231-166.408.0-168.764" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,416.751,121.094)"><path d="M0 63.847c-17.631.0-31.924-14.293-31.924-31.924C-31.924 14.292-17.631-.001.0-.001S31.924 14.292 31.924 31.923C31.924 49.554 17.631 63.847.0 63.847M84.791 22.474C82.795 22.474 81.074 21.034 80.763 19.062 78.71 6.077 73.604-5.886 66.2-16.078 65.025-17.697 65.217-19.931 66.632-21.345L66.639-21.352c1.598-1.599 1.598-4.192.0-5.791L59.066-34.715c-1.599-1.599-4.192-1.599-5.791.0L53.269-34.708C51.855-33.294 49.621-33.101 48.002-34.277c-10.193-7.404-22.156-12.51-35.141-14.562C10.889-49.151 9.449-50.871 9.449-52.869c0-2.261-1.833-4.094-4.094-4.094H-5.355c-2.261.0-4.095 1.833-4.095 4.094.0 1.998-1.438 3.718-3.411 4.03-12.985 2.052-24.948 7.158-35.14 14.562C-49.619-33.101-51.853-33.294-53.269-34.708L-53.275-34.715c-1.599-1.599-4.192-1.599-5.79.0L-66.638-27.143C-68.237-25.544-68.237-22.951-66.638-21.352L-66.631-21.345C-65.217-19.931-65.024-17.696-66.2-16.078-73.604-5.886-78.71 6.077-80.763 19.062-81.074 21.034-82.794 22.474-84.791 22.474c-2.262.0-4.095 1.833-4.095 4.095V37.278c0 2.261 1.833 4.095 4.095 4.095C-82.794 41.373-81.074 42.812-80.763 44.785-78.71 57.769-73.604 69.732-66.2 79.925-65.024 81.543-65.217 83.777-66.631 85.192L-66.638 85.199C-68.237 86.797-68.237 89.39-66.638 90.989L-59.065 98.562c1.598 1.599 4.191 1.599 5.79.0L-53.269 98.555C-51.853 97.14-49.619 96.948-48.001 98.123c10.192 7.404 22.155 12.511 35.14 14.563C-10.888 112.997-9.45 114.718-9.45 116.715c0 2.262 1.834 4.095 4.095 4.095H5.355c2.261.0 4.094-1.833 4.094-4.095.0-1.997 1.44-3.718 3.412-4.029C25.846 110.634 37.809 105.527 48.002 98.123 49.621 96.948 51.855 97.14 53.269 98.555L53.275 98.562c1.599 1.599 4.192 1.599 5.791.0L66.639 90.989C68.237 89.39 68.237 86.798 66.639 85.199L66.632 85.192C65.217 83.777 65.025 81.543 66.2 79.925c7.404-10.193 12.51-22.156 14.563-35.14C81.074 42.812 82.795 41.373 84.791 41.373c2.262.0 4.095-1.834 4.095-4.095V26.569c0-2.262-1.833-4.095-4.095-4.095" style="fill:#fff;fill-rule:nonzero"/></g></g></g></g></g></svg></span>
-</a>
-<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
-<ul class="navbar-nav mt-2 mt-lg-0">
-<li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class="nav-link active" href=/docs/><span class=active>Documentation</span></a>
-</li>
-<li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/community/><span>Community</span></a>
-</li>
-</ul>
-</div>
-<div class="navbar-nav d-none d-lg-block">
-</div>
-</nav>
-</header>
-<div class="container-fluid td-outer">
-<div class=td-main>
-<div class="row flex-xl-nowrap">
-<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-<div id=td-sidebar-menu class=td-sidebar__inner>
-<form class="td-sidebar__search d-flex align-items-center">
-<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-section-nav aria-expanded=false aria-label="Toggle section navigation">
-</button>
-</form>
-<nav class="collapse td-sidebar-nav foldable-nav" id=td-section-nav>
-<ul class="td-sidebar-nav__section pr-md-3 ul-0">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docs-li>
-<a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docs><span>Documentation</span></a>
-<ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li>
-<input type=checkbox id=m-docsoverview-check>
-<label for=m-docsoverview-check><a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-started-li>
-<input type=checkbox id=m-docsgetting-started-check>
-<label for=m-docsgetting-started-check><a href=/docs/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsgetting-started><span>Getting Started</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assembly-li>
-<input type=checkbox id=m-docsrobot-assembly-check>
-<label for=m-docsrobot-assembly-check><a href=/docs/robot-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assembly><span>Robot Assembly</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyprepare-the-parts-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-parts-check>
-<label for=m-docsrobot-assemblyprepare-the-parts-check><a href=/docs/robot-assembly/prepare-the-parts/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-parts><span>Prepare the Parts</span></a></label>
-<ul class="ul-3 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-check>
-<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-gps/ title="Prepare the GPS" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps><span>GPS</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-check>
-<label for=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-sd-card/ title="Prepare the SD Card" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card><span>SD Card</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-check>
-<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-robot/ title="Prepare the Robot" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot><span>Chassis</span></a></label>
-<ul class="ul-4 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-check>
-<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-robot/photo-guide/ title="Disassembling the YardForce Classic 500" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide><span>Photo Guide</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check>
-<label for=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-mainboard/ title="Prepare the Mainboard" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard><span>Mainboard</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsmisc-li>
-<input type=checkbox id=m-docsrobot-assemblyprepare-the-partsmisc-check>
-<label for=m-docsrobot-assemblyprepare-the-partsmisc-check><a href=/docs/robot-assembly/prepare-the-parts/misc/ title="Miscellaneous parts" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsmisc><span>Misc</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyassemble-the-robot-li>
-<input type=checkbox id=m-docsrobot-assemblyassemble-the-robot-check>
-<label for=m-docsrobot-assemblyassemble-the-robot-check><a href=/docs/robot-assembly/assemble-the-robot/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robot><span>Assemble the Robot</span></a></label>
-<ul class="ul-3 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyassemble-the-robotphoto-guide-li>
-<input type=checkbox id=m-docsrobot-assemblyassemble-the-robotphoto-guide-check>
-<label for=m-docsrobot-assemblyassemble-the-robotphoto-guide-check><a href=/docs/robot-assembly/assemble-the-robot/photo-guide/ title="Assembling the YardForce Classic 500" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robotphoto-guide><span>Photo Guide</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyfirst-startup-li>
-<input type=checkbox id=m-docsrobot-assemblyfirst-startup-check>
-<label for=m-docsrobot-assemblyfirst-startup-check><a href=/docs/robot-assembly/first-startup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyfirst-startup><span>First Startup</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdocking-station-assembly-li>
-<input type=checkbox id=m-docsdocking-station-assembly-check>
-<label for=m-docsdocking-station-assembly-check><a href=/docs/docking-station-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocking-station-assembly><span>Docking Station Assembly</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docssoftware-setup-li>
-<input type=checkbox id=m-docssoftware-setup-check>
-<label for=m-docssoftware-setup-check><a href=/docs/software-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setup><span>Software Setup</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setupconfiguring-wifi-li>
-<input type=checkbox id=m-docssoftware-setupconfiguring-wifi-check>
-<label for=m-docssoftware-setupconfiguring-wifi-check><a href=/docs/software-setup/configuring-wifi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setupconfiguring-wifi><span>Configuring Wi-Fi</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setuprecord-a-map-li>
-<input type=checkbox id=m-docssoftware-setuprecord-a-map-check>
-<label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsknowledge-base-li>
-<input type=checkbox id=m-docsknowledge-base-check checked>
-<label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li>
-<input type=checkbox id=m-docsknowledge-baseneopixel-led-colors-check>
-<label for=m-docsknowledge-baseneopixel-led-colors-check><a href=/docs/knowledge-base/neopixel-led-colors/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseneopixel-led-colors><span>Neopixel LED Colors</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-gps-li>
-<input type=checkbox id=m-docsknowledge-basertk-gps-check>
-<label for=m-docsknowledge-basertk-gps-check><a href=/docs/knowledge-base/rtk-gps/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-gps><span>GPS / Coordinate System</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basethe-map-li>
-<input type=checkbox id=m-docsknowledge-basethe-map-check>
-<label for=m-docsknowledge-basethe-map-check><a href=/docs/knowledge-base/the-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basethe-map><span>The Map</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsknowledge-basefirmware-update-li>
-<input type=checkbox id=m-docsknowledge-basefirmware-update-check checked>
-<label for=m-docsknowledge-basefirmware-update-check><a href=/docs/knowledge-base/firmware-update/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basefirmware-update><span class=td-sidebar-nav-active-item>Firmware Update</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li>
-<input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
-<label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-base-setup-li>
-<input type=checkbox id=m-docsknowledge-basertk-base-setup-check>
-<label for=m-docsknowledge-basertk-base-setup-check><a href=/docs/knowledge-base/rtk-base-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-base-setup><span>GPS Base Setup</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li>
-<input type=checkbox id=m-docsknowledge-baseshopping-list-check>
-<label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docscontributions-li>
-<input type=checkbox id=m-docscontributions-check>
-<label for=m-docscontributions-check><a href=/docs/contributions/ title="User Contributions" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributions><span>Contributions</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscontributionsincrease-mower-motor-current-li>
-<input type=checkbox id=m-docscontributionsincrease-mower-motor-current-check>
-<label for=m-docscontributionsincrease-mower-motor-current-check><a href=/docs/contributions/increase-mower-motor-current/ title="Increase mower motor to 6A" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributionsincrease-mower-motor-current><span>Mower motor to 6A</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversions-li>
-<input type=checkbox id=m-docsversions-check>
-<label for=m-docsversions-check><a href=/docs/versions/ title="Hardware Versions / Known Issues" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversions><span>Hardware Versions</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversionserrata-li>
-<input type=checkbox id=m-docsversionserrata-check>
-<label for=m-docsversionserrata-check><a href=/docs/versions/errata/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrata><span>Known Issues</span></a></label>
-<ul class="ul-3 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserrataic2-is-wrong-li>
-<input type=checkbox id=m-docsversionserrataic2-is-wrong-check>
-<label for=m-docsversionserrataic2-is-wrong-check><a href=/docs/versions/errata/ic2-is-wrong/ title="IC2 is INA180A3IDBVR which has inadequate voltage range" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrataic2-is-wrong><span>INA180A3IDBVR breaks</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserrataoutdated-firmware-li>
-<input type=checkbox id=m-docsversionserrataoutdated-firmware-check>
-<label for=m-docsversionserrataoutdated-firmware-check><a href=/docs/versions/errata/outdated-firmware/ title="Outdated firmware in the kit" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrataoutdated-firmware><span>Outdated firmware</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserratawrong-rain-sensor-cable-li>
-<input type=checkbox id=m-docsversionserratawrong-rain-sensor-cable-check>
-<label for=m-docsversionserratawrong-rain-sensor-cable-check><a href=/docs/versions/errata/wrong-rain-sensor-cable/ title="Rain sensor cable is female, but male is needed" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserratawrong-rain-sensor-cable><span>Rain cable is incorrect</span></a></label>
-</li>
-</ul>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docstroubleshooting-li>
-<input type=checkbox id=m-docstroubleshooting-check>
-<label for=m-docstroubleshooting-check><a href=/docs/troubleshooting/ title="Troubleshooting Guides" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshooting><span>Troubleshooting</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootinggps-rtk-li>
-<input type=checkbox id=m-docstroubleshootinggps-rtk-check>
-<label for=m-docstroubleshootinggps-rtk-check><a href=/docs/troubleshooting/gps-rtk/ title="Troubleshooting GPS-RTK" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootinggps-rtk><span>GPS-RTK</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingmap-li>
-<input type=checkbox id=m-docstroubleshootingmap-check>
-<label for=m-docstroubleshootingmap-check><a href=/docs/troubleshooting/map/ title="Troubleshoot mapping/recording areas" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingmap><span>Map</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingraspberry-pi-li>
-<input type=checkbox id=m-docstroubleshootingraspberry-pi-check>
-<label for=m-docstroubleshootingraspberry-pi-check><a href=/docs/troubleshooting/raspberry-pi/ title="Raspberry Pi 4" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingraspberry-pi><span>Raspberry Pi</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingwifi-li>
-<input type=checkbox id=m-docstroubleshootingwifi-check>
-<label for=m-docstroubleshootingwifi-check><a href=/docs/troubleshooting/wifi/ title="Troubleshoot Wi-Fi" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingwifi><span>Wi-Fi</span></a></label>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslinks-li>
-<input type=checkbox id=m-docslinks-check>
-<label for=m-docslinks-check><a href=/docs/links/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docslinks><span>Links</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslegal-li>
-<input type=checkbox id=m-docslegal-check>
-<label for=m-docslegal-check><a href=/docs/legal/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docslegal><span>Legal</span></a></label>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-<main class="col-12 col-md-9 col-xl-10 pl-md-5" role=main>
-<nav aria-label=breadcrumb class=td-breadcrumbs>
-<ol class=breadcrumb>
-<li class=breadcrumb-item>
-<a href=/docs/>Documentation</a>
-</li>
-<li class=breadcrumb-item>
-<a href=/docs/knowledge-base/>Knowledge Base</a>
-</li>
-<li class="breadcrumb-item active" aria-current=page>
-<a href=/docs/knowledge-base/firmware-update/ aria-disabled=true class="btn-link disabled">Firmware Update</a>
-</li>
-</ol>
-</nav>
-<div class=td-content>
-<h1>Firmware Update</h1>
-<div class=lead>This guide shows you how to update the firmware on your Open Mower.</div>
-<header class=article-meta>
-</header>
-<h2 id=prerequisites>Prerequisites</h2>
-<p>This update guide assumes that you have the following:</p>
-<ul>
-<li>A mower with the OpenMowerOS running on it.</li>
-<li><strong>Important:</strong> verified that the <code>/boot/mower_config.sh</code> file has the correct hardware version set (OM_HARDWARE_VERSION). If this is wrong, the wrong firmware will be installed on your device. Check the <a href=/docs/knowledge-base/manual-firmware-installation>Manual Firmware Installation</a> guide on how to find that value.</li>
-<li>The Raspberry Pi is running, and you are able to connect to it via <code>ssh</code></li>
-<li>The mower is connected to the internet</li>
-</ul>
-<h2 id=step-1-run-the-firmware-update-script>Step 1: Run the Firmware Update Script</h2>
-<p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.</p>
-<p>In order to run the script, execute the following commands:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#8f5902;font-style:italic># Make sure that you are in your home directory (the script is located there):</span>
-<span style=color:#204a87>cd</span> ~
-<span style=color:#8f5902;font-style:italic># Execute the script:</span>
-./fetch_and_upload_firmware.sh
-</code></pre></div><p>If everything works as expected, the output should look like this:</p>
-<div class=container>
-<div class="row justify-content-md-center">
-<div id=player></div>
-</div>
-</div>
-<script>AsciinemaPlayer.create('538389.cast',document.getElementById('player'),{cols:80,rows:20,autoplay:!0,loop:!0})</script>
-<h2 id=step-2-done->Step 2: Done 🎉</h2>
-<p>That&rsquo;s everything you need to do.</p>
-<div class=section-index>
-</div>
-<div class="text-muted mt-5 pt-3 border-top">
-Last modified November 17, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/98a22ad81df39848ec9f403c2bd26e4b54e4a4da>Initial Commit (98a22ad)</a>
-</div>
-</div>
-</main>
-</div>
-</div>
-<footer class="bg-dark py-3 row d-print-none">
-<div class="container-fluid mx-sm-5">
-<div class=row>
-<div class="col-6 col-sm-4 text-xs-center order-sm-2">
-<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href=https://github.com/ClemensElflein/openmower.de/tree/main/content/en/docs/Knowledge-Base/firmware-update/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+<link rel=stylesheet href=/css/asciinema-player.css><script>$(function(){const e=Array.from(document.querySelectorAll("img:not(.nozoom)"));e.forEach(e=>{mediumZoom(e,{margin:80,container:null,template:null,background:"#fff"})})})</script></head><body class=td-section><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/><span class="navbar-brand__logo navbar-logo"><svg width="100%" height="100%" viewBox="0 0 1603 272" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"><g transform="matrix(1,0,0,1,-1803.38,-592.875)"><g transform="matrix(1,0,0,1,1803.38,592.875)"><rect id="Page-6" serif:id="Page 6" x="0" y="0" width="1603" height="272" style="fill:none"/><g id="Page-61" serif:id="Page 6"><g id="Layer-2" serif:id="Layer 2"/><g id="Layer-1" serif:id="Layer 1"><g transform="matrix(1,0,0,1,682.34,135.614)"><path d="M0 .001c0-26.444-20.203-47.93-46.647-47.93-26.627.0-46.828 21.486-46.828 47.93s20.201 47.93 46.828 47.93C-20.203 47.931.0 26.445.0.001m-108.715.0c0-34.157 26.627-61.336 62.068-61.336 35.259.0 61.887 27.179 61.887 61.336.0 34.158-26.628 61.335-61.887 61.335-35.441.0-62.068-27.177-62.068-61.335" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,793.816,174.547)"><path d="M0-24.241C0-43.155-13.222-57.112-31.036-57.112c-17.077.0-30.483 14.14-30.483 32.871.0 18.73 13.406 33.055 30.483 33.055C-13.222 8.814.0-5.142.0-24.241M-75.477-68.865h13.406v15.426c6.613-11.57 19.651-17.263 34.158-17.263 24.791.0 42.236 20.384 42.236 46.461.0 26.076-17.445 46.644-42.236 46.644-14.141.0-26.997-5.877-33.606-17.446V46.461H-75.477V-68.865z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,898.311,155.997)"><path d="M0-11.199C-1.469-27.727-14.139-39.665-29.751-39.665c-15.239.0-27.729 11.753-29.747 28.466H0zM-74.006-5.507c0-25.893 19.464-46.645 44.992-46.645 23.874.0 42.788 20.568 42.788 46.093C13.774-3.487 13.406-.733 13.406-.549H-59.498c2.202 17.814 15.977 29.016 32.503 29.016 10.102.0 20.202-3.49 27.547-9.551L6.613 29.2c-9.551 7.53-21.488 11.753-33.79 11.753-25.343.0-46.829-18.18-46.829-46.46" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,931.924,193.277)"><path d="M0-87.595H13.955v15.242C20.2-83.188 31.768-89.432 44.99-89.432c22.405.0 32.321 13.59 32.321 37.096V1.837H63.356V-50.501c0-16.526-6.06-25.341-22.221-25.341-15.976.0-27.18 12.487-27.18 27.363V1.837H0V-87.595z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1033.48,195.115)"><path d="M0-118.999H13.04L42.054-78.598c6.245 8.815 19.283 27.545 19.283 27.545S74.375-69.599 80.619-78.414l29.014-40.585h13.039V0H107.98V-94.208S104.858-88.515 99.166-80.618L61.337-27.363 23.324-80.986c-5.328-7.529-8.633-13.222-8.633-13.222V0H0V-118.999z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1257.71,150.305)"><path d="M0 .185C0-18.73-14.143-32.87-32.689-32.87S-65.378-18.73-65.378.185c0 18.73 14.143 32.871 32.689 32.871S0 18.915.0.185m-79.701.0c0-26.078 20.752-46.645 47.012-46.645 26.26.0 47.012 20.567 47.012 46.645.0 25.892-20.752 46.46-47.012 46.46S-79.701 26.077-79.701.185" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1278.65,195.665)"><path d="M0-89.983H13.774l20.2 58.947c2.021 6.061 3.122 13.04 3.122 13.04S37.829-24.975 39.666-30.852L57.848-89.983H70.886L89.248-30.852C91.085-24.975 91.822-17.996 91.822-17.996S92.739-24.975 94.944-31.036l20.2-58.947h13.77L98.063.0H85.945L67.396-59.131C65.742-64.273 64.457-72.17 64.457-72.17S63.356-64.273 61.703-59.131L42.789.0H30.852L0-89.983z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1488.01,155.997)"><path d="M0-11.199C-1.469-27.727-14.139-39.665-29.747-39.665c-15.243.0-27.729 11.753-29.751 28.466H0zM-74.005-5.507c0-25.893 19.467-46.645 44.991-46.645 23.874.0 42.788 20.568 42.788 46.093C13.774-3.487 13.406-.733 13.406-.549H-59.498c2.202 17.814 15.977 29.016 32.505 29.016 10.1.0 20.2-3.49 27.545-9.551L6.613 29.2c-9.551 7.53-21.485 11.753-33.79 11.753-25.343.0-46.828-18.18-46.828-46.46" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,1521.62,193.277)"><path d="M0-87.595H13.958v18.914c5.141-11.752 16.709-20.751 34.523-20.751V-74.19c-20.932.0-34.523 11.753-34.523 33.607V1.837H0V-87.595z" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,443.663,215.024)"><path d="M0-168.764c-20.152-7.619-55.244-16.164-111.279-16.164-131.42.0-216.297 69.461-220.007 78.844h84.164l40.032-40.032h75.709C-129.37-150.874-124.58-154.172-119.043-153.961-112.428-153.71-106.953-148.236-106.702-141.621-106.423-134.295-112.28-128.269-119.543-128.269-124.869-128.269-129.437-131.508-131.387-136.124h-71.564l-30.04 30.04h29.184c2.179-5.15899999999999 7.631-8.599 13.754-7.717C-184.355-112.98-179.828-108.277-179.194-102.555-178.335-94.801-184.383-88.237-191.964-88.237-197.289-88.237-201.857-91.476-203.807-96.092h-140.98C-355.74-90.576-365.733-85.284-374.561-80.449h37.022l24.976 24.976h64.275C-246.108-60.633-240.657-64.072-234.534-63.19-228.836-62.369-224.309-57.667-223.675-51.945-222.816-44.191-228.863-37.626-236.444-37.626-241.77-37.626-246.338-40.866-248.288-45.481h-68.415l-24.975-24.976h-50.658C-396.539-68.031-400.269-65.832-403.474-63.913-410.95-59.437-413.042-49.556-408.027-42.43l15.924 22.63-14.593 27.139C-408.842 11.329-405.952 16.164-401.422 16.164h280.591c6.404-11.907 7.75-14.41 14.154-26.316C-116.396-25.067-122.044-42.877-122.044-62.006c0-51.71 41.245-94.442 92.65-95.1C-23.568-157.181-12.548-157.189-2.134-157.175 4.528-157.166 6.231-166.408.0-168.764" style="fill:#fff;fill-rule:nonzero"/></g><g transform="matrix(1,0,0,1,416.751,121.094)"><path d="M0 63.847c-17.631.0-31.924-14.293-31.924-31.924C-31.924 14.292-17.631-.001.0-.001S31.924 14.292 31.924 31.923C31.924 49.554 17.631 63.847.0 63.847M84.791 22.474C82.795 22.474 81.074 21.034 80.763 19.062 78.71 6.077 73.604-5.886 66.2-16.078 65.025-17.697 65.217-19.931 66.632-21.345L66.639-21.352c1.598-1.599 1.598-4.192.0-5.791L59.066-34.715c-1.599-1.599-4.192-1.599-5.791.0L53.269-34.708C51.855-33.294 49.621-33.101 48.002-34.277c-10.193-7.404-22.156-12.51-35.141-14.562C10.889-49.151 9.449-50.871 9.449-52.869c0-2.261-1.833-4.094-4.094-4.094H-5.355c-2.261.0-4.095 1.833-4.095 4.094.0 1.998-1.438 3.718-3.411 4.03-12.985 2.052-24.948 7.158-35.14 14.562C-49.619-33.101-51.853-33.294-53.269-34.708L-53.275-34.715c-1.599-1.599-4.192-1.599-5.79.0L-66.638-27.143C-68.237-25.544-68.237-22.951-66.638-21.352L-66.631-21.345C-65.217-19.931-65.024-17.696-66.2-16.078-73.604-5.886-78.71 6.077-80.763 19.062-81.074 21.034-82.794 22.474-84.791 22.474c-2.262.0-4.095 1.833-4.095 4.095V37.278c0 2.261 1.833 4.095 4.095 4.095C-82.794 41.373-81.074 42.812-80.763 44.785-78.71 57.769-73.604 69.732-66.2 79.925-65.024 81.543-65.217 83.777-66.631 85.192L-66.638 85.199C-68.237 86.797-68.237 89.39-66.638 90.989L-59.065 98.562c1.598 1.599 4.191 1.599 5.79.0L-53.269 98.555C-51.853 97.14-49.619 96.948-48.001 98.123c10.192 7.404 22.155 12.511 35.14 14.563C-10.888 112.997-9.45 114.718-9.45 116.715c0 2.262 1.834 4.095 4.095 4.095H5.355c2.261.0 4.094-1.833 4.094-4.095.0-1.997 1.44-3.718 3.412-4.029C25.846 110.634 37.809 105.527 48.002 98.123 49.621 96.948 51.855 97.14 53.269 98.555L53.275 98.562c1.599 1.599 4.192 1.599 5.791.0L66.639 90.989C68.237 89.39 68.237 86.798 66.639 85.199L66.632 85.192C65.217 83.777 65.025 81.543 66.2 79.925c7.404-10.193 12.51-22.156 14.563-35.14C81.074 42.812 82.795 41.373 84.791 41.373c2.262.0 4.095-1.834 4.095-4.095V26.569c0-2.262-1.833-4.095-4.095-4.095" style="fill:#fff;fill-rule:nonzero"/></g></g></g></g></g></svg></span></a><div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mr-4 mb-2 mb-lg-0"><a class="nav-link active" href=/docs/><span class=active>Documentation</span></a></li><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=/community/><span>Community</span></a></li></ul></div><div class="navbar-nav d-none d-lg-block"></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-section-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="collapse td-sidebar-nav foldable-nav" id=td-section-nav><ul class="td-sidebar-nav__section pr-md-3 ul-0"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docs-li><a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docs><span>Documentation</span></a><ul class=ul-1><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsoverview-li><input type=checkbox id=m-docsoverview-check>
+<label for=m-docsoverview-check><a href=/docs/overview/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsoverview><span>Overview</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsgetting-started-li><input type=checkbox id=m-docsgetting-started-check>
+<label for=m-docsgetting-started-check><a href=/docs/getting-started/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsgetting-started><span>Getting Started</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assembly-li><input type=checkbox id=m-docsrobot-assembly-check>
+<label for=m-docsrobot-assembly-check><a href=/docs/robot-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assembly><span>Robot Assembly</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyprepare-the-parts-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-parts-check>
+<label for=m-docsrobot-assemblyprepare-the-parts-check><a href=/docs/robot-assembly/prepare-the-parts/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-parts><span>Prepare the Parts</span></a></label><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-check>
+<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-gps-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-gps/ title="Prepare the GPS" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-gps><span>GPS</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-check>
+<label for=m-docsrobot-assemblyprepare-the-partsprepare-sd-card-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-sd-card/ title="Prepare the SD Card" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-sd-card><span>SD Card</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-check>
+<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-robot-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-robot/ title="Prepare the Robot" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robot><span>Chassis</span></a></label><ul class="ul-4 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-check>
+<label for=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-the-robot/photo-guide/ title="Disassembling the YardForce Classic 500" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-the-robotphoto-guide><span>Photo Guide</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check>
+<label for=m-docsrobot-assemblyprepare-the-partsprepare-mainboard-check><a href=/docs/robot-assembly/prepare-the-parts/prepare-mainboard/ title="Prepare the Mainboard" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsprepare-mainboard><span>Mainboard</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyprepare-the-partsmisc-li><input type=checkbox id=m-docsrobot-assemblyprepare-the-partsmisc-check>
+<label for=m-docsrobot-assemblyprepare-the-partsmisc-check><a href=/docs/robot-assembly/prepare-the-parts/misc/ title="Miscellaneous parts" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyprepare-the-partsmisc><span>Misc</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsrobot-assemblyassemble-the-robot-li><input type=checkbox id=m-docsrobot-assemblyassemble-the-robot-check>
+<label for=m-docsrobot-assemblyassemble-the-robot-check><a href=/docs/robot-assembly/assemble-the-robot/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robot><span>Assemble the Robot</span></a></label><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyassemble-the-robotphoto-guide-li><input type=checkbox id=m-docsrobot-assemblyassemble-the-robotphoto-guide-check>
+<label for=m-docsrobot-assemblyassemble-the-robotphoto-guide-check><a href=/docs/robot-assembly/assemble-the-robot/photo-guide/ title="Assembling the YardForce Classic 500" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyassemble-the-robotphoto-guide><span>Photo Guide</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrobot-assemblyfirst-startup-li><input type=checkbox id=m-docsrobot-assemblyfirst-startup-check>
+<label for=m-docsrobot-assemblyfirst-startup-check><a href=/docs/robot-assembly/first-startup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsrobot-assemblyfirst-startup><span>First Startup</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdocking-station-assembly-li><input type=checkbox id=m-docsdocking-station-assembly-check>
+<label for=m-docsdocking-station-assembly-check><a href=/docs/docking-station-assembly/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdocking-station-assembly><span>Docking Station Assembly</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscover-ui-assembly-li><input type=checkbox id=m-docscover-ui-assembly-check>
+<label for=m-docscover-ui-assembly-check><a href=/docs/cover-ui-assembly/ title="Cover UI board assembly" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscover-ui-assembly><span>Cover UI</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docssoftware-setup-li><input type=checkbox id=m-docssoftware-setup-check>
+<label for=m-docssoftware-setup-check><a href=/docs/software-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setup><span>Software Setup</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setupconfiguring-wifi-li><input type=checkbox id=m-docssoftware-setupconfiguring-wifi-check>
+<label for=m-docssoftware-setupconfiguring-wifi-check><a href=/docs/software-setup/configuring-wifi/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setupconfiguring-wifi><span>Configuring Wi-Fi</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docssoftware-setuprecord-a-map-li><input type=checkbox id=m-docssoftware-setuprecord-a-map-check>
+<label for=m-docssoftware-setuprecord-a-map-check><a href=/docs/software-setup/record-a-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docssoftware-setuprecord-a-map><span>Record a Map</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsknowledge-base-li><input type=checkbox id=m-docsknowledge-base-check checked>
+<label for=m-docsknowledge-base-check><a href=/docs/knowledge-base/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-base><span>Knowledge Base</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseneopixel-led-colors-li><input type=checkbox id=m-docsknowledge-baseneopixel-led-colors-check>
+<label for=m-docsknowledge-baseneopixel-led-colors-check><a href=/docs/knowledge-base/neopixel-led-colors/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-baseneopixel-led-colors><span>Neopixel LED Colors</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-gps-li><input type=checkbox id=m-docsknowledge-basertk-gps-check>
+<label for=m-docsknowledge-basertk-gps-check><a href=/docs/knowledge-base/rtk-gps/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-gps><span>GPS / Coordinate System</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basethe-map-li><input type=checkbox id=m-docsknowledge-basethe-map-check>
+<label for=m-docsknowledge-basethe-map-check><a href=/docs/knowledge-base/the-map/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basethe-map><span>The Map</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsknowledge-basefirmware-update-li><input type=checkbox id=m-docsknowledge-basefirmware-update-check checked>
+<label for=m-docsknowledge-basefirmware-update-check><a href=/docs/knowledge-base/firmware-update/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basefirmware-update><span class=td-sidebar-nav-active-item>Firmware Update</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basemanual-firmware-installation-li><input type=checkbox id=m-docsknowledge-basemanual-firmware-installation-check>
+<label for=m-docsknowledge-basemanual-firmware-installation-check><a href=/docs/knowledge-base/manual-firmware-installation/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basemanual-firmware-installation><span>Manual Firmware Installation</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-basertk-base-setup-li><input type=checkbox id=m-docsknowledge-basertk-base-setup-check>
+<label for=m-docsknowledge-basertk-base-setup-check><a href=/docs/knowledge-base/rtk-base-setup/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsknowledge-basertk-base-setup><span>GPS Base Setup</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsknowledge-baseshopping-list-li><input type=checkbox id=m-docsknowledge-baseshopping-list-check>
+<label for=m-docsknowledge-baseshopping-list-check><a href=/docs/knowledge-base/shopping-list/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsknowledge-baseshopping-list><span>Shopping List</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docscontributions-li><input type=checkbox id=m-docscontributions-check>
+<label for=m-docscontributions-check><a href=/docs/contributions/ title="User Contributions" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributions><span>Contributions</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscontributionsincrease-mower-motor-current-li><input type=checkbox id=m-docscontributionsincrease-mower-motor-current-check>
+<label for=m-docscontributionsincrease-mower-motor-current-check><a href=/docs/contributions/increase-mower-motor-current/ title="Increase mower motor to 6A" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributionsincrease-mower-motor-current><span>Mower motor to 6A</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docscontributionsmount-wheel-spikes-li><input type=checkbox id=m-docscontributionsmount-wheel-spikes-check>
+<label for=m-docscontributionsmount-wheel-spikes-check><a href=/docs/contributions/mount-wheel-spikes/ title="Mounting RoboClaws wheel spikes" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docscontributionsmount-wheel-spikes><span>Wheel spikes</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversions-li><input type=checkbox id=m-docsversions-check>
+<label for=m-docsversions-check><a href=/docs/versions/ title="Hardware Versions / Known Issues" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversions><span>Hardware Versions</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsversionserrata-li><input type=checkbox id=m-docsversionserrata-check>
+<label for=m-docsversionserrata-check><a href=/docs/versions/errata/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrata><span>Known Issues</span></a></label><ul class="ul-3 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserrataic2-is-wrong-li><input type=checkbox id=m-docsversionserrataic2-is-wrong-check>
+<label for=m-docsversionserrataic2-is-wrong-check><a href=/docs/versions/errata/ic2-is-wrong/ title="IC2 is INA180A3IDBVR which has inadequate voltage range" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrataic2-is-wrong><span>INA180A3IDBVR breaks</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserrataoutdated-firmware-li><input type=checkbox id=m-docsversionserrataoutdated-firmware-check>
+<label for=m-docsversionserrataoutdated-firmware-check><a href=/docs/versions/errata/outdated-firmware/ title="Outdated firmware in the kit" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserrataoutdated-firmware><span>Outdated firmware</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsversionserratawrong-rain-sensor-cable-li><input type=checkbox id=m-docsversionserratawrong-rain-sensor-cable-check>
+<label for=m-docsversionserratawrong-rain-sensor-cable-check><a href=/docs/versions/errata/wrong-rain-sensor-cable/ title="Rain sensor cable is female, but male is needed" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsversionserratawrong-rain-sensor-cable><span>Rain cable is incorrect</span></a></label></li></ul></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docstroubleshooting-li><input type=checkbox id=m-docstroubleshooting-check>
+<label for=m-docstroubleshooting-check><a href=/docs/troubleshooting/ title="Troubleshooting Guides" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshooting><span>Troubleshooting</span></a></label><ul class="ul-2 foldable"><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootinggps-rtk-li><input type=checkbox id=m-docstroubleshootinggps-rtk-check>
+<label for=m-docstroubleshootinggps-rtk-check><a href=/docs/troubleshooting/gps-rtk/ title="Troubleshooting GPS-RTK" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootinggps-rtk><span>GPS-RTK</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingmap-li><input type=checkbox id=m-docstroubleshootingmap-check>
+<label for=m-docstroubleshootingmap-check><a href=/docs/troubleshooting/map/ title="Troubleshoot mapping/recording areas" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingmap><span>Map</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingraspberry-pi-li><input type=checkbox id=m-docstroubleshootingraspberry-pi-check>
+<label for=m-docstroubleshootingraspberry-pi-check><a href=/docs/troubleshooting/raspberry-pi/ title="Raspberry Pi 4" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingraspberry-pi><span>Raspberry Pi</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docstroubleshootingwifi-li><input type=checkbox id=m-docstroubleshootingwifi-check>
+<label for=m-docstroubleshootingwifi-check><a href=/docs/troubleshooting/wifi/ title="Troubleshoot Wi-Fi" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docstroubleshootingwifi><span>Wi-Fi</span></a></label></li></ul></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslinks-li><input type=checkbox id=m-docslinks-check>
+<label for=m-docslinks-check><a href=/docs/links/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docslinks><span>Links</span></a></label></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docslegal-li><input type=checkbox id=m-docslegal-check>
+<label for=m-docslegal-check><a href=/docs/legal/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docslegal><span>Legal</span></a></label></li></ul></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-10 pl-md-5" role=main><nav aria-label=breadcrumb class=td-breadcrumbs><ol class=breadcrumb><li class=breadcrumb-item><a href=/docs/>Documentation</a></li><li class=breadcrumb-item><a href=/docs/knowledge-base/>Knowledge Base</a></li><li class="breadcrumb-item active" aria-current=page><a href=/docs/knowledge-base/firmware-update/ aria-disabled=true class="btn-link disabled">Firmware Update</a></li></ol></nav><div class=td-content><h1>Firmware Update</h1><div class=lead>This guide shows you how to update the firmware on your Open Mower.</div><header class=article-meta></header><h2 id=prerequisites>Prerequisites</h2><p>This update guide assumes that you have the following:</p><ul><li>A mower with the OpenMowerOS running on it.</li><li><strong>Important:</strong> verified that the <code>/boot/mower_config.sh</code> file has the correct hardware version set (OM_HARDWARE_VERSION). If this is wrong, the wrong firmware will be installed on your device. Check the <a href=/docs/knowledge-base/manual-firmware-installation>Manual Firmware Installation</a> guide on how to find that value.</li><li>The Raspberry Pi is running, and you are able to connect to it via <code>ssh</code></li><li>The mower is connected to the internet</li></ul><h2 id=step-1-run-the-firmware-update-script>Step 1: Run the Firmware Update Script</h2><p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.</p><p>In order to run the script, execute the following commands:</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Make sure that you are in your home directory (the script is located there):</span>
+</span></span><span style=display:flex><span><span style=color:#204a87>cd</span> ~
+</span></span><span style=display:flex><span><span style=color:#8f5902;font-style:italic># Execute the script:</span>
+</span></span><span style=display:flex><span>./fetch_and_upload_firmware.sh
+</span></span></code></pre></div><p>If everything works as expected, the output should look like this:</p><div class=container><div class="row justify-content-md-center"><div id=player></div></div></div><script>AsciinemaPlayer.create("538389.cast",document.getElementById("player"),{cols:80,rows:20,autoplay:!0,loop:!0})</script><h2 id=step-2-done->Step 2: Done 🎉</h2><p>That&rsquo;s everything you need to do.</p><div class=section-index></div><div class="text-muted mt-5 pt-3 border-top">Last modified November 17, 2022: <a href=https://github.com/ClemensElflein/openmower.de/commit/98a22ad81df39848ec9f403c2bd26e4b54e4a4da>Initial Commit (98a22ad)</a></div></div></main></div></div><footer class="bg-dark py-3 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"><a href=https://github.com/ClemensElflein/openmower.de/tree/main/content/en/docs/Knowledge-Base/firmware-update/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
 <a href=https://github.com/ClemensElflein/openmower.de/edit/main/content/en/docs/Knowledge-Base/firmware-update/_index.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-<a href="https://github.com/ClemensElflein/openmower.de/new/main/content/en/docs/Knowledge-Base/firmware-update/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+<a href="https://github.com/ClemensElflein/openmower.de/new/main/content/en/docs/Knowledge-Base/firmware-update/_index.md?filename=change-me.md&amp;value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
 <a href="https://github.com/ClemensElflein/openmower.de/issues/new?title=Firmware%20Update" class=td-page-meta--issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
-<a href=https://github.com/ClemensElflein/OpenMower/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a>
-</div>
-</div>
-<div class="py-4 col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
-<a class=text-white target=_blank rel=noopener href=https://github.com/ClemensElflein/OpenMower aria-label=GitHub>
-<i class="fab fa-github"></i>
-</a>
-</li>
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord>
-<a class=text-white target=_blank rel=noopener href=https://discord.gg/jE7QNaSxW7 aria-label=Discord>
-<i class="fab fa-discord"></i>
-</a>
-</li>
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Support on Patreon" aria-label="Support on Patreon">
-<a class=text-white target=_blank rel=noopener href=https://patreon.com/ClemensElflein aria-label="Support on Patreon">
-<i class="fa-brands fa-patreon"></i>
-</a>
-</li>
-</ul>
-</div>
-<div class="py-4 col-12 col-sm-4 text-center py-2 order-sm-2">
-<small class=text-white>&copy; 2023 x-tech UG (haftungsbeschränkt) All Rights Reserved</small>
+<a href=https://github.com/ClemensElflein/OpenMower/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fa-solid fa-list-check fa-fw"></i> Create project issue</a></div></div><div class="py-4 col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank rel=noopener href=https://github.com/ClemensElflein/OpenMower aria-label=GitHub><i class="fab fa-github"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Discord aria-label=Discord><a class=text-white target=_blank rel=noopener href=https://discord.gg/jE7QNaSxW7 aria-label=Discord><i class="fab fa-discord"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Support on Patreon" aria-label="Support on Patreon"><a class=text-white target=_blank rel=noopener href=https://patreon.com/ClemensElflein aria-label="Support on Patreon"><i class="fa-brands fa-patreon"></i></a></li></ul></div><div class="py-4 col-12 col-sm-4 text-center py-2 order-sm-2"><small class=text-white>&copy; 2023 x-tech UG (haftungsbeschränkt) All Rights Reserved</small>
 <small class=ml-1><a href=https://itrk.legal/zNs.8U.u9o.html target=_blank rel=noopener>Privacy Policy</a></small>
-<a href="https://itrk.legal/zNs.8U.u9o.html?imp=1">Imprint</a>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<script src=/js/main.min.8741557c571337827a7eb4977ad59c86860ae95b8e86a17138d36f059fa5fe23.js integrity="sha256-h0FVfFcTN4J6frSXetWchoYK6VuOhqFxONNvBZ+l/iM=" crossorigin=anonymous></script>
+<a href="https://itrk.legal/zNs.8U.u9o.html?imp=1">Imprint</a></div></div></div></footer></div><script src=/js/main.min.be25a680a0d95dc8b5d6664622e2134aa894220e2f224ef609e00f633a3a1b32.js integrity="sha256-viWmgKDZXci11mZGIuITSqiUIg4vIk72CeAPYzo6GzI=" crossorigin=anonymous></script>
 <script src=/js/tabpane-persist.js></script>
 <script type=text/javascript src=/js/lightbox.js></script>
-<link rel=stylesheet href=/css/lightbox.css>
-</body>
-</html>
+<link rel=stylesheet href=/css/lightbox.css></body></html>

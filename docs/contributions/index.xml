@@ -4,4 +4,89 @@
 Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
 &lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
 &lt;p>Instructions:
-Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item></channel></rss>
+Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/mount-wheel-spikes/</guid><description>
+&lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
+&lt;p>There are two YardForce spikes on Amazon (and other sites like Etsy): &lt;a href="https://www.mibrobo.de/product/yardforce-classic-500-models-184-mibrobo-blackline-spikes-incl-wheel-extension-eng/119">Mibrobo&lt;/a> and &lt;a href="https://www.etsy.com/listing/1009079264/lawn-robot-spikes-for-yardforce-robotics">RoboClaws&lt;/a>.
+This photo guide is about RoboClaws.&lt;/p>
+&lt;p>In short:&lt;/p>
+&lt;ul>
+&lt;li>remove wheels&lt;/li>
+&lt;li>(optionally) pre-drill holes, but people reported success even without that&lt;/li>
+&lt;li>attach spikes from inside&lt;/li>
+&lt;li>assemble back&lt;/li>
+&lt;/ul>
+&lt;p>Results:&lt;/p>
+&lt;ul>
+&lt;li>much better traction on grass&lt;/li>
+&lt;li>noise on paving&lt;/li>
+&lt;li>probable damage to tiles&lt;/li>
+&lt;/ul>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>
+&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_1600x1600_fit_q99_catmullrom.jpg" title="1 Remove the cover" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_400x400_fill_q95_catmullrom_smart1.jpg" alt="1 Remove the cover" title="1 Remove the cover">
+&lt;span title="1 Remove the cover">1 Remove the cover&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_1600x1600_fit_q99_catmullrom.jpg" title="2 Pry the wheel covers" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_400x400_fill_q95_catmullrom_smart1.jpg" alt="2 Pry the wheel covers" title="2 Pry the wheel covers">
+&lt;span title="2 Pry the wheel covers">2 Pry the wheel covers&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_1600x1600_fit_q99_catmullrom.jpg" title="3 Unscrew the nut" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_400x400_fill_q95_catmullrom_smart1.jpg" alt="3 Unscrew the nut" title="3 Unscrew the nut">
+&lt;span title="3 Unscrew the nut">3 Unscrew the nut&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_1600x1600_fit_q99_catmullrom.jpg" title="4 Pull the wheel to remove it" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_400x400_fill_q95_catmullrom_smart1.jpg" alt="4 Pull the wheel to remove it" title="4 Pull the wheel to remove it">
+&lt;span title="4 Pull the wheel to remove it">4 Pull the wheel to remove it&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_c6a59a6ed6aac85518adb3cb5b191747.jpg" title="5 Align the spikes from inside so platic is seen in all holes" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_225e4db38a082ecb14b107d64ff7b388.jpg" alt="5 Align the spikes from inside so platic is seen in all holes" title="5 Align the spikes from inside so platic is seen in all holes">
+&lt;span title="5 Align the spikes from inside so platic is seen in all holes">5 Align the spikes from inside so platic is seen in all holes&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_1600x1600_fit_q99_catmullrom.jpg" title="6 Plastic will cover approximately half of the hole" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_400x400_fill_q95_catmullrom_smart1.jpg" alt="6 Plastic will cover approximately half of the hole" title="6 Plastic will cover approximately half of the hole">
+&lt;span title="6 Plastic will cover approximately half of the hole">6 Plastic will cover approximately half of the hole&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_491de1abb23a47659ca288767b94d2a0.jpg" title="7 Optionally pre-drill 2mm holes, try to stay within plastic" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_745a41cc1dc9b5f55d180796e57ff396.jpg" alt="7 Optionally pre-drill 2mm holes, try to stay within plastic" title="7 Optionally pre-drill 2mm holes, try to stay within plastic">
+&lt;span title="7 Optionally pre-drill 2mm holes, try to stay within plastic">7 Optionally pre-drill 2mm holes, try to stay within plastic&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_1600x1600_fit_q99_catmullrom.jpg" title="8 Screw the screws, don&amp;#39;t overtight" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_400x400_fill_q95_catmullrom_smart1.jpg" alt="8 Screw the screws, don&amp;#39;t overtight" title="8 Screw the screws, don&amp;#39;t overtight">
+&lt;span title="8 Screw the screws, don&amp;#39;t overtight">8 Screw the screws, don&amp;#39;t overtight&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_1600x1600_fit_q99_catmullrom.jpg" title="9 Assemble them back" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_400x400_fill_q95_catmullrom_smart1.jpg" alt="9 Assemble them back" title="9 Assemble them back">
+&lt;span title="9 Assemble them back">9 Assemble them back&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="/photo-guide/wheel-spikes/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_1600x1600_fit_q99_catmullrom.jpg" title="A Close the cover" class="lightbox-image">
+&lt;img class="nozoom" src="/photo-guide/wheel-spikes/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_400x400_fill_q95_catmullrom_smart1.jpg" alt="A Close the cover" title="A Close the cover">
+&lt;span title="A Close the cover">A Close the cover&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

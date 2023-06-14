@@ -61,9 +61,10 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;li>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/li>
 &lt;/ul>
 &lt;p>An example:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> OM_VERSION
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> OM_VERSION
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
 &lt;p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
 &lt;div class="spoiler panel panel-default "
@@ -77,103 +78,128 @@ Click to see annotated config code
 &lt;/div>
 &lt;div class="panel-collapse collapse "
 id="mower_config_example">
-&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">## Important Settings ##&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Most of the time you must modify those settings, so they are moved to the beginning of document from their respective sections&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Refer to documentation for more info: https://openmower.de/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#step-2-configure-open-mower&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://openmower.de/docs/versions/) for the firmware versions.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_13_X: Use this if you have 0.13.x mainboard with LSM6DSOTR (default).&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_12_X_LSM6DSO: Use this if you have an LSM6DSOTR and have a 0.12.x mainboard.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_11_X_WT901: Use this if you have an WT901 and have a 0.11.x mainboard.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_WT901: Use this if you have an WT901 and have a 0.10.x mainboard.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_MPU9250: Use this if you have an MPU9250 and have a 0.10.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_WT901_INSTEAD_OF_SOUND: Use this if you have soldered the WT901 in the sound module&amp;#39;s slot and have a 0.9.x mainboard.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_MPU9250: Use this if you have an MPU9250 and have a 0.9.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_HARDWARE_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0_13_X&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Uncomment and set to coordinates near your future docking station, this will be your map origin.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># There might be a case that you don&amp;#39;t need those if you using OM_USE_RELATIVE_POSITION=True&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LAT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>48.CHANGEME
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LONG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>11.CHANGEME
-&lt;span style="color:#8f5902;font-style:italic"># NTRIP Settings&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Set to False if using external radio plugged into the Ardusimple board.&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_NTRIP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>True
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_HOSTNAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>192.168.178.55
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2101&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_ENDPOINT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>BASE1
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">## Hardware Specific Settings ##&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># The type of mower you&amp;#39;re using, used to get some hardware parameters automatically&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Currently supported:&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># YardForce500&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># YardForceSA650&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># CUSTOM (put your configs in ~/mower_params/)&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;YardForce500&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Select your ESC type&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># xesc_mini: for the STM32 version (VESC)&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># xesc_2040: for the RP2040 version (very experimental!)&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_ESC_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xesc_mini&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Select your gamepad&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Currently supported: ps3, steam_stick, steam_touch, xbox360&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_GAMEPAD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xbox360&amp;#34;&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Set to true to record your session.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Output will be stored in your $HOME&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># export OM_ENABLE_RECORDING_ALL=False&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">## GPS Settings ##&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Relative Positioning vs LatLng coordinates&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=False, we&amp;#39;re using an arbitrary point as map origin. This point is called the DATUM point and&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># needs to be set using OM_DATUM_LAT and OM_DATUM_LONG below.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=True, we&amp;#39;re using the ublox NAVRELPOSNED messages as position.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># This makes your base station the map origin&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it&amp;#39;s also more compatible overall.&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_RELATIVE_POSITION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
-&lt;span style="color:#8f5902;font-style:italic"># GPS protocol. Use UBX for u-blox chipsets and NMEA for everything else&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UBX
-&lt;span style="color:#8f5902;font-style:italic"># If you want to use F9R&amp;#39;s sensor fusion, set this to true (you will also need to set DATUM_LAT and DATUM_LONG.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Consider this option unstable, since I don&amp;#39;t have the F9R anymore, so I&amp;#39;m not able to test this.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># IF YOU DONT KNOW WHAT THIS IS, SET IT TO FALSE&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_F9R_SENSOR_FUSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">## Mower Logic Settings ##&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># The distance to drive forward AFTER reaching the second docking point&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DOCKING_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1.0
-&lt;span style="color:#8f5902;font-style:italic"># The distance to drive for undocking. This needs to be large enough for the robot to have GPS reception&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_UNDOCK_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2.0
-&lt;span style="color:#8f5902;font-style:italic"># How many outlines should the mover drive. It&amp;#39;s not recommended to set this below 4.&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_COUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Mowing angle offset -180 deg - +180 deg, 0 = east, -90 = north. If mowing angle offset is not absolute it gets added to the auto detected angle which is set by the first 2 m of recorded outline.&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET_IS_ABSOLUTE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
-&lt;span style="color:#8f5902;font-style:italic"># The width of mowing paths.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># Choose it smaller than your actual mowing tool in order to have some overlap.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># 0.13 works well for the Classic 500.&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_TOOL_WIDTH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.13
-&lt;span style="color:#8f5902;font-style:italic"># Voltages for battery to be considered full or empty&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_EMPTY_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>23.0
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_FULL_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>28.0
-&lt;span style="color:#8f5902;font-style:italic"># Mower motor temperatures to stop and start mowing&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_HIGH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>80.0
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_LOW&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>40.0
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_WAIT_TIME_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>10.0
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_TIMEOUT_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5.0
-&lt;span style="color:#8f5902;font-style:italic"># Mowing Behavior Settings&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># True to enable mowing motor&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_ENABLE_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># True to start mowing automatically. If this is false, you need to start manually by pressing the start button&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_AUTOMATIC_START&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">false&lt;/span>
-&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.05
-&lt;span style="color:#8f5902;font-style:italic"># source the default values for the hardware platform.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># you only need this line on non-docker installs. in the docker, it will be done automatically.&lt;/span>
-&lt;span style="color:#8f5902;font-style:italic"># source $(rospack find open_mower)/params/hardware_specific/$OM_MOWER/default_environment.sh&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Important Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Most of the time you must modify those settings, so they are moved to the beginning of document from their respective sections&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Refer to documentation for more info: https://openmower.de/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#step-2-configure-open-mower&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://openmower.de/docs/versions/) for the firmware versions.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_13_X: Use this if you have 0.13.x mainboard with LSM6DSOTR (default).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_12_X_LSM6DSO: Use this if you have an LSM6DSOTR and have a 0.12.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_11_X_WT901: Use this if you have an WT901 and have a 0.11.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_WT901: Use this if you have an WT901 and have a 0.10.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_MPU9250: Use this if you have an MPU9250 and have a 0.10.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_WT901_INSTEAD_OF_SOUND: Use this if you have soldered the WT901 in the sound module&amp;#39;s slot and have a 0.9.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_MPU9250: Use this if you have an MPU9250 and have a 0.9.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_HARDWARE_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0_13_X&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Uncomment and set to coordinates near your future docking station, this will be your map origin.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># There might be a case that you don&amp;#39;t need those if you using OM_USE_RELATIVE_POSITION=True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LAT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>48.CHANGEME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LONG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>11.CHANGEME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># NTRIP Settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Set to False if using external radio plugged into the Ardusimple board.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_NTRIP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_HOSTNAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>192.168.178.55
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2101&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_ENDPOINT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>BASE1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Hardware Specific Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The type of mower you&amp;#39;re using, used to get some hardware parameters automatically&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Currently supported:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># YardForce500&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># YardForceSA650&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># CUSTOM (put your configs in ~/mower_params/)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;YardForce500&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select your ESC type&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># xesc_mini: for the STM32 version (VESC)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># xesc_2040: for the RP2040 version (very experimental!)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_ESC_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xesc_mini&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select your gamepad&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Currently supported: ps3, steam_stick, steam_touch, xbox360&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_GAMEPAD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xbox360&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Set to true to record your session.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Output will be stored in your $HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_ENABLE_RECORDING_ALL=False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## GPS Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Relative Positioning vs LatLng coordinates&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=False, we&amp;#39;re using an arbitrary point as map origin. This point is called the DATUM point and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># needs to be set using OM_DATUM_LAT and OM_DATUM_LONG below.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=True, we&amp;#39;re using the ublox NAVRELPOSNED messages as position.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># This makes your base station the map origin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it&amp;#39;s also more compatible overall.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_RELATIVE_POSITION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># GPS protocol. Use UBX for u-blox chipsets and NMEA for everything else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UBX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If you want to use F9R&amp;#39;s sensor fusion, set this to true (you will also need to set DATUM_LAT and DATUM_LONG.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Consider this option unstable, since I don&amp;#39;t have the F9R anymore, so I&amp;#39;m not able to test this.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># IF YOU DONT KNOW WHAT THIS IS, SET IT TO FALSE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_F9R_SENSOR_FUSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Mower Logic Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The distance to drive forward AFTER reaching the second docking point&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DOCKING_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The distance to drive for undocking. This needs to be large enough for the robot to have GPS reception&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_UNDOCK_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># How many outlines should the mover drive. It&amp;#39;s not recommended to set this below 4.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_COUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mowing angle offset -180 deg - +180 deg, 0 = east, -90 = north. If mowing angle offset is not absolute it gets added to the auto detected angle which is set by the first 2 m of recorded outline.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET_IS_ABSOLUTE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The width of mowing paths.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Choose it smaller than your actual mowing tool in order to have some overlap.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0.13 works well for the Classic 500.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_TOOL_WIDTH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.13
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Voltages for battery to be considered full or empty&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_EMPTY_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>23.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_FULL_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>28.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mower motor temperatures to stop and start mowing&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_HIGH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>80.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_LOW&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>40.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_WAIT_TIME_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>10.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_TIMEOUT_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mowing Behavior Settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># True to enable mowing motor&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_ENABLE_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># True to start mowing automatically. If this is false, you need to start manually by pressing the start button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_AUTOMATIC_START&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.05
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># source the default values for the hardware platform.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># you only need this line on non-docker installs. in the docker, it will be done automatically.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># source $(rospack find open_mower)/params/hardware_specific/$OM_MOWER/default_environment.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>

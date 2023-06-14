@@ -79,11 +79,11 @@
 &lt;h2 id="step-1-run-the-firmware-update-script">Step 1: Run the Firmware Update Script&lt;/h2>
 &lt;p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.&lt;/p>
 &lt;p>In order to run the script, execute the following commands:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
-&lt;span style="color:#204a87">cd&lt;/span> ~
-&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
-./fetch_and_upload_firmware.sh
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>If everything works as expected, the output should look like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./fetch_and_upload_firmware.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If everything works as expected, the output should look like this:&lt;/p>
 &lt;div class="container">
 &lt;div class="row justify-content-md-center">
 &lt;div id="player" class="">&lt;/div>

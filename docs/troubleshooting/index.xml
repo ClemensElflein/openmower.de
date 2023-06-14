@@ -23,31 +23,31 @@ Even indoors next to the windows with antenna connected, you should see satellit
 If you don&amp;rsquo;t have dock station assembled and want to save the power in the main mower battery, you can power it from the Pico Dev board MicroUSB port, right below the GPS board. Use a 1A+ power bank, because computer USB port&amp;rsquo;s 500mA might be not enough.
 &lt;/div>
 &lt;p>Then SSH into OpenMower console. In the home directory there&amp;rsquo;s do &lt;code>./start_ros_bash.sh&lt;/code> which should take you to a bash inside the docker, then you can do &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo -c -w 5 /xbot_driver_gps/xb_pose&lt;/code> to look at the GPS data. There&amp;rsquo;s a position and some accuracy number in meters.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">seq&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">318&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">frame_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gps&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_vector_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">position_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.021&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># this is good&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3.141&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/map/</guid><description>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">seq&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">318&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">frame_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gps&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_vector_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">position_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.021&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># this is good&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3.141&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/map/</guid><description>
 &lt;p>We assume that you at least followed &lt;a href="/docs/software-setup/record-a-map/">Record a map&lt;/a>.&lt;/p>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/root/ros_home/.ros/map.bag
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
 &lt;p>If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
-sudo service openmower stop
-&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
-ls /root/ros_home/.ros/map.bag
-&lt;span style="color:#8f5902;font-style:italic"># delete map&lt;/span>
-sudo rm /root/ros_home/.ros/map.bag
-&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
-sudo service openmower start
-&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="map-editor">Map Editor&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo service openmower stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete map&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rm /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo service openmower start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="map-editor">Map Editor&lt;/h1>
 &lt;p>There&amp;rsquo;s a WIP map editor made by Nekraus, JavaBoon and Eddi using Python, which you can try and use to fix your map or add in obstacles.&lt;/p>
 &lt;p>&lt;a href="https://github.com/0815eddi/OpenMower/blob/main/utils/map/mowareareader.py">Map editor&lt;/a>&lt;/p></description></item><item><title>Docs: Raspberry Pi 4</title><link>/docs/troubleshooting/raspberry-pi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/troubleshooting/raspberry-pi/</guid><description>
 &lt;p>Follow the &lt;a href="/docs/robot-assembly/prepare-the-parts/prepare-sd-card/">SD Card preparation step&lt;/a> and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.&lt;/p>
@@ -70,50 +70,51 @@ Click to see sample cold start startup log
 &lt;/div>
 &lt;div class="panel-collapse collapse "
 id="openmower_status_log">
-&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">● openmower.service - OpenMower service
-Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
-Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
-Main PID: 1539 (start_open_mowe)
-Tasks: 9 (limit: 4164)
-CPU: 295ms
-CGroup: /system.slice/open-mower.service
-├─1539 /bin/bash /root/start_open_mower.sh
-└─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
-Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
-Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
-Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
-Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
-Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
-Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
-Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
-Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
-Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
-Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
-Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
-Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
-Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
-Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
-....
-Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
-Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
-Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
-Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
-Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
-Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
-Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
-Dec 11 17:52:19 openmower bash[3156]:
-Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
-Dec 11 17:52:20 openmower bash[3156]:
-Dec 11 17:52:20 openmower bash[3156]: SUMMARY
-....
-bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
-&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>● openmower.service - OpenMower service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Main PID: 1539 (start_open_mowe)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tasks: 9 (limit: 4164)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CPU: 295ms
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CGroup: /system.slice/open-mower.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├─1539 /bin/bash /root/start_open_mower.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: SUMMARY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/p>
@@ -124,16 +125,16 @@ bunch of PARAMETERS/NODES and view exception due to missing literally all the ha
 &lt;p>Please check which chipset your Wi-Fi dongle uses.
 You can solve this by editing the modprobe as following:&lt;/p>
 &lt;h2 id="realtek-rtl8192cu">Realtek RTL8192cu&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/modprobe.d/8192cu.conf
-&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
-&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="realtek-rtl8821cu">Realtek RTL8821CU&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo nano /etc/modprobe.d/8821cu.conf
-&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
-&lt;span style="color:#000">rtw_drv_log_level&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-&lt;span style="color:#000">rtw_led_ctrl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-&lt;span style="color:#000">rtw_vht_enable&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
-&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nano /etc/modprobe.d/8192cu.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="realtek-rtl8821cu">Realtek RTL8821CU&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nano /etc/modprobe.d/8821cu.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_drv_log_level&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_led_ctrl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_vht_enable&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

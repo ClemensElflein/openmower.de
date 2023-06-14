@@ -19,50 +19,51 @@ Click to see sample cold start startup log
 &lt;/div>
 &lt;div class="panel-collapse collapse "
 id="openmower_status_log">
-&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-fallback" data-lang="fallback">● openmower.service - OpenMower service
-Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
-Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
-Main PID: 1539 (start_open_mowe)
-Tasks: 9 (limit: 4164)
-CPU: 295ms
-CGroup: /system.slice/open-mower.service
-├─1539 /bin/bash /root/start_open_mower.sh
-└─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
-Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
-Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
-Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
-Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
-Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
-Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
-Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
-Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
-Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
-Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
-Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
-Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
-Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
-Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
-Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
-....
-Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
-Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
-Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
-Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
-Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
-Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
-Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
-Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
-Dec 11 17:52:19 openmower bash[3156]:
-Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
-Dec 11 17:52:20 openmower bash[3156]:
-Dec 11 17:52:20 openmower bash[3156]: SUMMARY
-....
-bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
-&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>● openmower.service - OpenMower service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Main PID: 1539 (start_open_mowe)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tasks: 9 (limit: 4164)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CPU: 295ms
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CGroup: /system.slice/open-mower.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├─1539 /bin/bash /root/start_open_mower.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: SUMMARY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/p>

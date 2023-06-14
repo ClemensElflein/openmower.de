@@ -2,19 +2,19 @@
 &lt;p>We assume that you at least followed &lt;a href="/docs/software-setup/record-a-map/">Record a map&lt;/a>.&lt;/p>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">/root/ros_home/.ros/map.bag
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
 &lt;p>If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
-sudo service openmower stop
-&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
-ls /root/ros_home/.ros/map.bag
-&lt;span style="color:#8f5902;font-style:italic"># delete map&lt;/span>
-sudo rm /root/ros_home/.ros/map.bag
-&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
-sudo service openmower start
-&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="map-editor">Map Editor&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo service openmower stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete map&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rm /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo service openmower start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="map-editor">Map Editor&lt;/h1>
 &lt;p>There&amp;rsquo;s a WIP map editor made by Nekraus, JavaBoon and Eddi using Python, which you can try and use to fix your map or add in obstacles.&lt;/p>
 &lt;p>&lt;a href="https://github.com/0815eddi/OpenMower/blob/main/utils/map/mowareareader.py">Map editor&lt;/a>&lt;/p></description></item></channel></rss>
