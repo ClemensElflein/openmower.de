@@ -111,6 +111,29 @@ systemctl mask mosquitto.service
 systemctl enable openmower-mqtt-bridge.service
 systemctl enable podman-auto-update.timer podman-auto-update.service
 ```
+Test if service is started:
+```bash
+sudo systemctl status openmower-mqtt-bridge.service
+```
+Should return something like this:
+```bash
+● openmower-mqtt-bridge.service - OpenMower MQTT Bridge
+     Loaded: loaded (/etc/systemd/system/openmower-mqtt-bridge.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-07-08 10:14:55 BST; 1 day 5h ago
+       Docs: man:mosquitto.conf(5)
+             man:mosquitto(8)
+    Process: 5977 ExecStartPre=/bin/mkdir -m 740 -p /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 5978 ExecStartPre=/bin/chown mosquitto /var/log/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 5979 ExecStartPre=/bin/mkdir -m 740 -p /run/mosquitto (code=exited, status=0/SUCCESS)
+    Process: 5980 ExecStartPre=/bin/chown mosquitto /run/mosquitto (code=exited, status=0/SUCCESS)
+   Main PID: 5981 (mosquitto)
+      Tasks: 1 (limit: 4471)
+        CPU: 7min 52.689s
+     CGroup: /system.slice/openmower-mqtt-bridge.service
+             └─5981 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+
+Jul 08 22:43:28 openmower mosquitto[5981]: 1688852608: Connecting bridge (step 1) bridge-to-external-broker (192.168.xxx.xxx:1883)
+```
 Now openmower is connet to your HA MQTT addons.
 You can check with [MQTT Explorer](http://mqtt-explorer.com/)
 
