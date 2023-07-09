@@ -20,97 +20,28 @@ Go to to addons settings and add in "Logins"
 ```
 Of course choose your own password.
 
-### Step 2: Install and setup MQTT bridqe on openmower
-Create mqtt-bridge.conf for connect bridge to HA Mosquitto
+### Step 2: Setup MQTT bridqe on openmower
+Enable MQTT on mower_config.txt
 ```bash
-sudo mkdir /boot/openmower/mqtt
-sudo nano /boot/openmower/mqtt/mqtt-bridge.conf
-```
-Paste your config:
-```bash
-connection bridge-to-external-broker
-
-try_private true
-cleansession true
-topic # out 0 "" openmower/
-topic # in 0 "" openmower/
-
-address 192.168.XXX.XXX # Ip of HA instance
-
-remote_username openmoweruser
-remote_password openmowerpass
+sudo nano /boot/openmower/mower_config.txt
 ```
 You need change IP adress,user and password.
 
-Create mosquitto.conf for connect bridge to openmower (ROS)
+Exemple:
 ```bash
-sudo mkdir /etc/mosquitto/
-sudo nano /etc/mosquitto/mosquitto.conf
-```
-Paste (nothing to change here).
-```bash
-# A full description of the configuration file is at
-# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+################################
+##    External MQTT Broker    ##
+################################
+# Set thes in order to publish status data to your external MQTT broker.
+# This is for use with smart home.
 
-pid_file /run/mosquitto/openmower-mqtt-bridge.pid
-
-log_type notice
-#log_dest /var/log/mosquitto/
-#some random port
-listener 18838
-
-
-#the bridge to the openmower container
-connection bridge-to-openmower
-
-try_private true
-cleansession true
-topic # out 0
-topic # in 0
-address localhost
-
-#include the config for the external bridge
-include_dir /boot/openmower/mqtt
+export OM_MQTT_ENABLE=True
+export OM_MQTT_HOSTNAME="192.168.1.100"
+export OM_MQTT_PORT="1883"
+export OM_MQTT_USER="openmoweruser"
+export OM_MQTT_PASSWORD="openmowerpass"
 ```
 
-Create openmower-mqtt-bridge.service
-```bash
-sudo nano /etc/systemd/system/openmower-mqtt-bridge.service
-```
-Paste (nothing to change here).
-```bash
-[Unit]
-Description=OpenMower MQTT Bridge
-Documentation=man:mosquitto.conf(5) man:mosquitto(8)
-After=network.target openmower.service openmower-debug.service
-Wants=network.target
-StartLimitBurst=0
-
-[Service]
-Type=notify
-NotifyAccess=main
-ExecStart=/usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=on-failure
-RestartSec=10s
-ExecStartPre=/bin/mkdir -m 740 -p /var/log/mosquitto
-ExecStartPre=/bin/chown mosquitto /var/log/mosquitto
-ExecStartPre=/bin/mkdir -m 740 -p /run/mosquitto
-ExecStartPre=/bin/chown mosquitto /run/mosquitto
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Install and launch mqtt-bridge
-```bash
-systemctl disable podman-auto-update.timer podman-auto-update.service
-sudo apt-get update
-sudo apt-get install -y mosquitto #!don't update the mosquitto.conf!
-systemctl mask mosquitto.service
-systemctl enable openmower-mqtt-bridge.service
-systemctl enable podman-auto-update.timer podman-auto-update.service
-```
 Test if service is started:
 ```bash
 sudo systemctl status openmower-mqtt-bridge.service
@@ -134,7 +65,7 @@ Should return something like this:
 
 Jul 08 22:43:28 openmower mosquitto[5981]: 1688852608: Connecting bridge (step 1) bridge-to-external-broker (192.168.xxx.xxx:1883)
 ```
-Now openmower is connet to your HA MQTT addons.
+Now openmower is connect to your HA MQTT addons.
 You can check with [MQTT Explorer](http://mqtt-explorer.com/)
 
 
