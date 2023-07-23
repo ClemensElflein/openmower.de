@@ -20,7 +20,7 @@ Go to to addons settings and add in "Logins"
 ```
 Of course choose your own password.
 
-### Step 2: Setup MQTT bridqe on openmower
+### Step 2: Setup MQTT bridge on OpenMower
 Enable MQTT on mower_config.txt
 ```bash
 sudo nano /boot/openmower/mower_config.txt
