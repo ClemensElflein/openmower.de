@@ -27,7 +27,7 @@ sudo nano /boot/openmower/mower_config.txt
 ```
 You need to change IP address, user and password.
 
-Exemple:
+Example:
 ```bash
 ################################
 ##    External MQTT Broker    ##
