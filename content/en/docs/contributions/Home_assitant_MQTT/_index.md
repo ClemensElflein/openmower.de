@@ -65,7 +65,7 @@ Should return something like this:
 
 Jul 08 22:43:28 openmower mosquitto[5981]: 1688852608: Connecting bridge (step 1) bridge-to-external-broker (192.168.xxx.xxx:1883)
 ```
-Now openmower is connect to your HA MQTT addons.
+Now OpenMower is connected to your HA MQTT addons.
 You can check with [MQTT Explorer](http://mqtt-explorer.com/)
 
 
