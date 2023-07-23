@@ -8,7 +8,7 @@ description: >
 Author: Etienne@discord , DocGalaxyBlock@discord , JuergenLeber@discord
 
 ### Prerequisites
-- **Home assistant**
+- **Home Assistant**
 - **[Mosquitto broker addons](https://github.com/home-assistant/addons/tree/master/mosquitto)**
 
 
