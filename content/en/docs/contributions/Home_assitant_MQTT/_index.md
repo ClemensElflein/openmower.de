@@ -25,7 +25,7 @@ Enable MQTT on mower_config.txt
 ```bash
 sudo nano /boot/openmower/mower_config.txt
 ```
-You need change IP adress,user and password.
+You need to change IP address, user and password.
 
 Exemple:
 ```bash
