@@ -30,7 +30,12 @@ This is described in more details in [MicroPython guide](https://www.raspberrypi
 * **1st row** : 2hr-8hr act as 4 digit progressbar for GPS quality. Blink = uncalibrated.
 * **2nd row**:
   - S1: General state. On = ROS is running but idle, Blink-slow = ROS in autonomous mode (either mowing, docking or undocking), Blink-fast = ROS is recording or any other state (only in undocked state).
-  - S2: Sub status depending on the general state. 
+  - S2: Sub status depending on the general state.
+    - Idle: Off.
+    - Area recording: Blink-slow = Record outline, Blink-fast = Record obstacle.
+    - Mowing: Off.
+    - Docking: Blink-slow.
+    - Undocking: Blink-fast.
   - Lock: Not used.
 * **3rd row** : Mon-Sun act as 7 digit progressbar for battery charge state (only in undocked state).
 * **4th row** :
