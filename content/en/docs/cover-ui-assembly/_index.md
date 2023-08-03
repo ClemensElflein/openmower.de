@@ -25,19 +25,37 @@ You need `.uf2` file from `firmware.zip`. Hold `BOOT` button on Pico, insert USB
 
 This is described in more details in [MicroPython guide](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#drag-and-drop-micropython), you can follow that, just use our `.uf2` file instead.
 
-## Meaning of LEDs and buttons
+## Meaning of LEDs
 
-Borrowed from Apehaenger's [custom firmware project](https://github.com/Apehaenger/CoverUI/tree/main/Firmware/CoverUI/yfc500#usage).
+* **1st row** : 2hr-8hr act as 4 digit progressbar for GPS quality. Blink = uncalibrated.
+* **2nd row**:
+  - S1: General state. On = ROS is running but idle, Blink-slow = ROS in autonomous mode (either mowing, docking or undocking), Blink-fast = ROS is recording or any other state (only in undocked state).
+  - S2: Sub status depending on the general state. 
+  - Lock: Not used.
+* **3rd row** : Mon-Sun act as 7 digit progressbar for battery charge state (only in undocked state).
+* **4th row** :
+  - Lifted: Emergency status. On = no heart beat for more than 0.5s, Blink-fast = Stop button, Blink-slow = Lifted or tilted, Off = no emergency.
+  - Wire: GPS Status. On = < 25%, Blink-fast = < 50%, Blink-slow < 75%, Off >= 75%.
+  - Battery: On = Battery empty.
+  - Charging: Fast blink = empty. Slow blink = approx. 1/2 charged. On = Fully charged.
 
-* 2hr-8hr LEDs act as 4 digit progressbar for GPS quality. Blink = uncalibrated
-* Home button: Stop mowing and go back home to dock
-* Play button: Start mowing of recorded area(s)
-* S1: On = ROS is running but idle, Blink-slow = ROS in autonomous mode, Blink-fast = ROS in nirvana?
-* S2 LED: >TODO<
-* S2 Button: Short press, skip over to next mowing area. Long press (>= 3s), delete all recorded areas!
-* Lock Button: Clear emergency state (probably long press >=3s)
-* Mon-Sun as 7 digit progressbar for battery charge state (only in undocked state)
-* Lifted: Show emergency states. >TODO<
-* Wire: Also indicate a poor GPS. On = < 25%, Blink-fast = < 50%, Blink-slow < 75%, Off >= 75%
-* Battery: On = Battery empty
-* Charging LED: Fast blink = empty. Slow blink = approx. 1/2 charged. On = Fully charged.
+## Button usage
+
+* State = Idle
+   - Home: don't do anything since the assumption is that idle = docking station.
+   - Play: Start mowing of recorded area(s).
+   - S1: Start recording area(s).
+   - S2 (press 2s): Delete area(s) and docking point.   
+* State = Area recording
+   - Home: Stop area recording and go to docking station (if any).
+   - S2 (press 2s): Delete area(s) and docking point.   
+* State = Mowing
+   - Home: Go to docking station.
+   - Play: Continue.
+   - S1: Pause.
+* State = Docking
+* State = Undocking
+
+* Any state
+  - Lock (press 2s): reset emergency mode (beta version doesn't support it but alpha does).
+
