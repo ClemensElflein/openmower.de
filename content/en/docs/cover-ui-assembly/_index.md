@@ -53,11 +53,12 @@ This is described in more details in [MicroPython guide](https://www.raspberrypi
    - S2 (press 2s): Delete area(s) and docking point.   
 * State = Area recording
    - Home: Stop area recording and go to docking station (if any).
-   - S2 (press 2s): Delete area(s) and docking point.   
+   - S2 (press 2s): Delete area(s) and docking point.
 * State = Mowing
    - Home: Go to docking station.
    - Play: Continue.
    - S1: Pause.
+   - S2: skip over to next mowing area.
 * State = Docking
 * State = Undocking
 
