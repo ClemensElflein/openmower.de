@@ -25,7 +25,7 @@ You need `.uf2` file from `firmware.zip`. Hold `BOOT` button on Pico, insert USB
 
 This is described in more details in [MicroPython guide](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html#drag-and-drop-micropython), you can follow that, just use our `.uf2` file instead.
 
-## Meaning of LEDs
+## Meaning of the LEDs
 
 * **1st row** : 2hr-8hr act as 4 digit progressbar for GPS quality. Blink = uncalibrated.
 * **2nd row**:
@@ -64,4 +64,17 @@ This is described in more details in [MicroPython guide](https://www.raspberrypi
 
 * Any state
   - Lock (press 2s): reset emergency mode (beta version doesn't support it but alpha does).
+
+## Joystick usage
+
+* State = Area recording
+   - A + Left stick button: Move mower slowly.
+   - A + LB + Left stick button: Move mower fast.
+   - B: Start/Stop recording a polygon (first one if the main area, following polygons are obstacles within the current main area).   
+   - Y + Pad-Up: Finish the current area and save it as a navigation area.
+   - Y + Pad-Down: Finish the current area and save it as a mowing area.
+   - X: Save docking positions (first and second).
+* Not available in other states
+
+
 
