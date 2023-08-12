@@ -19,7 +19,7 @@ the config of the mow motor differs from the config of the drive motors, the con
 Configurations for each xESC can be found at https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC
 
 
-Configuring the xESC
+## Configuring the xESC
 
 Prereqs:
 * VESC Tool (https://vesc-project.com/vesc_tool)
