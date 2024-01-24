@@ -71,7 +71,7 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 ### Software
 - Is your ZED-F9P connected? Do it!
 - We will use [RTKBase](https://github.com/Stefal/rtkbase)
-- To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no chmod in front of chmod. That did not work for me.
+- To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.
   
   ```bash
   cd ~
