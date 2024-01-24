@@ -126,3 +126,4 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - You have to set up the logging of your position as mentioned above by activating "file service". You need to wait for a day or week to be able to average all the values to get a high detailed position.
 - Next step will be added soon.
   
+Thanks to Stefl and all the contributors of RTKBase and the used recources.
