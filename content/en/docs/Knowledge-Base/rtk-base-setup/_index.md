@@ -45,7 +45,7 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
   ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/81771014-ea43-422a-90e1-d1e493a67990" width="120">
 - Press save to see this:
   
-  ![]() <img src="(https://github.com/ClemensElflein/openmower.de/assets/43208283/d9713463-4c1e-4b56-9503-7fa8be259798" width="120">
+  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/d9713463-4c1e-4b56-9503-7fa8be259798" width="120">
 
 - Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:
   
