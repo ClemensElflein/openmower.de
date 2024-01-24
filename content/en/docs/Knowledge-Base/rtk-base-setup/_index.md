@@ -122,5 +122,6 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/14ef9870-23a4-4a5f-a19d-1bf9718d5966" width="120">
 
 ### Find the position of your RTKBase
-- You have set up the logging of your position. We will wait for a day or week to be able to average all the values. So: wait!
+- You have set up the logging of your position as mentioned above by activating "file service". You need to wait for a day or week to be able to average all the values.
+- Next step will be added soon.
   
