@@ -139,7 +139,7 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/32be8b65-51a9-4a0d-8252-7d951a4f7c79" width="120">
 
 - When you received the email, look at "ITRF2014" (or search for "longitude") and see your values like LONGITUDE 6.XXXXXXXXX°  LATITUDE 51.XXXXXXXXX° HELL 79.9041 
-- You enter these values to your options at MainService, but substract for hell / z coordinate your antenna height. Be aware, that the order of LONGITUDE and LATITUDE is switched!
+- You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!
 
   ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
 - Finished!
