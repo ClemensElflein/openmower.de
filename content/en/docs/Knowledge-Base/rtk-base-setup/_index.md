@@ -106,7 +106,8 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/72d24226-570f-4394-b615-04975b89ddf2" width="120">
 
   - Go to settings and press "options" right to "Main Service", than paste your coordinates to "Base coordinates":
-    ![grafik](https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
+    
+    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
 
   - Press on options again, than on options right to "Caster Service"
   
