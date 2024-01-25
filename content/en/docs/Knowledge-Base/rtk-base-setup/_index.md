@@ -125,6 +125,23 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 
 ### Find the position of your RTKBase
 - You have to set up the logging of your position as mentioned above by activating "file service". You need to wait for a day or week to be able to average all the values to get a high detailed position.
-- Next step will be added soon.
+- After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check [RINEX-File](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters)
+- Press on the pencil right to the zip-file:
+
+  ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/ec5ffbb7-6b81-426f-b367-31361dd0ddc8" width="120">
+
+- "Create Rinex file":
+
+    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/cdf31b4d-61a7-4a19-95d4-dcb2c1264191" width="120">
+- Download it when finished (may take a while, some minutes or longer)
+- Go to [Calculator](https://rgp.ign.fr/SERVICES/calcul_online.php), upload your Rinex file and enter your email address. Don't forget to enter the "no robot"-verification.
+  
+    ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/32be8b65-51a9-4a0d-8252-7d951a4f7c79" width="120">
+
+- When you received the email, look at "ITRF2014" (or search for "longitude") and see your values like LONGITUDE 6.XXXXXXXXX°  LATITUDE 51.XXXXXXXXX° HELL 79.9041 
+- You enter these values to your options at MainService, but substract for hell / z coordinate your antenna height. Be aware, that the order of LONGITUDE and LATITUDE is switched!
+
+  ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
+- Finished!
   
 Thanks to Stefl and all the contributors of RTKBase and the used recources.
