@@ -142,6 +142,8 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!
 
   ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
+- Save
+- ReActivate Ntrip Service
 - Finished!
   
 Thanks to Stefl and all the contributors of RTKBase and the used recources.
