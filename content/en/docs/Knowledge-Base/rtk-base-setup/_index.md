@@ -124,8 +124,8 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/14ef9870-23a4-4a5f-a19d-1bf9718d5966" width="120">
 
 ### Find the position of your RTKBase
-- You have to set up the logging of your position as mentioned above by activating "file service". You need to wait for a day or week to be able to average all the values to get a high detailed position.
-- After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check [RINEX-File](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters)
+- You have to set up the logging of your position as mentioned above by activating "file service". You should wait for a day to average all the values to get a high precision position.
+- After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check [RINEX-File](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters) , but you don't need it.
 - Press on the pencil right to the zip-file:
 
   ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/ec5ffbb7-6b81-426f-b367-31361dd0ddc8" width="120">
@@ -146,4 +146,4 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - ReActivate Ntrip Service
 - Finished!
   
-Thanks to Stefl and all the contributors of RTKBase and the used recources.
+Thanks to Stefal and all the contributors of RTKBase and the used recources.
