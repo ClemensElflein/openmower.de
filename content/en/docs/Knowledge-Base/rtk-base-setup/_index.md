@@ -21,35 +21,35 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - Download [RPi Imager](https://www.raspberrypi.com/software/) for windows
 - Start Imager:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/d476563b-2693-472f-bfa6-34cf1311e65d" width="120">
+  ![]() <img src="Imager1.png" width="120">
 - Choose your RPI (in my case RPi 0W, choosing wrong RPi will most probably result in many problems)
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/1a24f9cc-d0d0-4cb7-b892-90c5b1ba93a3" width="120">
+  ![]() <img src="./Imager2.png" width="120">
 - Choose Operating system "Raspberry Pi OS lite (legacy, 32bit)
   
-  ![]() <img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/54dadde5-2595-4b1f-ab23-84c5f2a095cb" width="120">
+  ![]() <img src="./Imager3.png" width="120">
 
-  ![]() <img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/85015eb9-3098-494d-852e-aed4403cd6ef" width="120">
+  ![]() <img src="./Imager4.png" width="120">
 
 - Select your sd card:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/c2e0268b-58a8-44b0-91a2-a799bb4fc3af" width="120">
+  ![]() <img src="./Imager5.png" width="120">
 - Press next so this will appear:
  
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/6016215b-4fb0-4987-825f-daec47b29621" width="120">
+  ![]() <img src="./Imager6.png" width="120">
 - Edit settings like the following (and use your personal WiFi settings and country), where you set a good password for your Pi account. Username and password are case sensitive!
    
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/4768c937-6235-40fc-ab5e-42716a0524ea" width="120">
+  ![]() <img src="./OSCustom1.png" width="120">
 - activate SSH:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/81771014-ea43-422a-90e1-d1e493a67990" width="120">
+  ![]() <img src="./OSCustom.png" width="120">
 - Press save to see this:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/d9713463-4c1e-4b56-9503-7fa8be259798" width="120">
+  ![]() <img src="./OSCustom2.png" width="120">
 
 - Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/8faf9864-f557-46c8-b4f9-0273558efd88" width="120">
+  ![]() <img src="./Imager7.png" width="120">
 
 - Wait until it is finished, it may take half an hour, depending on your internet connection ;-)
   
@@ -61,12 +61,12 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - Get from your router the IP of your RPi
 - Start [PuTTY](https://putty.org) and connect to RPi, where you enter the local IP of your RPi
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/f9ae280a-e766-4d49-b64b-75426b92418b" width="120">
+  ![]() <img src="./Putty1.png" width="120">
 - Enter your Username Pi, press enter and than enter your password:
   
-  ![]() <img src="https://github.com/ClemensElflein/openmower.de/assets/43208283/e7cb379a-4689-4d7c-a210-36986e49abe2" width="120">
+  ![]() <img src="./Putty2.png" width="120">
  
-  ![]() <img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/00101910-7c7d-44cd-97c7-f08ac9ca32df" width="120">
+  ![]() <img src="./Putty3.png" width="120">
 
 ### Software
 - Is your ZED-F9P connected? Do it!
@@ -99,49 +99,51 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 ## Configuring your RTKBase
   - Start a browser and enter the IP address of your RTKBase. You will get this:
     
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/cb9c01d6-637a-4a97-8f84-54acf576648c" width="120">
+    ![]()<img src="./RTKBase01.png" width="120">
 
   - Enter as password admin. On the following site press the copy symbol right to PPP.
     
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/72d24226-570f-4394-b615-04975b89ddf2" width="120">
+    ![]()<img src="./RTKBase02.png" width="120">
 
   - Go to settings and press "options" right to "Main Service", than paste your coordinates to "Base coordinates":
     
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
+    ![]()<img src="./RTKBase03.png" width="120">
 
   - Press on options again, than on options right to "Caster Service"
   
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/0defa09d-ccb1-488c-abc3-c32eb67390f9" width="120">
+    ![]()<img src="./RTKBAse04.png" width="120">
   - Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.
   - Save the config
   - Switch on "Caster Service" and "File Service", it should look like this:
     
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/2fe64f78-dbf9-415b-8e52-5a53630dfa40" width="120">
+    ![]()<img src="./RTKBase05.png" width="120">
 
   - Eventually change your password below these options.
   - At logs you should find at least two files:
     
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/14ef9870-23a4-4a5f-a19d-1bf9718d5966" width="120">
+    ![]()<img src="./RTKBase06.png" width="120">
 
 ### Find the position of your RTKBase
 - You have to set up the logging of your position as mentioned above by activating "file service". You should wait for a day to average all the values to get a high precision position.
 - After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check [RINEX-File](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters) , but you don't need it.
 - Press on the pencil right to the zip-file:
 
-  ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/ec5ffbb7-6b81-426f-b367-31361dd0ddc8" width="120">
+  ![]()<img src="./RTKBase07.png" width="120">
 
 - "Create Rinex file":
 
-    ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/cdf31b4d-61a7-4a19-95d4-dcb2c1264191" width="120">
+    ![]()<img src="./RTKBase08.png" width="120">
 - Download it when finished (may take a while, some minutes or longer)
 - Go to [Calculator](https://rgp.ign.fr/SERVICES/calcul_online.php), upload your Rinex file and enter your email address. Don't forget to enter the "no robot"-verification.
   
-    ![]()<img src="(https://github.com/karlranseierausrom/openmower.de/assets/43208283/32be8b65-51a9-4a0d-8252-7d951a4f7c79" width="120">
+    ![]()<img src="./ignfr.png" width="120">
 
-- When you received the email, look at "ITRF2014" (or search for "longitude") and see your values like LONGITUDE 6.XXXXXXXXX°  LATITUDE 51.XXXXXXXXX° HELL 79.9041 
+- When you received the email, look at "ITRF2014" (or search for "longitude") and see your values like LONGITUDE 6.XXXXXXXXX°  LATITUDE 51.XXXXXXXXX° HELL 79.9041
+  
+   ![]()<img src="./averaged.png" width="120">
 - You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!
 
-  ![]()<img src="https://github.com/karlranseierausrom/openmower.de/assets/43208283/505978be-6c3e-4ead-bbd7-cdc914aa1c52" width="120">
+   ![]()<img src="./RTKBase03.png" width="120">
 - Save
 - ReActivate Ntrip Service
 - Finished!
