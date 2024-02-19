@@ -45,25 +45,25 @@
 Since [OpenMowerOS](https://github.com/ClemensElflein/OpenMowerOS) already ships with the container engine [Podman](https://podman.io/) it is very easy to use deploy a container here.
 
 - ssh as the openmower user into your mower and then clone this repo: 
-  ```sh
+  ```bash
   cd ~/
   git clone --depth=1 https://github.com/ClemensElflein/openmower.de
   cd ~/openmower.de/
   ```
 
 - Build the container:
-  ```sh
+  ```bash
   podman build -t openmower.de .
   ```
 
 - Now make your changes to the files and then start the container.
-  ```sh
+  ```bash
   podman run --detach --name openmower.de --publish 1313:1313 --volume ./:/src/ openmower.de
   ```
 
-- Be patient while the container installs all dependencies and builds the website. 🍵 \
+- Be patient while the container installs all dependencies and builds the website. 🍵  
   You can check its logs by
-  ```sh
+  ```bash
   podman logs -f openmower.de
   ```
 
@@ -136,7 +136,7 @@ Since [OpenMowerOS](https://github.com/ClemensElflein/OpenMowerOS) already ships
 > You can now make your changes on the fly - the container watches the source and will rebuild individual sites automatically on changes.
 
 If for some circumstances it does not rebuild you can try to restart the container:
-```sh
+```bash
 podman restart openmower.de
 ```
 
@@ -145,12 +145,12 @@ podman restart openmower.de
 <br>
 
 Once you are done you can stop the container
-```sh
+```bash
 podman stop openmower.de
 ```
 
 If you do not plan to edit the site once more you can remove the container and the images.
-```sh
+```bash
 podman rm openmower.de
 podman rmi openmower.de docker.io/klakegg/hugo:0.111.3-ext-ubuntu
 ```
@@ -171,12 +171,12 @@ podman rmi openmower.de docker.io/klakegg/hugo:0.111.3-ext-ubuntu
   Running the website locally on Bare Metal
 </h3>
 
-Building and running the site locally requires a recent `extended` version of [Hugo](https://gohugo.io). \
+Building and running the site locally requires a recent `extended` version of [Hugo](https://gohugo.io).  
 You can find out more about how to install Hugo for your environment in our
 [Getting started](https://www.docsy.dev/docs/getting-started/#prerequisites-and-installation) guide.
 
 Once you've made your working copy of the site repo, from the repo root folder, run:
-```sh
+```bash
 hugo server
 ```
 
@@ -198,12 +198,12 @@ _to be writen..._
 You can run openmower.de inside a container _([Docker](https://docs.docker.com/) or [Podman](https://podman.io/))_, the container runs with a volume bound to the `docsy-example` folder. This approach doesn't require you to install any dependencies other than [Docker Desktop](https://www.docker.com/products/docker-desktop) on Windows and Mac, and [Docker Compose](https://docs.docker.com/compose/install/) on Linux.
 
 - Build the docker image
-   ```sh
+   ```bash
    docker compose build
    ```
 
 - Run the built image
-   ```sh
+   ```bash
    docker compose up
    ```
 > [!TIP]
@@ -221,7 +221,7 @@ You can run openmower.de inside a container _([Docker](https://docs.docker.com/)
 To stop Docker Compose, on your terminal window, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 To remove the produced images run:
-```sh
+```bash
 docker compose rm
 ```
 For more information see the [Docker Compose documentation](https://docs.docker.com/compose/gettingstarted/).
