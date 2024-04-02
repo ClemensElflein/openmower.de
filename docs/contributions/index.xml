@@ -4,7 +4,24 @@
 Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
 &lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
 &lt;p>Instructions:
-Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/mount-wheel-spikes/</guid><description>
+Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Adjusting map position after a basestation change</title><link>/docs/contributions/basestation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/basestation/</guid><description>
+&lt;p>When you use the OM_DATUM_LAT and OM_DATUM_LONG DATUM fields in the mower_config.txt, you can shift the map around.&lt;/p>
+&lt;p>The procedure if you change the NTRIP base, is to change the DATUM Fields (&lt;code>OM_DATUM_LAT&lt;/code> for the left and right,
+&lt;code>OM_DATUM_LONG&lt;/code> for up and down) in the mower_config.txt file. What you basically do when you change the DATUM fields is
+shift the complete map up/down/left/right.&lt;/p>
+&lt;p>In order to position the map aligned with a fixed point on the map, you can use the docking position of the mower. To do
+this properly, you have to undock the mower via the area recording buttons, drive a little bit around for an accurate
+positioning of the mower and then dock the mower manually using the area recording buttons.&lt;/p>
+&lt;p>After docking, you see in the web interface that the mower is a bit off the docking position. You adjust the position of
+the map just a bit. To move the map horizontally, you adjust the &lt;code>OM_DATUM_LAT&lt;/code> a bit and to move the map vertically,
+adjust the &lt;code>OM_DATUM_LONG&lt;/code>. (The precision is depending on your position on the globe, but the 7th digit will give you
+about 1cm movement per digit). If you move the map down, the position of the mower will go up on the map and vise versa.&lt;/p>
+&lt;p>Remember to reload the exports (the easy way is a reboot of the pi if you are patient and lazy) and then drive around
+again a bit via the area recording buttons and dock manually again. In that way, you have a constant correct location
+when adjusting the map position. When you think it is all good, then go ahead, start mowing and let the mower return to
+docking immediately to see if the docking works precisely and the mower docks automatically and properly.&lt;/p>
+&lt;p>Then start mowing, the mower will do the outline first (normally 4 rounds, check the 4th round very thoroughly, that is
+the round closest to the edge). If all is ok, you are good to go.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
 &lt;p>There are two YardForce spikes on Amazon (and other sites like Etsy): &lt;a href="https://www.mibrobo.de/product/yardforce-classic-500-models-184-mibrobo-blackline-spikes-incl-wheel-extension-eng/119">Mibrobo&lt;/a> and &lt;a href="https://www.etsy.com/listing/1009079264/lawn-robot-spikes-for-yardforce-robotics">RoboClaws&lt;/a>.
 This photo guide is about RoboClaws.&lt;/p>
