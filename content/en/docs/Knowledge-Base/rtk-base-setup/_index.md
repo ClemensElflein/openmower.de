@@ -124,6 +124,20 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     ![]()<img src="./RTKBase06.png" width="120">
 
 ### Find the position of your RTKBase
+There are several ways to find your position. To use openmower you do not need the perfect position. Therefore the first option should be your choice, if you want a fast and good result for openmower.
+#### Easy and good way
+ - Click on the symbol right to PPP to copy the values to the clipboard:
+   
+   ![]()<img src="./RTKBase02.png" width="120">
+ - Enter these values to your options at MainService.
+   
+   ![]()<img src="./RTKBase03.png" width="120">
+ - Save
+ - ReActivate Ntrip Service
+ - Finished!
+
+#### More complicated and more exact way
+
 - You have to set up the logging of your position as mentioned above by activating "file service". You should wait for a day to average all the values to get a high precision position.
 - After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check [RINEX-File](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters) , but you don't need it.
 - Press on the pencil right to the zip-file:
