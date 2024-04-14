@@ -23,17 +23,17 @@ This will open in the browser. Use CTRL+S to download the file.&lt;/li>
 &lt;h3 id="step-1-open-u-center-and-connect-to-your-gps">Step 1: Open u-center and connect to your GPS&lt;/h3>
 &lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software.&lt;/p>
-&lt;p>In u-center, first connect to your board by selecting the appropriate COM port in the &lt;code>Receiver &amp;gt; Connection&lt;/code> menu.&lt;/p>
+&lt;p>In u-center, first connect to your board by selecting the appropriate COM port in the &lt;code>Receiver -&amp;gt; Connection&lt;/code> menu.&lt;/p>
 &lt;h3 id="step-2-transfer-the-configuration-to-the-gps">Step 2: Transfer the configuration to the GPS&lt;/h3>
 &lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Transfer Settings to u-center">&lt;/p>
 &lt;p>After successfully connecting to the board, you can transfer
-the previously downloaded configuration file &lt;code>Robot.txt&lt;/code> by opening the window &lt;code>Tools &amp;gt; Receiver Configuration ...&lt;/code>. In this window you open the &lt;code>Robot.txt&lt;/code> using the &lt;code>...&lt;/code> button and then transfer the configuration to the GPS by clicking the &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> button.&lt;/p>
+the previously downloaded configuration file &lt;code>Robot.txt&lt;/code> by opening the window &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>. In this window you open the &lt;code>Robot.txt&lt;/code> using the &lt;code>...&lt;/code> button and then transfer the configuration to the GPS by clicking the &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> button.&lt;/p>
 &lt;h3 id="step-3-save-configuration-to-flash">Step 3: Save configuration to Flash&lt;/h3>
 &lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Save Settings to Flash">&lt;/p>
-&lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View &amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
+&lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View -&amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
 &lt;h3 id="step-4-done-">Step 4: Done 🎉&lt;/h3>
 &lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p></description></item><item><title>Docs: Prepare the SD Card</title><link>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</guid><description>
-&lt;p>We have created a Docker image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.&lt;/p>
+&lt;p>We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to follow this guide, you will need:&lt;/p>
 &lt;ul>
@@ -54,17 +54,47 @@ You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;
 &lt;h2 id="step-2-configure-open-mower">Step 2: Configure Open Mower&lt;/h2>
 &lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files on Windows or Linux without any additional steps (it&amp;rsquo;s mounted as a mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
 &lt;h4 id="openmoweropenmower_versiontxt-on-linux-bootopenmoweropenmower_versiontxt">/openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)&lt;/h4>
-&lt;p>This file selects the Open Mower version to use. You can choose the following:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>testing:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/li>
-&lt;li>&lt;strong>alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.&lt;/li>
-&lt;li>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/li>
+&lt;p>This file selects the Open Mower version to use. You can choose the following:
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+2024.03.0+
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+aria-controls="tabs-00-02" aria-selected="false">
+0.0.1
+&lt;/a>
+&lt;/li>
 &lt;/ul>
-&lt;p>An example:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">OM_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;beta&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> OM_VERSION
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;p>&lt;strong>releases-edge:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/p>
+&lt;p>&lt;strong>releases-alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.&lt;/p>
+&lt;p>&lt;strong>releases-beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;p>&lt;strong>edge:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/p>
+&lt;p>&lt;strong>alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.&lt;/p>
+&lt;p>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
 &lt;p>This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
 &lt;div class="spoiler panel panel-default "
