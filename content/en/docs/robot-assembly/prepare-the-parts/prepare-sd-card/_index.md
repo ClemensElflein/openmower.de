@@ -6,9 +6,12 @@ description: >
   In this step we will install the SD card and configure the basic settings for our mower.
 ---
 
-We have created a Docker image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.
+We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.
+
+
 
 ## Prerequisites
+
 In order to follow this guide, you will need:
 - **An SD card with at least 16 GB**
 - **A PC with the Raspberry Pi Imager Software installed:**<br/>
@@ -18,28 +21,47 @@ In order to follow this guide, you will need:
   You can download it in the `Assets` section. You don't need to unzip the image.
 - **An SD card reader**
 
+
+
 ## Step 1: Flash the Image to your SD Card
+
 - Start the Raspberry Pi Imager Software. Select `CHOOSE OS > Use Custom`. Then open the image file you downloaded earlier.
 - Select `CHOOSE STORAGE` and select your SD card from the Window. **Make sure that you are really selecting the correct SD card, all data on the selected device will be erased!**
 - Select `WRITE` and wait for the process to finish
 
+
+
 ## Step 2: Configure Open Mower
+
 For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the `boot` partition of your newly flashed SD card. You can access the files on Windows or Linux without any additional steps (it's mounted as a mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.
 
+
+
 #### /openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)
+
 This file selects the Open Mower version to use. You can choose the following:
-- **testing:** This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.
-- **alpha:** For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.
-- **beta (recommended):** This one is the _most stable_ one of the three. I try to keep this as stable as possible.
+{{< tabpane text=true >}}
+{{% tab header="**OpenMowerOS version**:" disabled=true /%}}
+{{% tab header="2024.03.0+" %}}
+**releases-edge:** This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.
 
-An example:
-```bash
-OM_VERSION="beta"
+**releases-alpha:** For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.
 
-export OM_VERSION
-```
+**releases-beta (recommended):** This one is the _most stable_ one of the three. I try to keep this as stable as possible.
+{{% /tab %}}
+{{% tab header="0.0.1" %}}
+**edge:** This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.
+
+**alpha:** For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.
+
+**beta (recommended):** This one is the _most stable_ one of the three. I try to keep this as stable as possible.
+{{% /tab %}}
+{{< /tabpane >}}
+
+
 
 #### /openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)
+
 This file has important settings for the Open Mower software.
 The configurations in the file might change with the Open Mower release, that's why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.
 
@@ -169,5 +191,8 @@ export OM_OUTLINE_OFFSET=0.05
 ```
 {{< /spoiler >}}
 
-## Step 3: Done :tada:
+
+
+## Step 3: Done 🎉
+
 You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.
