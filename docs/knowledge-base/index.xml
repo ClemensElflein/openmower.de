@@ -534,4 +534,103 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;p>Finished!&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used recources.&lt;/p></description></item></channel></rss>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used recources.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>/docs/knowledge-base/shopping-list/</link><pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/shopping-list/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Read this first: &lt;a href="/docs/getting-started/#important-info">Important Info&lt;/a>
+&lt;/div>
+&lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mower&lt;br />(Yardforce Classic 500)&lt;/td>
+&lt;td>The mower to modify.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Open Mower Hardware Kit&lt;/td>
+&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://shop.devops.care/10-openmower">Vermut&amp;rsquo;s shop&lt;/a>&lt;/td>
+&lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Raspberry Pi 4&lt;/td>
+&lt;td>The brain of the robot.&lt;br />&lt;br />Use 2GB + model for running the software&lt;br />&lt;br />Use 8GB model for development&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SD Card (16 GB+)&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>USB Wi-Fi Dongle (Optional)&lt;/td>
+&lt;td>For better Wi-Fi reception&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Check for Linux Support&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Left-Angle USB adapter (Optional)&lt;/td>
+&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+You only need a GPS base station if you don&amp;rsquo;t have access to an external NTRIP service. There are multiple free services available, so check before buying this.
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raspberry Pi&lt;br />+ SD Card&lt;br />+ Power Supply&lt;/td>
+&lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the base station&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>
