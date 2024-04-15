@@ -322,7 +322,216 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;li>On the right toolbar click &amp;ldquo;Write App configuration&amp;rdquo; (the A with a arrow pointing down)&lt;/li>
 &lt;/ol>
 &lt;p>Finally ctrl+c in the openmower terminal and start openmower service again. &lt;code>systemctl start openmower&lt;/code>&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-base-setup/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-This part of the documentation is work in progress. There are many ways of setting up the RTK base, I&amp;rsquo;d like to show a few options. For now, please use the documentation provided by Ardusimple.
-&lt;/div></description></item></channel></rss>
+&lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.raspberrypi.com/products/raspberry-pi-zero-w/">Raspberry Pi 0W&lt;/a>&lt;/li>
+&lt;li>sd card&lt;/li>
+&lt;li>power supply for RPi&lt;/li>
+&lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">Ardusimple ZED-F9P&lt;/a>&lt;/li>
+&lt;li>A windows PC&lt;/li>
+&lt;li>stable internet connection (no disconnection within one hour)&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>If you know about RPi and have already a functional OS, you may head on to &amp;ldquo;Software&amp;rdquo;, but in my case it did not work using an older image.&lt;/p>
+&lt;h3 id="preparing-sd-card">Preparing sd card&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Download &lt;a href="https://www.raspberrypi.com/software/">RPi Imager&lt;/a> for windows&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start Imager:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="Imager1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose your RPI (in my case RPi 0W, choosing wrong RPi will most probably result in many problems)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose Operating system &amp;ldquo;Raspberry Pi OS lite (legacy, 32bit)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager3.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager4.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select your sd card:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager5.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press next so this will appear:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager6.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit settings like the following (and use your personal WiFi settings and country), where you set a good password for your Pi account. Username and password are case sensitive!&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>activate SSH:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press save to see this:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager7.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wait until it is finished, it may take half an hour, depending on your internet connection ;-)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="start-your-rtkbase-rpi">Start your RTKBase RPi&lt;/h3>
+&lt;ul>
+&lt;li>Put your sd card into your RPi&lt;/li>
+&lt;li>Connect ZED-F9P via usb to your RPi (NOT after the installation, it will be configured during installation).&lt;/li>
+&lt;li>Power your RPi&lt;/li>
+&lt;/ul>
+&lt;h3 id="connect-to-rpi">Connect to RPi&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Get from your router the IP of your RPi&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start &lt;a href="https://putty.org">PuTTY&lt;/a> and connect to RPi, where you enter the local IP of your RPi&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter your Username Pi, press enter and than enter your password:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty2.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty3.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="software">Software&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Is your ZED-F9P connected? Do it!&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We will use &lt;a href="https://github.com/Stefal/rtkbase">RTKBase&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://raw.githubusercontent.com/Stefal/rtkbase/master/tools/install.sh -O install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./install.sh --all release
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A very long output should follow. It ends with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GNSS Configuration: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>STARTING SERVICES
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created symlink /etc/systemd/system/multi-user.target.wants/str2str_tcp.service → /etc/systemd/system/str2str_tcp.service.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Job &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> gpsd.service failed because the control process exited with error code.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>See &lt;span style="color:#4e9a06">&amp;#34;systemctl status gpsd.service&amp;#34;&lt;/span> and &lt;span style="color:#4e9a06">&amp;#34;journalctl -xe&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> details.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>END OF INSTALLATION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You can open your browser to http://192.168.178.34 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>here the editor deleted IPV6&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Pi@RTKBase:~ $
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Installation finished, go on and configure your RTKBase&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuring-your-rtkbase">Configuring your RTKBase&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Start a browser and enter the IP address of your RTKBase. You will get this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase01.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter as password admin. On the following site press the copy symbol right to PPP.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to settings and press &amp;ldquo;options&amp;rdquo; right to &amp;ldquo;Main Service&amp;rdquo;, than paste your coordinates to &amp;ldquo;Base coordinates&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on options again, than on options right to &amp;ldquo;Caster Service&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBAse04.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save the config&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Switch on &amp;ldquo;Caster Service&amp;rdquo; and &amp;ldquo;File Service&amp;rdquo;, it should look like this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase05.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Eventually change your password below these options.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At logs you should find at least two files:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase06.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="find-the-position-of-your-rtkbase">Find the position of your RTKBase&lt;/h3>
+&lt;p>There are several ways to find your position. To use openmower you do not need the perfect position. Therefore the first option should be your choice, if you want a fast and good result for openmower.&lt;/p>
+&lt;h4 id="easy-and-good-way">Easy and good way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Click on the symbol right to PPP to copy the values to the clipboard:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter these values to your options at MainService.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="more-complicated-and-more-exact-way">More complicated and more exact way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>You have to set up the logging of your position as mentioned above by activating &amp;ldquo;file service&amp;rdquo;. You should wait for a day to average all the values to get a high precision position.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check &lt;a href="http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters">RINEX-File&lt;/a> , but you don&amp;rsquo;t need it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on the pencil right to the zip-file:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase07.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;ldquo;Create Rinex file&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase08.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download it when finished (may take a while, some minutes or longer)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to &lt;a href="https://rgp.ign.fr/SERVICES/calcul_online.php">Calculator&lt;/a>, upload your Rinex file and enter your email address. Don&amp;rsquo;t forget to enter the &amp;ldquo;no robot&amp;rdquo;-verification.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./ignfr.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you received the email, look at &amp;ldquo;ITRF2014&amp;rdquo; (or search for &amp;ldquo;longitude&amp;rdquo;) and see your values like LONGITUDE 6.XXXXXXXXX° LATITUDE 51.XXXXXXXXX° HELL 79.9041&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./averaged.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used recources.&lt;/p></description></item></channel></rss>
