@@ -17,4 +17,4 @@ Take an SD card (different from the one you are using for RPi), format as FAT, c
 ### xESC boards
 The Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.
 
-Configuring xESCs is beyond the scope of this doc. 
+See [configure-xesc](https://openmower.de/docs/knowledge-base/configure-xesc/) for details of configuring, for example if the mower motor stalls very often.
