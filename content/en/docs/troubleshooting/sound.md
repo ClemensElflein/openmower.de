@@ -19,7 +19,12 @@ This depend on the type and version of your CoverUI:
 | down | <kbd>Tue</kbd> | <kbd>Mon</kbd> | <kbd>6H</kbd> | <kbd>2</kbd> | <kbd>↓</kbd> |
 
 
-### I do hear one or two more adverts, but no GPS-Pings, no "Bidaa bidaa" emergency, ...
+### Volume doesn't get saved if changed via CoverUI
+
+LowLevel config stuff like sound volume, get saved only once a minute into flash (wear level protection). Therefore, if you change sound volume via CoverUI, you need to wait at least 1 minute, before powering your mower down.
+
+
+### I do hear one or two more adverts as before, but no GPS-Pings, no "Bidaa bidaa" emergency, ...
 
 This is because your DFPlayer's SD-Card is still in the old format. See [Sound SD-Card](../../robot-assembly/prepare-the-parts/prepare-sound/#sound-sd-card).
 
