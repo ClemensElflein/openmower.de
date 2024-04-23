@@ -9,9 +9,6 @@ env:
   main_branch: main
   base_url: 'https://openmower.de/'
 
-permissions:
-  contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-22.04

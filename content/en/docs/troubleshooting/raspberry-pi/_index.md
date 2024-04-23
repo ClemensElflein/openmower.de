@@ -2,15 +2,15 @@
 title: Raspberry Pi 4
 linkTitle: Raspberry Pi
 description: >
-    You don't get `GREEN` or `GREEN/RED`, webapp is not opening, cannot move mower via controller. We go step by step.
-tags: [docker, podman, pi, rpi, raspberry, ssh]
+    You don't get `RED/GREEN` or `GREEN`, webapp is not opening, cannot move mower via controller. We go step by step.
+tags: [docker, rpi, raspberry, docker, ssh]
 ---
 
 Follow the [SD Card preparation step]({{< relref "/docs/robot-assembly/prepare-the-parts/prepare-sd-card" >}}) and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.
 
 Then follow the [Wi-Fi Configuration]({{< relref "/docs/software-setup/configuring-wifi" >}}).
 
-The board will connect to your Wi-Fi and will start downloading ~3GB container image which will definitely take some time.  
+The board will connect to your Wi-Fi and will start downloading ~2Gb docker image which will definitely take some time.
 While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.
 
 
@@ -19,7 +19,7 @@ Username: `openmower`, password: `openmower`.
 {{% /alert %}}
 
 
-Running `sudo systemctl status --no-pager --full --lines 1000 openmower` should display something reassuring.
+Running `sudo systemctl status --no-pager -l -n 99999 openmower` should display something reassuring.
 {{< spoiler text="Click to see sample cold start startup log" id="openmower_status_log" >}}
 ```
 ● openmower.service - OpenMower service
@@ -69,10 +69,6 @@ bunch of PARAMETERS/NODES and view exception due to missing literally all the ha
 ```
 {{< /spoiler >}}
 
-If you are lazy, just wait 5-10 minutes and check that [`http://openmower.local:8080`](http://openmower.local:8080/) or `http://<your-openmower-IP>:8080` is accessible.  
-If it's not, you need to SSH and check the logs with `sudo journalctl --follow --unit openmower`.  
-Usually a problem would be bad config file.
-
-<br>
+If you are lazy, just wait 5-10 minutes and check that http://\<openmower IP\>:8080/ is accessible. If it's not, you need to SSH and check the logs with `sudo journalctl -fu openmower`. Usually a problem would be bad config file.
 
 If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.
