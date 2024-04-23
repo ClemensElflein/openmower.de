@@ -15,7 +15,7 @@
 &lt;p>Connect to the hotspot and the mobile device should ask you to &lt;em>sign-in into the network&lt;/em>.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
-&lt;div>&lt;img src='connect_Wi-Fi_screen_1.png' width=250 />&lt;/div>
+&lt;div>&lt;img src='connect_wifi_screen_1.png' width=250 />&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -28,7 +28,7 @@
 &lt;p>On the screen, select your home Wi-Fi connection and enter your password. Then click connect. Your robot will connect to your network and the hotspot will disappear. If the connection fails, the hotspot will reopen.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
-&lt;div>&lt;img src='connect_Wi-Fi_screen_2.png' width=250 />&lt;/div>
+&lt;div>&lt;img src='connect_wifi_screen_2.png' width=250 />&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
