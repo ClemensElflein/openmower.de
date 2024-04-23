@@ -67,70 +67,23 @@
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
 &lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
-&lt;p>The map is stored in the &lt;code>map.bag&lt;/code> file that is located on the mower at &lt;code>/root/ros_home/.ros&lt;/code>&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
+&lt;p>The map is stored in the map.bag file that is located on the mower at /root/ros_home/.ros&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>This update guide assumes that you have the following:&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>A mower with the OpenMowerOS running on it.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Important:&lt;/strong> verified that the &lt;code>/boot/openmower/mower_config.txt&lt;/code> file has the correct hardware version set (&lt;code>OM_HARDWARE_VERSION&lt;/code>). If this is wrong, the wrong firmware will be installed on your device. Check the &lt;a href="/docs/knowledge-base/manual-firmware-installation">Manual Firmware Installation&lt;/a> guide on how to find that value.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The Raspberry Pi is running, and you are able to connect to it via &lt;code>ssh&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The mower is connected to the internet&lt;/p>
-&lt;/li>
+&lt;li>A mower with the OpenMowerOS running on it.&lt;/li>
+&lt;li>&lt;strong>Important:&lt;/strong> verified that the &lt;code>/boot/mower_config.sh&lt;/code> file has the correct hardware version set (OM_HARDWARE_VERSION). If this is wrong, the wrong firmware will be installed on your device. Check the &lt;a href="/docs/knowledge-base/manual-firmware-installation">Manual Firmware Installation&lt;/a> guide on how to find that value.&lt;/li>
+&lt;li>The Raspberry Pi is running, and you are able to connect to it via &lt;code>ssh&lt;/code>&lt;/li>
+&lt;li>The mower is connected to the internet&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-1-run-the-firmware-update-script">Step 1: Run the Firmware Update Script&lt;/h2>
 &lt;p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.&lt;/p>
-&lt;p>In order to run the script, execute the following commands:
-&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
-&lt;li class="nav-item">
-&lt;a class="nav-link disabled"
-id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
-aria-controls="tabs-00-00" aria-selected="false">
-&lt;strong>OpenMowerOS version&lt;/strong>:
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link active"
-id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
-aria-controls="tabs-00-01" aria-selected="false">
-2024.03.0+
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
-aria-controls="tabs-00-02" aria-selected="false">
-0.0.1
-&lt;/a>
-&lt;/li>
-&lt;/ul>
-&lt;div class="tab-content" id="tabs-0-content">
-&lt;div class="tab-body tab-pane fade"
-id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
-&lt;/div>
-&lt;div class="tab-body tab-pane fade show active"
-id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;p>In order to run the script, execute the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/openmoweros-tools/fetch_and_upload_firmware.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;div class="tab-body tab-pane fade"
-id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/fetch_and_upload_firmware.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/p>
-&lt;p>If everything works as expected, the output should look like this:&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./fetch_and_upload_firmware.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If everything works as expected, the output should look like this:&lt;/p>
 &lt;div class="container">
 &lt;div class="row justify-content-md-center">
 &lt;div id="player" class="">&lt;/div>
@@ -138,9 +91,9 @@ id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
 &lt;/div>
 &lt;script>
 AsciinemaPlayer.create(
-'mainboard_firmware_update.cast',
+'538389.cast',
 document.getElementById('player'),
-{ cols: 100, rows: 24, autoplay: true, loop: true }
+{ cols: 80, rows: 20, autoplay: true, loop: true }
 );
 &lt;/script>
 &lt;h2 id="step-2-done-">Step 2: Done 🎉&lt;/h2>
@@ -148,8 +101,8 @@ document.getElementById('player'),
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
-received the hardware kit, you should be able to automatically update the firmware.&lt;br>
-Check the guide here: &lt;a href="/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
+received the hardware kit, you should be able to automatically update the firmware. Check the guide
+here: &lt;a href="/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
 &lt;/div>
 &lt;p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&amp;rsquo;t worry, the process is straightforward.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
