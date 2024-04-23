@@ -27,7 +27,7 @@ Connect to the hotspot and the mobile device should ask you to _sign-in into the
 </div>
 <div class="col-3">
 
-<div><img src='connect_Wi-Fi_screen_1.png' width=250 /></div>
+<div><img src='connect_wifi_screen_1.png' width=250 /></div>
 
 </div>
 </div>
@@ -50,7 +50,7 @@ On the screen, select your home Wi-Fi connection and enter your password. Then c
 </div>
 <div class="col-3">
 
-<div><img src='connect_Wi-Fi_screen_2.png' width=250 /></div>
+<div><img src='connect_wifi_screen_2.png' width=250 /></div>
 
 </div>
 </div>
