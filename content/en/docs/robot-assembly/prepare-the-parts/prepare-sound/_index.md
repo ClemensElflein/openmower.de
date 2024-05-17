@@ -14,6 +14,14 @@ If your mainboard got delivered with an already equipped DFPlayer, you most like
 If you need to attach one, and your're not located in the US, you might also use a DFPlayer-Clone with an 'MH2024K-24SS' or 'GD3200B' chip, as sold by Amazon, AliExpress or the like.
 
 {{% alert title="☝️" color="info" %}}
+When using a DFPlayer-<b>Clone</b> with a chip like MH2024 or GD3200,<br>
+in an open-mower-mainboard up to version 0.13.x,<br>
+you should cut-off Pin-11 from the DFPlayer-Clone:<br>
+<img title="Cut-off Pin-11 if DFP-Clone and MoBo <= 0.13.x" src="dfplayer-clone_cut-pin.png" width="200"><br>
+If not, volume control will not work and always play at 100%!
+{{% /alert %}}
+
+{{% alert title="☝️" color="info" %}}
 You also need to take attention that your motherboard has the required R7 and R13 (1k) resistors assembled:<br>
 <img title="Required 1kΩ R7 & R13" src="mainboard-013x-snd-r7-r13.png" width="200">
 {{% /alert %}}
