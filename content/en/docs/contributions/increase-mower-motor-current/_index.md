@@ -9,7 +9,6 @@ description: >
 Author: ow@discord
 
 YardForce Classic Mower Motor: https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66
-
 Alternative config was made by Tomm: https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698
 
 

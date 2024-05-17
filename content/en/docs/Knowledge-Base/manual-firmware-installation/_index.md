@@ -10,8 +10,8 @@ resources:
 
 {{% alert title="Info" color="info" %}}
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
-received the hardware kit, you should be able to automatically update the firmware.  
-Check the guide here: [Firmware Update](/docs/knowledge-base/firmware-update)
+received the hardware kit, you should be able to automatically update the firmware. Check the guide
+here: [Firmware Update](/docs/knowledge-base/firmware-update)
 {{% /alert %}}
 
 In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don't worry, the process is straightforward.
@@ -71,6 +71,6 @@ are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro
 Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
 Pico to reboot. The process takes about 10 seconds.
 
-## Step 4: Done 🎉
+## Step 4: Done :tada:
 
 Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.

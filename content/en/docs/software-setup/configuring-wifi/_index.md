@@ -4,17 +4,11 @@ linkTitle: "Configuring Wi-Fi"
 weight: 10
 ---
 
-<h2 id=step_0>
-  Step 0: Charge the Robot
-</h2>
-
+## Step 0: Charge the Robot
 Make sure that the robot is turned on and fully charged, since the software installation will take some time. You can also do this step while the mower is charging in the docking station.
 
-<br>
+## Step 1: Search the Hotspot
 
-<h2 id=step_1>
-  Step 1: Search the Hotspot
-</h2>
 
 <div class="container-fluid m-0 p-0">
 <div class="row">
@@ -25,22 +19,10 @@ Turn your mower on and wait for the Raspberry Pi to boot. The next step is to co
 In order to do this, take any mobile device and search for Wi-Fi networks. Your robot should have opened a hotspot with the credentials you set earlier.
 
 The default credentials are as follows:
+- **SSID:** openmower-somenumber
+- **Password:** openmower
 
-{{< tabpane text=true >}}
-{{% tab header="**OpenMowerOS version**:" disabled=true /%}}
-{{% tab header="2024.03.0+" %}}
-**SSID:** openmower - *(it uses the OS hostname)*
-
-**Password:** OpenMower
-{{% /tab %}}
-{{% tab header="0.0.1" %}}
-**SSID:** openmower-somenumber
-
-**Password:** openmower
-{{% /tab %}}
-{{< /tabpane >}}
-
-Connect to the hotspot and the mobile device should ask you to *sign-in into the network*.
+Connect to the hotspot and the mobile device should ask you to _sign-in into the network_.
 
 </div>
 <div class="col-3">
@@ -51,18 +33,14 @@ Connect to the hotspot and the mobile device should ask you to *sign-in into the
 </div>
 </div>
 
-<br>
-
-{{% alert title="If no website is shown" %}}
-  If the mobile device does not automatically open the sign-in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: [`http://10.41.0.1/`](http://10.41.0.1/)
-{{% /alert %}}
-
-<br>
 
 
-<h2 id=step_2>
-  Step 2: Enter your Wi-Fi Credentials
-</h2>
+#### If no website is shown:
+If the mobile device does not automatically open the sign-in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/
+
+## Step 2: Enter your Wi-Fi Credentials
+
+
 <div class="container-fluid m-0 p-0">
 <div class="row">
 <div class="col">
@@ -78,20 +56,10 @@ On the screen, select your home Wi-Fi connection and enter your password. Then c
 </div>
 </div>
 
-<br>
-
-<h2 id=step_3>
-  Step 3 (Optional): Check Connection
-</h2>
-
+## Step 3 (Optional): Check Connection
 Check the connection by using any other PC in your network and `ping openmower.local`. This should be working. Alternatively, you can check if the device is connected by logging into your router.
 
-<br>
-
-<h2 id=step_4>
-  Step 4: Wait
-</h2>
-
+## Step 4: Wait
 If the connection is successful, the Raspberry Pi will download and install the latest OpenMower software automatically.
 
 **This will take some time! Depending on your SD card and your internet connection give it up to 30 minutes!**

@@ -12,4 +12,4 @@ The most important information for the Open Mower is its map. The map tells the 
 
 Each area consists of **one outline** and **multiple obstacles**. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.
 
-The map is stored in the `map.bag` file that is located on the mower at `/root/ros_home/.ros`
+The map is stored in the map.bag file that is located on the mower at /root/ros_home/.ros 
