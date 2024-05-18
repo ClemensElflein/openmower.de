@@ -11,10 +11,10 @@ tags: [dfplayer, sound, speaker, optional]
 
 If your mainboard got delivered with an already equipped DFPlayer, you most likely got the original [DFRobot-DFPlayer](https://www.dfrobot.com/product-1121.html) with a 'DFRobot LISP3' chip.
 
-If you need to attach one, and your're not located in the US, you might also use a DFPlayer-Clone with an 'MH2024K-24SS' or 'GD3200B' chip, as sold by Amazon, AliExpress or the like.
+If you need to attach one, and your're not located in the US, you might also use a DFPlayer-Clone with an 'MH2024K-24SS', 'GD3200B' or 'JL AB23A799755' chip, as sold by Amazon, AliExpress or the like.
 
 {{% alert title="☝️" color="info" %}}
-When using a DFPlayer-<b>Clone</b> with a chip like MH2024 or GD3200,<br>
+When using a DFPlayer-<b>Clone</b>,<br>
 in an open-mower-mainboard up to version 0.13.x,<br>
 you should cut-off Pin-11 from the DFPlayer-Clone:<br>
 <img title="Cut-off Pin-11 if DFP-Clone and MoBo <= 0.13.x" src="dfplayer-clone_cut-pin.png" width="200"><br>

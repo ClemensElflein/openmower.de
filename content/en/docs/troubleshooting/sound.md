@@ -23,6 +23,9 @@ This depend on the type and version of your CoverUI:
 
 LowLevel config stuff like sound volume, get saved only once a minute into flash (wear level protection). Therefore, if you change sound volume via CoverUI, you need to wait at least 1 minute, before powering your mower down.
 
+### I decreased my volume via volume-down button, but sound get still played at full volume
+
+This is a known issue with DFPlayer-Clones in mainboard version 0.9.x up (and incl.) 0.13.x. [Read here how to fix](http://localhost:1313/docs/robot-assembly/prepare-the-parts/prepare-sound/#dfplayer-module).
 
 ### I do hear one or two more adverts as before, but no GPS-Pings, no "Bidaa bidaa" emergency, ...
 
