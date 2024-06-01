@@ -1,0 +1,23 @@
+{{ $height := .Get "height" }}
+{{ $unit := .Get "unit" }}
+{{ $ordinal := $.Ordinal }}
+{{ $items := .Get "items" }}
+{{ $duration := .Get "duration" }}
+{{ $carousel := .Page.Params.carousel }}
+
+<div id="carousel{{ $ordinal }}" class="carousel" duration="{{ $duration }}">
+    <ul>
+        {{ range $index, $slide := $carousel }}
+        <li id="c{{ $ordinal }}_slide{{ add $index 1 }}">
+            <img src="{{ $slide.image }}" style="max-height: {{ $height }}{{ $unit }}" alt="" class="nozoom" />
+        </li>
+        {{ end }}
+    </ul>
+    <ol>
+        {{ range $index, $slide := $carousel }}
+        <li><a href="#c{{ $ordinal }}_slide{{ add $index 1 }}"></a></li>
+        {{ end }}
+    </ol>
+    <div class="prev">&lsaquo;</div>
+    <div class="next">&rsaquo;</div>
+</div>
