@@ -23,16 +23,16 @@ Here are my findings for an SA900ECO build but the findings may also be useful f
 
 
 ### Mainboard Pico firmware:
-- The hall sensors on the SA900ECO work the opposite way round to on the classic so you firstly need to edit the main Firmware/LowLevel/main.cpp file in the OpenMower repo to invert the hall sensors (remove the "!"'s leaving: approx line 150:
+- The hall sensors on the SA900ECO work the opposite way round to on the Yardforce classic.  So you will need to edit the firmare.  This is best done in VSCode with platformIO plugin.  Firstly you need to edit the main Firmware/LowLevel/main.cpp file in the OpenMower repo to invert the hall sensors (remove the "!"'s) leaving: approx line 150:
 ```
     uint8_t emergency_read =  gpio_get(PIN_EMERGENCY_3) << 1 | // Stop1
                               gpio_get(PIN_EMERGENCY_4) << 2 | // Stop2
                               gpio_get(PIN_EMERGENCY_1) << 3 | // Lift1
                               gpio_get(PIN_EMERGENCY_2) << 4 | // Lift2
 ```
-- If like me you have connected all wheel hall sensors to the x4 sockets on the mainboard, then the Emergency STOP button isn't used this way, and pins 3&4 instead become two more lift sensors.
+If like me you have connected all wheel hall sensors to the x4 sockets on the mainboard, then the Emergency STOP button isn't used this way, and pins 3&4 instead become two more lift sensors.
 
-Firstly need to change datatypes.h to take stop button out of action and add x2 more lift sensors:
+To handle this, firstly you need to change datatypes.h to take stop button out of action and add x2 more lift sensors:
 ```
 #define LL_EMERGENCY_BIT_LIFT1 LL_EMERGENCY_BIT_HALL1
 #define LL_EMERGENCY_BIT_LIFT2 LL_EMERGENCY_BIT_HALL2
@@ -67,3 +67,7 @@ Then build with platformIO and copy onto RasPi4 and then upload_firmware.sh flas
 ### ESC's
 
 - Download VESCtool and learn to connect to the x3 ESCs and upload the write XML config file onto each ESC for the SA650ECO (which is broadly similar).  I have set my mow motor max rpms to 12500 I think, FYI.  https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC
+
+
+### UI
+In the above build there are no functional buttons on the mower itself... everything needs doing in the mower webs interface, or you can set up your own UI using HomeAssistant or NodeRed for example.
