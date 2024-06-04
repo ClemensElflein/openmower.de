@@ -24,25 +24,25 @@ Build Notes:
 
 Mainboard Pico firmware:
 - The hall sensors on the SA900ECO work the opposite way round to on the classic so you firstly need to edit the main Firmware/LowLevel/main.cpp file in the OpenMower repo to invert the hall sensors (remove the "!"'s leaving: approx line 150:
-
+```
     uint8_t emergency_read =  gpio_get(PIN_EMERGENCY_3) << 1 | // Stop1
                               gpio_get(PIN_EMERGENCY_4) << 2 | // Stop2
                               gpio_get(PIN_EMERGENCY_1) << 3 | // Lift1
                               gpio_get(PIN_EMERGENCY_2) << 4 | // Lift2
-
+```
 - If like me you have connected all wheel hall sensors to the x4 sockets on the mainboard, then the Emergency STOP button isn't used this way, and pins 3&4 instead become two more lift sensors.
 
 Firstly need to change datatypes.h to take stop button out of action and add x2 more lift sensors:
-
+```
 #define LL_EMERGENCY_BIT_LIFT1 LL_EMERGENCY_BIT_HALL1
 #define LL_EMERGENCY_BIT_LIFT2 LL_EMERGENCY_BIT_HALL2
 #define LL_EMERGENCY_BIT_LIFT3 LL_EMERGENCY_BIT_HALL3
 #define LL_EMERGENCY_BIT_LIFT4 LL_EMERGENCY_BIT_HALL4
 #define LL_EMERGENCY_BITS_LIFT (LL_EMERGENCY_BIT_LIFT1 | LL_EMERGENCY_BIT_LIFT2 | LL_EMERGENCY_BIT_LIFT3 | LL_EMERGENCY_BIT_LIFT4)
 #define LL_EMERGENCY_BITS_STOP 0b01000000 // placeholder for SA900ECO config - this is wrong and this bit can never be achieved.
-
+```
 and then back in main.cpp change the lift logic to something akin to:
-
+```
 // Handle lifted (both wheels are lifted)
     // Calculate the number of lift emergency bits set
     int8_t bitsSetCount = 0; 
@@ -59,7 +59,7 @@ and then back in main.cpp change the lift logic to something akin to:
         // Not lifted, reset the time
         lift_emergency_started = 0;
     }
-
+```
 
 Then build with platformIO and copy onto RasPi4 and then upload_firmware.sh flash onto PICO.
 
