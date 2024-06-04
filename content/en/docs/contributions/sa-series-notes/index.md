@@ -6,14 +6,8 @@ description: >-
      This includes some notes on building an SA900ECO with the 0.13 mainboard from Vermut's shop.
 ---
 
-## Heading
+## YardForce SAxxxECO series notes
 
-Edit this template to create your new page.
-
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
 
 Here are my findings for an SA900ECO build but the findings may also be useful for an SA650ECO which looks very similar:
 
