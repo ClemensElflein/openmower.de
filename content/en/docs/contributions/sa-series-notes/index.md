@@ -11,7 +11,7 @@ description: >-
 
 Here are my findings for an SA900ECO build but the findings may also be useful for an SA650ECO which looks very similar:
 
-Build Notes:
+###Build Notes:
 - Generally you can follow the steps for the Classic 500 build using Vermut 0.13x kit, it is broadly similar. https://openmower.de/docs/robot-assembly/assemble-the-robot/photo-guide/
 - After opening up You can remove the front wire detector bar and put aside for now. Not needed.
 - One way to mount the SimpleRTK antenna is to bold the square green board shield on top of the mower at the front, and run the cable inside the (now-removed) wire detector bar gromet a the front of the main housing. top on the front.
@@ -22,7 +22,7 @@ Build Notes:
 - When assembling the charger, it is largely similar but slightly different to the YF Classic 500 one, and you will need some flush cutters to hack out a small bit of plastic when you come to close it up again. You will see.  It’s not problem.
 
 
-Mainboard Pico firmware:
+###Mainboard Pico firmware:
 - The hall sensors on the SA900ECO work the opposite way round to on the classic so you firstly need to edit the main Firmware/LowLevel/main.cpp file in the OpenMower repo to invert the hall sensors (remove the "!"'s leaving: approx line 150:
 ```
     uint8_t emergency_read =  gpio_get(PIN_EMERGENCY_3) << 1 | // Stop1
@@ -64,6 +64,6 @@ and then back in main.cpp change the lift logic to something akin to:
 Then build with platformIO and copy onto RasPi4 and then upload_firmware.sh flash onto PICO.
 
 
-ESC's
+###ESC's
 
 - Download VESCtool and learn to connect to the x3 ESCs and upload the write XML config file onto each ESC for the SA650ECO (which is broadly similar).  I have set my mow motor max rpms to 12500 I think, FYI.  https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC
