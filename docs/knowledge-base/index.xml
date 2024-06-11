@@ -221,7 +221,7 @@ are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro
 Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;h2 id="step-4-done-">Step 4: Done 🎉&lt;/h2>
 &lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Configuring xESC</title><link>/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/configure-xesc/</guid><description>
-&lt;p>If you bought the kit the xESC are preconfigured.&lt;/p>
+&lt;p>If you bought the kit the xESC are preconfigured with &lt;a href="https://github.com/vedderb/bldc">VESC firmware&lt;/a> 5.x&amp;quot;&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
