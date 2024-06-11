@@ -6,7 +6,7 @@ description: >
   Configuring xESC in the mower 
 ---
 
-If you bought the kit the xESC are preconfigured.
+If you bought the kit the xESC are preconfigured with [VESC firmware](https://github.com/vedderb/bldc) 5.x"
 
 | device  	    | xESC        	|
 |---------	    |-------------	|
