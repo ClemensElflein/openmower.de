@@ -36,7 +36,7 @@ If you want to see a quick overview, you can check out this video:
 
 
 ### Support More Mowers
-Currently, the only mower officially supported is the YardForce Classic 500, as the existing mainboard revision is designed to fit this model. However, we now also support the YardForce 500B and 600 models with slight modifications to the mainboard. The stock mainboard can also be adapted to fit the YardForce SA600ECO and SA900ECO, though this requires some extra work. For a comprehensive list of compatible models, please refer to our compatible models page.
+Currently, the only mower officially supported is the YardForce Classic 500, as the existing mainboard revision is designed to fit this model. However, we now also support the YardForce 500B, 650 and 900 models with slight modifications to the mainboard. The stock mainboard can also be adapted to fit the YardForce SA650ECO and SA900ECO, though this requires some extra work. For a comprehensive list of compatible models, please refer to our compatible models page.
 
 ### Community and Development
 The OpenMower project thrives on the contributions of a vibrant community of hobbyists and professionals. Active discussions and collaborative efforts on platforms like Discord are continuously working on supporting a variety of other mower models, including the Worx Landroid, Fuxtec Redback, Bosch Indego, Lidl Parkside, and Viking MI 632. While these models are not yet officially supported out of the box, the collaborative efforts and shared knowledge in the community make it worthwhile to try adapting other models or join the discussion.
