@@ -2,78 +2,50 @@
 title: "Overview"
 linkTitle: "Overview"
 weight: 1
-description: >
-  General information about the Open Mower project.
+description: General information about the Open Mower project.
+carousel:
+  - image: open_mower_app_1.jpg
+  - image: open_mower_app_2.jpg
+  - image: homeassistant_dashboard.png
+  - image: smarthome_tracker.png
 ---
 
-
-
-
-
-## What is Open Mower?
+### Introduction and Vision
+**OpenMower** is a pioneering project aimed at revolutionizing robotic lawn mowing through open-source collaboration. What started as a modest garage project has grown into a mature, community-driven initiative with robust hardware, advanced features, and a dedicated user base.
 
 If you want to see a quick overview, you can check out this video:
 
 <a href="https://www.youtube.com/watch?v=BSF04i3zNGw" target="_blank"><img src="https://user-images.githubusercontent.com/2864655/161540069-f4263fa7-a47b-49d2-a7bc-d1cdc3a47704.jpg" /></a>
 
+### Key Features and Achievements
+**Autonomous Lawn Mowing:** The device efficiently mows the lawn automatically, ensuring a neat and even cut.
+
+**Good Safety:** Equipped with emergency stop features for enhanced safety.
+
+**No Perimeter Wire Needed:** Supports flexible operation across multiple mowing areas without the need for perimeter wires.
+
+**Low Cost:** Designed to be more affordable than mid-range commercial models.
+
+**Open Source:** Committed to sharing knowledge and enabling others to build their own OpenMower.
+
+**User-Friendly App:** The web app interface allows easy setup, control and management of the mower, from desktop or mobile phone.
+
+**Smart Home Integration:** Seamlessly integrates with HomeAssistant, allowing for advanced automations and detailed monitoring. Users can view real-time data such as battery status, motor temperatures, and power sensors directly from their smart home dashboard. Additionally, the integration supports automations like pausing operations during rain and resuming once conditions improve, ensuring efficient and safe operation.
+
+{{< carousel height="500" unit="px" items="4" duration="3000" >}}
 
 
-Let's be honest: The current generation of robotic lawn mowers sucks. Basically, all of these bots drive in a random direction until they hit the border of the lawn, rotate for a randomized duration and repeat. **I think we can do better!**
+### Support More Mowers
+Currently, the only mower officially supported is the YardForce Classic 500, as the existing mainboard revision is designed to fit this model. However, we now also support the YardForce 500B, 650 and 900 models with slight modifications to the mainboard. The stock mainboard can also be adapted to fit the YardForce SA650ECO and SA900ECO, though this requires some extra work. For a comprehensive list of compatible models, please refer to our compatible models page.
 
+### Community and Development
+The OpenMower project thrives on the contributions of a vibrant community of hobbyists and professionals. Active discussions and collaborative efforts on platforms like Discord are continuously working on supporting a variety of other mower models, including the Worx Landroid, Fuxtec Redback, Bosch Indego, Lidl Parkside, and Viking MI 632. While these models are not yet officially supported out of the box, the collaborative efforts and shared knowledge in the community make it worthwhile to try adapting other models or join the discussion.
 
-Therefore, we have disassembled the cheapest off-the-shelf robotic mower we could find ([YardForce Classic 500](https://amzn.to/3NWgIxk)) and were surprised that the hardware itself is actually quite decent:
-- Geared sensored brushless motors for the wheels
-- A sensored brushless motor for the mower motor itself
-- The whole construction seems robust, waterproof and all in all thought through
-- All components are connected using standard connectors, therefore, upgrading the hardware is easily possible.
+### Getting Started and Resources
+Interested in joining the OpenMower project? Explore the following resources to get started:
+- [Getting Started](/docs/getting-started/): Quick start guide to building your own OpenMower.
+- [Links](/docs/links): Additional information, repositories, and the shop.
+- [Compatible Models Page](/docs/compatible-models): Comprehensive list of supported mower models.
 
-The bottom line is: The bot itself is surprisingly high quality and doesn't need to be changed at all. **We just need some better software in there**.
-
-## Important Information
-
-OpenMower is an early stage open source project, **and not a finished product!**
-
-This basically means: I'm just documenting a project of mine here for free, and I don't have the time and resources to check that devices built using this information will be safe to use, legal to use or even work as intended. You will need technical know-how to use this project, and I'm not liable for any direct or indirect damages your actions do to anyone or anything. [More Info](/docs/getting-started/#important-info)
-
-
-## Project Goals / Current State
-
-The basic mowing function finally works! As you can see in the video, map teaching and mowing work as expected. It even returns to the docking station automatically as soon as the battery gets low and continues once it's recharged. Of course, we don't want to stop there, and we want to provide some more great features.
-
-**Here is a rough overview of what works and what's planned for the future:**
-
-:heavy_check_mark: **Autonomous Lawn Mowing:** Obviously, the device should be able to mow the lawn automatically.
-
-:heavy_check_mark: **Good Safety:** The device must be safe, e.g. emergency stop if lifted or crashed.
-
-:heavy_check_mark: **No Perimeter Wire Needed:** We want to be flexible and support multiple mowing areas.
-
-:heavy_check_mark: **Low Cost:** It should be cheaper than a mid-range off-the-shelf product
-
-:heavy_check_mark: **Open:** I want to share knowledge and enable others to build an OpenMower as well.
-
-:heavy_check_mark: **Nice to Look At:** You should not be ashamed to have an OpenMower mowing your lawn.
-
-:wrench: **Usability:** The mower should be easy to use. For now, the mower is controlled via ssh terminal and has no app or other graphical user interface. Also, the mowing needs to be triggered manually. There is no schedule implemented yet.
-
-:wrench: **Smart Home:** The mower should be connected to your smart home. This way you can see what it is currently doing and also start it automatically, according to your own rules.
-
-:wrench: **Avoid Obstacles:** The mower should detect obstacles and avoid them during mowing. For now, if the mower is not able to drive the path successfully, it will skip a part of the path and retry.
-
-:wrench: **Rain Detection:** The device should be able to detect bad weather conditions and pause mowing until they improve.
-
-:wrench: **Support More Mowers:** Currently the only mower officially supported is the YardForce Classic 500. This is because the current mainboard revision fits in this mower. The goal is to create modular hardware which can be used in other mower models as well (with an adaptor of course).
-
-
-## Open Mower App 
-
-![Open Mower App 1](open_mower_app_1.jpg)
-![Open Mower App 2](open_mower_app_2.jpg)
-
-
-
-## Where should I go next?
-
-If you are interested in joining the Open Mower project, you can build your own by checking the following pages:
-* [Getting Started](/docs/getting-started/): Read this if you want to start building quickly
-* [Links](/docs/links): Links to more information, the repositories and the shop.
+### Project Goals and Future Plans
+The OpenMower project continues to evolve with ambitious goals for the future. Planned features include obstacle detection, enhanced scheduling, and expanded compatibility with new mower models. Join us on this journey to redefine robotic lawn mowing.

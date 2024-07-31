@@ -8,40 +8,38 @@ description: >
 
 ## Important Info
 {{% alert title="Read Before Starting" color="warning" %}}
-- **This project is still in an early stage**: You will need time to get the robot running! You will encounter bugs! You might break stuff! You might spend the money and don't get it to work! No guarantees for anything!
+- **Ongoing Development**: The OpenMower project is under continuous development. Be prepared to invest time and effort to get the robot fully operational. While the project is robust, you may encounter bugs or potential issues along the way.
 - **DO NOT** use the stock charger with the OpenMower mainboard!
-- **Lithium Batteries can be dangerous:** You will be building your own charger. Make sure you are comfortable doing that and understand the dangers of working with Lithium batteries.
-- **Read** the whole documentation and **get a high-level overview**: Understand every step involved in the build before actually doing anything.
-- **You are responsible for your own actions**: Be sure that you know what you are doing!
-- **This documentation is work in progress**: There might be errors and missing steps. If you have questions **ask on Discord**.
-{{% /alert %}}
+- **Lithium Batteries can be dangerous:** You will be building your own charger. Ensure you are comfortable with this process and understand the associated risks.
+- **Read** the entire documentation and **gain a high-level overview**: Understand each step involved in the build before starting.
+- **You are responsible for your own actions**: Make sure you know what you're doing!
+- **Evolving Documentation**: This documentation is continuously being improved. There may be errors or missing steps. If you have questions, **ask on Discord**.
+  {{% /alert %}}
 
 ## Prerequisites
 
-Read this paragraph thoroughly in order to understand _which_ components you will need for the Open Mower project and _why_ you will need them. This prevents you from buying expensive stuff and later noticing that you will need even more expensive stuff in order to finish the project.
-
+Read this section thoroughly to understand _which_ components you will need for the Open Mower project and _why_ you need them. This will prevent unnecessary expenses and ensure you are well-prepared.
 
 ### Required Knowledge
-- **Linux**: You should be comfortable using a Linux PC, and you should know how to install a Raspberry Pi. Although there is the Open Mower app available, you will need to change some settings and probably do some debugging to get it working.
-- **Electronics**: You should be comfortable handling PCBs and have some soldering skills. You should be capable of understanding each step you are about to perform.
+- **Linux**: You should be comfortable using a Linux PC and know how to set up a Raspberry Pi. While the Open Mower app is available, you may need to adjust settings and debug issues.
+- **Electronics**: You should have experience handling PCBs and soldering. Ensure you understand each step you will perform.
 
 ### Required Parts
-The Open Mower project consists of multiple parts:
-- **The Robot**: The robot is a modified lawn-mowing robot. The robot is built by using the case and motors of an off-the-shelf lawn mowing robot and replacing the electronics with custom electronics. You will either need to buy the custom electronics or get the parts and solder it yourself.
-- **RTK GPS**: The robot needs to know where _exactly_ it is inside your property in order to mow with high precision. This is achieved by a technology called RTK GPS. This type of GPS uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot via some radio link. This way, the robot is able to position with centimeter accuracy. This can be done using Wi-Fi or some other long range radio. _Hint: There are also cloud services available for RTK error corrections. Some are free and some are paid_
-- **Docking Station**: The robot needs to recharge in a docking station. Unfortunately the battery-charging electronics is not part of the original docking station. That's why we will replace the electronics inside the original docking station as well. **Do not use the stock docking station with the modified robot**
+The Open Mower project involves several key components:
+- **The Robot**: A modified lawn-mowing robot. You will use the case and motors from an off-the-shelf robot and replace the electronics with custom components. You can either purchase the custom electronics or solder the parts yourself.
+- **RTK GPS**: Precision is achieved with RTK GPS, which uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot, enabling centimeter accuracy. This can be done using Wi-Fi or another long-range radio. Note: Some cloud services offer RTK error corrections, both free and paid.
+- **Docking Station**: The robot needs a docking station to recharge. Since the original docking station lacks the necessary charging electronics, you will replace the internal electronics. **Do not use the stock docking station with the modified robot.**
 
-If you are ready and want to get shopping, check out the [Shopping List](/docs/knowledge-base/shopping-list)
+Ready to start? Check out the [Shopping List](/docs/knowledge-base/shopping-list).
 
 ## Build Steps
 
 ![Open Mower Build Overview](flow_chart.jpg)
 
-It's important to build the components in the correct order:
-- The first step is to modify the robot by following the [Robot Assembly](/docs/robot-assembly) steps. Don't let the mower powered on for too long, because **you cannot charge it using the unmodified docking station**.
-- With the modified robot, it's time to modify the docking station by following the [Docking Station Assembly](/docs/docking-station-assembly) section. **Now you are able to charge the battery with the new docking station.**
-- The next step is to set up the software. Since this might take some time and therefore drain the battery, it's important that you do this step after finishing the docking station assembly. This step connects the robot to your Wi-Fi, downloads the OpenMower software, and you will do some general configuration.
-- Finally, with the software running, you can use the Open Mower App to record your mowing areas and navigation areas and finally mow.
+Follow these steps in order to build your OpenMower:
+- First, modify the robot following the [Robot Assembly](/docs/robot-assembly) steps. Avoid leaving the mower powered on too long, as **you cannot charge it using the unmodified docking station**.
+- Next, modify the docking station using the [Docking Station Assembly](/docs/docking-station-assembly) guide. **You will then be able to charge the battery with the new docking station.**
+- Set up the software. This step connects the robot to your Wi-Fi, downloads the OpenMower software, and involves general configuration. Ensure the docking station assembly is complete before starting this step to avoid battery drain.
+- Finally, with the software running, use the Open Mower App to record your mowing and navigation areas, and start mowing.
 
-
-If you have the parts and are ready to assemble the robot, read the [Robot Assembly](/docs/robot-assembly) docs.
+If you have the parts and are ready to assemble the robot, read the [Robot Assembly](/docs/robot-assembly) documentation.
