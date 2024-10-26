@@ -9,32 +9,28 @@ description: >
 We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.
 
 
-
 ## Prerequisites
 
 In order to follow this guide, you will need:
 - **An SD card with at least 16 GB**
 - **A PC with the Raspberry Pi Imager Software installed:**<br/>
-  :link:&nbsp;[https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)
+  🔗&nbsp;[https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)
 - **The latest OpenMowerOS Image:**<br/>
-  :link:&nbsp;[https://github.com/ClemensElflein/OpenMowerOS/releases](https://github.com/ClemensElflein/OpenMowerOS/releases)<br/>
-  You can download it in the `Assets` section. You don't need to unzip the image.
+  🔗&nbsp;[https://github.com/ClemensElflein/OpenMowerOS/releases](https://github.com/ClemensElflein/OpenMowerOS/releases)<br/>
+  You can download it in the `Assets` section. You don't need to unpack the image.
 - **An SD card reader**
-
 
 
 ## Step 1: Flash the Image to your SD Card
 
-- Start the Raspberry Pi Imager Software. Select `CHOOSE OS > Use Custom`. Then open the image file you downloaded earlier.
+- Start the Raspberry Pi Imager Software. Select `CHOOSE OS -> Use Custom`. Then open the image file you downloaded earlier.
 - Select `CHOOSE STORAGE` and select your SD card from the Window. **Make sure that you are really selecting the correct SD card, all data on the selected device will be erased!**
 - Select `WRITE` and wait for the process to finish
-
 
 
 ## Step 2: Configure Open Mower
 
 For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the `boot` partition of your newly flashed SD card. You can access the files on Windows or Linux without any additional steps (it's mounted as a mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.
-
 
 
 #### /openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)
@@ -50,7 +46,6 @@ This file selects the Open Mower version to use. You can choose the following:
 **beta (recommended):** This one is the _most stable_ one of the three. I try to keep this as stable as possible.
 {{% /tab %}}
 {{< /tabpane >}}
-
 
 
 #### /openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)
@@ -183,7 +178,6 @@ export OM_OUTLINE_OFFSET=0.05
 # source $(rospack find open_mower)/params/hardware_specific/$OM_MOWER/default_environment.sh
 ```
 {{< /spoiler >}}
-
 
 
 ## Step 3: Done 🎉

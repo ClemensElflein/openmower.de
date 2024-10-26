@@ -21,6 +21,7 @@ This update guide assumes that you have the following:
 
 - The mower is connected to the internet
 
+
 ## Step 1: Run the Firmware Update Script
 
 The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.
@@ -52,6 +53,7 @@ If everything works as expected, the output should look like this:
         { cols: 100, rows: 24, autoplay: true, loop: true }
     );
 </script>
+
 
 ## Step 2: Done 🎉
 

@@ -15,8 +15,11 @@ description: >
 
 In this section, we modify the docking station. This is needed in order to add a constant current / constant voltage module which will charge the Lipo battery. In order to fit the CC/CV module inside the docking station, I'm using a PCB as carrier board. Additionally, this PCB adds a fuse to protect the module from over-current. 
 
+
 # Disassemble YF500 docking station
+
 ## Step 1: Remove screws on the bottom
+
 ![step1-dockingstation](remove-bottom-dockingstation.png)
 
 First turn the whole docking station upside down.
@@ -24,40 +27,48 @@ First turn the whole docking station upside down.
 Remove the 6 screws (red) that hold the docking part. Remove the other 5 screws (yellow) that holds the bottom plate to the docking station.
 The docking unit should now come apart from the bottom plate with 2 green wires still attached.
 
-## Step 2: Remove plastic tabs
-![remove-plastic-tab-dock](remove-plastic-tab-dock.png)
 
+## Step 2: Remove plastic tabs
+
+![remove-plastic-tab-dock](remove-plastic-tab-dock.png)
 
 Go to the back of the docking unit and locate the 2 plastic tabs.
 
-
 Stick a plastic removal tool/wedge or flathead screwdriver on the bottom of the plastic (see red arrows).
-
 
 Push down till you hear a click, you should now be able to remove the top plastic part.
 
+
 ## Step 3: Remove orange plastic on top of the docking station
+
 ![remove-orange-part](remove-orange-part.png)
 
 Using your fingers, you can easily remove the orange plastic, just press down, and it should come off.
 
+
 ## Step 4: Remove the back side
+
 ![remove-back-of-docking](remove-back-of-docking.png)
 
 Remove the 7 screws (red) on the back of the docking unit.
 
 You should now be able to pull apart the docking station.
 
+
 # Docking station assembly
 
 ## Step 1: Prepare CC/CV module
+
 {{< tabpane text=true persistLang=false >}}
 {{% tab header="**Dock PCB version**:" disabled=true /%}}
 {{% tab header="Red 0.13" %}}
 Skip this step.
 {{% /tab %}}
 {{% tab header="Green 0.10" %}}
+
+
 ## Desolder the original CC/CV module
+
 ![Desoldered Module](desoldered_module.jpg)
 The first step is to desolder the screw terminals from the CC/CV module. This way we can mount it onto our carrier PCB. It is important that the through-hole connections don't get damaged during desoldering. Therefore, you should use **much heat and no force** during the desoldering process. Clear the through holes using a solder sucker.
 {{% /tab %}}
@@ -65,13 +76,13 @@ The first step is to desolder the screw terminals from the CC/CV module. This wa
 
 
 ## Step 2: Mount the CC/CV module to the PCB and solder the components
+
 {{< tabpane text=true persistLang=false >}}
 {{% tab header="**Dock PCB version**:" disabled=true /%}}
 {{% tab header="Red 0.13" %}}
  > Kit doesn't include standoffs for CC/CV; it assumes you are mounting CC/CV directly on PCB using 3mm screws. You can use standoffs if you have them.
 
 Alternative to wires would be soldering CC-CV terminals to the holes below directly. Both options are fine.
-
 
 1. Mount the CC-CV on the dock pcb with 3mm screws
 ![1 Mount the CC-CV on the dock pcb with 3mm screws](red_board_1.jpg)
@@ -96,7 +107,9 @@ Another assembly without the standoffs.
 {{% /tab %}}
 {{< /tabpane >}}
 
+
 ## Step 3: Mount the assembly inside the docking station
+
 ![Module Mounted inside Dock](cc_cv_module_mounted.jpg)
 
 Now you can mount the whole assembly inside the docking station. Connect the module as shown in the image above.
@@ -105,7 +118,9 @@ Now you can mount the whole assembly inside the docking station. Connect the mod
 Many people mistake the polarity of the wires in terminals. Verify them now with multimeter.
 {{% /alert %}}
 
+
 ## Step 4: Set Voltage
+
 ![Setting the Voltage](setting_the_voltage.jpg)
 
 Connect a multimeter as shown in the picture and connect the power supply. Set the voltage to 29.2V and the current to a minimum by turning it all the way counter-clockwise (this is important for the next step!). You should hear a clicking sound as soon as the limit is reached. If not, turn at least 20 turns.
@@ -113,6 +128,7 @@ Connect a multimeter as shown in the picture and connect the power supply. Set t
 Note that when you turn the current screw all the way counter-clockwise the voltage will be limited too. After turning it counter-clockwise all the way, make sure you give it a small nudge clockwise so you can still accurately measure the voltage.
 
 **Disconnect the power supply.**
+
 
 ## Step 5: Set Current
 
@@ -141,8 +157,12 @@ If you can't reach 1.2A of charging current, your battery is charged too much. D
 
 Once you have set the current **turn off the mower and disconnect the power supply**.
 
+
 ## Step 6: Assemble the Dock
+
 Now that you have set the voltage and the current, you can reassemble the docking station, and it is ready for use. **Don't forget to connect the positive terminal we disconnected earlier!**
 
+
 ## Step 7: Done 🎉
+
 Continue with [Software Setup](/docs/software-setup/).

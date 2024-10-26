@@ -6,6 +6,7 @@ weight: 30
 
 In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.
 
+
 ## Prerequisites
 
 - A smartphone or PC
@@ -13,7 +14,6 @@ In this section, we finally drive the robot around and test if everything works 
 - OpenMower software running on the robot
 - Docking station modified and powered up
 - Mower fully charged
-
 
 
 ## Step 1: Check the GPS
@@ -31,7 +31,6 @@ Wait for the GPS to find a position. This might take some time (up to 30 minutes
 You can see the current GPS quality in the Open Mower app as shown in the graphic above.
 
 **You need to have RTK Fixed** for the following to work. If you don't get a good GPS fix, you will need to check your RTK setup and configuration.
-
 
 
 ## Step 2: Initialize the Orientation
@@ -52,7 +51,6 @@ The orientation is initialized correctly if:
 - When rotating in place, the visualization stays in place and doesn't jump
 
 
-
 ## Step 3: Record a Simple Map
 
 In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you're confident that everything works as expected.
@@ -68,7 +66,6 @@ The map for the mower consists of three parts: the **docking position**, at leas
 Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.
 
 
-
 ### Record Outline
 
 ![Record Outline](record_outline.jpg)
@@ -78,7 +75,6 @@ Now that the robot knows where it is located, and you know which areas we need t
 - Drive around the mowing area. Make sure that the GPS position stays fixed at all times.
 - Stop the recording using **Stop Recording**.
 - The outline should now turn green. This means it's done recording, and you can move on to recording exclusions.
-
 
 
 ### Optional: Record Exclusions
@@ -93,7 +89,6 @@ If your area has zones you want to exclude (e.g. static obstacles), you can reco
 - The outline should now turn red. This means it's done recording, and you can move on to recording more exclusions.
 
 
-
 ### Save Area
 
 ![Save Area](save_mowing_area.jpg)
@@ -101,7 +96,6 @@ If your area has zones you want to exclude (e.g. static obstacles), you can reco
 If you are happy with your recording, you can save the area. In order to do this, click the **Finish Area** button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.
 
 As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.
-
 
 
 ### Record Docking Position
@@ -114,7 +108,6 @@ In order to record the docking position, do the following:
 - Now drive close to the docking station. The front wheels of the robot should be at the edge of the docking station. **Don't fully drive into the docking station!**.
 - Make sure you have a GPS fix and press the **Record Docking** button.
 - The app should move the **home** icon to your current location. Now you can fully drive into the docking station.
-
 
 
 ### Finish Recording

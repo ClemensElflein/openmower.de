@@ -7,5 +7,3 @@ description: >
 resources:
 - src: "**.png"
 ---
-
-
