@@ -18,7 +18,8 @@
 &lt;/figure>
 &lt;/p>
 &lt;h2 id="determining-if-you-are-affected">Determining if you are affected&lt;/h2>
-&lt;p>INA180A3IDBVR has marking &lt;code>1A9D&lt;/code>. If you see that - you are affected. Good chip TSC101CILT is marked &lt;code>0106&lt;/code>.&lt;/p>
+&lt;p>INA180A3IDBVR has marking &lt;code>1A9D&lt;/code>. If you see that - you are affected.&lt;br>
+The good chip TSC101CILT is marked &lt;code>0106&lt;/code>.&lt;/p>
 &lt;p>
 &lt;figure>
 &lt;img src="/docs/versions/errata/ic2-is-wrong/INA180A3IDBVR.png"
@@ -37,8 +38,8 @@ alt="Good TSC101CILT"/> &lt;figcaption>
 &lt;p>First, for many people, it&amp;rsquo;s just working. So if your mower worked for a couple of weeks, it might survive. In that case you don&amp;rsquo;t have to take any action. If your robot does not charge anymore, there are two options: Fixing the hardware or ignoring the error in software.&lt;/p>
 &lt;p>I recommend replacing the IC to fix this issue.&lt;/p>
 &lt;h3 id="option-1">Option 1&lt;/h3>
-&lt;p>Replace IC2 with TSC101CILT (DigiKey &lt;code>497-6947-1-ND&lt;/code>, Mouser &lt;code>511-TSC101CILT&lt;/code>, TME &lt;code>TSC101CILT&lt;/code> or other major distributor).&lt;/p>
-&lt;p>The process is pretty simple to do with a normal soldering iron.
+&lt;p>Replace IC2 with TSC101CILT &lt;em>(DigiKey &lt;code>497-6947-1-ND&lt;/code>, Mouser &lt;code>511-TSC101CILT&lt;/code>, TME &lt;code>TSC101CILT&lt;/code> or other major distributor).&lt;/em>&lt;/p>
+&lt;p>The process is pretty simple to do with a normal soldering iron.&lt;br>
 Disconnect all modules and power from the mainboard before starting the replacement.&lt;/p>
 &lt;p>For replacement, follow these steps:&lt;/p>
 &lt;ol>
@@ -54,14 +55,16 @@ Disconnect all modules and power from the mainboard before starting the replacem
 &lt;li>IC2 to measure the current and shut down charging, if excessive current occurs&lt;/li>
 &lt;li>Battery management system inside the battery to protect the battery.&lt;/li>
 &lt;/ol>
-&lt;p>If you feel that you don&amp;rsquo;t need the safety check and don&amp;rsquo;t want to switch the IC, you can disable the check in the firmware. We advise to do the hardware replacement instead. As always: Do this at your own risk.&lt;/p>
+&lt;p>If you feel that you don&amp;rsquo;t need the safety check and don&amp;rsquo;t want to switch the IC, you can disable the check in the firmware. We advise to do the hardware replacement instead.&lt;br>
+&lt;strong>As always: Do this at your own risk.&lt;/strong>&lt;/p>
 &lt;p>To do that, update your firmware, hard-coding charge current to -1A:
 Replace&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">status_message&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">charging_current&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#204a87;font-weight:bold">float&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#000">analogRead&lt;/span>&lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">PIN_ANALOG_CHARGE_CURRENT&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3.3f&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">/&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">4096.0f&lt;/span>&lt;span style="color:#000;font-weight:bold">)&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">/&lt;/span> &lt;span style="color:#000;font-weight:bold">(&lt;/span>&lt;span style="color:#000">CURRENT_SENSE_GAIN&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">*&lt;/span> &lt;span style="color:#000">R_SHUNT&lt;/span>&lt;span style="color:#000;font-weight:bold">);&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>with&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">status_message&lt;/span>&lt;span style="color:#000;font-weight:bold">.&lt;/span>&lt;span style="color:#000">charging_current&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">-&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.0&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For mainstream kit versions, we prepared this already. Just update your mower_version in &lt;code>/boot/mower_config.txt&lt;/code> to use the firmware without charging current control.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For mainstream kit versions, we prepared this already.&lt;br>
+Just update your &lt;code>OM_HARDWARE_VERSION&lt;/code> in &lt;code>/boot/openmower/mower_config.txt&lt;/code> to use the firmware without charging current control.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>

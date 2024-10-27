@@ -67,23 +67,56 @@
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
 &lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
-&lt;p>The map is stored in the map.bag file that is located on the mower at /root/ros_home/.ros&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
+&lt;p>The map is stored in the &lt;code>map.bag&lt;/code> file that is located on the mower at &lt;code>/root/ros_home/.ros&lt;/code>&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/firmware-update/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>This update guide assumes that you have the following:&lt;/p>
 &lt;ul>
-&lt;li>A mower with the OpenMowerOS running on it.&lt;/li>
-&lt;li>&lt;strong>Important:&lt;/strong> verified that the &lt;code>/boot/mower_config.sh&lt;/code> file has the correct hardware version set (OM_HARDWARE_VERSION). If this is wrong, the wrong firmware will be installed on your device. Check the &lt;a href="/docs/knowledge-base/manual-firmware-installation">Manual Firmware Installation&lt;/a> guide on how to find that value.&lt;/li>
-&lt;li>The Raspberry Pi is running, and you are able to connect to it via &lt;code>ssh&lt;/code>&lt;/li>
-&lt;li>The mower is connected to the internet&lt;/li>
+&lt;li>
+&lt;p>A mower with the OpenMowerOS running on it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Important:&lt;/strong> verified that the &lt;code>/boot/openmower/mower_config.txt&lt;/code> file has the correct hardware version set (&lt;code>OM_HARDWARE_VERSION&lt;/code>). If this is wrong, the wrong firmware will be installed on your device. Check the &lt;a href="/docs/knowledge-base/manual-firmware-installation">Manual Firmware Installation&lt;/a> guide on how to find that value.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The Raspberry Pi is running, and you are able to connect to it via &lt;code>ssh&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The mower is connected to the internet&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-1-run-the-firmware-update-script">Step 1: Run the Firmware Update Script&lt;/h2>
 &lt;p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.&lt;/p>
-&lt;p>In order to run the script, execute the following commands:&lt;/p>
+&lt;p>In order to run the script, execute the following commands:
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+0.1.0
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./fetch_and_upload_firmware.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If everything works as expected, the output should look like this:&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/fetch_and_upload_firmware.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>If everything works as expected, the output should look like this:&lt;/p>
 &lt;div class="container">
 &lt;div class="row justify-content-md-center">
 &lt;div id="player" class="">&lt;/div>
@@ -93,7 +126,7 @@
 AsciinemaPlayer.create(
 '538389.cast',
 document.getElementById('player'),
-{ cols: 80, rows: 20, autoplay: true, loop: true }
+{ cols: 100, rows: 24, autoplay: true, loop: true }
 );
 &lt;/script>
 &lt;h2 id="step-2-done-">Step 2: Done 🎉&lt;/h2>
@@ -101,8 +134,8 @@ document.getElementById('player'),
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
-received the hardware kit, you should be able to automatically update the firmware. Check the guide
-here: &lt;a href="/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
+received the hardware kit, you should be able to automatically update the firmware.&lt;br>
+Check the guide here: &lt;a href="/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
 &lt;/div>
 &lt;p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&amp;rsquo;t worry, the process is straightforward.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
@@ -220,7 +253,34 @@ are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro
 &lt;p>Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
 Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;h2 id="step-4-done-">Step 4: Done 🎉&lt;/h2>
-&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Configuring xESC</title><link>/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/configure-xesc/</guid><description>
+&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Compatible Mowers</title><link>/docs/knowledge-base/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/compatible-mowers/</guid><description>
+&lt;p>The project got started on a YardForce Classic 500(B) and there are (photo) guides at this documentation on how to dissassemble and assemble it again.&lt;br>
+So the YF Classics 500(B) is from a users perspective the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
+&lt;p>The YF SA650ECO is the second model officially supported but there are no model specific guides yet.&lt;/p>
+&lt;br>
+&lt;p>&lt;strong>Howerver there are more Mowers from the YardForce brand compatible:&lt;/strong>&lt;/p>
+&lt;p>In theory every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ have compatible electronics to replace the stock mainboard by an openmower one.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+As of today the YardForce Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.&lt;br>
+The main reason is that the OpenMower mainboard does not fit in their chassis.
+&lt;/div>
+&lt;h2 id="confirmed-convertable-mowers">Confirmed convertable mowers&lt;/h2>
+&lt;ul>
+&lt;li>YardForce
+&lt;ul>
+&lt;li>Classic
+&lt;ul>
+&lt;li>500, 500B&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SA
+&lt;ul>
+&lt;li>650ECO, 900ECO&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Configuring xESC</title><link>/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/configure-xesc/</guid><description>
 &lt;p>If you bought the kit the xESC are preconfigured with &lt;a href="https://github.com/vedderb/bldc">VESC firmware&lt;/a> 5.x&amp;quot;&lt;/p>
 &lt;table>
 &lt;thead>
@@ -245,7 +305,7 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;p>the config of the mow motor differs from the config of the drive motors, the configs of the two drive motors are equal&lt;/p>
-&lt;p>Configurations for each xESC can be found at &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC&lt;/a>&lt;/p>
+&lt;p>Configurations for each xESC can be found at  https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC&lt;/p>
 &lt;h2 id="configuring-the-xesc">Configuring the xESC&lt;/h2>
 &lt;p>Prereqs:&lt;/p>
 &lt;ul>
@@ -253,13 +313,15 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;/ul>
 &lt;p>Connecting to the xESC:&lt;/p>
 &lt;ol>
-&lt;li>&lt;code>systemctl stop openmower&lt;/code>&lt;/li>
-&lt;li>&lt;code>socat tcp-listen:65102,reuseaddr,fork file:/dev/ttyAMAX,raw&lt;/code> &amp;lt;- replace X with devicenumber&lt;/li>
+&lt;li>&lt;code>sudo systemctl stop openmower&lt;/code>&lt;/li>
+&lt;li>&lt;code>socat tcp-listen:65102,reuseaddr,fork file:/dev/ttyAMAx,raw&lt;/code> &amp;lt;- replace &lt;code>x&lt;/code> with devicenumber&lt;/li>
 &lt;li>start VESC Tool&lt;/li>
-&lt;li>Go to Connection&amp;gt;TCP and insert openmower IP, leave port at 65102&lt;/li>
+&lt;li>Go to &lt;code>Connection -&amp;gt; TCP&lt;/code> and insert openmower IP, leave port at 65102&lt;/li>
 &lt;li>Connect&lt;/li>
 &lt;/ol>
-&lt;p>To change xESC just ctrl+c in the openmower terminal replacing ttyAMA with a new device number and reconnect in VESC Tool.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+To change xESC just &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd> in the openmower terminal replacing &lt;code>ttyAMAx&lt;/code> with a new device number and reconnect in VESC Tool.
+&lt;/div>
 &lt;p>Loading XML motor configuration:&lt;/p>
 &lt;ol>
 &lt;li>Download XML configuration files from repo&lt;/li>
@@ -274,7 +336,7 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;li>Select file named app for the xESC you connected to&lt;/li>
 &lt;li>On the right toolbar click &amp;ldquo;Write App configuration&amp;rdquo; (the A with a arrow pointing down)&lt;/li>
 &lt;/ol>
-&lt;p>Finally ctrl+c in the openmower terminal and start openmower service again. &lt;code>systemctl start openmower&lt;/code>&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-base-setup/</guid><description>
+&lt;p>Finally hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd> in the openmower terminal and start the openmower service again. &lt;code>sudo systemctl start openmower&lt;/code>&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-base-setup/</guid><description>
 &lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
@@ -505,7 +567,7 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Mower&lt;br />(Yardforce Classic 500 or 500B)&lt;/td>
+&lt;td>Mower&lt;br />(YardForce Classic 500 or 500B)&lt;/td>
 &lt;td>The mower to modify.&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>

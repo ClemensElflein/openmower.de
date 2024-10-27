@@ -1,17 +1,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Software Setup</title><link>/docs/software-setup/</link><description>Recent content in Software Setup on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/software-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring Wi-Fi</title><link>/docs/software-setup/configuring-wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/configuring-wifi/</guid><description>
-&lt;h2 id="step-0-charge-the-robot">Step 0: Charge the Robot&lt;/h2>
+&lt;h2 id=step_0>
+Step 0: Charge the Robot
+&lt;/h2>
 &lt;p>Make sure that the robot is turned on and fully charged, since the software installation will take some time. You can also do this step while the mower is charging in the docking station.&lt;/p>
-&lt;h2 id="step-1-search-the-hotspot">Step 1: Search the Hotspot&lt;/h2>
+&lt;br>
+&lt;h2 id=step_1>
+Step 1: Search the Hotspot
+&lt;/h2>
 &lt;div class="container-fluid m-0 p-0">
 &lt;div class="row">
 &lt;div class="col">
 &lt;p>Turn your mower on and wait for the Raspberry Pi to boot. The next step is to connect the Robot to your Wi-Fi network. This way it can download and install the latest OpenMower software.&lt;/p>
 &lt;p>In order to do this, take any mobile device and search for Wi-Fi networks. Your robot should have opened a hotspot with the credentials you set earlier.&lt;/p>
 &lt;p>The default credentials are as follows:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>SSID:&lt;/strong> openmower-somenumber&lt;/li>
-&lt;li>&lt;strong>Password:&lt;/strong> openmower&lt;/li>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+0.1.0
+&lt;/a>
+&lt;/li>
 &lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;p>&lt;strong>SSID:&lt;/strong> openmower-somenumber&lt;/p>
+&lt;p>&lt;strong>Password:&lt;/strong> openmower&lt;/p>
+&lt;/div>
+&lt;/div>
 &lt;p>Connect to the hotspot and the mobile device should ask you to &lt;em>sign-in into the network&lt;/em>.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
@@ -19,9 +45,15 @@
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;h4 id="if-no-website-is-shown">If no website is shown:&lt;/h4>
-&lt;p>If the mobile device does not automatically open the sign-in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: http://10.41.0.1/&lt;/p>
-&lt;h2 id="step-2-enter-your-wi-fi-credentials">Step 2: Enter your Wi-Fi Credentials&lt;/h2>
+&lt;br>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">If no website is shown&lt;/h4>
+If the mobile device does not automatically open the sign-in page for you, you can access it while being connected with the hotspot by navigating to the following URL in any browser: &lt;a href="http://10.41.0.1/">&lt;code>http://10.41.0.1/&lt;/code>&lt;/a>
+&lt;/div>
+&lt;br>
+&lt;h2 id=step_2>
+Step 2: Enter your Wi-Fi Credentials
+&lt;/h2>
 &lt;div class="container-fluid m-0 p-0">
 &lt;div class="row">
 &lt;div class="col">
@@ -32,9 +64,15 @@
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;h2 id="step-3-optional-check-connection">Step 3 (Optional): Check Connection&lt;/h2>
+&lt;br>
+&lt;h2 id=step_3>
+Step 3 (Optional): Check Connection
+&lt;/h2>
 &lt;p>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively, you can check if the device is connected by logging into your router.&lt;/p>
-&lt;h2 id="step-4-wait">Step 4: Wait&lt;/h2>
+&lt;br>
+&lt;h2 id=step_4>
+Step 4: Wait
+&lt;/h2>
 &lt;p>If the connection is successful, the Raspberry Pi will download and install the latest OpenMower software automatically.&lt;/p>
 &lt;p>&lt;strong>This will take some time! Depending on your SD card and your internet connection give it up to 30 minutes!&lt;/strong>&lt;/p>
 &lt;p>You know that the process was successful by looking at the RGB LED on your mainboard. It will either switch to &lt;em>RED-GREEN blinking&lt;/em> or a &lt;em>SOLID GREEN&lt;/em>.&lt;/p></description></item><item><title>Docs: Record a Map</title><link>/docs/software-setup/record-a-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/software-setup/record-a-map/</guid><description>
@@ -51,7 +89,7 @@
 &lt;p>&lt;img src="gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
-&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080">http://openmower.local:8080&lt;/a>. If that doesn&amp;rsquo;t work, replace &lt;code>openmower.local&lt;/code> with your mower&amp;rsquo;s IP address.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
 &lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
 &lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
@@ -73,9 +111,15 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;p>In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
 &lt;p>The map for the mower consists of three parts: the &lt;strong>docking position&lt;/strong>, at least one &lt;strong>mowing area&lt;/strong> and optionally &lt;strong>navigation areas&lt;/strong>.&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/li>
-&lt;li>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/li>
-&lt;li>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
 &lt;h3 id="record-outline">Record Outline&lt;/h3>
