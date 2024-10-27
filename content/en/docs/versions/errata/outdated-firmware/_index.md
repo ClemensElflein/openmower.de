@@ -1,8 +1,8 @@
 ---
 title: Outdated firmware in the kit
 linkTitle: Outdated firmware
-
 ---
+
 Pico firmware shipped with the kit was outdated.
 
 Symptoms:

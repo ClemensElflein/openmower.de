@@ -9,15 +9,22 @@ description: >
 This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase.
 
 ## Prerequisites
+
 - [Raspberry Pi 0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
 - sd card
 - power supply for RPi
 - [Ardusimple ZED-F9P](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/)
 - A windows PC
 - stable internet connection (no disconnection within one hour)
+
+
 ## Installation
+
 If you know about RPi and have already a functional OS, you may head on to "Software", but in my case it did not work using an older image. 
+
+
 ### Preparing sd card
+
 - Download [RPi Imager](https://www.raspberrypi.com/software/) for windows
 - Start Imager:
   
@@ -53,11 +60,16 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 
 - Wait until it is finished, it may take half an hour, depending on your internet connection ;-)
   
+
 ### Start your RTKBase RPi
+
 - Put your sd card into your RPi
 - Connect ZED-F9P via usb to your RPi (NOT after the installation, it will be configured during installation).
 - Power your RPi
+
+
 ### Connect to RPi
+
 - Get from your router the IP of your RPi
 - Start [PuTTY](https://putty.org) and connect to RPi, where you enter the local IP of your RPi
   
@@ -68,7 +80,9 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
  
   ![]() <img src="./Putty3.png" width="120">
 
+
 ### Software
+
 - Is your ZED-F9P connected? Do it!
 - We will use [RTKBase](https://github.com/Stefal/rtkbase)
 - To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.
@@ -96,7 +110,9 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
   ```
 - Installation finished, go on and configure your RTKBase
   
+
 ## Configuring your RTKBase
+
   - Start a browser and enter the IP address of your RTKBase. You will get this:
     
     ![]()<img src="./RTKBase01.png" width="120">
@@ -123,9 +139,14 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
     
     ![]()<img src="./RTKBase06.png" width="120">
 
+
 ### Find the position of your RTKBase
+
 There are several ways to find your position. To use openmower you do not need the perfect position. Therefore the first option should be your choice, if you want a fast and good result for openmower.
+
+
 #### Easy and good way
+
  - Click on the symbol right to PPP to copy the values to the clipboard:
    
    ![]()<img src="./RTKBase02.png" width="120">
@@ -135,6 +156,7 @@ There are several ways to find your position. To use openmower you do not need t
  - Save
  - ReActivate Ntrip Service
  - Finished!
+
 
 #### More complicated and more exact way
 

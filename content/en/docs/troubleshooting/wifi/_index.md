@@ -16,7 +16,9 @@ The Raspberry Pi tries to powersave on the Wi-Fi, which causes high latency or e
 Please check which chipset your Wi-Fi dongle uses.
 You can solve this by editing the modprobe as following:
 
+
 ## Realtek RTL8192cu
+
 ```bash
 sudo nano /etc/modprobe.d/8192cu.conf
 # Change the following lines
@@ -25,6 +27,7 @@ rtw_enusbss=0
 ```
 
 ## Realtek RTL8821CU
+
 ```bash
 sudo nano /etc/modprobe.d/8821cu.conf
 # Change the following lines

@@ -22,4 +22,4 @@ resources:
 | **end of boot sequence** |                                                                                                                                     |
 | orange - red flashing    | emergency mode and ros is disconnected                                                                                              |
 | green - red flashing     | emergency mode and ros is connected                                                                                                 |
-| steady green	            | ros is connected and no emergency mode is detected<br/>(all voltages are OK, wheels aren't lifted, emergency button is not pressed) |
+| steady green	           | ros is connected and no emergency mode is detected<br/>(all voltages are OK, wheels aren't lifted, emergency button is not pressed) |

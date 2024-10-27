@@ -10,6 +10,7 @@ tags: [ photo guide, disassembly, 0_13_x ]
 
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unscrew-the-cover" >}}
 
+
 ### Pry the cover
 
 This is a bit tricky in some parts, so I recommend you checking YouTube video
@@ -18,6 +19,7 @@ here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_
 
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/pry-the-cover" >}}
 
+
 ### Unplug the cover
 
 2 small wires on the front going to wheel sensors, and 1 wide wire from mainboard to cover UI board.
@@ -25,13 +27,16 @@ Screwdriver is in the pictures for illustrative purposes, you can simply hold it
 
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unplug-the-cover" >}}
 
+
 ### Unplug the mainboard
 
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unplug-the-mainboard" >}}
 
+
 ### Remove front PCB
 
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/remove-front-pcb" >}}
+
 
 ### Remove cover UI board
 

@@ -7,5 +7,3 @@ description: >
 ---
 
 Now that you have all the parts available, you will need to configure some of them, so that they will work together in the end.
-
-

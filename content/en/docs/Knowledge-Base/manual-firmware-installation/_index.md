@@ -10,8 +10,8 @@ resources:
 
 {{% alert title="Info" color="info" %}}
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
-received the hardware kit, you should be able to automatically update the firmware. Check the guide
-here: [Firmware Update](/docs/knowledge-base/firmware-update)
+received the hardware kit, you should be able to automatically update the firmware.  
+Check the guide here: [Firmware Update](/docs/knowledge-base/firmware-update)
 {{% /alert %}}
 
 In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don't worry, the process is straightforward.
@@ -21,23 +21,27 @@ It's very important that you get the correct firmware for your hardware version.
 device to malfunction and in the worst case, destroy the hardware.
 {{% /alert %}}
 
+
 ## Step 1: Download the Latest Firmware Bundle
 
 {{< container-image path="firmware-download.png" alt="Firmware Download" >}}
 
 The first step is to download and extract the latest firmware bundle. The zip file contains all the firmwares supported
 by the OpenMower project.
-You can get the latest version here: :link:
+You can get the latest version here: 🔗
 &nbsp;[https://github.com/ClemensElflein/OpenMower/releases](https://github.com/ClemensElflein/OpenMower/releases)
+
 
 ## Step 2: Find the Firmware
 
 In order to find the correct firmware file, you will need two pieces of information:
 
+
 ### 2.1: The hardware version of your mainboard
 
 The version of your mainboard is printed on the lower left side of your mainboard:
 <div><img src='mainboard-version.jpg' width=400 /></div>
+
 
 ### 2.2: The type of IMU you are using:
 
@@ -46,6 +50,7 @@ The version of your mainboard is printed on the lower left side of your mainboar
 | WT901    | <img src='wt-901.jpg' width=200 />   |
 | MPU9250  | <img src='mpu-9250.jpg' width=200 /> |
 | LSM6DSO  | <img src='lsm6dso.jpg' width=200 />  |
+
 
 ### 3.3: Select Firmware:
 
@@ -63,6 +68,7 @@ Now you can select the firmware according to this table:
 | 0.9.x             | WT901   | 0_9_X_WT901_INSTEAD_OF_SOUND/firmware.uf2 | WT901 gets soldered instead of the sound module, since this mainboard does not have a WT901 header |
 | 0.9.x             | WT901   | 0_9_X_WT901/firmware.uf2                  | IMU Connected on the MPU9250 Slot using SerialPIO                                                  |
 
+
 ## Step 3: Install Firmware
 
 In order to not draw too much current from your computer's USB port, make sure that no modules (Raspberry Pi, GPS, ESCs)
@@ -71,6 +77,7 @@ are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro
 Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
 Pico to reboot. The process takes about 10 seconds.
 
-## Step 4: Done :tada:
+
+## Step 4: Done 🎉
 
 Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.
