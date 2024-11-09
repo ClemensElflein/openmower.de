@@ -1,7 +1,6 @@
 ---
 title: "Manual Firmware Installation"
 linkTitle: "Manual Firmware Installation"
-weight: 20
 description: >
   This guide shows you how to get the correct firmware for your hardware version and install it on your mainboard manually.
 resources:

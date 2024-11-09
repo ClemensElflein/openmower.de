@@ -1,7 +1,6 @@
 ---
 title: "Firmware Update"
 linkTitle: "Firmware Update"
-weight: 10
 description: >
   This guide shows you how to update the firmware on your Open Mower.
 resources:

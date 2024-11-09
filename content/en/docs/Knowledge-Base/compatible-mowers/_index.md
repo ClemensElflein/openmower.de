@@ -1,7 +1,7 @@
 ---
 title: "Compatible Mowers"
 linkTitle: "Compatible Mowers"
-weight: 50
+weight: 1
 description: >
  These are the mowers that are compatible with the OpenMower project
 ---

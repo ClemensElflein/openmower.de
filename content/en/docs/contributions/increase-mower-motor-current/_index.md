@@ -1,7 +1,6 @@
 ---
 title: Increase mower motor to 6A
 linkTitle: Mower motor to 6A
-weight: 110
 description: >
   Updating motor configuration for more mowing power.
 ---
