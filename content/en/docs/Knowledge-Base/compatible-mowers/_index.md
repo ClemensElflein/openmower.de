@@ -18,7 +18,7 @@ The YF SA650ECO is the second model officially supported but there are no model 
 In theory every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ have compatible electronics to replace the stock mainboard by an openmower one.
 
 {{% alert color="warning" %}}
-As of today the YardForce Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.  
+As of today the YardForce Amiro, Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.  
 The main reason is that the OpenMower mainboard does not fit in their chassis.
 {{% /alert %}}
 
