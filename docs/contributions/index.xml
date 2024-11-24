@@ -1,10 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – User Contributions</title><link>/docs/contributions/</link><description>Recent content in User Contributions on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/contributions/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Increase mower motor to 6A</title><link>/docs/contributions/increase-mower-motor-current/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/increase-mower-motor-current/</guid><description>
-&lt;p>Author: ow@discord&lt;/p>
-&lt;p>YardForce Classic Mower Motor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>&lt;/p>
-&lt;p>Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
-&lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
-&lt;p>Instructions:
-Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Adjusting map position after a basestation change</title><link>/docs/contributions/basestation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/basestation/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – User Contributions</title><link>/docs/contributions/</link><description>Recent content in User Contributions on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/contributions/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Adjusting map position after a basestation change</title><link>/docs/contributions/basestation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/basestation/</guid><description>
 &lt;p>When you use the OM_DATUM_LAT and OM_DATUM_LONG DATUM fields in the mower_config.txt, you can shift the map around.&lt;/p>
 &lt;p>The procedure if you change the NTRIP base, is to change the DATUM Fields (&lt;code>OM_DATUM_LAT&lt;/code> for the left and right,
 &lt;code>OM_DATUM_LONG&lt;/code> for up and down) in the mower_config.txt file. What you basically do when you change the DATUM fields is
@@ -21,7 +15,13 @@ again a bit via the area recording buttons and dock manually again. In that way,
 when adjusting the map position. When you think it is all good, then go ahead, start mowing and let the mower return to
 docking immediately to see if the docking works precisely and the mower docks automatically and properly.&lt;/p>
 &lt;p>Then start mowing, the mower will do the outline first (normally 4 rounds, check the 4th round very thoroughly, that is
-the round closest to the edge). If all is ok, you are good to go.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/mount-wheel-spikes/</guid><description>
+the round closest to the edge). If all is ok, you are good to go.&lt;/p></description></item><item><title>Docs: Increase mower motor to 6A</title><link>/docs/contributions/increase-mower-motor-current/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/increase-mower-motor-current/</guid><description>
+&lt;p>Author: ow@discord&lt;/p>
+&lt;p>YardForce Classic Mower Motor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>&lt;/p>
+&lt;p>Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
+&lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
+&lt;p>Instructions:
+Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
 &lt;p>There are two YardForce spikes on Amazon (and other sites like Etsy): &lt;a href="https://www.mibrobo.de/product/yardforce-classic-500-models-184-mibrobo-blackline-spikes-incl-wheel-extension-eng/119">Mibrobo&lt;/a> and &lt;a href="https://www.etsy.com/listing/1009079264/lawn-robot-spikes-for-yardforce-robotics">RoboClaws&lt;/a>.
 This photo guide is about RoboClaws.&lt;/p>
