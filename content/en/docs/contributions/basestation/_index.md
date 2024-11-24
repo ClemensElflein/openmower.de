@@ -7,7 +7,6 @@ description: >
   mowing.
 ---
 
-
 When you use the OM_DATUM_LAT and OM_DATUM_LONG DATUM fields in the mower_config.txt, you can shift the map around.
 
 The procedure if you change the NTRIP base, is to change the DATUM Fields (`OM_DATUM_LAT` for the left and right,
