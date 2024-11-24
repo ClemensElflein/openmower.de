@@ -1,7 +1,6 @@
 ---
 title: "The Map"
 linkTitle: "The Map"
-weight: 4
 description: >
   Information about the Open Mower map (Mowing Areas, Navigation Areas, Docking Point).
 ---

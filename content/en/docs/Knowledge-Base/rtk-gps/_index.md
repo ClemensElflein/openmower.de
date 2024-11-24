@@ -1,7 +1,6 @@
 ---
 title: "GPS / Coordinate System"
 linkTitle: "GPS / Coordinate System"
-weight: 4
 description: >
   Information about the RTK modes and the coordinate system used by OpenMower.
 ---
