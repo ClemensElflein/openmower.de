@@ -11,7 +11,7 @@ tags: [dfplayer, sound, speaker, optional]
 
 If your mainboard got delivered with an already equipped DFPlayer, you most likely got the original [DFRobot-DFPlayer](https://www.dfrobot.com/product-1121.html) with a 'DFRobot LISP3' chip.
 
-If you need to attach one, and your're not located in the US, you might also use a DFPlayer-Clone with an 'MH2024K-24SS', 'GD3200B' or 'JL AB23A799755' chip, as sold by Amazon, AliExpress or the like.
+If you need to attach one, and your're not located in the US, you might also use a DFPlayer-Clone with a 'MH2024K-24SS', 'JL AB23A799755' or 'GD3200B' chip, as sold by Amazon, AliExpress or the like.
 
 {{% alert title="☝️" color="info" %}}
 When using a DFPlayer-<b>Clone</b>,<br>
@@ -41,11 +41,11 @@ Once changed, you're save to enable full sound support via `OM_DFP_IS_5V=True` [
 SDCard (128Mb) and DFPlayer Mini are included in the kit.
 {{% /alert %}}
 
-Take an SD card (different from the one you are using for RPi), format as FAT, copy [MP3 files](https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles) to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)
+Take an SD card (different from the one you are using for RPi), format as FAT32, copy all [MP3 files and folder](https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles) to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)
 
-{{% alert title="☝️ Updated 5/2024 " color="info" %}}
-The soundfile structure completely changed in May 2024.
-If you already prepared your SD-Card before, it still works, but for full sound support you need to **replace** all files with the new structure.
+{{% alert title="☝️ Updated 11/2024 " color="info" %}}
+The soundfile structure completely changed in November 2024.
+If you already prepared your SD-Card before, it still works, but for full sound support you need to **replace** all files with the new structure (and take care that no old origin files remain on the SD-Card).
 {{% /alert %}}
 
 #### Speaker mount
