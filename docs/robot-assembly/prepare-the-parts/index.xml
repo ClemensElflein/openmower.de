@@ -77,9 +77,9 @@ id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
 &lt;/div>
 &lt;div class="tab-body tab-pane fade show active"
 id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
-&lt;p>&lt;strong>edge:&lt;/strong> This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.&lt;/p>
-&lt;p>&lt;strong>alpha:&lt;/strong> For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.&lt;/p>
-&lt;p>&lt;strong>beta (recommended):&lt;/strong> This one is the &lt;em>most stable&lt;/em> one of the three. I try to keep this as stable as possible.&lt;/p>
+&lt;p>&lt;strong>edge:&lt;/strong> Use &lt;code>edge&lt;/code> for now. It is the only version which fits this guide. Most people are running this version.&lt;/p>
+&lt;p>In the future there will be a proper versioning system.&lt;/p>
+&lt;p>If you are a developer, ask on Discord how to run custom versions of the software.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/p>
