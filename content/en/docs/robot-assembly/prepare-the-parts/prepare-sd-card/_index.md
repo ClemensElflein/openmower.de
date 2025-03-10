@@ -39,11 +39,12 @@ This file selects the Open Mower version to use. You can choose the following:
 {{< tabpane text=true >}}
 {{% tab header="**OpenMowerOS version**:" disabled=true /%}}
 {{% tab header="0.1.0" %}}
-**edge:** This one changes very often. Only use it if you want to take part in the development or are asked to use it by a developer.
+**edge:** Use `edge` for now. It is the only version which fits this guide. Most people are running this version.
 
-**alpha:** For people who like to test stuff. This one will be updated fairly often as well and without notice. Only use it if you want to be among the first people to get new features, but prepare to have issues.
+In the future there will be a proper versioning system.
 
-**beta (recommended):** This one is the _most stable_ one of the three. I try to keep this as stable as possible.
+If you are a developer, ask on Discord how to run custom versions of the software.
+
 {{% /tab %}}
 {{< /tabpane >}}
 
