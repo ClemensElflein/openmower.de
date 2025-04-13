@@ -5,7 +5,7 @@ description: >
   Build your own GPS RTK base!
 ---
 
-This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase.
+This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.
 
 ## Prerequisites
 
@@ -14,6 +14,7 @@ This part of the documentation is work in progress. There are many ways of setti
 - power supply for RPi
 - [Ardusimple ZED-F9P](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/)
 - A windows PC
+- a cable or combinatin of cables to connect micro usb male to micro usb male, for example https://www.amazon.de/gp/product/B01M5GZ3N0/
 - stable internet connection (no disconnection within one hour)
 
 
