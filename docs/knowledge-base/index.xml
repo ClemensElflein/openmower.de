@@ -149,7 +149,7 @@ document.getElementById('player'),
 &lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
 &lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/rtk-base-setup/</guid><description>
-&lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase.&lt;/p>
+&lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.raspberrypi.com/products/raspberry-pi-zero-w/">Raspberry Pi 0W&lt;/a>&lt;/li>
@@ -157,6 +157,7 @@ document.getElementById('player'),
 &lt;li>power supply for RPi&lt;/li>
 &lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">Ardusimple ZED-F9P&lt;/a>&lt;/li>
 &lt;li>A windows PC&lt;/li>
+&lt;li>a cable or combinatin of cables to connect micro usb male to micro usb male, for example &lt;a href="https://www.amazon.de/gp/product/B01M5GZ3N0/">https://www.amazon.de/gp/product/B01M5GZ3N0/&lt;/a>&lt;/li>
 &lt;li>stable internet connection (no disconnection within one hour)&lt;/li>
 &lt;/ul>
 &lt;h2 id="installation">Installation&lt;/h2>
