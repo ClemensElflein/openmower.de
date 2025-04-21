@@ -26,6 +26,10 @@ external adapter and people are installing all kinds of stuff. Depicted is `Alfa
 `rtl8188eu` chip using [custom driver](https://github.com/aircrack-ng/rtl8188eus).
 {{% /alert %}}
 
+{{% alert title="⚠️" color="danger" %}}
+Important: If you install an external WiFi USB adapter, it might prevent you from seeing the OpenMower hotspot during initial setup. For first startup, it's recommended to keep the external adapter disconnected until you've completed the initial WiFi configuration. After successfully connecting to your network, you can then connect the external adapter.
+{{% /alert %}}
+
 {{< image-gallery gallery_dir="/photo-guide/vermut-0.13/install-external-wifi-adapter" >}}
 
 ### Assemble mainboard
