@@ -42,4 +42,4 @@ You mixed up DFPlayer's SD-Card by adding the new files on top of the old ones. 
 
 This happen because you enabled full sound support by signalling it via `OM_DFP_IS_5V=True` flag, but didn't switched it in real. See [Change DFPlayer’s V<sub>CC</sub> to 5V](../../robot-assembly/prepare-the-parts/prepare-sound/#change-dfplayers-vsubccsub-to-5v).
 
-Don't worry. A new Pico is cheap (~ 4$). Happy desoldering :no_mouth:!
+Don't worry. A new Pico is cheap (~ 4$). Happy desoldering 😶!

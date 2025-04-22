@@ -10,12 +10,14 @@ This part of the documentation is work in progress. There are many ways of setti
 ## Prerequisites
 
 - [Raspberry Pi 0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
-- sd card
-- power supply for RPi
+- µSD card
+- Power supply for RPi
 - [Ardusimple ZED-F9P](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/)
+- A cable or combinatin of cables to connect micro usb male to micro usb male:
+  - A) Direct like [this](https://www.berrybase.de/en/detail/019234a35aaf727382bd7ff62a8d64dc), or [this](https://www.amazon.de/gp/product/B01M5GZ3N0/)
+  - B) Adapter ([like this](https://www.berrybase.de/en/usb-2.0-hi-speed-otg-adapterkabel-economy-micro-b-stecker-a-buchse-schwarz-0-15m)) + micro usb to usb-a cable
 - A windows PC
-- a cable or combinatin of cables to connect micro usb male to micro usb male, for example https://www.amazon.de/gp/product/B01M5GZ3N0/
-- stable internet connection (no disconnection within one hour)
+- Stable internet connection (no disconnection within one hour)
 
 
 ## Installation
@@ -27,35 +29,35 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 
 - Download [RPi Imager](https://www.raspberrypi.com/software/) for windows
 - Start Imager:
-  
+
   ![]() <img src="Imager1.png" width="120">
 - Choose your RPI (in my case RPi 0W, choosing wrong RPi will most probably result in many problems)
-  
+
   ![]() <img src="./Imager2.png" width="120">
 - Choose Operating system "Raspberry Pi OS lite (legacy, 32bit)
-  
+
   ![]() <img src="./Imager3.png" width="120">
 
   ![]() <img src="./Imager4.png" width="120">
 
 - Select your sd card:
-  
+
   ![]() <img src="./Imager5.png" width="120">
 - Press next so this will appear:
- 
+
   ![]() <img src="./Imager6.png" width="120">
 - Edit settings like the following (and use your personal WiFi settings and country), where you set a good password for your Pi account. Username and password are case sensitive!
-   
+
   ![]() <img src="./OSCustom1.png" width="120">
 - activate SSH:
-  
+
   ![]() <img src="./OSCustom.png" width="120">
 - Press save to see this:
-  
+
   ![]() <img src="./OSCustom2.png" width="120">
 
 - Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:
-  
+
   ![]() <img src="./Imager7.png" width="120">
 
 - Wait until it is finished, it may take half an hour, depending on your internet connection ;-)
@@ -72,12 +74,12 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 
 - Get from your router the IP of your RPi
 - Start [PuTTY](https://putty.org) and connect to RPi, where you enter the local IP of your RPi
-  
+
   ![]() <img src="./Putty1.png" width="120">
 - Enter your Username Pi, press enter and than enter your password:
-  
+
   ![]() <img src="./Putty2.png" width="120">
- 
+
   ![]() <img src="./Putty3.png" width="120">
 
 
@@ -86,7 +88,7 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
 - Is your ZED-F9P connected? Do it!
 - We will use [RTKBase](https://github.com/Stefal/rtkbase)
 - To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.
-  
+
   ```bash
   cd ~
   wget https://raw.githubusercontent.com/Stefal/rtkbase/master/tools/install.sh -O install.sh
@@ -109,35 +111,36 @@ If you know about RPi and have already a functional OS, you may head on to "Soft
   Pi@RTKBase:~ $
   ```
 - Installation finished, go on and configure your RTKBase
-  
+
+<br>
 
 ## Configuring your RTKBase
 
-  - Start a browser and enter the IP address of your RTKBase. You will get this:
-    
-    ![]()<img src="./RTKBase01.png" width="120">
+- Start a browser and enter the IP address of your RTKBase. You will get this:
 
-  - Enter as password admin. On the following site press the copy symbol right to PPP.
-    
-    ![]()<img src="./RTKBase02.png" width="120">
+  ![]()<img src="./RTKBase01.png" width="120">
 
-  - Go to settings and press "options" right to "Main Service", than paste your coordinates to "Base coordinates":
-    
-    ![]()<img src="./RTKBase03.png" width="120">
+- Enter as password admin. On the following site press the copy symbol right to PPP.
 
-  - Press on options again, than on options right to "Caster Service"
-  
-    ![]()<img src="./RTKBAse04.png" width="120">
-  - Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.
-  - Save the config
-  - Switch on "Caster Service" and "File Service", it should look like this:
-    
-    ![]()<img src="./RTKBase05.png" width="120">
+  ![]()<img src="./RTKBase02.png" width="120">
 
-  - Eventually change your password below these options.
-  - At logs you should find at least two files:
-    
-    ![]()<img src="./RTKBase06.png" width="120">
+- Go to settings and press "options" right to "Main Service", than paste your coordinates to "Base coordinates":
+
+  ![]()<img src="./RTKBase03.png" width="120">
+
+- Press on options again, than on options right to "Caster Service"
+
+  ![]()<img src="./RTKBase04.png" width="120">
+- Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.
+- Save the config
+- Switch on "Caster Service" and "File Service", it should look like this:
+
+  ![]()<img src="./RTKBase05.png" width="120">
+
+- Eventually change your password below these options.
+- At logs you should find at least two files:
+
+  ![]()<img src="./RTKBase06.png" width="120">
 
 
 ### Find the position of your RTKBase
@@ -147,15 +150,15 @@ There are several ways to find your position. To use openmower you do not need t
 
 #### Easy and good way
 
- - Click on the symbol right to PPP to copy the values to the clipboard:
-   
-   ![]()<img src="./RTKBase02.png" width="120">
- - Enter these values to your options at MainService.
-   
-   ![]()<img src="./RTKBase03.png" width="120">
- - Save
- - ReActivate Ntrip Service
- - Finished!
+- Click on the symbol right to PPP to copy the values to the clipboard:
+
+  ![]()<img src="./RTKBase02.png" width="120">
+- Enter these values to your options at MainService.
+
+  ![]()<img src="./RTKBase03.png" width="120">
+- Save
+- ReActivate Ntrip Service
+- Finished!
 
 
 #### More complicated and more exact way
@@ -168,20 +171,22 @@ There are several ways to find your position. To use openmower you do not need t
 
 - "Create Rinex file":
 
-    ![]()<img src="./RTKBase08.png" width="120">
+  ![]()<img src="./RTKBase08.png" width="120">
 - Download it when finished (may take a while, some minutes or longer)
 - Go to [Calculator](https://rgp.ign.fr/SERVICES/calcul_online.php), upload your Rinex file and enter your email address. Don't forget to enter the "no robot"-verification.
-  
-    ![]()<img src="./ignfr.png" width="120">
+
+  ![]()<img src="./ignfr.png" width="120">
 
 - When you received the email, look at "ITRF2014" (or search for "longitude") and see your values like LONGITUDE 6.XXXXXXXXX°  LATITUDE 51.XXXXXXXXX° HELL 79.9041
-  
-   ![]()<img src="./averaged.png" width="120">
+
+  ![]()<img src="./averaged.png" width="120">
 - You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!
 
-   ![]()<img src="./RTKBase03.png" width="120">
+  ![]()<img src="./RTKBase03.png" width="120">
 - Save
 - ReActivate Ntrip Service
 - Finished!
-  
-Thanks to Stefal and all the contributors of RTKBase and the used recources.
+
+<br>
+
+Thanks to Stefal and all the contributors of RTKBase and the used resources.
