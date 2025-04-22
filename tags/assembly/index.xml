@@ -71,6 +71,10 @@ This is optional and will vary with the size and shape of your adapter, because 
 external adapter and people are installing all kinds of stuff. Depicted is &lt;code>Alfa USB Adapter AWUS036NHV&lt;/code>, on the
 &lt;code>rtl8188eu&lt;/code> chip using &lt;a href="https://github.com/aircrack-ng/rtl8188eus">custom driver&lt;/a>.
 &lt;/div>
+&lt;div class="alert alert-danger" role="alert">
+&lt;h4 class="alert-heading">⚠️&lt;/h4>
+Important: If you install an external WiFi USB adapter, it might prevent you from seeing the OpenMower hotspot during initial setup. For first startup, it&amp;rsquo;s recommended to keep the external adapter disconnected until you&amp;rsquo;ve completed the initial WiFi configuration. After successfully connecting to your network, you can then connect the external adapter.
+&lt;/div>
 &lt;style>
 .image-gallery {overflow: auto; margin-left: -1%!important;}
 .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
