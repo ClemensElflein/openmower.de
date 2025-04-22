@@ -153,12 +153,17 @@ document.getElementById('player'),
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.raspberrypi.com/products/raspberry-pi-zero-w/">Raspberry Pi 0W&lt;/a>&lt;/li>
-&lt;li>sd card&lt;/li>
-&lt;li>power supply for RPi&lt;/li>
+&lt;li>µSD card&lt;/li>
+&lt;li>Power supply for RPi&lt;/li>
 &lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">Ardusimple ZED-F9P&lt;/a>&lt;/li>
+&lt;li>A cable or combinatin of cables to connect micro usb male to micro usb male:
+&lt;ul>
+&lt;li>A) Direct like &lt;a href="https://www.berrybase.de/en/detail/019234a35aaf727382bd7ff62a8d64dc">this&lt;/a>, or &lt;a href="https://www.amazon.de/gp/product/B01M5GZ3N0/">this&lt;/a>&lt;/li>
+&lt;li>B) Adapter (&lt;a href="https://www.berrybase.de/en/usb-2.0-hi-speed-otg-adapterkabel-economy-micro-b-stecker-a-buchse-schwarz-0-15m">like this&lt;/a>) + micro usb to usb-a cable&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>A windows PC&lt;/li>
-&lt;li>a cable or combinatin of cables to connect micro usb male to micro usb male, for example &lt;a href="https://www.amazon.de/gp/product/B01M5GZ3N0/">https://www.amazon.de/gp/product/B01M5GZ3N0/&lt;/a>&lt;/li>
-&lt;li>stable internet connection (no disconnection within one hour)&lt;/li>
+&lt;li>Stable internet connection (no disconnection within one hour)&lt;/li>
 &lt;/ul>
 &lt;h2 id="installation">Installation&lt;/h2>
 &lt;p>If you know about RPi and have already a functional OS, you may head on to &amp;ldquo;Software&amp;rdquo;, but in my case it did not work using an older image.&lt;/p>
@@ -263,6 +268,7 @@ document.getElementById('player'),
 &lt;p>Installation finished, go on and configure your RTKBase&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;br>
 &lt;h2 id="configuring-your-rtkbase">Configuring your RTKBase&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -279,7 +285,7 @@ document.getElementById('player'),
 &lt;/li>
 &lt;li>
 &lt;p>Press on options again, than on options right to &amp;ldquo;Caster Service&amp;rdquo;&lt;/p>
-&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBAse04.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase04.png" width="120">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.&lt;/p>
@@ -362,7 +368,8 @@ document.getElementById('player'),
 &lt;p>Finished!&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used recources.&lt;/p></description></item><item><title>Docs: Manual Firmware Installation</title><link>/docs/knowledge-base/manual-firmware-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/manual-firmware-installation/</guid><description>
+&lt;br>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Manual Firmware Installation</title><link>/docs/knowledge-base/manual-firmware-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/manual-firmware-installation/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
@@ -564,11 +571,11 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Mower&lt;br />(YardForce Classic 500 or 500B)&lt;/td>
+&lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
 &lt;td>The mower to modify.&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>Check the &lt;a href="/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Open Mower Hardware Kit&lt;/td>
@@ -586,27 +593,34 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi 4&lt;/td>
-&lt;td>The brain of the robot.&lt;br />&lt;br />Use 2GB + model for running the software&lt;br />&lt;br />Use 8GB model for development&lt;/td>
+&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
 &lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>SD Card (16 GB+)&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>µSD Card&lt;/td>
+&lt;td>The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/">RasPiKey&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>USB Wi-Fi Dongle (Optional)&lt;/td>
+&lt;td>USB Wi-Fi Dongle&lt;/td>
 &lt;td>For better Wi-Fi reception&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;/td>
 &lt;td>Check for Linux Support&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Left-Angle USB adapter (Optional)&lt;/td>
+&lt;td>Left-Angle USB adapter&lt;/td>
 &lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
 &lt;td>0&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
@@ -631,7 +645,7 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Raspberry Pi&lt;br />+ SD Card&lt;br />+ Power Supply&lt;/td>
+&lt;td>Raspberry Pi&lt;br>+ SD Card&lt;br>+ Power Supply&lt;/td>
 &lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
@@ -645,7 +659,8 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: The Map</title><link>/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/the-map/</guid><description>
+&lt;/table>
+&lt;p>For the setup check the &lt;a href="/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>&lt;/p></description></item><item><title>Docs: The Map</title><link>/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/the-map/</guid><description>
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
 &lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
