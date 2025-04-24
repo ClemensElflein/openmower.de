@@ -554,6 +554,7 @@ Pico to reboot. The process takes about 10 seconds.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: Shopping List</title><link>/docs/knowledge-base/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/knowledge-base/shopping-list/</guid><description>
+&lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Read this first: &lt;a href="/docs/getting-started/#important-info">Important Info&lt;/a>
@@ -574,7 +575,7 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
 &lt;td>The mower to modify.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon*&lt;/a>&lt;/td>
 &lt;td>Check the &lt;a href="/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -602,7 +603,7 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>µSD Card&lt;/td>
 &lt;td>The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon*&lt;/a> or your local hardware store&lt;/td>
 &lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/">RasPiKey&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -623,7 +624,7 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>Left-Angle USB adapter&lt;/td>
 &lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
 &lt;td>0&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon&lt;/a> or your local hardware store&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon*&lt;/a> or your local hardware store&lt;/td>
 &lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
