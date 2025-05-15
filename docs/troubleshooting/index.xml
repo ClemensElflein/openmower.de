@@ -49,7 +49,7 @@ In the home directory (&lt;code>~/&lt;/code>) there is a scripts called &lt;code
 Run the &lt;code>start_ros_bash.sh&lt;/code> script by executing &lt;code>~/start_ros_bash.sh&lt;/code> which should take you to a bash inside the container.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;p>There you can run &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo --clear -w 5 /xbot_driver_gps/xb_pose&lt;/code> to look at the GPS data.&lt;br>
+&lt;p>There you can run &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo --clear -w 5 /ll/position/gps&lt;/code> to look at the GPS data.&lt;br>
 You will get some lines of data:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">seq&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">44&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
