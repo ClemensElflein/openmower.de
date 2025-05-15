@@ -44,7 +44,7 @@ Run the `start_ros_bash.sh` script by executing `~/start_ros_bash.sh` which shou
 {{% /tab %}}
 {{< /tabpane >}}
 
-There you can run `rostopic list` to list all topics and `rostopic echo --clear -w 5  /xbot_driver_gps/xb_pose` to look at the GPS data.  
+There you can run `rostopic list` to list all topics and `rostopic echo --clear -w 5  /ll/position/gps` to look at the GPS data.  
 You will get some lines of data:
 
 ```yaml
