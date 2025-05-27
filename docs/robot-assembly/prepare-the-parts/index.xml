@@ -304,6 +304,7 @@ You also need to take attention that your motherboard has the required R7 and R1
 &lt;p>All mainboard version ≤ 0.13.x supply the DFPlayer with 3.3V by default.
 But for full sound support, it&amp;rsquo;s highly advised to change this to 5V, otherwise you might risk your Pico&amp;rsquo;s PMIC 💣. More technical details here: &lt;a href="https://github.com/ClemensElflein/OpenMower/blob/main/Firmware/LowLevel/README-Sound%2C%20DFPIS5V.md">Sound-Readme&lt;/a>&lt;br>
 &lt;img title="Required 1kΩ R7 &amp; R13" src="mainboard-013x-snd-change5v.png" width="200">&lt;/p>
+&lt;p>&lt;strong>Don&amp;rsquo;t forget to cut the trace between middle and 3.3v! It&amp;rsquo;s there, even if it&amp;rsquo;s barely visible!&lt;/strong> (if you forgot, you&amp;rsquo;ll bridge the 3v3 with 5V resulting in incorrect battery voltage reporting)&lt;/p>
 &lt;p>Once changed, you&amp;rsquo;re save to enable full sound support via &lt;code>OM_DFP_IS_5V=True&lt;/code> &lt;a href="../prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">mower_config&lt;/a> switch.&lt;/p>
 &lt;h4 id="sound-sd-card">Sound SD-Card&lt;/h4>
 &lt;div class="alert alert-primary" role="alert">
