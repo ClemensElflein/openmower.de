@@ -56,7 +56,7 @@ The OpenMower project thrives on the contributions of a vibrant community of hob
 Interested in joining the OpenMower project? Explore the following resources to get started:
 - [Getting Started](/docs/getting-started/): Quick start guide to building your own OpenMower.
 - [Links](/docs/links): Additional information, repositories, and the shop.
-- [Compatible Models Page](/docs/knowledge-base/compatible-models): Comprehensive list of supported mower models.
+- [Compatible Mowers Page](/docs/knowledge-base/compatible-mowers): Comprehensive list of supported mower models.
 
 
 ### Project Goals and Future Plans
