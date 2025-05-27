@@ -69,14 +69,14 @@ To change xESC just &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd> in the openmower 
 &lt;/div>
 &lt;p>Loading XML motor configuration:&lt;/p>
 &lt;ol>
-&lt;li>Download XML configuration files from repo&lt;/li>
+&lt;li>Download XML configuration files from &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">repo&lt;/a>&lt;/li>
 &lt;li>File&amp;gt;Load Motor Configuration XML&lt;/li>
 &lt;li>Select file named motor for the xESC you connected to&lt;/li>
 &lt;li>On the right toolbar click &amp;ldquo;Write Motor configuration&amp;rdquo; (the M with a arrow pointing down)&lt;/li>
 &lt;/ol>
 &lt;p>Loading XML app configuration:&lt;/p>
 &lt;ol>
-&lt;li>Download XML configuration files from repo&lt;/li>
+&lt;li>Download XML configuration files from &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">repo&lt;/a>&lt;/li>
 &lt;li>File&amp;gt;Load App Configuration XML&lt;/li>
 &lt;li>Select file named app for the xESC you connected to&lt;/li>
 &lt;li>On the right toolbar click &amp;ldquo;Write App configuration&amp;rdquo; (the A with a arrow pointing down)&lt;/li>
