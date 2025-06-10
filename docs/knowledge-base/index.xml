@@ -590,7 +590,7 @@ Read this first: &lt;a href="/docs/getting-started/#important-info">Important In
 &lt;td>Positioning system for the robot&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
-&lt;td>Some users using &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">UM9XX chips&lt;/a> (available on &lt;a href="https://vi.aliexpress.com/item/1005007177629130.html">Ali&lt;/a>) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
+&lt;td>Some users use &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">UM9XX chips&lt;/a> (available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960">WitMotion&lt;/a> and &lt;a href="https://aliexpress.com/item/1005007177629130.html">AliExpress&lt;/a>) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi 4&lt;/td>
@@ -657,7 +657,7 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;td>Positioning system for the base station&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td>See above&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
