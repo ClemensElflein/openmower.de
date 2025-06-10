@@ -18,8 +18,8 @@ Check my YouTube video here: [<i class="fa fa-brands fa-youtube"></i> Video](htt
 
 This assumes that you are using the Ardusimple F9P GPS board.
 
-Support for other GPS receivers is a work in progress:
-- Wimotion Unicore UM9XX: [wiki](https://wiki.openmower.de/index.php?title=Unicore_GPS_modules), [optional adapter](https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x), [set-up guide](https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART).
+Other GPS receivers are also supported, but need different steps:
+- WitMotion Unicore UM9XX: [wiki](https://wiki.openmower.de/index.php?title=Unicore_GPS_modules), [optional adapter](https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x), [set-up guide](https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART)
 
 
 ### Prerequisites
