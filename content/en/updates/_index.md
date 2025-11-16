@@ -119,7 +119,7 @@ We’ve also completed a small **beta test round** — with solid results. Some 
 
 <br>
 
-📬 **If you are interested in getting the hardware, DM me (@c.ez) on Discord!**
+📬 **If you are interested in getting the hardware, DM Apehaenger on Discord!**
 
 <br>
 
@@ -144,7 +144,7 @@ It would be great to see people trying and testing the v2 hardware, so I will be
 Do you want to test the v2 hardware or even contribute to development? Do you want to help writing the docs for v2? Or maybe just be among the first people to get their hands on the v2 hardware? 
 
 In any case:
-📬 **DM me (@c.ez) on Discord!** 
+📬 **DM Apehaenger on Discord!** 
 
 ##### **Support the Project**
 Also, if you’d like to support the project financially and help me dedicate more time to OpenMower, check out my [Patreon](https://www.patreon.com/ClemensElflein). Every bit helps, and I truly appreciate the support.  
