@@ -68,17 +68,7 @@ This repository contains the main part of the Open Mower software. The whole wor
 This repository contains the hardware design for the BLDC motor controllers I'm using in this project. The design is based on the popular VESC BLDC motor controller and is compatible with the VESC firmware.
 
 
-## Shop / Support
-
-### Vermut's Shop
-
-🔗&nbsp;[https://shop.devops.care/](https://shop.devops.care/)
-
-This is the shop of Discord user Vermut. He's selling soldered and tested hardware kits for Open Mower builds. If you want to get started quickly, check his shop and get a kit. It includes most of the things you need to build the Open Mower.  
-Some profits of each sale are going to me, so you do support the project by getting the kit.
-
-
-### Patreon ♥️
+## Support me on Patreon ♥️
 
 🔗&nbsp;[https://patreon.com/ClemensElflein](https://patreon.com/ClemensElflein)
 
