@@ -7,8 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 OUT="${PROJECT_ROOT}/config/_generated_versions.toml"
 
-# Where the per-version docs live, e.g. https://openmower.de/docs/v1.0/
-DOCS_BASE_URL="${DOCS_BASE_URL:-https://openmower.de/docs}"
+DOCS_BASE_URL="${DOCS_BASE_URL:-https://openmower.de/archive}"
 
 mkdir -p "$(dirname "$OUT")"
 
@@ -78,7 +77,7 @@ EOF
 
 [[params.versions]]
   version = "$esc_title"
-  url = "${DOCS_BASE_URL}/${esc_tag}/"
+  url = "${DOCS_BASE_URL}/${esc_tag}/docs"
 EOF
   done
 } > "$OUT"
