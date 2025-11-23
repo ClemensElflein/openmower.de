@@ -8,7 +8,7 @@ tags: [ photo guide, disassembly, 0_13_x ]
 
 ### Unscrew top cover
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unscrew-the-cover" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/unscrew-the-cover" >}}
 
 
 ### Pry the cover
@@ -17,7 +17,7 @@ This is a bit tricky in some parts, so I recommend you checking YouTube video
 here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_bImqD-pQSA?t=148). The relevant time is:
 2:25 - 5:08.
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/pry-the-cover" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/pry-the-cover" >}}
 
 
 ### Unplug the cover
@@ -25,17 +25,17 @@ here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_
 2 small wires on the front going to wheel sensors, and 1 wide wire from mainboard to cover UI board.
 Screwdriver is in the pictures for illustrative purposes, you can simply hold it with your hand.
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unplug-the-cover" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/unplug-the-cover" >}}
 
 
 ### Unplug the mainboard
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/unplug-the-mainboard" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/unplug-the-mainboard" >}}
 
 
 ### Remove front PCB
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/remove-front-pcb" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/remove-front-pcb" >}}
 
 
 ### Remove cover UI board
@@ -46,4 +46,4 @@ option to reuse stock board with custom firmware. If you are going to go this pa
 more information in Discord, as of now it's work in progress.
 {{% /alert %}}
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/remove-cover-ui-board" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/remove-cover-ui-board" >}}

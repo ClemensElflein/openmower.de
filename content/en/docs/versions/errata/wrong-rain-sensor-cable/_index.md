@@ -4,4 +4,4 @@ linkTitle: Rain cable is incorrect
 ---
 
 This was a production error, but can be easily mitigated with a couple of pins from the pin header.
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/modify-rain-sensor-cable" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/modify-rain-sensor-cable" >}}

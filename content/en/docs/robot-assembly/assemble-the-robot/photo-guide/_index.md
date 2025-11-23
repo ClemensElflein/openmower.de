@@ -8,7 +8,7 @@ tags: [ photo guide, assembly, 0_13_x ]
 
 ### Connect bottom wires
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/connect-bottom-wires" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/connect-bottom-wires" >}}
 
 ### Install GPS antenna
 
@@ -16,7 +16,7 @@ The second picture is not perfect, the screw is out of the frame, yellow arrow p
 itself is
 historic from 0.9.3, yours will be green and shiny.
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/install-gps-antenna" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/install-gps-antenna" >}}
 
 ### Install external Wi-Fi adapter (optional)
 
@@ -30,17 +30,17 @@ external adapter and people are installing all kinds of stuff. Depicted is `Alfa
 Important: If you install an external WiFi USB adapter, it might prevent you from seeing the OpenMower hotspot during initial setup. For first startup, it's recommended to keep the external adapter disconnected until you've completed the initial WiFi configuration. After successfully connecting to your network, you can then connect the external adapter.
 {{% /alert %}}
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/install-external-wifi-adapter" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/install-external-wifi-adapter" >}}
 
 ### Assemble mainboard
 
 This step assumes that you did all previous configuration steps from the documentation.
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/assemble-mainboard" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/assemble-mainboard" >}}
 
 ### Connect and screw mainboard
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/connect-and-screw-mainboard" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/connect-and-screw-mainboard" >}}
 
 ### Modify rain sensor cable (kit version specific)
 
@@ -49,7 +49,7 @@ Kits till mid-2023 included incorrect rain sensor cable that has female connecto
 example of how this can be fixed. Alternatively, you can cut them and just solder together.
 {{% /alert %}}
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/modify-rain-sensor-cable" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/modify-rain-sensor-cable" >}}
 
 ### Assemble cover
 
@@ -61,11 +61,11 @@ would be different for you. You can find more information in Discord, as of now 
 
 On the photos you see an old patched version of rain sensor cable (see above). Yours might just fit in normally.
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/assemble-cover" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/assemble-cover" >}}
 
 ### Connect cover to bottom
 
-{{< image-gallery gallery_dir="/photo-guide/vermut-0.13/connect-cover-to-bottom" >}}
+{{< image-gallery gallery_dir="images/vermut-0.13/connect-cover-to-bottom" >}}
 
 ### Close the cover
 

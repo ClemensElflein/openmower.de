@@ -21,4 +21,4 @@ Results:
  * noise on paving
  * probable damage to tiles
 
-{{< image-gallery gallery_dir="/photo-guide/wheel-spikes" >}}
+{{< image-gallery gallery_dir="images" >}}

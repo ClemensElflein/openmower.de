@@ -6,20 +6,48 @@
     .image-gallery li a img {width: 100%; display: block;}
 </style>
 
-{{ $dir := string (.Get "gallery_dir") }}
+{{- $dir := .Get "gallery_dir" -}}                 {{/* e.g. "images/vermut-0.13/connect-bottom-wires" */}}
+{{- $page := .Page -}}
+{{- $pageDir := path.Dir $page.File.Path -}}       {{/* e.g. "docs/robot-assembly/assemble-the-robot/photo-guide" */}}
+
+{{- $fsDir := printf "content/%s/%s/%s" $page.Lang $pageDir $dir | path.Clean -}}
+
 <ul class="image-gallery">
-{{ range (readDir (print "/assets" $dir)) }}
-  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
-  {{- $imageurl := printf "%s/%s" $dir .Name -}}
-  {{- $imagetitle := index (split .Name ".") 0 -}}
-  {{ with $image }}
+    {{- range (readDir $fsDir) }}
+    {{- if not .IsDir }}
+    {{- $name := .Name -}}
+    {{- $relPath := path.Join $dir $name -}}     {{/* path inside bundle, e.g. "images/.../file.jpg" */}}
+    {{- $image := $page.Resources.GetMatch $relPath -}}
+
+    {{- $basename := path.Base $name -}}
+    {{- $imagetitle := replace $basename (path.Ext $basename) "" -}}
+
+    {{- with $image }}
+    {{- $full  := .Fit  "1600x1600 q99" -}}
+    {{- $thumb := .Fill "400x400 q95"  -}}
     <li>
-      <a href="{{ ($image.Fit "1600x1600 q99").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
-        <img class="nozoom" src="{{ ($image.Fill "400x400 q95").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
-        <span title="{{ $imagetitle }}">{{ $imagetitle }}</span>
-      </a>
+        <a href="{{ $full.Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+            <img class="nozoom"
+                 src="{{ $thumb.Permalink }}"
+                 alt="{{ $imagetitle }}"
+                 title="{{ $imagetitle }}">
+            <span title="{{ $imagetitle }}">{{ $imagetitle }}</span>
+        </a>
     </li>
-  {{ end }}
-  
-{{ end }}
+    {{- else }}
+    {{/* Fallback: no page resource (older Hugo / weird bundle) -> direct static URL */}}
+    {{- $url := path.Join $.Page.RelPermalink $dir $name -}}
+    <li>
+        <a href="{{ $url }}" title="{{ $imagetitle }}" class="lightbox-image">
+            <img class="nozoom"
+                 src="{{ $url }}"
+                 alt="{{ $imagetitle }}"
+                 title="{{ $imagetitle }}">
+            <span title="{{ $imagetitle }}">{{ $imagetitle }}</span>
+        </a>
+    </li>
+    {{- end }}
+
+    {{- end }}
+    {{- end }}
 </ul>

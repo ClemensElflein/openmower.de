@@ -17,7 +17,7 @@ Early boards marked `WIP` had a blue patch wire. You don't need it, ignore it on
 * solder back side buzzer (round pin is `+`). Early versions had silkscreen `+` on wrong side, be careful. 
 * solder Pico Dev board, either directly to the board or use pin headers (not included in the kit)
 
-{{< image-gallery gallery_dir="/photo-guide/cover-ui-board" >}}
+{{< image-gallery gallery_dir="images" >}}
 
 After that, upload the cover UI firmware to Pico Board: https://github.com/ClemensElflein/CoverUI/releases/latest
 
