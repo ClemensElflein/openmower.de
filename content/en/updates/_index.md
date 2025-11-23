@@ -4,6 +4,13 @@ linkTitle: "Announcement"
 menu:
   main:
     weight: 50
+cascade:
+  - _build:
+      list: never
+      render: link
+      publishResources: false
+    _target:
+      environment: docs-only
 ---
 
 It’s been a while since the last proper OpenMower update — three years, in fact. Back then, the project was barely more than a prototype. No kits, no polished user experience — just some soldered PCBs and command-line interactions.

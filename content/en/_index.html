@@ -1,8 +1,15 @@
-+++
-title = "OpenMower User Guide"
-linkTitle = "OpenMower"
-
-+++
+---
+title: "OpenMower User Guide"
+linkTitle: "OpenMower"
+cascade:
+  - _build:
+      list: never
+      render: link
+      publishResources: false
+    _target:
+      environment: docs-only
+      path: /_index.html
+---
 
 {{< blocks/cover title="Welcome to Open Mower: The DIY RTK GPS Smart Mowing Robot for Everyone!" image_anchor="top" height="full" color="orange" >}}
 <div class="mx-auto">
