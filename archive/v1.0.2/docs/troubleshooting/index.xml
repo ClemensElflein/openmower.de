@@ -1,0 +1,258 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Troubleshooting Guides</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/</link><description>Recent content in Troubleshooting Guides on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/archive/v1.0.2/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Troubleshooting GPS-RTK</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/gps-rtk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/troubleshooting/gps-rtk/</guid><description>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>. If mower is already assembled - open the top cover.&lt;/p>
+&lt;p>Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration).&lt;/p>
+&lt;p>Make sure that &lt;code>Protocol of received messages&lt;/code> in bottom status bar right shows &lt;code>UBX&lt;/code>, not &lt;code>NMEA&lt;/code>. If not - upload configuration again. Then disconnect/connect power of GPS and make sure it stayed &lt;code>UBX&lt;/code>.&lt;/p>
+&lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If the mower is already assembled and an antenna is plugged in - just take it outside with the mower.
+Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
+&lt;p>Deviation map (&lt;code>View -&amp;gt; Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File -&amp;gt; Database clean&lt;/code>.&lt;/p>
+&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145">NTRIP node somewhere nearby&lt;/a> (&amp;lt;30km) or running your own &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>.&lt;/p>
+&lt;p>Go to &lt;code>Receiver -&amp;gt; NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">configuration file later&lt;/a>.
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
+&lt;img class="card-img-top" src="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png" width="500" height="460">
+&lt;/figure>
+&lt;/p>
+&lt;p>NTRIP client should display green connection in the status bar. Deviation map (&lt;code>View -&amp;gt; Deviation Map, F12&lt;/code>) should stay dead center. &lt;code>No RTK&lt;/code> led will start blinking or go away completely.
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 810px">
+&lt;img class="card-img-top" src="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/troubleshooting/gps-rtk/gps-fix-and-deviation_hu6cbd1643a4df8dcd346344c082d9a5e1_47047_800x0_resize_catmullrom_3.png" width="800" height="484">
+&lt;/figure>
+&lt;/p>
+&lt;h2 id="test-gps-on-mainboard">Test GPS on Mainboard&lt;/h2>
+&lt;p>We have checked that GPS works alone, let&amp;rsquo;s see if it would together with the mainboard. Plug the GPS into the mainboard. Everything should light up and start flashing.&lt;br>
+Wait until the LED lights up GREEN or GREEN/RED.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">🔋 Powering the mainboard&lt;/h4>
+If you don&amp;rsquo;t have dock station assembled and want to save the power in the main mower battery, you can power it from the Pico Dev board MicroUSB port, right below the GPS board. Use a 1A+ power bank, because computer USB port&amp;rsquo;s 500mA might be not enough.
+&lt;/div>
+&lt;ul class="nav nav-tabs" id="tabs-6" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-06-00-tab" data-toggle="tab" href="#tabs-06-00" role="tab"
+aria-controls="tabs-06-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-06-01-tab" data-toggle="tab" href="#tabs-06-01" role="tab"
+aria-controls="tabs-06-01" aria-selected="false">
+0.1.0
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-6-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-06-00" role="tabpanel" aria-labelled-by="tabs-06-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-06-01" role="tabpanel" aria-labelled-by="tabs-06-01-tab">
+&lt;p>Then SSH into your OpenMower.&lt;br>
+In the home directory (&lt;code>~/&lt;/code>) there is a scripts called &lt;code>start_ros_bash.sh&lt;/code>.&lt;br>
+Run the &lt;code>start_ros_bash.sh&lt;/code> script by executing &lt;code>~/start_ros_bash.sh&lt;/code> which should take you to a bash inside the container.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>There you can run &lt;code>rostopic list&lt;/code> to list all topics and &lt;code>rostopic echo --clear -w 5 /ll/position/gps&lt;/code> to look at the GPS data.&lt;br>
+You will get some lines of data:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">header&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">seq&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">44&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">stamp&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">secs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1708328554&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">nsecs&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">51810942&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">frame_id&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gps&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">sensor_stamp&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">114172000&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">received_stamp&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1711341013&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">source&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">flags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_vector_valid&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">position_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.024&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation_accuracy&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3.141&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">pose&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">pose&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">position&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.975&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4.819&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">z&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">114.9&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">orientation&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">z&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.201&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">w&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.979&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">covariance&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000;font-weight:bold">[&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">88.21&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">88.21&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">88.21&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.000&lt;/span>&lt;span style="color:#000;font-weight:bold">,&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">9.869&lt;/span>&lt;span style="color:#000;font-weight:bold">]&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_vector&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.045&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">0.05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">z&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">0.01&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">vehicle_heading&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.570&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">motion_heading&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.405&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#000">---&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The important lines here are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>flags: 3&lt;/code>&lt;br>
+you want a &lt;code>3&lt;/code> here since that means your rtk state is &amp;ldquo;fixed&amp;rdquo;&lt;br>
+&lt;code>3&lt;/code> is &amp;ldquo;fix&amp;rdquo;, &lt;code>5&lt;/code> is &amp;ldquo;float&amp;rdquo; and &lt;code>0&lt;/code> is &amp;ldquo;single&amp;rdquo; (classic non-rtk GNSS gps only)&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;ul>
+&lt;li>&lt;code>position_accuracy: 0.024&lt;/code>&lt;br>
+this value is in meters so the example has a accuracy of ~2,5cm and that is great.&lt;br>
+It can be the case that this value is ok but the rtk state is not yet &amp;ldquo;fixed&amp;rdquo;&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/troubleshooting/map/</guid><description>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/software-setup/record-a-map/">Record a map&lt;/a>.&lt;/p>
+&lt;br>
+&lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
+&lt;p>The default location of the map can be found under&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .bag file.&lt;/p>
+&lt;p>If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /root/ros_home/.ros/map.bag /root/ros_home/.ros/map.bag.backup
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl stop openmower
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete map&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rm /root/ros_home/.ros/map.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start openmower
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;hr>
+&lt;br>
+&lt;h1 id="map-editor">Map Editor&lt;/h1>
+&lt;p>There&amp;rsquo;s a WIP map editor made by Nekraus, JavaBoon and Eddi using Python, which you can try and use to fix your map or add in obstacles.&lt;/p>
+&lt;p>&lt;a href="https://github.com/0815eddi/OpenMower/blob/main/utils/map/mowareareader.py">Map editor&lt;/a>&lt;/p></description></item><item><title>Docs: Raspberry Pi 4</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/raspberry-pi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/troubleshooting/raspberry-pi/</guid><description>
+&lt;p>Follow the &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-sd-card/">SD Card preparation step&lt;/a> and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.&lt;/p>
+&lt;p>Then follow the &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/software-setup/configuring-wifi/">Wi-Fi Configuration&lt;/a>.&lt;/p>
+&lt;p>The board will connect to your Wi-Fi and will start downloading ~3GB container image which will definitely take some time.&lt;br>
+While waiting, I recommend figuring out IP of the mower from router DHCP leases and opening SSH connection.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">🔑 Default SSH credentials&lt;/h4>
+Username: &lt;code>openmower&lt;/code>, password: &lt;code>openmower&lt;/code>.
+&lt;/div>
+&lt;p>Running &lt;code>sudo systemctl status --no-pager --full --lines 1000 openmower&lt;/code> should display something reassuring.
+&lt;div class="spoiler panel panel-default "
+>
+&lt;div class="panel-heading">
+&lt;a class="collapsed" data-toggle="collapse"
+style="display:block;"
+href="#openmower_status_log" >
+Click to see sample cold start startup log
+&lt;/a>
+&lt;/div>
+&lt;div class="panel-collapse collapse "
+id="openmower_status_log">
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>● openmower.service - OpenMower service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Loaded: loaded (/etc/systemd/system/openmower.service; enabled; vendor preset: enabled)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Active: active (running) since Sun 2022-12-11 17:38:46 GMT; 1min 56s ago
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Main PID: 1539 (start_open_mowe)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Tasks: 9 (limit: 4164)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CPU: 295ms
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CGroup: /system.slice/open-mower.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├─1539 /bin/bash /root/start_open_mower.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └─1540 docker pull ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:39:58 openmower bash[1540]: 69ea1fadf775: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:00 openmower bash[1540]: 15e1b3c068e4: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:01 openmower bash[1540]: 4f4fb700ef54: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:38 openmower bash[1540]: ebf4cb1b6e8d: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: 0acc91bc6454: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: c2b7ae792e5c: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:48 openmower bash[1540]: ffd8732fa33d: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: f77cf07a1833: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:49 openmower bash[1540]: c2e28204415f: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: d20c270f7c57: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: 88fa587d1506: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:40:50 openmower bash[1540]: cdca27d2d0cc: Pull complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Verifying Checksum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:48:13 openmower bash[1540]: 67f58a6eff2a: Download complete
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:30 openmower bash[1540]: Digest: sha256:dafdce282bf6963a07dc391c2cc06119ac5a5ca5a9ecaac8b97204f81922635c
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: Status: Downloaded newer image for ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:51:33 openmower bash[1540]: ghcr.io/clemenselflein/open_mower_ros:releases-testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [48B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:18 openmower bash[3156]: [62B blob data]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: ... logging to /root/.ros/log/8ed2c83c-797c-11ed-a3ba-e45f0178e709/roslaunch-openmower-85.log
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Checking log directory for disk usage. This may take a while.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Press Ctrl-C to interrupt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]: Done checking log file disk usage. Usage is &amp;lt;1GB.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:19 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: started roslaunch server http://openmower:39419/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dec 11 17:52:20 openmower bash[3156]: SUMMARY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bunch of PARAMETERS/NODES and view exception due to missing literally all the hardware
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>If you are lazy, just wait 5-10 minutes and check that &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code> is accessible.&lt;br>
+If it&amp;rsquo;s not, you need to SSH and check the logs with &lt;code>sudo journalctl --follow --unit openmower&lt;/code>.&lt;br>
+Usually a problem would be bad config file.&lt;/p>
+&lt;br>
+&lt;p>If you got to the webapp - you are good. Plug the Raspberry Pi back to mainboard.&lt;/p></description></item><item><title>Docs: Troubleshoot Sound</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/troubleshooting/sound/</guid><description>
+&lt;h3 id="all-sounds-get-played-infinite">All sounds get played infinite&lt;/h3>
+&lt;p>This is most likely because your OpenMower&amp;rsquo;s mainboard miss R7 and/or R13. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#dfplayer-module">DFPlayer Module&lt;/a>.&lt;/p>
+&lt;p>But also happen if you use an old or damaged SD-Card which take loooong for getting the file allocation table.&lt;/p>
+&lt;h3 id="howto-increase-or-decrease-volume">Howto increase or decrease volume?&lt;/h3>
+&lt;p>This depend on the type and version of your CoverUI:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Volume&lt;/th>
+&lt;th style="text-align:center">Custom CoverUI V1&lt;br>Stock C500(A/B)&lt;/th>
+&lt;th style="text-align:center">Custom CoverUI V2&lt;br> &lt;/th>
+&lt;th style="text-align:center">RM-ECOW-V1.0.0&lt;br>(NX80i, &amp;hellip;)&lt;/th>
+&lt;th style="text-align:center">RM-EC3-V1.1&lt;br>(NX100i)&lt;/th>
+&lt;th style="text-align:center">SA/SC-Pro&lt;br>(240*160 Pixel)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>up&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Mon&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Sun&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>4H&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>1&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>↑&lt;/kbd>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>down&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Tue&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Mon&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>6H&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>2&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>↓&lt;/kbd>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="i-decreased-my-volume-via-volume-down-button-but-sound-get-still-played-at-full-volume">I decreased my volume via volume-down button, but sound get still played at full volume&lt;/h3>
+&lt;p>This is a known issue with DFPlayer-Clones in mainboard version 0.9.x up (and incl.) 0.13.x. &lt;a href="http://localhost:1313/docs/robot-assembly/prepare-the-parts/prepare-sound/#dfplayer-module">Read here how to fix&lt;/a>.&lt;/p>
+&lt;h3 id="i-do-hear-one-or-two-more-adverts-as-before-but-no-gps-pings-no-bidaa-bidaa-emergency-">I do hear one or two more adverts as before, but no GPS-Pings, no &amp;ldquo;Bidaa bidaa&amp;rdquo; emergency, &amp;hellip;&lt;/h3>
+&lt;p>First off: &amp;ldquo;Bidaa bidaa&amp;rdquo; emergency signalling or similar, is an optional &amp;lsquo;background-sound&amp;rsquo; feature, which is disabled by default.
+You need to enable it via &lt;code>export OM_BACKGROUND_SOUNDS=True&lt;/code> in your mower_config.&lt;/p>
+&lt;p>If it still doesn&amp;rsquo;t play after changing &lt;code>export OM_BACKGROUND_SOUNDS=True&lt;/code> in your mower_config, this is most likely because your DFPlayer&amp;rsquo;s SD-Card is still in the old format. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#sound-sd-card">Sound SD-Card&lt;/a>,&lt;/p>
+&lt;h3 id="i-do-hear-some-new-sounds-but-they-do-not-match-to-what-happen">I do hear some new sounds, but they do not match to what happen&lt;/h3>
+&lt;p>You mixed up DFPlayer&amp;rsquo;s SD-Card by adding the new files on top of the old ones. You need to remove all old files before copying the new ones. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#sound-sd-card">Sound SD-Card&lt;/a>.&lt;/p>
+&lt;h3 id="sound-worked-for-a-couple-of-weeks-but-then-my-pico-suddenly-died">Sound worked for a couple of weeks, but then my Pico suddenly died&lt;/h3>
+&lt;p>This happen because you enabled full sound support by signalling it via &lt;code>OM_DFP_IS_5V=True&lt;/code> flag, but didn&amp;rsquo;t switched it in real. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#change-dfplayers-vsubccsub-to-5v">Change DFPlayer’s V&lt;sub>CC&lt;/sub> to 5V&lt;/a>.&lt;/p>
+&lt;p>Don&amp;rsquo;t worry. A new Pico is cheap (~ 4$). Happy desoldering 😶!&lt;/p></description></item><item><title>Docs: Troubleshoot Wi-Fi</title><link>https://openmower.de/archive/v1.0.2/docs/troubleshooting/wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/troubleshooting/wifi/</guid><description>
+&lt;h1 id="wi-fi-disconnects-and-unstable-wi-fi-with-external-dongle">Wi-Fi Disconnects and unstable Wi-Fi with external dongle&lt;/h1>
+&lt;p>The Raspberry Pi tries to powersave on the Wi-Fi, which causes high latency or even packet loss on the Wi-Fi connections.&lt;/p>
+&lt;p>Please check which chipset your Wi-Fi dongle uses.
+You can solve this by editing the modprobe as following:&lt;/p>
+&lt;h2 id="realtek-rtl8192cu">Realtek RTL8192cu&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nano /etc/modprobe.d/8192cu.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="realtek-rtl8821cu">Realtek RTL8821CU&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo nano /etc/modprobe.d/8821cu.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Change the following lines&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_drv_log_level&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_led_ctrl&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_vht_enable&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_power_mgnt&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">rtw_enusbss&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
