@@ -57,9 +57,13 @@ jobs:
           baseURL = "${{ env.base_url }}archive/${{ github.ref_name }}/"
           [params]
           version = "${{ github.ref_name }}"
+          archived_version = true
           EOF
 
           hugo --minify --environment docs-only --config config.toml,config/_generated_versions.toml,config/_ci_override.toml
+
+      - name: Debug
+        run: cat config/_ci_override.toml && cat config/_generated_versions.toml
 
       # Deploy main build to /latest
       - name: Deploy latest (main)
