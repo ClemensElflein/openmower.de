@@ -44,65 +44,94 @@ This photo guide is about RoboClaws.&lt;/p>
 .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
 .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
 .image-gallery li a img {width: 100%; display: block;}
-&lt;/style>
-&lt;ul class="image-gallery">
+&lt;/style>&lt;ul class="image-gallery">
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_1600x1600_fit_q99_catmullrom.jpg" title="1 Remove the cover" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_400x400_fill_q95_catmullrom_smart1.jpg" alt="1 Remove the cover" title="1 Remove the cover">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover.jpg" title="1 Remove the cover" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover.jpg"
+alt="1 Remove the cover"
+title="1 Remove the cover">
 &lt;span title="1 Remove the cover">1 Remove the cover&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_1600x1600_fit_q99_catmullrom.jpg" title="2 Pry the wheel covers" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_400x400_fill_q95_catmullrom_smart1.jpg" alt="2 Pry the wheel covers" title="2 Pry the wheel covers">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers.jpg" title="2 Pry the wheel covers" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers.jpg"
+alt="2 Pry the wheel covers"
+title="2 Pry the wheel covers">
 &lt;span title="2 Pry the wheel covers">2 Pry the wheel covers&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_1600x1600_fit_q99_catmullrom.jpg" title="3 Unscrew the nut" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_400x400_fill_q95_catmullrom_smart1.jpg" alt="3 Unscrew the nut" title="3 Unscrew the nut">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut.jpg" title="3 Unscrew the nut" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut.jpg"
+alt="3 Unscrew the nut"
+title="3 Unscrew the nut">
 &lt;span title="3 Unscrew the nut">3 Unscrew the nut&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_1600x1600_fit_q99_catmullrom.jpg" title="4 Pull the wheel to remove it" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_400x400_fill_q95_catmullrom_smart1.jpg" alt="4 Pull the wheel to remove it" title="4 Pull the wheel to remove it">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it.jpg" title="4 Pull the wheel to remove it" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it.jpg"
+alt="4 Pull the wheel to remove it"
+title="4 Pull the wheel to remove it">
 &lt;span title="4 Pull the wheel to remove it">4 Pull the wheel to remove it&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_c6a59a6ed6aac85518adb3cb5b191747.jpg" title="5 Align the spikes from inside so platic is seen in all holes" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_225e4db38a082ecb14b107d64ff7b388.jpg" alt="5 Align the spikes from inside so platic is seen in all holes" title="5 Align the spikes from inside so platic is seen in all holes">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/5%20Align%20the%20spikes%20from%20inside%20so%20platic%20is%20seen%20in%20all%20holes.jpg" title="5 Align the spikes from inside so platic is seen in all holes" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/5%20Align%20the%20spikes%20from%20inside%20so%20platic%20is%20seen%20in%20all%20holes.jpg"
+alt="5 Align the spikes from inside so platic is seen in all holes"
+title="5 Align the spikes from inside so platic is seen in all holes">
 &lt;span title="5 Align the spikes from inside so platic is seen in all holes">5 Align the spikes from inside so platic is seen in all holes&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_1600x1600_fit_q99_catmullrom.jpg" title="6 Plastic will cover approximately half of the hole" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_400x400_fill_q95_catmullrom_smart1.jpg" alt="6 Plastic will cover approximately half of the hole" title="6 Plastic will cover approximately half of the hole">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole.jpg" title="6 Plastic will cover approximately half of the hole" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole.jpg"
+alt="6 Plastic will cover approximately half of the hole"
+title="6 Plastic will cover approximately half of the hole">
 &lt;span title="6 Plastic will cover approximately half of the hole">6 Plastic will cover approximately half of the hole&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_491de1abb23a47659ca288767b94d2a0.jpg" title="7 Optionally pre-drill 2mm holes, try to stay within plastic" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_745a41cc1dc9b5f55d180796e57ff396.jpg" alt="7 Optionally pre-drill 2mm holes, try to stay within plastic" title="7 Optionally pre-drill 2mm holes, try to stay within plastic">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/7%20Optionally%20pre-drill%202mm%20holes,%20try%20to%20stay%20within%20plastic.jpg" title="7 Optionally pre-drill 2mm holes, try to stay within plastic" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/7%20Optionally%20pre-drill%202mm%20holes,%20try%20to%20stay%20within%20plastic.jpg"
+alt="7 Optionally pre-drill 2mm holes, try to stay within plastic"
+title="7 Optionally pre-drill 2mm holes, try to stay within plastic">
 &lt;span title="7 Optionally pre-drill 2mm holes, try to stay within plastic">7 Optionally pre-drill 2mm holes, try to stay within plastic&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_1600x1600_fit_q99_catmullrom.jpg" title="8 Screw the screws, don&amp;#39;t overtight" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_400x400_fill_q95_catmullrom_smart1.jpg" alt="8 Screw the screws, don&amp;#39;t overtight" title="8 Screw the screws, don&amp;#39;t overtight">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight.jpg" title="8 Screw the screws, don&amp;#39;t overtight" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight.jpg"
+alt="8 Screw the screws, don&amp;#39;t overtight"
+title="8 Screw the screws, don&amp;#39;t overtight">
 &lt;span title="8 Screw the screws, don&amp;#39;t overtight">8 Screw the screws, don&amp;#39;t overtight&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_1600x1600_fit_q99_catmullrom.jpg" title="9 Assemble them back" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_400x400_fill_q95_catmullrom_smart1.jpg" alt="9 Assemble them back" title="9 Assemble them back">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back.jpg" title="9 Assemble them back" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back.jpg"
+alt="9 Assemble them back"
+title="9 Assemble them back">
 &lt;span title="9 Assemble them back">9 Assemble them back&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/wheel-spikes/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_1600x1600_fit_q99_catmullrom.jpg" title="A Close the cover" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/wheel-spikes/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_400x400_fill_q95_catmullrom_smart1.jpg" alt="A Close the cover" title="A Close the cover">
+&lt;a href="/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover.jpg" title="A Close the cover" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover.jpg"
+alt="A Close the cover"
+title="A Close the cover">
 &lt;span title="A Close the cover">A Close the cover&lt;/span>
 &lt;/a>
 &lt;/li>

@@ -111,29 +111,40 @@ Just update your &lt;code>OM_HARDWARE_VERSION&lt;/code> in &lt;code>/boot/openmo
 .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
 .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
 .image-gallery li a img {width: 100%; display: block;}
-&lt;/style>
-&lt;ul class="image-gallery">
+&lt;/style>&lt;ul class="image-gallery">
 &lt;li>
-&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header_hu00443b47d164e086a71a3f8a7ce79b14_1046188_1600x1600_fit_q99_catmullrom.jpg" title="1 Take pin header" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header_hu00443b47d164e086a71a3f8a7ce79b14_1046188_400x400_fill_q95_catmullrom_smart1.jpg" alt="1 Take pin header" title="1 Take pin header">
+&lt;a href="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header.jpg" title="1 Take pin header" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/1%20Take%20pin%20header.jpg"
+alt="1 Take pin header"
+title="1 Take pin header">
 &lt;span title="1 Take pin header">1 Take pin header&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness_hucf7ddfef5d0ec1d511b55a6238cecbdb_963093_1600x1600_fit_q99_catmullrom.jpg" title="2 Pry 2 pins from harness" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness_hucf7ddfef5d0ec1d511b55a6238cecbdb_963093_400x400_fill_q95_catmullrom_smart1.jpg" alt="2 Pry 2 pins from harness" title="2 Pry 2 pins from harness">
+&lt;a href="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness.jpg" title="2 Pry 2 pins from harness" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/2%20Pry%202%20pins%20from%20harness.jpg"
+alt="2 Pry 2 pins from harness"
+title="2 Pry 2 pins from harness">
 &lt;span title="2 Pry 2 pins from harness">2 Pry 2 pins from harness&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector_hucf7ddfef5d0ec1d511b55a6238cecbdb_1065498_1600x1600_fit_q99_catmullrom.jpg" title="3 Insert them to smaller connector" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector_hucf7ddfef5d0ec1d511b55a6238cecbdb_1065498_400x400_fill_q95_catmullrom_smart1.jpg" alt="3 Insert them to smaller connector" title="3 Insert them to smaller connector">
+&lt;a href="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector.jpg" title="3 Insert them to smaller connector" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/3%20Insert%20them%20to%20smaller%20connector.jpg"
+alt="3 Insert them to smaller connector"
+title="3 Insert them to smaller connector">
 &lt;span title="3 Insert them to smaller connector">3 Insert them to smaller connector&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;li>
-&lt;a href="/photo-guide/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side_hucf7ddfef5d0ec1d511b55a6238cecbdb_1064497_1600x1600_fit_q99_catmullrom.jpg" title="4 Plug it to rain sensor connector either side" class="lightbox-image">
-&lt;img class="nozoom" src="/photo-guide/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side_hucf7ddfef5d0ec1d511b55a6238cecbdb_1064497_400x400_fill_q95_catmullrom_smart1.jpg" alt="4 Plug it to rain sensor connector either side" title="4 Plug it to rain sensor connector either side">
+&lt;a href="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side.jpg" title="4 Plug it to rain sensor connector either side" class="lightbox-image">
+&lt;img class="nozoom"
+src="/docs/versions/errata/wrong-rain-sensor-cable/images/vermut-0.13/modify-rain-sensor-cable/4%20Plug%20it%20to%20rain%20sensor%20connector%20either%20side.jpg"
+alt="4 Plug it to rain sensor connector either side"
+title="4 Plug it to rain sensor connector either side">
 &lt;span title="4 Plug it to rain sensor connector either side">4 Plug it to rain sensor connector either side&lt;/span>
 &lt;/a>
 &lt;/li>
