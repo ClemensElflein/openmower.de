@@ -4,7 +4,7 @@ services:
   openmower.de:
     container_name: "openmower.de"
     image: klakegg/hugo:0.111.3-ext-ubuntu
-    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install --no-bin-links && hugo server --poll 1s"
+    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install --no-bin-links && scripts/gen-doc-versions.sh && hugo server --config config.toml,config/_generated_versions.toml --poll 1s"
     ports:
       - "1313:1313"
     volumes:

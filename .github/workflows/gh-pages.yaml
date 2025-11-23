@@ -39,7 +39,8 @@ jobs:
           # cache-dependency-path: '**/package-lock.json'
 
       - run: npm install
-      - run: hugo --minify
+      - run: scripts/gen-doc-versions.sh
+      - run: hugo --minify --config config.toml,config/_generated_versions.toml
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
