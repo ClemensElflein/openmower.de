@@ -1,0 +1,668 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Knowledge Base</title><link>https://openmower.de/latest/docs/knowledge-base/</link><description>Recent content in Knowledge Base on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</guid><description>
+&lt;p>The project got started on a YardForce Classic 500(B) and there are (photo) guides at this documentation on how to dissassemble and assemble it again.&lt;br>
+So the YF Classics 500(B) is from a users perspective the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
+&lt;p>The YF SA650ECO is the second model officially supported but there are no model specific guides yet.&lt;/p>
+&lt;br>
+&lt;p>&lt;strong>Howerver there are more Mowers from the YardForce brand compatible:&lt;/strong>&lt;/p>
+&lt;p>In theory every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ have compatible electronics to replace the stock mainboard by an openmower one.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+As of today the YardForce Amiro, Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.&lt;br>
+The main reason is that the OpenMower mainboard does not fit in their chassis.
+&lt;/div>
+&lt;h2 id="confirmed-convertable-mowers">Confirmed convertable mowers&lt;/h2>
+&lt;ul>
+&lt;li>YardForce
+&lt;ul>
+&lt;li>Classic
+&lt;ul>
+&lt;li>500, 500B&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SA
+&lt;ul>
+&lt;li>650ECO, 900ECO&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</guid><description>
+&lt;p>If you bought the kit the xESC are preconfigured with &lt;a href="https://github.com/vedderb/bldc">VESC firmware&lt;/a> 5.x&amp;quot;&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>device&lt;/th>
+&lt;th>xESC&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>/dev/ttyAMA2&lt;/td>
+&lt;td>drive motor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>/dev/ttyAMA3&lt;/td>
+&lt;td>mow motor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>/dev/ttyAMA4&lt;/td>
+&lt;td>drive motor&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>the config of the mow motor differs from the config of the drive motors, the configs of the two drive motors are equal&lt;/p>
+&lt;p>Configurations for each xESC can be found at  https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC&lt;/p>
+&lt;h2 id="configuring-the-xesc">Configuring the xESC&lt;/h2>
+&lt;p>Prereqs:&lt;/p>
+&lt;ul>
+&lt;li>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool">https://vesc-project.com/vesc_tool&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;p>Connecting to the xESC:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>sudo systemctl stop openmower&lt;/code>&lt;/li>
+&lt;li>&lt;code>socat tcp-listen:65102,reuseaddr,fork file:/dev/ttyAMAx,raw&lt;/code> &amp;lt;- replace &lt;code>x&lt;/code> with devicenumber&lt;/li>
+&lt;li>start VESC Tool&lt;/li>
+&lt;li>Go to &lt;code>Connection -&amp;gt; TCP&lt;/code> and insert openmower IP, leave port at 65102&lt;/li>
+&lt;li>Connect&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-primary" role="alert">
+To change xESC just &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd> in the openmower terminal replacing &lt;code>ttyAMAx&lt;/code> with a new device number and reconnect in VESC Tool.
+&lt;/div>
+&lt;p>Loading XML motor configuration:&lt;/p>
+&lt;ol>
+&lt;li>Download XML configuration files from &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">repo&lt;/a>&lt;/li>
+&lt;li>File&amp;gt;Load Motor Configuration XML&lt;/li>
+&lt;li>Select file named motor for the xESC you connected to&lt;/li>
+&lt;li>On the right toolbar click &amp;ldquo;Write Motor configuration&amp;rdquo; (the M with a arrow pointing down)&lt;/li>
+&lt;/ol>
+&lt;p>Loading XML app configuration:&lt;/p>
+&lt;ol>
+&lt;li>Download XML configuration files from &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">repo&lt;/a>&lt;/li>
+&lt;li>File&amp;gt;Load App Configuration XML&lt;/li>
+&lt;li>Select file named app for the xESC you connected to&lt;/li>
+&lt;li>On the right toolbar click &amp;ldquo;Write App configuration&amp;rdquo; (the A with a arrow pointing down)&lt;/li>
+&lt;/ol>
+&lt;p>Finally hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd> in the openmower terminal and start the openmower service again. &lt;code>sudo systemctl start openmower&lt;/code>&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>This update guide assumes that you have the following:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>A mower with the OpenMowerOS running on it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Important:&lt;/strong> verified that the &lt;code>/boot/openmower/mower_config.txt&lt;/code> file has the correct hardware version set (&lt;code>OM_HARDWARE_VERSION&lt;/code>). If this is wrong, the wrong firmware will be installed on your device. Check the &lt;a href="https://openmower.de/latest/docs/knowledge-base/manual-firmware-installation">Manual Firmware Installation&lt;/a> guide on how to find that value.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The Raspberry Pi is running, and you are able to connect to it via &lt;code>ssh&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The mower is connected to the internet&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-run-the-firmware-update-script">Step 1: Run the Firmware Update Script&lt;/h2>
+&lt;p>The OpenMowerOS image contains a firmware update script which will download and install the latest firmware version for you.&lt;/p>
+&lt;p>In order to run the script, execute the following commands:
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+0.1.0
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Make sure that you are in your home directory (the script is located there):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Execute the script:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>~/fetch_and_upload_firmware.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;p>If everything works as expected, the output should look like this:&lt;/p>
+&lt;div class="container">
+&lt;div class="row justify-content-md-center">
+&lt;div id="player" class="">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'538389.cast',
+document.getElementById('player'),
+{ cols: 100, rows: 24, autoplay: true, loop: true }
+);
+&lt;/script>
+&lt;h2 id="step-2-done-">Step 2: Done 🎉&lt;/h2>
+&lt;p>That&amp;rsquo;s everything you need to do.&lt;/p></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</guid><description>
+&lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
+&lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
+&lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
+&lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-base-setup/</guid><description>
+&lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.raspberrypi.com/products/raspberry-pi-zero-w/">Raspberry Pi 0W&lt;/a>&lt;/li>
+&lt;li>µSD card&lt;/li>
+&lt;li>Power supply for RPi&lt;/li>
+&lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">Ardusimple ZED-F9P&lt;/a>&lt;/li>
+&lt;li>A cable or combinatin of cables to connect micro usb male to micro usb male:
+&lt;ul>
+&lt;li>A) Direct like &lt;a href="https://www.berrybase.de/en/detail/019234a35aaf727382bd7ff62a8d64dc">this&lt;/a>, or &lt;a href="https://www.amazon.de/gp/product/B01M5GZ3N0/">this&lt;/a>&lt;/li>
+&lt;li>B) Adapter (&lt;a href="https://www.berrybase.de/en/usb-2.0-hi-speed-otg-adapterkabel-economy-micro-b-stecker-a-buchse-schwarz-0-15m">like this&lt;/a>) + micro usb to usb-a cable&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>A windows PC&lt;/li>
+&lt;li>Stable internet connection (no disconnection within one hour)&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>If you know about RPi and have already a functional OS, you may head on to &amp;ldquo;Software&amp;rdquo;, but in my case it did not work using an older image.&lt;/p>
+&lt;h3 id="preparing-sd-card">Preparing sd card&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Download &lt;a href="https://www.raspberrypi.com/software/">RPi Imager&lt;/a> for windows&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start Imager:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="Imager1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose your RPI (in my case RPi 0W, choosing wrong RPi will most probably result in many problems)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose Operating system &amp;ldquo;Raspberry Pi OS lite (legacy, 32bit)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager3.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager4.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select your sd card:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager5.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press next so this will appear:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager6.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit settings like the following (and use your personal WiFi settings and country), where you set a good password for your Pi account. Username and password are case sensitive!&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>activate SSH:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press save to see this:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager7.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wait until it is finished, it may take half an hour, depending on your internet connection ;-)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="start-your-rtkbase-rpi">Start your RTKBase RPi&lt;/h3>
+&lt;ul>
+&lt;li>Put your sd card into your RPi&lt;/li>
+&lt;li>Connect ZED-F9P via usb to your RPi (NOT after the installation, it will be configured during installation).&lt;/li>
+&lt;li>Power your RPi&lt;/li>
+&lt;/ul>
+&lt;h3 id="connect-to-rpi">Connect to RPi&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Get from your router the IP of your RPi&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start &lt;a href="https://putty.org">PuTTY&lt;/a> and connect to RPi, where you enter the local IP of your RPi&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter your Username Pi, press enter and than enter your password:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty2.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty3.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="software">Software&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Is your ZED-F9P connected? Do it!&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We will use &lt;a href="https://github.com/Stefal/rtkbase">RTKBase&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://raw.githubusercontent.com/Stefal/rtkbase/master/tools/install.sh -O install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./install.sh --all release
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A very long output should follow. It ends with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GNSS Configuration: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>STARTING SERVICES
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created symlink /etc/systemd/system/multi-user.target.wants/str2str_tcp.service → /etc/systemd/system/str2str_tcp.service.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Job &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> gpsd.service failed because the control process exited with error code.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>See &lt;span style="color:#4e9a06">&amp;#34;systemctl status gpsd.service&amp;#34;&lt;/span> and &lt;span style="color:#4e9a06">&amp;#34;journalctl -xe&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> details.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>END OF INSTALLATION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You can open your browser to http://192.168.178.34 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>here the editor deleted IPV6&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Pi@RTKBase:~ $
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Installation finished, go on and configure your RTKBase&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;h2 id="configuring-your-rtkbase">Configuring your RTKBase&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Start a browser and enter the IP address of your RTKBase. You will get this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase01.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter as password admin. On the following site press the copy symbol right to PPP.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to settings and press &amp;ldquo;options&amp;rdquo; right to &amp;ldquo;Main Service&amp;rdquo;, than paste your coordinates to &amp;ldquo;Base coordinates&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on options again, than on options right to &amp;ldquo;Caster Service&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase04.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save the config&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Switch on &amp;ldquo;Caster Service&amp;rdquo; and &amp;ldquo;File Service&amp;rdquo;, it should look like this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase05.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Eventually change your password below these options.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At logs you should find at least two files:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase06.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="find-the-position-of-your-rtkbase">Find the position of your RTKBase&lt;/h3>
+&lt;p>There are several ways to find your position. To use openmower you do not need the perfect position. Therefore the first option should be your choice, if you want a fast and good result for openmower.&lt;/p>
+&lt;h4 id="easy-and-good-way">Easy and good way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Click on the symbol right to PPP to copy the values to the clipboard:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter these values to your options at MainService.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="more-complicated-and-more-exact-way">More complicated and more exact way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>You have to set up the logging of your position as mentioned above by activating &amp;ldquo;file service&amp;rdquo;. You should wait for a day to average all the values to get a high precision position.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check &lt;a href="http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters">RINEX-File&lt;/a> , but you don&amp;rsquo;t need it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on the pencil right to the zip-file:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase07.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;ldquo;Create Rinex file&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase08.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download it when finished (may take a while, some minutes or longer)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to &lt;a href="https://rgp.ign.fr/SERVICES/calcul_online.php">Calculator&lt;/a>, upload your Rinex file and enter your email address. Don&amp;rsquo;t forget to enter the &amp;ldquo;no robot&amp;rdquo;-verification.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./ignfr.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you received the email, look at &amp;ldquo;ITRF2014&amp;rdquo; (or search for &amp;ldquo;longitude&amp;rdquo;) and see your values like LONGITUDE 6.XXXXXXXXX° LATITUDE 51.XXXXXXXXX° HELL 79.9041&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./averaged.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Manual Firmware Installation</title><link>https://openmower.de/latest/docs/knowledge-base/manual-firmware-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/manual-firmware-installation/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
+received the hardware kit, you should be able to automatically update the firmware.&lt;br>
+Check the guide here: &lt;a href="https://openmower.de/latest/docs/knowledge-base/firmware-update">Firmware Update&lt;/a>
+&lt;/div>
+&lt;p>In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don&amp;rsquo;t worry, the process is straightforward.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+It&amp;rsquo;s very important that you get the correct firmware for your hardware version. Using the wrong firmware will cause the
+device to malfunction and in the worst case, destroy the hardware.
+&lt;/div>
+&lt;h2 id="step-1-download-the-latest-firmware-bundle">Step 1: Download the Latest Firmware Bundle&lt;/h2>
+&lt;figure>
+&lt;img src='https://openmower.de/latest/docs/knowledge-base/manual-firmware-installation/firmware-download.png' alt='Firmware Download' class="img-thumbnail">
+&lt;/figure>
+&lt;p>The first step is to download and extract the latest firmware bundle. The zip file contains all the firmwares supported
+by the OpenMower project.
+You can get the latest version here: 🔗
+ &lt;a href="https://github.com/ClemensElflein/OpenMower/releases">https://github.com/ClemensElflein/OpenMower/releases&lt;/a>&lt;/p>
+&lt;h2 id="step-2-find-the-firmware">Step 2: Find the Firmware&lt;/h2>
+&lt;p>In order to find the correct firmware file, you will need two pieces of information:&lt;/p>
+&lt;h3 id="21-the-hardware-version-of-your-mainboard">2.1: The hardware version of your mainboard&lt;/h3>
+&lt;p>The version of your mainboard is printed on the lower left side of your mainboard:&lt;/p>
+&lt;div>&lt;img src='mainboard-version.jpg' width=400 />&lt;/div>
+&lt;h3 id="22-the-type-of-imu-you-are-using">2.2: The type of IMU you are using:&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>IMU Name&lt;/th>
+&lt;th>Image&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>WT901&lt;/td>
+&lt;td>&lt;img src='wt-901.jpg' width=200 />&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>MPU9250&lt;/td>
+&lt;td>&lt;img src='mpu-9250.jpg' width=200 />&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>LSM6DSO&lt;/td>
+&lt;td>&lt;img src='lsm6dso.jpg' width=200 />&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="33-select-firmware">3.3: Select Firmware:&lt;/h3>
+&lt;p>Now you can select the firmware according to this table:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Mainboard Version&lt;/th>
+&lt;th>IMU&lt;/th>
+&lt;th>Firmware File&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0.13.x&lt;/td>
+&lt;td>LSM6DSO&lt;/td>
+&lt;td>0_13_X/firmware.uf2&lt;/td>
+&lt;td>If you have bought the 0.13.x kit in Vermut&amp;rsquo;s shop, this is your version.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.12.x&lt;/td>
+&lt;td>LSM6DSO&lt;/td>
+&lt;td>0_12_X/firmware.uf2&lt;/td>
+&lt;td>If you have bought the 0.12.x kit in Vermut&amp;rsquo;s shop, this is your version.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.11.x&lt;/td>
+&lt;td>MPU9250&lt;/td>
+&lt;td>0_11_X_MPU9250/firmware.uf2&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.11.x&lt;/td>
+&lt;td>WT901&lt;/td>
+&lt;td>0_11_X_WT901/firmware.uf2&lt;/td>
+&lt;td>If you have bought the 0.11.x kit in Vermut&amp;rsquo;s shop, this is your version.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.10.x&lt;/td>
+&lt;td>MPU9250&lt;/td>
+&lt;td>0_10_X_MPU9250/firmware.uf2&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.10.x&lt;/td>
+&lt;td>WT901&lt;/td>
+&lt;td>0_10_X_WT901/firmware.uf2&lt;/td>
+&lt;td>If you have bought the 0.10.x kit in Vermut&amp;rsquo;s shop, this is your version.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.9.x&lt;/td>
+&lt;td>MPU9250&lt;/td>
+&lt;td>0_9_X_MPU9250/firmware.uf2&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.9.x&lt;/td>
+&lt;td>WT901&lt;/td>
+&lt;td>0_9_X_WT901_INSTEAD_OF_SOUND/firmware.uf2&lt;/td>
+&lt;td>WT901 gets soldered instead of the sound module, since this mainboard does not have a WT901 header&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>0.9.x&lt;/td>
+&lt;td>WT901&lt;/td>
+&lt;td>0_9_X_WT901/firmware.uf2&lt;/td>
+&lt;td>IMU Connected on the MPU9250 Slot using SerialPIO&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="step-3-install-firmware">Step 3: Install Firmware&lt;/h2>
+&lt;p>In order to not draw too much current from your computer&amp;rsquo;s USB port, make sure that no modules (Raspberry Pi, GPS, ESCs)
+are plugged into your mainboard. Then connect the Raspberry Pi Pico with a micro USB cable to your PC.&lt;/p>
+&lt;p>Your PC should show a new mass-storage device. Copy the UF2 file identified above onto the mass-storage and wait for the
+Pico to reboot. The process takes about 10 seconds.&lt;/p>
+&lt;h2 id="step-4-done-">Step 4: Done 🎉&lt;/h2>
+&lt;p>Your mainboard now has the latest firmware and is good to go. You can plug all modules into the mainboard now.&lt;/p></description></item><item><title>Docs: Neopixel LED Colors</title><link>https://openmower.de/latest/docs/knowledge-base/neopixel-led-colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/neopixel-led-colors/</guid><description>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 260px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/neopixel-led-colors/neopixel-status-led_hu70ef149a4bb48905604289e195ae28e0_38939_250x0_resize_q75_catmullrom.jpg" width="250" height="188">
+&lt;/figure>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Color&lt;/th>
+&lt;th>Meaning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>boot sequence&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>dim red&lt;/td>
+&lt;td>firmware booted&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>bright red&lt;/td>
+&lt;td>RPi powered on&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blinking blue&lt;/td>
+&lt;td>halt, IMU not found&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>turquoise (blue+green)&lt;/td>
+&lt;td>starting sound initialization&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blue&lt;/td>
+&lt;td>setting sound volume&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>brown (red+green)&lt;/td>
+&lt;td>sound volume is set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>blinking blue&lt;/td>
+&lt;td>warning, sound not available&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>end of boot sequence&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>orange - red flashing&lt;/td>
+&lt;td>emergency mode and ros is disconnected&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>green - red flashing&lt;/td>
+&lt;td>emergency mode and ros is connected&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>steady green&lt;/td>
+&lt;td>ros is connected and no emergency mode is detected&lt;br/>(all voltages are OK, wheels aren&amp;rsquo;t lifted, emergency button is not pressed)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Shopping List</title><link>https://openmower.de/latest/docs/knowledge-base/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/shopping-list/</guid><description>
+&lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Read this first: &lt;a href="https://openmower.de/latest/docs/getting-started/#important-info">Important Info&lt;/a>
+&lt;/div>
+&lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
+&lt;td>The mower to modify.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon*&lt;/a>&lt;/td>
+&lt;td>Check the &lt;a href="https://openmower.de/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Open Mower Hardware Kit&lt;/td>
+&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/updates">Announcement&lt;/a>)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower">Vermut&amp;rsquo;s shop&lt;/a>&lt;/td>
+&lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>Some users use &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">UM9XX chips&lt;/a> (available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960">WitMotion&lt;/a> and &lt;a href="https://aliexpress.com/item/1005007177629130.html">AliExpress&lt;/a>) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Raspberry Pi 4&lt;/td>
+&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>µSD Card&lt;/td>
+&lt;td>The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon*&lt;/a> or your local hardware store&lt;/td>
+&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/">RasPiKey&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>USB Wi-Fi Dongle&lt;/td>
+&lt;td>For better Wi-Fi reception&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Check for Linux Support&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Left-Angle USB adapter&lt;/td>
+&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon*&lt;/a> or your local hardware store&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+You only need a GPS base station if you don&amp;rsquo;t have access to an external NTRIP service. There are multiple free services available, so check before buying this.
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raspberry Pi&lt;br>+ SD Card&lt;br>+ Power Supply&lt;/td>
+&lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the base station&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>See above&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>&lt;/p></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
+&lt;h2 id="the-map">The Map&lt;/h2>
+&lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
+&lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
+&lt;p>The map is stored in the &lt;code>map.bag&lt;/code> file that is located on the mower at &lt;code>/root/ros_home/.ros&lt;/code>&lt;/p></description></item></channel></rss>

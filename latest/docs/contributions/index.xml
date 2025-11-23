@@ -1,0 +1,138 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – User Contributions</title><link>https://openmower.de/latest/docs/contributions/</link><description>Recent content in User Contributions on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/contributions/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Adjusting map position after a basestation change</title><link>https://openmower.de/latest/docs/contributions/basestation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/basestation/</guid><description>
+&lt;p>When you use the OM_DATUM_LAT and OM_DATUM_LONG DATUM fields in the mower_config.txt, you can shift the map around.&lt;/p>
+&lt;p>The procedure if you change the NTRIP base, is to change the DATUM Fields (&lt;code>OM_DATUM_LAT&lt;/code> for the left and right,
+&lt;code>OM_DATUM_LONG&lt;/code> for up and down) in the mower_config.txt file. What you basically do when you change the DATUM fields is
+shift the complete map up/down/left/right.&lt;/p>
+&lt;p>In order to position the map aligned with a fixed point on the map, you can use the docking position of the mower. To do
+this properly, you have to undock the mower via the area recording buttons, drive a little bit around for an accurate
+positioning of the mower and then dock the mower manually using the area recording buttons.&lt;/p>
+&lt;p>After docking, you see in the web interface that the mower is a bit off the docking position. You adjust the position of
+the map just a bit. To move the map horizontally, you adjust the &lt;code>OM_DATUM_LAT&lt;/code> a bit and to move the map vertically,
+adjust the &lt;code>OM_DATUM_LONG&lt;/code>. (The precision is depending on your position on the globe, but the 7th digit will give you
+about 1cm movement per digit). If you move the map down, the position of the mower will go up on the map and vise versa.&lt;/p>
+&lt;p>Remember to reload the exports (the easy way is a reboot of the pi if you are patient and lazy) and then drive around
+again a bit via the area recording buttons and dock manually again. In that way, you have a constant correct location
+when adjusting the map position. When you think it is all good, then go ahead, start mowing and let the mower return to
+docking immediately to see if the docking works precisely and the mower docks automatically and properly.&lt;/p>
+&lt;p>Then start mowing, the mower will do the outline first (normally 4 rounds, check the 4th round very thoroughly, that is
+the round closest to the edge). If all is ok, you are good to go.&lt;/p></description></item><item><title>Docs: Increase mower motor to 6A</title><link>https://openmower.de/latest/docs/contributions/increase-mower-motor-current/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/increase-mower-motor-current/</guid><description>
+&lt;p>Author: ow@discord&lt;/p>
+&lt;p>YardForce Classic Mower Motor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>&lt;/p>
+&lt;p>Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
+&lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
+&lt;p>Instructions:
+Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
+&lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
+&lt;p>There are two YardForce spikes on Amazon (and other sites like Etsy): &lt;a href="https://www.mibrobo.de/product/yardforce-classic-500-models-184-mibrobo-blackline-spikes-incl-wheel-extension-eng/119">Mibrobo&lt;/a> and &lt;a href="https://www.etsy.com/listing/1009079264/lawn-robot-spikes-for-yardforce-robotics">RoboClaws&lt;/a>.
+This photo guide is about RoboClaws.&lt;/p>
+&lt;p>In short:&lt;/p>
+&lt;ul>
+&lt;li>remove wheels&lt;/li>
+&lt;li>(optionally) pre-drill holes, but people reported success even without that&lt;/li>
+&lt;li>attach spikes from inside&lt;/li>
+&lt;li>assemble back&lt;/li>
+&lt;/ul>
+&lt;p>Results:&lt;/p>
+&lt;ul>
+&lt;li>much better traction on grass&lt;/li>
+&lt;li>noise on paving&lt;/li>
+&lt;li>probable damage to tiles&lt;/li>
+&lt;/ul>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover.jpg" title="1 Remove the cover" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover.jpg"
+alt="1 Remove the cover"
+title="1 Remove the cover">
+&lt;span title="1 Remove the cover">1 Remove the cover&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers.jpg" title="2 Pry the wheel covers" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers.jpg"
+alt="2 Pry the wheel covers"
+title="2 Pry the wheel covers">
+&lt;span title="2 Pry the wheel covers">2 Pry the wheel covers&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut.jpg" title="3 Unscrew the nut" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut.jpg"
+alt="3 Unscrew the nut"
+title="3 Unscrew the nut">
+&lt;span title="3 Unscrew the nut">3 Unscrew the nut&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it.jpg" title="4 Pull the wheel to remove it" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it.jpg"
+alt="4 Pull the wheel to remove it"
+title="4 Pull the wheel to remove it">
+&lt;span title="4 Pull the wheel to remove it">4 Pull the wheel to remove it&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/5%20Align%20the%20spikes%20from%20inside%20so%20platic%20is%20seen%20in%20all%20holes.jpg" title="5 Align the spikes from inside so platic is seen in all holes" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/5%20Align%20the%20spikes%20from%20inside%20so%20platic%20is%20seen%20in%20all%20holes.jpg"
+alt="5 Align the spikes from inside so platic is seen in all holes"
+title="5 Align the spikes from inside so platic is seen in all holes">
+&lt;span title="5 Align the spikes from inside so platic is seen in all holes">5 Align the spikes from inside so platic is seen in all holes&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole.jpg" title="6 Plastic will cover approximately half of the hole" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole.jpg"
+alt="6 Plastic will cover approximately half of the hole"
+title="6 Plastic will cover approximately half of the hole">
+&lt;span title="6 Plastic will cover approximately half of the hole">6 Plastic will cover approximately half of the hole&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/7%20Optionally%20pre-drill%202mm%20holes,%20try%20to%20stay%20within%20plastic.jpg" title="7 Optionally pre-drill 2mm holes, try to stay within plastic" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/7%20Optionally%20pre-drill%202mm%20holes,%20try%20to%20stay%20within%20plastic.jpg"
+alt="7 Optionally pre-drill 2mm holes, try to stay within plastic"
+title="7 Optionally pre-drill 2mm holes, try to stay within plastic">
+&lt;span title="7 Optionally pre-drill 2mm holes, try to stay within plastic">7 Optionally pre-drill 2mm holes, try to stay within plastic&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight.jpg" title="8 Screw the screws, don&amp;#39;t overtight" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight.jpg"
+alt="8 Screw the screws, don&amp;#39;t overtight"
+title="8 Screw the screws, don&amp;#39;t overtight">
+&lt;span title="8 Screw the screws, don&amp;#39;t overtight">8 Screw the screws, don&amp;#39;t overtight&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back.jpg" title="9 Assemble them back" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back.jpg"
+alt="9 Assemble them back"
+title="9 Assemble them back">
+&lt;span title="9 Assemble them back">9 Assemble them back&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;li>
+&lt;a href="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover.jpg" title="A Close the cover" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/latest/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover.jpg"
+alt="A Close the cover"
+title="A Close the cover">
+&lt;span title="A Close the cover">A Close the cover&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

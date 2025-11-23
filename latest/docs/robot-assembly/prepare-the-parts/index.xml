@@ -1,0 +1,325 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Prepare the Parts</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/</link><description>Recent content in Prepare the Parts on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Prepare the GPS</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-the-gps/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+There is a tutorial video available for this step of the process! &lt;br/>
+Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+(time 16:21 - 17:15)
+&lt;/div>
+&lt;h2 id="configure-the-gps-board">Configure the GPS board&lt;/h2>
+&lt;p>This assumes that you are using the Ardusimple F9P GPS board.&lt;/p>
+&lt;p>Other GPS receivers are also supported, but need different steps:&lt;/p>
+&lt;ul>
+&lt;li>WitMotion Unicore UM9XX: &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">wiki&lt;/a>, &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x">optional adapter&lt;/a>, &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART">set-up guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Latest version of the u-center software:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
+Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
+&lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/main/configs/GPSConfig/Robot.txt" target="_blank">Robot.txt&lt;/a>&lt;br/>
+This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd> to download the file.&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-0-update-firmware">Step 0: Update Firmware&lt;/h3>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2022-05/UBX_F9_100_HPG132.df73486d99374142f3aabf79b7178f48.bin">&lt;code>ZED-F9P HPG 1.32&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>&lt;br>
+There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
+&lt;h3 id="step-1-open-u-center-and-connect-to-your-gps">Step 1: Open u-center and connect to your GPS&lt;/h3>
+&lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
+With the module connected to your PC, open the u-center software.&lt;/p>
+&lt;p>In u-center, first connect to your board by selecting the appropriate COM port in the &lt;code>Receiver -&amp;gt; Connection&lt;/code> menu.&lt;/p>
+&lt;h3 id="step-2-transfer-the-configuration-to-the-gps">Step 2: Transfer the configuration to the GPS&lt;/h3>
+&lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Transfer Settings to u-center">&lt;/p>
+&lt;p>After successfully connecting to the board, you can transfer
+the previously downloaded configuration file &lt;code>Robot.txt&lt;/code> by opening the window &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>. In this window you open the &lt;code>Robot.txt&lt;/code> using the &lt;code>...&lt;/code> button and then transfer the configuration to the GPS by clicking the &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> button.&lt;/p>
+&lt;h3 id="step-3-save-configuration-to-flash">Step 3: Save configuration to Flash&lt;/h3>
+&lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Save Settings to Flash">&lt;/p>
+&lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View -&amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
+&lt;h3 id="step-4-done-">Step 4: Done 🎉&lt;/h3>
+&lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p></description></item><item><title>Docs: Prepare the SD Card</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sd-card/</guid><description>
+&lt;p>We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>In order to follow this guide, you will need:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>An SD card with at least 16 GB&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A PC with the Raspberry Pi Imager Software installed:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/&lt;/a>&lt;/li>
+&lt;li>&lt;strong>The latest OpenMowerOS Image:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/releases">https://github.com/ClemensElflein/OpenMowerOS/releases&lt;/a>&lt;br/>
+You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;t need to unpack the image.&lt;/li>
+&lt;li>&lt;strong>An SD card reader&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-flash-the-image-to-your-sd-card">Step 1: Flash the Image to your SD Card&lt;/h2>
+&lt;ul>
+&lt;li>Start the Raspberry Pi Imager Software. Select &lt;code>CHOOSE OS -&amp;gt; Use Custom&lt;/code>. Then open the image file you downloaded earlier.&lt;/li>
+&lt;li>Select &lt;code>CHOOSE STORAGE&lt;/code> and select your SD card from the Window. &lt;strong>Make sure that you are really selecting the correct SD card, all data on the selected device will be erased!&lt;/strong>&lt;/li>
+&lt;li>Select &lt;code>WRITE&lt;/code> and wait for the process to finish&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-2-configure-open-mower">Step 2: Configure Open Mower&lt;/h2>
+&lt;p>For the robot to work correctly, you need to set some configuration options. In order to make this as simple as possible, the configuration files are located in the &lt;code>boot&lt;/code> partition of your newly flashed SD card. You can access the files on Windows or Linux without any additional steps (it&amp;rsquo;s mounted as a mass-storage device). If the partition does not show up in your file explorer, unplug and replug the SD card.&lt;/p>
+&lt;h4 id="openmoweropenmower_versiontxt-on-linux-bootopenmoweropenmower_versiontxt">/openmower/openmower_version.txt (on Linux: /boot/openmower/openmower_version.txt)&lt;/h4>
+&lt;p>This file selects the Open Mower version to use. You can choose the following:
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>OpenMowerOS version&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+0.1.0
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;p>&lt;strong>edge:&lt;/strong> Use &lt;code>edge&lt;/code> for now. It is the only version which fits this guide. Most people are running this version.&lt;/p>
+&lt;p>In the future there will be a proper versioning system.&lt;/p>
+&lt;p>If you are a developer, ask on Discord how to run custom versions of the software.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/p>
+&lt;h4 id="openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">/openmower/mower_config.txt (on Linux: /boot/openmower/mower_config.txt)&lt;/h4>
+&lt;p>This file has important settings for the Open Mower software.
+The configurations in the file might change with the Open Mower release, that&amp;rsquo;s why the documentation can be found in the file. Here is an example file, but please use and modify the one that came with your OpenMowerOS.&lt;/p>
+&lt;div class="spoiler panel panel-default "
+>
+&lt;div class="panel-heading">
+&lt;a class="collapsed" data-toggle="collapse"
+style="display:block;"
+href="#mower_config_example" >
+Click to see annotated config code
+&lt;/a>
+&lt;/div>
+&lt;div class="panel-collapse collapse "
+id="mower_config_example">
+&lt;div class="panel-body">&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Important Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Most of the time you must modify those settings, so they are moved to the beginning of document from their respective sections&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Refer to documentation for more info: https://openmower.de/docs/robot-assembly/prepare-the-parts/prepare-sd-card/#step-2-configure-open-mower&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Your Hardware Version (more a firmware version, really). Check the OpenMower docs (https://openmower.de/docs/versions/) for the firmware versions.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_13_X: Use this if you have 0.13.x mainboard with LSM6DSOTR (default).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_12_X_LSM6DSO: Use this if you have an LSM6DSOTR and have a 0.12.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_11_X_WT901: Use this if you have an WT901 and have a 0.11.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_WT901: Use this if you have an WT901 and have a 0.10.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_10_X_MPU9250: Use this if you have an MPU9250 and have a 0.10.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_WT901_INSTEAD_OF_SOUND: Use this if you have soldered the WT901 in the sound module&amp;#39;s slot and have a 0.9.x mainboard.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0_9_X_MPU9250: Use this if you have an MPU9250 and have a 0.9.x mainboard (be aware that there are many fake chips on the market. So probably not your hardware version).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_HARDWARE_VERSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0_13_X&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Uncomment and set to coordinates near your future docking station, this will be your map origin.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># There might be a case that you don&amp;#39;t need those if you using OM_USE_RELATIVE_POSITION=True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LAT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>48.CHANGEME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DATUM_LONG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>11.CHANGEME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># NTRIP Settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Set to False if using external radio plugged into the Ardusimple board.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_NTRIP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>True
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_HOSTNAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>192.168.178.55
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2101&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_PASSWORD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_NTRIP_ENDPOINT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>BASE1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Hardware Specific Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The type of mower you&amp;#39;re using, used to get some hardware parameters automatically&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Currently supported:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># YardForce500&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># YardForceSA650&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># CUSTOM (put your configs in ~/mower_params/)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;YardForce500&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select your ESC type&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported values as of today:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># xesc_mini: for the STM32 version (VESC)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># xesc_2040: for the RP2040 version (very experimental!)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_ESC_TYPE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xesc_mini&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Select your gamepad&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Currently supported: ps3, steam_stick, steam_touch, xbox360&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWER_GAMEPAD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xbox360&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Set to true to record your session.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Output will be stored in your $HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_ENABLE_RECORDING_ALL=False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Full Sound Support - But read on carefully:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Up to (and inclusive) OM hardware version 0.13.x, DFPlayer&amp;#39;s power supply is set by default to 3.3V.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># This is done by solder jumper &amp;#34;JP1&amp;#34; whose board track is by default at 3.3V.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If you manually opened the 3.3V track and solder a bridge to 5V, then you can indicate it here to get full sound support.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># DO NOT enable &amp;#34;OM_DFP_IS_5V=True&amp;#34; if you haven&amp;#39;t changed it in real. You might risk your &amp;#34;Raspberry Pico&amp;#34;!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># And even if the Pico isn&amp;#39;t expensive, it&amp;#39;s a torture to replace it.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Full details are available here: https://github.com/ClemensElflein/OpenMower/blob/main/Firmware/LowLevel/README-Sound%2C%20DFPIS5V.md&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_DFP_IS_5V=False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Language as ISO-639-1 code string (currently only used by sound).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported languages: en|de&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_LANGUAGE=&amp;#34;en&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Sound volume (%)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Supported values:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0-100 = Set sound volume on OM start, ignoring a previously set volume level (i.e. changed by CoverUI)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># -1 = Don&amp;#39;t change a previously set volume level&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_VOLUME=-1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Background sounds&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Beside some spoken informational advert sounds like &amp;#34;Waiting for RTK GPS&amp;#34; or &amp;#34;Heading back to docking station&amp;#34;,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># the current sound implementation might also play some funny background sounds like &amp;#34;I&amp;#39;m singing in the rain&amp;#34; once rain got detected.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># But it will also play background sounds which might unsettle your wife or neighbor.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># That&amp;#39;s why it&amp;#39;s configured false/off by default. If your wife or neightbor is heavy-duty, you can set it to &amp;#34;true&amp;#34; (on) here:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># export OM_BACKGROUND_SOUNDS=False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## GPS Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Relative Positioning vs LatLng coordinates&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=False, we&amp;#39;re using an arbitrary point as map origin. This point is called the DATUM point and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># needs to be set using OM_DATUM_LAT and OM_DATUM_LONG below.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If OM_USE_RELATIVE_POSITION=True, we&amp;#39;re using the ublox NAVRELPOSNED messages as position.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># This makes your base station the map origin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># For it recommended to set OM_USE_RELATIVE_POSITION to False. This way you can move your base station without re-recording your maps and it&amp;#39;s also more compatible overall.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_RELATIVE_POSITION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># GPS protocol. Use UBX for u-blox chipsets and NMEA for everything else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>UBX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># If you want to use F9R&amp;#39;s sensor fusion, set this to true (you will also need to set DATUM_LAT and DATUM_LONG.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Consider this option unstable, since I don&amp;#39;t have the F9R anymore, so I&amp;#39;m not able to test this.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># IF YOU DONT KNOW WHAT THIS IS, SET IT TO FALSE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_USE_F9R_SENSOR_FUSION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">## Mower Logic Settings ##&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The distance to drive forward AFTER reaching the second docking point&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_DOCKING_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The distance to drive for undocking. This needs to be large enough for the robot to have GPS reception&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_UNDOCK_DISTANCE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># How many outlines should the mover drive. It&amp;#39;s not recommended to set this below 4.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_COUNT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mowing angle offset -180 deg - +180 deg, 0 = east, -90 = north. If mowing angle offset is not absolute it gets added to the auto detected angle which is set by the first 2 m of recorded outline.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_ANGLE_OFFSET_IS_ABSOLUTE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>False
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># The width of mowing paths.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Choose it smaller than your actual mowing tool in order to have some overlap.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># 0.13 works well for the Classic 500.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_TOOL_WIDTH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.13
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Voltages for battery to be considered full or empty&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_EMPTY_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>23.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_BATTERY_FULL_VOLTAGE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>28.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mower motor temperatures to stop and start mowing&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_HIGH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>80.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_MOWING_MOTOR_TEMP_LOW&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>40.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_WAIT_TIME_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>10.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_TIMEOUT_SEC&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>5.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Mowing Behavior Settings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># True to enable mowing motor&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_ENABLE_MOWER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># True to start mowing automatically. If this is false, you need to start manually by pressing the start button&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_AUTOMATIC_START&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_OUTLINE_OFFSET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.05
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># source the default values for the hardware platform.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># you only need this line on non-docker installs. in the docker, it will be done automatically.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># source $(rospack find open_mower)/params/hardware_specific/$OM_MOWER/default_environment.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="step-3-done-">Step 3: Done 🎉&lt;/h2>
+&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software.&lt;/p></description></item><item><title>Docs: Prepare the Robot</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-the-robot/</guid><description>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>YardForce Classic 500&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Some basic screwdrivers&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-open-the-robot">Step 1: Open The Robot&lt;/h3>
+&lt;p>The first step is to open up the robot. This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is: 2:25 - 5:08.&lt;/p>
+&lt;h3 id="step-2-remove-stock-electronics">Step 2: Remove Stock Electronics&lt;/h3>
+&lt;p>You will need to remove these stock electronics:&lt;/p>
+&lt;ul>
+&lt;li>Mainboard&lt;/li>
+&lt;li>Perimeter Sensor (slim PCB in the front of the robot).&lt;/li>
+&lt;li>All cables in the orange cover (emergency stop).&lt;/li>
+&lt;/ul>
+&lt;p>Keep the battery in place.&lt;/p>
+&lt;h3 id="step-3-optional-modify-usb-socket">Step 3 &lt;strong>Optional&lt;/strong>: Modify USB Socket&lt;/h3>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+The kit includes compatible USB socket adapter starting version 0.12.
+&lt;/div>
+&lt;p>The YardForce classic has a USB socket on the back of the robot. Unfortunately for us, this socket has some non-standard connector on the inside.&lt;/p>
+&lt;p>If you want to use this USB socket on the back of the robot (for example for controlling the robot using a gamepad like shown in the first video), you will need to add a USB A plug to the USB cable and plug it into the Raspberry Pi.&lt;/p>
+&lt;p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+If you have bought the hardware kit, the mainboard already has firmware installed, but it&amp;rsquo;s a good idea to &lt;a href="https://openmower.de/latest/docs/knowledge-base/firmware-update">update it to
+the latest version&lt;/a> anyway.
+&lt;/div>
+&lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is because
+without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
+&lt;p>For this, follow the &lt;a href="https://openmower.de/latest/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: xESC boards</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/xesc/</guid><description>
+&lt;p>The Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
+&lt;p>Configuring xESCs is described &lt;a href="../../../knowledge-base/configure-xesc/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Sound (DFPlayer)</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sound/</guid><description>
+&lt;h3 id="dfplayer-module">DFPlayer Module&lt;/h3>
+&lt;p>If your mainboard got delivered with an already equipped DFPlayer, you most likely got the original &lt;a href="https://www.dfrobot.com/product-1121.html">DFRobot-DFPlayer&lt;/a> with a &amp;lsquo;DFRobot LISP3&amp;rsquo; chip.&lt;/p>
+&lt;p>If you need to attach one, and your&amp;rsquo;re not located in the US, you might also use a DFPlayer-Clone with a &amp;lsquo;MH2024K-24SS&amp;rsquo;, &amp;lsquo;JL AB23A799755&amp;rsquo; or &amp;lsquo;GD3200B&amp;rsquo; chip, as sold by Amazon, AliExpress or the like.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️&lt;/h4>
+When using a DFPlayer-&lt;b>Clone&lt;/b>,&lt;br>
+in an open-mower-mainboard up to version 0.13.x,&lt;br>
+you should cut-off Pin-11 from the DFPlayer-Clone:&lt;br>
+&lt;img title="Cut-off Pin-11 if DFP-Clone and MoBo &lt;= 0.13.x" src="dfplayer-clone_cut-pin.png" width="200">&lt;br>
+If not, volume control will not work and always play at 100%!
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️&lt;/h4>
+You also need to take attention that your motherboard has the required R7 and R13 (1k) resistors assembled:&lt;br>
+&lt;img title="Required 1kΩ R7 &amp; R13" src="mainboard-013x-snd-r7-r13.png" width="200">
+&lt;/div>
+&lt;h4 id="change-dfplayers-vsubccsub-to-5v">Change DFPlayer&amp;rsquo;s V&lt;sub>CC&lt;/sub> to 5V&lt;/h4>
+&lt;p>All mainboard version ≤ 0.13.x supply the DFPlayer with 3.3V by default.
+But for full sound support, it&amp;rsquo;s highly advised to change this to 5V, otherwise you might risk your Pico&amp;rsquo;s PMIC 💣. More technical details here: &lt;a href="https://github.com/ClemensElflein/OpenMower/blob/main/Firmware/LowLevel/README-Sound%2C%20DFPIS5V.md">Sound-Readme&lt;/a>&lt;br>
+&lt;img title="Required 1kΩ R7 &amp; R13" src="mainboard-013x-snd-change5v.png" width="200">&lt;/p>
+&lt;p>&lt;strong>Don&amp;rsquo;t forget to cut the trace between middle and 3.3v! It&amp;rsquo;s there, even if it&amp;rsquo;s barely visible!&lt;/strong> (if you forgot, you&amp;rsquo;ll bridge the 3v3 with 5V resulting in incorrect battery voltage reporting)&lt;/p>
+&lt;p>Once changed, you&amp;rsquo;re save to enable full sound support via &lt;code>OM_DFP_IS_5V=True&lt;/code> &lt;a href="../prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">mower_config&lt;/a> switch.&lt;/p>
+&lt;h4 id="sound-sd-card">Sound SD-Card&lt;/h4>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+SDCard (128Mb) and DFPlayer Mini are included in the kit.
+&lt;/div>
+&lt;p>Take an SD card (different from the one you are using for RPi), format as FAT32, copy all &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files and folder&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️ Updated 11/2024 &lt;/h4>
+The soundfile structure completely changed in November 2024.
+If you already prepared your SD-Card before, it still works, but for full sound support you need to &lt;strong>replace&lt;/strong> all files with the new structure (and take care that no old origin files remain on the SD-Card).
+&lt;/div>
+&lt;h4 id="speaker-mount">Speaker mount&lt;/h4>
+&lt;p>There&amp;rsquo;re a couple of 3D-Printable speaker mounts available for different models. Worth to check &lt;a href="https://www.printables.com/search/models?q=tag:openmower%20speaker">OpenMower @ Printables&lt;/a>&lt;/p></description></item></channel></rss>
