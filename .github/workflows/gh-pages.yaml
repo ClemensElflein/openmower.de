@@ -49,7 +49,7 @@ jobs:
 
           hugo --minify --config config.toml,config/_generated_versions.toml,config/_ci_override.toml
 
-      # Build for tags (docs-only, version = tag, baseURL /archive/<tag>/)
+      # Build for tags (docs-only environment, version = tag, baseURL /archive/<tag>/)
       - name: Build Hugo (tag)
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
@@ -79,31 +79,15 @@ jobs:
           publish_dir: ./public
           destination_dir: archive/${{ github.ref_name }}
 
-      # Create root redirect openmower.de -> /latest
-      - name: Create root redirect to /latest
+      # Prepare a root index.html that is just the Hugo-generated homepage
+      - name: Prepare root index
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir -p public-root
-          cat > public-root/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="utf-8">
-              <title>Redirecting...</title>
-              <meta http-equiv="refresh" content="0; url=/latest/">
-              <link rel="canonical" href="/latest/">
-            </head>
-            <body>
-              <p>Redirecting to <a href="/latest/">/latest/</a>...</p>
-              <script>
-                window.location.replace('/latest/');
-              </script>
-            </body>
-          </html>
-          EOF
+          cp public/index.html public-root/index.html
 
-      # Deploy root redirect + CNAME at repo root (keep /latest and /archive)
-      - name: Deploy root redirect and CNAME
+      # Deploy root index and CNAME, keeping /latest and /archive/*
+      - name: Deploy root index and CNAME
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
