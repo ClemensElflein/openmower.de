@@ -1,0 +1,82 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – sound</title><link>https://openmower.de/latest/tags/sound/</link><description>Recent content in sound on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/tags/sound/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Sound (DFPlayer)</title><link>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/robot-assembly/prepare-the-parts/prepare-sound/</guid><description>
+&lt;h3 id="dfplayer-module">DFPlayer Module&lt;/h3>
+&lt;p>If your mainboard got delivered with an already equipped DFPlayer, you most likely got the original &lt;a href="https://www.dfrobot.com/product-1121.html">DFRobot-DFPlayer&lt;/a> with a &amp;lsquo;DFRobot LISP3&amp;rsquo; chip.&lt;/p>
+&lt;p>If you need to attach one, and your&amp;rsquo;re not located in the US, you might also use a DFPlayer-Clone with a &amp;lsquo;MH2024K-24SS&amp;rsquo;, &amp;lsquo;JL AB23A799755&amp;rsquo; or &amp;lsquo;GD3200B&amp;rsquo; chip, as sold by Amazon, AliExpress or the like.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️&lt;/h4>
+When using a DFPlayer-&lt;b>Clone&lt;/b>,&lt;br>
+in an open-mower-mainboard up to version 0.13.x,&lt;br>
+you should cut-off Pin-11 from the DFPlayer-Clone:&lt;br>
+&lt;img title="Cut-off Pin-11 if DFP-Clone and MoBo &lt;= 0.13.x" src="dfplayer-clone_cut-pin.png" width="200">&lt;br>
+If not, volume control will not work and always play at 100%!
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️&lt;/h4>
+You also need to take attention that your motherboard has the required R7 and R13 (1k) resistors assembled:&lt;br>
+&lt;img title="Required 1kΩ R7 &amp; R13" src="mainboard-013x-snd-r7-r13.png" width="200">
+&lt;/div>
+&lt;h4 id="change-dfplayers-vsubccsub-to-5v">Change DFPlayer&amp;rsquo;s V&lt;sub>CC&lt;/sub> to 5V&lt;/h4>
+&lt;p>All mainboard version ≤ 0.13.x supply the DFPlayer with 3.3V by default.
+But for full sound support, it&amp;rsquo;s highly advised to change this to 5V, otherwise you might risk your Pico&amp;rsquo;s PMIC 💣. More technical details here: &lt;a href="https://github.com/ClemensElflein/OpenMower/blob/main/Firmware/LowLevel/README-Sound%2C%20DFPIS5V.md">Sound-Readme&lt;/a>&lt;br>
+&lt;img title="Required 1kΩ R7 &amp; R13" src="mainboard-013x-snd-change5v.png" width="200">&lt;/p>
+&lt;p>&lt;strong>Don&amp;rsquo;t forget to cut the trace between middle and 3.3v! It&amp;rsquo;s there, even if it&amp;rsquo;s barely visible!&lt;/strong> (if you forgot, you&amp;rsquo;ll bridge the 3v3 with 5V resulting in incorrect battery voltage reporting)&lt;/p>
+&lt;p>Once changed, you&amp;rsquo;re save to enable full sound support via &lt;code>OM_DFP_IS_5V=True&lt;/code> &lt;a href="../prepare-sd-card/#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">mower_config&lt;/a> switch.&lt;/p>
+&lt;h4 id="sound-sd-card">Sound SD-Card&lt;/h4>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">🧰&lt;/h4>
+SDCard (128Mb) and DFPlayer Mini are included in the kit.
+&lt;/div>
+&lt;p>Take an SD card (different from the one you are using for RPi), format as FAT32, copy all &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/Firmware/LowLevel/soundfiles">MP3 files and folder&lt;/a> to the root folder. Insert SD card to DFPlayer. Insert DFPlayer into motherboard SD card facing right (towards RPi)&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">☝️ Updated 11/2024 &lt;/h4>
+The soundfile structure completely changed in November 2024.
+If you already prepared your SD-Card before, it still works, but for full sound support you need to &lt;strong>replace&lt;/strong> all files with the new structure (and take care that no old origin files remain on the SD-Card).
+&lt;/div>
+&lt;h4 id="speaker-mount">Speaker mount&lt;/h4>
+&lt;p>There&amp;rsquo;re a couple of 3D-Printable speaker mounts available for different models. Worth to check &lt;a href="https://www.printables.com/search/models?q=tag:openmower%20speaker">OpenMower @ Printables&lt;/a>&lt;/p></description></item><item><title>Docs: Troubleshoot Sound</title><link>https://openmower.de/latest/docs/troubleshooting/sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/sound/</guid><description>
+&lt;h3 id="all-sounds-get-played-infinite">All sounds get played infinite&lt;/h3>
+&lt;p>This is most likely because your OpenMower&amp;rsquo;s mainboard miss R7 and/or R13. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#dfplayer-module">DFPlayer Module&lt;/a>.&lt;/p>
+&lt;p>But also happen if you use an old or damaged SD-Card which take loooong for getting the file allocation table.&lt;/p>
+&lt;h3 id="howto-increase-or-decrease-volume">Howto increase or decrease volume?&lt;/h3>
+&lt;p>This depend on the type and version of your CoverUI:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Volume&lt;/th>
+&lt;th style="text-align:center">Custom CoverUI V1&lt;br>Stock C500(A/B)&lt;/th>
+&lt;th style="text-align:center">Custom CoverUI V2&lt;br> &lt;/th>
+&lt;th style="text-align:center">RM-ECOW-V1.0.0&lt;br>(NX80i, &amp;hellip;)&lt;/th>
+&lt;th style="text-align:center">RM-EC3-V1.1&lt;br>(NX100i)&lt;/th>
+&lt;th style="text-align:center">SA/SC-Pro&lt;br>(240*160 Pixel)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>up&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Mon&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Sun&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>4H&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>1&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>↑&lt;/kbd>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>down&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Tue&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>Mon&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>6H&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>2&lt;/kbd>&lt;/td>
+&lt;td style="text-align:center">&lt;kbd>↓&lt;/kbd>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="i-decreased-my-volume-via-volume-down-button-but-sound-get-still-played-at-full-volume">I decreased my volume via volume-down button, but sound get still played at full volume&lt;/h3>
+&lt;p>This is a known issue with DFPlayer-Clones in mainboard version 0.9.x up (and incl.) 0.13.x. &lt;a href="http://localhost:1313/docs/robot-assembly/prepare-the-parts/prepare-sound/#dfplayer-module">Read here how to fix&lt;/a>.&lt;/p>
+&lt;h3 id="i-do-hear-one-or-two-more-adverts-as-before-but-no-gps-pings-no-bidaa-bidaa-emergency-">I do hear one or two more adverts as before, but no GPS-Pings, no &amp;ldquo;Bidaa bidaa&amp;rdquo; emergency, &amp;hellip;&lt;/h3>
+&lt;p>First off: &amp;ldquo;Bidaa bidaa&amp;rdquo; emergency signalling or similar, is an optional &amp;lsquo;background-sound&amp;rsquo; feature, which is disabled by default.
+You need to enable it via &lt;code>export OM_BACKGROUND_SOUNDS=True&lt;/code> in your mower_config.&lt;/p>
+&lt;p>If it still doesn&amp;rsquo;t play after changing &lt;code>export OM_BACKGROUND_SOUNDS=True&lt;/code> in your mower_config, this is most likely because your DFPlayer&amp;rsquo;s SD-Card is still in the old format. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#sound-sd-card">Sound SD-Card&lt;/a>,&lt;/p>
+&lt;h3 id="i-do-hear-some-new-sounds-but-they-do-not-match-to-what-happen">I do hear some new sounds, but they do not match to what happen&lt;/h3>
+&lt;p>You mixed up DFPlayer&amp;rsquo;s SD-Card by adding the new files on top of the old ones. You need to remove all old files before copying the new ones. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#sound-sd-card">Sound SD-Card&lt;/a>.&lt;/p>
+&lt;h3 id="sound-worked-for-a-couple-of-weeks-but-then-my-pico-suddenly-died">Sound worked for a couple of weeks, but then my Pico suddenly died&lt;/h3>
+&lt;p>This happen because you enabled full sound support by signalling it via &lt;code>OM_DFP_IS_5V=True&lt;/code> flag, but didn&amp;rsquo;t switched it in real. See &lt;a href="../../robot-assembly/prepare-the-parts/prepare-sound/#change-dfplayers-vsubccsub-to-5v">Change DFPlayer’s V&lt;sub>CC&lt;/sub> to 5V&lt;/a>.&lt;/p>
+&lt;p>Don&amp;rsquo;t worry. A new Pico is cheap (~ 4$). Happy desoldering 😶!&lt;/p></description></item></channel></rss>
