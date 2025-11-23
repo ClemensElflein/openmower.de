@@ -23,8 +23,7 @@ the round closest to the edge). If all is ok, you are good to go.&lt;/p></descri
 &lt;p>Instructions:
 Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/archive/v1.0.2/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
-&lt;p>There are two YardForce spikes on Amazon (and other sites like Etsy): &lt;a href="https://www.mibrobo.de/product/yardforce-classic-500-models-184-mibrobo-blackline-spikes-incl-wheel-extension-eng/119">Mibrobo&lt;/a> and &lt;a href="https://www.etsy.com/listing/1009079264/lawn-robot-spikes-for-yardforce-robotics">RoboClaws&lt;/a>.
-This photo guide is about RoboClaws.&lt;/p>
+&lt;p>There are YardForce spikes on Amazon and other sites like Etsy. This photo guide is about RoboClaws.&lt;/p>
 &lt;p>In short:&lt;/p>
 &lt;ul>
 &lt;li>remove wheels&lt;/li>
