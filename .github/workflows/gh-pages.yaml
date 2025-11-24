@@ -23,10 +23,11 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           submodules: recursive  # Fetch the Docsy theme
-          fetch-depth: 0         # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 1
+          fetch-tags: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
