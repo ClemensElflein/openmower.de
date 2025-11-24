@@ -3,9 +3,12 @@
     (not .Site.Params.ui.navbar_translucent_over_cover_disable)
 -}}
 
+{{/* decide where the logo should point */}}
+{{ $home   := .Site.Home.RelPermalink }}
+{{ $latest := .Site.Params.url_latest_version | default $home }}
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark
             {{- if $cover }} td-navbar-cover {{- end }} flex-column flex-md-row td-navbar">
-  <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+  <a class="navbar-brand" href="{{ $latest }}">
     {{- /**/ -}}
     <span class="navbar-brand__logo navbar-logo">
       {{- if ne .Site.Params.ui.navbar_logo false -}}
