@@ -27,6 +27,11 @@ jobs:
         with:
           submodules: recursive  # Fetch the Docsy theme
           fetch-depth: 0
+      # Workaround for actions/checkout dropping tag annotations on tag runs
+      - name: Restore annotated tags
+        run: |
+          # Overwrite local tag refs with real tag objects from origin
+          git fetch --force origin 'refs/tags/*:refs/tags/*'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
