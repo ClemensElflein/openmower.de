@@ -1,4 +1,5 @@
-baseURL = "/"
+# Set a base url, so that we see if Links work properly when the site is moved to archive
+baseURL = "http://localhost:1313/latest/"
 title = "Open Mower"
 
 # Language settings
