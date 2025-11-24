@@ -280,12 +280,12 @@ The kit includes compatible USB socket adapter starting version 0.12.
 &lt;p>This way the USB port at the back of the robot is wired directly to the Raspberry Pi.&lt;/p></description></item><item><title>Docs: Prepare the Mainboard</title><link>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-mainboard/</guid><description>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-If you have bought the hardware kit, the mainboard already has firmware installed, but it&amp;rsquo;s a good idea to &lt;a href="https://openmower.de/archive/v1.0.2/docs/knowledge-base/firmware-update">update it to
+If you have bought the hardware kit, the mainboard already has firmware installed, but it&amp;rsquo;s a good idea to &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/knowledge-base/firmware-update/">update it to
 the latest version&lt;/a> anyway.
 &lt;/div>
 &lt;p>If you have just soldered the mainboard yourself, you will need to upload firmware once via USB. This is because
 without the firmware, the main Raspberry Pi won&amp;rsquo;t turn on.&lt;/p>
-&lt;p>For this, follow the &lt;a href="https://openmower.de/archive/v1.0.2/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: xESC boards</title><link>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/xesc/</guid><description>
+&lt;p>For this, follow the &lt;a href="https://openmower.de/archive/v1.0.2/archive/v1.0.2/docs/knowledge-base/manual-firmware-installation/">Manual Firmware Installation&lt;/a> guide.&lt;/p></description></item><item><title>Docs: xESC boards</title><link>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/xesc/</guid><description>
 &lt;p>The Kit includes 2 wheel xESCs and 1 mower motor xESC, configured and ready to go. They are identical in hardware, only XML configs differ.&lt;/p>
 &lt;p>Configuring xESCs is described &lt;a href="../../../knowledge-base/configure-xesc/">here&lt;/a>.&lt;/p></description></item><item><title>Docs: Sound (DFPlayer)</title><link>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.0.2/docs/robot-assembly/prepare-the-parts/prepare-sound/</guid><description>
 &lt;h3 id="dfplayer-module">DFPlayer Module&lt;/h3>
