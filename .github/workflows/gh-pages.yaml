@@ -14,6 +14,11 @@ env:
 permissions:
   contents: write
 
+# Ensure only one deployment runs at a time, but don't cancel older ones
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
