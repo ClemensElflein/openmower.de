@@ -10,7 +10,7 @@ resources:
 {{% alert title="Info" color="info" %}}
 You only need to do this if there is no firmware in your mainboard yet. If you have the mower already running or have
 received the hardware kit, you should be able to automatically update the firmware.  
-Check the guide here: [Firmware Update](/docs/knowledge-base/firmware-update)
+Check the guide here: [Firmware Update]({{% relref "/docs/knowledge-base/firmware-update" %}})
 {{% /alert %}}
 
 In order for ROS to talk to your mainboard, it needs to be programmed with a Firmware. Don't worry, the process is straightforward.

@@ -14,7 +14,7 @@ Since the Open Mower project is quite complex, the parts are split among multipl
 
 ### Documentation (this page)
 
-🔗&nbsp;[https://openmower.de/docs](/docs)
+🔗&nbsp;[https://openmower.de/docs]({{% relref "/docs" %}})
 
 **Interesting For:** All Users
 

@@ -165,4 +165,4 @@ Now that you have set the voltage and the current, you can reassemble the dockin
 
 ## Step 7: Done 🎉
 
-Continue with [Software Setup](/docs/software-setup/).
+Continue with [Software Setup]({{% relref "/docs/software-setup/" %}}).

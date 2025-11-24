@@ -14,7 +14,7 @@ This update guide assumes that you have the following:
 
 - A mower with the OpenMowerOS running on it.
 
-- **Important:** verified that the `/boot/openmower/mower_config.txt` file has the correct hardware version set (`OM_HARDWARE_VERSION`). If this is wrong, the wrong firmware will be installed on your device. Check the [Manual Firmware Installation](/docs/knowledge-base/manual-firmware-installation) guide on how to find that value.
+- **Important:** verified that the `/boot/openmower/mower_config.txt` file has the correct hardware version set (`OM_HARDWARE_VERSION`). If this is wrong, the wrong firmware will be installed on your device. Check the [Manual Firmware Installation]({{% relref "/docs/knowledge-base/manual-firmware-installation" %}}) guide on how to find that value.
 
 - The Raspberry Pi is running, and you are able to connect to it via `ssh`
 

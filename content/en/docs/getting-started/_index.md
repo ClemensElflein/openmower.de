@@ -36,7 +36,7 @@ The Open Mower project involves several key components:
 - **RTK GPS**: Precision is achieved with RTK GPS, which uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot, enabling centimeter accuracy. This can be done using Wi-Fi or another long-range radio. Note: Some cloud services offer RTK error corrections, both free and paid.
 - **Docking Station**: The robot needs a docking station to recharge. Since the original docking station lacks the necessary charging electronics, you will replace the internal electronics. **Do not use the stock docking station with the modified robot.**
 
-Ready to start? Check out the [Shopping List](/docs/knowledge-base/shopping-list).
+Ready to start? Check out the [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}).
 
 
 ## Build Steps
@@ -44,9 +44,9 @@ Ready to start? Check out the [Shopping List](/docs/knowledge-base/shopping-list
 ![Open Mower Build Overview](flow_chart.jpg)
 
 Follow these steps in order to build your OpenMower:
-- First, modify the robot following the [Robot Assembly](/docs/robot-assembly) steps. Avoid leaving the mower powered on too long, as **you cannot charge it using the unmodified docking station**.
-- Next, modify the docking station using the [Docking Station Assembly](/docs/docking-station-assembly) guide. **You will then be able to charge the battery with the new docking station.**
+- First, modify the robot following the [Robot Assembly]({{% relref "/docs/robot-assembly" %}}) steps. Avoid leaving the mower powered on too long, as **you cannot charge it using the unmodified docking station**.
+- Next, modify the docking station using the [Docking Station Assembly]({{% relref "/docs/docking-station-assembly" %}}) guide. **You will then be able to charge the battery with the new docking station.**
 - Set up the software. This step connects the robot to your Wi-Fi, downloads the OpenMower software, and involves general configuration. Ensure the docking station assembly is complete before starting this step to avoid battery drain.
 - Finally, with the software running, use the Open Mower App to record your mowing and navigation areas, and start mowing.
 
-If you have the parts and are ready to assemble the robot, read the [Robot Assembly](/docs/robot-assembly) documentation.
+If you have the parts and are ready to assemble the robot, read the [Robot Assembly]({{% relref "/docs/robot-assembly" %}}) documentation.

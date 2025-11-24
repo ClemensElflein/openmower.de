@@ -27,8 +27,6 @@ If you want to see a quick overview, you can check out this video:
 
 **No Perimeter Wire Needed:** Supports flexible operation across multiple mowing areas without the need for perimeter wires.
 
-**Low Cost:** Designed to be more affordable than mid-range commercial models.
-
 **Open Source:** Committed to sharing knowledge and enabling others to build their own OpenMower.
 
 **User-Friendly App:** The web app interface allows easy setup, control and management of the mower, from desktop or mobile phone.
@@ -42,9 +40,15 @@ Additionally, the integration supports automations like pausing operations durin
 
 ### Supported Mowers
 
-Currently, the only officially supported mower is the YardForce Classic 500, as the existing mainboard revision is designed to fit this model.  
-However, we now also support the YF Classic 500B, YF SA650ECO and SA900ECO models, though the later two requires some extra work.  
-A comprehensive list of compatible models can be found on the compatible models page (linked below).
+Open Mower replaces the electronics inside the robot mower with custom ones, so that we can gain full control of the robot's sensors and actuators.
+Therefore, adding support for a new mower model means providing the electronics for that mower model.
+
+Currently, there exist multiple Mainboard Versions, so the following mower models are supported:
+- YardForce Classic 500, YardForce Classic 500B, YardForce SA650ECO and YardForce SA900ECO models, though the later two requires some extra work.
+- SABO MOWit 500F (Series-I & II), John Deere Tango E5 (Series-I & II)
+- Many others with the new v2 Universal Board (Ask on Discord, the Docs are not ready at the moment)
+
+Also check the [Compatible Mowers Page]({{% relref "/docs/knowledge-base/compatible-mowers" %}}) for more infos.
 
 ### Community and Development
 
@@ -54,9 +58,9 @@ The OpenMower project thrives on the contributions of a vibrant community of hob
 ### Getting Started and Resources
 
 Interested in joining the OpenMower project? Explore the following resources to get started:
-- [Getting Started](/docs/getting-started/): Quick start guide to building your own OpenMower.
-- [Links](/docs/links): Additional information, repositories, and the shop.
-- [Compatible Mowers Page](/docs/knowledge-base/compatible-mowers): Comprehensive list of supported mower models.
+- [Getting Started]({{% relref "/docs/getting-started/" %}}): Quick start guide to building your own OpenMower.
+- [Links]({{% relref "/docs/links" %}}): Additional information, repositories, and the shop.
+- [Compatible Mowers Page]({{% relref "/docs/knowledge-base/compatible-mowers" %}}): Comprehensive list of supported mower models.
 
 
 ### Project Goals and Future Plans

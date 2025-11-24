@@ -9,13 +9,13 @@ This part of the documentation is work in progress. There are many ways of setti
 
 ## Prerequisites
 
-- [Raspberry Pi 0W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+- [Raspberry Pi 0W](https://amzn.to/48sGCVP)
 - µSD card
 - Power supply for RPi
 - [Ardusimple ZED-F9P](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/)
 - A cable or combinatin of cables to connect micro usb male to micro usb male:
-  - A) Direct like [this](https://www.berrybase.de/en/detail/019234a35aaf727382bd7ff62a8d64dc), or [this](https://www.amazon.de/gp/product/B01M5GZ3N0/)
-  - B) Adapter ([like this](https://www.berrybase.de/en/usb-2.0-hi-speed-otg-adapterkabel-economy-micro-b-stecker-a-buchse-schwarz-0-15m)) + micro usb to usb-a cable
+  - A) Direct like [this](https://amzn.to/3K7kfMs)
+  - B) Adapter ([like this](https://amzn.to/4ifLYqG)) + micro usb to usb-a cable
 - A windows PC
 - Stable internet connection (no disconnection within one hour)
 
