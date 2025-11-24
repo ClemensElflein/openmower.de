@@ -256,4 +256,3 @@ Error: failed to download modules: binary with name "go" not found
 
 This error occurs if you have not installed the `go` programming language on your system.
 See this [section](https://www.docsy.dev/docs/get-started/docsy-as-module/installation-prerequisites/#install-go-language) of the user guide for instructions on how to install `go`.
-
