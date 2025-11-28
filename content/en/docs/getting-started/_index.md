@@ -158,44 +158,8 @@ Therefore, you will need one or two RTK GPS receivers:
 
 Follow these steps in sequence:
 
-### Step 1: Robot Assembly
 
-Modify your robot by installing the OpenMower hardware.
-
-{{% alert title="Important" color="warning" %}}
-During robot assembly, avoid leaving the mower powered on for extended periods. You cannot charge it with the unmodified docking station.
-{{% /alert %}}
-
-➡️ [Robot Assembly Guide]({{% relref "/docs/robot-assembly" %}})
-
-### Step 2: Docking Station Assembly
-
-Replace the docking station's internal electronics with OpenMower charging hardware.
-
-**After completing this step**, you can safely charge your robot's battery.
-
-➡️ [Docking Station Assembly Guide]({{% relref "/docs/docking-station-assembly" %}})
-
-### Step 3: Software Setup
-
-Configure the software stack:
-- Connect the robot to your Wi-Fi network
-- Download and install OpenMower software
-- Configure GPS and mower settings
-
-{{% alert title="Tip" color="info" %}}
-Complete the docking station assembly before software setup to avoid battery drain during configuration.
-{{% /alert %}}
-
-➡️ Software Setup Guide (coming soon for v2)
-
-### Step 4: Map Recording
-
-Use the OpenMower App to:
-- Record your lawn's mowing areas
-- Define navigation paths
-- Set the docking station location
-- Start your first mowing session
+# TODO: Fill this section
 
 
 

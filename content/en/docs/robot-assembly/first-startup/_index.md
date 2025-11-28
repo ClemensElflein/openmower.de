@@ -31,5 +31,5 @@ This shows that the mower is in emergency mode and that ROS is not connected to 
 Don't run the mower for too long, you **cannot recharge it with the unmodified docking station!**
 {{% /alert %}}
 
-If everything seems healthy, **turn off the mower** and proceed to the next section: [Docking Station Assembly]({{% relref "/docs/docking-station-assembly/" %}}).
+If everything seems healthy, **turn off the mower** and proceed to the next section: [TODO]().
 Otherwise, refer to [Troubleshooting]({{% relref "/docs/troubleshooting/" %}}).
