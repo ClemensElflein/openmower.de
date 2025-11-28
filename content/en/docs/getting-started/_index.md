@@ -6,41 +6,33 @@ description: >
   How to get started with the Open Mower project.
 ---
 
-## Important Info
+{{% toc %}}
+
+## Quick Facts
+
+- **Build time:** A weekend for a YardForce-class mower; longer for custom chassis
+- **Estimated cost:** ~€700 (excluding the mower and RTK base station)
+- **Skill level:** Intermediate electronics, Linux, and mechanical skills
+- **Community:** 2k+ members on Discord ready to help with reviews and troubleshooting
+
+New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}).
+
+
+## Important Warnings
 
 {{% alert title="Read Before Starting" color="warning" %}}
-- **Ongoing Development**: The OpenMower project is under continuous development. Be prepared to invest time and effort to get the robot fully operational. While the project is robust, you may encounter bugs or potential issues along the way.
-- **DO NOT** use the stock charger with the OpenMower mainboard!
-- **Lithium Batteries can be dangerous:** You will be building your own charger. Ensure you are comfortable with this process and understand the associated risks.
+- **Ongoing Development**: OpenMower is continuously evolving. Be prepared to troubleshoot and update software.
+- **Lithium Battery Safety**: You will build your own charger. Understand the risks of working with lithium batteries.
+- **Your Responsibility**: Ensure you understand each modification step before proceeding.
 - **Read** the entire documentation and **gain a high-level overview**: Understand each step involved in the build before starting.
-- **You are responsible for your own actions**: Make sure you know what you're doing!
-- **Evolving Documentation**: This documentation is continuously being improved. There may be errors or missing steps. If you have questions, **ask on Discord**.
+- **Evolving Documentation**: This documentation is continuously improved. If you find errors or have questions, **ask on Discord**.
   {{% /alert %}}
 
 
-## Prerequisites
+## Is Your Mower Compatible?
 
-Read this section thoroughly to understand _which_ components you will need for the Open Mower project and _why_ you need them. This will prevent unnecessary expenses and ensure you are well-prepared.
-
-
-### Required Knowledge
-
-- **Linux**: You should be comfortable using a Linux PC and know how to set up a Raspberry Pi. While the Open Mower app is available, you may need to adjust settings and debug issues.
-- **Electronics**: You should have experience handling PCBs and soldering. Ensure you understand each step you will perform.
-
-
-### Required Parts
-
-The Open Mower project involves several key components:
-- **The Robot**: A modified lawn-mowing robot. You will use the case and motors from an off-the-shelf robot and replace the electronics with custom components. You can either purchase the custom electronics or solder the parts yourself.
-- **RTK GPS**: Precision is achieved with RTK GPS, which uses two receivers: one on the robot and one fixed base station. The base station sends error correction data to the robot, enabling centimeter accuracy. This can be done using Wi-Fi or another long-range radio. Note: Some cloud services offer RTK error corrections, both free and paid.
-- **Docking Station**: The robot needs a docking station to recharge. Since the original docking station lacks the necessary charging electronics, you will replace the internal electronics. **Do not use the stock docking station with the modified robot.**
-
-Ready to start? Check out the [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}).
-
-
-## Compatibility Check
-
+Before purchasing anything, verify your mower is compatible with the OpenMower project.
+Use this flowchart to check compatibility:
 ```mermaid
 %%{init: {
   "flowchart": {
@@ -95,14 +87,143 @@ flowchart LR
     CheckSpace -- No --> AskDiscord
 ```
 
-## Build Steps
+
+
+{{% alert title="Battery Voltage Explained" color="info" %}}
+The voltage range **18.5V - 29.6V** corresponds to **5S-8S lithium battery packs** based on nominal cell voltage (3.7V per cell):
+- 5S: 5 × 3.7V = 18.5V nominal
+- 8S: 8 × 3.7V = 29.6V nominal
+
+Check your mower's battery label or manual to determine the series count.
+{{% /alert %}}
+
+### Officially Supported Mowers
+
+The following mowers are fully supported with dedicated carrier boards:
+
+- **YardForce Classic 500(B)** - Most common, well-documented
+- **Other YardForce Models (SA Series)**
+- **SABO MOWit 500F** (Series-I & II)
+- **John Deere Tango E5** (Series-I & II)
+
+See the full [Compatible Mowers List]({{% relref "/docs/knowledge-base/compatible-mowers/" %}}) for additional models and community builds.
+
+
+
+## What You Need to Know
+
+### Required Skills
+
+- **Linux Basics**: Comfortable with terminal commands, basic file system navigation, and text editing
+- **Raspberry Pi Experience**: Ability to set up and configure a Raspberry Pi
+- **Electronics Knowledge**: Experience with PCBs, connectors, and basic electrical safety
+- **Mechanical Skills**: Ability to disassemble and reassemble your mower
+
+{{% alert title="Note" color="info" %}}
+While the OpenMower app simplifies configuration, you may need to debug issues via SSH or adjust settings manually.
+{{% /alert %}}
+
+
+### What Parts You'll Need
+
+The OpenMower project requires these main components:
+
+#### 1. The Robot
+A compatible lawn-mowing robot with its case and motors. You'll replace the electronics with OpenMower hardware.
+
+#### 2. OpenMower Hardware v2
+Custom electronics consisting of:
+- **Core Board**: Universal computing module with Raspberry Pi CM4, STM32 controller, IMU
+- **Carrier Board**: Model-specific board (YardForce, SABO/John Deere, or Universal)
+
+{{% alert title="Hardware Version 2" color="success" %}}
+OpenMower v2 hardware is now available and recommended for all new builds. v1 hardware is deprecated. See the [v2 Announcement]({{% relref "/updates" %}}) for details.
+
+**To purchase v2 hardware:** Contact @Apehaenger on Discord.
+{{% /alert %}}
+
+#### 3. RTK GPS System
+RTK GPS enables centimeter-level accuracy by sending error corrections to the robot via Wi-Fi or radio.
+Therefore, you will need one or two RTK GPS receivers:
+- **Rover (required)**: GPS module mounted on the robot
+- **Base Station (optional)**: Fixed GPS module providing correction data OR access to an NTRIP service. Some countries have free RTK services available.
+
+
+#### **Ready to shop?** Check the detailed [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}).
+
+
+## Build Overview
 
 ![Open Mower Build Overview](flow_chart.jpg)
 
-Follow these steps in order to build your OpenMower:
-- First, modify the robot following the [Robot Assembly]({{% relref "/docs/robot-assembly" %}}) steps. Avoid leaving the mower powered on too long, as **you cannot charge it using the unmodified docking station**.
-- Next, modify the docking station using the [Docking Station Assembly]({{% relref "/docs/docking-station-assembly" %}}) guide. **You will then be able to charge the battery with the new docking station.**
-- Set up the software. This step connects the robot to your Wi-Fi, downloads the OpenMower software, and involves general configuration. Ensure the docking station assembly is complete before starting this step to avoid battery drain.
-- Finally, with the software running, use the Open Mower App to record your mowing and navigation areas, and start mowing.
+Follow these steps in sequence:
 
-If you have the parts and are ready to assemble the robot, read the [Robot Assembly]({{% relref "/docs/robot-assembly" %}}) documentation.
+### Step 1: Robot Assembly
+
+Modify your robot by installing the OpenMower hardware.
+
+{{% alert title="Important" color="warning" %}}
+During robot assembly, avoid leaving the mower powered on for extended periods. You cannot charge it with the unmodified docking station.
+{{% /alert %}}
+
+➡️ [Robot Assembly Guide]({{% relref "/docs/robot-assembly" %}})
+
+### Step 2: Docking Station Assembly
+
+Replace the docking station's internal electronics with OpenMower charging hardware.
+
+**After completing this step**, you can safely charge your robot's battery.
+
+➡️ [Docking Station Assembly Guide]({{% relref "/docs/docking-station-assembly" %}})
+
+### Step 3: Software Setup
+
+Configure the software stack:
+- Connect the robot to your Wi-Fi network
+- Download and install OpenMower software
+- Configure GPS and mower settings
+
+{{% alert title="Tip" color="info" %}}
+Complete the docking station assembly before software setup to avoid battery drain during configuration.
+{{% /alert %}}
+
+➡️ Software Setup Guide (coming soon for v2)
+
+### Step 4: Map Recording
+
+Use the OpenMower App to:
+- Record your lawn's mowing areas
+- Define navigation paths
+- Set the docking station location
+- Start your first mowing session
+
+
+
+## Get Support
+
+### Discord Community
+
+Join our active Discord community for:
+- Build guidance and troubleshooting
+- Hardware availability updates
+- Software tips and tricks
+- Feature discussions
+
+🔗 [Join OpenMower Discord](https://discord.gg/jE7QNaSxW7)
+
+### Documentation & Resources
+
+- **This Documentation**: Reviewed, official information
+- **OpenMower Wiki**: Community-contributed guides and tips
+- **YouTube Channel**: Video tutorials and project updates
+
+See the [Links]({{% relref "/docs/links" %}}) page for all resources.
+
+
+## Next Steps
+
+If you have a compatible mower and are ready to start building:
+
+➡️ [Review the Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}})
+
+➡️ [Begin Robot Assembly]({{% relref "/docs/robot-assembly" %}})
