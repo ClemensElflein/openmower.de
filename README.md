@@ -39,6 +39,8 @@ This opens a local instance of the openmower.de homepage. You can now make
 changes to the website and those changes will immediately show up in your
 browser after you save.
 
+If you see `502 Bad Gateway`, wait a bit, the website is still building.
+
 ### Cleanup
 
 To stop Docker Compose, on your terminal window, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
