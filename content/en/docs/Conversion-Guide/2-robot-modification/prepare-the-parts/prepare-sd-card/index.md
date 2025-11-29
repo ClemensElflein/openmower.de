@@ -40,6 +40,13 @@ In order to follow this guide, you will need:
 - Check that everything is correct and click `WRITE`. You will be prompted to confirm once again, you might be prompted to enter your admin password.
 - Wait for the process to finish.
 
-## Step 3: Done 🎉
+
+### Configuring the Image
+Older versions of the Raspberry Pi Imager software allowed the image to be configured directly in the software. In the current version, this is no longer possible.
+
+When using an older version of the Raspberry Pi Imager, you can still configure the image as usual, but **renaming the user is not possible**. The user will always be named `openmower`.
+
+
+## Done 🎉
 
 You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with [preparing the mainboard.]({{% relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}}).
