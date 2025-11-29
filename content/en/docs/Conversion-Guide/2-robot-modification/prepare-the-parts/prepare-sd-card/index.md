@@ -3,7 +3,7 @@ title: "Prepare the SD Card"
 linkTitle: SD Card
 weight: 20
 description: >
-  In this step we will install the SD card and configure the basic settings for our mower.
+  In this step we will install OpenMower OS on the SD card.
 ---
 
 We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.
@@ -11,7 +11,9 @@ We have created a Container image that contains the Open Mower software. Additio
 {{% alert title="Info" color="info" %}}
 This guide is for the **Lite** version of the Raspberry Pi Compute module (the version **without** eMMC storage).
 
-If you have a compute module **with eMMC**, you can safely skip this step for now and flash the board, once your mower is powered up. [Here is the official guide on how to do it](https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc)
+If you have a compute module **with eMMC**, you can safely skip this step for now and continue with [preparing the mainboard.]({{% relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}})
+
+You can flash the CM4, once your mower is powered up. [Here is the official guide on how to do it](https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc)
 {{% /alert %}}
 
 ## Prerequisites
