@@ -35,17 +35,7 @@
         </a>
     </li>
     {{- else }}
-    {{/* Fallback: no page resource (older Hugo / weird bundle) -> direct static URL */}}
-    {{- $url := path.Join $.Page.RelPermalink $dir $name -}}
-    <li>
-        <a href="{{ $url }}" title="{{ $imagetitle }}" class="lightbox-image">
-            <img class="nozoom"
-                 src="{{ $url }}"
-                 alt="{{ $imagetitle }}"
-                 title="{{ $imagetitle }}">
-            <span title="{{ $imagetitle }}">{{ $imagetitle }}</span>
-        </a>
-    </li>
+    {{- errorf "image-gallery: page %q does not expose %q as a resource. Use a leaf bundle (index.md) so Hugo can publish the images." $page.File.Path $relPath -}}
     {{- end }}
 
     {{- end }}
