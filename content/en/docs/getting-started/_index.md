@@ -190,4 +190,4 @@ If you have a compatible mower and are ready to start building:
 
 ➡️ [Review the Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}})
 
-➡️ [Begin Robot Assembly]({{% relref "/docs/robot-assembly" %}})
+➡️ [Check the Conversion Guide]({{% relref "/docs/Conversion-Guide/" %}})

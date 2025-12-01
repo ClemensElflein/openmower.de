@@ -6,7 +6,7 @@ resources:
     - src: "**.png"
 ---
 
-We assume that you at least followed [documentation of GPS setup]({{< relref "/docs/robot-assembly/prepare-the-parts/prepare-the-gps" >}}). If mower is already assembled - open the top cover.
+We assume that you at least followed [documentation of GPS setup]({{< relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-the-gps" >}}). If mower is already assembled - open the top cover.
 
 Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration). 
 
@@ -19,7 +19,7 @@ Deviation map (`View -> Deviation Map, F12`) should stay in a ~1m, that what you
 
 Now let's connect NTRIP. We assume that you either found a suitable [NTRIP node somewhere nearby](https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145) (<30km) or running your own [base station]({{< relref "/docs/Knowledge-Base/rtk-base-setup" >}}).
 
-Go to `Receiver -> NTRIP Client...` and configure your NTRIP settings. This will be the same settings that you will use in [configuration file later]({{< relref "/docs/robot-assembly/prepare-the-parts/prepare-sd-card#openmowermower_configtxt-on-linux-bootopenmowermower_configtxt">}}).
+Go to `Receiver -> NTRIP Client...` and configure your NTRIP settings. This will be the same settings that you will use in the ROS configuration file later.
 {{< imgproc ntrip-client Resize 500x />}}
 
 NTRIP client should display green connection in the status bar. Deviation map (`View -> Deviation Map, F12`) should stay dead center. `No RTK` led will start blinking or go away completely.

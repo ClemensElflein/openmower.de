@@ -28,7 +28,7 @@ Alternatively, here is a picture guide of the disassembly process:
 
 ### Unscrew top cover
 
-{{< image-gallery gallery_dir="images/vermut-0.13/unscrew-the-cover" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/unscrew-the-cover" >}}
 
 
 ### Pry the cover
@@ -37,7 +37,7 @@ This is a bit tricky in some parts, so I recommend you checking YouTube video
 here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_bImqD-pQSA?t=148). The relevant time is:
 2:25 - 5:08.
 
-{{< image-gallery gallery_dir="images/vermut-0.13/pry-the-cover" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/pry-the-cover" >}}
 
 
 ### Unplug the cover
@@ -45,32 +45,32 @@ here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_
 2 small wires on the front going to wheel sensors, and 1 wide wire from mainboard to cover UI board.
 Screwdriver is in the pictures for illustrative purposes, you can simply hold it with your hand.
 
-{{< image-gallery gallery_dir="images/vermut-0.13/unplug-the-cover" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/unplug-the-cover" >}}
 
 
 ### Unplug the mainboard
 
-{{< image-gallery gallery_dir="images/vermut-0.13/unplug-the-mainboard" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/unplug-the-mainboard" >}}
 
 
 ### Remove front PCB
 
-{{< image-gallery gallery_dir="images/vermut-0.13/remove-front-pcb" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/remove-front-pcb" >}}
 
 
 ### Remove cover UI board
 
 {{% alert title="Info" color="info" %}}
 This section assumes that you are completely replacing the stock UI board with a custom one. There is an option to reuse stock board by flashing it with custom firmware.
-If you are going to go this path - leave it in place. You can find more information [in the Cover UI Repo *](https://github.com/ClemensElflein/CoverUI/blob/main/Firmware/CoverUI/YardForce/README.md).
+If you are going to go this path - leave it in place. You can find more information <a href="https://github.com/ClemensElflein/CoverUI/blob/main/Firmware/CoverUI/YardForce/README.md" target="_blank">in the Cover UI Repo *</a>.
 
 \* Would be nice if someone could transfer this to the Knowledge Base on this website though.
 {{% /alert %}}
 
-{{< image-gallery gallery_dir="images/vermut-0.13/remove-cover-ui-board" >}}
+{{< image-gallery gallery_dir="images/disassemble-mower/remove-cover-ui-board" >}}
 
 
-### Step 2: Remove Stock Electronics
+## Step 2: Remove Stock Electronics
 
 You will need to remove these stock electronics:
 - Mainboard
@@ -78,3 +78,75 @@ You will need to remove these stock electronics:
 - All cables in the orange cover (emergency stop).
 
 Keep the battery in place.
+
+## Step 3: Small Preparations
+
+### Cutting Plastic Tabs in the Lid
+On some YardForce Classic 500 models, in the lid there are plastic tabs which are in the way when installing the OpenMower mainboard.
+We need to clip these tabs off. I have used a large side cutter, but you can also use a Dremel or whatever you have handy.
+![CuttingTheTabs.jpg](images/CuttingTheTabs.jpg)
+
+If your cover does not have tabs, you don't need to do anything here.
+
+### Assemble GPS Antenna Holder
+![GPS-Assembly.jpg](images/GPS-Assembly.jpg)
+Take the GPS antenna holder and assemble it as shown in the picture.
+
+## Step 4: Install OpenMower Electronics
+
+Now you can install the OpenMower mainboard and the GPS antenna holder we prepared earlier.
+- Put the mainboard into the mower just as the original board was installed (in the rear it sits between plastic tabs, on the front there are two screws holding it in place).
+- To fit the GPS holder into the mower, you need need to remove two of the white plastic cable ties by just pulling them upwards. Then plug it into the corresponding holes and fix it with one screw you saved earlier.
+- Connect all cables as shown in the picture and the list below.
+
+When finished, it should look like this:
+![Connections.jpg](images/Connections.jpg)
+
+**The connections are as follows:**
+1. Mower Motor Sensor
+2. Main Motor Connector (Drive motors, mower motors, sensors)
+3. Power Connector
+4. Charging Contacts
+5. Emergency Stop Button in the Lid (left / right side doesn't matter)
+6. Emergency Stop Button in the Lid (left / right side doesn't matter)
+7. USB Connector on the Rear of the Robot
+8. Cover UI Board in the Lid (optional)
+9. GPS Antenna
+10. Lift Sensor (left / right side doesn't matter)
+11. Lift Sensor (left / right side doesn't matter)
+
+
+
+
+
+
+
+
+## Step 5: First Startup
+
+Congratulations that you have made it this far. Now comes the fun part — starting it all up!
+
+
+{{% alert title="Warning" color="warning" %}}
+If you see / smell anything unexpected, turn the switch off **immediately!**
+
+This includes but is not limited to:
+- Smoke / Fire
+- Smell of hot electronics
+- Blown Fuses
+  {{% /alert %}}
+
+
+It's time to power the robot up by hitting the switch at the back of the robot.
+Some battery packs don't like the inrush current and will turn off immediately. If this happens, you can try to turn the switch off and on again and it should work.
+
+Once turned on, LEDs should start blinking on the ESCs, the GPS, the xCore board and the mainboard.
+**Keep the robot turned on for at least five minutes to maker sure the CM4 boots up properly. It does setup during the first boot.**
+
+{{% alert title="Info" color="info" %}}
+Now is the time to place the mower into the docking station, so that the battery doesn't drain. In this state, the battery does not charge, because the core board does not have the correct firmware installed.
+{{% /alert %}}
+
+If everything seems healthy, proceed to the next section: [TODO]().
+
+Otherwise, **stop here and ask for help on the Discord server**.
