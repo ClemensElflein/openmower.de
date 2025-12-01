@@ -6,7 +6,7 @@ description: >
 tags: [docker, podman, pi, rpi, raspberry, ssh]
 ---
 
-Follow the [SD Card preparation step]({{< relref "/docs/robot-assembly/prepare-the-parts/prepare-sd-card" >}}) and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.
+Follow the [SD Card preparation step]({{< relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-sd-card" >}}) and insert that card into Raspberry Pi 4, then, without plugging anywhere, power it from USB-C port.
 
 Then follow the [Wi-Fi Configuration]({{< relref "/docs/software-setup/configuring-wifi" >}}).
 
