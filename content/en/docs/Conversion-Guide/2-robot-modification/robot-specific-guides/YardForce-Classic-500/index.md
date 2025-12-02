@@ -26,7 +26,7 @@ You have **v1 hardware**, if:
 - **XH connector set and some wires** to crimp connectors for the emergency stops and the Cover UI board 
 - **Some basic screwdrivers** for disassembly and assembly.
 
-## Step 1: Disassemble the Robot
+## Step 2.4.1: Disassemble the Robot
 The first step is to disassemble up the robot.
 This is a bit tricky in some parts, so I recommend you checking my YouTube video here: [<i class="fa fa-brands fa-youtube"></i> YouTube Video](https://youtu.be/_bImqD-pQSA?t=148). The relevant time is: 2:25 - 5:08.
 **Do not** follow the video further than that, because it is outdated.
@@ -77,7 +77,7 @@ If you are going to go this path - leave it in place. You can find more informat
 {{< image-gallery gallery_dir="images/disassemble-mower/remove-cover-ui-board" >}}
 
 
-## Step 2: Remove Stock Electronics
+## Step 2.4.2: Remove Stock Electronics
 
 You will need to remove these stock electronics:
 - Mainboard
@@ -86,7 +86,7 @@ You will need to remove these stock electronics:
 
 Keep the battery in place.
 
-## Step 3: Small Preparations
+## Step 2.4.3: Small Preparations
 
 ### 3.1 Cutting Plastic Tabs in the Lid
 On some YardForce Classic 500 models, in the lid there are plastic tabs which are in the way when installing the OpenMower mainboard.
@@ -96,10 +96,10 @@ We need to clip these tabs off. I have used a large side cutter, but you can als
 If your cover does not have tabs, you don't need to do anything here.
 
 ### 3.2 Assemble GPS Antenna Holder
-![GPS-Assembly.jpg](images/GPS-Assembly.jpg)
+![GPSHolder.jpg](images/GPSHolder.jpg)
 Take the GPS antenna holder and assemble it as shown in the picture.
 
-### 3.3 Add new connectors to the Emergency Stop Buttons
+### 3.3 Add new connectors to the Emergency Stop Cables
 The Open Mower mainboard uses one JST XH connectors for each of the emergency stop sensors, whereas the original YardForce Classic 500 uses one large connector with all emergency stop buttons connected to it.
 In the following picture you can see the original connector cable.
 ![EmergencyCables1.jpg](images/EmergencyCables1.jpg)
@@ -112,10 +112,16 @@ We will now create **four** cables, one for each emergency stop sensor. To do th
 
 In the end you will have four cables with **different lengths, but the same pinout**.
 
+### 3.4 Create a cable for the CoverUI
+If you are going to use a custom CoverUI board, you will need to create a cable to connect it to the mainboard.
+- Take four wires with around 20 cm length.
+- Crimp XH connectors on both sides of the cables as shown in the picture. The connections are "straight through", so pin 1 connectos to pin 1 on the other side and so on.
+
+![CoverUICable.jpg](images/CoverUICable.jpg)
 
 
 
-## Step 4: Install OpenMower Electronics
+## Step 2.4.4: Install OpenMower Electronics
 
 Now you can install the OpenMower mainboard and the GPS antenna holder we prepared earlier.
 - Put the mainboard into the mower just as the original board was installed <br/>(in the rear it sits between plastic tabs, on the front there are two screws holding it in place).
@@ -145,10 +151,9 @@ When finished, it should look like this:
 
 
 
-## Step 5: First Startup
+## Step 2.4.5: First Startup
 
-Congratulations that you have made it this far. Now comes the fun part — starting it all up!
-
+It's time to power the robot up by hitting the switch at the back of the robot.
 
 {{% alert title="Warning" color="warning" %}}
 If you see / smell anything unexpected, turn the switch off **immediately!**
@@ -160,16 +165,17 @@ This includes but is not limited to:
   {{% /alert %}}
 
 
-It's time to power the robot up by hitting the switch at the back of the robot.
 Some battery packs don't like the inrush current and will turn off immediately. If this happens, you can try to turn the switch off and on again and it should work.
 
 Once turned on, LEDs should start blinking on the ESCs, the GPS, the xCore board and the mainboard.
 **Keep the robot turned on for at least five minutes to maker sure the CM4 boots up properly. It does setup during the first boot.**
 
 {{% alert title="Info" color="info" %}}
-Now is the time to place the mower into the docking station, so that the battery doesn't drain. In this state, the battery does not charge, because the core board does not have the correct firmware installed.
+It's a good idea to place the mower into the docking station, so that the battery doesn't drain.
+
+In this state, the battery does not charge, because the core board does not have the correct firmware installed, but the docking voltage will still be used to power the electronics, so the battery will not drain.
 {{% /alert %}}
 
-If everything seems healthy, proceed to the next section: [TODO]().
+If everything seems healthy, proceed to the [Software Setup]({{< relref "/docs/Conversion-Guide/3-software-setup" >}}).
 
 Otherwise, **stop here and ask for help on the Discord server**.

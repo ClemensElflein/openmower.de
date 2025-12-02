@@ -1,5 +1,5 @@
 ---
-title: "Prepare the Mainboard"
+title: "Step 2.3: Prepare the Mainboard"
 linkTitle: Mainboard
 weight: 40
 description: Prepare the mainboard by adding all modules into their respective slots.
@@ -17,7 +17,7 @@ In order to follow this guide, you will need:
 - **Optional: CM4 Heat Sink**
 
 
-## Step 1: Mount the CM4 onto the xCore
+## Step 2.3.1: Mount the CM4 onto the xCore
 
 ### If you are using a CM4 heat sink 
 Place the spacer on the lower two mounting holes of the CM4 as shown in the picture. **Do not** place spacers on the upper two holes:
@@ -38,7 +38,7 @@ The next step is to mount the CM4 onto the xCore. To do so:
 
 
 
-## Step 2: Mount CM4 Heat Sink
+## Step 2.3.2: Mount CM4 Heat Sink
 **__(optional - except for the spacers in the end)__**
 
 {{% alert title="Info" color="info" %}}
@@ -57,7 +57,7 @@ The next step is to mount the heat sink onto the CM4. To do so:
 5. Press the 3d printed spacer between the CM4 and the xCore board as shown in the picture.
 6. It is now a good time to insert the SD card into the CM4 (except for the version with eMMC).
 
-## Step 3: Insert the xCore into the Mainboard
+## Step 2.3.3: Insert the xCore into the Mainboard
 Now that the xCore board is assembled, it is time to insert it into the mainboard.
 
 {{% alert title="Info" color="info" %}}
@@ -73,7 +73,7 @@ Follow these steps to insert the xCore into the mainboard:
 3. Use two screws to secure the xCore board to the mainboard. Don't put spacers or anything, otherwise the mainboard will not fit into the mower (at least for the YardForce Classic 500).
 
 
-## Step 4: Insert ESCs and GPS into the Mainboard
+## Step 2.3.4: Insert ESCs and GPS into the Mainboard
 Finally, we can insert the remaining modules into the mainboard.
 
 Match the pins of the ESCs as well as the GPS board to the corresponding pins on the mainboard. Don't worry if some of the ESC pins don't have mating connectors, they are only used for initial firmware upload after the boards are manufactured.
@@ -82,5 +82,5 @@ The resulting board will look similar to this (depending on your mainboard layou
 ![Finished Mainboard](images/finished-mainboard.jpg)
 
 
-## Step 5: Done :tada:
+## Step 2.3.5: Done :tada:
 You have now finished the preparation of the mainboard. You can now proceed with the [mower-specific guide]({{< relref "/docs/Conversion-Guide/2-robot-modification/robot-specific-guides/_index.md" >}}).
