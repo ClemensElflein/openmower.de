@@ -24,6 +24,7 @@ Other GPS receivers are also supported, but need different steps:
 
 ### Prerequisites
 
+- **An Ardusimple F9P GPS board**
 - **A Micro USB Cable**
 - **A Windows PC**
 - **Latest v1 version of the u-center software:**<br/>
