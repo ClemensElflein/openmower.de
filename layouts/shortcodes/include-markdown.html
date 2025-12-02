@@ -1,0 +1,7 @@
+{{ $file := .Get "file" }}
+{{ $content := .Site.GetPage "section" $file }}
+{{ if $content }}
+{{ $content.Content | safeHTML }}
+{{ else }}
+<p>Unable to include markdown file: {{ $file }}</p>
+{{ end }}

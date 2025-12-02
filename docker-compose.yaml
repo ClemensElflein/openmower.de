@@ -11,6 +11,7 @@ services:
       - "1313:1313"
   reverse-proxy:
     image: nginx:alpine
+    restart: on-failure
     container_name: nginx
     ports:
       - "8080:80"

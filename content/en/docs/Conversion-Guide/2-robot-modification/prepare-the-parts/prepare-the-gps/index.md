@@ -1,5 +1,5 @@
 ---
-title: "Prepare the GPS"
+title: "Step 2.1: Prepare the GPS"
 linkTitle: GPS
 weight: 1
 description: >
@@ -35,7 +35,7 @@ Other GPS receivers are also supported, but need different steps:
   This will open in a new browser tab.  Use <kbd>Ctrl</kbd>+<kbd>S</kbd> to download the file.
 
 
-### Step 0: Update Firmware
+### Step 2.1.0: Update Firmware
 
 {{% alert title="Warning" color="warning" %}}
 The F9P now exists in multiple variants. The firmware below is for the L1 + L2 version. Make sure that on the u-blox chip, it says one of the following: **ZED-F9P-02B, ZED-F9P-04B or ZED-F9P-05B!**.
@@ -46,7 +46,7 @@ If it's a different board, **don't** use the linked firmware, get it from u-blox
 Update the firmware of your Ardusimple board to version [`ZED-F9P HPG 1.51` - *link here*](https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin). There's a guide on the [Ardusimple Website](https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/).
 
 
-### Step 1: Open u-center and connect to your GPS
+### Step 2.1.1: Open u-center and connect to your GPS
 
 After installing u-center, connect your Ardusimple board using the "Power+GPS" USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software. 
@@ -54,7 +54,7 @@ With the module connected to your PC, open the u-center software.
 In u-center, first connect to your board by selecting the appropriate COM port in the `Receiver -> Connection` menu.
 
 
-### Step 2: Transfer the configuration to the GPS
+### Step 2.1.2: Transfer the configuration to the GPS
 
 ![Transfer Settings to u-center](transfer-gps-settings.jpg)
 
@@ -62,7 +62,7 @@ After successfully connecting to the board, you can transfer
 the previously downloaded configuration file `robot-fw-1_51.txt` by opening the window `Tools -> Receiver Configuration ...`. In this window you open the `robot-fw-1_51.txt` using the `...` button and then transfer the configuration to the GPS by clicking the `Transfer File -> GNSS` button.
 
 
-### Step 3: Save configuration to Flash
+### Step 2.1.3: Save configuration to Flash
 
 ![Save Settings to Flash](save-settings-to-flash.jpg)
 
@@ -71,6 +71,6 @@ In order to keep the GPS configured even after powering it down, you need to sav
 Once successful, there will be a timer showing on the upper right side of the window. This is the timer since the last message was sent to your GPS board. It should be `0s` directly after clicking `Send`.
 
 
-### Step 4: Done 🎉
+### Step 2.1.4: Done 🎉
 
 Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.

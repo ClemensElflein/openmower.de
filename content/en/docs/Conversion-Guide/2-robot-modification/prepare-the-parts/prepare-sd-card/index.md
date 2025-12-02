@@ -1,5 +1,5 @@
 ---
-title: "Prepare the SD Card"
+title: "Step 2.2: Prepare the SD Card"
 linkTitle: SD Card
 weight: 20
 description: >
