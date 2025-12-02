@@ -16,8 +16,15 @@ You have **v1 hardware**, if:
 
 ## Prerequisites
 
-- **YardForce Classic 500**
-- **Some basic screwdrivers**
+### Things you will need:
+- **YardForce Classic 500(B)**
+- **Open Mower Mainboard** with all modules installed (xCore, CM4, GPS, 3x ESCs)
+- **Cover UI Board** (optional)
+- **GPS Holder (3d printed part)**, **GPS Antenna**, 2x M2,5x20 screws, 2x M4x16 screws for the GPS holder
+
+### Tools you will need:
+- **XH connector set and some wires** to crimp connectors for the emergency stops and the Cover UI board 
+- **Some basic screwdrivers** for disassembly and assembly.
 
 ## Step 1: Disassemble the Robot
 The first step is to disassemble up the robot.
@@ -81,21 +88,37 @@ Keep the battery in place.
 
 ## Step 3: Small Preparations
 
-### Cutting Plastic Tabs in the Lid
+### 3.1 Cutting Plastic Tabs in the Lid
 On some YardForce Classic 500 models, in the lid there are plastic tabs which are in the way when installing the OpenMower mainboard.
 We need to clip these tabs off. I have used a large side cutter, but you can also use a Dremel or whatever you have handy.
 ![CuttingTheTabs.jpg](images/CuttingTheTabs.jpg)
 
 If your cover does not have tabs, you don't need to do anything here.
 
-### Assemble GPS Antenna Holder
+### 3.2 Assemble GPS Antenna Holder
 ![GPS-Assembly.jpg](images/GPS-Assembly.jpg)
 Take the GPS antenna holder and assemble it as shown in the picture.
+
+### 3.3 Add new connectors to the Emergency Stop Buttons
+The Open Mower mainboard uses one JST XH connectors for each of the emergency stop sensors, whereas the original YardForce Classic 500 uses one large connector with all emergency stop buttons connected to it.
+In the following picture you can see the original connector cable.
+![EmergencyCables1.jpg](images/EmergencyCables1.jpg)
+
+We will now create **four** cables, one for each emergency stop sensor. To do this:
+- First, Cut the cable **very close to the large connector** as shown in the picture. You will need the whole length of the emergency stop cables.
+- Then, crimp XH connectors to the other end of the cable as shown in the picture below. **Make sure to check the pinout! There is a twist in the connector!**
+- **Repeat this step for all four emergency stop sensors**, so that each one has an XH connector at the end. The pinout is the same for all of them.
+![EmergencyCables2.jpg](images/EmergencyCables2.jpg)
+
+In the end you will have four cables with **different lengths, but the same pinout**.
+
+
+
 
 ## Step 4: Install OpenMower Electronics
 
 Now you can install the OpenMower mainboard and the GPS antenna holder we prepared earlier.
-- Put the mainboard into the mower just as the original board was installed (in the rear it sits between plastic tabs, on the front there are two screws holding it in place).
+- Put the mainboard into the mower just as the original board was installed <br/>(in the rear it sits between plastic tabs, on the front there are two screws holding it in place).
 - To fit the GPS holder into the mower, you need need to remove two of the white plastic cable ties by just pulling them upwards. Then plug it into the corresponding holes and fix it with one screw you saved earlier.
 - Connect all cables as shown in the picture and the list below.
 
