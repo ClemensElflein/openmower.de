@@ -6,9 +6,10 @@ description: >
   Configure the environment, install firmware to the xCore board and configure your xESC motor controllers.
 ---
 
+{{% toc %}}
 
 ## Overview:
-### Which settings are there?
+### Types of settings
 There are two parts to the robot configuration:
 - **Environment Variables:** tell the system which mower model and hardware version you are using as well as which version of the ROS to use. **We will need to configure these first.**
 - **ROS Parameters:** Configure the ROS runtime behavior. This includes GPS settings, mowing behavior, MQTT configuration for smart-home, etc.

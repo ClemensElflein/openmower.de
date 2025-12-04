@@ -6,7 +6,15 @@ description: >
   In this step we will install OpenMower OS on the SD card.
 ---
 
-We have created a Container image that contains the Open Mower software. Additionally, we have created a Raspberry Pi image that is modified specifically for Open Mower use. In this step, we flash the image and do some basic setup for your mower.
+We have created a Raspberry Pi image which is modified specifically for Open Mower use.
+The modifications include:
+- Networking setup for the robot's internal network
+- A hotspot to make it easy to connect the robot to your home network
+- Docker installation for easy container management
+- Browser based terminal access to the robot
+- ... and more!
+
+In this step, we flash the image and do some basic setup for your mower.
 
 {{% alert title="Info" color="info" %}}
 This guide is for the **Lite** version of the Raspberry Pi Compute module (the version **without** eMMC storage).

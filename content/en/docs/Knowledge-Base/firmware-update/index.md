@@ -26,7 +26,7 @@ The expected output is shown below:
 </div>
 <script>
     AsciinemaPlayer.create(
-        'cast/openmower-update-firmware.cast',
+        '{{< relref "/docs/Knowledge-Base/firmware-update" >}}/cast/openmower-update-firmware.cast',
         document.getElementById('step-3-2-2-player'),
         { cols: 110, rows: 24, autoplay: false, loop: true }
     );
