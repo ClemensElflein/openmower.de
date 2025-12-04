@@ -1,0 +1,203 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Step by Step Guide</title><link>https://openmower.de/latest/docs/step-by-step/</link><description>Recent content in Step by Step Guide on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/step-by-step/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step 1: Check Compatibility</title><link>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</guid><description>
+&lt;p>Before purchasing anything, verify your mower is compatible with the OpenMower project.
+Use this flowchart to check compatibility:&lt;/p>
+&lt;div class="mermaid">%%{init: {
+"flowchart": {
+"nodeSpacing": 15,
+"diagramPadding": 3
+},
+"themeVariables": {
+"fontSize": "12px"
+}
+}}%%
+flowchart TD
+%% Nodes
+Start([Start])
+CheckList{"Is the mower in the&lt;br/>Compatible Mowers List?"}
+Compatible(["&lt;b>Compatible&lt;/b>&lt;br/>Proceed with standard install"])
+CheckEncoders{"Does the mower have&lt;br/>Wheel Encoders?"}
+Incompatible(["&lt;b>Incompatible&lt;/b>&lt;br/>Ask on Discord for confirmation"])
+CheckBattery{"Check Battery Voltage&lt;br/>(Series count 5S - 8S)"}
+CheckSpace{"Enough space for&lt;br/>Universal Mainboard?"}
+UniversalMainboard(["&lt;b>Universal Mainboard&lt;/b>&lt;br/>Hardware looks good"])
+AskDiscord(["&lt;b>Unknown Compatibility&lt;/b>&lt;br/>Ask on Discord"])
+%% Classes
+classDef decision fill:#FFF,stroke:#666,stroke-width:2px,color:#333;
+%% Assign class to decision nodes
+class CheckList,CheckEncoders,CheckBattery,CheckSpace decision;
+%% Styles
+style Start fill:#93c0f0,stroke:#333,stroke-width:2px,color:#333
+style Compatible fill:#256d33,stroke:#333,stroke-width:2px,color:#fcfcfc
+style UniversalMainboard fill:#256d33,stroke:#333,stroke-width:2px,color:#fcfcfc
+style Incompatible fill:#a63a41,stroke:#333,stroke-width:2px,color:#fcfcfc
+style AskDiscord fill:#e19e20,stroke:#333,stroke-width:2px,color:#fcfcfc
+%% Logic Connections
+Start --> CheckList
+CheckList -- Yes --> Compatible
+CheckList -- No --> CheckEncoders
+CheckEncoders -- No --> Incompatible
+CheckEncoders -- Yes --> CheckBattery
+%% Voltage Calculation:
+%% 5S (5 * 3.6V = 18V) to 8S (8 * 4.2V = 33.6V)
+CheckBattery -- "Yes: 18.5V - 29.6V" --> CheckSpace
+CheckBattery -- "No: &lt; 18.5V or > 29.6V" --> AskDiscord
+CheckSpace -- Yes --> UniversalMainboard
+CheckSpace -- No --> AskDiscord
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Battery Voltage Explained&lt;/h4>
+&lt;p>The voltage range &lt;strong>18.5V - 29.6V&lt;/strong> corresponds to &lt;strong>5S-8S lithium battery packs&lt;/strong> based on nominal cell voltage (3.7V per cell):&lt;/p>
+&lt;ul>
+&lt;li>5S: 5 × 3.7V = 18.5V nominal&lt;/li>
+&lt;li>8S: 8 × 3.7V = 29.6V nominal&lt;/li>
+&lt;/ul>
+&lt;p>Check your mower&amp;rsquo;s battery label or manual to determine the series count.&lt;/p>
+&lt;/div>
+&lt;h1 id="officially-supported-mowers">Officially Supported Mowers&lt;/h1>
+&lt;h2 id="yard-force">Yard Force&lt;/h2>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce">https://github.com/xtech/hw-openmower-yardforce&lt;/a>&lt;/p>
+&lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
+&lt;p>&lt;strong>However, there are more mowers from the YardForce brand that are compatible:&lt;/strong>&lt;/p>
+&lt;p>In theory, every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ has compatible electronics to replace the stock mainboard with an OpenMower one.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+As of today the YardForce Amiro, Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.&lt;br>
+The main reason is that the OpenMower mainboard does not fit in their chassis.
+&lt;/div>
+&lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
+&lt;p>There is a dedicated mainboard for &lt;strong>SABO MOWit 500F&lt;/strong> (Series-I &amp;amp; II) and &lt;strong>John Deere Tango E5&lt;/strong> (Series-I &amp;amp; II) mowers.&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo">https://github.com/xtech/hw-openmower-sabo&lt;/a>&lt;/p>
+&lt;p>This Carrierboard is compatible with the following mower models:&lt;/p>
+&lt;ul>
+&lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
+&lt;li>John Deere Tango E5 (Series-I &amp;amp; II)&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Series-I Carrierboard (v0.2)&lt;/th>
+&lt;th style="text-align:center">Series-II Carrierboard (v0.2)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;strong>Series-I (v0.1) @ John Deere Tango E5&lt;/strong>&lt;/td>
+&lt;td style="text-align:center">&lt;strong>Series-II (v0.1) @ Sabo MOWiT 500F&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>These mowers are &lt;strong>well supported&lt;/strong>. Even the display controller was replaced by a fully functional, modern user interface!&lt;/p>
+&lt;div style="padding-bottom: 2.5rem">
+&lt;video width="640" height="360" controls>
+&lt;source src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/sabo-gui.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;/div>
+&lt;h2 id="universal-board">Universal Board&lt;/h2>
+&lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal">https://github.com/xtech/hw-openmower-universal&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
+&lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
+&lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Husqvarna&lt;/strong>: Most Husqvarna mowers&lt;/li>
+&lt;li>&lt;strong>Gardena&lt;/strong>: Most Gardena mowers&lt;/li>
+&lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Fuxtec and Redback mowers&lt;/li>
+&lt;/ul>
+&lt;h3 id="custom-hardware">Custom Hardware&lt;/h3>
+&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Step 2: Robot Modification</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/</guid><description/></item><item><title>Docs: Step 3: Software Setup</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>Before starting the software setup, make sure your mower does not run out of power.&lt;/p>
+&lt;p>This can usually be done by placing it into the docking station while doing the setup.&lt;/p>
+&lt;/div></description></item><item><title>Docs: Step 4: Record Areas &amp; Use it</title><link>https://openmower.de/latest/docs/step-by-step/4-record-areas-and-use-it/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/4-record-areas-and-use-it/</guid><description>
+&lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>A smartphone or PC&lt;/li>
+&lt;li>Modified robot connected to your network&lt;/li>
+&lt;li>OpenMower software running on the robot&lt;/li>
+&lt;li>Docking station powered up&lt;/li>
+&lt;li>Mower fully charged&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-41-check-the-gps">Step 4.1: Check the GPS&lt;/h2>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
+&lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
+&lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
+&lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
+&lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
+&lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
+&lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
+In order to initialize the orientation, you need to drive the robot.&lt;/p>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
+&lt;/div>
+&lt;p>Now drive the mower for at least 50m, do some straight lines and some figure eight patterns. Currently, the robot does not know the quality of its orientation estimate, but you can judge by driving and looking at the app.&lt;/p>
+&lt;p>The orientation is initialized correctly if:&lt;/p>
+&lt;ul>
+&lt;li>When driving a straight line, the visualization also drives a straight line (no jumps)&lt;/li>
+&lt;li>When rotating in place, the visualization stays in place and doesn&amp;rsquo;t jump&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-43-record-a-simple-map">Step 4.3: Record a Simple Map&lt;/h2>
+&lt;p>In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
+&lt;p>The map for the mower consists of three parts: the &lt;strong>docking position&lt;/strong>, at least one &lt;strong>mowing area&lt;/strong> and optionally &lt;strong>navigation areas&lt;/strong>.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
+&lt;h3 id="record-outline">Record Outline&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
+&lt;ul>
+&lt;li>Drive the robot to the outline. Make sure that the robot is facing in &lt;strong>counterclockwise direction&lt;/strong>.&lt;/li>
+&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Drive around the mowing area. Make sure that the GPS position stays fixed at all times.&lt;/li>
+&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>The outline should now turn green. This means it&amp;rsquo;s done recording, and you can move on to recording exclusions.&lt;/li>
+&lt;/ul>
+&lt;h3 id="optional-record-exclusions">Optional: Record Exclusions&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
+&lt;p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:&lt;/p>
+&lt;ul>
+&lt;li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in &lt;strong>clockwise direction&lt;/strong>.&lt;/li>
+&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Drive around the area to exclude. Make sure that the GPS position stays fixed at all times.&lt;/li>
+&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>The outline should now turn red. This means it&amp;rsquo;s done recording, and you can move on to recording more exclusions.&lt;/li>
+&lt;/ul>
+&lt;h3 id="save-area">Save Area&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
+&lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
+&lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
+&lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
+&lt;p>In order to record the docking position, do the following:&lt;/p>
+&lt;ul>
+&lt;li>Drive to a location about 2 m in front of your docking station.&lt;/li>
+&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
+&lt;li>Now drive close to the docking station. The front wheels of the robot should be at the edge of the docking station. &lt;strong>Don&amp;rsquo;t fully drive into the docking station!&lt;/strong>.&lt;/li>
+&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
+&lt;li>The app should move the &lt;strong>home&lt;/strong> icon to your current location. Now you can fully drive into the docking station.&lt;/li>
+&lt;/ul>
+&lt;h3 id="finish-recording">Finish Recording&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
+&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item></channel></rss>

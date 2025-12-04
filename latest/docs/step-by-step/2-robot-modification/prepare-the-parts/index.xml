@@ -1,0 +1,333 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – Prepare the Parts</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/</link><description>Recent content in Prepare the Parts on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step 2.1: Prepare the GPS</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+There is a tutorial video available for this step of the process! &lt;br/>
+Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+(time 16:21 - 17:15)
+&lt;/div>
+&lt;h2 id="configure-the-gps-board">Configure the GPS board&lt;/h2>
+&lt;p>This assumes that you are using the Ardusimple F9P GPS board.&lt;/p>
+&lt;p>Other GPS receivers are also supported, but need different steps:&lt;/p>
+&lt;ul>
+&lt;li>WitMotion Unicore UM9XX: &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">wiki&lt;/a>, &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x">optional adapter&lt;/a>, &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART">set-up guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>An Ardusimple F9P GPS board&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Latest v1 version of the u-center software:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
+Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
+&lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
+This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd> to download the file.&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-210-update-firmware">Step 2.1.0: Update Firmware&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>The F9P now exists in multiple variants. The firmware below is for the L1 + L2 version. Make sure that on the u-blox chip, it says one of the following: &lt;strong>ZED-F9P-02B, ZED-F9P-04B or ZED-F9P-05B!&lt;/strong>.&lt;/p>
+&lt;p>If it&amp;rsquo;s a different board, &lt;strong>don&amp;rsquo;t&lt;/strong> use the linked firmware, get it from u-blox.com directly.&lt;/p>
+&lt;/div>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
+&lt;h3 id="step-211-open-u-center-and-connect-to-your-gps">Step 2.1.1: Open u-center and connect to your GPS&lt;/h3>
+&lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
+With the module connected to your PC, open the u-center software.&lt;/p>
+&lt;p>In u-center, first connect to your board by selecting the appropriate COM port in the &lt;code>Receiver -&amp;gt; Connection&lt;/code> menu.&lt;/p>
+&lt;h3 id="step-212-transfer-the-configuration-to-the-gps">Step 2.1.2: Transfer the configuration to the GPS&lt;/h3>
+&lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Transfer Settings to u-center">&lt;/p>
+&lt;p>After successfully connecting to the board, you can transfer
+the previously downloaded configuration file &lt;code>robot-fw-1_51.txt&lt;/code> by opening the window &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>. In this window you open the &lt;code>robot-fw-1_51.txt&lt;/code> using the &lt;code>...&lt;/code> button and then transfer the configuration to the GPS by clicking the &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> button.&lt;/p>
+&lt;h3 id="step-213-save-configuration-to-flash">Step 2.1.3: Save configuration to Flash&lt;/h3>
+&lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Save Settings to Flash">&lt;/p>
+&lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View -&amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
+&lt;p>Once successful, there will be a timer showing on the upper right side of the window. This is the timer since the last message was sent to your GPS board. It should be &lt;code>0s&lt;/code> directly after clicking &lt;code>Send&lt;/code>.&lt;/p>
+&lt;h3 id="step-214-done-">Step 2.1.4: Done 🎉&lt;/h3>
+&lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p>
+&lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>&lt;/p></description></item><item><title>Docs: Step 2.2: Prepare the SD Card</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</guid><description>
+&lt;p>We have created a Raspberry Pi image which is modified specifically for Open Mower use.
+The modifications include:&lt;/p>
+&lt;ul>
+&lt;li>Networking setup for the robot&amp;rsquo;s internal network&lt;/li>
+&lt;li>A hotspot to make it easy to connect the robot to your home network&lt;/li>
+&lt;li>Docker installation for easy container management&lt;/li>
+&lt;li>Browser based terminal access to the robot&lt;/li>
+&lt;li>&amp;hellip; and more!&lt;/li>
+&lt;/ul>
+&lt;p>In this step, we flash the image and do some basic setup for your mower.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+&lt;p>This guide is for the &lt;strong>Lite&lt;/strong> version of the Raspberry Pi Compute module (the version &lt;strong>without&lt;/strong> eMMC storage).&lt;/p>
+&lt;p>If you have a compute module &lt;strong>with eMMC&lt;/strong>, you can safely skip this step for now and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>&lt;/p>
+&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc">Here is the official guide on how to do it&lt;/a>&lt;/p>
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>In order to follow this guide, you will need:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Raspberry Pi CM4 Lite (no on-board memory)&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Micro SD card with at least 16 GB&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A PC with the Raspberry Pi Imager Software installed:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/&lt;/a>&lt;/li>
+&lt;li>&lt;strong>The latest OpenMowerOS Image:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/releases">https://github.com/ClemensElflein/OpenMowerOS/releases&lt;/a>&lt;br/>
+You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;t need to unpack the image.&lt;/li>
+&lt;li>&lt;strong>An SD card reader&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="flash-the-image-to-your-sd-card">Flash the Image to your SD Card&lt;/h2>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%201_hu1de76bd80b40549393acca8d29bd6f6b_110416_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 1" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%201_hu1de76bd80b40549393acca8d29bd6f6b_110416_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 1"
+title="Pi Imager Step 1">
+&lt;span title="Pi Imager Step 1">Pi Imager Step 1&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%202_hub42f6dcdbe2d1fcfc36de647d7f7e668_87995_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 2" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%202_hub42f6dcdbe2d1fcfc36de647d7f7e668_87995_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 2"
+title="Pi Imager Step 2">
+&lt;span title="Pi Imager Step 2">Pi Imager Step 2&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%203_hud3ac4c7e0311dd22127e1e605dad4733_56769_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 3" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%203_hud3ac4c7e0311dd22127e1e605dad4733_56769_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 3"
+title="Pi Imager Step 3">
+&lt;span title="Pi Imager Step 3">Pi Imager Step 3&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%204_hu1ce7c76f2f94c52961fa743c0746d11a_70164_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 4" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%204_hu1ce7c76f2f94c52961fa743c0746d11a_70164_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 4"
+title="Pi Imager Step 4">
+&lt;span title="Pi Imager Step 4">Pi Imager Step 4&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%205_hu5bf4049654f7e2755e71076874386743_77276_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 5" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%205_hu5bf4049654f7e2755e71076874386743_77276_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 5"
+title="Pi Imager Step 5">
+&lt;span title="Pi Imager Step 5">Pi Imager Step 5&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%206_hu8855d455d7e7d85636d5e38993b2b2e0_49906_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 6" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%206_hu8855d455d7e7d85636d5e38993b2b2e0_49906_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 6"
+title="Pi Imager Step 6">
+&lt;span title="Pi Imager Step 6">Pi Imager Step 6&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%207_hu06f43e6f1db1c1c4dcc7d09aca1d6254_76444_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager Step 7" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%207_hu06f43e6f1db1c1c4dcc7d09aca1d6254_76444_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager Step 7"
+title="Pi Imager Step 7">
+&lt;span title="Pi Imager Step 7">Pi Imager Step 7&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Start the Raspberry Pi Imager Software.&lt;/li>
+&lt;li>Select &lt;code>Raspberry Pi 4&lt;/code>. Click Next to continue.&lt;/li>
+&lt;li>Then click &lt;code>Use Custom&lt;/code> to open the image file you downloaded earlier. Click Next to continue.&lt;/li>
+&lt;li>Select your SD card from the Window. &lt;strong>Make sure that you are really selecting the correct SD card, all data on the selected device will be erased!&lt;/strong>. Click Next to continue.&lt;/li>
+&lt;li>Check that everything is correct and click &lt;code>WRITE&lt;/code>. You will be prompted to confirm once again, you might be prompted to enter your admin password.&lt;/li>
+&lt;li>Wait for the process to finish.&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuring-the-image">Configuring the Image&lt;/h3>
+&lt;p>Older versions of the Raspberry Pi Imager software allowed the image to be configured directly in the software. In the current version, this is no longer possible.&lt;/p>
+&lt;p>When using an older version of the Raspberry Pi Imager, you can still configure the image as usual, but &lt;strong>renaming the user is not possible&lt;/strong>. The user will always be named &lt;code>openmower&lt;/code>.&lt;/p>
+&lt;h2 id="done-">Done 🎉&lt;/h2>
+&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>.&lt;/p></description></item><item><title>Docs: Step 2.3: Prepare the Mainboard</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</guid><description>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>In order to follow this guide, you will need:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>An OpenMower v2 Mainboard&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1x xCore Board&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1x Raspberry Pi 4 CM4&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>3x xESC Motor Controllers&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1x GPS Module&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Mounting Brackets for the xCore&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Optional: CM4 Heat Sink&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-231-mount-the-cm4-onto-the-xcore">Step 2.3.1: Mount the CM4 onto the xCore&lt;/h2>
+&lt;h3 id="if-you-are-using-a-cm4-heat-sink">If you are using a CM4 heat sink&lt;/h3>
+&lt;p>Place the spacer on the lower two mounting holes of the CM4 as shown in the picture. &lt;strong>Do not&lt;/strong> place spacers on the upper two holes:
+&lt;img src="images/CM4-spacer.jpg" alt="CM4-spacer.jpg">&lt;/p>
+&lt;p>The spacers I used are 1.7 mm thick and were provided with the heat sink.&lt;/p>
+&lt;p>If you are not using a CM4 heat sink, you can skip this step.&lt;/p>
+&lt;h3 id="mount-the-cm4-onto-the-xcore">Mount the CM4 onto the xCore&lt;/h3>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%201%20-%20Align%20CM4_hub634c694023f2eb4baae5bb7e214b74b_1627011_1600x1600_fit_q99_catmullrom.jpg" title="Step 1 - Align CM4" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%201%20-%20Align%20CM4_hub634c694023f2eb4baae5bb7e214b74b_1627011_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 1 - Align CM4"
+title="Step 1 - Align CM4">
+&lt;span title="Step 1 - Align CM4">Step 1 - Align CM4&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%202%20-%20Grab%20the%20CM4%20at%20the%20connectors_huaf49570b7772666ea7f9b331e735ebc6_1500070_1600x1600_fit_q99_catmullrom.jpg" title="Step 2 - Grab the CM4 at the connectors" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%202%20-%20Grab%20the%20CM4%20at%20the%20connectors_huaf49570b7772666ea7f9b331e735ebc6_1500070_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 2 - Grab the CM4 at the connectors"
+title="Step 2 - Grab the CM4 at the connectors">
+&lt;span title="Step 2 - Grab the CM4 at the connectors">Step 2 - Grab the CM4 at the connectors&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%203%20-%20Press%20until%20you%20hear%20it%20click_hu30438f3efe2ce1ab54a632fefe1d1810_1352974_1600x1600_fit_q99_catmullrom.jpg" title="Step 3 - Press until you hear it click" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%203%20-%20Press%20until%20you%20hear%20it%20click_hu30438f3efe2ce1ab54a632fefe1d1810_1352974_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 3 - Press until you hear it click"
+title="Step 3 - Press until you hear it click">
+&lt;span title="Step 3 - Press until you hear it click">Step 3 - Press until you hear it click&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>The next step is to mount the CM4 onto the xCore. To do so:&lt;/p>
+&lt;ol>
+&lt;li>Align the CM4 with the xCore board as shown in the picture.&lt;/li>
+&lt;li>Place two fingers over the connectors of the xCore and the CM4.&lt;/li>
+&lt;li>Gently press down until you hear and feel both connectors click.&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-232-mount-cm4-heat-sink">Step 2.3.2: Mount CM4 Heat Sink&lt;/h2>
+&lt;p>&lt;strong>&lt;strong>(optional - except for the spacers in the end)&lt;/strong>&lt;/strong>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+&lt;p>This step is different, depending on which heat sink you are using. The images here show the Berry Base heat sink, but the process is similar for other heat sink models as well.&lt;/p>
+&lt;p>Make sure to use spacers between the PCBs, otherwise the screws will put excessive pressure onto the connectors.&lt;/p>
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%201%20-%20Mount%20spacers%20to%20heat%20sink_hu68361f3eb43b139baeb93fd43e157ca7_1267618_1600x1600_fit_q99_catmullrom.jpg" title="Step 1 - Mount spacers to heat sink" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%201%20-%20Mount%20spacers%20to%20heat%20sink_hu68361f3eb43b139baeb93fd43e157ca7_1267618_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 1 - Mount spacers to heat sink"
+title="Step 1 - Mount spacers to heat sink">
+&lt;span title="Step 1 - Mount spacers to heat sink">Step 1 - Mount spacers to heat sink&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%202%20-%20Stick%20thermal%20pads%20onto%20the%20chips_hu3c3738134403feecf6e3bfa44ec9f8b1_1663938_1600x1600_fit_q99_catmullrom.jpg" title="Step 2 - Stick thermal pads onto the chips" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%202%20-%20Stick%20thermal%20pads%20onto%20the%20chips_hu3c3738134403feecf6e3bfa44ec9f8b1_1663938_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 2 - Stick thermal pads onto the chips"
+title="Step 2 - Stick thermal pads onto the chips">
+&lt;span title="Step 2 - Stick thermal pads onto the chips">Step 2 - Stick thermal pads onto the chips&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%203%20-%20Align%20heat%20sink%20with%20mounting%20holes_hu45fbcf3baf4dbe2e50fd5aef786cd1b7_1425740_1600x1600_fit_q99_catmullrom.jpg" title="Step 3 - Align heat sink with mounting holes" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%203%20-%20Align%20heat%20sink%20with%20mounting%20holes_hu45fbcf3baf4dbe2e50fd5aef786cd1b7_1425740_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 3 - Align heat sink with mounting holes"
+title="Step 3 - Align heat sink with mounting holes">
+&lt;span title="Step 3 - Align heat sink with mounting holes">Step 3 - Align heat sink with mounting holes&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%204%20-%20Fix%20the%20heat%20sink%20using%20the%20lower%20two%20screws_hu4798fe58a1add070814da39e4db3a257_1371078_1600x1600_fit_q99_catmullrom.jpg" title="Step 4 - Fix the heat sink using the lower two screws" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%204%20-%20Fix%20the%20heat%20sink%20using%20the%20lower%20two%20screws_hu4798fe58a1add070814da39e4db3a257_1371078_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 4 - Fix the heat sink using the lower two screws"
+title="Step 4 - Fix the heat sink using the lower two screws">
+&lt;span title="Step 4 - Fix the heat sink using the lower two screws">Step 4 - Fix the heat sink using the lower two screws&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%205%20-%20Insert%20spacers%20on%20the%20upper%20holes_hu615571c45aff6795800f6160f8fe02f1_1329070_1600x1600_fit_q99_catmullrom.jpg" title="Step 5 - Insert spacers on the upper holes" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%205%20-%20Insert%20spacers%20on%20the%20upper%20holes_hu615571c45aff6795800f6160f8fe02f1_1329070_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 5 - Insert spacers on the upper holes"
+title="Step 5 - Insert spacers on the upper holes">
+&lt;span title="Step 5 - Insert spacers on the upper holes">Step 5 - Insert spacers on the upper holes&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%206%20-%20Insert%20SD%20Card_hu8d9a3531e802627df05d3b46dfcdcd98_1821889_1600x1600_fit_q99_catmullrom.jpg" title="Step 6 - Insert SD Card" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%206%20-%20Insert%20SD%20Card_hu8d9a3531e802627df05d3b46dfcdcd98_1821889_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 6 - Insert SD Card"
+title="Step 6 - Insert SD Card">
+&lt;span title="Step 6 - Insert SD Card">Step 6 - Insert SD Card&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>The next step is to mount the heat sink onto the CM4. To do so:&lt;/p>
+&lt;ol>
+&lt;li>Mount the spacers to the heat sink as shown in the picture.&lt;/li>
+&lt;li>Place all thermal pads onto the corresponding chips.&lt;br />&lt;strong>Important:&lt;/strong> The pads have &lt;strong>clear plastic cover on the top&lt;/strong> and glue on the bottom.&lt;br />&lt;strong>Do not forget to remove the top plastic cover as well!&lt;/strong>&lt;/li>
+&lt;li>Align the heat sink with the CM4 as shown in the picture.&lt;/li>
+&lt;li>Fix the heat sink with the &lt;strong>two screws&lt;/strong> on the bottom. &lt;strong>Do not&lt;/strong> fix the upper two holes.&lt;/li>
+&lt;li>Press the 3d printed spacer between the CM4 and the xCore board as shown in the picture.&lt;/li>
+&lt;li>It is now a good time to insert the SD card into the CM4 (except for the version with eMMC).&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-233-insert-the-xcore-into-the-mainboard">Step 2.3.3: Insert the xCore into the Mainboard&lt;/h2>
+&lt;p>Now that the xCore board is assembled, it is time to insert it into the mainboard.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+Before finishing this step, make sure that your SD card is inserted into the CM4 (if using the version with eMMC, skip this step).
+Depending on the mainboard layout, you won&amp;rsquo;t have easy access to the SD card slot later.
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%201%20-%20Insert%20xCore%20in%2045%20degree%20angle_hu1e929e22648a795cb4c68ba225f09fc6_1425091_1600x1600_fit_q99_catmullrom.jpg" title="Step 1 - Insert xCore in 45 degree angle" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%201%20-%20Insert%20xCore%20in%2045%20degree%20angle_hu1e929e22648a795cb4c68ba225f09fc6_1425091_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 1 - Insert xCore in 45 degree angle"
+title="Step 1 - Insert xCore in 45 degree angle">
+&lt;span title="Step 1 - Insert xCore in 45 degree angle">Step 1 - Insert xCore in 45 degree angle&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/_huca419582850eab59ed3cc66a984d4873_2579551_da7d9e9cfded513aa83a07719a215660.jpg" title="Step 2 - Lock the tabs on the left and right of the board" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/_huca419582850eab59ed3cc66a984d4873_2579551_88f371cde38e0342b596ed3d1b7a6269.jpg"
+alt="Step 2 - Lock the tabs on the left and right of the board"
+title="Step 2 - Lock the tabs on the left and right of the board">
+&lt;span title="Step 2 - Lock the tabs on the left and right of the board">Step 2 - Lock the tabs on the left and right of the board&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%203%20-%20fix%20the%20core%20using%20screws_hu9b5852c29b80039105f3fad5bfdfcc42_1601654_1600x1600_fit_q99_catmullrom.jpg" title="Step 3 - fix the core using screws" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%203%20-%20fix%20the%20core%20using%20screws_hu9b5852c29b80039105f3fad5bfdfcc42_1601654_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Step 3 - fix the core using screws"
+title="Step 3 - fix the core using screws">
+&lt;span title="Step 3 - fix the core using screws">Step 3 - fix the core using screws&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>Follow these steps to insert the xCore into the mainboard:&lt;/p>
+&lt;ol>
+&lt;li>Insert the xCore board into the slot on the mainboard. It is approximately a 45 degree angle.&lt;/li>
+&lt;li>Push the board down until it is flat with the mainboard. Make sure the arms on the side engage with the xCore.&lt;/li>
+&lt;li>Use two screws to secure the xCore board to the mainboard. &lt;strong>Don&amp;rsquo;t put spacers or anything, otherwise the mainboard will not fit into the mower (at least for the YardForce Classic 500).&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-234-insert-xescs-and-gps-into-the-mainboard">Step 2.3.4: Insert xESCs and GPS into the Mainboard&lt;/h2>
+&lt;p>Finally, we can insert the remaining modules into the mainboard.&lt;/p>
+&lt;p>Match the pins of the xESCs as well as the GPS board to the corresponding pins on the mainboard. Don&amp;rsquo;t worry if some of the ESC pins don&amp;rsquo;t have mating connectors, they are only used for initial firmware upload after the boards are manufactured.&lt;/p>
+&lt;p>The resulting board will look similar to this (example shows a YardForce mainboard):
+&lt;img src="images/finished-mainboard.jpg" alt="Finished Mainboard">&lt;/p>
+&lt;h2 id="step-235-done-">Step 2.3.5: Done 🎉&lt;/h2>
+&lt;p>You have now finished the preparation of the mainboard. You can now proceed with the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/">mower-specific guide&lt;/a>.&lt;/p></description></item></channel></rss>
