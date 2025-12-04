@@ -55,12 +55,6 @@ You can see, if you have the problem by running `df -h /` and checking, if the `
 - **Finish and Reboot**
 - **Run** `df -h /` again, you should see the `Use %` column is now down to a low percentage (depending on your SD card size)
 
-### Rename your host (optional)
-If you are running multiple robots, it's a good idea to rename your host to distinguish between them.
-{{< include-markdown file="/docs/Knowledge-Base/change-hostname/index.md" >}}
-
-
-
 ### Update the `openmower` tool to the latest version
 To make sure you have the latest version of the `openmower` tool, you need to update it to the latest version.
 The tool has an integrated update mechanism, so to update, you need to run:
@@ -84,6 +78,16 @@ Here is the expected output:
         { cols: 110, rows: 24, autoplay: false, loop: true }
     );
 </script>
+
+### Rename your host (optional)
+If you are running multiple robots, it's a good idea to rename your host to distinguish between them.
+
+You can do this by following the steps in the Knowledge Base: [Change Hostname]({{< relref "/docs/Knowledge-Base/change-hostname" >}})
+
+### Enable External WiFi Antenna (optional)
+If you have added an external WiFi antenna, you need to enable it.
+You can do this by following the steps in the Knowledge Base: [Enable External Antenna]({{< relref "/docs/Knowledge-Base/external-wifi-antenna" >}})
+
 
 ## Step 3.2.1: Setup Environment Variables
 Now we can start the configuration by setting the environment variables.
@@ -113,6 +117,8 @@ Here is a screncast showing the whole process:
 
 
 After this is done, the system will know which ROS version to use and which mower model is used.
+
+The `openmower` tool will now fetch the selected ROS version. **This will take some time (~30 minutes)**. Time to get some :coffee:.
 
 
 
