@@ -56,13 +56,10 @@ You can see, if you have the problem by running `df -h /` and checking, if the `
 - **Run** `df -h /` again, you should see the `Use %` column is now down to a low percentage (depending on your SD card size)
 
 ### Rename your host (optional)
-If you are running multiple openmowers, it's a good idea to rename your host to distinguish between them.
+If you are running multiple robots, it's a good idea to rename your host to distinguish between them.
+{{< include-markdown file="/docs/Knowledge-Base/change-hostname/index.md" >}}
 
-This can easily be done in `raspi-config`:
-- **Run** `sudo raspi-config`
-- **Select** System Options -> Hostname
-- **Enter** a new hostname and press <kbd>Enter</kbd>`
-- **Finish and Reboot**
+
 
 ### Update the `openmower` tool to the latest version
 To make sure you have the latest version of the `openmower` tool, you need to update it to the latest version.
