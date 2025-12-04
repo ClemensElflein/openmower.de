@@ -96,33 +96,8 @@ After this is done, the system will know which ROS version to use and which mowe
 
 ## Step 3.3.1: Install Firmware
 Now that the system knows which hardware you are using, we are ready to install the firmware to the xCore board.
+{{< include-markdown file="/docs/Knowledge-Base/firmware-update/index.md" >}}
 
-{{% alert title="Warning" color="warning" %}}
-Early versions of the xCore board have a bug in the bootloader which sometimes prevents the board from being detected by the `openmower` tool.
-
-If you encounter Timeout errors during the firmware installation process, update the bootloader by running: `openmower update-bootloader` and try again.
-{{% /alert %}}
-
-
-To install the firmware to the xCore board, simply run: `openmower update-firmware`. The `openmower` tool will read your environment variables, download the appropriate firmware binary and upload it to the xCore board via Ethernet.
-
-
-The expected output is shown below:
-<div class="container pb-3 pt-3">
-<div class="row justify-content-md-center">
-<div id="step-3-2-2-player" class=""></div>
-</div>
-<div class="row justify-content-md-center">
-<div>Example output for <code>openmower update-firmware</code> command.</div>
-</div>
-</div>
-<script>
-    AsciinemaPlayer.create(
-        'cast/openmower-update-firmware.cast',
-        document.getElementById('step-3-2-2-player'),
-        { cols: 110, rows: 24, autoplay: false, loop: true }
-    );
-</script>
 
 
 ## Step 3.3.2: Configure xESC Motor Controllers
