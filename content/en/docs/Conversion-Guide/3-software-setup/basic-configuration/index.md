@@ -37,7 +37,9 @@ password: openmower
 
 The browser based terminal does not need any credentials and can be reached at: [http://openmower:7681](http://openmower:7681)
 
-## Step 3.2.0: Update the `openmower` tool to the latest version
+## Step 3.2.0: Basic Checks
+
+### Update the `openmower` tool to the latest version
 To make sure you have the latest version of the `openmower` tool, you need to update it to the latest version.
 The tool has an integrated update mechanism, so to update, you need to run:
 ```bash
@@ -61,7 +63,32 @@ Here is the expected output:
     );
 </script>
 
----
+
+### Check, if filesystem expanded correctly
+{{% alert title="Warning" color="warning" %}}
+OpenMowerOS currently has an issue where sometimes the file system doesn't expand correctly.
+You can see, if you have the problem by running `df -h /` and checking, if the `Use %` column is almost 100%.
+
+![full-file-system.png](images/full-file-system.png)
+
+{{% /alert %}}
+
+
+**If your filesystem is almost full**, do the following steps to properly expand the filesystem:
+- **Run** `sudo raspi-config`
+- **Select** Advanced Options -> Expand Filesystem
+- **Finish and Reboot**
+- **Run** `df -h /` again, you should see the `Use %` column is now down to a low percentage (depending on your SD card size)
+
+### Rename your host (optional)
+If you are running multiple openmowers, it's a good idea to rename your host to distinguish between them.
+
+This can easily be done in `raspi-config`:
+- **Run** `sudo raspi-config`
+- **Select** System Options -> Hostname
+- **Enter** a new hostname and press <kbd>Enter</kbd>`
+- **Finish and Reboot**
+
 
 ## Step 3.2.1: Setup Environment Variables
 Now we can start the configuration by setting the environment variables.
