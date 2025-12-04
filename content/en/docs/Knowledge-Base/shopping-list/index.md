@@ -8,7 +8,7 @@ description: >
 _If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!_
 
 {{% alert title="Warning" color="warning" %}}
-Read this first: [Important Info]({{% relref "/docs/getting-started/#important-info" %}})
+Read this first: [Important Info]({{% relref "/docs/getting-started#important-info" %}})
 {{% /alert %}}
 
 

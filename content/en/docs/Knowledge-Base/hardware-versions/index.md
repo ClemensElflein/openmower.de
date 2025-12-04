@@ -12,7 +12,37 @@ resources:
 
 # Current Hardware (v2 Hardware Platform)
 
+For v2 Hardware Platform, please check the corresponding repository for changes and known issues:
+- **YardForce:** [https://github.com/xtech/hw-openmower-yardforce](https://github.com/xtech/hw-openmower-yardforce) 
+- **SABO / John Deere:** [https://github.com/xtech/hw-openmower-sabo](https://github.com/xtech/hw-openmower-sabo)
+- **Universal:** [https://github.com/xtech/hw-openmower-universal](https://github.com/xtech/hw-openmower-universal)
+
+## 0.13.0 - Red
+
+{{< imgproc 0_13_b Fill "400x400 q99" />}}
+{{< imgproc 0_13_a Fill "400x400 q99" />}}
+
+### Notable changes
+
+* Custom CoverUI added to the kit
+* Dropped support for dfPlayer sound module
+
+### Known issues
+
+* 2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.
+* The first batch of 0.13 boards was mistakenly labeled "latest". No action needed.
+* [Outdated Firmware](https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/). Affect kits shipped before May'23.
+* [IC2 chip is wrong](https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/). Affect kits shipped before May'23.
+* [rain sensor cable is female, but needs to be male](https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/). Affect kits shipped before May'23.
+
+
 # Legacy Hardware (v1 Hardware Platform)
+{{% alert title="Information" color="info" %}}
+
+V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
+If you currently own a v1 hardware kit, this is nothing to worry, the kit will continue to work with your mower,
+there is no real benefit of upgrading it to a v2 hardware kit. For new builds, the v2 hardware platform is recommended.
+{{% /alert %}}
 
 
 ## 0.13.0 - Red

@@ -46,7 +46,7 @@ Not sure whether your mower fits? Start with the [Compatible Mowers]({{% relref 
 
 ### Where to go next
 
-- [Getting Started]({{% relref "/docs/getting-started/" %}}): Required skills, compatibility flowchart, and the full build sequence.
+- [Getting Started]({{% relref "/docs/getting-started" %}}): Required skills, compatibility flowchart, and the full build sequence.
 - [Compatible Mowers]({{% relref "/docs/knowledge-base/compatible-mowers" %}}): Confirm your chassis before buying hardware.
 - [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}): Detailed bill of materials, including RTK components.
 - [Links]({{% relref "/docs/links" %}}): GitHub repos, Discord invite, videos, and other resources.
