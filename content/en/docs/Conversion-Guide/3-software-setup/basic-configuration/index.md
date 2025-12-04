@@ -39,31 +39,6 @@ The browser based terminal does not need any credentials and can be reached at: 
 
 ## Step 3.2.0: Basic Checks
 
-### Update the `openmower` tool to the latest version
-To make sure you have the latest version of the `openmower` tool, you need to update it to the latest version.
-The tool has an integrated update mechanism, so to update, you need to run:
-```bash
-sudo openmower update-self
-```
-
-Here is the expected output:
-<div class="container pb-3">
-<div class="row justify-content-md-center">
-<div id="step-3-2-0-player" class=""></div>
-</div>
-<div class="row justify-content-md-center">
-<div>Example output for a successful update.</div>
-</div>
-</div>
-<script>
-    AsciinemaPlayer.create(
-        'cast/openmower-update-self.cast',
-        document.getElementById('step-3-2-0-player'),
-        { cols: 110, rows: 24, autoplay: false, loop: true }
-    );
-</script>
-
-
 ### Check, if filesystem expanded correctly
 {{% alert title="Warning" color="warning" %}}
 OpenMowerOS currently has an issue where sometimes the file system doesn't expand correctly.
@@ -89,6 +64,29 @@ This can easily be done in `raspi-config`:
 - **Enter** a new hostname and press <kbd>Enter</kbd>`
 - **Finish and Reboot**
 
+### Update the `openmower` tool to the latest version
+To make sure you have the latest version of the `openmower` tool, you need to update it to the latest version.
+The tool has an integrated update mechanism, so to update, you need to run:
+```bash
+sudo openmower update-self
+```
+
+Here is the expected output:
+<div class="container pb-3">
+<div class="row justify-content-md-center">
+<div id="step-3-2-0-player" class=""></div>
+</div>
+<div class="row justify-content-md-center">
+<div>Example output for a successful update.</div>
+</div>
+</div>
+<script>
+    AsciinemaPlayer.create(
+        'cast/openmower-update-self.cast',
+        document.getElementById('step-3-2-0-player'),
+        { cols: 110, rows: 24, autoplay: false, loop: true }
+    );
+</script>
 
 ## Step 3.2.1: Setup Environment Variables
 Now we can start the configuration by setting the environment variables.
