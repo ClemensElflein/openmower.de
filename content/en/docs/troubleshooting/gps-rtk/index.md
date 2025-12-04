@@ -6,7 +6,7 @@ resources:
     - src: "**.png"
 ---
 
-We assume that you at least followed [documentation of GPS setup]({{< relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-the-gps" >}}). If mower is already assembled - open the top cover.
+We assume that you at least followed [documentation of GPS setup]({{< relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps" >}}). If mower is already assembled - open the top cover.
 
 Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration). 
 

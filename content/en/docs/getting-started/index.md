@@ -126,4 +126,4 @@ If you are ready to start building:
 
 ➡️ [Review the Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}})
 
-➡️ [Check the Conversion Guide]({{% relref "/docs/Conversion-Guide/" %}})
+➡️ [Check the Step by Step Guide]({{% relref "/docs/step-by-step/" %}})

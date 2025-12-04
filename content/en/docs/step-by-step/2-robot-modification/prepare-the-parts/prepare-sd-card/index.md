@@ -19,7 +19,7 @@ In this step, we flash the image and do some basic setup for your mower.
 {{% alert title="Info" color="info" %}}
 This guide is for the **Lite** version of the Raspberry Pi Compute module (the version **without** eMMC storage).
 
-If you have a compute module **with eMMC**, you can safely skip this step for now and continue with [preparing the mainboard.]({{% relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}})
+If you have a compute module **with eMMC**, you can safely skip this step for now and continue with [preparing the mainboard.]({{% relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}})
 
 You can flash the CM4, once your mower is powered up. [Here is the official guide on how to do it](https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc)
 {{% /alert %}}
@@ -59,4 +59,4 @@ When using an older version of the Raspberry Pi Imager, you can still configure 
 
 ## Done 🎉
 
-You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with [preparing the mainboard.]({{% relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}}).
+You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with [preparing the mainboard.]({{% relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}}).
