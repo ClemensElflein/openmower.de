@@ -1,5 +1,5 @@
 ---
-title: "Step 2: Prepare the Parts"
+title: "Prepare the Parts"
 linkTitle: "Prepare the Parts"
 weight: 1
 description: >
