@@ -75,4 +75,4 @@ Once successful, there will be a timer showing on the upper right side of the wi
 
 Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.
 
-Continue with [Step 2.2: Prepare the SD Card]({{< relref "/docs/Conversion-Guide/2-robot-modification/prepare-the-parts/prepare-sd-card" >}})
+Continue with [Step 2.2: Prepare the SD Card]({{< relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card" >}})

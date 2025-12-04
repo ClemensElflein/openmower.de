@@ -147,11 +147,26 @@ When finished, it should look like this:
 
 
 
+## Step 2.4.5: Install external WiFi Antenna (optional)
+If you want to use an external WiFi antenna for better reception, installation is simple.
+
+![ExternalAntenna.jpg](images/ExternalAntenna.jpg)
+
+## Prerequisites
+
+### Things you will need:
+- **WiFi Antenna Mount:** 3D printed part available on [Printables](https://www.printables.com/model/1504184-openmower-yardforce-classic-500-wifi-antenna-mount)
+- **Two Screws** you can use the screws from the front sensor we removed earlier
+- **WiFi Antenna with Cable** You can get it from [Amazon](https://amzn.to/48iknlw)
+
+### Steps:
+1. Mount the antenna to the holder
+2. Mount the holder to the mower using the two screws
+3. Connect the antenna to the CM4 board
+4. Zip tie the cable to the corner of the PCB
 
 
-
-
-## Step 2.4.5: First Startup
+## Step 2.4.6: First Startup
 
 It's time to power the robot up by hitting the switch at the back of the robot.
 
@@ -176,6 +191,6 @@ It's a good idea to place the mower into the docking station, so that the batter
 In this state, the battery does not charge, because the core board does not have the correct firmware installed, but the docking voltage will still be used to power the electronics, so the battery will not drain.
 {{% /alert %}}
 
-If everything seems healthy, proceed to the [Software Setup]({{< relref "/docs/Conversion-Guide/3-software-setup" >}}).
+If everything seems healthy, proceed to the [Software Setup]({{< relref "/docs/step-by-step/3-software-setup" >}}).
 
 Otherwise, **stop here and ask for help on the Discord server**.

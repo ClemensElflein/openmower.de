@@ -133,4 +133,4 @@ Now that the system knows which hardware you are using, we are ready to install 
 {{< include-markdown file="/docs/Knowledge-Base/configure-xesc/index.md" >}}
 
 
-## Continue with Step 3.4: [Configure ROS Parameters]({{< relref "/docs/Conversion-Guide/3-software-setup/setup-ros" >}})
+## Continue with Step 3.4: [Configure ROS Parameters]({{< relref "/docs/step-by-step/3-software-setup/setup-ros" >}})

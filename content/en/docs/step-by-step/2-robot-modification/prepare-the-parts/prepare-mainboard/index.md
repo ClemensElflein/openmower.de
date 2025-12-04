@@ -83,4 +83,4 @@ The resulting board will look similar to this (example shows a YardForce mainboa
 
 
 ## Step 2.3.5: Done :tada:
-You have now finished the preparation of the mainboard. You can now proceed with the [mower-specific guide]({{< relref "/docs/Conversion-Guide/2-robot-modification/robot-specific-guides/_index.md" >}}).
+You have now finished the preparation of the mainboard. You can now proceed with the [mower-specific guide]({{< relref "/docs/step-by-step/2-robot-modification/robot-specific-guides/_index.md" >}}).
