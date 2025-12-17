@@ -405,6 +405,238 @@ In the following picture you can see the original connector cable.
 &lt;p>In this state, the battery does not charge, because the core board does not have the correct firmware installed, but the docking voltage will still be used to power the electronics, so the battery will not drain.&lt;/p>
 &lt;/div>
 &lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
+&lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;h3 id="things-you-will-need">Things you will need:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>SABO MOWiT 500F or John Deere Tango E5&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Open Mower V2 Carrier Board for SABO&lt;/strong> with all modules installed (xCore, CM4, GPS, 3x ESCs)&lt;/li>
+&lt;/ul>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/John%20Deere%20Tango%20E5_hu0ce3284194a3d660b12015accd1cf5dc_10238_1600x1600_fit_q99_h2_catmullrom_2.webp" title="John Deere Tango E5" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/John%20Deere%20Tango%20E5_hu0ce3284194a3d660b12015accd1cf5dc_10238_400x400_fill_q95_h2_catmullrom_smart1_2.webp"
+alt="John Deere Tango E5"
+title="John Deere Tango E5">
+&lt;span title="John Deere Tango E5">John Deere Tango E5&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Series-II" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="SABO MOWiT 500F Series-II"
+title="SABO MOWiT 500F Series-II">
+&lt;span title="SABO MOWiT 500F Series-II">SABO MOWiT 500F Series-II&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_1600x1600_fit_q99_h2_catmullrom_2.webp" title="SABO MOWit 500F Series-I" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_400x400_fill_q95_h2_catmullrom_smart1_2.webp"
+alt="SABO MOWit 500F Series-I"
+title="SABO MOWit 500F Series-I">
+&lt;span title="SABO MOWit 500F Series-I">SABO MOWit 500F Series-I&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO carrier board assembled" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="SABO carrier board assembled"
+title="SABO carrier board assembled">
+&lt;span title="SABO carrier board assembled">SABO carrier board assembled&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="tools-you-will-need">Tools you will need:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>M10 ratchet&lt;/strong> for the cover&lt;/li>
+&lt;li>&lt;strong>5mm Allen key&lt;/strong> for the blade&lt;/li>
+&lt;li>&lt;strong>Torx T30&lt;/strong> for the mainboard mount/holder&lt;/li>
+&lt;li>&lt;strong>Torx T20&lt;/strong> for the mainboard&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-241-open-the-mower-and-remove-the-oem-mainboard-">Step 2.4.1: Open the mower and remove the OEM mainboard 🔓&lt;/h2>
+&lt;ol>
+&lt;li>Place the mower on its back and remove the six 10 mm screws from the housing.&lt;/li>
+&lt;li>Remove the blade with the 5mm Allen key (right‑hand thread). Use gloves and secure the blade while loosening.&lt;/li>
+&lt;li>Hold the housing together with both hands and place the mower back on its wheels.&lt;/li>
+&lt;li>Slightly open the cover on the handle (rear) side by a few centimeters.&lt;/li>
+&lt;li>Using a flashlight, disconnect the display ribbon cable(s):
+&lt;ul>
+&lt;li>Series‑I: two ribbon cables going to the CoverUI. Each plug has small side locks; press to release, then unplug from the mainboard.&lt;/li>
+&lt;li>Series‑II: one ribbon cable; pull it straight out from the mainboard (no release locks).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>You can now open the cover further. A single cable from the cover’s charging contacts goes toward the mainboard. Before the mainboard there is a 2‑pin Molex plug; press to unlock and disconnect it. Put the cover aside for later modification and reassembly.&lt;/li>
+&lt;li>Disconnect all remaining cables from the OEM mainboard. Many plugs have a latch; press to release before pulling.&lt;/li>
+&lt;li>The OEM mainboard is mounted on a black plastic mainboard holder. On its back side are two larger Torx T30 screws. Remove them to lift out the mainboard together with the holder.&lt;/li>
+&lt;li>Remove the OEM mainboard from the holder by unscrewing the Torx T20 screws.&lt;/li>
+&lt;/ol>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/1-2%20Release%20the%20cover%20and%20remove%20the%20mower%20blade_hu0fc2ab289d94344d5844c617919b6d71_371754_1600x1600_fit_q99_catmullrom.jpg" title="1-2 Release the cover and remove the mower blade" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/1-2%20Release%20the%20cover%20and%20remove%20the%20mower%20blade_hu0fc2ab289d94344d5844c617919b6d71_371754_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1-2 Release the cover and remove the mower blade"
+title="1-2 Release the cover and remove the mower blade">
+&lt;span title="1-2 Release the cover and remove the mower blade">1-2 Release the cover and remove the mower blade&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/4-7%20Slightly%20open%20the%20cover%20and%20disconnect%20cables_hu0e712b4557157b65fcbd2e3ed270d0a1_226389_1600x1600_fit_q99_catmullrom.jpg" title="4-7 Slightly open the cover and disconnect cables" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/4-7%20Slightly%20open%20the%20cover%20and%20disconnect%20cables_hu0e712b4557157b65fcbd2e3ed270d0a1_226389_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="4-7 Slightly open the cover and disconnect cables"
+title="4-7 Slightly open the cover and disconnect cables">
+&lt;span title="4-7 Slightly open the cover and disconnect cables">4-7 Slightly open the cover and disconnect cables&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/8%20Release%20mainboard%20holder_huf6a8b7466ce4bab395f7e80fe18ff6ed_294522_1600x1600_fit_q99_catmullrom.jpg" title="8 Release mainboard holder" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/8%20Release%20mainboard%20holder_huf6a8b7466ce4bab395f7e80fe18ff6ed_294522_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="8 Release mainboard holder"
+title="8 Release mainboard holder">
+&lt;span title="8 Release mainboard holder">8 Release mainboard holder&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-242-mount-prepared-parts">Step 2.4.2: Mount prepared parts&lt;/h2>
+&lt;p>Assemble the previously &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/">prepared parts&lt;/a>:&lt;/p>
+&lt;ol>
+&lt;li>Mount your prepared UM9x GPS module to the carrier board and attach the IPEX/SMA cable (usually included with the UM9x) as shown:&lt;br>
+&lt;img src="images/UM9x-IPEX-SMA-Cable.jpg" alt="UM9x IPEX/SMA cable">&lt;/li>
+&lt;li>Mount your xCore + CM4 (+ optional heatsink) combo to the carrier board (if not already mounted)&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-243-optional-install-wifi-adhesive-antenna-">Step 2.4.3 (optional): Install Wi‑Fi adhesive antenna 📶&lt;/h2>
+&lt;p>The Wi‑Fi adhesive antenna can be placed as shown:&lt;/p>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/1%20Fix%20it%20to%20the%20mainboard%20holder_hud055a1f3368372fa623422641d791dd2_25431_1600x1600_fit_q99_catmullrom.jpg" title="1 Fix it to the mainboard holder" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/1%20Fix%20it%20to%20the%20mainboard%20holder_hud055a1f3368372fa623422641d791dd2_25431_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1 Fix it to the mainboard holder"
+title="1 Fix it to the mainboard holder">
+&lt;span title="1 Fix it to the mainboard holder">1 Fix it to the mainboard holder&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/2%20Route%20cable%20and%20connect%20it_hud1046dc7cbc5098d684b17f4df80587b_39166_1600x1600_fit_q99_catmullrom.jpg" title="2 Route cable and connect it" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/2%20Route%20cable%20and%20connect%20it_hud1046dc7cbc5098d684b17f4df80587b_39166_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="2 Route cable and connect it"
+title="2 Route cable and connect it">
+&lt;span title="2 Route cable and connect it">2 Route cable and connect it&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-244-assemble-carrier-board-with-mainboard-">Step 2.4.4: Assemble carrier board with mainboard 🔩&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Now that all modules are prepared and mounted, fasten the carrier board to the mainboard holder.&lt;br>
+&lt;strong>If you have fewer screws than holes, prioritize holes close to the larger connectors!&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mount the carrier board + mainboard-holder back into the mower and fasten it with the two T30 screws.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Carefully connect all plugs. Some plugs fit into multiple counterparts, verify the labels or use this plug overview:&lt;br>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Series-I Plugs&lt;/th>
+&lt;th style="text-align:center">Series-II Plugs&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="images/om-sabo-cb-s1-v02-plugs.jpg" alt="Series-I Plugs">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="images/om-sabo-cb-s2-v02-plugs.jpg" alt="Series-II Plugs">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Note: some plugs are rotated — do not force any connector!&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-245-install-gps-antenna-eg-hahx901-on-the-cover-">Step 2.4.5: Install GPS antenna (e.g. HA/HX‑901) on the cover 🛰️&lt;/h2>
+&lt;p>An alternative non-destructive internal holder was &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808">designed by STS&lt;/a>. Check the Discord discussion for more details and STL files if available.&lt;/p>
+&lt;ol>
+&lt;li>Drill a 6.5–7 mm hole in the cover approximately at the position as shown in the images.&lt;/li>
+&lt;li>Install the (included) 30-40cm SMA extension cable. Ensure the SMA bulkhead protrudes far enough so the HA/HX‑901 can fully engage and make good contact; if in doubt, omit one washer/spacer on the inside to gain thread length.&lt;br>
+Seal it from the top with silicone or a similar sealant. Don’t use too much sealant, so the HA/HX‑901 can still be screwed on later.&lt;/li>
+&lt;li>Also seal the inside thoroughly to prevent any water ingress. On the inside use sealant rule: &lt;em>More is better&lt;/em>&lt;/li>
+&lt;li>Allow sufficient time for the sealant to cure before proceeding.&lt;/li>
+&lt;/ol>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/1%20Drill%20hole%20location_hu8069cf3c520d3e276c280f433e42eb95_35320_1600x1600_fit_q99_catmullrom.jpg" title="1 Drill hole location" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/1%20Drill%20hole%20location_hu8069cf3c520d3e276c280f433e42eb95_35320_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1 Drill hole location"
+title="1 Drill hole location">
+&lt;span title="1 Drill hole location">1 Drill hole location&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/2%20Seal%20rule%20%22more%20is%20better%22%20at%20inside_hu6baefd0d29b5c0ce65240988872bb88e_28437_1600x1600_fit_q99_catmullrom.jpg" title="2 Seal rule &amp;#34;more is better&amp;#34; at inside" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/2%20Seal%20rule%20%22more%20is%20better%22%20at%20inside_hu6baefd0d29b5c0ce65240988872bb88e_28437_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="2 Seal rule &amp;#34;more is better&amp;#34; at inside"
+title="2 Seal rule &amp;#34;more is better&amp;#34; at inside">
+&lt;span title="2 Seal rule &amp;#34;more is better&amp;#34; at inside">2 Seal rule &amp;#34;more is better&amp;#34; at inside&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-246-close-the-housing-">Step 2.4.6: Close the housing ✅&lt;/h2>
+&lt;ol>
+&lt;li>Place the cover back onto the mower. Let the front engage slightly, but keep the rear open enough to:
+&lt;ol>
+&lt;li>Connect the GPS antenna cable to the carrier board&lt;/li>
+&lt;li>Reconnect the docking‑contact cable&lt;/li>
+&lt;li>Finally, reconnect the CoverUI ribbon cable(s)&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Close the cover completely so it fits and latches evenly all around&lt;/li>
+&lt;li>Hold the housing together with both hands and turn the mower back onto its back&lt;/li>
+&lt;li>Reinstall and fasten the six 10 mm hex‑head screws&lt;/li>
+&lt;li>&lt;strong>Do not install the blade yet&lt;/strong>&lt;/li>
+&lt;li>Put the mower back on its wheels&lt;/li>
+&lt;li>Finally, screw the HA/HX‑901 antenna onto the cover&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-247-first-startup">Step 2.4.7: First Startup&lt;/h2>
+&lt;p>It&amp;rsquo;s time to power the robot up by hitting the switch at the back of the robot.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>If you see / smell anything unexpected, turn the switch off &lt;strong>immediately!&lt;/strong>&lt;/p>
+&lt;p>This includes but is not limited to:&lt;/p>
+&lt;ul>
+&lt;li>Smoke / Fire&lt;/li>
+&lt;li>Smell of hot electronics&lt;/li>
+&lt;li>Blown Fuses&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>Once turned on, it will take approximately 10 seconds before the LEDs and LCD start to show signs of life.
+&lt;strong>Keep the robot turned on for at least five minutes to make sure the CM4 boots up properly. It performs setup during the first boot.&lt;/strong>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain and can charge.
+&lt;/div>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://github.com/xtech/hw-openmower-sabo/blob/main/INSTALL-SOFTWARE.md">Software Setup&lt;/a>.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: v1 Hardware Guide (Legacy)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v1 Hardware Only!&lt;/h4>
