@@ -364,8 +364,42 @@ Open the VESC Configuration Tool and connect to the xESC controllers by clicking
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
 &lt;p>you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.&lt;/p>
 &lt;/div>
+&lt;h4 id="configure-xesc">Configure xESC&lt;/h4>
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-04-00-tab" data-toggle="tab" href="#tabs-04-00" role="tab"
+aria-controls="tabs-04-00" aria-selected="false">
+&lt;strong>Choose your configuration path&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-04-01-tab" data-toggle="tab" href="#tabs-04-01" role="tab"
+aria-controls="tabs-04-01" aria-selected="false">
+Preset configs (Yard Force)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-02-tab" data-toggle="tab" href="#tabs-04-02" role="tab"
+aria-controls="tabs-04-02" aria-selected="false">
+SABO/John Deere (tuning)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-03-tab" data-toggle="tab" href="#tabs-04-03" role="tab"
+aria-controls="tabs-04-03" aria-selected="false">
+New model? Let’s dial it in
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-4-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-00" role="tabpanel" aria-labelled-by="tabs-04-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab">
 &lt;h4 id="upload-the-configurations">Upload the configurations&lt;/h4>
-&lt;style>
+&lt;div class="tab-gallery">&lt;style>
 .image-gallery {overflow: auto; margin-left: -1%!important;}
 .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
 .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
@@ -421,6 +455,7 @@ title="6 - Write App Config">
 &lt;/a>
 &lt;/li>
 &lt;/ul>
+&lt;/div>
 &lt;p>With the VESC Configuration Tool connected, you can now upload the configuration to your xESC controllers:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>[Image 1]&lt;/strong>: Click &lt;code>File -&amp;gt; Load Motor Configuration XML&lt;/code>&lt;/li>
@@ -431,7 +466,111 @@ title="6 - Write App Config">
 &lt;li>&lt;strong>[Image 6]&lt;/strong>: Click &lt;code>Write App configuration&lt;/code>. The green banner will appear on success.&lt;/li>
 &lt;li>&lt;strong>Hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>&lt;/strong> in the openmower terminal to stop exposing the xESC controller.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>Repeat these steps for all three of the three xESC controllers.&lt;/strong>&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
+&lt;p>&lt;strong>Repeat these steps for all three of the three xESC controllers.&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
+&lt;h4 id="required-preparations">Required preparations&lt;/h4>
+&lt;ol>
+&lt;li>Remove the mower blade.&lt;/li>
+&lt;li>Really, remove the blade! This is a huge mower with a strong motor and large blade! 💀&lt;/li>
+&lt;li>Lift the mower&amp;rsquo;s rear so wheels can spin freely (use a carton, block or stand).&lt;/li>
+&lt;li>Unmount the mower blade!&lt;/li>
+&lt;li>Use battery power for calibration (not dock power), and ensure the battery has sufficient charge.&lt;/li>
+&lt;li>Check if you disassembled the mower blade!&lt;/li>
+&lt;/ol>
+&lt;h4 id="drive-motor-calibration-left-then-right">Drive motor calibration (left then right)&lt;/h4>
+&lt;p>Perform calibration for left drive first, then repeat the procedure for the right drive.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
+&lt;img src="images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
+&lt;img src="images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
+&lt;img src="images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
+&lt;img src="images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;/li>
+&lt;li>
+&lt;p>Now that the calibration succeed, lets test the result:
+&lt;img src="images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
+Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
+&lt;img src="images/sabo/vesc_6_settings1.jpg" alt="Drive Settings">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Done 😆&lt;br>
+&amp;hellip; &lt;strong>but not finished&lt;/strong> ✌️ &amp;hellip; you need to do the whole procedure again, but with the right drive side.&lt;/p>
+&lt;p>So, &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>c&lt;/kbd> your &lt;code>openmower expose-esc left&lt;/code>, and do it again but with &lt;code>openmower expose-esc right&lt;/code> and with port 65104 for the right site drive.&lt;/p>
+&lt;h4 id="mow-motor-calibration">Mow Motor Calibration&lt;/h4>
+&lt;p>For the mow motor ESC calibration, you do the same workflow, but with adapted values:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>openmower expose-esc mower&lt;/code> and VESC connect to port 65103&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>During FOC Calibration Wizard use the following values:&lt;/p>
+&lt;ul>
+&lt;li>Tab &amp;ldquo;Motor&amp;rdquo; = Medium Inrunner ~750g
+&lt;ul>
+&lt;li>Advanced: Max Power Loss = 200, Motor Poles = 8&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Battery&amp;rdquo;
+&lt;ul>
+&lt;li>Battery Capacity = 3.9Ah (same as before)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Setup&amp;rdquo;
+&lt;ul>
+&lt;li>Gear Ratio = Check Direct Drive&lt;/li>
+&lt;li>Motor Poles = 8&lt;/li>
+&lt;li>Motor Temp. Sensor = disabled&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Test with &amp;ldquo;&lt;strong>D 0,08&lt;/strong>&amp;rdquo; which should draw &lt;strong>&amp;lt;= 0.52A&lt;/strong> (without assembled blade)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check/Adjust blade rotation direction:&lt;br>
+We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like &amp;ldquo;D 0,08&amp;rdquo;.&lt;/p>
+&lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Limit blade RPM:&lt;br>
+It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
+&lt;img src="images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
+&lt;img src="images/sabo/vesc_7_mow_settings1.jpg" alt="Drive Settings">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
+&lt;p>Choose your adventure. Your build, your rules.&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>Early versions of the xCore board have a bug in the bootloader which sometimes prevents the board from being detected by the &lt;code>openmower&lt;/code> tool.&lt;/p>
