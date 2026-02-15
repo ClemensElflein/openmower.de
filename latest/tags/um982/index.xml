@@ -71,6 +71,7 @@ the previously downloaded configuration file &lt;code>robot-fw-1_51.txt&lt;/code
 &lt;/div>
 &lt;div class="tab-body tab-pane fade"
 id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;div class="prep-gps-um9xx-tab">
 &lt;ol>
 &lt;li>
 &lt;p>Connect your UM9xx to your PC using the supplied USB-C cable&lt;/p>
@@ -79,13 +80,16 @@ id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
 &lt;p>Open a serial terminal (minicom, miniterm, CuteCom, etc.) at 115200 baud&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Send &lt;code>CONFIG&lt;/code>&lt;kbd>⏎ Enter&lt;/kbd> to verify the connection. You should see readable key/value style output. If not, check cable, port, and permissions.&lt;/p>
+&lt;p>Take attention that your line-end termination has to be CR/LF&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Send &lt;code>CONFIG&lt;/code>&lt;kbd>↵ Enter&lt;/kbd> to verify the connection. You should see readable key/value style output. If not, check cable, port, and permissions.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Reset and switch the baud rate to 921600 by entering the following commands, line by line:&lt;/p>
 &lt;blockquote>
-&lt;p>FRESET&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-CONFIG COM1 921600&lt;kbd>⏎ Enter&lt;/kbd>&lt;/p>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+CONFIG COM1 921600&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;/blockquote>
 &lt;p>(After &lt;code>FRESET&lt;/code> the module may take a few seconds to respond.)&lt;/p>
 &lt;/li>
@@ -95,14 +99,14 @@ CONFIG COM1 921600&lt;kbd>⏎ Enter&lt;/kbd>&lt;/p>
 &lt;li>
 &lt;p>Apply the rover configuration by entering the following commands, line by line:&lt;/p>
 &lt;blockquote>
-&lt;p>MODE ROVER UAV&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPGSV COM1 2&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPRMC COM1 1&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPGSA COM1 1&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPVTG COM1 1&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPGST COM1 1&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-GPGGA COM1 0.2&lt;kbd>⏎ Enter&lt;/kbd>&lt;br>
-SAVECONFIG&lt;kbd>⏎ Enter&lt;/kbd>&lt;/p>
+&lt;p>MODE ROVER UAV&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSV COM1 2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPRMC COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSA COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPVTG COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGST COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGGA COM1 0.2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;/blockquote>
 &lt;p>Take attention to the &lt;code>SAVECONFIG&lt;/code> command, which stores settings so they survive power cycles.&lt;/p>
 &lt;/li>
@@ -110,8 +114,7 @@ SAVECONFIG&lt;kbd>⏎ Enter&lt;/kbd>&lt;/p>
 &lt;p>Unplug the USB cable from the UM9x module and mount it to the CarrierBoard (solder required headers first if required).&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;h3 id="alternative-instruction">Alternative Instruction&lt;/h3>
-&lt;p>&lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">wiki&lt;/a>, &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x">optional adapter&lt;/a>, &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_Setup-UART">set-up guide&lt;/a>&lt;/p>
+&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>&lt;/p></description></item></channel></rss>
