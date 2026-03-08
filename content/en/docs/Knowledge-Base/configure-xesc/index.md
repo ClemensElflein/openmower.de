@@ -24,7 +24,7 @@ The firmware for the controllers is based on the open source VESC project and th
 
 #### Expose the ESC to the network
 ![Expose ESC to the network]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/openmower-expose-xesc.png)
-Run `openmower expose-esc [left|right|mower]` to expose the xESC controller (choose `left`, `mower` or `right`).<br/>The controller is then reachable in your local network on `openmower:65102` until you hit <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+Run `openmower expose-xesc [left|right|mower]` to expose the xESC controller (choose `left`, `mower` or `right`).<br/>The controller is then reachable in your local network on `openmower:65102` until you hit <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 #### Connect to the xESC
@@ -113,14 +113,14 @@ Perform calibration for left drive first, then repeat the procedure for the righ
 Done :satisfied:<br>
 ... **but not finished** :v: ... you need to do the whole procedure again, but with the right drive side.
 
-So, <kbd>Ctrl</kbd>+<kbd>c</kbd> your `openmower expose-esc left`, and do it again but with `openmower expose-esc right` and with port 65104 for the right site drive.
+So, <kbd>Ctrl</kbd>+<kbd>c</kbd> your `openmower expose-xesc left`, and do it again but with `openmower expose-xesc right`.
 
 
 #### Mow Motor Calibration
 
 For the mow motor ESC calibration, you do the same workflow, but with adapted values:
 
-1. `openmower expose-esc mower` and VESC connect to port 65103
+1. `openmower expose-xesc mower`
 1. During FOC Calibration Wizard use the following values:
    - Tab "Motor" = Medium Inrunner ~750g
      - Advanced: Max Power Loss = 200, Motor Poles = 8
