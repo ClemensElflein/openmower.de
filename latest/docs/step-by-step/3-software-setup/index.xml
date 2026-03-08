@@ -203,7 +203,7 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;p>&lt;code>openmower stop&lt;/code> to stop ROS from interfering with the controllers during configuration.&lt;/p>
 &lt;h4 id="expose-the-esc-to-the-network">Expose the ESC to the network&lt;/h4>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
-Run &lt;code>openmower expose-esc [left|right|mower]&lt;/code> to expose the xESC controller (choose &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> or &lt;code>right&lt;/code>).&lt;br/>The controller is then reachable in your local network on &lt;code>openmower:65102&lt;/code> until you hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
+Run &lt;code>openmower expose-xesc [left|right|mower]&lt;/code> to expose the xESC controller (choose &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> or &lt;code>right&lt;/code>).&lt;br/>The controller is then reachable in your local network on &lt;code>openmower:65102&lt;/code> until you hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
 &lt;h4 id="connect-to-the-xesc">Connect to the xESC&lt;/h4>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
 Open the VESC Configuration Tool and connect to the xESC controllers by clicking:&lt;/p>
@@ -370,12 +370,12 @@ Test with some higher duty settings. It will become more loud for sure, but shou
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
 &amp;hellip; &lt;strong>but not finished&lt;/strong> ✌️ &amp;hellip; you need to do the whole procedure again, but with the right drive side.&lt;/p>
-&lt;p>So, &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>c&lt;/kbd> your &lt;code>openmower expose-esc left&lt;/code>, and do it again but with &lt;code>openmower expose-esc right&lt;/code> and with port 65104 for the right site drive.&lt;/p>
+&lt;p>So, &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>c&lt;/kbd> your &lt;code>openmower expose-xesc left&lt;/code>, and do it again but with &lt;code>openmower expose-xesc right&lt;/code>.&lt;/p>
 &lt;h4 id="mow-motor-calibration">Mow Motor Calibration&lt;/h4>
 &lt;p>For the mow motor ESC calibration, you do the same workflow, but with adapted values:&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>&lt;code>openmower expose-esc mower&lt;/code> and VESC connect to port 65103&lt;/p>
+&lt;p>&lt;code>openmower expose-xesc mower&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>During FOC Calibration Wizard use the following values:&lt;/p>
