@@ -6,5 +6,11 @@ menu:
   main:
     weight: 40
 cascade:
-  type: blog
+  - type: blog
+  - _build:
+      list: never
+      render: never
+      publishResources: false
+    _target:
+      environment: docs-only
 ---
