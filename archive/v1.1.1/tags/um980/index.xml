@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – um980</title><link>https://openmower.de/archive/v1.1.1/tags/um980/</link><description>Recent content in um980 on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/archive/v1.1.1/tags/um980/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step 2.1: Prepare the GPS</title><link>https://openmower.de/archive/v1.1.1/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/archive/v1.1.1/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>GPS module&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+Ardusimple F9P
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+aria-controls="tabs-00-02" aria-selected="false">
+WitMotion Unicore UM9xx
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;h2 id="update-firmware-and-configure-the-gps-board">Update Firmware and configure the GPS board&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+&lt;pre>&lt;code>There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+(time 16:21 - 17:15)&lt;/p>
+&lt;/div>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>An Ardusimple F9P GPS board&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Latest v1 version of the u-center software:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
+Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
+&lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
+This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd> to download the file.&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-210-update-firmware">Step 2.1.0: Update Firmware&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;The F9P now exists in multiple variants. The firmware below is for the L1 + L2 version. Make sure that on the u-blox chip, it says one of the following: &amp;lt;strong&amp;gt;ZED-F9P-02B, ZED-F9P-04B or ZED-F9P-05B!&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>If it&amp;rsquo;s a different board, &lt;strong>don&amp;rsquo;t&lt;/strong> use the linked firmware, get it from u-blox.com directly.&lt;/p>
+&lt;/div>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
+&lt;h3 id="step-211-open-u-center-and-connect-to-your-gps">Step 2.1.1: Open u-center and connect to your GPS&lt;/h3>
+&lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
+With the module connected to your PC, open the u-center software.&lt;/p>
+&lt;p>In u-center, first connect to your board by selecting the appropriate COM port in the &lt;code>Receiver -&amp;gt; Connection&lt;/code> menu.&lt;/p>
+&lt;h3 id="step-212-transfer-the-configuration-to-the-gps">Step 2.1.2: Transfer the configuration to the GPS&lt;/h3>
+&lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Transfer Settings to u-center">&lt;/p>
+&lt;p>After successfully connecting to the board, you can transfer
+the previously downloaded configuration file &lt;code>robot-fw-1_51.txt&lt;/code> by opening the window &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>. In this window you open the &lt;code>robot-fw-1_51.txt&lt;/code> using the &lt;code>...&lt;/code> button and then transfer the configuration to the GPS by clicking the &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> button.&lt;/p>
+&lt;h3 id="step-213-save-configuration-to-flash">Step 2.1.3: Save configuration to Flash&lt;/h3>
+&lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Save Settings to Flash">&lt;/p>
+&lt;p>In order to keep the GPS configured even after powering it down, you need to save the current configuration to Flash memory. In order to do this, select &lt;code>View -&amp;gt; Configuration View&lt;/code>. In the new window you need to select &lt;code>CFG (Configuration)&lt;/code> in the list on the left side and then enable &lt;code>Save current configuration&lt;/code>. Make sure that &lt;code>0 - BBR&lt;/code> and &lt;code>1 - FLASH&lt;/code> are both selected on the right side of the window. Once that&amp;rsquo;s done, click the &lt;code>Send&lt;/code> button in the lower toolbar of the window.&lt;/p>
+&lt;p>Once successful, there will be a timer showing on the upper right side of the window. This is the timer since the last message was sent to your GPS board. It should be &lt;code>0s&lt;/code> directly after clicking &lt;code>Send&lt;/code>.&lt;/p>
+&lt;h3 id="step-214-done-">Step 2.1.4: Done 🎉&lt;/h3>
+&lt;p>Your GPS is now configured for use with the Open Mower software. You can disconnect it from your Windows PC.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;ol>
+&lt;li>
+&lt;p>Connect your UM9xx to your PC using the supplied USB-C cable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open a serial terminal (minicom, miniterm, CuteCom, etc.) at 115200 baud&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Take attention that your line-end termination has to be CR/LF&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Send &lt;code>CONFIG&lt;/code>&lt;kbd>↵ Enter&lt;/kbd> to verify the connection. You should see readable key/value style output. If not, check cable, port, and permissions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Reset and switch the baud rate to 921600 by entering the following commands, line by line:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+CONFIG COM1 921600&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>(After &lt;code>FRESET&lt;/code> the module may take a few seconds to respond.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Re-check connection with the simple &lt;code>CONFIG&lt;/code> command. If you don&amp;rsquo;t get similar results than before, change your serial terminal speed to 921600 baud (re-open if necessary) and run &lt;code>CONFIG&lt;/code> again, till your get a reasonable response&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply the rover configuration by entering the following commands, line by line:&lt;/p>
+&lt;blockquote>
+&lt;p>MODE ROVER UAV&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSV COM1 2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPRMC COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSA COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPVTG COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGST COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGGA COM1 0.2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>Take attention to the &lt;code>SAVECONFIG&lt;/code> command, which stores settings so they survive power cycles.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Unplug the USB cable from the UM9x module and mount it to the CarrierBoard (solder required headers first if required).&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Continue with &lt;a href="https://openmower.de/archive/v1.1.1/archive/v1.1.1/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>&lt;/p></description></item></channel></rss>
