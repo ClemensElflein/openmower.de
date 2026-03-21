@@ -1,10 +1,113 @@
 /*
+ * OpenMower Brand Theme Variables (Light Mode)
+ * Source: design-openmower-branding/src/theme/tokens.json v1.1.0
+ */
 
-Add styles or override variables from the theme here.
+// ---- Brand Palette ----
+$om-green:       #2CC76B;   // accent / brand highlight
+$om-green-main:  #1B9D52;   // primary interactive (darker for contrast on white)
+$om-green-deep:  #14853F;   // primary dark
+$om-green-light: #3DD97E;   // lighter accent
+$om-green-pale:  #E3F9EC;   // very light green tint
+$om-amber:       #F5A523;   // code / decorative accent
 
-*/
+// Light surfaces
+$om-bg:       #FFFFFF;
+$om-surface:  #FFFFFF;
+$om-surface2: #EFEFEF;
+$om-surface3: #E5E5E5;
 
+// Borders
+$om-border:   #E0E0E0;   // subtle
+$om-border2:  #CACACA;   // default
+
+// Text
+$om-text:     #1A1A1A;   // primary
+$om-text2:    #555555;   // secondary
+$om-text3:    #9E9E9E;   // disabled
+
+// Semantic
+$om-error:   #C93020;
+$om-warning: #F5A523;
+$om-info:    #1565C0;
+$om-success: #1B9D52;
+
+// ---- Docsy: load DM Sans manually ----
 $td-enable-google-fonts: false;
 
-$kbd-bg: #797979;
-$kbd-box-shadow: inset 0 -0.1rem 0 rgba(0, 0, 0, 0.25);
+// ---- Typography ----
+$font-family-sans-serif: 'DM Sans Variable', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-monospace:  'DM Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+$headings-font-weight:   600;
+
+// ---- Bootstrap theme colors ----
+$primary:   $om-green-main;
+$secondary: $om-green-deep;
+$success:   $om-success;
+$warning:   $om-warning;
+$danger:    $om-error;
+$info:      $om-info;
+
+// ---- Body ----
+$body-color: $om-text;
+
+// ---- Links ----
+$link-color:       $om-green-main;
+$link-hover-color: $om-green-deep;
+
+// ---- Borders ----
+$border-color:     $om-border;
+$border-radius:    0.75rem;
+$border-radius-sm: 0.375rem;
+$border-radius-lg: 1rem;
+
+// ---- Cards ----
+$card-bg:           $om-surface;   // #FFFFFF per template (shadow creates depth, not bg color)
+$card-border-color: transparent;
+$card-cap-bg:       $om-surface2;
+
+// ---- Forms / Inputs ----
+$input-bg:                 $om-surface2;
+$input-color:              $om-text;
+$input-border-color:       $om-border2;
+$input-focus-border-color: $om-green;   // #2CC76B per template (accent, not primary)
+$input-placeholder-color:  $om-text3;
+$input-group-addon-bg:     $om-surface3;
+$input-group-addon-color:  $om-text2;
+
+// ---- Code ----
+$code-color: $om-amber;
+$pre-color:  $om-text;
+$kbd-bg:     $om-surface3;
+$kbd-color:  $om-text;
+$kbd-box-shadow: inset 0 -0.1rem 0 $om-border2;
+
+// ---- Tables ----
+$table-color:        $om-text;
+$table-border-color: $om-border;
+$table-head-bg:      $om-surface2;
+$table-head-color:   $om-text3;                  // #9E9E9E per template
+$table-accent-bg:    rgba(44, 199, 107, 0.03);  // exact template value
+$table-hover-bg:     rgba(44, 199, 107, 0.03);  // exact template value
+
+// ---- Pagination ----
+$pagination-color:               $om-text2;
+$pagination-bg:                  $om-bg;
+$pagination-border-color:        $om-border;
+$pagination-active-color:        #ffffff;
+$pagination-active-bg:           $om-green-main;
+$pagination-active-border-color: $om-green-main;
+$pagination-hover-color:         $om-green-main;
+$pagination-hover-border-color:  $om-border2;
+
+// ---- Navbar (Docsy uses navbar-dark / bg-primary by default) ----
+// navbar will be primary green — keep text/hover white
+$navbar-dark-color:          rgba(#ffffff, 0.9);
+$navbar-dark-hover-color:    #ffffff;
+$navbar-dark-active-color:   #ffffff;
+$navbar-dark-brand-color:    #ffffff;
+
+// ---- Docsy sidebar ----
+$td-sidebar-bg-color:        $om-surface2;
+$td-sidebar-border-color:    $om-border;
+$td-sidebar-tree-root-color: $om-green-main;

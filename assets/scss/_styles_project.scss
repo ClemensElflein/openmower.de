@@ -1,11 +1,448 @@
-.medium-zoom-image {
-    z-index: 20;
+// =============================================================================
+// OpenMower Project Styles (Light Mode)
+// Applied from design-openmower-branding/src/theme/tokens.json v1.1.0
+// =============================================================================
+
+// -- Preserved existing styles --
+
+// =============================================================================
+// Tabs – active tab green, inactive tab muted
+// =============================================================================
+.nav-tabs {
+  .nav-link {
+    color: $om-text3;
+
+    &:hover, &:focus {
+      color: $om-green-main;
+    }
+
+    &.active {
+      color: $om-green-main;
+      border-bottom-color: transparent;
+    }
+  }
+}
+.medium-zoom-image   { z-index: 20; }
+.medium-zoom-overlay { z-index: 20; }
+.prep-gps-um9xx-tab kbd { margin-left: 0.4rem; }
+
+// -- Base --
+html { scroll-behavior: smooth; }
+
+body { -webkit-font-smoothing: antialiased; }
+
+// =============================================================================
+// Navbar – dark app bar (matches branding template)
+// =============================================================================
+.td-navbar {
+  background-color: #181C19 !important;
+
+  .nav-link {
+    color: #9AABA5;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+
+    &:hover,
+    &:focus {
+      color: #EBEBEB;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      color: #ffffff !important;
+      font-weight: 500;
+      border-bottom-color: #2CC76B;
+    }
+  }
 }
 
-.medium-zoom-overlay {
-    z-index: 20;
+// =============================================================================
+// Cards – shadow depth (no border, shadow provides depth per template)
+// =============================================================================
+.card {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.09), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-.prep-gps-um9xx-tab kbd {
-    margin-left: 0.4rem;
+// =============================================================================
+// Buttons – no text-transform, gradient primary
+// =============================================================================
+.btn {
+  text-transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, $om-green-main 0%, $om-green-deep 100%);
+  border-color: $om-green-deep;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: linear-gradient(135deg, $om-green 0%, $om-green-main 100%);
+    border-color: $om-green-main;
+  }
+}
+
+// =============================================================================
+// Sidebar navigation
+// =============================================================================
+
+// Remove underline below the "Documentation" tree-root heading
+.td-sidebar-link.tree-root {
+  border-bottom: none;
+}
+
+.td-sidebar-nav {
+  // Active page: green text only, no background
+  a.active,
+  .td-sidebar-link.active,
+  .td-sidebar-link__page.active {
+    color: $om-green-main;
+  }
+
+  // Hover: color change only, no background
+  a:hover,
+  .td-sidebar-link:hover {
+    color: $om-green-main;
+  }
+}
+
+// Chevron: keep gray when section is open or hovered
+nav.foldable-nav {
+  .ul-1 .with-child > input:checked ~ label:before {
+    color: $gray-900;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ul-1 .with-child > label:hover:before,
+    .ul-1 .with-child > input:checked ~ label:hover:before {
+      color: $gray-900;
+    }
+  }
+}
+
+// =============================================================================
+// Table of Contents (right sidebar)
+// =============================================================================
+.td-toc {
+  #TableOfContents {
+    a:hover {
+      color: $om-green-main;
+    }
+
+    li.active > a {
+      color: $om-green-main;
+      font-weight: 500;
+    }
+  }
+}
+
+// =============================================================================
+// Content area
+// =============================================================================
+.td-content {
+  h2 {
+    border-bottom: 1px solid $om-border;
+    padding-bottom: 0.3em;
+  }
+
+  blockquote {
+    border-left: 4px solid $om-green-main;
+    background-color: $om-surface2;
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1.25rem;
+
+    p {
+      color: $om-text2;
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    border-color: $om-border;
+  }
+
+  table th {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+}
+
+// =============================================================================
+// Code blocks
+// =============================================================================
+.highlight,
+div.highlight {
+  border: 1px solid $om-border;
+  border-radius: 8px;
+
+  pre {
+    background-color: $om-surface2;
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+pre {
+  background-color: $om-surface2;
+  border: 1px solid $om-border;
+  border-radius: 8px;
+}
+
+// Inline code (not inside pre)
+:not(pre) > code {
+  color: $om-amber;
+  background-color: $om-surface3;
+  border-radius: 4px;
+  padding: 0.15em 0.35em;
+}
+
+// =============================================================================
+// Alerts – exact RGBA tint values from components.ts
+// =============================================================================
+.alert {
+  border-radius: 10px;
+
+  // success: rgba(44,199,107, …) — accent green tint
+  &-success { background-color: rgba(44, 199, 107, 0.10); border-color: rgba(44, 199, 107, 0.25); }
+  // error: rgba(255,96,64, …) — vivid red tint (reads better on white than dark #C93020)
+  &-danger   { background-color: rgba(255, 96, 64, 0.08);  border-color: rgba(255, 96, 64, 0.20); }
+  // warning: rgba(252,199,98, …) — amber tint
+  &-warning  { background-color: rgba(252, 199, 98, 0.08); border-color: rgba(252, 199, 98, 0.20); }
+  // info: rgba(122,184,255, …) — sky blue tint
+  &-info     { background-color: rgba(122, 184, 255, 0.08); border-color: rgba(122, 184, 255, 0.20); }
+}
+
+// =============================================================================
+// Breadcrumbs
+// =============================================================================
+.td-breadcrumbs .breadcrumb {
+  background-color: transparent;
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: $om-text3;
+  }
+}
+
+// =============================================================================
+// Search
+// =============================================================================
+.td-search__input {
+  border-radius: 8px;
+
+  &:focus {
+    border-color: $om-green-main !important;
+    box-shadow: 0 0 0 2px rgba($om-green-main, 0.15) !important;
+  }
+}
+
+// =============================================================================
+// Homepage hero / cover block – dark, matching the branding template HeroSection
+// =============================================================================
+.td-cover-block {
+  background-color: #0E100E !important;
+  background-image: none !important;
+  position: relative;
+  overflow: hidden;
+
+  // Neutralize Docsy's td-overlay--dark::after which adds rgba($dark,0.3)
+  // and causes the background to render lighter than the intended color.
+  &::after {
+    background-color: transparent !important;
+  }
+
+  // Radial green glow at bottom, identical to the template
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at 50% 100%, #063A19 0%, transparent 68%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Logo wordmark
+  .td-cover-logo-wordmark {
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .td-overlay__inner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // All text in the hero should be light
+  h1, h2, h3, p, .lead {
+    color: #EBEBEB;
+  }
+
+  // Tagline: "Smart. Open. Autonomous."
+  .om-hero-tagline {
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: #EBEBEB;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .om-hero-green {
+    color: #2CC76B;
+  }
+
+  .om-hero-desc {
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    color: #8A9490;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .om-hero-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  // Secondary/outlined button style for dark background
+  .btn-secondary {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #EBEBEB;
+
+    &:hover, &:focus {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: white;
+      color: white;
+    }
+  }
+}
+
+// =============================================================================
+// Dropdown menus – surface2 bg, border2 border (matches MuiMenu in template)
+// =============================================================================
+.dropdown-menu {
+  background-color: $om-surface2;
+  border: 1px solid $om-border2;
+  border-radius: 10px;
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba(44, 199, 107, 0.08);
+  }
+}
+
+// =============================================================================
+// Section with background image (om-section-image)
+// =============================================================================
+.om-section-image {
+  .om-section-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 16, 14, 0.72);
+    z-index: 0;
+  }
+
+  h1, h2, h3, h4, h5, p, .h4 {
+    color: #EBEBEB;
+  }
+
+  a:not(.btn) {
+    color: $om-green-light;
+    &:hover { color: $om-green; }
+  }
+
+  // Feature block icons and text
+  .col-lg-4 {
+    i.fas, i.fab, i.fa {
+      color: #ffffff;
+    }
+
+    .h3 {
+      color: #EBEBEB;
+      font-size: 1.35rem;
+    }
+
+    .mb-0, p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #C8D0CD;
+    }
+  }
+
+  .om-section-lead {
+    margin-bottom: 3rem;
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #C8D0CD;
+      max-width: 640px;
+      margin: 0 auto 1rem;
+    }
+  }
+}
+
+// =============================================================================
+// Homepage – stretch image section to fill remaining viewport height
+// =============================================================================
+body.td-home {
+  .td-outer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .td-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .td-main .om-section-image {
+    flex: 1;
+  }
+}
+
+// =============================================================================
+// Footer – de-emphasise links to match surrounding text
+// =============================================================================
+.td-page-meta a {
+  color: rgba(255, 255, 255, 0.75);
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+// =============================================================================
+// Homepage sections (td-box)
+// =============================================================================
+.td-box {
+  a:not(.btn) {
+    color: $om-green-main;
+
+    &:hover {
+      color: $om-green-deep;
+    }
+  }
 }

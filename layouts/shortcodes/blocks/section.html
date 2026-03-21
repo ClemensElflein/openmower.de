@@ -1,0 +1,38 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $col_id := .Get "color" | default .Ordinal }}
+{{ $height := .Get "height" | default "auto" }}
+{{ $type   := .Get "type" | default "" }}
+{{ $imageName := .Get "image" | default "" }}
+{{ $bgImage := "" }}
+{{ with $imageName }}
+  {{ with $.Page.Resources.GetMatch . }}
+    {{ $bgImage = (.Fill "1920x1080 Center").RelPermalink }}
+  {{ end }}
+{{ end }}
+<a id="td-block-{{ .Ordinal }}" class="td-offset-anchor"></a>
+{{ if $bgImage }}
+<section class="row td-box position-relative td-box--height-{{ $height }} om-section-image" style="background-image: url({{ $bgImage }}); background-size: cover; background-position: center;">
+  <div class="om-section-image-overlay"></div>
+  <div class="col" style="position: relative; z-index: 1;">
+    <div class="row {{ $type }}">
+      {{ if eq .Page.File.Ext "md" }}
+        {{ .Inner | markdownify }}
+      {{ else }}
+        {{ .Inner | htmlUnescape | safeHTML }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ else }}
+<section class="row td-box td-box--{{ $col_id }} td-box--gradient td-box--height-{{ $height }}">
+  <div class="col">
+    <div class="row {{ $type }}">
+      {{ if eq .Page.File.Ext "md" }}
+        {{ .Inner | markdownify }}
+      {{ else }}
+        {{ .Inner | htmlUnescape | safeHTML }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

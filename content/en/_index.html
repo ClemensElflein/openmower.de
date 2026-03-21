@@ -11,59 +11,37 @@ cascade:
       path: /_index.html
 ---
 
-{{< blocks/cover title="Welcome to Open Mower: The DIY RTK GPS Smart Mowing Robot for Everyone!" image_anchor="top" height="full" color="orange" >}}
-<div class="mx-auto">
+{{< blocks/cover image_anchor="top" height="auto" color="dark" >}}
+<h1 class="om-hero-tagline">Smart. <span class="om-hero-green">Open.</span> Autonomous.</h1>
+<p class="om-hero-desc">A GPL-licensed ROS and RTOS-based robotic mower platform — free from manufacturer lock-in, built by the community, and open for anyone to study, modify, and improve.</p>
+<div class="om-hero-buttons">
 	<a class="btn btn-lg btn-primary mr-3 mb-4" href='{{< relref "docs/_index.md" >}}'>
-		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+		Get Started
 	</a>
-	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://www.youtube.com/watch?v=BSF04i3zNGw">
-		Intro Video <i class="fab fa-youtube ml-2 "></i>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4 lightbox-youtube" href="https://www.youtube.com/watch?v=BSF04i3zNGw" data-id="BSF04i3zNGw">
+		Intro Video <i class="fab fa-youtube ml-2"></i>
 	</a>
-
-
-	<p class="lead mt-5">Build your own RTK GPS lawn mowing robot!</p>
-	<a class="btn btn-lg btn-success mr-3 mb-4" href='{{< relref "updates/_index.md" >}}'>
-		New: Version 2 Hardware Announcement
+	<a class="btn btn-lg btn-outline-light mr-3 mb-4" href="https://github.com/ClemensElflein/OpenMower">
+		View on GitHub <i class="fab fa-github ml-2"></i>
 	</a>
-	<p></p>
-
-	{{< blocks/link-down color="info" >}}
 </div>
 {{< /blocks/cover >}}
 
 
-{{% blocks/lead color="primary" %}}
-Open Mower is an open source project which allows you to build your own RTK GPS based lawn mowing robot. Since the robot is following an efficient path, your lawn will be mowed quicker and more evenly.
-
-This project also helps you to get a deep understanding in ROS, Linux and robotics in general.
-{{% /blocks/lead %}}
-
-{{< blocks/section color="dark" >}}
+{{< blocks/section image="featured-background.jpg" >}}
+<div class="col-12 text-center om-section-lead">
+<p>OpenMower is a complete custom implementation — software, firmware, and mostly open hardware — that replaces the closed, manufacturer-controlled stack of robotic mowers with a GPL-licensed ROS and RTOS-based platform. No proprietary lock-in. No black boxes.</p>
+<p>The result: centimetre-accurate RTK GPS navigation, efficient path planning, and a codebase you actually own. Read it, modify it, ship your own version.</p>
+</div>
 {{% blocks/feature icon="fa-heart" title="Support Open Mower!" url="https://patreon.com/ClemensElflein" %}}
 Open Mower is a very complicated project, that's why the development and maintenance takes a lot of time. Please consider supporting the project by joining my Patreon.
-
-
 {{% /blocks/feature %}}
-
-
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/ClemensElflein/OpenMower" %}}
 We do a [Pull Request](https://github.com/ClemensElflein/OpenMower/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
-
-
 {{% blocks/feature icon="fab fa-discord" title="Join the Discord!" url="https://discord.gg/jE7QNaSxW7" %}}
 For announcement of latest features etc. Most communication for this project is done on the Discord server.
 {{% /blocks/feature %}}
-
-
-{{< /blocks/section >}}
-
-
-{{< blocks/section >}}
-<div class="col">
-<h1 class="text-center"><a href='{{< relref "docs/_index.md" >}}'>Read the docs here!</a></h1>
-</div>
-
 {{< /blocks/section >}}
 
 
