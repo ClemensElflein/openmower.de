@@ -1,1 +1,333 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – OpenMower User Guide</title><link>https://openmower.de/latest/</link><description>Recent content in OpenMower User Guide on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Mower – OpenMower User Guide</title><link>https://openmower.de/latest/</link><description>Recent content in OpenMower User Guide on Open Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/index.xml" rel="self" type="application/rss+xml"/><item><title>Updates: New Website Design &amp; OpenMower Brand System</title><link>https://openmower.de/latest/updates/website-redesign-and-branding/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/website-redesign-and-branding/</guid><description>
+&lt;p>The docs at openmower.de just got a complete visual overhaul — and alongside it, we&amp;rsquo;re publishing the first official &lt;strong>OpenMower brand system&lt;/strong>.&lt;/p>
+&lt;h3 id="what-changed-on-the-site">&lt;strong>What Changed on the Site&lt;/strong>&lt;/h3>
+&lt;p>The site now runs a fully custom theme built directly on OpenMower design tokens: self-hosted DM Sans and DM Mono fonts, a cohesive green-on-dark colour palette, and a homepage that leads with what the project actually is — a GPL-licensed, ROS and RTOS-based platform that replaces the closed, manufacturer-controlled firmware of robotic mowers. No lock-in. No black boxes.&lt;/p>
+&lt;h3 id="the-openmower-brand-system">&lt;strong>The OpenMower Brand System&lt;/strong>&lt;/h3>
+&lt;p>We now have a proper, versioned design system — &lt;a href="https://github.com/ClemensElflein/OpenMower">&lt;code>design-openmower-branding&lt;/code>&lt;/a> — that gives the project a consistent visual identity across any platform:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Colour palette&lt;/strong> — Primary green &lt;code>#1B9D52&lt;/code>, dark graphite surfaces, amber code accents&lt;/li>
+&lt;li>&lt;strong>Typography&lt;/strong> — DM Sans Variable + DM Mono across all weights&lt;/li>
+&lt;li>&lt;strong>Component library&lt;/strong> — Buttons, cards, alerts, tables, inputs — all token-driven and documented&lt;/li>
+&lt;li>&lt;strong>Logo assets&lt;/strong> — Full wordmark SVG and square icon mark, ready for headers, favicons, and marketing&lt;/li>
+&lt;li>&lt;strong>Machine-readable tokens&lt;/strong> — &lt;code>tokens.json&lt;/code> as the single source of truth, with an AI-optimised token file and a Theme Factory JSON for Claude Code&lt;/li>
+&lt;/ul>
+&lt;p>The theme ships as a &lt;strong>Material UI v6 theme&lt;/strong> you can drop into any React/MUI project. The design tokens are format-agnostic — Tailwind and CSS custom properties mappings are included too.&lt;/p>
+&lt;p>&lt;strong>Live demo →&lt;/strong> &lt;a href="https://xtech.github.io/design-openmower-branding/">https://xtech.github.io/design-openmower-branding/&lt;/a>&lt;/p>
+&lt;p>Brand assets are CC BY-NC-SA 4.0. Theme code is MIT.&lt;/p></description></item><item><title>Updates: Introducing the OpenMower App</title><link>https://openmower.de/latest/updates/openmower-app-launch/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/openmower-app-launch/</guid><description>
+&lt;p>Community member &lt;a href="https://github.com/rovo89">@rovo89&lt;/a> has been quietly building something great: the &lt;strong>OpenMower App&lt;/strong>, a completely new application for your OpenMower mower.&lt;/p>
+&lt;p>You can find it here: &lt;strong>&lt;a href="https://github.com/xtech/openmower-app">github.com/xtech/openmower-app&lt;/a>&lt;/strong>&lt;/p>
+&lt;h3 id="whats-in-it-right-now">What&amp;rsquo;s in it right now&lt;/h3>
+&lt;p>At this stage, the app ships with a &lt;strong>map editor&lt;/strong> and some debug information. The map editor is the part we wanted to get into people&amp;rsquo;s hands first — it&amp;rsquo;s the most useful starting point and lets you manage your mowing areas directly from the browser.&lt;/p>
+&lt;p>If you&amp;rsquo;re running &lt;strong>OpenMowerOS v2&lt;/strong>, adding it is straightforward:&lt;/p>
+&lt;ol>
+&lt;li>Open &lt;code>http://&amp;lt;mower-ip&amp;gt;:5001/compose/openmower&lt;/code> in your browser.&lt;/li>
+&lt;li>Switch to edit mode and add the following to your &lt;code>compose.yaml&lt;/code>, above the &lt;code># Dockge-specific extras&lt;/code> line:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">app&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">image&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">ghcr.io/xtech/openmower-app:edge&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">container_name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">app&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ports&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#0000cf;font-weight:bold">3000&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">3000&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">restart&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">unless-stopped&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Also add the new URL to the &lt;code>x-dockge&lt;/code> section:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">x-dockge&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">urls&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">http://${HOSTNAME}:8080&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">http://${HOSTNAME}:3000&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>Hit &lt;strong>Deploy&lt;/strong>. The app will be available at &lt;code>http://&amp;lt;mower-ip&amp;gt;:3000&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>Not on OSv2? You can still try it by running the container manually.&lt;/p>
+&lt;h3 id="ros-version">ROS version&lt;/h3>
+&lt;p>You should be running &lt;strong>ROS v1.1.1&lt;/strong>, which was &lt;a href="https://openmower.de/latest/latest/updates/ros-v1-1-1/">released at the same time&lt;/a>. The map editor also works with v1.1.0, but it won&amp;rsquo;t respect the &amp;ldquo;active&amp;rdquo; flag on mowing areas — so upgrade if you can.&lt;/p>
+&lt;h3 id="why-openmower-app">Why &amp;ldquo;OpenMower App&amp;rdquo;?&lt;/h3>
+&lt;p>After some deliberation, we settled on &lt;strong>OpenMower App&lt;/strong> even though it is a conflict with the current OpenMower App naming. The reasoing is that as the new app matures, the older one will be phased out and confusion will stop.&lt;/p>
+&lt;p>More features are on the way — great work rovo89, this is just the beginning.&lt;/p></description></item><item><title>Updates: OpenMower ROS v1.1.1</title><link>https://openmower.de/latest/updates/ros-v1-1-1/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/ros-v1-1-1/</guid><description>
+&lt;p>&lt;a href="https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.1.1">v1.1.1&lt;/a> is a focused patch on top of v1.1.0.&lt;/p>
+&lt;h3 id="whats-new">What&amp;rsquo;s New&lt;/h3>
+&lt;p>&lt;strong>Skip inactive mowing areas&lt;/strong> — The mower now correctly skips areas that have been marked as inactive, so you don&amp;rsquo;t need to delete and re-record areas you only want to temporarily disable. Thanks &lt;a href="https://github.com/rovo89">@rovo89&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Publish parameters to MQTT&lt;/strong> — Mower configuration parameters are now published to MQTT, making it easier to observe and integrate the current configuration from external tools and home automation systems. Thanks &lt;a href="https://github.com/rovo89">@rovo89&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Ignore meta RPC method requests&lt;/strong> — JSON-RPC meta requests are now filtered out correctly instead of being treated as unknown commands. Thanks &lt;a href="https://github.com/rovo89">@rovo89&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Real-time logging order fix&lt;/strong> — A fix to the real-time logging subsystem ensures log messages are emitted in the correct chronological order. Thanks &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Full changelog:&lt;/strong> &lt;a href="https://github.com/ClemensElflein/open_mower_ros/compare/v1.1.0...v1.1.1">v1.1.0 → v1.1.1&lt;/a>&lt;/p></description></item><item><title>Updates: Firmware Release v0.0.3</title><link>https://openmower.de/latest/updates/firmware-v0-0-3/</link><pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/firmware-v0-0-3/</guid><description>
+&lt;p>Firmware &lt;a href="https://github.com/xtech/fw-openmower-v2/releases/tag/v0.0.3">v0.0.3&lt;/a> is out. This release is a big step forward for SABO / John Deere users and brings a handful of robustness improvements that benefit all platforms.&lt;/p>
+&lt;h3 id="sabo--john-deere-support">SABO / John Deere Support&lt;/h3>
+&lt;p>Most of the work in this release went into maturing SABO support, driven almost entirely by &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a> — huge thanks!&lt;/p>
+&lt;p>The SABO carrier board can now be considered properly supported:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>BMS integration&lt;/strong> — The SBS/SABO battery management system is now integrated, giving the firmware visibility into battery state, charge levels, and health.&lt;/li>
+&lt;li>&lt;strong>Dynamic power management&lt;/strong> — Power management functions are now implemented dynamically and wired up for the SABO platform, allowing the firmware to manage power states intelligently rather than statically.&lt;/li>
+&lt;li>&lt;strong>COBS parsing efficiency&lt;/strong> — The YardForce ESC driver received a character-match interrupt to make COBS frame parsing more efficient, reducing CPU load during serial communication.&lt;/li>
+&lt;/ul>
+&lt;h3 id="input-service-improvements">Input Service Improvements&lt;/h3>
+&lt;p>The input handling layer got a round of improvements:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Configurable delays&lt;/strong> — Input service delays are now configurable, making it easier to tune debounce and hold behaviour per platform.&lt;/li>
+&lt;li>&lt;strong>Key press injection&lt;/strong> — A mechanism to inject synthetic key presses has been added, which is useful for automated testing and hardware-in-the-loop simulation.&lt;/li>
+&lt;li>&lt;strong>Brief-input emergency trigger&lt;/strong> — The firmware now correctly triggers an emergency stop for inputs that are only active for a very short time. Previously, a momentary signal could be missed — this is now fixed, improving safety on all platforms.&lt;/li>
+&lt;/ul>
+&lt;h3 id="internals">Internals&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>xbot_framework&lt;/code> and the &lt;code>services&lt;/code> submodule have both been updated to their latest versions.&lt;/li>
+&lt;li>The SystemView build (used for real-time tracing and debugging) has been fixed.&lt;/li>
+&lt;/ul>
+&lt;h3 id="download">Download&lt;/h3>
+&lt;p>Grab the firmware bundle from the &lt;a href="https://github.com/xtech/fw-openmower-v2/releases/tag/v0.0.3">v0.0.3 release page&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;code>fw-openmower-v2-v0.0.3.zip&lt;/code>&lt;/strong> — contains binaries for all supported carrier boards&lt;/li>
+&lt;/ul></description></item><item><title>Updates: OpenMower ROS v1.1.0</title><link>https://openmower.de/latest/updates/ros-v1-1-0/</link><pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/ros-v1-1-0/</guid><description>
+&lt;p>&lt;a href="https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.1.0">v1.1.0&lt;/a> is a substantial release with a breaking map format change, a long-standing planner bug fix, and a wide range of new features.&lt;/p>
+&lt;h3 id="map-format-changed-to-json">Map Format Changed to JSON&lt;/h3>
+&lt;p>The map is now stored as &lt;code>map.json&lt;/code> instead of &lt;code>map.bag&lt;/code>. On first boot after upgrading, your existing &lt;code>map.bag&lt;/code> will be &lt;strong>automatically converted&lt;/strong> — no manual action required. From that point on only &lt;code>map.json&lt;/code> is read and updated.&lt;/p>
+&lt;p>The MQTT map format has changed to match the internal representation. If the map doesn&amp;rsquo;t appear correctly in the web interface after upgrading, do a hard reload (Ctrl+F5) or clear your browser cache.&lt;/p>
+&lt;h3 id="unmowed-strip-fix">Unmowed Strip Fix&lt;/h3>
+&lt;p>A long-reported issue where the mower left narrow strips of unmowed grass between path lines has been fixed. The root cause was an incorrect parameter in the coverage planner. If you had worked around this by reducing the configured tool width below the actual blade diameter, you can now revert that to the correct value.&lt;/p>
+&lt;h3 id="new-features">New Features&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>JSON-RPC 2.0 over MQTT&lt;/strong> — The mower now exposes a JSON-RPC 2.0 interface over MQTT, enabling clean remote control and query from any MQTT client.&lt;/li>
+&lt;li>&lt;strong>Capabilities published via MQTT&lt;/strong> — The mower publishes what it supports at runtime, so integrations can discover features without hardcoding assumptions.&lt;/li>
+&lt;li>&lt;strong>Map to SVG visualiser&lt;/strong> — A new tool converts the mowing map to an SVG file for offline inspection and debugging.&lt;/li>
+&lt;li>&lt;strong>Skip fill / outlines per area&lt;/strong> — Individual areas can now be configured to skip the fill pass, the outline pass, or both.&lt;/li>
+&lt;li>&lt;strong>Switch Pro and Shield controller support&lt;/strong> — Two more gamepads are now supported for manual control.&lt;/li>
+&lt;li>&lt;strong>Rain detection exposed to MQTT&lt;/strong> — The &lt;code>rain_detected&lt;/code> flag is now included in the &lt;code>robot_state/json&lt;/code> MQTT topic.&lt;/li>
+&lt;li>&lt;strong>ROS node auto-respawn&lt;/strong> — All nodes now respawn automatically after 10 seconds if they crash, improving overall resilience.&lt;/li>
+&lt;li>&lt;strong>Configurable wait times for docking and undocking&lt;/strong> — The delays before and after docking manoeuvres are now configurable via environment variables.&lt;/li>
+&lt;li>&lt;strong>Abort docking/undocking&lt;/strong> — It&amp;rsquo;s now possible to abort an in-progress docking or undocking manoeuvre.&lt;/li>
+&lt;li>&lt;strong>Snapshot recording&lt;/strong> — An option to record snapshots of recent ROS messages has been added for debugging purposes.&lt;/li>
+&lt;li>&lt;strong>Updated web app&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="notable-bug-fixes">Notable Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Obstacles outside the mowing area are no longer considered during coverage planning.&lt;/li>
+&lt;li>Simulator fixed for maps without a docking station.&lt;/li>
+&lt;li>GPS protocol selection for v1 hardware now matches v2 behaviour.&lt;/li>
+&lt;li>Various topic naming fixes.&lt;/li>
+&lt;/ul>
+&lt;h3 id="internals--infrastructure">Internals &amp;amp; Infrastructure&lt;/h3>
+&lt;ul>
+&lt;li>Environment variable handling has been comprehensively reworked.&lt;/li>
+&lt;li>GPS driver moved to the &lt;code>ll/services/gps&lt;/code> namespace.&lt;/li>
+&lt;li>Docker build and CI workflows updated.&lt;/li>
+&lt;li>&lt;code>spdlog&lt;/code> output redirected into the ROS logging system.&lt;/li>
+&lt;li>License switched to &lt;strong>GPLv3&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full changelog:&lt;/strong> &lt;a href="https://github.com/ClemensElflein/open_mower_ros/compare/v1.0.2...v1.1.0">v1.0.2 → v1.1.0&lt;/a>&lt;/p></description></item><item><title>Updates: Universal Board v1.1.1-beta</title><link>https://openmower.de/latest/updates/hw-universal-v1-1-1-beta/</link><pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/hw-universal-v1-1-1-beta/</guid><description>
+&lt;p>&lt;a href="https://github.com/xtech/hw-openmower-universal/releases/tag/v1.1.1-beta">v1.1.1-beta&lt;/a> is a hardware revision fixing a critical EEPROM power issue and switching the inter-module connectors.&lt;/p>
+&lt;h3 id="changes">Changes&lt;/h3>
+&lt;p>&lt;strong>EEPROM 3.3V fix&lt;/strong> — The 3.3V supply for the EEPROM was not connected in the previous revision. This is now routed correctly, fixing &lt;a href="https://github.com/xtech/hw-openmower-universal/issues/6">#6&lt;/a>. Without this fix the core board cannot read the carrier board&amp;rsquo;s EEPROM and therefore cannot auto-detect the attached mower model.&lt;/p>
+&lt;p>&lt;strong>XH connectors replace SATA&lt;/strong> — The inter-module data connectors have been switched from SATA to XH connectors. SATA was a pragmatic choice in early revisions; XH connectors are more appropriate for this use case and easier to source.&lt;/p>
+&lt;p>&lt;strong>Fuse added&lt;/strong> — A fuse has been added to the power path for protection.&lt;/p>
+&lt;p>&lt;strong>I2C4 EEPROM pins&lt;/strong> — Pins for the I2C4 EEPROM interface have been added to the board.&lt;/p>
+&lt;p>&lt;strong>BOM fix&lt;/strong> — Corrections to the bill of materials.&lt;/p>
+&lt;h3 id="download">Download&lt;/h3>
+&lt;p>&lt;strong>&lt;a href="https://github.com/xtech/hw-openmower-universal/releases/tag/v1.1.1-beta">release-hw-openmower-universal-v1.1.1-beta.zip&lt;/a>&lt;/strong> — Gerbers, BOM, and pick-and-place files.&lt;/p></description></item><item><title>Updates: YardForce Carrier Board v1.1.0-beta</title><link>https://openmower.de/latest/updates/hw-yardforce-v1-1-0-beta/</link><pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/hw-yardforce-v1-1-0-beta/</guid><description>
+&lt;p>&lt;a href="https://github.com/xtech/hw-openmower-yardforce/releases/tag/v1.1.0-beta">v1.1.0-beta&lt;/a> brings a handful of hardware improvements to the YardForce v2 carrier board.&lt;/p>
+&lt;h3 id="changes">Changes&lt;/h3>
+&lt;p>&lt;strong>Fan voltage selector&lt;/strong> — A voltage selector has been added for the fan connectors, allowing the fan supply voltage to be configured. Fan connector silkscreen labels have been added to match. The third FAN connector has been removed and the silkscreen documentation updated accordingly, resolving &lt;a href="https://github.com/xtech/hw-openmower-yardforce/issues/3">#3&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Fuses&lt;/strong> — Fuses have been added to the power path for protection.&lt;/p>
+&lt;p>&lt;strong>AGPIO on extension headers&lt;/strong> — The extension header pins now use AGPIO, which is more appropriate for analog and general-purpose signal use on the STM32.&lt;/p>
+&lt;p>&lt;strong>Silkscreen improvements&lt;/strong> — General silkscreen additions and corrections across the board.&lt;/p>
+&lt;h3 id="download">Download&lt;/h3>
+&lt;p>&lt;strong>&lt;a href="https://github.com/xtech/hw-openmower-yardforce/releases/tag/v1.1.0-beta">release-hw-openmower-yardforce-v1.1.0-beta.zip&lt;/a>&lt;/strong> — Gerbers, BOM, and pick-and-place files.&lt;/p></description></item><item><title>Updates: OpenMower ROS v1.0.2</title><link>https://openmower.de/latest/updates/ros-v1-0-2/</link><pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/ros-v1-0-2/</guid><description>
+&lt;p>&lt;a href="https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.0.2">v1.0.2&lt;/a> is a large feature release with contributions from across the community.&lt;/p>
+&lt;h3 id="highlights">Highlights&lt;/h3>
+&lt;p>&lt;strong>GPS via TCP&lt;/strong> — The GPS driver can now connect to a GPS source over TCP, making it easier to use network-attached GPS receivers and relay setups. Thanks &lt;a href="https://github.com/rovo89">@rovo89&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Rain detection&lt;/strong> — The mower now implements rain logic: when rain is detected it stops mowing and waits for the configurable &lt;code>OM_RAIN_DELAY_MINUTES&lt;/code> before resuming. Thanks &lt;a href="https://github.com/olliewalsh">@olliewalsh&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Angled undocking&lt;/strong> — The mower can now undock at an angle, improving reliability on docking stations where a straight-back exit causes issues. Thanks &lt;a href="https://github.com/AndreKR">@AndreKR&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>RPM monitoring and sensor thresholds&lt;/strong> — Motor RPM and configurable sensor thresholds have been added, along with improved sensor reporting. Thanks &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Background sound&lt;/strong> — An option to play background sounds has been added. Thanks &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Manual mower control during area recording&lt;/strong> — It&amp;rsquo;s now possible to drive the mower manually while in area recording mode. Thanks &lt;a href="https://github.com/olliewalsh">@olliewalsh&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Toggle automatic point collection during recording&lt;/strong> — Point collection can now be toggled on and off during a recording session. Thanks &lt;a href="https://github.com/rovo89">@rovo89&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Configurable docking retry count above 10&lt;/strong> — The docking retry limit is no longer capped at 10. Thanks &lt;a href="https://github.com/jeremysalwen">@jeremysalwen&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>OM_NO_COMMS environment variable&lt;/strong> — A new env var disables the communications node entirely, useful for running without the lower-level hardware connected. Thanks &lt;a href="https://github.com/jeremysalwen">@jeremysalwen&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>Sparse path planning&lt;/strong> — The slic3r coverage planner has been updated to support sparse paths, enabling less dense mowing patterns. Thanks &lt;a href="https://github.com/ClemensElflein">@ClemensElflein&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>IMU axis mapping for v2 hardware&lt;/strong> — Correct IMU axis orientation for the v2 mainboard has been added. Thanks &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>.&lt;/p>
+&lt;h3 id="v2-hardware-preparation">v2 Hardware Preparation&lt;/h3>
+&lt;p>This release includes early groundwork for the v2 hardware interface, reworked mower communications, an enlarged config packet format, and an &lt;code>InputService&lt;/code> interface (the initial version was reverted pending further work, but the infrastructure is in place).&lt;/p>
+&lt;h3 id="notable-bug-fixes">Notable Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fixed GPS header detection for UBX protocol.&lt;/li>
+&lt;li>Fixed planner crash on certain edge-case map geometries.&lt;/li>
+&lt;li>Fixed mowing motor repeatedly starting and stopping when GPS fix is lost.&lt;/li>
+&lt;li>Fixed segmentation fault in slic3r.&lt;/li>
+&lt;li>Fixed perimeter joining when islands exist.&lt;/li>
+&lt;li>Updated NTRIP client to prevent IP bans from RTK2GO.&lt;/li>
+&lt;li>Improved undocking smoothness.&lt;/li>
+&lt;/ul>
+&lt;h3 id="internals">Internals&lt;/h3>
+&lt;ul>
+&lt;li>Parameter system comprehensively reworked.&lt;/li>
+&lt;li>UART mapping handling updated for newer kernel versions.&lt;/li>
+&lt;li>FTC planner stop-distance lookahead disabled once &lt;code>speed_fast_threshold&lt;/code> is exceeded.&lt;/li>
+&lt;li>&lt;code>spdlog&lt;/code> redirected to the ROS logging system.&lt;/li>
+&lt;li>Native arm64 CI runner support.&lt;/li>
+&lt;li>License switched to &lt;strong>GPLv3&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full changelog:&lt;/strong> &lt;a href="https://github.com/ClemensElflein/open_mower_ros/compare/v1.0.1-edge.2...v1.0.2">v1.0.1-edge.2 → v1.0.2&lt;/a>&lt;/p></description></item><item><title>Updates: OpenMower v2 Hardware Update</title><link>https://openmower.de/latest/updates/openmower-v2-hardware-update/</link><pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/openmower-v2-hardware-update/</guid><description>
+&lt;p>It&amp;rsquo;s been a while since the last proper OpenMower update — three years, in fact. Back then, the project was barely more than a prototype. No kits, no polished user experience — just some soldered PCBs and command-line interactions.&lt;/p>
+&lt;p>Fast-forward to today, and OpenMower has matured in a big way.&lt;/p>
+&lt;h3 id="how-far-weve-come">&lt;strong>How Far We&amp;rsquo;ve Come&lt;/strong>&lt;/h3>
+&lt;p>When the project started, users had to build their mowers from scratch, often hand-soldering the entire PCB. Just getting it to mow required diving into terminal commands — not exactly plug-and-play.&lt;/p>
+&lt;p>But the community stuck with it, and together, we&amp;rsquo;ve made huge strides:&lt;/p>
+&lt;ul>
+&lt;li>✅ &lt;strong>Pre-built hardware kits&lt;/strong> are now available.&lt;/li>
+&lt;li>✅ &lt;strong>Improved documentation&lt;/strong> makes getting started far easier.&lt;/li>
+&lt;li>✅ A &lt;strong>ready-to-use OS image&lt;/strong> pulls the latest software via Docker. (Shoutout to &lt;a href="https://github.com/docgalaxyblock">@DocGalaxyBlock&lt;/a> for that!)&lt;/li>
+&lt;li>✅ A &lt;strong>dedicated app&lt;/strong> lets you teach mowing areas, start jobs, and monitor progress.&lt;/li>
+&lt;li>✅ The &lt;strong>software is significantly more stable.&lt;/strong>&lt;/li>
+&lt;li>✅ There&amp;rsquo;s even &lt;strong>Home Assistant integration&lt;/strong> created by the community!&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;hr>
+&lt;h3 id="introducing-openmower-v2-hardware">&lt;strong>Introducing OpenMower v2 Hardware&lt;/strong>&lt;/h3>
+&lt;h5 id="why-we-need-new-hardware">&lt;strong>Why We Need New Hardware&lt;/strong>&lt;/h5>
+&lt;p>Despite the progress, OpenMower hardware currently has a major limitation: &lt;strong>it only works with YardForce mowers&lt;/strong>.
+Using any other hardware is currently very hard and therefore only done by a few custom builds. That&amp;rsquo;s not what OpenMower was supposed to be about.&lt;/p>
+&lt;p>So we set out to fix that — with a &lt;strong>modular, mower-agnostic hardware platform&lt;/strong>.&lt;/p>
+&lt;h5 id="the-new-hardware-concept">&lt;strong>The New Hardware Concept&lt;/strong>&lt;/h5>
+&lt;p>For over one year I have completely redesigned the hardware from the ground up to get the OpenMower project on the next level. The new architecture splits the hardware into two parts:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>A universal core board&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Simple, Model-specific carrier boards&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;strong>core board&lt;/strong> is the brains of the operation. It includes:&lt;/p>
+&lt;ul>
+&lt;li>Raspberry Pi Compute Module 4 (or alternative modules with similar form factor)&lt;/li>
+&lt;li>Powerful STM32 microcontroller (550 MHz)&lt;/li>
+&lt;li>Gigabit Ethernet switch&lt;/li>
+&lt;li>Onboard IMU&lt;/li>
+&lt;li>Flash Storage for Configuration&lt;/li>
+&lt;li>SODIMM Connector for easy integration and installation&lt;/li>
+&lt;/ul>
+&lt;p>This core board stays the same across all mowers.&lt;/p>
+&lt;p>The &lt;strong>carrier boards&lt;/strong>, on the other hand, are tailored to each mower model. They handle:&lt;/p>
+&lt;ul>
+&lt;li>Power delivery&lt;/li>
+&lt;li>LiPo charging circuit (configuration and monitoring via software)&lt;/li>
+&lt;li>Motor drivers&lt;/li>
+&lt;li>Physical connectors&lt;/li>
+&lt;li>EEPROM (so the core board can auto-detect the actual mower which is currently running the software)&lt;/li>
+&lt;li>There is also a I2S sound chip, 12V power supply and an extension port for custom addons&lt;/li>
+&lt;/ul>
+&lt;p>The idea is to keep the carrier boards as simple as possible, so it should be easy to adapt them for a new mower.&lt;/p>
+&lt;h4 id="yardforce-v2-board">&lt;strong>YardForce v2 Board&lt;/strong>&lt;/h4>
+&lt;p>This is the YardForce v2 Board which is similar in shape to the current v1 board and also has the same connectors.
+In addition, it now features a built-in sound chip, more emergency stop connectors, additional ethernet ports, a connector for UM9XX GPS boards, a 12V power supply for user extensions (switchable via software) and
+the extension port for custom addons.&lt;/p>
+&lt;p>&lt;img src="YardForceModules.jpg" alt="YardForce Mainboard">&lt;/p>
+&lt;h4 id="sabo--john-deere-board">&lt;strong>SABO / John Deere Board&lt;/strong>&lt;/h4>
+&lt;p>The SABO mainboard (great work by &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>) has all the same features, the YardForce v2 board has and works with the following mower models:&lt;/p>
+&lt;ul>
+&lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
+&lt;li>John Deere Tango E5 (Series-I &amp;amp; II)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="SABO_Mainboard.jpg" alt="SABO Mainboard">&lt;/p>
+&lt;h4 id="universal-board">&lt;strong>Universal Board&lt;/strong>&lt;/h4>
+&lt;p>The universal board is a bit special. It is designed to work with many robot platforms. Power can be delivered via screw terminal connections or XT30 plugs.
+Motor connections can either be soldered directly or can also be done using screw terminals.&lt;/p>
+&lt;p>As for GPS, you have three different options: The Ardusimple F9P Arduino Board, the Ardusimple micro or the UM9XX GPS.&lt;/p>
+&lt;p>Now to the special part: If the board doesn&amp;rsquo;t fit your mower, it can be broken apart into modules (see picture). The modules can then be distributed in the mower
+and reconnected using power and data cables. Currently we are using SATA for the data connections, but for the next revision, other plugs will be used instead.&lt;/p>
+&lt;p>&lt;img src="BreakingTheBoard.jpg" alt="Breaking the Universal Board">&lt;/p>
+&lt;h3 id="firmware-rewritten-from-scratch">&lt;strong>Firmware: Rewritten from Scratch&lt;/strong>&lt;/h3>
+&lt;p>The new firmware is fully open-source (GPL licensed) and runs on ChibiOS, the real-time operating system which also powers the xESC motor controllers.
+The STM32 microcontroller now has more responsibility, therefore the firmware was completely rewritten from scratch.&lt;/p>
+&lt;p>Key features include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Single Binary&lt;/strong> for all the mowers! The firmware detects the actual mower hardware automatically on power up and configures itself accordingly.&lt;/li>
+&lt;li>STM32 &amp;lt;-&amp;gt; Pi communication over &lt;strong>Ethernet&lt;/strong>, improving speed and development flexibility.&lt;/li>
+&lt;li>&lt;strong>Failsafe behavior&lt;/strong>: Emergency stop and charging circuits work independently of the ROS stack.&lt;/li>
+&lt;li>Allows the compute module to be powered down when idle to save energy.&lt;/li>
+&lt;/ul>
+&lt;p>Huge thanks to &lt;a href="https://github.com/rovo89">@rovo89&lt;/a> for help on the firmware side!&lt;/p>
+&lt;h3 id="whats-available-today">&lt;strong>What&amp;rsquo;s Available Today&lt;/strong>&lt;/h3>
+&lt;p>There are already &lt;strong>three carrier board designs&lt;/strong> available:&lt;/p>
+&lt;ul>
+&lt;li>✅ &lt;strong>YardForce&lt;/strong> (The reference design, surpassing the current hardware design)&lt;/li>
+&lt;li>✅ &lt;strong>John Deere / SABO&lt;/strong> mowers (Big thanks to &lt;a href="https://github.com/Apehaenger">@Apehaenger&lt;/a>!)&lt;/li>
+&lt;li>✅ &lt;strong>Universal Board&lt;/strong> compatible with many other models&lt;/li>
+&lt;/ul>
+&lt;p>We&amp;rsquo;ve also completed a small &lt;strong>beta test round&lt;/strong> — with solid results. Some builds have been running for months without issues.&lt;/p>
+&lt;br>
+&lt;p>📬 &lt;strong>If you are interested in getting the hardware, DM Apehaenger on Discord!&lt;/strong>&lt;/p>
+&lt;br>
+&lt;hr>
+&lt;h3 id="whats-next-for-openmower">&lt;strong>What&amp;rsquo;s Next for OpenMower&lt;/strong>&lt;/h3>
+&lt;p>We&amp;rsquo;re not done yet. Here&amp;rsquo;s what&amp;rsquo;s coming:&lt;/p>
+&lt;ul>
+&lt;li>🚀 &lt;strong>Migration to ROS2&lt;/strong> (ROS1 is EOL)&lt;/li>
+&lt;li>📅 &lt;strong>Visual scheduling system&lt;/strong>&lt;/li>
+&lt;li>🧠 &lt;strong>Obstacle avoidance&lt;/strong>&lt;/li>
+&lt;li>🛠️ &lt;strong>General usability improvements&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>A lot of this is already being explored by the community. It&amp;rsquo;s exciting to watch new features emerge from real-world use.&lt;/p>
+&lt;h3 id="get-involved">&lt;strong>Get Involved!&lt;/strong>&lt;/h3>
+&lt;h5 id="get-v2-hardware">&lt;strong>Get v2 Hardware&lt;/strong>&lt;/h5>
+&lt;p>It would be great to see people trying and testing the v2 hardware, so I will be making a limited batch available soon!
+Do you want to test the v2 hardware or even contribute to development? Do you want to help writing the docs for v2? Or maybe just be among the first people to get their hands on the v2 hardware?&lt;/p>
+&lt;p>In any case:
+📬 &lt;strong>DM Apehaenger on Discord!&lt;/strong>&lt;/p>
+&lt;h5 id="support-the-project">&lt;strong>Support the Project&lt;/strong>&lt;/h5>
+&lt;p>Also, if you&amp;rsquo;d like to support the project financially and help me dedicate more time to OpenMower, check out my &lt;a href="https://www.patreon.com/ClemensElflein">Patreon&lt;/a>. Every bit helps, and I truly appreciate the support.
+Thanks for reading the whole thing — and see you in the next update!&lt;/p>
+&lt;br>
+&lt;h3 id="questions">&lt;strong>Questions&lt;/strong>&lt;/h3>
+&lt;h4 id="will-my-v1-mower-break">Will my v1 mower break?&lt;/h4>
+&lt;p>No, the software will be backwards compatible with the current hardware&lt;/p>
+&lt;h4 id="will-the-new-kit-be-more-expensive-than-the-current-one">Will the new kit be more expensive than the current one?&lt;/h4>
+&lt;p>The new kit is almost the same price as the current one, even though its more capable&lt;/p>
+&lt;h4 id="is-the-new-hardware-required-to-run-the-openmower-software">Is the new hardware required to run the OpenMower Software?&lt;/h4>
+&lt;p>No, there is a clear-cut interface to the lower communication layer. You can still do custom builds which use reverse engineered stock hardware (or any other custom hardware)&lt;/p></description></item><item><title>Updates: Universal Board v1.0.0-beta — v1.0.2-beta</title><link>https://openmower.de/latest/updates/hw-universal-v1-0-x-beta/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/hw-universal-v1-0-x-beta/</guid><description>
+&lt;p>Three beta releases shipped in quick succession in October 2024, establishing the initial hardware design for the Universal carrier board.&lt;/p>
+&lt;h3 id="v100-beta--2024-10-19">v1.0.0-beta — 2024-10-19&lt;/h3>
+&lt;p>The first public release of the Universal carrier board design. The Universal board is designed to work with a wide range of robot mower platforms and can be broken apart into separate modules if the full board doesn&amp;rsquo;t fit a given chassis. Power can be delivered via screw terminals or XT30 plugs; motor connections can be soldered directly or via screw terminals. GPS options include the Ardusimple F9P Arduino board, the Ardusimple micro, or the UM9XX module.&lt;/p>
+&lt;h3 id="v101-beta--2024-10-19">v1.0.1-beta — 2024-10-19&lt;/h3>
+&lt;p>Released the same day with two corrections:&lt;/p>
+&lt;ul>
+&lt;li>Switched to non-PCB-mount XT30 connectors.&lt;/li>
+&lt;li>Added the JLC part number for the xCore connector to the BOM.&lt;/li>
+&lt;/ul>
+&lt;h3 id="v102-beta--2024-10-21">v1.0.2-beta — 2024-10-21&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Extension port added&lt;/strong> — An extension port has been added for custom add-ons.&lt;/li>
+&lt;li>Silkscreen labels removed to clean up the board layout.&lt;/li>
+&lt;/ul>
+&lt;h3 id="download">Download&lt;/h3>
+&lt;p>Design files (Gerbers, BOM, pick-and-place) for each revision are available on the &lt;a href="https://github.com/xtech/hw-openmower-universal/releases">releases page&lt;/a>.&lt;/p></description></item><item><title>Updates: YardForce Carrier Board v1.0.0-beta — v1.0.1-beta</title><link>https://openmower.de/latest/updates/hw-yardforce-v1-0-x-beta/</link><pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/hw-yardforce-v1-0-x-beta/</guid><description>
+&lt;p>The YardForce v2 carrier board is the reference design for the OpenMower v2 hardware platform. It connects the universal xCore board to the YardForce mower&amp;rsquo;s motors, charging circuit, and sensors, and shares the same SODIMM form factor as the original board with the same connectors.&lt;/p>
+&lt;h3 id="v100-beta--2024-10-07">v1.0.0-beta — 2024-10-07&lt;/h3>
+&lt;p>First public release of the YardForce v2 carrier board design.&lt;/p>
+&lt;h3 id="v101-beta--2024-10-19">v1.0.1-beta — 2024-10-19&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>DCDC bias supply&lt;/strong> — A bias supply has been added to the DC-DC converter for improved efficiency under light load conditions.&lt;/li>
+&lt;li>&lt;strong>F9P power switch&lt;/strong> — A dedicated power switch for the Ardusimple F9P GPS module has been added, allowing the GPS to be powered down independently.&lt;/li>
+&lt;li>&lt;strong>xCore library update&lt;/strong> — The xCore KiCad library has been updated to the latest version.&lt;/li>
+&lt;/ul>
+&lt;h3 id="download">Download&lt;/h3>
+&lt;p>Design files (Gerbers, BOM, pick-and-place) for each revision are available on the &lt;a href="https://github.com/xtech/hw-openmower-yardforce/releases">releases page&lt;/a>.&lt;/p></description></item><item><title>Updates: OpenMower ROS v1.0.1 Edge Releases</title><link>https://openmower.de/latest/updates/ros-v1-0-1-edge/</link><pubDate>Wed, 24 Jul 2024 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/ros-v1-0-1-edge/</guid><description>
+&lt;p>Three edge pre-releases shipped between v1.0.0 and v1.0.2. Here&amp;rsquo;s a summary of what landed in each.&lt;/p>
+&lt;h3 id="v101-edge2--2024-07-24">v1.0.1-edge.2 — 2024-07-24&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Docking retry on roll-off&lt;/strong> — The mower now retries docking if it rolls off the charger instead of giving up. Thanks &lt;a href="https://github.com/jeremysalwen">@jeremysalwen&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>NTRIP IP ban fix&lt;/strong> — Fixed an issue where the NTRIP client could get your IP banned from public casters. Thanks &lt;a href="https://github.com/EtheriVR">@EtheriVR&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Configurable docking retry count&lt;/strong> — &lt;code>docking_retry_count&lt;/code> can now be changed via environment variable. Thanks &lt;a href="https://github.com/gytisgreitai">@gytisgreitai&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>Publish current mowing area&lt;/strong> — The active mowing area is now published to both ROS and MQTT. Thanks &lt;a href="https://github.com/11phc">@11phc&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>YardForce Rev4 adapter board support&lt;/strong> — Added support for the Rev4 adapter board variant.&lt;/li>
+&lt;li>&lt;strong>Bug fixes&lt;/strong> — Map not rebuilt unnecessarily on nav point clear; fake &lt;code>mower/status&lt;/code> stamp set correctly in simulation; mowing motor no longer starts and stops repeatedly on GPS fix loss.&lt;/li>
+&lt;/ul>
+&lt;h3 id="v101-edge1--2024-07-02">v1.0.1-edge.1 — 2024-07-02&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Docking improvements&lt;/strong> — Optional delay after voltage detection during docking; logging of the reason for each docking event.&lt;/li>
+&lt;li>&lt;strong>Reset emergency from app&lt;/strong> — The OpenMower app can now reset the emergency state remotely.&lt;/li>
+&lt;li>&lt;strong>Configuration as JSON Schema&lt;/strong> — The mower configuration is now described as a JSON Schema, enabling better tooling and validation.&lt;/li>
+&lt;li>&lt;strong>Dockerised dev environment&lt;/strong> — A fully containerised development environment has been added.&lt;/li>
+&lt;/ul>
+&lt;h3 id="v101-edge0--2024-05-31">v1.0.1-edge.0 — 2024-05-31&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Docking reliability&lt;/strong> — Short voltage drops during mowing due to current spikes are now tolerated without triggering a docking event.&lt;/li>
+&lt;li>&lt;strong>NMEA GPS sign fix&lt;/strong> — Fixed incorrect sign in the motion vector when using NMEA GPS devices.&lt;/li>
+&lt;li>&lt;strong>Slic3r segfault fix&lt;/strong> — Fixed a segmentation fault in the coverage planner.&lt;/li>
+&lt;li>&lt;strong>Perimeter fix&lt;/strong> — Fixed perimeter joining when islands are present in the map.&lt;/li>
+&lt;/ul></description></item></channel></rss>
