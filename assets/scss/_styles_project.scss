@@ -56,6 +56,18 @@ body { -webkit-font-smoothing: antialiased; }
       border-bottom-color: #2CC76B;
     }
   }
+
+  // On mobile, Bootstrap utility classes (mt-2, mb-2) shift the nav items
+  // down inside the fixed-height container, clipping the green border-bottom.
+  @include media-breakpoint-down(lg) {
+    .td-navbar-nav-scroll .navbar-nav {
+      margin-top: 0 !important;
+    }
+
+    .td-navbar-nav-scroll .nav-item {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 
 // =============================================================================
