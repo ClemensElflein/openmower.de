@@ -857,15 +857,15 @@ Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-sta
 &lt;td>Some users use &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">UM9XX chips&lt;/a> (available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960">WitMotion&lt;/a> and &lt;a href="https://aliexpress.com/item/1005007177629130.html">AliExpress&lt;/a>) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Raspberry Pi 4&lt;/td>
-&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;/td>
+&lt;td>Raspberry Pi Compute Module 4 with WiFi&lt;/td>
+&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;br>&lt;br> 16GB+ storage (eMMC or µSD Card)&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://rpilocator.com/?cat=PI4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
-&lt;td>Yes, it has to be the Raspberry Pi 4, because we need all the UARTs.&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>Yes, it has to be the Raspberry Pi CM4, because we need all the UARTs and it goes into the xCore board.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>µSD Card&lt;/td>
-&lt;td>The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
+&lt;td>Only for RPi CM4 Lite. The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon*&lt;/a> or your local hardware store&lt;/td>
 &lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/">RasPiKey&lt;/a>&lt;/td>
