@@ -1188,10 +1188,6 @@ Test with some higher duty settings. It will become more loud for sure, but shou
 &lt;li>
 &lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
-&lt;li>
-&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
-&lt;img src="images/sabo/vesc_6_settings1.jpg" alt="Drive Settings">&lt;/p>
-&lt;/li>
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
 &amp;hellip; &lt;strong>but not finished&lt;/strong> ✌️ &amp;hellip; you need to do the whole procedure again, but with the right drive side.&lt;/p>
@@ -1239,10 +1235,6 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
 &lt;img src="images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
-&lt;img src="images/sabo/vesc_7_mow_settings1.jpg" alt="Drive Settings">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
@@ -2337,10 +2329,6 @@ Test with some higher duty settings. It will become more loud for sure, but shou
 &lt;li>
 &lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
-&lt;li>
-&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
-&lt;img src="images/sabo/vesc_6_settings1.jpg" alt="Drive Settings">&lt;/p>
-&lt;/li>
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
 &amp;hellip; &lt;strong>but not finished&lt;/strong> ✌️ &amp;hellip; you need to do the whole procedure again, but with the right drive side.&lt;/p>
@@ -2388,10 +2376,6 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
 &lt;img src="images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Optional misc settings which you might align to be within the motor/battery specs:&lt;br>
-&lt;img src="images/sabo/vesc_7_mow_settings1.jpg" alt="Drive Settings">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
