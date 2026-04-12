@@ -107,9 +107,6 @@ Perform calibration for left drive first, then repeat the procedure for the righ
 
 10. As a last important step, load the correct ESC-App config via: _File → Load App Configuration XML_, choose `SABO_Drive-App.xml` (see [SABO ESCs configs](https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC)) and finally press the `↧A` icon (Write app configuration) on the right side.
 
-11. Optional misc settings which you might align to be within the motor/battery specs:<br>
-   ![Drive Settings](images/sabo/vesc_6_settings1.jpg)
-
 Done :satisfied:<br>
 ... **but not finished** :v: ... you need to do the whole procedure again, but with the right drive side.
 
@@ -142,9 +139,6 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 1. Limit blade RPM:<br>
    It's important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away :skull:
    ![Limit RPM](images/sabo/vesc_7_mow_settings2.jpg)
-
-1. Optional misc settings which you might align to be within the motor/battery specs:<br>
-   ![Drive Settings](images/sabo/vesc_7_mow_settings1.jpg)
 
 {{% /tab %}}
 

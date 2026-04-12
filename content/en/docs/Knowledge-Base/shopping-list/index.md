@@ -32,9 +32,9 @@ Read this first: [Important Info]({{% relref "/docs/getting-started#important-in
 You only need a GPS base station if you don't have access to an external NTRIP service. There are multiple free services available, so check before buying this.
 {{% /alert %}}
 
-| Name                                            | Description                                                               | Quantity Required | Source Link                                                                          | Notes |
-|-------------------------------------------------|---------------------------------------------------------------------------|-------------------|--------------------------------------------------------------------------------------|-------|
-| Raspberry Pi<br>+ SD Card<br>+ Power Supply     | You can basically use any Raspberry Pi for this. No special requirements. | 1                 | [e.g. Raspberry Pi 4](https://amzn.to/4a904YP)                                       |       |
-| Ardusimple RTK2B GPS + Antenna                  | Positioning system for the base station                                   | 1                 | [ArduSimple](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/) | See above |
+| Name                                        | Description                                                               | Quantity Required | Source Link                                                                          | Notes     |
+| ------------------------------------------- | ------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------ | --------- |
+| Raspberry Pi<br>+ SD Card<br>+ Power Supply | You can basically use any Raspberry Pi for this. No special requirements. | 1                 | [e.g. Raspberry Pi 4](https://amzn.to/4a904YP)                                       |           |
+| Ardusimple RTK2B GPS + Antenna              | Positioning system for the base station                                   | 1                 | [ArduSimple](https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/) | See above |
 
 For the setup check the [GPS Base Setup Guide]({{% relref "/docs/knowledge-base/rtk-base-setup" %}})
