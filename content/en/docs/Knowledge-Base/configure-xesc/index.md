@@ -87,20 +87,20 @@ With the VESC Configuration Tool connected, you can now upload the configuration
 Perform calibration for left drive first, then repeat the procedure for the right drive.
 
 1. **Enable realtime data:** Later on, we wanna validate our calibration with a known reference value, but also during calibration it's interesting to see the displayed values in the marked 2 window. That's why we enable real-time data first:<br>
-   ![RT Data](images/sabo/vesc_3_realtime_data.jpg)
+   ![RT Data]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_3_realtime_data.jpg)
 1. Start the **FOC Calibration Wizard**:<br>
-   ![Start FOC Calibration](images/sabo/vesc_4_voc_1.jpg)<br>
+   ![Start FOC Calibration]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_1.jpg)<br>
 
 1. Now we need to provide some specs of our motor. **These are the specs for the left and right drive motors**, for the mow motor, we need to use other specs:<br>
-   <img src="images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%"><br>
+   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%"><br>
 
-   <img src="images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%"><br>
+   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%"><br>
 
 1. Once calibration has been done, **do not change the direction** (even though the left wheel turns forward during calibration, whereas the right one backwards):
 
-   <img src="images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 9. Now that the calibration succeed, lets test the result:
-   ![Run Test](images/sabo/vesc_5_test.jpg)<br>
+   ![Run Test]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_5_test.jpg)<br>
 
    Test with "**D 0,4**" (1) and press the "Duty cycle" play button (2). If it draw **<= 0.15A** (3) and sound healty, it is calibrated well.<br>
    Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).
@@ -138,7 +138,7 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 
 1. Limit blade RPM:<br>
    It's important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away :skull:
-   ![Limit RPM](images/sabo/vesc_7_mow_settings2.jpg)
+   ![Limit RPM]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_7_mow_settings2.jpg)
 
 {{% /tab %}}
 

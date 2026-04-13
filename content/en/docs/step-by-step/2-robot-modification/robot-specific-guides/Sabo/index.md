@@ -112,6 +112,6 @@ Once turned on, it will take approximately 10 seconds before the LEDs and LCD st
 It's a good idea to place the mower into the docking station, so that the battery doesn't drain and can charge.
 {{% /alert %}}
 
-If everything seems healthy, proceed to the [Software Setup](https://github.com/xtech/hw-openmower-sabo/blob/main/INSTALL-SOFTWARE.md).
+If everything seems healthy, proceed to the [Software Setup]({{< relref "/docs/step-by-step/3-software-setup" >}}).
 
 Otherwise, **stop here and ask for help on the Discord server**.
