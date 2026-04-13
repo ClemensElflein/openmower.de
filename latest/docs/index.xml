@@ -1164,24 +1164,24 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
-&lt;img src="images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
-&lt;img src="images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
-&lt;img src="images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
-&lt;p>&lt;img src="images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
-&lt;img src="images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 &lt;/li>
 &lt;li>
 &lt;p>Now that the calibration succeed, lets test the result:
-&lt;img src="images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
 &lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
@@ -1234,7 +1234,7 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
-&lt;img src="images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
@@ -1474,7 +1474,7 @@ title="2 Seal rule more is better at inside">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain and can charge.
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://github.com/xtech/hw-openmower-sabo/blob/main/INSTALL-SOFTWARE.md">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: Step 2.2: Prepare the SD Card</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</guid><description>
 &lt;p>We have created a Raspberry Pi image which is modified specifically for Open Mower use.
 The modifications include:&lt;/p>
@@ -2305,24 +2305,24 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
-&lt;img src="images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
-&lt;img src="images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
-&lt;img src="images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
-&lt;p>&lt;img src="images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
-&lt;img src="images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 &lt;/li>
 &lt;li>
 &lt;p>Now that the calibration succeed, lets test the result:
-&lt;img src="images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
 &lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
@@ -2375,7 +2375,7 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
-&lt;img src="images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>

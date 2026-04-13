@@ -636,7 +636,7 @@ title="2 Seal rule more is better at inside">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain and can charge.
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://github.com/xtech/hw-openmower-sabo/blob/main/INSTALL-SOFTWARE.md">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: v1 Hardware Guide (Legacy)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v1 Hardware Only!&lt;/h4>
