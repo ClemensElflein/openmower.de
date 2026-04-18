@@ -67,8 +67,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "Open Mower"
-description = "OpenMower - The DIY Smart Mowing Robot for Everyone"
+title = "OpenMower — Open Source RTK GPS Robotic Mower"
+description = "OpenMower is an open-source RTK GPS robotic lawn mower platform built on ROS and RTOS. GPL-licensed, community-driven, and free from manufacturer lock-in. Developed by x-tech UG."
 languageName ="English"
 # Weight used for sorting.
 weight = 1

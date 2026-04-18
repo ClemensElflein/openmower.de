@@ -438,6 +438,14 @@ body.td-home {
 // =============================================================================
 // Footer – de-emphasise links to match surrounding text
 // =============================================================================
+
+// Docsy sets .td-outer { height: 100vh; display: flex; flex-direction: column }.
+// flex-shrink: 1 (default) lets the footer shrink below its content height, causing
+// bg-dark to not cover the overflow area. Fix: never shrink the footer.
+footer.d-print-none {
+  flex-shrink: 0;
+}
+
 .td-page-meta a {
   color: rgba(255, 255, 255, 0.75);
 

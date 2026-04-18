@@ -96,6 +96,8 @@ jobs:
         run: |
           mkdir -p public-root
           cp public/index.html public-root/index.html
+          cp public/sitemap.xml public-root/sitemap.xml
+          cp public/robots.txt public-root/robots.txt
 
       # Deploy root index and CNAME, keeping /latest and /archive/*
       - name: Deploy root index and CNAME

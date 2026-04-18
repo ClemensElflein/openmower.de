@@ -1,4 +1,29 @@
 
+<link rel="canonical" href="{{ .Permalink }}">
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OpenMower",
+  "description": "Open-source RTK GPS robotic lawn mower platform built on ROS and RTOS. GPL-licensed, community-driven, free from manufacturer lock-in.",
+  "url": "https://openmower.de",
+  "applicationCategory": "Robotics",
+  "operatingSystem": "Linux (ROS)",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "author": {
+    "@type": "Organization",
+    "name": "x-tech UG",
+    "url": "https://x-tech.online"
+  },
+  "sameAs": [
+    "https://github.com/ClemensElflein/OpenMower",
+    "https://x-tech.online"
+  ]
+}
+</script>
+{{ end }}
+
 <script src="{{ "js/medium-zoom.min.js" | relURL }}"></script>
 <script src="{{ "js/asciinema-player.min.js" | relURL }}"></script>
 <script src="{{ "js/carousel.js" | relURL }}"></script>
