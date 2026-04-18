@@ -3,8 +3,7 @@ title: "Links"
 linkTitle: "Links"
 date: 2017-01-05
 weight: 400
-description: >
-  A list of links to the parts of the Open Mower project.
+description: "All OpenMower project resources in one place — GitHub repositories, hardware schematics, firmware, and community links."
 ---
 
 Since the Open Mower project is quite complex, the parts are split among multiple websites and repositories. This page gives an overview of all important resources.

@@ -100,7 +100,7 @@ copyright = "x-tech UG (haftungsbeschränkt)"
 privacy_policy = "https://itrk.legal/zNs.8U.u9o.html"
 
 # First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
+images = ["featured-background.jpg"]
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.

@@ -1,5 +1,8 @@
 
 <link rel="canonical" href="{{ .Permalink }}">
+{{ if strings.Contains .RelPermalink "/archive/" -}}
+<meta name="robots" content="noindex, follow">
+{{- end }}
 {{ if .IsHome }}
 <script type="application/ld+json">
 {

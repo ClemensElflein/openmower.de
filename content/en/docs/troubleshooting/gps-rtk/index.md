@@ -1,6 +1,7 @@
 ---
 title: Troubleshooting GPS-RTK
 linkTitle: GPS-RTK
+description: "Troubleshoot GPS-RTK issues on OpenMower. Verify UBX protocol, satellite fix, NTRIP connection, and centimetre-accurate RTK positioning step by step."
 tags: [gps, gps-rtk, simplertk2b, zed-f9p, ntrip]
 resources:
     - src: "**.png"
