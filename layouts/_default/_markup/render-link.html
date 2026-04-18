@@ -1,0 +1,12 @@
+{{- $url := .Destination -}}
+{{- $isExternal := or (strings.HasPrefix $url "http://") (strings.HasPrefix $url "https://") -}}
+{{- $nofollow := false -}}
+{{- if $isExternal -}}
+  {{- range .Page.Site.Params.nofollow_domains -}}
+    {{- if strings.Contains $url . -}}{{- $nofollow = true -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $url }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if $isExternal }} target="_blank" rel="{{ if $nofollow }}nofollow noopener{{ else }}noopener{{ end }}"{{ end -}}
+>{{ .Text | safeHTML }}</a>

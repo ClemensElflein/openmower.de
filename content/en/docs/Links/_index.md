@@ -20,15 +20,6 @@ Since the Open Mower project is quite complex, the parts are split among multipl
 This documentation contains reviewed information that is known to be correct and will not change too often. Consider this as your main entry point for information about the OpenMower project.
 
 
-### Open Mower Wiki
-
-🔗&nbsp;[https://wiki.openmower.de/](https://wiki.openmower.de/)
-
-**Interesting For:** All Users
-
-The Wiki is written by Open Mower users like you. It contains useful tips and information on running the Open Mower software. I'm not able to check all the information there all the time, so it might be that some guides are outdated or just not working. If you find any wrong information there, feel free to edit or tell me on Discord.
-
-
 ### YouTube
 
 🔗&nbsp;[https://www.youtube.com/c/ClemensElflein](https://www.youtube.com/c/ClemensElflein)

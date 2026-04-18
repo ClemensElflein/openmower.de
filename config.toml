@@ -99,6 +99,17 @@ time_format_blog = "January 2, 2006"
 copyright = "x-tech UG (haftungsbeschränkt)"
 privacy_policy = "https://itrk.legal/zNs.8U.u9o.html"
 
+# Domains that get rel="nofollow noopener" on all markdown links
+nofollow_domains = [
+  "amzn.to",
+  "shop.devops.care",
+  "aliexpress.com",
+  "witmotion-sensor.com",
+  "uugear.com",
+  "ardusimple.com",
+  "core-electronics.com.au",
+]
+
 # First one is picked as the Twitter card image if not set on page.
 images = ["featured-background.jpg"]
 
