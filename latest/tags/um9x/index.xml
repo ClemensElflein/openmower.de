@@ -29,10 +29,10 @@ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;h2 id="update-firmware-and-configure-the-gps-board">Update Firmware and configure the GPS board&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-&lt;pre>&lt;code>There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
 &lt;/code>&lt;/pre>
-&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
-(time 16:21 - 17:15)&lt;/p>
+&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>&lt;/p>
+&lt;p>(time 16:21 - 17:15)&lt;/p>&lt;/p>
 &lt;/div>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
@@ -40,7 +40,8 @@ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Latest v1 version of the u-center software:&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center" target="_blank" rel="noopener">https://www.u-blox.com/en/product/u-center&lt;/a>
+&lt;br/>
 Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
 &lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
 🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
@@ -53,7 +54,9 @@ This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd
 &lt;/code>&lt;/pre>
 &lt;p>If it&amp;rsquo;s a different board, &lt;strong>don&amp;rsquo;t&lt;/strong> use the linked firmware, get it from u-blox.com directly.&lt;/p>
 &lt;/div>
-&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin" target="_blank" rel="noopener">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>
+. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/" target="_blank" rel="nofollow noopener">Ardusimple Website&lt;/a>
+.&lt;/p>
 &lt;h3 id="step-211-open-u-center-and-connect-to-your-gps">Step 2.1.1: Open u-center and connect to your GPS&lt;/h3>
 &lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software.&lt;/p>
@@ -117,4 +120,5 @@ SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>
+&lt;/p></description></item></channel></rss>

@@ -56,7 +56,8 @@ CheckSpace -- No --> AskDiscord
 &lt;h1 id="officially-supported-mowers">Officially Supported Mowers&lt;/h1>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce">https://github.com/xtech/hw-openmower-yardforce&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/p>
 &lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
 &lt;p>&lt;strong>However, there are more mowers from the YardForce brand that are compatible:&lt;/strong>&lt;/p>
 &lt;p>In theory, every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ has compatible electronics to replace the stock mainboard with an OpenMower one.&lt;/p>
@@ -66,7 +67,8 @@ The main reason is that the OpenMower mainboard does not fit in their chassis.
 &lt;/div>
 &lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
 &lt;p>There is a dedicated mainboard for &lt;strong>SABO MOWit 500F&lt;/strong> (Series-I &amp;amp; II) and &lt;strong>John Deere Tango E5&lt;/strong> (Series-I &amp;amp; II) mowers.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo">https://github.com/xtech/hw-openmower-sabo&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/p>
 &lt;p>This Carrierboard is compatible with the following mower models:&lt;/p>
 &lt;ul>
 &lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
@@ -103,7 +105,8 @@ Your browser does not support the video tag.
 &lt;/div>
 &lt;h2 id="universal-board">Universal Board&lt;/h2>
 &lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal">https://github.com/xtech/hw-openmower-universal&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/p>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
 &lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
 &lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
@@ -132,7 +135,8 @@ Your browser does not support the video tag.
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
-&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
+or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
 &lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
 &lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>

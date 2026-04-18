@@ -17,11 +17,14 @@ docking immediately to see if the docking works precisely and the mower docks au
 &lt;p>Then start mowing, the mower will do the outline first (normally 4 rounds, check the 4th round very thoroughly, that is
 the round closest to the edge). If all is ok, you are good to go.&lt;/p></description></item><item><title>Docs: Increase mower motor to 6A</title><link>https://openmower.de/latest/docs/contributions/increase-mower-motor-current/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/increase-mower-motor-current/</guid><description>
 &lt;p>Author: ow@discord&lt;/p>
-&lt;p>YardForce Classic Mower Motor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>&lt;/p>
-&lt;p>Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>&lt;/p>
+&lt;p>YardForce Classic Mower Motor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66" target="_blank" rel="noopener">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>
+&lt;/p>
+&lt;p>Alternative config was made by Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698" target="_blank" rel="noopener">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>
+&lt;/p>
 &lt;p>Battery current limit is 3a, motor current limit is 6a. RPM limited to 3500. Disabled backing off when temp increases or voltage drops. I would use a 6amp fuse, seen drive motors report over 1a sometimes.&lt;/p>
 &lt;p>Instructions:
-Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool">VESC-TOOL&lt;/a>.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
+Open cover, replace fuse, upload central xESC config with &lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">VESC-TOOL&lt;/a>
+.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
 &lt;p>There are YardForce spikes on Amazon and other sites like Etsy. This photo guide is about RoboClaws.&lt;/p>
 &lt;p>In short:&lt;/p>

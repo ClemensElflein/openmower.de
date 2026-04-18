@@ -1,11 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Troubleshooting Guides</title><link>https://openmower.de/latest/docs/troubleshooting/</link><description>Recent content in Troubleshooting Guides on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Troubleshooting GPS-RTK</title><link>https://openmower.de/latest/docs/troubleshooting/gps-rtk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/gps-rtk/</guid><description>
-&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>. If mower is already assembled - open the top cover.&lt;/p>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>
+. If mower is already assembled - open the top cover.&lt;/p>
 &lt;p>Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration).&lt;/p>
 &lt;p>Make sure that &lt;code>Protocol of received messages&lt;/code> in bottom status bar right shows &lt;code>UBX&lt;/code>, not &lt;code>NMEA&lt;/code>. If not - upload configuration again. Then disconnect/connect power of GPS and make sure it stayed &lt;code>UBX&lt;/code>.&lt;/p>
 &lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If the mower is already assembled and an antenna is plugged in - just take it outside with the mower.
 Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
 &lt;p>Deviation map (&lt;code>View -&amp;gt; Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File -&amp;gt; Database clean&lt;/code>.&lt;/p>
-&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145">NTRIP node somewhere nearby&lt;/a> (&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>.&lt;/p>
+&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145" target="_blank" rel="noopener">NTRIP node somewhere nearby&lt;/a>
+(&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>
+.&lt;/p>
 &lt;p>Go to &lt;code>Receiver -&amp;gt; NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in the ROS configuration file later.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png" width="500" height="460">
@@ -96,7 +99,8 @@ you want a &lt;code>3&lt;/code> here since that means your rtk state is &amp;ldq
 this value is in meters so the example has a accuracy of ~2,5cm and that is great.&lt;br>
 It can be the case that this value is ok but the rtk state is not yet &amp;ldquo;fixed&amp;rdquo;&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>https://openmower.de/latest/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/map/</guid><description>
-&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/record-areas/">Record a map&lt;/a>.&lt;/p>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/record-areas/">Record a map&lt;/a>
+.&lt;/p>
 &lt;br>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>

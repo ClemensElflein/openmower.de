@@ -2,7 +2,8 @@
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v2 Hardware Only!&lt;/h4>
 &lt;p>This guide here is for OpenMower v2.x Hardware!
-If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de/archive/v1.0.2/docs/">here&lt;/a>, because for v1 hardware you will also need to modify the docking station!&lt;/p>
+If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de/archive/v1.0.2/docs/" target="_blank" rel="noopener">here&lt;/a>
+, because for v1 hardware you will also need to modify the docking station!&lt;/p>
 &lt;p>You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;ul>
 &lt;li>You are using a full-size Raspberry Pi&lt;/li>
@@ -24,7 +25,8 @@ If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de
 &lt;/ul>
 &lt;h2 id="step-241-disassemble-the-robot">Step 2.4.1: Disassemble the Robot&lt;/h2>
 &lt;p>The first step is to disassemble up the robot.
-This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is: 2:25 - 5:08.
+This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>
+. The relevant time is: 2:25 - 5:08.
 &lt;strong>Do not&lt;/strong> follow the video further than that, because it is outdated.&lt;/p>
 &lt;p>Alternatively, here is a picture guide of the disassembly process:&lt;/p>
 &lt;h3 id="unscrew-top-cover">Unscrew top cover&lt;/h3>
@@ -70,7 +72,8 @@ title="4 Save the screws">
 &lt;/ul>
 &lt;h3 id="pry-the-cover">Pry the cover&lt;/h3>
 &lt;p>This is a bit tricky in some parts, so I recommend you checking YouTube video
-here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is:
+here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>
+. The relevant time is:
 2:25 - 5:08.&lt;/p>
 &lt;style>
 .image-gallery {overflow: auto; margin-left: -1%!important;}
@@ -373,9 +376,11 @@ In the following picture you can see the original connector cable.
 &lt;h2 id="prerequisites-1">Prerequisites&lt;/h2>
 &lt;h3 id="things-you-will-need-1">Things you will need:&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>WiFi Antenna Mount:&lt;/strong> 3D printed part available on &lt;a href="https://www.printables.com/model/1504184-openmower-yardforce-classic-500-wifi-antenna-mount">Printables&lt;/a>&lt;/li>
+&lt;li>&lt;strong>WiFi Antenna Mount:&lt;/strong> 3D printed part available on &lt;a href="https://www.printables.com/model/1504184-openmower-yardforce-classic-500-wifi-antenna-mount" target="_blank" rel="noopener">Printables&lt;/a>
+&lt;/li>
 &lt;li>&lt;strong>Two Screws&lt;/strong> you can use the screws from the front sensor we removed earlier&lt;/li>
-&lt;li>&lt;strong>WiFi Antenna with Cable&lt;/strong> You can get it from &lt;a href="https://amzn.to/48iknlw">Amazon&lt;/a>&lt;/li>
+&lt;li>&lt;strong>WiFi Antenna with Cable&lt;/strong> You can get it from &lt;a href="https://amzn.to/48iknlw" target="_blank" rel="nofollow noopener">Amazon&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="steps">Steps:&lt;/h3>
 &lt;ol>
@@ -404,7 +409,8 @@ In the following picture you can see the original connector cable.
 &lt;p>It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain.&lt;/p>
 &lt;p>In this state, the battery does not charge, because the core board does not have the correct firmware installed, but the docking voltage will still be used to power the electronics, so the battery will not drain.&lt;/p>
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>
+.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;h3 id="things-you-will-need">Things you will need:&lt;/h3>
@@ -509,7 +515,8 @@ title="8 Release mainboard holder">
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="step-242-mount-prepared-parts">Step 2.4.2: Mount prepared parts&lt;/h2>
-&lt;p>Assemble the previously &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/">prepared parts&lt;/a>:&lt;/p>
+&lt;p>Assemble the previously &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/">prepared parts&lt;/a>
+:&lt;/p>
 &lt;ol>
 &lt;li>Mount your prepared UM9x GPS module to the carrier board and attach the IPEX/SMA cable (usually included with the UM9x) as shown:&lt;br>
 &lt;img src="images/UM9x-IPEX-SMA-Cable.jpg" alt="UM9x IPEX/SMA cable">&lt;/li>
@@ -570,7 +577,8 @@ title="2 Route cable and connect it">
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="step-245-install-gps-antenna-eg-hahx901-on-the-cover-">Step 2.4.5: Install GPS antenna (e.g. HA/HX‑901) on the cover 🛰️&lt;/h2>
-&lt;p>An alternative non-destructive internal holder was &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808">designed by STS&lt;/a>. Check the Discord discussion for more details and STL files if available.&lt;/p>
+&lt;p>An alternative non-destructive internal holder was &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808" target="_blank" rel="noopener">designed by STS&lt;/a>
+. Check the Discord discussion for more details and STL files if available.&lt;/p>
 &lt;ol>
 &lt;li>Drill a 6.5–7 mm hole in the cover approximately at the position as shown in the images.&lt;/li>
 &lt;li>Install the (included) 30-40cm SMA extension cable. Ensure the SMA bulkhead protrudes far enough so the HA/HX‑901 can fully engage and make good contact; if in doubt, omit one washer/spacer on the inside to gain thread length.&lt;br>
@@ -636,7 +644,8 @@ title="2 Seal rule more is better at inside">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain and can charge.
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>
+.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: v1 Hardware Guide (Legacy)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v1 Hardware Only!&lt;/h4>
@@ -647,4 +656,5 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;li>Your mainboard shows version &lt;strong>v0.xx&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h3 id="the-v1-guide-is-herehttpsopenmowerdearchivev102docs">The v1 guide is &lt;a href="https://openmower.de/archive/v1.0.2/docs">here&lt;/a>.&lt;/h3></description></item></channel></rss>
+&lt;h3 id="the-v1-guide-is-herehttpsopenmowerdearchivev102docs">The v1 guide is &lt;a href="https://openmower.de/archive/v1.0.2/docs" target="_blank" rel="noopener">here&lt;/a>
+.&lt;/h3></description></item></channel></rss>

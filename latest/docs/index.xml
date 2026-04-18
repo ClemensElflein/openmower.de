@@ -1,7 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Documentation</title><link>https://openmower.de/latest/docs/</link><description>Recent content in Documentation on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</guid><description>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce">https://github.com/xtech/hw-openmower-yardforce&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/p>
 &lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
 &lt;p>&lt;strong>However, there are more mowers from the YardForce brand that are compatible:&lt;/strong>&lt;/p>
 &lt;p>In theory, every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ has compatible electronics to replace the stock mainboard with an OpenMower one.&lt;/p>
@@ -11,7 +12,8 @@ The main reason is that the OpenMower mainboard does not fit in their chassis.
 &lt;/div>
 &lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
 &lt;p>There is a dedicated mainboard for &lt;strong>SABO MOWit 500F&lt;/strong> (Series-I &amp;amp; II) and &lt;strong>John Deere Tango E5&lt;/strong> (Series-I &amp;amp; II) mowers.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo">https://github.com/xtech/hw-openmower-sabo&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/p>
 &lt;p>This Carrierboard is compatible with the following mower models:&lt;/p>
 &lt;ul>
 &lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
@@ -48,7 +50,8 @@ Your browser does not support the video tag.
 &lt;/div>
 &lt;h2 id="universal-board">Universal Board&lt;/h2>
 &lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal">https://github.com/xtech/hw-openmower-universal&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/p>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
 &lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
 &lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
@@ -89,10 +92,10 @@ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;h2 id="update-firmware-and-configure-the-gps-board">Update Firmware and configure the GPS board&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-&lt;pre>&lt;code>There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
+&lt;pre>&lt;code>&amp;lt;p&amp;gt;There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
 &lt;/code>&lt;/pre>
-&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
-(time 16:21 - 17:15)&lt;/p>
+&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>&lt;/p>
+&lt;p>(time 16:21 - 17:15)&lt;/p>&lt;/p>
 &lt;/div>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
@@ -100,7 +103,8 @@ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;li>&lt;strong>A Micro USB Cable&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>A Windows PC&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Latest v1 version of the u-center software:&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://www.u-blox.com/en/product/u-center">https://www.u-blox.com/en/product/u-center&lt;/a>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center" target="_blank" rel="noopener">https://www.u-blox.com/en/product/u-center&lt;/a>
+&lt;br/>
 Don&amp;rsquo;t get u-center V2, you will need u-center v1 for the F9P.&lt;/li>
 &lt;li>&lt;strong>The GPS configuration file&lt;/strong>&lt;br/>
 🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
@@ -113,7 +117,9 @@ This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd
 &lt;/code>&lt;/pre>
 &lt;p>If it&amp;rsquo;s a different board, &lt;strong>don&amp;rsquo;t&lt;/strong> use the linked firmware, get it from u-blox.com directly.&lt;/p>
 &lt;/div>
-&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/">Ardusimple Website&lt;/a>.&lt;/p>
+&lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin" target="_blank" rel="noopener">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>
+. There&amp;rsquo;s a guide on the &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/" target="_blank" rel="nofollow noopener">Ardusimple Website&lt;/a>
+.&lt;/p>
 &lt;h3 id="step-211-open-u-center-and-connect-to-your-gps">Step 2.1.1: Open u-center and connect to your GPS&lt;/h3>
 &lt;p>After installing u-center, connect your Ardusimple board using the &amp;ldquo;Power+GPS&amp;rdquo; USB socket to your Windows computer. You should see the blue LEDs of the board come on and Windows should recognize the device as a COM port.
 With the module connected to your PC, open the u-center software.&lt;/p>
@@ -177,7 +183,8 @@ SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>&lt;/p></description></item><item><title>Docs: Step 1: Check Compatibility</title><link>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</guid><description>
+&lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>
+&lt;/p></description></item><item><title>Docs: Step 1: Check Compatibility</title><link>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</guid><description>
 &lt;p>Before purchasing anything, verify your mower is compatible with the OpenMower project.
 Use this flowchart to check compatibility:&lt;/p>
 &lt;div class="mermaid">%%{init: {
@@ -235,7 +242,8 @@ CheckSpace -- No --> AskDiscord
 &lt;h1 id="officially-supported-mowers">Officially Supported Mowers&lt;/h1>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce">https://github.com/xtech/hw-openmower-yardforce&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/p>
 &lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
 &lt;p>&lt;strong>However, there are more mowers from the YardForce brand that are compatible:&lt;/strong>&lt;/p>
 &lt;p>In theory, every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ has compatible electronics to replace the stock mainboard with an OpenMower one.&lt;/p>
@@ -245,7 +253,8 @@ The main reason is that the OpenMower mainboard does not fit in their chassis.
 &lt;/div>
 &lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
 &lt;p>There is a dedicated mainboard for &lt;strong>SABO MOWit 500F&lt;/strong> (Series-I &amp;amp; II) and &lt;strong>John Deere Tango E5&lt;/strong> (Series-I &amp;amp; II) mowers.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo">https://github.com/xtech/hw-openmower-sabo&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/p>
 &lt;p>This Carrierboard is compatible with the following mower models:&lt;/p>
 &lt;ul>
 &lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
@@ -282,7 +291,8 @@ Your browser does not support the video tag.
 &lt;/div>
 &lt;h2 id="universal-board">Universal Board&lt;/h2>
 &lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal">https://github.com/xtech/hw-openmower-universal&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/p>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
 &lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
 &lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
@@ -314,7 +324,8 @@ OpenMowerOS will automatically create a hotspot with the name `OpenMower-&lt;Som
 &lt;div class="row">
 &lt;div class="col">
 Some devices will detect that the hotspot does not provide internet connectivity and will send you to a configuration page.
-&lt;p>If your device does not do this, open the browser on your phone and navigate to: &lt;a href="http://10.41.0.1/">http://10.41.0.1/&lt;/a>.&lt;/p>
+&lt;p>If your device does not do this, open the browser on your phone and navigate to: &lt;a href="http://10.41.0.1/" target="_blank" rel="noopener">http://10.41.0.1/&lt;/a>
+.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
 &lt;p>&lt;img src="images/connect_wifi_screen_1.png" alt="connect_wifi_screen_1.png">&lt;/p>
@@ -329,7 +340,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;ul>
 &lt;li>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively, you can check if the device is connected by logging into your router.&lt;/li>
 &lt;li>Check, if you can reach the mower via SSH (&lt;code>ssh openmower@openmower.local&lt;/code>, password &lt;code>openmower&lt;/code>).&lt;/li>
-&lt;li>Check, if you can reach the mower&amp;rsquo;s terminal in a browser. Navigate to &lt;a href="http://openmower.local:7681/">http://openmower.local:7681/&lt;/a>&lt;/li>
+&lt;li>Check, if you can reach the mower&amp;rsquo;s terminal in a browser. Navigate to &lt;a href="http://openmower.local:7681/" target="_blank" rel="noopener">http://openmower.local:7681/&lt;/a>
+&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Getting Started</title><link>https://openmower.de/latest/docs/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/getting-started/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
@@ -369,7 +381,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;li>&lt;strong>Skill level:&lt;/strong> Intermediate electronics, Linux, and mechanical skills&lt;/li>
 &lt;li>&lt;strong>Community:&lt;/strong> 2k+ members on Discord ready to help with reviews and troubleshooting&lt;/li>
 &lt;/ul>
-&lt;p>New to the project? Start with the &lt;a href="https://openmower.de/latest/latest/docs/overview/">Overview page&lt;/a>.&lt;/p>
+&lt;p>New to the project? Start with the &lt;a href="https://openmower.de/latest/latest/docs/overview/">Overview page&lt;/a>
+.&lt;/p>
 &lt;h2 id="important-warnings">Important Warnings&lt;/h2>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Read Before Starting&lt;/h4>
@@ -393,7 +406,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;li>Many other models using the universal carrier board&lt;/li>
 &lt;li>If you want to build a mower from scratch, that&amp;rsquo;s also possible&lt;/li>
 &lt;/ul>
-&lt;p>See the full &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers List&lt;/a> for additional models and community builds.&lt;/p>
+&lt;p>See the full &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers List&lt;/a>
+for additional models and community builds.&lt;/p>
 &lt;h2 id="what-you-need-to-know">What You Need to Know&lt;/h2>
 &lt;h3 id="required-skills">Required Skills&lt;/h3>
 &lt;ul>
@@ -414,7 +428,8 @@ Some people are building a custom mower chassis from scratch.&lt;/p>
 &lt;h4 id="2-openmower-hardware">2. OpenMower Hardware&lt;/h4>
 &lt;div class="alert alert-success" role="alert">
 &lt;h4 class="alert-heading">Hardware Version 2&lt;/h4>
-&lt;p>OpenMower v2 hardware is now available and recommended for all new builds. v1 hardware is deprecated. See the &lt;a href="https://openmower.de/latest/latest/updates/">v2 Announcement&lt;/a> for details.&lt;/p>
+&lt;p>OpenMower v2 hardware is now available and recommended for all new builds. v1 hardware is deprecated. See the &lt;a href="https://openmower.de/latest/latest/updates/">v2 Announcement&lt;/a>
+for details.&lt;/p>
 &lt;p>&lt;strong>To purchase v2 hardware:&lt;/strong> Contact @Apehaenger on Discord.&lt;/p>
 &lt;/div>
 &lt;p>Custom electronics consisting of:&lt;/p>
@@ -434,7 +449,8 @@ Therefore, you will need one or two RTK GPS receivers:&lt;/p>
 &lt;p>&lt;img src="flow_chart.jpg" alt="Open Mower Build Overview">&lt;/p>
 &lt;p>Follow these steps in sequence:&lt;/p>
 &lt;h2 id="ready-to-shop">Ready to shop?&lt;/h2>
-&lt;p>&lt;strong>Check the detailed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Shopping List&lt;/a>.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Check the detailed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Shopping List&lt;/a>
+.&lt;/strong>&lt;/p>
 &lt;h2 id="get-support">Get Support&lt;/h2>
 &lt;h3 id="discord-community">Discord Community&lt;/h3>
 &lt;p>Join our active Discord community for:&lt;/p>
@@ -444,21 +460,26 @@ Therefore, you will need one or two RTK GPS receivers:&lt;/p>
 &lt;li>Software tips and tricks&lt;/li>
 &lt;li>Feature discussions&lt;/li>
 &lt;/ul>
-&lt;p>🔗 &lt;a href="https://discord.gg/jE7QNaSxW7">Join OpenMower Discord&lt;/a>&lt;/p>
+&lt;p>🔗 &lt;a href="https://discord.gg/jE7QNaSxW7" target="_blank" rel="noopener">Join OpenMower Discord&lt;/a>
+&lt;/p>
 &lt;h3 id="documentation--resources">Documentation &amp;amp; Resources&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>This Documentation&lt;/strong>: Reviewed, official information&lt;/li>
 &lt;li>&lt;strong>YouTube Channel&lt;/strong>: Video tutorials and project updates&lt;/li>
 &lt;/ul>
-&lt;p>See the &lt;a href="https://openmower.de/latest/latest/docs/links/">Links&lt;/a> page for all resources.&lt;/p>
+&lt;p>See the &lt;a href="https://openmower.de/latest/latest/docs/links/">Links&lt;/a>
+page for all resources.&lt;/p>
 &lt;h2 id="next-steps">Next Steps&lt;/h2>
 &lt;p>If you are ready to start building:&lt;/p>
-&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Review the Shopping List&lt;/a>&lt;/p>
-&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">Check the Step by Step Guide&lt;/a>&lt;/p></description></item><item><title>Docs: YardForce Classic 500(B)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</guid><description>
+&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Review the Shopping List&lt;/a>
+&lt;/p>
+&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">Check the Step by Step Guide&lt;/a>
+&lt;/p></description></item><item><title>Docs: YardForce Classic 500(B)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v2 Hardware Only!&lt;/h4>
 &lt;p>This guide here is for OpenMower v2.x Hardware!
-If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de/archive/v1.0.2/docs/">here&lt;/a>, because for v1 hardware you will also need to modify the docking station!&lt;/p>
+If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de/archive/v1.0.2/docs/" target="_blank" rel="noopener">here&lt;/a>
+, because for v1 hardware you will also need to modify the docking station!&lt;/p>
 &lt;p>You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;ul>
 &lt;li>You are using a full-size Raspberry Pi&lt;/li>
@@ -480,7 +501,8 @@ If you have v1 Hardware, follow the legacy docs &lt;a href="https://openmower.de
 &lt;/ul>
 &lt;h2 id="step-241-disassemble-the-robot">Step 2.4.1: Disassemble the Robot&lt;/h2>
 &lt;p>The first step is to disassemble up the robot.
-This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is: 2:25 - 5:08.
+This is a bit tricky in some parts, so I recommend you checking my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>
+. The relevant time is: 2:25 - 5:08.
 &lt;strong>Do not&lt;/strong> follow the video further than that, because it is outdated.&lt;/p>
 &lt;p>Alternatively, here is a picture guide of the disassembly process:&lt;/p>
 &lt;h3 id="unscrew-top-cover">Unscrew top cover&lt;/h3>
@@ -526,7 +548,8 @@ title="4 Save the screws">
 &lt;/ul>
 &lt;h3 id="pry-the-cover">Pry the cover&lt;/h3>
 &lt;p>This is a bit tricky in some parts, so I recommend you checking YouTube video
-here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>. The relevant time is:
+here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=148" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> YouTube Video&lt;/a>
+. The relevant time is:
 2:25 - 5:08.&lt;/p>
 &lt;style>
 .image-gallery {overflow: auto; margin-left: -1%!important;}
@@ -829,9 +852,11 @@ In the following picture you can see the original connector cable.
 &lt;h2 id="prerequisites-1">Prerequisites&lt;/h2>
 &lt;h3 id="things-you-will-need-1">Things you will need:&lt;/h3>
 &lt;ul>
-&lt;li>&lt;strong>WiFi Antenna Mount:&lt;/strong> 3D printed part available on &lt;a href="https://www.printables.com/model/1504184-openmower-yardforce-classic-500-wifi-antenna-mount">Printables&lt;/a>&lt;/li>
+&lt;li>&lt;strong>WiFi Antenna Mount:&lt;/strong> 3D printed part available on &lt;a href="https://www.printables.com/model/1504184-openmower-yardforce-classic-500-wifi-antenna-mount" target="_blank" rel="noopener">Printables&lt;/a>
+&lt;/li>
 &lt;li>&lt;strong>Two Screws&lt;/strong> you can use the screws from the front sensor we removed earlier&lt;/li>
-&lt;li>&lt;strong>WiFi Antenna with Cable&lt;/strong> You can get it from &lt;a href="https://amzn.to/48iknlw">Amazon&lt;/a>&lt;/li>
+&lt;li>&lt;strong>WiFi Antenna with Cable&lt;/strong> You can get it from &lt;a href="https://amzn.to/48iknlw" target="_blank" rel="nofollow noopener">Amazon&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="steps">Steps:&lt;/h3>
 &lt;ol>
@@ -860,7 +885,8 @@ In the following picture you can see the original connector cable.
 &lt;p>It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain.&lt;/p>
 &lt;p>In this state, the battery does not charge, because the core board does not have the correct firmware installed, but the docking voltage will still be used to power the electronics, so the battery will not drain.&lt;/p>
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>
+.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: Step 3.2: Basic Configuration (Environment, Firmware Installation, xESC configuration)</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/basic-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/basic-configuration/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
@@ -914,7 +940,8 @@ You can either use SSH or the browser-based terminal.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: openmower
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname: openmower
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: openmower
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The browser based terminal does not need any credentials and can be reached at: &lt;a href="http://openmower:7681">http://openmower:7681&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The browser based terminal does not need any credentials and can be reached at: &lt;a href="http://openmower:7681" target="_blank" rel="noopener">http://openmower:7681&lt;/a>
+&lt;/p>
 &lt;h2 id="step-320-basic-checks">Step 3.2.0: Basic Checks&lt;/h2>
 &lt;h3 id="check-if-filesystem-expanded-correctly">Check, if filesystem expanded correctly&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
@@ -952,10 +979,12 @@ document.getElementById('step-3-2-0-player'),
 &lt;/script>
 &lt;h3 id="rename-your-host-optional">Rename your host (optional)&lt;/h3>
 &lt;p>If you are running multiple robots, it&amp;rsquo;s a good idea to rename your host to distinguish between them.&lt;/p>
-&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/change-hostname/">Change Hostname&lt;/a>&lt;/p>
+&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/change-hostname/">Change Hostname&lt;/a>
+&lt;/p>
 &lt;h3 id="enable-external-wifi-antenna-optional">Enable External WiFi Antenna (optional)&lt;/h3>
 &lt;p>If you have added an external WiFi antenna, you need to enable it.
-You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/external-wifi-antenna/">Enable External Antenna&lt;/a>&lt;/p>
+You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/external-wifi-antenna/">Enable External Antenna&lt;/a>
+&lt;/p>
 &lt;h2 id="step-321-setup-environment-variables">Step 3.2.1: Setup Environment Variables&lt;/h2>
 &lt;p>Now we can start the configuration by setting the environment variables.&lt;/p>
 &lt;ul>
@@ -1013,9 +1042,12 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
-&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool">https://vesc-project.com/vesc_tool&lt;/a>)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
-&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a> guide.&lt;/li>
-&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">OpenMower repository&lt;/a> for the files suited for your mower. &lt;br/>You will need three files:
+&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
+)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a>
+guide.&lt;/li>
+&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
+for the files suited for your mower. &lt;br/>You will need three files:
 &lt;ul>
 &lt;li>App configuration XML (sets the baud rate, etc. Same for all three xESC controllers)&lt;/li>
 &lt;li>Mower Motor configuration XML (motor parameters for the mower motor)&lt;/li>
@@ -1186,7 +1218,8 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
@@ -1229,7 +1262,8 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
@@ -1243,7 +1277,8 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;p>Choose your adventure. Your build, your rules.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;h2 id="continue-with-step-34-configure-ros-parametershahahugoshortcodes6hbhb">Continue with Step 3.4: &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/setup-ros/">Configure ROS Parameters&lt;/a>&lt;/h2></description></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
+&lt;h2 id="continue-with-step-34-configure-ros-parametershahahugoshortcodes6hbhb">Continue with Step 3.4: &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/setup-ros/">Configure ROS Parameters&lt;/a>
+&lt;/h2></description></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;h3 id="things-you-will-need">Things you will need:&lt;/h3>
 &lt;ul>
@@ -1347,7 +1382,8 @@ title="8 Release mainboard holder">
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="step-242-mount-prepared-parts">Step 2.4.2: Mount prepared parts&lt;/h2>
-&lt;p>Assemble the previously &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/">prepared parts&lt;/a>:&lt;/p>
+&lt;p>Assemble the previously &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/">prepared parts&lt;/a>
+:&lt;/p>
 &lt;ol>
 &lt;li>Mount your prepared UM9x GPS module to the carrier board and attach the IPEX/SMA cable (usually included with the UM9x) as shown:&lt;br>
 &lt;img src="images/UM9x-IPEX-SMA-Cable.jpg" alt="UM9x IPEX/SMA cable">&lt;/li>
@@ -1408,7 +1444,8 @@ title="2 Route cable and connect it">
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="step-245-install-gps-antenna-eg-hahx901-on-the-cover-">Step 2.4.5: Install GPS antenna (e.g. HA/HX‑901) on the cover 🛰️&lt;/h2>
-&lt;p>An alternative non-destructive internal holder was &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808">designed by STS&lt;/a>. Check the Discord discussion for more details and STL files if available.&lt;/p>
+&lt;p>An alternative non-destructive internal holder was &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808" target="_blank" rel="noopener">designed by STS&lt;/a>
+. Check the Discord discussion for more details and STL files if available.&lt;/p>
 &lt;ol>
 &lt;li>Drill a 6.5–7 mm hole in the cover approximately at the position as shown in the images.&lt;/li>
 &lt;li>Install the (included) 30-40cm SMA extension cable. Ensure the SMA bulkhead protrudes far enough so the HA/HX‑901 can fully engage and make good contact; if in doubt, omit one washer/spacer on the inside to gain thread length.&lt;br>
@@ -1474,7 +1511,8 @@ title="2 Seal rule more is better at inside">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 It&amp;rsquo;s a good idea to place the mower into the docking station, so that the battery doesn&amp;rsquo;t drain and can charge.
 &lt;/div>
-&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>.&lt;/p>
+&lt;p>If everything seems healthy, proceed to the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/">Software Setup&lt;/a>
+.&lt;/p>
 &lt;p>Otherwise, &lt;strong>stop here and ask for help on the Discord server&lt;/strong>.&lt;/p></description></item><item><title>Docs: Step 2.2: Prepare the SD Card</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</guid><description>
 &lt;p>We have created a Raspberry Pi image which is modified specifically for Open Mower use.
 The modifications include:&lt;/p>
@@ -1489,8 +1527,10 @@ The modifications include:&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
 &lt;p>This guide is for the &lt;strong>Lite&lt;/strong> version of the Raspberry Pi Compute module (the version &lt;strong>without&lt;/strong> eMMC storage).&lt;/p>
-&lt;p>If you have a compute module &lt;strong>with eMMC&lt;/strong>, you can safely skip this step for now and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>&lt;/p>
-&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc">Here is the official guide on how to do it&lt;/a>&lt;/p>
+&lt;p>If you have a compute module &lt;strong>with eMMC&lt;/strong>, you can safely skip this step for now and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>
+&lt;/p>
+&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">Here is the official guide on how to do it&lt;/a>
+&lt;/p>
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>In order to follow this guide, you will need:&lt;/p>
@@ -1498,9 +1538,11 @@ The modifications include:&lt;/p>
 &lt;li>&lt;strong>Raspberry Pi CM4 Lite (no on-board memory)&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Micro SD card with at least 16 GB&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>A PC with the Raspberry Pi Imager Software installed:&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://www.raspberrypi.com/software/">https://www.raspberrypi.com/software/&lt;/a>&lt;/li>
+🔗 &lt;a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">https://www.raspberrypi.com/software/&lt;/a>
+&lt;/li>
 &lt;li>&lt;strong>The latest OpenMowerOS Image:&lt;/strong>&lt;br/>
-🔗 &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/releases">https://github.com/ClemensElflein/OpenMowerOS/releases&lt;/a>&lt;br/>
+🔗 &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/releases" target="_blank" rel="noopener">https://github.com/ClemensElflein/OpenMowerOS/releases&lt;/a>
+&lt;br/>
 You can download it in the &lt;code>Assets&lt;/code> section. You don&amp;rsquo;t need to unpack the image.&lt;/li>
 &lt;li>&lt;strong>An SD card reader&lt;/strong>&lt;/li>
 &lt;/ul>
@@ -1581,7 +1623,8 @@ title="Pi Imager Step 7">
 &lt;p>Older versions of the Raspberry Pi Imager software allowed the image to be configured directly in the software. In the current version, this is no longer possible.&lt;/p>
 &lt;p>When using an older version of the Raspberry Pi Imager, you can still configure the image as usual, but &lt;strong>renaming the user is not possible&lt;/strong>. The user will always be named &lt;code>openmower&lt;/code>.&lt;/p>
 &lt;h2 id="done-">Done 🎉&lt;/h2>
-&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>.&lt;/p></description></item><item><title>Docs: Step 3.3: Configure ROS</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
+&lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>
+.&lt;/p></description></item><item><title>Docs: Step 3.3: Configure ROS</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
 &lt;h2 id="step-331-configure-ros-parameters">Step 3.3.1: Configure ROS Parameters&lt;/h2>
 &lt;p>The ROS parameters can be configured using similar to the environment above.
 Simply run the &lt;code>openmower configure ros&lt;/code> command and set the parameters as needed.&lt;/p>
@@ -1590,7 +1633,8 @@ Simply run the &lt;code>openmower configure ros&lt;/code> command and set the pa
 &lt;ul>
 &lt;li>&lt;strong>gps/baud_rate&lt;/strong>: The baud rate of the GPS module. If you are using the Ardusimple GPS with the provided configuration file, leave it at 921600.&lt;/li>
 &lt;li>&lt;strong>gps/protocol&lt;/strong>: The GPS protocol used. If you are using the Ardusimple GPS with the provided configuration file, leave it at &amp;ldquo;UBX&amp;rdquo;.&lt;/li>
-&lt;li>&lt;strong>gps/datum_lat, gps/datum_long&lt;/strong>: Use coordinates close to where you will setup your docking station. &lt;strong>Tip:&lt;/strong> Open &lt;a href="https://maps.google.com/">Google Maps&lt;/a> and right-click on any location to get the coordinates. It should be within a few meters of the dock, no need to be ultra precise here.&lt;/li>
+&lt;li>&lt;strong>gps/datum_lat, gps/datum_long&lt;/strong>: Use coordinates close to where you will setup your docking station. &lt;strong>Tip:&lt;/strong> Open &lt;a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps&lt;/a>
+and right-click on any location to get the coordinates. It should be within a few meters of the dock, no need to be ultra precise here.&lt;/li>
 &lt;li>&lt;strong>ntrip_client/*&lt;/strong>: Set the NTRIP parameters for your GPS base station.&lt;/li>
 &lt;/ul>
 &lt;div class="container pb-3 pt-3">
@@ -1824,7 +1868,8 @@ title="Step 3 - fix the core using screws">
 &lt;p>The resulting board will look similar to this (example shows a YardForce mainboard):
 &lt;img src="images/finished-mainboard.jpg" alt="Finished Mainboard">&lt;/p>
 &lt;h2 id="step-235-done-">Step 2.3.5: Done 🎉&lt;/h2>
-&lt;p>You have now finished the preparation of the mainboard. You can now proceed with the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/">mower-specific guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
+&lt;p>You have now finished the preparation of the mainboard. You can now proceed with the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/">mower-specific guide&lt;/a>
+.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
@@ -1838,7 +1883,8 @@ title="Step 3 - fix the core using screws">
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
-&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
+or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
 &lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
 &lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
@@ -1920,7 +1966,8 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
-&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a> or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
+or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
 &lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
 &lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
@@ -1998,7 +2045,8 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;li>Your mainboard shows version &lt;strong>v0.xx&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;h3 id="the-v1-guide-is-herehttpsopenmowerdearchivev102docs">The v1 guide is &lt;a href="https://openmower.de/archive/v1.0.2/docs">here&lt;/a>.&lt;/h3></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;h3 id="the-v1-guide-is-herehttpsopenmowerdearchivev102docs">The v1 guide is &lt;a href="https://openmower.de/archive/v1.0.2/docs" target="_blank" rel="noopener">here&lt;/a>
+.&lt;/h3></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
@@ -2044,9 +2092,12 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;h1 id="current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/h1>
 &lt;p>For v2 Hardware Platform, please check the corresponding repository for changes and known issues:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>YardForce:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce">https://github.com/xtech/hw-openmower-yardforce&lt;/a>&lt;/li>
-&lt;li>&lt;strong>SABO / John Deere:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo">https://github.com/xtech/hw-openmower-sabo&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal">https://github.com/xtech/hw-openmower-universal&lt;/a>&lt;/li>
+&lt;li>&lt;strong>YardForce:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>SABO / John Deere:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="0130---red">0.13.0 - Red&lt;/h2>
 &lt;p>
@@ -2066,9 +2117,12 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;ul>
 &lt;li>2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.&lt;/li>
 &lt;li>The first batch of 0.13 boards was mistakenly labeled &amp;ldquo;latest&amp;rdquo;. No action needed.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/">Outdated Firmware&lt;/a>. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/">IC2 chip is wrong&lt;/a>. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/">rain sensor cable is female, but needs to be male&lt;/a>. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
 &lt;/ul>
 &lt;h1 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h1>
 &lt;div class="alert alert-info" role="alert">
@@ -2095,9 +2149,12 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;ul>
 &lt;li>2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.&lt;/li>
 &lt;li>The first batch of 0.13 boards was mistakenly labeled &amp;ldquo;latest&amp;rdquo;. No action needed.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/">Outdated Firmware&lt;/a>. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/">IC2 chip is wrong&lt;/a>. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/">rain sensor cable is female, but needs to be male&lt;/a>. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
+. Affect kits shipped before May'23.&lt;/li>
 &lt;/ul>
 &lt;h2 id="0120---black">0.12.0 - Black&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
@@ -2110,9 +2167,12 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;h3 id="known-issues-2">Known issues&lt;/h3>
 &lt;ul>
 &lt;li>SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/">Outdated Firmware&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/">IC2 chip is wrong&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/">rain sensor cable is female, but needs to be male&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="0110---purple">0.11.0 - Purple&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
@@ -2125,7 +2185,8 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;/ul>
 &lt;h3 id="known-issues-3">Known issues&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/">IC2 chip is wrong&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="0100---green">0.10.0 - Green&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
@@ -2137,7 +2198,8 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;/ul>
 &lt;h3 id="known-issues-4">Known issues&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/">IC2 chip is wrong&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="093---also-green">0.9.3 - Also Green&lt;/h2>
 &lt;p>
@@ -2154,9 +2216,12 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
-&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool">https://vesc-project.com/vesc_tool&lt;/a>)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
-&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a> guide.&lt;/li>
-&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">OpenMower repository&lt;/a> for the files suited for your mower. &lt;br/>You will need three files:
+&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
+)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a>
+guide.&lt;/li>
+&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
+for the files suited for your mower. &lt;br/>You will need three files:
 &lt;ul>
 &lt;li>App configuration XML (sets the baud rate, etc. Same for all three xESC controllers)&lt;/li>
 &lt;li>Mower Motor configuration XML (motor parameters for the mower motor)&lt;/li>
@@ -2327,7 +2392,8 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
@@ -2370,7 +2436,8 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
@@ -2413,14 +2480,18 @@ document.getElementById('step-3-2-2-player'),
 &lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://amzn.to/48sGCVP">Raspberry Pi 0W&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://amzn.to/48sGCVP" target="_blank" rel="nofollow noopener">Raspberry Pi 0W&lt;/a>
+&lt;/li>
 &lt;li>µSD card&lt;/li>
 &lt;li>Power supply for RPi&lt;/li>
-&lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">Ardusimple ZED-F9P&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">Ardusimple ZED-F9P&lt;/a>
+&lt;/li>
 &lt;li>A cable or combinatin of cables to connect micro usb male to micro usb male:
 &lt;ul>
-&lt;li>A) Direct like &lt;a href="https://amzn.to/3K7kfMs">this&lt;/a>&lt;/li>
-&lt;li>B) Adapter (&lt;a href="https://amzn.to/4ifLYqG">like this&lt;/a>) + micro usb to usb-a cable&lt;/li>
+&lt;li>A) Direct like &lt;a href="https://amzn.to/3K7kfMs" target="_blank" rel="nofollow noopener">this&lt;/a>
+&lt;/li>
+&lt;li>B) Adapter (&lt;a href="https://amzn.to/4ifLYqG" target="_blank" rel="nofollow noopener">like this&lt;/a>
+) + micro usb to usb-a cable&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>A windows PC&lt;/li>
@@ -2431,7 +2502,8 @@ document.getElementById('step-3-2-2-player'),
 &lt;h3 id="preparing-sd-card">Preparing sd card&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>Download &lt;a href="https://www.raspberrypi.com/software/">RPi Imager&lt;/a> for windows&lt;/p>
+&lt;p>Download &lt;a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">RPi Imager&lt;/a>
+for windows&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start Imager:&lt;/p>
@@ -2486,7 +2558,8 @@ document.getElementById('step-3-2-2-player'),
 &lt;p>Get from your router the IP of your RPi&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Start &lt;a href="https://putty.org">PuTTY&lt;/a> and connect to RPi, where you enter the local IP of your RPi&lt;/p>
+&lt;p>Start &lt;a href="https://putty.org" target="_blank" rel="noopener">PuTTY&lt;/a>
+and connect to RPi, where you enter the local IP of your RPi&lt;/p>
 &lt;p>&lt;img src="" alt=""> &lt;img src="./Putty1.png" width="120">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -2501,7 +2574,8 @@ document.getElementById('step-3-2-2-player'),
 &lt;p>Is your ZED-F9P connected? Do it!&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>We will use &lt;a href="https://github.com/Stefal/rtkbase">RTKBase&lt;/a>&lt;/p>
+&lt;p>We will use &lt;a href="https://github.com/Stefal/rtkbase" target="_blank" rel="noopener">RTKBase&lt;/a>
+&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.&lt;/p>
@@ -2594,7 +2668,8 @@ document.getElementById('step-3-2-2-player'),
 &lt;p>You have to set up the logging of your position as mentioned above by activating &amp;ldquo;file service&amp;rdquo;. You should wait for a day to average all the values to get a high precision position.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check &lt;a href="http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters">RINEX-File&lt;/a> , but you don&amp;rsquo;t need it.&lt;/p>
+&lt;p>After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check &lt;a href="http://walter.bislins.ch/bloge/index.asp?page=Understanding&amp;#43;GPS%2FGNSS&amp;#43;RINEX&amp;#43;Files&amp;#43;and&amp;#43;Relevant&amp;#43;Parameters" target="_blank" rel="noopener">RINEX-File&lt;/a>
+, but you don&amp;rsquo;t need it.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Press on the pencil right to the zip-file:&lt;/p>
@@ -2608,7 +2683,8 @@ document.getElementById('step-3-2-2-player'),
 &lt;p>Download it when finished (may take a while, some minutes or longer)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Go to &lt;a href="https://rgp.ign.fr/SERVICES/calcul_online.php">Calculator&lt;/a>, upload your Rinex file and enter your email address. Don&amp;rsquo;t forget to enter the &amp;ldquo;no robot&amp;rdquo;-verification.&lt;/p>
+&lt;p>Go to &lt;a href="https://rgp.ign.fr/SERVICES/calcul_online.php" target="_blank" rel="noopener">Calculator&lt;/a>
+, upload your Rinex file and enter your email address. Don&amp;rsquo;t forget to enter the &amp;ldquo;no robot&amp;rdquo;-verification.&lt;/p>
 &lt;p>&lt;img src="" alt="">&lt;img src="./ignfr.png" width="120">&lt;/p>
 &lt;/li>
 &lt;li>
@@ -2631,13 +2707,16 @@ document.getElementById('step-3-2-2-player'),
 &lt;/ul>
 &lt;br>
 &lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Troubleshooting GPS-RTK</title><link>https://openmower.de/latest/docs/troubleshooting/gps-rtk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/gps-rtk/</guid><description>
-&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>. If mower is already assembled - open the top cover.&lt;/p>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/">documentation of GPS setup&lt;/a>
+. If mower is already assembled - open the top cover.&lt;/p>
 &lt;p>Get your Windows PC and connect to GPS module directly with microUSB cable (as if you were uploading the configuration).&lt;/p>
 &lt;p>Make sure that &lt;code>Protocol of received messages&lt;/code> in bottom status bar right shows &lt;code>UBX&lt;/code>, not &lt;code>NMEA&lt;/code>. If not - upload configuration again. Then disconnect/connect power of GPS and make sure it stayed &lt;code>UBX&lt;/code>.&lt;/p>
 &lt;p>Connect the antenna to the board and go outside to check if general GPS is working. If the mower is already assembled and an antenna is plugged in - just take it outside with the mower.
 Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
 &lt;p>Deviation map (&lt;code>View -&amp;gt; Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File -&amp;gt; Database clean&lt;/code>.&lt;/p>
-&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145">NTRIP node somewhere nearby&lt;/a> (&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>.&lt;/p>
+&lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145" target="_blank" rel="noopener">NTRIP node somewhere nearby&lt;/a>
+(&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>
+.&lt;/p>
 &lt;p>Go to &lt;code>Receiver -&amp;gt; NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in the ROS configuration file later.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/troubleshooting/gps-rtk/ntrip-client_hu093974d0b20218b173b54badb71bcd6b_31055_500x0_resize_catmullrom_3.png" width="500" height="460">
@@ -2728,7 +2807,8 @@ you want a &lt;code>3&lt;/code> here since that means your rtk state is &amp;ldq
 this value is in meters so the example has a accuracy of ~2,5cm and that is great.&lt;br>
 It can be the case that this value is ok but the rtk state is not yet &amp;ldquo;fixed&amp;rdquo;&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>https://openmower.de/latest/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/map/</guid><description>
-&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/record-areas/">Record a map&lt;/a>.&lt;/p>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/record-areas/">Record a map&lt;/a>
+.&lt;/p>
 &lt;br>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>
@@ -2768,36 +2848,47 @@ Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-sta
 &lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
 &lt;td>The mower to modify.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3NWgIxk">Amazon*&lt;/a>&lt;/td>
-&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+&lt;/td>
+&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>
+&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Open Mower Hardware Kit&lt;/td>
 &lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower">Vermut&amp;rsquo;s shop&lt;/a>&lt;/td>
+&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>
+)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower" target="_blank" rel="nofollow noopener">Vermut&amp;rsquo;s shop&lt;/a>
+&lt;/td>
 &lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
 &lt;td>Positioning system for the robot&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
-&lt;td>Some users use &lt;a href="https://wiki.openmower.de/index.php?title=Unicore_GPS_modules">UM9XX chips&lt;/a> (available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960">WitMotion&lt;/a> and &lt;a href="https://aliexpress.com/item/1005007177629130.html">AliExpress&lt;/a>) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
+&lt;td>Some users use &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps/">UM9XX chips&lt;/a>
+(available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
+and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
+) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi Compute Module 4 with WiFi&lt;/td>
 &lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;br>&lt;br> 16GB+ storage (eMMC or µSD Card)&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock">RPi Locator&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock" target="_blank" rel="noopener">RPi Locator&lt;/a>
+&lt;/td>
 &lt;td>Yes, it has to be the Raspberry Pi CM4, because we need all the UARTs and it goes into the xCore board.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>µSD Card&lt;/td>
 &lt;td>Only for RPi CM4 Lite. The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3EeWBXj">Amazon*&lt;/a> or your local hardware store&lt;/td>
-&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/">RasPiKey&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+or your local hardware store&lt;/td>
+&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/" target="_blank" rel="nofollow noopener">RasPiKey&lt;/a>
+&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
@@ -2817,7 +2908,8 @@ Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-sta
 &lt;td>Left-Angle USB adapter&lt;/td>
 &lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
 &lt;td>0&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3ukNAIj">Amazon*&lt;/a> or your local hardware store&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+or your local hardware store&lt;/td>
 &lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -2842,23 +2934,215 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;td>Raspberry Pi&lt;br>+ SD Card&lt;br>+ Power Supply&lt;/td>
 &lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/4a904YP">e.g. Raspberry Pi 4&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/4a904YP" target="_blank" rel="nofollow noopener">e.g. Raspberry Pi 4&lt;/a>
+&lt;/td>
 &lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
 &lt;td>Positioning system for the base station&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/">ArduSimple&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
 &lt;td>See above&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>&lt;/p></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
+&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
+&lt;/p></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
 &lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
-&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
+&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Unicore GPS Modules</title><link>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</guid><description>
+&lt;p>Several users have chosen alternative GPS RTK modules with chips by &lt;strong>Unicore&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>UM960&lt;/li>
+&lt;li>UM980&lt;/li>
+&lt;li>UM982&lt;/li>
+&lt;/ul>
+&lt;p>These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to the Raspberry Pi). Some have a different antenna socket, which requires an &lt;em>SMA F&lt;/em> to &lt;em>MMCX M90&lt;/em> cable.&lt;/p>
+&lt;p>Compared to the &lt;em>ArduSimple simpleRTK2B&lt;/em>, they are a bit cheaper and support triple-band frequencies.&lt;/p>
+&lt;h2 id="connection-options">Connection options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Connection&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Module USB-C → RPi USB&lt;/td>
+&lt;td>e.g. with angle connector&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Module UART → MainBoard UART&lt;/td>
+&lt;td>requires header connectivity&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="configuration-options">Configuration options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Method&lt;/th>
+&lt;th>When to use&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Vendor software (UPrecise) on Windows&lt;/td>
+&lt;td>Before installing module into mower&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Over UART bus (terminal only)&lt;/td>
+&lt;td>When RPi is installed and operational&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="software">Software&lt;/h2>
+&lt;p>The vendor offers &lt;a href="https://en.unicore.com/products/uprecise.html" target="_blank" rel="noopener">UPrecise&lt;/a>
+to check all status details and configure the receiver. The UI is pleasing and has many features, but also quite some bugs. The download requires creating a free account.&lt;/p>
+&lt;h2 id="configuration-via-uprecise-usb">Configuration via UPrecise (USB)&lt;/h2>
+&lt;h3 id="receiver">Receiver&lt;/h3>
+&lt;p>Connect to the receiver via UPrecise. COM3 is used when connected via USB. Paste the following commands into UPrecise:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONFIG COM3 460800
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA 0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGST 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also connect directly to the receiver&amp;rsquo;s TTY, but make sure to send CR+LF (&lt;code>\r\n&lt;/code>) line endings — otherwise commands won&amp;rsquo;t be recognized.&lt;/p>
+&lt;h3 id="openmower-mower_configtxt">OpenMower (&lt;code>mower_config.txt&lt;/code>)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/dev/ttyUSB0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_BAUDRATE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;460800&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration-via-uart-mainboard">Configuration via UART (mainboard)&lt;/h2>
+&lt;p>Use this method when the RPi is already installed and you want to wire the module directly to the mainboard UART header.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>Modified mower with replaced mainboard&lt;/li>
+&lt;li>RPi with &lt;code>openmower&lt;/code> service running&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1--solder-headers-on-the-um9xx">Step 1 — Solder headers on the UM9XX&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/wm9xx.png" alt="UM9XX module with header pins">&lt;/p>
+&lt;p>You only need the 4 middle pins from the 6 available: &lt;strong>GND&lt;/strong>, &lt;strong>VCC&lt;/strong>, &lt;strong>TX&lt;/strong>, &lt;strong>RX&lt;/strong>.&lt;/p>
+&lt;p>The remaining 2 pins are not needed:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>EN&lt;/strong> — can be used to temporarily shut down the module&lt;/li>
+&lt;li>&lt;strong>PPS&lt;/strong> — pulse-per-second signal, useful only if you need precise timing&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-2--wire-um9xx-to-the-mainboard">Step 2 — Wire UM9XX to the mainboard&lt;/h3>
+&lt;p>An &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x" target="_blank" rel="noopener">adapter board&lt;/a>
+is available as an alternative to manual wiring.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>MainBoard&lt;/th>
+&lt;th>UM9XX&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>TXD&lt;/td>
+&lt;td>TXD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>RXD&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5V_IN&lt;/td>
+&lt;td>VCC&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GND&lt;/td>
+&lt;td>GND&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/um9xx-wiring-pinout.jpg" alt="UM9XX wiring pinout sample">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/mainboard-wiring.jpg" alt="Mainboard wiring sample">&lt;/p>
+&lt;h3 id="step-3--configure-um9xx-over-uart">Step 3 — Configure UM9XX over UART&lt;/h3>
+&lt;p>Install miniterm (part of &lt;code>python3-serial&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install python3-serial
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stop the openmower service so it does not occupy the UART bus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl stop openmower
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Connect to the UART bus at the default baud rate (115200):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
+&lt;/div>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The following commands assume you wired to the bottom lane (COM1). If you used a different lane, replace &lt;code>COM1&lt;/code> with &lt;code>COM2&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;p>Factory-reset the module and note the response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$command,FRESET,response: OK*4D
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>system is rebooting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>..........
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$devicename,COM1*67
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the baud rate to 460800:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CONFIG COM1 460800
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>, then reconnect at the new baud rate:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> If commands get no response, the baud rate or COM port is wrong. Reconnect at 115200, run &lt;code>FRESET&lt;/code>, and try again.&lt;/p>
+&lt;/blockquote>
+&lt;p>Configure NMEA output. Each &lt;code>GP*&lt;/code> command produces extra output — make sure &lt;code>SAVECONFIG&lt;/code> completes successfully at the end:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV COM1 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA COM1 0.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output after &lt;code>SAVECONFIG&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$GNGGA,192705.50,,,,,0,00,9999.0,,,,,,*45
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$command,SAVECONFIG,response: OK*55
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNGGA,192706.00,,,,,0,00,9999.0,,,,,,*43
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GPGSA,,1,,,,,,,,,,,,,,,,*73
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNRMC,192706.00,V,,,,,,,030625,0.0,E,N,V*7B
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>.&lt;/p>
+&lt;h3 id="step-4--configure-openmower">Step 4 — Configure OpenMower&lt;/h3>
+&lt;p>Run &lt;code>openmower configure ros&lt;/code> and set the GPS protocol to &lt;code>NMEA&lt;/code> and the baud rate to &lt;code>460800&lt;/code>.&lt;/p>
+&lt;p>With your RTK base configured, take the mower outside and verify you get a GPS fix.&lt;/p>
+&lt;h2 id="troubleshooting--receiver-resets">Troubleshooting — receiver resets&lt;/h2>
+&lt;p>If the receiver cannot get a fix, a reboot may help. UPrecise provides three reset buttons. Unlike &lt;code>FRESET&lt;/code>, these &lt;strong>do not wipe the configuration&lt;/strong>:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Button&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Effect&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hot Start&lt;/td>
+&lt;td>&lt;code>RESET&lt;/code>&lt;/td>
+&lt;td>Quick restart&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Warm Start&lt;/td>
+&lt;td>&lt;code>RESET EPHEM&lt;/code>&lt;/td>
+&lt;td>Clears ephemeris data&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cold Start&lt;/td>
+&lt;td>&lt;code>RESET EPHEM ALMANAC IONUTC POSITION&lt;/code>&lt;/td>
+&lt;td>Full data reset&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>See section 8.3 (&amp;ldquo;Reset&amp;rdquo;) in the &lt;a href="https://core-electronics.com.au/attachments/localcontent/Unicore_Reference_Commands_Manual_For_N4_High_Precision_Products_V2_EN_R1_1_189543505cb.pdf" target="_blank" rel="nofollow noopener">Unicore command reference&lt;/a>
+for details.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
 &lt;p>There are YardForce spikes on Amazon and other sites like Etsy. This photo guide is about RoboClaws.&lt;/p>
 &lt;p>In short:&lt;/p>

@@ -20,7 +20,8 @@ OpenMowerOS will automatically create a hotspot with the name `OpenMower-&lt;Som
 &lt;div class="row">
 &lt;div class="col">
 Some devices will detect that the hotspot does not provide internet connectivity and will send you to a configuration page.
-&lt;p>If your device does not do this, open the browser on your phone and navigate to: &lt;a href="http://10.41.0.1/">http://10.41.0.1/&lt;/a>.&lt;/p>
+&lt;p>If your device does not do this, open the browser on your phone and navigate to: &lt;a href="http://10.41.0.1/" target="_blank" rel="noopener">http://10.41.0.1/&lt;/a>
+.&lt;/p>
 &lt;/div>
 &lt;div class="col-3">
 &lt;p>&lt;img src="images/connect_wifi_screen_1.png" alt="connect_wifi_screen_1.png">&lt;/p>
@@ -35,7 +36,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;ul>
 &lt;li>Check the connection by using any other PC in your network and &lt;code>ping openmower.local&lt;/code>. This should be working. Alternatively, you can check if the device is connected by logging into your router.&lt;/li>
 &lt;li>Check, if you can reach the mower via SSH (&lt;code>ssh openmower@openmower.local&lt;/code>, password &lt;code>openmower&lt;/code>).&lt;/li>
-&lt;li>Check, if you can reach the mower&amp;rsquo;s terminal in a browser. Navigate to &lt;a href="http://openmower.local:7681/">http://openmower.local:7681/&lt;/a>&lt;/li>
+&lt;li>Check, if you can reach the mower&amp;rsquo;s terminal in a browser. Navigate to &lt;a href="http://openmower.local:7681/" target="_blank" rel="noopener">http://openmower.local:7681/&lt;/a>
+&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Step 3.2: Basic Configuration (Environment, Firmware Installation, xESC configuration)</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/basic-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/basic-configuration/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
@@ -89,7 +91,8 @@ You can either use SSH or the browser-based terminal.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: openmower
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname: openmower
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: openmower
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The browser based terminal does not need any credentials and can be reached at: &lt;a href="http://openmower:7681">http://openmower:7681&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The browser based terminal does not need any credentials and can be reached at: &lt;a href="http://openmower:7681" target="_blank" rel="noopener">http://openmower:7681&lt;/a>
+&lt;/p>
 &lt;h2 id="step-320-basic-checks">Step 3.2.0: Basic Checks&lt;/h2>
 &lt;h3 id="check-if-filesystem-expanded-correctly">Check, if filesystem expanded correctly&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
@@ -127,10 +130,12 @@ document.getElementById('step-3-2-0-player'),
 &lt;/script>
 &lt;h3 id="rename-your-host-optional">Rename your host (optional)&lt;/h3>
 &lt;p>If you are running multiple robots, it&amp;rsquo;s a good idea to rename your host to distinguish between them.&lt;/p>
-&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/change-hostname/">Change Hostname&lt;/a>&lt;/p>
+&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/change-hostname/">Change Hostname&lt;/a>
+&lt;/p>
 &lt;h3 id="enable-external-wifi-antenna-optional">Enable External WiFi Antenna (optional)&lt;/h3>
 &lt;p>If you have added an external WiFi antenna, you need to enable it.
-You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/external-wifi-antenna/">Enable External Antenna&lt;/a>&lt;/p>
+You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/external-wifi-antenna/">Enable External Antenna&lt;/a>
+&lt;/p>
 &lt;h2 id="step-321-setup-environment-variables">Step 3.2.1: Setup Environment Variables&lt;/h2>
 &lt;p>Now we can start the configuration by setting the environment variables.&lt;/p>
 &lt;ul>
@@ -188,9 +193,12 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
-&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool">https://vesc-project.com/vesc_tool&lt;/a>)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
-&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a> guide.&lt;/li>
-&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC">OpenMower repository&lt;/a> for the files suited for your mower. &lt;br/>You will need three files:
+&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
+)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a>
+guide.&lt;/li>
+&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
+for the files suited for your mower. &lt;br/>You will need three files:
 &lt;ul>
 &lt;li>App configuration XML (sets the baud rate, etc. Same for all three xESC controllers)&lt;/li>
 &lt;li>Mower Motor configuration XML (motor parameters for the mower motor)&lt;/li>
@@ -361,7 +369,8 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;p>Done 😆&lt;br>
@@ -404,7 +413,8 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC">SABO ESCs configs&lt;/a>) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
@@ -418,7 +428,8 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;p>Choose your adventure. Your build, your rules.&lt;/p>
 &lt;/div>
 &lt;/div>
-&lt;h2 id="continue-with-step-34-configure-ros-parametershahahugoshortcodes6hbhb">Continue with Step 3.4: &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/setup-ros/">Configure ROS Parameters&lt;/a>&lt;/h2></description></item><item><title>Docs: Step 3.3: Configure ROS</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
+&lt;h2 id="continue-with-step-34-configure-ros-parametershahahugoshortcodes6hbhb">Continue with Step 3.4: &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/3-software-setup/setup-ros/">Configure ROS Parameters&lt;/a>
+&lt;/h2></description></item><item><title>Docs: Step 3.3: Configure ROS</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
 &lt;h2 id="step-331-configure-ros-parameters">Step 3.3.1: Configure ROS Parameters&lt;/h2>
 &lt;p>The ROS parameters can be configured using similar to the environment above.
 Simply run the &lt;code>openmower configure ros&lt;/code> command and set the parameters as needed.&lt;/p>
@@ -427,7 +438,8 @@ Simply run the &lt;code>openmower configure ros&lt;/code> command and set the pa
 &lt;ul>
 &lt;li>&lt;strong>gps/baud_rate&lt;/strong>: The baud rate of the GPS module. If you are using the Ardusimple GPS with the provided configuration file, leave it at 921600.&lt;/li>
 &lt;li>&lt;strong>gps/protocol&lt;/strong>: The GPS protocol used. If you are using the Ardusimple GPS with the provided configuration file, leave it at &amp;ldquo;UBX&amp;rdquo;.&lt;/li>
-&lt;li>&lt;strong>gps/datum_lat, gps/datum_long&lt;/strong>: Use coordinates close to where you will setup your docking station. &lt;strong>Tip:&lt;/strong> Open &lt;a href="https://maps.google.com/">Google Maps&lt;/a> and right-click on any location to get the coordinates. It should be within a few meters of the dock, no need to be ultra precise here.&lt;/li>
+&lt;li>&lt;strong>gps/datum_lat, gps/datum_long&lt;/strong>: Use coordinates close to where you will setup your docking station. &lt;strong>Tip:&lt;/strong> Open &lt;a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps&lt;/a>
+and right-click on any location to get the coordinates. It should be within a few meters of the dock, no need to be ultra precise here.&lt;/li>
 &lt;li>&lt;strong>ntrip_client/*&lt;/strong>: Set the NTRIP parameters for your GPS base station.&lt;/li>
 &lt;/ul>
 &lt;div class="container pb-3 pt-3">
