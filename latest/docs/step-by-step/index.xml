@@ -125,7 +125,8 @@ Your browser does not support the video tag.
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>A smartphone or PC&lt;/li>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+)&lt;/li>
 &lt;li>Modified robot connected to your network&lt;/li>
 &lt;li>OpenMower software running on the robot&lt;/li>
 &lt;li>Docking station powered up&lt;/li>
@@ -143,7 +144,8 @@ or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
 &lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.&lt;/p>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+(hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Don&amp;rsquo;t pick up the mower or the orientation will be lost again!

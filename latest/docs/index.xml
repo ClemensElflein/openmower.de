@@ -1873,7 +1873,8 @@ title="Step 3 - fix the core using screws">
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>A smartphone or PC&lt;/li>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+)&lt;/li>
 &lt;li>Modified robot connected to your network&lt;/li>
 &lt;li>OpenMower software running on the robot&lt;/li>
 &lt;li>Docking station powered up&lt;/li>
@@ -1891,7 +1892,8 @@ or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
 &lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.&lt;/p>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+(hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
@@ -1956,7 +1958,8 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>A smartphone or PC&lt;/li>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+)&lt;/li>
 &lt;li>Modified robot connected to your network&lt;/li>
 &lt;li>OpenMower software running on the robot&lt;/li>
 &lt;li>Docking station powered up&lt;/li>
@@ -1974,7 +1977,8 @@ or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
 &lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.&lt;/p>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+(hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
@@ -3142,7 +3146,93 @@ Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
 &lt;/tbody>
 &lt;/table>
 &lt;p>See section 8.3 (&amp;ldquo;Reset&amp;rdquo;) in the &lt;a href="https://core-electronics.com.au/attachments/localcontent/Unicore_Reference_Commands_Manual_For_N4_High_Precision_Products_V2_EN_R1_1_189543505cb.pdf" target="_blank" rel="nofollow noopener">Unicore command reference&lt;/a>
-for details.&lt;/p></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
+for details.&lt;/p></description></item><item><title>Docs: Using a Gamepad</title><link>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</guid><description>
+&lt;p>Using a USB gamepad is the most intuitive way to control your OpenMower during the area recording process. Instead of relying on the on-screen joystick in the web app, a physical controller gives you precise control over the mower&amp;rsquo;s movement — making it much easier to drive clean outlines around your mowing areas.&lt;/p>
+&lt;p>Any Xbox-compatible USB gamepad works out of the box. Simply plug it into one of the USB ports on your Raspberry Pi and OpenMower will detect it automatically. No additional configuration is needed.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Recording Mode Required&lt;/h4>
+&lt;p>Gamepad control only works while OpenMower is in &lt;strong>recording mode&lt;/strong>. Enter recording mode using the OpenMower app before using any of the buttons below.&lt;/p>
+&lt;p>If no map has been recorded yet, OpenMower will automatically start in recording mode — no action needed.&lt;/p>
+&lt;/div>
+&lt;h2 id="video-tutorial">Video Tutorial&lt;/h2>
+&lt;p>The video below walks through the entire area recording process, including how to use the gamepad to drive the mower and save mowing areas.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/j7qkwuoHJpI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="button-reference">Button Reference&lt;/h2>
+&lt;figure>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/images/gamepad_controls.png"
+alt="OpenMower Gamepad Controls (image licensed from shutterstock.com)"/> &lt;figcaption>
+&lt;p>OpenMower Gamepad Controls (image licensed from shutterstock.com)&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>The table below covers every button used during normal operation and area recording. Most of your time will be spent holding &lt;strong>A&lt;/strong> to drive and using &lt;strong>B&lt;/strong> to start and stop recordings.&lt;/p>
+&lt;h3 id="driving">Driving&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Input&lt;/th>
+&lt;th>Action&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hold &lt;strong>A&lt;/strong> + left analog stick&lt;/td>
+&lt;td>Drive the mower&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>RB&lt;/strong>&lt;/td>
+&lt;td>Turbo mode (faster driving)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="recording-areas">Recording Areas&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Input&lt;/th>
+&lt;th>Action&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>B&lt;/strong>&lt;/td>
+&lt;td>Start / stop recording the current polygon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Y&lt;/strong> + &lt;strong>D-PAD UP&lt;/strong>&lt;/td>
+&lt;td>Finish and save current area as a &lt;strong>navigation area&lt;/strong> — the mower can drive here but will not mow&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Y&lt;/strong> + &lt;strong>D-PAD DOWN&lt;/strong>&lt;/td>
+&lt;td>Finish and save current area as a &lt;strong>mowing area&lt;/strong> — at least one is required&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="docking-station">Docking Station&lt;/h3>
+&lt;p>Recording the docking station requires two separate position fixes that define the approach direction. The line between these two points tells the mower which way to face when returning to dock.&lt;/p>
+&lt;ol>
+&lt;li>Drive the mower to a point roughly &lt;strong>1.5 m in front of the docking station&lt;/strong>, facing toward it. Press &lt;strong>X&lt;/strong> to record the first point.&lt;/li>
+&lt;li>Drive the mower forward until the &lt;strong>front wheels are just at the edge of the docking station&lt;/strong> — do not fully drive in. Press &lt;strong>X&lt;/strong> again to record the second point.&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Input&lt;/th>
+&lt;th>Action&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>X&lt;/strong> (first press)&lt;/td>
+&lt;td>Record approach point ~1.5 m in front of the dock&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>X&lt;/strong> (second press)&lt;/td>
+&lt;td>Record dock entry point at the edge of the station&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Mounting RoboClaws wheel spikes</title><link>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/contributions/mount-wheel-spikes/</guid><description>
 &lt;p>Author: prigor@discord, Vermut@discord&lt;/p>
 &lt;p>There are YardForce spikes on Amazon and other sites like Etsy. This photo guide is about RoboClaws.&lt;/p>
 &lt;p>In short:&lt;/p>
