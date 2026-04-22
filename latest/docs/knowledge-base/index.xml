@@ -183,7 +183,40 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/ul>
 &lt;h3 id="finish-recording">Finish Recording&lt;/h3>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
-&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</guid><description>
+&lt;h2 id="viewing-and-configuring-ros-parameters">Viewing and Configuring ROS Parameters&lt;/h2>
+&lt;p>OpenMower is built on ROS, which means much of its behavior is controlled through parameters. Understanding how to inspect and modify these parameters gives you fine-grained control over your mower’s operation.&lt;/p>
+&lt;h3 id="listing-all-parameters">Listing All Parameters&lt;/h3>
+&lt;p>To see all currently active ROS parameters, open the OpenMower shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rosparam list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will display a full list of parameters currently loaded in the system. It’s a useful first step when debugging or trying to understand how your mower is configured.&lt;/p>
+&lt;h3 id="overwriting-parameters">Overwriting Parameters&lt;/h3>
+&lt;p>All parameters can be customized using the &lt;code>mower_params.yaml&lt;/code> configuration file. This file acts as the central place to override default values.&lt;/p>
+&lt;p>The easiest way to edit it is with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
+&lt;p>In this example we will be overwriting the speed parameter.&lt;/p>
+&lt;h4 id="1-fetch-the-parameters-current-value">1. Fetch the Parameter&amp;rsquo;s current value&lt;/h4>
+&lt;p>After discovering a parameter you want to edit using &lt;code>rosparam list&lt;/code>, you can get the value using &lt;code>rosparam get &amp;lt;parameter&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, our speed is currently at 0.4 m/sec for mowing&lt;/p>
+&lt;h4 id="2-change-the-value-for-your-config">2. Change the value for your config&lt;/h4>
+&lt;p>On the host system call &lt;code>openmower configure ros&lt;/code> and translate the parameter name to YAML.
+This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space).&lt;/p>
+&lt;p>For our example it looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">move_base_flex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">FTCPlanner&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">speed_fast&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-save-the-file-and-check-the-updated-value">3. Save the file and check the updated value&lt;/h4>
+&lt;p>After saving the file, ROS is automatically restarted and you can check, if the value is now updated:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
+&lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
+&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
