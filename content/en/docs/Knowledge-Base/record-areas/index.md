@@ -8,10 +8,9 @@ description: >
 
 In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.
 
-
 ## Prerequisites
 
-- A smartphone or PC
+- A smartphone or PC (or a [USB gamepad]({{< relref "/docs/Knowledge-Base/using-a-gamepad" >}}))
 - Modified robot connected to your network
 - OpenMower software running on the robot
 - Docking station powered up
@@ -40,7 +39,7 @@ You can see the current GPS quality in the Open Mower app as shown in the graphi
 In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot's orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.
 
-You can either use the on-screen joystick in the Open Mower App or a gamepad connected via USB (hold the A button) to drive the robot.
+You can either use the on-screen joystick in the Open Mower App or a [gamepad connected via USB]({{< relref "/docs/Knowledge-Base/using-a-gamepad" >}}) (hold the A button) to drive the robot.
 
 {{% alert title="Warning" color="warning" %}}
 Don't pick up the mower or the orientation will be lost again!
