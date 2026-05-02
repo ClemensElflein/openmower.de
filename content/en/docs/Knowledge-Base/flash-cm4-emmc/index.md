@@ -75,7 +75,7 @@ Use **Raspberry Pi Imager** to write your OS image to the eMMC device. Select th
 Alternatively, use `dd` on Linux/macOS:
 
 ```bash
-sudo dd if=your-image.img of=/dev/sdX bs=4MiB
+sudo dd if=your-image.img of=/dev/sdX bs=4MiB status=progress oflag=sync
 ```
 
 Replace `/dev/sdX` with the actual device path of the eMMC. Double-check this before running.
