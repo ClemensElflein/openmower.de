@@ -1529,7 +1529,7 @@ The modifications include:&lt;/p>
 &lt;p>This guide is for the &lt;strong>Lite&lt;/strong> version of the Raspberry Pi Compute module (the version &lt;strong>without&lt;/strong> eMMC storage).&lt;/p>
 &lt;p>If you have a compute module &lt;strong>with eMMC&lt;/strong>, you can safely skip this step for now and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>
 &lt;/p>
-&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">Here is the official guide on how to do it&lt;/a>
+&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/flash-cm4-emmc/">Here is the guide on how to do it&lt;/a>
 &lt;/p>
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
