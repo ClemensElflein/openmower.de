@@ -121,6 +121,11 @@ Your browser does not support the video tag.
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>Before starting the software setup, make sure your mower does not run out of power.&lt;/p>
 &lt;p>This can usually be done by placing it into the docking station while doing the setup.&lt;/p>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Using a CM4 with eMMC?&lt;/h4>
+If your Compute Module 4 has onboard eMMC storage (not the Lite variant), you need to flash OpenMower OS to it before proceeding. Now is the time to do that — follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/flash-cm4-emmc/">Flash CM4 eMMC&lt;/a>
+guide, then come back here.
 &lt;/div></description></item><item><title>Docs: Step 4: Record Areas &amp; Use it</title><link>https://openmower.de/latest/docs/step-by-step/4-record-areas-and-use-it/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/4-record-areas-and-use-it/</guid><description>
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>

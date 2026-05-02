@@ -2225,7 +2225,88 @@ On OSv2, &lt;code>/home/openmower/params&lt;/code> is mapped to &lt;code>/data/p
 &lt;h2 id="step-3-restart-openmower">Step 3: Restart OpenMower&lt;/h2>
 &lt;p>After saving both files, restart the service to apply the changes:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Flashing the CM4 eMMC</title><link>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">CM4 with eMMC only&lt;/h4>
+&lt;p>This guide applies &lt;strong>only to CM4 variants with onboard eMMC storage&lt;/strong>. The CM4 Lite variant has no eMMC — it uses a microSD card instead and does not require this process.&lt;/p>
+&lt;p>Check your CM4 model number: variants with eMMC have the storage size in the name (e.g. CM4008032 = 32 GB eMMC). Lite variants are explicitly labelled &amp;ldquo;Lite&amp;rdquo; (e.g. CM4008000).&lt;/p>
+&lt;/div>
+&lt;p>The CM4 with eMMC has onboard flash storage instead of a microSD slot. To flash a new image, you need to put it into USB boot mode so it appears as a mass storage device on your computer.&lt;/p>
+&lt;p>This guide covers the OpenMower-specific steps. For full reference, see the &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">official Raspberry Pi documentation&lt;/a>
+.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>A host computer (Linux, Windows, or macOS)&lt;/li>
+&lt;li>A micro USB cable (connected to the USB port on the xCore board)&lt;/li>
+&lt;li>The OS image you want to flash (e.g. OpenMower OS)&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-enter-usb-boot-mode">Step 1: Enter USB boot mode&lt;/h2>
+&lt;p>The xCore board has an &lt;strong>Rpi Boot&lt;/strong> button (left of the two buttons, label printed below the CM4 slot).&lt;/p>
+&lt;p>&lt;img src="images/rpi-boot-button.png" alt="xCore board showing the Rpi Boot button location">&lt;/p>
+&lt;ol>
+&lt;li>Hold the &lt;strong>Rpi Boot&lt;/strong> button.&lt;/li>
+&lt;li>While holding it, connect power to the xCore board (or plug in the micro USB cable to your host computer).&lt;/li>
+&lt;li>Release the button once powered.&lt;/li>
+&lt;/ol>
+&lt;p>The CM4 is now in USB boot mode.&lt;/p>
+&lt;h2 id="step-2-install-rpiboot-on-your-host-computer">Step 2: Install rpiboot on your host computer&lt;/h2>
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
+Linux
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+aria-controls="tabs-01-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+aria-controls="tabs-01-02" aria-selected="false">
+macOS
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-1-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install rpiboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rpiboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
+&lt;ol>
+&lt;li>Download and run the installer from the &lt;a href="https://github.com/raspberrypi/usbboot/releases" target="_blank" rel="noopener">usbboot releases page&lt;/a>
+.&lt;/li>
+&lt;li>Reboot your computer after installation.&lt;/li>
+&lt;li>With the CM4 in USB boot mode, open &lt;strong>Start → rpiboot - Mass Storage Gadget&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
+&lt;p>Build rpiboot from source, then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rpiboot -d mass-storage-gadget64
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://github.com/raspberrypi/usbboot" target="_blank" rel="noopener">usbboot repository&lt;/a>
+for build instructions.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>Within a few seconds the CM4&amp;rsquo;s eMMC will appear as a USB mass storage device on your computer.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If the device is not recognised, avoid USB hubs — connect the micro USB cable directly to your computer.
+&lt;/div>
+&lt;h2 id="step-3-flash-the-image">Step 3: Flash the image&lt;/h2>
+&lt;p>Use &lt;strong>Raspberry Pi Imager&lt;/strong> to write your OS image to the eMMC device. Select the eMMC as the target storage — it will appear like any other USB drive.&lt;/p>
+&lt;p>Alternatively, use &lt;code>dd&lt;/code> on Linux/macOS:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>/dev/sdX&lt;/code> with the actual device path of the eMMC. Double-check this before running.&lt;/p>
+&lt;h2 id="step-4-boot-from-emmc">Step 4: Boot from eMMC&lt;/h2>
+&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
