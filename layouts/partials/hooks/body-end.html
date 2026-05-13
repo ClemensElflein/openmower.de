@@ -1,0 +1,117 @@
+{{- if hugo.IsProduction }}
+{{- with .Site.Params.googleAnalyticsID }}
+<script src="{{ "js/cookieconsent.umd.js" | relURL }}"></script>
+<script>
+(function(gaId) {
+    var gaLoaded = false;
+
+    function loadGA() {
+        if (gaLoaded) return;
+        gaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', gaId);
+    }
+
+    CookieConsent.run({
+        categories: {
+            necessary: {
+                enabled: true,
+                readOnly: true
+            },
+            analytics: {
+                autoClear: {
+                    cookies: [
+                        {name: /^_ga/},
+                        {name: '_gid'}
+                    ],
+                    reloadPage: true
+                }
+            }
+        },
+        onConsent: function() {
+            if (CookieConsent.acceptedCategory('analytics')) {
+                loadGA();
+            }
+        },
+        onChange: function(opts) {
+            if (opts.changedCategories.includes('analytics')) {
+                if (CookieConsent.acceptedCategory('analytics')) {
+                    loadGA();
+                }
+            }
+        },
+        guiOptions: {
+            consentModal: {
+                layout: 'bar',
+                position: 'bottom center',
+                equalWeightButtons: false
+            },
+            preferencesModal: {
+                layout: 'box'
+            }
+        },
+        language: {
+            default: 'en',
+            translations: {
+                en: {
+                    consentModal: {
+                        title: '👋 Help us improve OpenMower!',
+                        description: 'We use analytics to understand which parts of the docs are most helpful — so we can make them even better. Accepting helps the project grow. You can change your mind any time.',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        showPreferencesBtn: 'Manage preferences',
+                        footer: '<a href="{{ $.Site.Params.privacy_policy }}" target="_blank" rel="noopener noreferrer">Privacy Policy</a>'
+                    },
+                    preferencesModal: {
+                        title: 'Cookie Preferences',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        savePreferencesBtn: 'Save preferences',
+                        closeIconLabel: 'Close',
+                        sections: [
+                            {
+                                title: 'Strictly Necessary',
+                                description: 'Required for the website to function. Cannot be disabled.',
+                                linkedCategory: 'necessary'
+                            },
+                            {
+                                title: 'Analytics — help us improve the docs',
+                                description: 'Google Analytics tells us which pages people visit and where they get stuck. This helps us prioritize doc improvements and understand what the community needs most.',
+                                linkedCategory: 'analytics',
+                                cookieTable: {
+                                    headers: {
+                                        name: 'Cookie',
+                                        domain: 'Domain',
+                                        description: 'Description',
+                                        expiration: 'Expiration'
+                                    },
+                                    body: [
+                                        {
+                                            name: '_ga',
+                                            domain: location.hostname,
+                                            description: 'Distinguishes unique users',
+                                            expiration: '2 years'
+                                        },
+                                        {
+                                            name: '_ga_*',
+                                            domain: location.hostname,
+                                            description: 'Session persistence',
+                                            expiration: '2 years'
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    });
+})('{{ . }}');
+</script>
+{{- end }}
+{{- end }}

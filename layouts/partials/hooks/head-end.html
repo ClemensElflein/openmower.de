@@ -48,3 +48,14 @@
     });
     });
 </script>
+{{- if hugo.IsProduction }}
+{{- with .Site.Params.googleAnalyticsID }}
+<link rel="stylesheet" href="{{ "css/cookieconsent.css" | relURL }}">
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+</script>
+{{- end }}
+<script defer src="https://a.x-tech.online/script.js" data-website-id="6371d47b-db7b-4276-b5bf-3a09d4148cfc"></script>
+<script defer src="https://a.x-tech.online/recorder.js" data-website-id="6371d47b-db7b-4276-b5bf-3a09d4148cfc" data-sample-rate="0.15" data-mask-level="moderate" data-max-duration="300000"></script>
+{{- end }}

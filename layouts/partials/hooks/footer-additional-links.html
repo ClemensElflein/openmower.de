@@ -1,4 +1,14 @@
-<a href="https://itrk.legal/zNs.8U.u9o.html?imp=1" rel="nofollow">Imprint</a>
+<div class="mt-1">
+  <small>
+    <a href="{{ .Site.Params.privacy_policy }}" target="_blank" rel="noopener">Privacy Policy</a>
+    <span class="mx-1">&middot;</span>
+    <a href="https://itrk.legal/zNs.8U.u9o.html?imp=1" rel="nofollow">Imprint</a>
+    {{- if hugo.IsProduction }}{{ with .Site.Params.googleAnalyticsID }}
+    <span class="mx-1">&middot;</span>
+    <a href="#" onclick="CookieConsent.showPreferences(); return false;">Cookie Preferences</a>
+    {{- end }}{{- end }}
+  </small>
+</div>
 <div class="mt-3 text-center" style="opacity: 0.7;">
   <small class="text-white">OpenMower is a project by <a href="https://x-tech.online" rel="author" target="_blank" class="text-white" style="text-decoration: underline;">x-tech UG</a></small>
   <div class="mt-2">
