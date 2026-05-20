@@ -184,7 +184,22 @@ SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;p>Continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Step 2.2: Prepare the SD Card&lt;/a>
-&lt;/p></description></item><item><title>Docs: Step 1: Check Compatibility</title><link>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</guid><description>
+&lt;/p></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/architecture/</guid><description>
+&lt;p>OpenMower is split into distinct layers — each with a clear responsibility — connected by well-defined interfaces. This separation means you can work on navigation logic without touching firmware, or add a new robot platform without changing ROS.&lt;/p>
+&lt;p>&lt;img src="images/architecture.svg" alt="System Architecture diagram showing the OpenMower component layers">&lt;/p>
+&lt;h2 id="layers">Layers&lt;/h2>
+&lt;h3 id="app--user-interface">App — User Interface&lt;/h3>
+&lt;p>The OpenMower App runs on a phone or browser and lets the user control the mower, record areas, and monitor status. It communicates with ROS over &lt;strong>MQTT&lt;/strong> on the local network via a dedicated ROS node that bridges MQTT messages to ROS topics.&lt;/p>
+&lt;h3 id="ros--navigation--planning-raspberry-pi-cm4">ROS — Navigation &amp;amp; Planning (Raspberry Pi CM4)&lt;/h3>
+&lt;p>The Raspberry Pi Compute Module 4 runs the full ROS navigation stack. This is where high-level decisions are made: where to drive, how to cover an area, when to dock. ROS receives sensor data (position, orientation, odometry) from the firmware and sends motion commands back.&lt;/p>
+&lt;p>ROS is deliberately decoupled from hardware — it never talks to motors or sensors directly.&lt;/p>
+&lt;h3 id="xbot_framework--the-bridge">xbot_framework — The Bridge&lt;/h3>
+&lt;p>ROS and firmware communicate over &lt;strong>Ethernet&lt;/strong> using &lt;a href="https://github.com/xtech/xbot_framework" target="_blank" rel="noopener">xbot_framework&lt;/a>
+— a message-passing middleware that decouples the two layers. This means the navigation stack does not need to know anything about the specific hardware platform.&lt;/p>
+&lt;h3 id="firmware--motor-control--sensors-xcore--stm32h723">Firmware — Motor Control &amp;amp; Sensors (xCore · STM32H723)&lt;/h3>
+&lt;p>The firmware runs on the xCore board and owns all low-level hardware: driving the motors via xESC controllers, reading the GPS and IMU, managing the battery and charger, and enforcing safety states (the emergency service can cut power independently of ROS). The same firmware codebase supports multiple robot platforms through compile-time configuration.&lt;/p>
+&lt;h3 id="rtk-base-station--centimetre-accurate-positioning">RTK Base Station — Centimetre-Accurate Positioning&lt;/h3>
+&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Step 1: Check Compatibility</title><link>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/1-check-compatibility/</guid><description>
 &lt;p>Before purchasing anything, verify your mower is compatible with the OpenMower project.
 Use this flowchart to check compatibility:&lt;/p>
 &lt;div class="mermaid">%%{init: {
@@ -382,7 +397,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;li>&lt;strong>Community:&lt;/strong> 2k+ members on Discord ready to help with reviews and troubleshooting&lt;/li>
 &lt;/ul>
 &lt;p>New to the project? Start with the &lt;a href="https://openmower.de/latest/latest/docs/overview/">Overview page&lt;/a>
-.&lt;/p>
+. Before building, read the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/architecture/">System Architecture&lt;/a>
+to understand how the app, ROS, firmware, and hardware fit together.&lt;/p>
 &lt;h2 id="important-warnings">Important Warnings&lt;/h2>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Read Before Starting&lt;/h4>

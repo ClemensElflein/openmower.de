@@ -61,7 +61,22 @@ Your browser does not support the video tag.
 &lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Fuxtec and Redback mowers&lt;/li>
 &lt;/ul>
 &lt;h3 id="custom-hardware">Custom Hardware&lt;/h3>
-&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/change-hostname/</guid><description>
+&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/architecture/</guid><description>
+&lt;p>OpenMower is split into distinct layers — each with a clear responsibility — connected by well-defined interfaces. This separation means you can work on navigation logic without touching firmware, or add a new robot platform without changing ROS.&lt;/p>
+&lt;p>&lt;img src="images/architecture.svg" alt="System Architecture diagram showing the OpenMower component layers">&lt;/p>
+&lt;h2 id="layers">Layers&lt;/h2>
+&lt;h3 id="app--user-interface">App — User Interface&lt;/h3>
+&lt;p>The OpenMower App runs on a phone or browser and lets the user control the mower, record areas, and monitor status. It communicates with ROS over &lt;strong>MQTT&lt;/strong> on the local network via a dedicated ROS node that bridges MQTT messages to ROS topics.&lt;/p>
+&lt;h3 id="ros--navigation--planning-raspberry-pi-cm4">ROS — Navigation &amp;amp; Planning (Raspberry Pi CM4)&lt;/h3>
+&lt;p>The Raspberry Pi Compute Module 4 runs the full ROS navigation stack. This is where high-level decisions are made: where to drive, how to cover an area, when to dock. ROS receives sensor data (position, orientation, odometry) from the firmware and sends motion commands back.&lt;/p>
+&lt;p>ROS is deliberately decoupled from hardware — it never talks to motors or sensors directly.&lt;/p>
+&lt;h3 id="xbot_framework--the-bridge">xbot_framework — The Bridge&lt;/h3>
+&lt;p>ROS and firmware communicate over &lt;strong>Ethernet&lt;/strong> using &lt;a href="https://github.com/xtech/xbot_framework" target="_blank" rel="noopener">xbot_framework&lt;/a>
+— a message-passing middleware that decouples the two layers. This means the navigation stack does not need to know anything about the specific hardware platform.&lt;/p>
+&lt;h3 id="firmware--motor-control--sensors-xcore--stm32h723">Firmware — Motor Control &amp;amp; Sensors (xCore · STM32H723)&lt;/h3>
+&lt;p>The firmware runs on the xCore board and owns all low-level hardware: driving the motors via xESC controllers, reading the GPS and IMU, managing the battery and charger, and enforcing safety states (the emergency service can cut power independently of ROS). The same firmware codebase supports multiple robot platforms through compile-time configuration.&lt;/p>
+&lt;h3 id="rtk-base-station--centimetre-accurate-positioning">RTK Base Station — Centimetre-Accurate Positioning&lt;/h3>
+&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/change-hostname/</guid><description>
 &lt;p>Changing the hostname is simple, thanks to the &lt;code>raspi-config&lt;/code> tool:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
