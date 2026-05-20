@@ -1,4 +1,42 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – OpenMower — Open Source RTK GPS Robotic Mower</title><link>https://openmower.de/latest/</link><description>Recent content on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/index.xml" rel="self" type="application/rss+xml"/><item><title>Updates: New Website Design &amp; OpenMower Brand System</title><link>https://openmower.de/latest/updates/website-redesign-and-branding/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/website-redesign-and-branding/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – OpenMower — Open Source RTK GPS Robotic Mower</title><link>https://openmower.de/latest/</link><description>Recent content on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/index.xml" rel="self" type="application/rss+xml"/><item><title>Updates: OpenMower ROS v1.2.0</title><link>https://openmower.de/latest/updates/ros-v1-2-0/</link><pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/ros-v1-2-0/</guid><description>
+&lt;p>&lt;a href="https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.2.0" target="_blank" rel="noopener">v1.2.0&lt;/a>
+brings per-area configuration overrides, a batch of v2 hardware improvements, and a handful of reliability fixes.&lt;/p>
+&lt;h3 id="area-overrides-for-various-settings">Area Overrides for Various Settings&lt;/h3>
+&lt;p>The move from &lt;code>map.bag&lt;/code> to &lt;code>map.json&lt;/code> in v1.1.0 opened the door to flexible, backwards-compatible map extensions. The first major use of that flexibility lands here: individual mowing areas can now carry their own values for &lt;code>outline_count&lt;/code>, &lt;code>outline_overlap_count&lt;/code>, &lt;code>outline_offset&lt;/code>, and &lt;code>angle&lt;/code>.&lt;/p>
+&lt;p>The first three override the global defaults for that area only. &lt;code>angle&lt;/code> replaces the automatic orientation detection (which is based on the first two meters of the outline) with a fixed heading — useful for areas where auto-detection consistently picks the wrong direction.&lt;/p>
+&lt;p>For now, these attributes must be added manually by editing &lt;code>map.json&lt;/code> in a text editor. Support in the &lt;a href="https://github.com/xtech/openmower-app" target="_blank" rel="noopener">OpenMower app&lt;/a>
+is planned. Thanks &lt;a href="https://github.com/jrv" target="_blank" rel="noopener">@jrv&lt;/a>
+and &lt;a href="https://github.com/rovo89" target="_blank" rel="noopener">@rovo89&lt;/a>
+.&lt;/p>
+&lt;h3 id="v2-hardware-improvements">v2 Hardware Improvements&lt;/h3>
+&lt;p>Several improvements have landed specifically for v2 hardware:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Input service &amp;amp; emergency handling&lt;/strong> — A new input service replaces the previous approach, with more granular emergency state tracking and handling. Thanks &lt;a href="https://github.com/rovo89" target="_blank" rel="noopener">@rovo89&lt;/a>
+.&lt;/li>
+&lt;li>&lt;strong>High-level service&lt;/strong> — A new high-level service consolidates control logic for v2 boards. Thanks &lt;a href="https://github.com/Apehaenger" target="_blank" rel="noopener">@Apehaenger&lt;/a>
+.&lt;/li>
+&lt;li>&lt;strong>Extended battery reporting&lt;/strong> — Battery state is now reported in more detail, giving better visibility into charge level and health. Thanks &lt;a href="https://github.com/Apehaenger" target="_blank" rel="noopener">@Apehaenger&lt;/a>
+, with additional contributions by &lt;a href="https://github.com/ClemensElflein" target="_blank" rel="noopener">@ClemensElflein&lt;/a>
+.&lt;/li>
+&lt;/ul>
+&lt;h3 id="user-parameters-always-win">User Parameters Always Win&lt;/h3>
+&lt;p>The params include order has been corrected so that user-provided parameters are loaded last and always override built-in defaults. Previously, certain default values could silently take precedence. (&lt;a href="https://github.com/ClemensElflein" target="_blank" rel="noopener">@ClemensElflein&lt;/a>
+)&lt;/p>
+&lt;h3 id="obstacle-area-ordering-fix">Obstacle Area Ordering Fix&lt;/h3>
+&lt;p>Obstacle areas are now respected regardless of the order they appear in the map. Previously, a quirk in how areas were processed could cause obstacles defined later in the map to be ignored during coverage planning. Thanks &lt;a href="https://github.com/olliewalsh" target="_blank" rel="noopener">@olliewalsh&lt;/a>
+.&lt;/p>
+&lt;h3 id="reliability--developer-experience">Reliability &amp;amp; Developer Experience&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Deadlock protection in xbot_monitoring&lt;/strong> — The monitoring subsystem is now guarded against deadlocks that could cause it to hang silently. Thanks &lt;a href="https://github.com/rovo89" target="_blank" rel="noopener">@rovo89&lt;/a>
+.&lt;/li>
+&lt;li>&lt;strong>Unbuffered logging&lt;/strong> — Log output is now written immediately rather than buffered, so messages appear in real time when tailing logs. Thanks &lt;a href="https://github.com/Apehaenger" target="_blank" rel="noopener">@Apehaenger&lt;/a>
+.&lt;/li>
+&lt;li>&lt;strong>Simulator fixes&lt;/strong> — Several issues in the simulator have been resolved. Thanks &lt;a href="https://github.com/olliewalsh" target="_blank" rel="noopener">@olliewalsh&lt;/a>
+and &lt;a href="https://github.com/rovo89" target="_blank" rel="noopener">@rovo89&lt;/a>
+.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Full changelog:&lt;/strong> &lt;a href="https://github.com/ClemensElflein/open_mower_ros/compare/v1.1.1...v1.2.0" target="_blank" rel="noopener">v1.1.1 → v1.2.0&lt;/a>
+&lt;/p></description></item><item><title>Updates: New Website Design &amp; OpenMower Brand System</title><link>https://openmower.de/latest/updates/website-redesign-and-branding/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/updates/website-redesign-and-branding/</guid><description>
 &lt;p>The docs at openmower.de just got a complete visual overhaul — and alongside it, we&amp;rsquo;re publishing the first official &lt;strong>OpenMower brand system&lt;/strong>.&lt;/p>
 &lt;h3 id="what-changed-on-the-site">&lt;strong>What Changed on the Site&lt;/strong>&lt;/h3>
 &lt;p>The site now runs a fully custom theme built directly on OpenMower design tokens: self-hosted DM Sans and DM Mono fonts, a cohesive green-on-dark colour palette, and a homepage that leads with what the project actually is — a GPL-licensed, ROS and RTOS-based platform that replaces the closed, manufacturer-controlled firmware of robotic mowers. No lock-in. No black boxes.&lt;/p>
