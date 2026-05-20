@@ -15,7 +15,7 @@ description: >
 - **Skill level:** Intermediate electronics, Linux, and mechanical skills
 - **Community:** 2k+ members on Discord ready to help with reviews and troubleshooting
 
-New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}).
+New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}). Before building, read the [System Architecture]({{% relref "/docs/knowledge-base/architecture" %}}) to understand how the app, ROS, firmware, and hardware fit together.
 
 
 ## Important Warnings
