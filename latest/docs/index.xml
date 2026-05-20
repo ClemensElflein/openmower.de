@@ -2306,7 +2306,115 @@ If the device is not recognised, avoid USB hubs — connect the micro USB cable 
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress &lt;span style="color:#000">oflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sync
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>/dev/sdX&lt;/code> with the actual device path of the eMMC. Double-check this before running.&lt;/p>
 &lt;h2 id="step-4-boot-from-emmc">Step 4: Boot from eMMC&lt;/h2>
-&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: Creating a Debug Recording</title><link>https://openmower.de/latest/docs/knowledge-base/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/debug-recording/</guid><description>
+&lt;p>When investigating issues — especially positioning problems — a rosbag recording gives developers a full snapshot of sensor data to analyse. This guide walks you through recording one and retrieving it from your mower.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Privacy notice&lt;/h4>
+A rosbag records raw sensor data, which includes the &lt;strong>GPS position of your mower&lt;/strong>. By sharing the file you disclose the physical location of your garden. Only share it with people you trust.
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>OpenMower is running and the mower has a GPS fix (green GPS icon in the app)&lt;/li>
+&lt;li>You can access the mower via SSH or the web terminal&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-start-the-recording">Step 1: Start the recording&lt;/h2>
+&lt;p>Connect to your mower via SSH or the web terminal, then enter the ROS shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once inside, navigate to the recordings directory and start recording all topics:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /data/recordings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rosbag record -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This records &lt;strong>all&lt;/strong> active ROS topics. Leave the terminal open — the recording runs until you stop it with &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>.&lt;/p>
+&lt;h2 id="step-2-enter-area-recording-mode">Step 2: Enter area recording mode&lt;/h2>
+&lt;p>Open the OpenMower app and activate &lt;strong>area recording mode&lt;/strong> — the same mode you use when recording mowing areas. This ensures all relevant topics (GPS, IMU, wheel odometry) are actively publishing at full rate.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">GPS fix required&lt;/h4>
+Make sure the GPS icon in the app is &lt;strong>green&lt;/strong> before driving. Recording without a fix produces data that cannot be used for analysis.
+&lt;/div>
+&lt;h2 id="step-3-drive-the-test-patterns">Step 3: Drive the test patterns&lt;/h2>
+&lt;p>Drive the mower through the following patterns. Each one exercises a different aspect of positioning:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Pattern&lt;/th>
+&lt;th>Purpose&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Straight lines&lt;/td>
+&lt;td>Linear odometry and GPS consistency&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Figure-8&lt;/td>
+&lt;td>Combined turning and straight-line tracking&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Rotate on the spot (clockwise)&lt;/td>
+&lt;td>Yaw estimation, IMU vs. GPS heading&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Rotate on the spot (counter-clockwise)&lt;/td>
+&lt;td>Same, opposite direction&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>A minute or two of each pattern is sufficient. You don&amp;rsquo;t need a large area — a small open patch of lawn works fine.&lt;/p>
+&lt;h2 id="step-4-stop-the-recording">Step 4: Stop the recording&lt;/h2>
+&lt;p>Once done, go back to the terminal and press &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>, then type &lt;code>exit&lt;/code> to leave the ROS shell.&lt;/p>
+&lt;p>The &lt;code>.bag&lt;/code> file is now in &lt;code>~/recordings/&lt;/code> on the mower. List the directory to find your filename:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls -lh ~/recordings/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The filename includes a timestamp, e.g. &lt;code>2024-06-01-12-34-56.bag&lt;/code>.&lt;/p>
+&lt;h2 id="step-5-retrieve-the-file">Step 5: Retrieve the file&lt;/h2>
+&lt;p>Copy the &lt;code>.bag&lt;/code> file from &lt;code>~/recordings/&lt;/code> on the mower to your computer.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-02-00-tab" data-toggle="tab" href="#tabs-02-00" role="tab"
+aria-controls="tabs-02-00" aria-selected="false">
+Linux / macOS
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-02-01-tab" data-toggle="tab" href="#tabs-02-01" role="tab"
+aria-controls="tabs-02-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab">
+&lt;p>Use &lt;code>scp&lt;/code> from your local terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp openmower@&amp;lt;mower-ip&amp;gt;:recordings/&amp;lt;filename&amp;gt;.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code> with your mower&amp;rsquo;s IP address and &lt;code>&amp;lt;filename&amp;gt;&lt;/code> with the actual filename. The file downloads to your current directory.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
+&lt;p>&lt;strong>Windows 10 (build 1809 or later) and Windows 11&lt;/strong> include an OpenSSH client. Open &lt;strong>Command Prompt&lt;/strong> or &lt;strong>PowerShell&lt;/strong> and run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bat" data-lang="bat">&lt;span style="display:flex;">&lt;span>scp openmower@&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>mower-ip&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:recordings/&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>filename&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On &lt;strong>older Windows versions&lt;/strong>, use a graphical SFTP client instead:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="https://winscp.net" target="_blank" rel="noopener">WinSCP&lt;/a>
+&lt;/strong> — free, open source&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://cyberduck.io" target="_blank" rel="noopener">Cyberduck&lt;/a>
+&lt;/strong> — free, cross-platform&lt;/li>
+&lt;/ul>
+&lt;p>Connect with protocol &lt;strong>SFTP&lt;/strong>, host &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code>, user &lt;code>openmower&lt;/code>, and navigate to &lt;code>/home/openmower/recordings/&lt;/code> to download the file.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;code>.bag&lt;/code> files compress very well. Zipping before sharing can reduce the file size significantly:
+&lt;/div>
+&lt;p>Once you have the file, share it with whoever is helping you debug — via Discord, a file sharing service, or any other method that works in context.&lt;/p>
+&lt;h2 id="step-6-clean-up">Step 6: Clean up&lt;/h2>
+&lt;p>Once debugging is done, delete the recordings from the mower to free up disk space:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete a specific file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/&amp;lt;filename&amp;gt;.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete all recordings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/*.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
