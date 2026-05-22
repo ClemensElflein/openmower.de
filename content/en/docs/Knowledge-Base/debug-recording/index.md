@@ -1,7 +1,7 @@
 ---
 title: "Creating a Debug Recording"
 linkTitle: "Debug Recording"
-weight: 150
+weight: 610
 description: >-
   How to record a rosbag for debugging positioning and other issues,
   and how to retrieve it from the mower for sharing.

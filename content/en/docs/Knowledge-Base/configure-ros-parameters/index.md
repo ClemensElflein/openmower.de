@@ -1,7 +1,7 @@
 ---
 title: "Managing ROS Parameters"
 linkTitle: "Configure ROS Parameters"
-weight: 120
+weight: 400
 description: >-
      Learn how to view and override ROS parameters in OpenMower using the shell
      and configuration files for flexible system tuning.

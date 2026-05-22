@@ -1,6 +1,7 @@
 ---
 title: "Using a Gamepad"
 linkTitle: "Using a Gamepad"
+weight: 510
 description: >
   Learn how to connect a USB gamepad to your OpenMower and use it to drive the robot and record mowing areas.
 ---

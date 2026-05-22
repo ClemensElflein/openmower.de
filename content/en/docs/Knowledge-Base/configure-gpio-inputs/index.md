@@ -1,7 +1,7 @@
 ---
 title: "Configuring GPIO Inputs"
 linkTitle: "Configure GPIO Inputs"
-weight: 130
+weight: 220
 description: >-
   Learn how to configure GPIO inputs for emergency stops, wheel lift sensors,
   and other hardware buttons using the OpenMower input service.

@@ -1,6 +1,7 @@
 ---
 title: "GPS Base Setup"
 linkTitle: "GPS Base Setup"
+weight: 310
 description: >
   Build your own GPS RTK base!
 ---

@@ -1,7 +1,7 @@
 ---
 title: Hardware Versions / Known Issues
 linkTitle: Hardware Versions
-weight: 200
+weight: 40
 description: >
   Version History, Release Notes and Known Errors
 resources:

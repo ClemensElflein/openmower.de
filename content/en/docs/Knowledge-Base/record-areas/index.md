@@ -1,7 +1,7 @@
 ---
 title: "Record Areas"
 linkTitle: "Record Areas"
-weight: 40
+weight: 500
 description: >
   Finish your build by recording mowing areas and starting to use the mower.
 ---

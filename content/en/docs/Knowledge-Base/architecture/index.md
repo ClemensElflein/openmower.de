@@ -1,7 +1,7 @@
 ---
 title: "System Architecture"
 linkTitle: "System Architecture"
-weight: 5
+weight: 30
 description: >-
   A high-level overview of how the OpenMower software, firmware, and hardware
   components fit together.

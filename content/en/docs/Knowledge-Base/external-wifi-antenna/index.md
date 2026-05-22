@@ -1,7 +1,7 @@
 ---
 title: "External Wifi Antenna"
 linkTitle: "External Wifi Antenna"
-weight: 40
+weight: 120
 description: >
   To improve the WiFi signal quality, you can add an external antenna.
 ---

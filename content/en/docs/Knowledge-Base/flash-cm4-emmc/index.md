@@ -1,7 +1,7 @@
 ---
 title: "Flashing the CM4 eMMC"
 linkTitle: "Flash CM4 eMMC"
-weight: 140
+weight: 110
 description: >-
   How to flash a new OS image to the Raspberry Pi Compute Module 4's built-in
   eMMC storage using rpiboot and Raspberry Pi Imager.

@@ -1,6 +1,7 @@
 ---
 title: "Unicore GPS Modules"
 linkTitle: "Unicore GPS"
+weight: 210
 description: "Set up Unicore GPS RTK modules (UM960, UM980, UM982) as alternatives to ArduSimple simpleRTK2B — cheaper, triple-band, and compatible with OpenMower."
 ---
 

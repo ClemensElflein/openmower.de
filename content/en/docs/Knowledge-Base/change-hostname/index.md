@@ -1,7 +1,7 @@
 ---
 title: "Change Hostname"
 linkTitle: "Change Hostname"
-weight: 40
+weight: 600
 description: >
   If you have multiple robots or just want a different hostname, here is how to do it.
 ---

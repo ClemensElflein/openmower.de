@@ -1,6 +1,7 @@
 ---
 title: "Shopping List"
 linkTitle: "Shopping List"
+weight: 20
 description: >
   A shopping list for your Open Mower build.	
 ---

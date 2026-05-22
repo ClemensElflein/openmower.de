@@ -1,6 +1,7 @@
 ---
 title: Configuring xESC
 linkTitle: Configuring xESC
+weight: 200
 description: >
   Configuring xESC in the mower 
 ---
