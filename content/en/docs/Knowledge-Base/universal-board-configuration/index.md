@@ -130,6 +130,10 @@ Fill in the credentials from your RTK correction provider.
 
 ---
 
+### Emergency Sensors
+
+Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see [Configuring GPIO Inputs]({{< relref "/docs/Knowledge-Base/configure-gpio-inputs" >}}) for the full setup guide.
+
 ### Enable Mower Motor
 
 ```yaml
@@ -137,7 +141,7 @@ mower_logic:
   enable_mower: false
 ```
 
-Set to `true` only after you have verified that all emergency sensors (lift, tilt, stop buttons) work correctly. Running without functioning emergency sensors is unsafe.
+Set to `true` only after all emergency sensors are wired, configured, and verified to work correctly. Running without functioning emergency sensors is unsafe.
 
 ---
 
