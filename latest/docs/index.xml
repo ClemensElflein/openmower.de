@@ -1802,30 +1802,22 @@ document.getElementById('step-3-2-3-player'),
 &lt;li>&lt;a href="#known-issues">Known issues&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul>
-&lt;ul>
-&lt;li>&lt;a href="#0130---red-1">0.13.0 - Red&lt;/a>
+&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#notable-changes-1">Notable changes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#known-issues-1">Known issues&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>
+&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#notable-changes-2">Notable changes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#known-issues-2">Known issues&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>
+&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#notable-changes-3">Notable changes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#known-issues-3">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-4">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-4">Known issues&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#093---also-green">0.9.3 - Also Green&lt;/a>&lt;/li>
@@ -1843,6 +1835,13 @@ document.getElementById('step-3-2-3-player'),
 &lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
 &lt;/li>
 &lt;/ul>
+&lt;h1 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h1>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Information&lt;/h4>
+V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
+If you currently own a v1 hardware kit, this is nothing to worry, the kit will continue to work with your mower,
+there is no real benefit of upgrading it to a v2 hardware kit. For new builds, the v2 hardware platform is recommended.
+&lt;/div>
 &lt;h2 id="0130---red">0.13.0 - Red&lt;/h2>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
@@ -1868,47 +1867,15 @@ document.getElementById('step-3-2-3-player'),
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
 . Affect kits shipped before May'23.&lt;/li>
 &lt;/ul>
-&lt;h1 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h1>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Information&lt;/h4>
-V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
-If you currently own a v1 hardware kit, this is nothing to worry, the kit will continue to work with your mower,
-there is no real benefit of upgrading it to a v2 hardware kit. For new builds, the v2 hardware platform is recommended.
-&lt;/div>
-&lt;h2 id="0130---red-1">0.13.0 - Red&lt;/h2>
-&lt;p>
-&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
-&lt;/figure>
-&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
-&lt;/figure>
-&lt;/p>
-&lt;h3 id="notable-changes-1">Notable changes&lt;/h3>
-&lt;ul>
-&lt;li>Custom CoverUI added to the kit&lt;/li>
-&lt;li>Dropped support for dfPlayer sound module&lt;/li>
-&lt;/ul>
-&lt;h3 id="known-issues-1">Known issues&lt;/h3>
-&lt;ul>
-&lt;li>2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.&lt;/li>
-&lt;li>The first batch of 0.13 boards was mistakenly labeled &amp;ldquo;latest&amp;rdquo;. No action needed.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
-. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
-. Affect kits shipped before May'23.&lt;/li>
-&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
-. Affect kits shipped before May'23.&lt;/li>
-&lt;/ul>
 &lt;h2 id="0120---black">0.12.0 - Black&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-2">Notable changes&lt;/h3>
+&lt;h3 id="notable-changes-1">Notable changes&lt;/h3>
 &lt;ul>
 &lt;li>IMU: LSM6DSO instead of WT901&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-2">Known issues&lt;/h3>
+&lt;h3 id="known-issues-1">Known issues&lt;/h3>
 &lt;ul>
 &lt;li>SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.&lt;/li>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
@@ -1922,12 +1889,12 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-3">Notable changes&lt;/h3>
+&lt;h3 id="notable-changes-2">Notable changes&lt;/h3>
 &lt;ul>
 &lt;li>Connected WT901 via I2C freeing pins for dfPlayer&lt;/li>
 &lt;li>Upgraded dock station PCB with extra holes and terminals (red)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-3">Known issues&lt;/h3>
+&lt;h3 id="known-issues-2">Known issues&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
@@ -1936,11 +1903,11 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
 &lt;/figure>
-&lt;h3 id="notable-changes-4">Notable changes&lt;/h3>
+&lt;h3 id="notable-changes-3">Notable changes&lt;/h3>
 &lt;ul>
 &lt;li>Added dock station PCB (green)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-4">Known issues&lt;/h3>
+&lt;h3 id="known-issues-3">Known issues&lt;/h3>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
