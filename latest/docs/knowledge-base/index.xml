@@ -61,7 +61,130 @@ Your browser does not support the video tag.
 &lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Fuxtec and Redback mowers&lt;/li>
 &lt;/ul>
 &lt;h3 id="custom-hardware">Custom Hardware&lt;/h3>
-&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/architecture/</guid><description>
+&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>https://openmower.de/latest/docs/knowledge-base/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/shopping-list/</guid><description>
+&lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-info">Important Info&lt;/a>
+&lt;/div>
+&lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
+&lt;td>The mower to modify.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+&lt;/td>
+&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Open Mower Hardware Kit&lt;/td>
+&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>
+)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower" target="_blank" rel="nofollow noopener">Vermut&amp;rsquo;s shop&lt;/a>
+&lt;/td>
+&lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the robot&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
+&lt;td>Some users use &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps/">UM9XX chips&lt;/a>
+(available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
+and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
+) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Raspberry Pi Compute Module 4 with WiFi&lt;/td>
+&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;br>&lt;br> 16GB+ storage (eMMC or µSD Card)&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock" target="_blank" rel="noopener">RPi Locator&lt;/a>
+&lt;/td>
+&lt;td>Yes, it has to be the Raspberry Pi CM4, because we need all the UARTs and it goes into the xCore board.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>µSD Card&lt;/td>
+&lt;td>Only for RPi CM4 Lite. The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+or your local hardware store&lt;/td>
+&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/" target="_blank" rel="nofollow noopener">RasPiKey&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>USB Wi-Fi Dongle&lt;/td>
+&lt;td>For better Wi-Fi reception&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Check for Linux Support&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Left-Angle USB adapter&lt;/td>
+&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+or your local hardware store&lt;/td>
+&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+You only need a GPS base station if you don&amp;rsquo;t have access to an external NTRIP service. There are multiple free services available, so check before buying this.
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Quantity Required&lt;/th>
+&lt;th>Source Link&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raspberry Pi&lt;br>+ SD Card&lt;br>+ Power Supply&lt;/td>
+&lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/4a904YP" target="_blank" rel="nofollow noopener">e.g. Raspberry Pi 4&lt;/a>
+&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
+&lt;td>Positioning system for the base station&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
+&lt;td>See above&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
+&lt;/p></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/architecture/</guid><description>
 &lt;p>OpenMower is split into distinct layers — each with a clear responsibility — connected by well-defined interfaces. This separation means you can work on navigation logic without touching firmware, or add a new robot platform without changing ROS.&lt;/p>
 &lt;p>&lt;img src="images/architecture.svg" alt="System Architecture diagram showing the OpenMower component layers">&lt;/p>
 &lt;h2 id="layers">Layers&lt;/h2>
@@ -76,493 +199,7 @@ Your browser does not support the video tag.
 &lt;h3 id="firmware--motor-control--sensors-xcore--stm32h723">Firmware — Motor Control &amp;amp; Sensors (xCore · STM32H723)&lt;/h3>
 &lt;p>The firmware runs on the xCore board and owns all low-level hardware: driving the motors via xESC controllers, reading the GPS and IMU, managing the battery and charger, and enforcing safety states (the emergency service can cut power independently of ROS). The same firmware codebase supports multiple robot platforms through compile-time configuration.&lt;/p>
 &lt;h3 id="rtk-base-station--centimetre-accurate-positioning">RTK Base Station — Centimetre-Accurate Positioning&lt;/h3>
-&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/change-hostname/</guid><description>
-&lt;p>Changing the hostname is simple, thanks to the &lt;code>raspi-config&lt;/code> tool:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Select&lt;/strong> System Options -&amp;gt; Hostname&lt;/li>
-&lt;li>&lt;strong>Enter&lt;/strong> a new hostname and press &lt;kbd>Enter&lt;/kbd>`&lt;/li>
-&lt;li>&lt;strong>Finish and Reboot&lt;/strong>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: External Wifi Antenna</title><link>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</guid><description>
-&lt;p>After adding the external antenna, you need to tell the Raspberry Pi CM4 to use the external antenna instead of the built-in one.&lt;/p>
-&lt;h3 id="terminal-cast">Terminal Cast&lt;/h3>
-&lt;div class="container pb-3 pt-3">
-&lt;div class="row justify-content-md-center">
-&lt;div id="external-wifi-player" class="">&lt;/div>
-&lt;/div>
-&lt;div class="row justify-content-md-center">
-&lt;div>How to edit the antenna configuration&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;script>
-AsciinemaPlayer.create(
-'/latest/docs/knowledge-base/external-wifi-antenna//cast/change-antenna.cast',
-document.getElementById('external-wifi-player'),
-{ cols: 110, rows: 24, autoplay: false, loop: true }
-);
-&lt;/script>
-&lt;h3 id="instructions">Instructions&lt;/h3>
-&lt;p>You can do this by:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo nano /boot/firmware/config.txt&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Scroll Down&lt;/strong> to the &lt;code>[cm4]&lt;/code> section and:
-&lt;ul>
-&lt;li>Comment &lt;code># dtparam=ant1&lt;/code>&lt;/li>
-&lt;li>Uncomment &lt;code>dtparam=ant2&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;strong>Save&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>O&lt;/kbd> and &lt;strong>Exit Nano&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>X&lt;/kbd>&lt;/li>
-&lt;li>&lt;strong>Reboot&lt;/strong> the OS by running &lt;code>sudo reboot&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
-&lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;ul>
-&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
-)&lt;/li>
-&lt;li>Modified robot connected to your network&lt;/li>
-&lt;li>OpenMower software running on the robot&lt;/li>
-&lt;li>Docking station powered up&lt;/li>
-&lt;li>Mower fully charged&lt;/li>
-&lt;/ul>
-&lt;h2 id="step-41-check-the-gps">Step 4.1: Check the GPS&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
-&lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
-&lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
-&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
-or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
-&lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
-&lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
-&lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
-&lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
-&lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
-In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
-(hold the A button) to drive the robot.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
-&lt;/div>
-&lt;p>Now drive the mower for at least 50m, do some straight lines and some figure eight patterns. Currently, the robot does not know the quality of its orientation estimate, but you can judge by driving and looking at the app.&lt;/p>
-&lt;p>The orientation is initialized correctly if:&lt;/p>
-&lt;ul>
-&lt;li>When driving a straight line, the visualization also drives a straight line (no jumps)&lt;/li>
-&lt;li>When rotating in place, the visualization stays in place and doesn&amp;rsquo;t jump&lt;/li>
-&lt;/ul>
-&lt;h2 id="step-43-record-a-simple-map">Step 4.3: Record a Simple Map&lt;/h2>
-&lt;p>In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
-&lt;p>The map for the mower consists of three parts: the &lt;strong>docking position&lt;/strong>, at least one &lt;strong>mowing area&lt;/strong> and optionally &lt;strong>navigation areas&lt;/strong>.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
-&lt;h3 id="record-outline">Record Outline&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
-&lt;ul>
-&lt;li>Drive the robot to the outline. Make sure that the robot is facing in &lt;strong>counterclockwise direction&lt;/strong>.&lt;/li>
-&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
-&lt;li>Drive around the mowing area. Make sure that the GPS position stays fixed at all times.&lt;/li>
-&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
-&lt;li>The outline should now turn green. This means it&amp;rsquo;s done recording, and you can move on to recording exclusions.&lt;/li>
-&lt;/ul>
-&lt;h3 id="optional-record-exclusions">Optional: Record Exclusions&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
-&lt;p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:&lt;/p>
-&lt;ul>
-&lt;li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in &lt;strong>clockwise direction&lt;/strong>.&lt;/li>
-&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
-&lt;li>Drive around the area to exclude. Make sure that the GPS position stays fixed at all times.&lt;/li>
-&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
-&lt;li>The outline should now turn red. This means it&amp;rsquo;s done recording, and you can move on to recording more exclusions.&lt;/li>
-&lt;/ul>
-&lt;h3 id="save-area">Save Area&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
-&lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
-&lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
-&lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
-&lt;p>In order to record the docking position, do the following:&lt;/p>
-&lt;ul>
-&lt;li>Drive to a location about 2 m in front of your docking station.&lt;/li>
-&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
-&lt;li>Now drive close to the docking station. The front wheels of the robot should be at the edge of the docking station. &lt;strong>Don&amp;rsquo;t fully drive into the docking station!&lt;/strong>.&lt;/li>
-&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
-&lt;li>The app should move the &lt;strong>home&lt;/strong> icon to your current location. Now you can fully drive into the docking station.&lt;/li>
-&lt;/ul>
-&lt;h3 id="finish-recording">Finish Recording&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
-&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</guid><description>
-&lt;h2 id="viewing-and-configuring-ros-parameters">Viewing and Configuring ROS Parameters&lt;/h2>
-&lt;p>OpenMower is built on ROS, which means much of its behavior is controlled through parameters. Understanding how to inspect and modify these parameters gives you fine-grained control over your mower’s operation.&lt;/p>
-&lt;h3 id="listing-all-parameters">Listing All Parameters&lt;/h3>
-&lt;p>To see all currently active ROS parameters, open the OpenMower shell:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rosparam list
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will display a full list of parameters currently loaded in the system. It’s a useful first step when debugging or trying to understand how your mower is configured.&lt;/p>
-&lt;h3 id="overwriting-parameters">Overwriting Parameters&lt;/h3>
-&lt;p>All parameters can be customized using the &lt;code>mower_params.yaml&lt;/code> configuration file. This file acts as the central place to override default values.&lt;/p>
-&lt;p>The easiest way to edit it is with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
-&lt;p>In this example we will be overwriting the speed parameter.&lt;/p>
-&lt;h4 id="1-fetch-the-parameters-current-value">1. Fetch the Parameter&amp;rsquo;s current value&lt;/h4>
-&lt;p>After discovering a parameter you want to edit using &lt;code>rosparam list&lt;/code>, you can get the value using &lt;code>rosparam get &amp;lt;parameter&amp;gt;&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.4
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, our speed is currently at 0.4 m/sec for mowing&lt;/p>
-&lt;h4 id="2-change-the-value-for-your-config">2. Change the value for your config&lt;/h4>
-&lt;p>On the host system call &lt;code>openmower configure ros&lt;/code> and translate the parameter name to YAML.
-This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space).&lt;/p>
-&lt;p>For our example it looks like this:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">move_base_flex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">FTCPlanner&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">speed_fast&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-save-the-file-and-check-the-updated-value">3. Save the file and check the updated value&lt;/h4>
-&lt;p>After saving the file, ROS is automatically restarted and you can check, if the value is now updated:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
-&lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
-&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Configuring GPIO Inputs</title><link>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>OpenMower supports configuring GPIO pins as digital inputs that can trigger emergency stops or other events. Common use cases include:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Wheel lift sensors&lt;/strong> — detect when the mower is lifted&lt;/li>
-&lt;li>&lt;strong>Stop buttons&lt;/strong> — physical emergency stop buttons on top of the mower&lt;/li>
-&lt;/ul>
-&lt;h2 id="step-1-create-the-inputs-configuration-file">Step 1: Create the inputs configuration file&lt;/h2>
-&lt;p>Create &lt;code>/home/openmower/params/inputs.yaml&lt;/code> with your GPIO input definitions:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gpio&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front left wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front right wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO11&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO12&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO13&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configuration-fields">Configuration fields&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Field&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>name&lt;/code>&lt;/td>
-&lt;td>Human-readable label for the input&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>line&lt;/code>&lt;/td>
-&lt;td>GPIO pin name (e.g. &lt;code>GPIO10&lt;/code>)&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>active&lt;/code>&lt;/td>
-&lt;td>Logic level that triggers the event — &lt;code>low&lt;/code> or &lt;code>high&lt;/code>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>emergency.reason&lt;/code>&lt;/td>
-&lt;td>Emergency type — &lt;code>lift&lt;/code> for wheel lift, &lt;code>stop&lt;/code> for stop button&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>emergency.delay&lt;/code>&lt;/td>
-&lt;td>Debounce/delay in milliseconds before the emergency is triggered&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="gpio-pin-mapping">GPIO Pin Mapping&lt;/h2>
-&lt;p>The example config above uses GPIO10–GPIO13. Here is how those map to physical connectors on each board.&lt;/p>
-&lt;h3 id="openmower-universal-board">OpenMower Universal Board&lt;/h3>
-&lt;p>Orientation: looking at the board with the ethernet ports facing you.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Position&lt;/th>
-&lt;th>GPIO&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Top left&lt;/td>
-&lt;td>GPIO13&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Top right&lt;/td>
-&lt;td>GPIO12&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Bottom right&lt;/td>
-&lt;td>GPIO11&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Bottom left&lt;/td>
-&lt;td>GPIO10&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h3 id="openmower-yardforce-board">OpenMower Yardforce Board&lt;/h3>
-&lt;p>Orientation: looking at the board with the ethernet ports at the bottom left, pins sorted top to bottom.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Position&lt;/th>
-&lt;th>GPIO&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>1st (topmost)&lt;/td>
-&lt;td>GPIO10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2nd&lt;/td>
-&lt;td>GPIO11&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>3rd&lt;/td>
-&lt;td>GPIO12&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>4th&lt;/td>
-&lt;td>GPIO13&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="step-2-enable-the-input-service">Step 2: Enable the input service&lt;/h2>
-&lt;p>Add the following to your &lt;code>mower_params.yaml&lt;/code> (or &lt;code>custom_params.yaml&lt;/code> for Universal board builds):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">input&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">config_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/data/params/inputs.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To open the file for editing:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Path mapping on OSv2&lt;/h4>
-On OSv2, &lt;code>/home/openmower/params&lt;/code> is mapped to &lt;code>/data/params&lt;/code> inside the container. If you are on a different setup, adjust the &lt;code>config_file&lt;/code> path accordingly.
-&lt;/div>
-&lt;h2 id="step-3-restart-openmower">Step 3: Restart OpenMower&lt;/h2>
-&lt;p>After saving both files, restart the service to apply the changes:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Flashing the CM4 eMMC</title><link>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">CM4 with eMMC only&lt;/h4>
-&lt;p>This guide applies &lt;strong>only to CM4 variants with onboard eMMC storage&lt;/strong>. The CM4 Lite variant has no eMMC — it uses a microSD card instead and does not require this process.&lt;/p>
-&lt;p>Check your CM4 model number: variants with eMMC have the storage size in the name (e.g. CM4008032 = 32 GB eMMC). Lite variants are explicitly labelled &amp;ldquo;Lite&amp;rdquo; (e.g. CM4008000).&lt;/p>
-&lt;/div>
-&lt;p>The CM4 with eMMC has onboard flash storage instead of a microSD slot. To flash a new image, you need to put it into USB boot mode so it appears as a mass storage device on your computer.&lt;/p>
-&lt;p>This guide covers the OpenMower-specific steps. For full reference, see the &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">official Raspberry Pi documentation&lt;/a>
-.&lt;/p>
-&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;ul>
-&lt;li>A host computer (Linux, Windows, or macOS)&lt;/li>
-&lt;li>A micro USB cable (connected to the USB port on the xCore board)&lt;/li>
-&lt;li>The OS image you want to flash (e.g. OpenMower OS)&lt;/li>
-&lt;/ul>
-&lt;h2 id="step-1-enter-usb-boot-mode">Step 1: Enter USB boot mode&lt;/h2>
-&lt;p>The xCore board has an &lt;strong>Rpi Boot&lt;/strong> button (left of the two buttons, label printed below the CM4 slot).&lt;/p>
-&lt;p>&lt;img src="images/rpi-boot-button.png" alt="xCore board showing the Rpi Boot button location">&lt;/p>
-&lt;ol>
-&lt;li>Hold the &lt;strong>Rpi Boot&lt;/strong> button.&lt;/li>
-&lt;li>While holding it, connect power to the xCore board (or plug in the micro USB cable to your host computer).&lt;/li>
-&lt;li>Release the button once powered.&lt;/li>
-&lt;/ol>
-&lt;p>The CM4 is now in USB boot mode.&lt;/p>
-&lt;h2 id="step-2-install-rpiboot-on-your-host-computer">Step 2: Install rpiboot on your host computer&lt;/h2>
-&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
-&lt;li class="nav-item">
-&lt;a class="nav-link active"
-id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
-aria-controls="tabs-01-00" aria-selected="false">
-Linux
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
-aria-controls="tabs-01-01" aria-selected="false">
-Windows
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
-aria-controls="tabs-01-02" aria-selected="false">
-macOS
-&lt;/a>
-&lt;/li>
-&lt;/ul>
-&lt;div class="tab-content" id="tabs-1-content">
-&lt;div class="tab-body tab-pane fade show active"
-id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install rpiboot
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rpiboot
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;div class="tab-body tab-pane fade"
-id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
-&lt;ol>
-&lt;li>Download and run the installer from the &lt;a href="https://github.com/raspberrypi/usbboot/releases" target="_blank" rel="noopener">usbboot releases page&lt;/a>
-.&lt;/li>
-&lt;li>Reboot your computer after installation.&lt;/li>
-&lt;li>With the CM4 in USB boot mode, open &lt;strong>Start → rpiboot - Mass Storage Gadget&lt;/strong>.&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;div class="tab-body tab-pane fade"
-id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
-&lt;p>Build rpiboot from source, then run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rpiboot -d mass-storage-gadget64
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://github.com/raspberrypi/usbboot" target="_blank" rel="noopener">usbboot repository&lt;/a>
-for build instructions.&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;p>Within a few seconds the CM4&amp;rsquo;s eMMC will appear as a USB mass storage device on your computer.&lt;/p>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-If the device is not recognised, avoid USB hubs — connect the micro USB cable directly to your computer.
-&lt;/div>
-&lt;h2 id="step-3-flash-the-image">Step 3: Flash the image&lt;/h2>
-&lt;p>Use &lt;strong>Raspberry Pi Imager&lt;/strong> to write your OS image to the eMMC device. Select the eMMC as the target storage — it will appear like any other USB drive.&lt;/p>
-&lt;p>Alternatively, use &lt;code>dd&lt;/code> on Linux/macOS:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress &lt;span style="color:#000">oflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sync
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>/dev/sdX&lt;/code> with the actual device path of the eMMC. Double-check this before running.&lt;/p>
-&lt;h2 id="step-4-boot-from-emmc">Step 4: Boot from eMMC&lt;/h2>
-&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: Creating a Debug Recording</title><link>https://openmower.de/latest/docs/knowledge-base/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/debug-recording/</guid><description>
-&lt;p>When investigating issues — especially positioning problems — a rosbag recording gives developers a full snapshot of sensor data to analyse. This guide walks you through recording one and retrieving it from your mower.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Privacy notice&lt;/h4>
-A rosbag records raw sensor data, which includes the &lt;strong>GPS position of your mower&lt;/strong>. By sharing the file you disclose the physical location of your garden. Only share it with people you trust.
-&lt;/div>
-&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
-&lt;ul>
-&lt;li>OpenMower is running and the mower has a GPS fix (green GPS icon in the app)&lt;/li>
-&lt;li>You can access the mower via SSH or the web terminal&lt;/li>
-&lt;/ul>
-&lt;h2 id="step-1-start-the-recording">Step 1: Start the recording&lt;/h2>
-&lt;p>Connect to your mower via SSH or the web terminal, then enter the ROS shell:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once inside, navigate to the recordings directory and start recording all topics:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /data/recordings
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rosbag record -a
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This records &lt;strong>all&lt;/strong> active ROS topics. Leave the terminal open — the recording runs until you stop it with &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>.&lt;/p>
-&lt;h2 id="step-2-enter-area-recording-mode">Step 2: Enter area recording mode&lt;/h2>
-&lt;p>Open the OpenMower app and activate &lt;strong>area recording mode&lt;/strong> — the same mode you use when recording mowing areas. This ensures all relevant topics (GPS, IMU, wheel odometry) are actively publishing at full rate.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">GPS fix required&lt;/h4>
-Make sure the GPS icon in the app is &lt;strong>green&lt;/strong> before driving. Recording without a fix produces data that cannot be used for analysis.
-&lt;/div>
-&lt;h2 id="step-3-drive-the-test-patterns">Step 3: Drive the test patterns&lt;/h2>
-&lt;p>Drive the mower through the following patterns. Each one exercises a different aspect of positioning:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Pattern&lt;/th>
-&lt;th>Purpose&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Straight lines&lt;/td>
-&lt;td>Linear odometry and GPS consistency&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Figure-8&lt;/td>
-&lt;td>Combined turning and straight-line tracking&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Rotate on the spot (clockwise)&lt;/td>
-&lt;td>Yaw estimation, IMU vs. GPS heading&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Rotate on the spot (counter-clockwise)&lt;/td>
-&lt;td>Same, opposite direction&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>A minute or two of each pattern is sufficient. You don&amp;rsquo;t need a large area — a small open patch of lawn works fine.&lt;/p>
-&lt;h2 id="step-4-stop-the-recording">Step 4: Stop the recording&lt;/h2>
-&lt;p>Once done, go back to the terminal and press &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>, then type &lt;code>exit&lt;/code> to leave the ROS shell.&lt;/p>
-&lt;p>The &lt;code>.bag&lt;/code> file is now in &lt;code>~/recordings/&lt;/code> on the mower. List the directory to find your filename:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls -lh ~/recordings/
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The filename includes a timestamp, e.g. &lt;code>2024-06-01-12-34-56.bag&lt;/code>.&lt;/p>
-&lt;h2 id="step-5-retrieve-the-file">Step 5: Retrieve the file&lt;/h2>
-&lt;p>Copy the &lt;code>.bag&lt;/code> file from &lt;code>~/recordings/&lt;/code> on the mower to your computer.&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
-&lt;li class="nav-item">
-&lt;a class="nav-link active"
-id="tabs-02-00-tab" data-toggle="tab" href="#tabs-02-00" role="tab"
-aria-controls="tabs-02-00" aria-selected="false">
-Linux / macOS
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link"
-id="tabs-02-01-tab" data-toggle="tab" href="#tabs-02-01" role="tab"
-aria-controls="tabs-02-01" aria-selected="false">
-Windows
-&lt;/a>
-&lt;/li>
-&lt;/ul>
-&lt;div class="tab-content" id="tabs-2-content">
-&lt;div class="tab-body tab-pane fade show active"
-id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab">
-&lt;p>Use &lt;code>scp&lt;/code> from your local terminal:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp openmower@&amp;lt;mower-ip&amp;gt;:recordings/&amp;lt;filename&amp;gt;.bag .
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code> with your mower&amp;rsquo;s IP address and &lt;code>&amp;lt;filename&amp;gt;&lt;/code> with the actual filename. The file downloads to your current directory.&lt;/p>
-&lt;/div>
-&lt;div class="tab-body tab-pane fade"
-id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
-&lt;p>&lt;strong>Windows 10 (build 1809 or later) and Windows 11&lt;/strong> include an OpenSSH client. Open &lt;strong>Command Prompt&lt;/strong> or &lt;strong>PowerShell&lt;/strong> and run:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bat" data-lang="bat">&lt;span style="display:flex;">&lt;span>scp openmower@&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>mower-ip&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:recordings/&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>filename&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>.bag .
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On &lt;strong>older Windows versions&lt;/strong>, use a graphical SFTP client instead:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>&lt;a href="https://winscp.net" target="_blank" rel="noopener">WinSCP&lt;/a>
-&lt;/strong> — free, open source&lt;/li>
-&lt;li>&lt;strong>&lt;a href="https://cyberduck.io" target="_blank" rel="noopener">Cyberduck&lt;/a>
-&lt;/strong> — free, cross-platform&lt;/li>
-&lt;/ul>
-&lt;p>Connect with protocol &lt;strong>SFTP&lt;/strong>, host &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code>, user &lt;code>openmower&lt;/code>, and navigate to &lt;code>/home/openmower/recordings/&lt;/code> to download the file.&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Tip&lt;/h4>
-&lt;code>.bag&lt;/code> files compress very well. Zipping before sharing can reduce the file size significantly:
-&lt;/div>
-&lt;p>Once you have the file, share it with whoever is helping you debug — via Discord, a file sharing service, or any other method that works in context.&lt;/p>
-&lt;h2 id="step-6-clean-up">Step 6: Clean up&lt;/h2>
-&lt;p>Once debugging is done, delete the recordings from the mower to free up disk space:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete a specific file&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/&amp;lt;filename&amp;gt;.bag
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete all recordings&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/*.bag
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
@@ -726,7 +363,140 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_9_3_gps_huacf58bf9d1b8aad2e5aacd6c79ee4fbd_1066416_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
 &lt;/p>
-&lt;p>First build. Experimental xESC2040 instead of xESC-mini (STM32).&lt;/p></description></item><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</guid><description>
+&lt;p>First build. Experimental xESC2040 instead of xESC-mini (STM32).&lt;/p></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+&lt;p>Early versions of the xCore board have a bug in the bootloader which sometimes prevents the board from being detected by the &lt;code>openmower&lt;/code> tool.&lt;/p>
+&lt;p>If you encounter Timeout errors during the firmware installation process, update the bootloader by running: &lt;code>openmower update-bootloader&lt;/code> and try again.&lt;/p>
+&lt;/div>
+&lt;p>To install the firmware to the xCore board, simply run: &lt;code>openmower update-firmware&lt;/code>. The &lt;code>openmower&lt;/code> tool will read your environment variables, download the appropriate firmware binary and upload it to the xCore board via Ethernet.&lt;/p>
+&lt;p>The expected output is shown below:&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-2-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Example output for &lt;code>openmower update-firmware&lt;/code> command.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/docs/knowledge-base/firmware-update//cast/openmower-update-firmware.cast',
+document.getElementById('step-3-2-2-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script></description></item><item><title>Docs: Flashing the CM4 eMMC</title><link>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">CM4 with eMMC only&lt;/h4>
+&lt;p>This guide applies &lt;strong>only to CM4 variants with onboard eMMC storage&lt;/strong>. The CM4 Lite variant has no eMMC — it uses a microSD card instead and does not require this process.&lt;/p>
+&lt;p>Check your CM4 model number: variants with eMMC have the storage size in the name (e.g. CM4008032 = 32 GB eMMC). Lite variants are explicitly labelled &amp;ldquo;Lite&amp;rdquo; (e.g. CM4008000).&lt;/p>
+&lt;/div>
+&lt;p>The CM4 with eMMC has onboard flash storage instead of a microSD slot. To flash a new image, you need to put it into USB boot mode so it appears as a mass storage device on your computer.&lt;/p>
+&lt;p>This guide covers the OpenMower-specific steps. For full reference, see the &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">official Raspberry Pi documentation&lt;/a>
+.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>A host computer (Linux, Windows, or macOS)&lt;/li>
+&lt;li>A micro USB cable (connected to the USB port on the xCore board)&lt;/li>
+&lt;li>The OS image you want to flash (e.g. OpenMower OS)&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-enter-usb-boot-mode">Step 1: Enter USB boot mode&lt;/h2>
+&lt;p>The xCore board has an &lt;strong>Rpi Boot&lt;/strong> button (left of the two buttons, label printed below the CM4 slot).&lt;/p>
+&lt;p>&lt;img src="images/rpi-boot-button.png" alt="xCore board showing the Rpi Boot button location">&lt;/p>
+&lt;ol>
+&lt;li>Hold the &lt;strong>Rpi Boot&lt;/strong> button.&lt;/li>
+&lt;li>While holding it, connect power to the xCore board (or plug in the micro USB cable to your host computer).&lt;/li>
+&lt;li>Release the button once powered.&lt;/li>
+&lt;/ol>
+&lt;p>The CM4 is now in USB boot mode.&lt;/p>
+&lt;h2 id="step-2-install-rpiboot-on-your-host-computer">Step 2: Install rpiboot on your host computer&lt;/h2>
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
+Linux
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+aria-controls="tabs-01-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+aria-controls="tabs-01-02" aria-selected="false">
+macOS
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-1-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install rpiboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rpiboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
+&lt;ol>
+&lt;li>Download and run the installer from the &lt;a href="https://github.com/raspberrypi/usbboot/releases" target="_blank" rel="noopener">usbboot releases page&lt;/a>
+.&lt;/li>
+&lt;li>Reboot your computer after installation.&lt;/li>
+&lt;li>With the CM4 in USB boot mode, open &lt;strong>Start → rpiboot - Mass Storage Gadget&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
+&lt;p>Build rpiboot from source, then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rpiboot -d mass-storage-gadget64
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>See the &lt;a href="https://github.com/raspberrypi/usbboot" target="_blank" rel="noopener">usbboot repository&lt;/a>
+for build instructions.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>Within a few seconds the CM4&amp;rsquo;s eMMC will appear as a USB mass storage device on your computer.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+If the device is not recognised, avoid USB hubs — connect the micro USB cable directly to your computer.
+&lt;/div>
+&lt;h2 id="step-3-flash-the-image">Step 3: Flash the image&lt;/h2>
+&lt;p>Use &lt;strong>Raspberry Pi Imager&lt;/strong> to write your OS image to the eMMC device. Select the eMMC as the target storage — it will appear like any other USB drive.&lt;/p>
+&lt;p>Alternatively, use &lt;code>dd&lt;/code> on Linux/macOS:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress &lt;span style="color:#000">oflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sync
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>/dev/sdX&lt;/code> with the actual device path of the eMMC. Double-check this before running.&lt;/p>
+&lt;h2 id="step-4-boot-from-emmc">Step 4: Boot from eMMC&lt;/h2>
+&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: External Wifi Antenna</title><link>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</guid><description>
+&lt;p>After adding the external antenna, you need to tell the Raspberry Pi CM4 to use the external antenna instead of the built-in one.&lt;/p>
+&lt;h3 id="terminal-cast">Terminal Cast&lt;/h3>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="external-wifi-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>How to edit the antenna configuration&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/docs/knowledge-base/external-wifi-antenna//cast/change-antenna.cast',
+document.getElementById('external-wifi-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;p>You can do this by:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo nano /boot/firmware/config.txt&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Scroll Down&lt;/strong> to the &lt;code>[cm4]&lt;/code> section and:
+&lt;ul>
+&lt;li>Comment &lt;code># dtparam=ant1&lt;/code>&lt;/li>
+&lt;li>Uncomment &lt;code>dtparam=ant2&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Save&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>O&lt;/kbd> and &lt;strong>Exit Nano&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>X&lt;/kbd>&lt;/li>
+&lt;li>&lt;strong>Reboot&lt;/strong> the OS by running &lt;code>sudo reboot&lt;/code>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</guid><description>
 &lt;p>The xESC motor controllers can be configured to work with many BLDC and DC motors.
 The firmware for the controllers is based on the open source VESC project and therefore, the controllers can be configured using the VESC Configuration Tool.&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
@@ -966,29 +736,530 @@ It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it
 id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;p>Choose your adventure. Your build, your rules.&lt;/p>
 &lt;/div>
-&lt;/div></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
+&lt;/div></description></item><item><title>Docs: Unicore GPS Modules</title><link>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</guid><description>
+&lt;p>Several users have chosen alternative GPS RTK modules with chips by &lt;strong>Unicore&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>UM960&lt;/li>
+&lt;li>UM980&lt;/li>
+&lt;li>UM982&lt;/li>
+&lt;/ul>
+&lt;p>These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to the Raspberry Pi). Some have a different antenna socket, which requires an &lt;em>SMA F&lt;/em> to &lt;em>MMCX M90&lt;/em> cable.&lt;/p>
+&lt;p>Compared to the &lt;em>ArduSimple simpleRTK2B&lt;/em>, they are a bit cheaper and support triple-band frequencies.&lt;/p>
+&lt;h2 id="connection-options">Connection options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Connection&lt;/th>
+&lt;th>Notes&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Module USB-C → RPi USB&lt;/td>
+&lt;td>e.g. with angle connector&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Module UART → MainBoard UART&lt;/td>
+&lt;td>requires header connectivity&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="configuration-options">Configuration options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Method&lt;/th>
+&lt;th>When to use&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Vendor software (UPrecise) on Windows&lt;/td>
+&lt;td>Before installing module into mower&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Over UART bus (terminal only)&lt;/td>
+&lt;td>When RPi is installed and operational&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="software">Software&lt;/h2>
+&lt;p>The vendor offers &lt;a href="https://en.unicore.com/products/uprecise.html" target="_blank" rel="noopener">UPrecise&lt;/a>
+to check all status details and configure the receiver. The UI is pleasing and has many features, but also quite some bugs. The download requires creating a free account.&lt;/p>
+&lt;h2 id="configuration-via-uprecise-usb">Configuration via UPrecise (USB)&lt;/h2>
+&lt;h3 id="receiver">Receiver&lt;/h3>
+&lt;p>Connect to the receiver via UPrecise. COM3 is used when connected via USB. Paste the following commands into UPrecise:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONFIG COM3 460800
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA 0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGST 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also connect directly to the receiver&amp;rsquo;s TTY, but make sure to send CR+LF (&lt;code>\r\n&lt;/code>) line endings — otherwise commands won&amp;rsquo;t be recognized.&lt;/p>
+&lt;h3 id="openmower-mower_configtxt">OpenMower (&lt;code>mower_config.txt&lt;/code>)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/dev/ttyUSB0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_BAUDRATE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;460800&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration-via-uart-mainboard">Configuration via UART (mainboard)&lt;/h2>
+&lt;p>Use this method when the RPi is already installed and you want to wire the module directly to the mainboard UART header.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>Modified mower with replaced mainboard&lt;/li>
+&lt;li>RPi with &lt;code>openmower&lt;/code> service running&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1--solder-headers-on-the-um9xx">Step 1 — Solder headers on the UM9XX&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/wm9xx.png" alt="UM9XX module with header pins">&lt;/p>
+&lt;p>You only need the 4 middle pins from the 6 available: &lt;strong>GND&lt;/strong>, &lt;strong>VCC&lt;/strong>, &lt;strong>TX&lt;/strong>, &lt;strong>RX&lt;/strong>.&lt;/p>
+&lt;p>The remaining 2 pins are not needed:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>EN&lt;/strong> — can be used to temporarily shut down the module&lt;/li>
+&lt;li>&lt;strong>PPS&lt;/strong> — pulse-per-second signal, useful only if you need precise timing&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-2--wire-um9xx-to-the-mainboard">Step 2 — Wire UM9XX to the mainboard&lt;/h3>
+&lt;p>An &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x" target="_blank" rel="noopener">adapter board&lt;/a>
+is available as an alternative to manual wiring.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>MainBoard&lt;/th>
+&lt;th>UM9XX&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>TXD&lt;/td>
+&lt;td>TXD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>RXD&lt;/td>
+&lt;td>RXD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5V_IN&lt;/td>
+&lt;td>VCC&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GND&lt;/td>
+&lt;td>GND&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/um9xx-wiring-pinout.jpg" alt="UM9XX wiring pinout sample">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/mainboard-wiring.jpg" alt="Mainboard wiring sample">&lt;/p>
+&lt;h3 id="step-3--configure-um9xx-over-uart">Step 3 — Configure UM9XX over UART&lt;/h3>
+&lt;p>Install miniterm (part of &lt;code>python3-serial&lt;/code>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install python3-serial
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stop the openmower service so it does not occupy the UART bus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl stop openmower
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Connect to the UART bus at the default baud rate (115200):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
+&lt;/div>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The following commands assume you wired to the bottom lane (COM1). If you used a different lane, replace &lt;code>COM1&lt;/code> with &lt;code>COM2&lt;/code>.&lt;/p>
+&lt;/blockquote>
+&lt;p>Factory-reset the module and note the response:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$command,FRESET,response: OK*4D
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>system is rebooting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>..........
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$devicename,COM1*67
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the baud rate to 460800:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CONFIG COM1 460800
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>, then reconnect at the new baud rate:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> If commands get no response, the baud rate or COM port is wrong. Reconnect at 115200, run &lt;code>FRESET&lt;/code>, and try again.&lt;/p>
+&lt;/blockquote>
+&lt;p>Configure NMEA output. Each &lt;code>GP*&lt;/code> command produces extra output — make sure &lt;code>SAVECONFIG&lt;/code> completes successfully at the end:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV COM1 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG COM1 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA COM1 0.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output after &lt;code>SAVECONFIG&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$GNGGA,192705.50,,,,,0,00,9999.0,,,,,,*45
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$command,SAVECONFIG,response: OK*55
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNGGA,192706.00,,,,,0,00,9999.0,,,,,,*43
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GPGSA,,1,,,,,,,,,,,,,,,,*73
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNRMC,192706.00,V,,,,,,,030625,0.0,E,N,V*7B
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>.&lt;/p>
+&lt;h3 id="step-4--configure-openmower">Step 4 — Configure OpenMower&lt;/h3>
+&lt;p>Run &lt;code>openmower configure ros&lt;/code> and set the GPS protocol to &lt;code>NMEA&lt;/code> and the baud rate to &lt;code>460800&lt;/code>.&lt;/p>
+&lt;p>With your RTK base configured, take the mower outside and verify you get a GPS fix.&lt;/p>
+&lt;h2 id="troubleshooting--receiver-resets">Troubleshooting — receiver resets&lt;/h2>
+&lt;p>If the receiver cannot get a fix, a reboot may help. UPrecise provides three reset buttons. Unlike &lt;code>FRESET&lt;/code>, these &lt;strong>do not wipe the configuration&lt;/strong>:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Button&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Effect&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hot Start&lt;/td>
+&lt;td>&lt;code>RESET&lt;/code>&lt;/td>
+&lt;td>Quick restart&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Warm Start&lt;/td>
+&lt;td>&lt;code>RESET EPHEM&lt;/code>&lt;/td>
+&lt;td>Clears ephemeris data&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cold Start&lt;/td>
+&lt;td>&lt;code>RESET EPHEM ALMANAC IONUTC POSITION&lt;/code>&lt;/td>
+&lt;td>Full data reset&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>See section 8.3 (&amp;ldquo;Reset&amp;rdquo;) in the &lt;a href="https://core-electronics.com.au/attachments/localcontent/Unicore_Reference_Commands_Manual_For_N4_High_Precision_Products_V2_EN_R1_1_189543505cb.pdf" target="_blank" rel="nofollow noopener">Unicore command reference&lt;/a>
+for details.&lt;/p></description></item><item><title>Docs: Configuring GPIO Inputs</title><link>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>OpenMower supports configuring GPIO pins as digital inputs that can trigger emergency stops or other events. Common use cases include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Wheel lift sensors&lt;/strong> — detect when the mower is lifted&lt;/li>
+&lt;li>&lt;strong>Stop buttons&lt;/strong> — physical emergency stop buttons on top of the mower&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-create-the-inputs-configuration-file">Step 1: Create the inputs configuration file&lt;/h2>
+&lt;p>Create &lt;code>/home/openmower/params/inputs.yaml&lt;/code> with your GPIO input definitions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gpio&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front left wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front right wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO11&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO12&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO13&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configuration-fields">Configuration fields&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>name&lt;/code>&lt;/td>
+&lt;td>Human-readable label for the input&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>line&lt;/code>&lt;/td>
+&lt;td>GPIO pin name (e.g. &lt;code>GPIO10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>active&lt;/code>&lt;/td>
+&lt;td>Logic level that triggers the event — &lt;code>low&lt;/code> or &lt;code>high&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>emergency.reason&lt;/code>&lt;/td>
+&lt;td>Emergency type — &lt;code>lift&lt;/code> for wheel lift, &lt;code>stop&lt;/code> for stop button&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>emergency.delay&lt;/code>&lt;/td>
+&lt;td>Debounce/delay in milliseconds before the emergency is triggered&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gpio-pin-mapping">GPIO Pin Mapping&lt;/h2>
+&lt;p>The example config above uses GPIO10–GPIO13. Here is how those map to physical connectors on each board.&lt;/p>
+&lt;h3 id="openmower-universal-board">OpenMower Universal Board&lt;/h3>
+&lt;p>Orientation: looking at the board with the ethernet ports facing you.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Position&lt;/th>
+&lt;th>GPIO&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Top left&lt;/td>
+&lt;td>GPIO13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Top right&lt;/td>
+&lt;td>GPIO12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bottom right&lt;/td>
+&lt;td>GPIO11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bottom left&lt;/td>
+&lt;td>GPIO10&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="openmower-yardforce-board">OpenMower Yardforce Board&lt;/h3>
+&lt;p>Orientation: looking at the board with the ethernet ports at the bottom left, pins sorted top to bottom.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Position&lt;/th>
+&lt;th>GPIO&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1st (topmost)&lt;/td>
+&lt;td>GPIO10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2nd&lt;/td>
+&lt;td>GPIO11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3rd&lt;/td>
+&lt;td>GPIO12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4th&lt;/td>
+&lt;td>GPIO13&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="step-2-enable-the-input-service">Step 2: Enable the input service&lt;/h2>
+&lt;p>Add the following to your &lt;code>mower_params.yaml&lt;/code> (or &lt;code>custom_params.yaml&lt;/code> for Universal board builds):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">input&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">config_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/data/params/inputs.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To open the file for editing:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Path mapping on OSv2&lt;/h4>
+On OSv2, &lt;code>/home/openmower/params&lt;/code> is mapped to &lt;code>/data/params&lt;/code> inside the container. If you are on a different setup, adjust the &lt;code>config_file&lt;/code> path accordingly.
+&lt;/div>
+&lt;h2 id="step-3-restart-openmower">Step 3: Restart OpenMower&lt;/h2>
+&lt;p>After saving both files, restart the service to apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Universal Board Configuration</title><link>https://openmower.de/latest/docs/knowledge-base/universal-board-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/universal-board-configuration/</guid><description>
+&lt;p>This guide is for &lt;strong>custom mower builds&lt;/strong> using the OpenMower Universal Board. Unlike supported mowers, custom builds require you to measure and set several hardware-specific parameters before the mower will operate correctly.&lt;/p>
+&lt;p>All custom parameters go into &lt;code>~/params/custom_params.yaml&lt;/code> on the mower.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;p>Early versions of the xCore board have a bug in the bootloader which sometimes prevents the board from being detected by the &lt;code>openmower&lt;/code> tool.&lt;/p>
-&lt;p>If you encounter Timeout errors during the firmware installation process, update the bootloader by running: &lt;code>openmower update-bootloader&lt;/code> and try again.&lt;/p>
+&lt;h4 class="alert-heading">Do not use openmower configure ros&lt;/h4>
+&lt;p>&lt;code>openmower configure ros&lt;/code> opens &lt;code>mower_params.yaml&lt;/code> by default — this is the &lt;strong>wrong file&lt;/strong> for custom builds. Always edit &lt;code>custom_params.yaml&lt;/code> directly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/params/custom_params.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All other &lt;code>openmower&lt;/code> commands (e.g. &lt;code>openmower configure env&lt;/code>) work as expected.&lt;/p>
 &lt;/div>
-&lt;p>To install the firmware to the xCore board, simply run: &lt;code>openmower update-firmware&lt;/code>. The &lt;code>openmower&lt;/code> tool will read your environment variables, download the appropriate firmware binary and upload it to the xCore board via Ethernet.&lt;/p>
-&lt;p>The expected output is shown below:&lt;/p>
-&lt;div class="container pb-3 pt-3">
-&lt;div class="row justify-content-md-center">
-&lt;div id="step-3-2-2-player" class="">&lt;/div>
-&lt;/div>
-&lt;div class="row justify-content-md-center">
-&lt;div>Example output for &lt;code>openmower update-firmware&lt;/code> command.&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;script>
-AsciinemaPlayer.create(
-'/latest/docs/knowledge-base/firmware-update//cast/openmower-update-firmware.cast',
-document.getElementById('step-3-2-2-player'),
-{ cols: 110, rows: 24, autoplay: false, loop: true }
-);
-&lt;/script></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</guid><description>
+&lt;h2 id="configuration-template">Configuration Template&lt;/h2>
+&lt;p>Download the template and place it at &lt;code>~/params/custom_params.yaml&lt;/code> on your mower as a starting point:&lt;/p>
+&lt;p>&lt;strong>&lt;a href="custom_params.yaml">Download custom_params.yaml&lt;/a>
+&lt;/strong>&lt;/p>
+&lt;p>The sections below explain every parameter marked &lt;code># TODO&lt;/code>.&lt;/p>
+&lt;hr>
+&lt;h3 id="differential-drive">Differential Drive&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">diff_drive&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">wheel_distance_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.325&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ticks_per_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1600.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>wheel_distance_m&lt;/code>&lt;/td>
+&lt;td>Distance in meters between the center of the left and right drive wheels. Measure with a tape measure.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>ticks_per_m&lt;/code>&lt;/td>
+&lt;td>Encoder ticks per meter of travel. Must be measured — see &lt;a href="#calibrating-wheel-ticks">Calibrating Wheel Ticks&lt;/a>
+below.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="imu-orientation">IMU Orientation&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">imu&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">axis_config&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;+X-Y-Z&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>axis_config&lt;/code>&lt;/td>
+&lt;td>Orientation of the mainboard relative to the mower chassis. &lt;code>+X-Y-Z&lt;/code> is correct for a flat, horizontal mounting with the board&amp;rsquo;s X axis pointing forward. Change this if your mainboard is mounted at an angle or rotated.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="battery-voltages">Battery Voltages&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">power&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_full_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">20.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_empty_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">18.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_critical_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">16.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_critical_high_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">21.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">charge_critical_high_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">30.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">charge_critical_high_current&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look up the voltage spec for your battery pack and set accordingly.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>battery_full_voltage&lt;/code>&lt;/td>
+&lt;td>Voltage of a fully charged pack (from spec).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_empty_voltage&lt;/code>&lt;/td>
+&lt;td>Voltage at which the mower returns to dock.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_critical_voltage&lt;/code>&lt;/td>
+&lt;td>Emergency low-voltage cutoff. Set below empty but above damaging discharge.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_critical_high_voltage&lt;/code>&lt;/td>
+&lt;td>Overvoltage protection threshold. Set slightly above full charge voltage.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>charge_critical_high_voltage&lt;/code>&lt;/td>
+&lt;td>Maximum acceptable charger output voltage.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>charge_critical_high_current&lt;/code>&lt;/td>
+&lt;td>Maximum acceptable charge current in amps.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="gps-antenna-offset">GPS Antenna Offset&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">xbot_positioning&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The positioning system needs to know where the GPS antenna is relative to the mower&amp;rsquo;s &lt;strong>center of rotation&lt;/strong> (the midpoint between the two drive wheels).&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>antenna_offset_x&lt;/code>&lt;/td>
+&lt;td>Forward/back offset in meters. Positive = antenna is in front of the rotation center. Measure from wheel midpoint to antenna.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>antenna_offset_y&lt;/code>&lt;/td>
+&lt;td>Left/right offset in meters. Positive = antenna is to the left. Usually 0 if the antenna is centered.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="gps-datum">GPS Datum&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">datum_lat&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">53.457452&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">datum_long&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10.014737&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These are not marked &lt;code>TODO&lt;/code> in the template but &lt;strong>must be changed&lt;/strong>. Set them to coordinates near your docking station — this becomes the origin of your mower&amp;rsquo;s map. Use a GPS or map tool to get the coordinates.&lt;/p>
+&lt;hr>
+&lt;h3 id="ntrip-credentials">NTRIP Credentials&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ntrip_client&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;www.your-ntrip-caster.de&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2101&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">username&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntripuser&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">password&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntrippass&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mountpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntripmount&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Fill in the credentials from your RTK correction provider.&lt;/p>
+&lt;hr>
+&lt;h3 id="emergency-sensors">Emergency Sensors&lt;/h3>
+&lt;p>Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/configure-gpio-inputs/">Configuring GPIO Inputs&lt;/a>
+for the full setup guide.&lt;/p>
+&lt;h3 id="enable-mower-motor">Enable Mower Motor&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">mower_logic&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enable_mower&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set to &lt;code>true&lt;/code> only after all emergency sensors are wired, configured, and verified to work correctly. Running without functioning emergency sensors is unsafe.&lt;/p>
+&lt;hr>
+&lt;h2 id="calibrating-wheel-ticks">Calibrating Wheel Ticks&lt;/h2>
+&lt;p>This procedure measures the &lt;code>ticks_per_m&lt;/code> value for your specific mower&amp;rsquo;s wheel encoders.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>OpenMower is running&lt;/li>
+&lt;li>SSH or web terminal access&lt;/li>
+&lt;li>A flat surface with ~10 m of clear, straight space&lt;/li>
+&lt;li>Something to mark the start and end position (tape, chalk, etc.)&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-enter-recording-mode">Step 1: Enter recording mode&lt;/h3>
+&lt;p>Open the OpenMower app and activate &lt;strong>area recording mode&lt;/strong>. This ensures the drive motors and wheel encoders are active and publishing odometry data.&lt;/p>
+&lt;h3 id="step-2-record-start-tacho-values">Step 2: Record start tacho values&lt;/h3>
+&lt;p>Open the ROS shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Subscribe to the left ESC status topic and note the &lt;code>tacho&lt;/code> field:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/left_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write down the value, then press &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>. Repeat for the right wheel:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/right_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-drive-a-10-m-straight-line">Step 3: Drive a 10 m straight line&lt;/h3>
+&lt;p>Mark the mower&amp;rsquo;s current position, then drive it in a straight line for exactly &lt;strong>10 meters&lt;/strong>. Drive slowly and steadily — the straighter the line, the more accurate the result.&lt;/p>
+&lt;h3 id="step-4-record-end-tacho-values">Step 4: Record end tacho values&lt;/h3>
+&lt;p>Subscribe to each topic again and note the new &lt;code>tacho&lt;/code> values:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/left_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/right_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-calculate-ticks_per_m">Step 5: Calculate ticks_per_m&lt;/h3>
+&lt;p>Compute the difference for each wheel. If negative, flip the sign:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>left_diff = |tacho_end_left - tacho_start_left|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>right_diff = |tacho_end_right - tacho_start_right|
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The two values should be approximately equal. Average them and divide by 10:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ticks_per_m = (left_diff + right_diff) / (2 * 10)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-apply-the-value">Step 6: Apply the value&lt;/h3>
+&lt;p>Edit &lt;code>custom_params.yaml&lt;/code> directly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/params/custom_params.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the value you calculated:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">diff_drive&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ticks_per_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your_value&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save the file and restart OpenMower to apply.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Run the measurement two or three times and average the results for better accuracy. Small variations in how straight you drive will affect individual readings.
+&lt;/div></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</guid><description>
 &lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
 &lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
@@ -1222,323 +1493,125 @@ and connect to RPi, where you enter the local IP of your RPi&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;br>
-&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>https://openmower.de/latest/docs/knowledge-base/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/shopping-list/</guid><description>
-&lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</guid><description>
+&lt;h2 id="viewing-and-configuring-ros-parameters">Viewing and Configuring ROS Parameters&lt;/h2>
+&lt;p>OpenMower is built on ROS, which means much of its behavior is controlled through parameters. Understanding how to inspect and modify these parameters gives you fine-grained control over your mower’s operation.&lt;/p>
+&lt;h3 id="listing-all-parameters">Listing All Parameters&lt;/h3>
+&lt;p>To see all currently active ROS parameters, open the OpenMower shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rosparam list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will display a full list of parameters currently loaded in the system. It’s a useful first step when debugging or trying to understand how your mower is configured.&lt;/p>
+&lt;h3 id="overwriting-parameters">Overwriting Parameters&lt;/h3>
+&lt;p>All parameters can be customized using the &lt;code>mower_params.yaml&lt;/code> configuration file. This file acts as the central place to override default values.&lt;/p>
+&lt;p>The easiest way to edit it is with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
+&lt;p>In this example we will be overwriting the speed parameter.&lt;/p>
+&lt;h4 id="1-fetch-the-parameters-current-value">1. Fetch the Parameter&amp;rsquo;s current value&lt;/h4>
+&lt;p>After discovering a parameter you want to edit using &lt;code>rosparam list&lt;/code>, you can get the value using &lt;code>rosparam get &amp;lt;parameter&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, our speed is currently at 0.4 m/sec for mowing&lt;/p>
+&lt;h4 id="2-change-the-value-for-your-config">2. Change the value for your config&lt;/h4>
+&lt;p>On the host system call &lt;code>openmower configure ros&lt;/code> and translate the parameter name to YAML.
+This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space).&lt;/p>
+&lt;p>For our example it looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">move_base_flex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">FTCPlanner&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">speed_fast&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-save-the-file-and-check-the-updated-value">3. Save the file and check the updated value&lt;/h4>
+&lt;p>After saving the file, ROS is automatically restarted and you can check, if the value is now updated:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
+&lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
+&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
+&lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+)&lt;/li>
+&lt;li>Modified robot connected to your network&lt;/li>
+&lt;li>OpenMower software running on the robot&lt;/li>
+&lt;li>Docking station powered up&lt;/li>
+&lt;li>Mower fully charged&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-41-check-the-gps">Step 4.1: Check the GPS&lt;/h2>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
+&lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
+&lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
+&lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
+or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Wait for the GPS to find a position. This might take some time (up to 30 minutes).&lt;/p>
+&lt;p>You can see the current GPS quality in the Open Mower app as shown in the graphic above.&lt;/p>
+&lt;p>&lt;strong>You need to have RTK Fixed&lt;/strong> for the following to work. If you don&amp;rsquo;t get a good GPS fix, you will need to check your RTK setup and configuration.&lt;/p>
+&lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
+&lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
+In order to initialize the orientation, you need to drive the robot.&lt;/p>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+(hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-info">Important Info&lt;/a>
+Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/div>
-&lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;th>Quantity Required&lt;/th>
-&lt;th>Source Link&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Mower&lt;br>(YardForce Classic 500(B))&lt;/td>
-&lt;td>The mower to modify.&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3NWgIxk" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
-&lt;/td>
-&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Open Mower Hardware Kit&lt;/td>
-&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>
-)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower" target="_blank" rel="nofollow noopener">Vermut&amp;rsquo;s shop&lt;/a>
-&lt;/td>
-&lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
-&lt;td>Positioning system for the robot&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
-&lt;/td>
-&lt;td>Some users use &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps/">UM9XX chips&lt;/a>
-(available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
-and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
-) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Raspberry Pi Compute Module 4 with WiFi&lt;/td>
-&lt;td>The brain of the robot.&lt;br>&lt;br>RAM: 2GB+ for running the software&lt;br>4GB+ for development&lt;br>&lt;br> 16GB+ storage (eMMC or µSD Card)&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock" target="_blank" rel="noopener">RPi Locator&lt;/a>
-&lt;/td>
-&lt;td>Yes, it has to be the Raspberry Pi CM4, because we need all the UARTs and it goes into the xCore board.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>µSD Card&lt;/td>
-&lt;td>Only for RPi CM4 Lite. The absolute minimum capacity you should buy is 16GB. But better buy a 32GB one&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3EeWBXj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
-or your local hardware store&lt;/td>
-&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/" target="_blank" rel="nofollow noopener">RasPiKey&lt;/a>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
-&lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>USB Wi-Fi Dongle&lt;/td>
-&lt;td>For better Wi-Fi reception&lt;/td>
-&lt;td>0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Check for Linux Support&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Left-Angle USB adapter&lt;/td>
-&lt;td>If you want to keep Wi-Fi dongle inside the mower. RPi USB is really close to the mower side wall&lt;/td>
-&lt;td>0&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/3ukNAIj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
-or your local hardware store&lt;/td>
-&lt;td>The kit contains the wire to connect external USB port. That may be enough if Wi-Fi dongle is waterproof.&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="parts-for-the-gps-base-station">Parts for the GPS Base Station&lt;/h2>
-&lt;div class="alert alert-info" role="alert">
-&lt;h4 class="alert-heading">Info&lt;/h4>
-You only need a GPS base station if you don&amp;rsquo;t have access to an external NTRIP service. There are multiple free services available, so check before buying this.
-&lt;/div>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;th>Quantity Required&lt;/th>
-&lt;th>Source Link&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Raspberry Pi&lt;br>+ SD Card&lt;br>+ Power Supply&lt;/td>
-&lt;td>You can basically use any Raspberry Pi for this. No special requirements.&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://amzn.to/4a904YP" target="_blank" rel="nofollow noopener">e.g. Raspberry Pi 4&lt;/a>
-&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Ardusimple RTK2B GPS + Antenna&lt;/td>
-&lt;td>Positioning system for the base station&lt;/td>
-&lt;td>1&lt;/td>
-&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
-&lt;/td>
-&lt;td>See above&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
-&lt;/p></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
-&lt;h2 id="the-map">The Map&lt;/h2>
-&lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
-&lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
-&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Unicore GPS Modules</title><link>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/unicore-gps/</guid><description>
-&lt;p>Several users have chosen alternative GPS RTK modules with chips by &lt;strong>Unicore&lt;/strong>:&lt;/p>
+&lt;p>Now drive the mower for at least 50m, do some straight lines and some figure eight patterns. Currently, the robot does not know the quality of its orientation estimate, but you can judge by driving and looking at the app.&lt;/p>
+&lt;p>The orientation is initialized correctly if:&lt;/p>
 &lt;ul>
-&lt;li>UM960&lt;/li>
-&lt;li>UM980&lt;/li>
-&lt;li>UM982&lt;/li>
+&lt;li>When driving a straight line, the visualization also drives a straight line (no jumps)&lt;/li>
+&lt;li>When rotating in place, the visualization stays in place and doesn&amp;rsquo;t jump&lt;/li>
 &lt;/ul>
-&lt;p>These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to the Raspberry Pi). Some have a different antenna socket, which requires an &lt;em>SMA F&lt;/em> to &lt;em>MMCX M90&lt;/em> cable.&lt;/p>
-&lt;p>Compared to the &lt;em>ArduSimple simpleRTK2B&lt;/em>, they are a bit cheaper and support triple-band frequencies.&lt;/p>
-&lt;h2 id="connection-options">Connection options&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Connection&lt;/th>
-&lt;th>Notes&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Module USB-C → RPi USB&lt;/td>
-&lt;td>e.g. with angle connector&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Module UART → MainBoard UART&lt;/td>
-&lt;td>requires header connectivity&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="configuration-options">Configuration options&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Method&lt;/th>
-&lt;th>When to use&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Vendor software (UPrecise) on Windows&lt;/td>
-&lt;td>Before installing module into mower&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Over UART bus (terminal only)&lt;/td>
-&lt;td>When RPi is installed and operational&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="software">Software&lt;/h2>
-&lt;p>The vendor offers &lt;a href="https://en.unicore.com/products/uprecise.html" target="_blank" rel="noopener">UPrecise&lt;/a>
-to check all status details and configure the receiver. The UI is pleasing and has many features, but also quite some bugs. The download requires creating a free account.&lt;/p>
-&lt;h2 id="configuration-via-uprecise-usb">Configuration via UPrecise (USB)&lt;/h2>
-&lt;h3 id="receiver">Receiver&lt;/h3>
-&lt;p>Connect to the receiver via UPrecise. COM3 is used when connected via USB. Paste the following commands into UPrecise:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CONFIG COM3 460800
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA 0.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGST 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also connect directly to the receiver&amp;rsquo;s TTY, but make sure to send CR+LF (&lt;code>\r\n&lt;/code>) line endings — otherwise commands won&amp;rsquo;t be recognized.&lt;/p>
-&lt;h3 id="openmower-mower_configtxt">OpenMower (&lt;code>mower_config.txt&lt;/code>)&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PROTOCOL&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_PORT&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/dev/ttyUSB0&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">OM_GPS_BAUDRATE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;460800&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuration-via-uart-mainboard">Configuration via UART (mainboard)&lt;/h2>
-&lt;p>Use this method when the RPi is already installed and you want to wire the module directly to the mainboard UART header.&lt;/p>
-&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;h2 id="step-43-record-a-simple-map">Step 4.3: Record a Simple Map&lt;/h2>
+&lt;p>In this step, we will record a simple map. Keep it simple for the first tests and record your map as soon as you&amp;rsquo;re confident that everything works as expected.&lt;/p>
+&lt;p>The map for the mower consists of three parts: the &lt;strong>docking position&lt;/strong>, at least one &lt;strong>mowing area&lt;/strong> and optionally &lt;strong>navigation areas&lt;/strong>.&lt;/p>
 &lt;ul>
-&lt;li>Modified mower with replaced mainboard&lt;/li>
-&lt;li>RPi with &lt;code>openmower&lt;/code> service running&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Mowing Areas&lt;/strong> are the areas which will be mowed. Each mowing area has a single outline and optional areas to exclude (e.g. static obstacles).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Docking Position&lt;/strong> is the position and orientation of your docking station. It needs to be close to a mowing area or navigation area. This is needed for the robot to find its way to the docking station.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Navigation Areas&lt;/strong> are areas similar to mowing areas (they consist of an outline and optionally exclusions). The mower is allowed to drive in these areas, but &lt;strong>won&amp;rsquo;t mow&lt;/strong>. Use these areas to connect mowing areas. Also, if your docking station is not close to a mowing area, you can use a navigation area to allow the robot to drive to the docking station.&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;h3 id="step-1--solder-headers-on-the-um9xx">Step 1 — Solder headers on the UM9XX&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/wm9xx.png" alt="UM9XX module with header pins">&lt;/p>
-&lt;p>You only need the 4 middle pins from the 6 available: &lt;strong>GND&lt;/strong>, &lt;strong>VCC&lt;/strong>, &lt;strong>TX&lt;/strong>, &lt;strong>RX&lt;/strong>.&lt;/p>
-&lt;p>The remaining 2 pins are not needed:&lt;/p>
+&lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
+&lt;h3 id="record-outline">Record Outline&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>EN&lt;/strong> — can be used to temporarily shut down the module&lt;/li>
-&lt;li>&lt;strong>PPS&lt;/strong> — pulse-per-second signal, useful only if you need precise timing&lt;/li>
+&lt;li>Drive the robot to the outline. Make sure that the robot is facing in &lt;strong>counterclockwise direction&lt;/strong>.&lt;/li>
+&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Drive around the mowing area. Make sure that the GPS position stays fixed at all times.&lt;/li>
+&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>The outline should now turn green. This means it&amp;rsquo;s done recording, and you can move on to recording exclusions.&lt;/li>
 &lt;/ul>
-&lt;h3 id="step-2--wire-um9xx-to-the-mainboard">Step 2 — Wire UM9XX to the mainboard&lt;/h3>
-&lt;p>An &lt;a href="https://github.com/xtech/hw-openmower-utils/tree/main/hw-openmower-utils-v1-arduino-uno-um9x" target="_blank" rel="noopener">adapter board&lt;/a>
-is available as an alternative to manual wiring.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>MainBoard&lt;/th>
-&lt;th>UM9XX&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>TXD&lt;/td>
-&lt;td>TXD&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>RXD&lt;/td>
-&lt;td>RXD&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>5V_IN&lt;/td>
-&lt;td>VCC&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>GND&lt;/td>
-&lt;td>GND&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/um9xx-wiring-pinout.jpg" alt="UM9XX wiring pinout sample">
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/mainboard-wiring.jpg" alt="Mainboard wiring sample">&lt;/p>
-&lt;h3 id="step-3--configure-um9xx-over-uart">Step 3 — Configure UM9XX over UART&lt;/h3>
-&lt;p>Install miniterm (part of &lt;code>python3-serial&lt;/code>):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install python3-serial
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stop the openmower service so it does not occupy the UART bus:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl stop openmower
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Connect to the UART bus at the default baud rate (115200):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span> -e
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;div class="alert alert-info" role="alert">
-Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
-&lt;/div>
-&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> The following commands assume you wired to the bottom lane (COM1). If you used a different lane, replace &lt;code>COM1&lt;/code> with &lt;code>COM2&lt;/code>.&lt;/p>
-&lt;/blockquote>
-&lt;p>Factory-reset the module and note the response:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FRESET
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$command,FRESET,response: OK*4D
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>system is rebooting
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>..........
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$devicename,COM1*67
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the baud rate to 460800:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CONFIG COM1 460800
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>, then reconnect at the new baud rate:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA1 &lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span> -e
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> If commands get no response, the baud rate or COM port is wrong. Reconnect at 115200, run &lt;code>FRESET&lt;/code>, and try again.&lt;/p>
-&lt;/blockquote>
-&lt;p>Configure NMEA output. Each &lt;code>GP*&lt;/code> command produces extra output — make sure &lt;code>SAVECONFIG&lt;/code> completes successfully at the end:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSV COM1 2
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPRMC COM1 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGSA COM1 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPVTG COM1 1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GPGGA COM1 0.5
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SAVECONFIG
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output after &lt;code>SAVECONFIG&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$GNGGA,192705.50,,,,,0,00,9999.0,,,,,,*45
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$command,SAVECONFIG,response: OK*55
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNGGA,192706.00,,,,,0,00,9999.0,,,,,,*43
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GPGSA,,1,,,,,,,,,,,,,,,,*73
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$GNRMC,192706.00,V,,,,,,,030625,0.0,E,N,V*7B
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>.&lt;/p>
-&lt;h3 id="step-4--configure-openmower">Step 4 — Configure OpenMower&lt;/h3>
-&lt;p>Run &lt;code>openmower configure ros&lt;/code> and set the GPS protocol to &lt;code>NMEA&lt;/code> and the baud rate to &lt;code>460800&lt;/code>.&lt;/p>
-&lt;p>With your RTK base configured, take the mower outside and verify you get a GPS fix.&lt;/p>
-&lt;h2 id="troubleshooting--receiver-resets">Troubleshooting — receiver resets&lt;/h2>
-&lt;p>If the receiver cannot get a fix, a reboot may help. UPrecise provides three reset buttons. Unlike &lt;code>FRESET&lt;/code>, these &lt;strong>do not wipe the configuration&lt;/strong>:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Button&lt;/th>
-&lt;th>Command&lt;/th>
-&lt;th>Effect&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Hot Start&lt;/td>
-&lt;td>&lt;code>RESET&lt;/code>&lt;/td>
-&lt;td>Quick restart&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Warm Start&lt;/td>
-&lt;td>&lt;code>RESET EPHEM&lt;/code>&lt;/td>
-&lt;td>Clears ephemeris data&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Cold Start&lt;/td>
-&lt;td>&lt;code>RESET EPHEM ALMANAC IONUTC POSITION&lt;/code>&lt;/td>
-&lt;td>Full data reset&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>See section 8.3 (&amp;ldquo;Reset&amp;rdquo;) in the &lt;a href="https://core-electronics.com.au/attachments/localcontent/Unicore_Reference_Commands_Manual_For_N4_High_Precision_Products_V2_EN_R1_1_189543505cb.pdf" target="_blank" rel="nofollow noopener">Unicore command reference&lt;/a>
-for details.&lt;/p></description></item><item><title>Docs: Using a Gamepad</title><link>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</guid><description>
+&lt;h3 id="optional-record-exclusions">Optional: Record Exclusions&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
+&lt;p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:&lt;/p>
+&lt;ul>
+&lt;li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in &lt;strong>clockwise direction&lt;/strong>.&lt;/li>
+&lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Drive around the area to exclude. Make sure that the GPS position stays fixed at all times.&lt;/li>
+&lt;li>Stop the recording using &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>The outline should now turn red. This means it&amp;rsquo;s done recording, and you can move on to recording more exclusions.&lt;/li>
+&lt;/ul>
+&lt;h3 id="save-area">Save Area&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
+&lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
+&lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
+&lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
+&lt;p>In order to record the docking position, do the following:&lt;/p>
+&lt;ul>
+&lt;li>Drive to a location about 2 m in front of your docking station.&lt;/li>
+&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
+&lt;li>Now drive close to the docking station. The front wheels of the robot should be at the edge of the docking station. &lt;strong>Don&amp;rsquo;t fully drive into the docking station!&lt;/strong>.&lt;/li>
+&lt;li>Make sure you have a GPS fix and press the &lt;strong>Record Docking&lt;/strong> button.&lt;/li>
+&lt;li>The app should move the &lt;strong>home&lt;/strong> icon to your current location. Now you can fully drive into the docking station.&lt;/li>
+&lt;/ul>
+&lt;h3 id="finish-recording">Finish Recording&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
+&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Using a Gamepad</title><link>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</guid><description>
 &lt;p>Using a USB gamepad is the most intuitive way to control your OpenMower during the area recording process. Instead of relying on the on-screen joystick in the web app, a physical controller gives you precise control over the mower&amp;rsquo;s movement — making it much easier to drive clean outlines around your mowing areas.&lt;/p>
 &lt;p>Any Xbox-compatible USB gamepad works out of the box. Simply plug it into one of the USB ports on your Raspberry Pi and OpenMower will detect it automatically. No additional configuration is needed.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -1624,4 +1697,123 @@ alt="OpenMower Gamepad Controls (image licensed from shutterstock.com)"/> &lt;fi
 &lt;td>Record dock entry point at the edge of the station&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;/table></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
+&lt;h2 id="the-map">The Map&lt;/h2>
+&lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
+&lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
+&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/change-hostname/</guid><description>
+&lt;p>Changing the hostname is simple, thanks to the &lt;code>raspi-config&lt;/code> tool:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Select&lt;/strong> System Options -&amp;gt; Hostname&lt;/li>
+&lt;li>&lt;strong>Enter&lt;/strong> a new hostname and press &lt;kbd>Enter&lt;/kbd>`&lt;/li>
+&lt;li>&lt;strong>Finish and Reboot&lt;/strong>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Creating a Debug Recording</title><link>https://openmower.de/latest/docs/knowledge-base/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/debug-recording/</guid><description>
+&lt;p>When investigating issues — especially positioning problems — a rosbag recording gives developers a full snapshot of sensor data to analyse. This guide walks you through recording one and retrieving it from your mower.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Privacy notice&lt;/h4>
+A rosbag records raw sensor data, which includes the &lt;strong>GPS position of your mower&lt;/strong>. By sharing the file you disclose the physical location of your garden. Only share it with people you trust.
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>OpenMower is running and the mower has a GPS fix (green GPS icon in the app)&lt;/li>
+&lt;li>You can access the mower via SSH or the web terminal&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-start-the-recording">Step 1: Start the recording&lt;/h2>
+&lt;p>Connect to your mower via SSH or the web terminal, then enter the ROS shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once inside, navigate to the recordings directory and start recording all topics:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /data/recordings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rosbag record -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This records &lt;strong>all&lt;/strong> active ROS topics. Leave the terminal open — the recording runs until you stop it with &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>.&lt;/p>
+&lt;h2 id="step-2-enter-area-recording-mode">Step 2: Enter area recording mode&lt;/h2>
+&lt;p>Open the OpenMower app and activate &lt;strong>area recording mode&lt;/strong> — the same mode you use when recording mowing areas. This ensures all relevant topics (GPS, IMU, wheel odometry) are actively publishing at full rate.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">GPS fix required&lt;/h4>
+Make sure the GPS icon in the app is &lt;strong>green&lt;/strong> before driving. Recording without a fix produces data that cannot be used for analysis.
+&lt;/div>
+&lt;h2 id="step-3-drive-the-test-patterns">Step 3: Drive the test patterns&lt;/h2>
+&lt;p>Drive the mower through the following patterns. Each one exercises a different aspect of positioning:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Pattern&lt;/th>
+&lt;th>Purpose&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Straight lines&lt;/td>
+&lt;td>Linear odometry and GPS consistency&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Figure-8&lt;/td>
+&lt;td>Combined turning and straight-line tracking&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Rotate on the spot (clockwise)&lt;/td>
+&lt;td>Yaw estimation, IMU vs. GPS heading&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Rotate on the spot (counter-clockwise)&lt;/td>
+&lt;td>Same, opposite direction&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>A minute or two of each pattern is sufficient. You don&amp;rsquo;t need a large area — a small open patch of lawn works fine.&lt;/p>
+&lt;h2 id="step-4-stop-the-recording">Step 4: Stop the recording&lt;/h2>
+&lt;p>Once done, go back to the terminal and press &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>, then type &lt;code>exit&lt;/code> to leave the ROS shell.&lt;/p>
+&lt;p>The &lt;code>.bag&lt;/code> file is now in &lt;code>~/recordings/&lt;/code> on the mower. List the directory to find your filename:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls -lh ~/recordings/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The filename includes a timestamp, e.g. &lt;code>2024-06-01-12-34-56.bag&lt;/code>.&lt;/p>
+&lt;h2 id="step-5-retrieve-the-file">Step 5: Retrieve the file&lt;/h2>
+&lt;p>Copy the &lt;code>.bag&lt;/code> file from &lt;code>~/recordings/&lt;/code> on the mower to your computer.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-02-00-tab" data-toggle="tab" href="#tabs-02-00" role="tab"
+aria-controls="tabs-02-00" aria-selected="false">
+Linux / macOS
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-02-01-tab" data-toggle="tab" href="#tabs-02-01" role="tab"
+aria-controls="tabs-02-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab">
+&lt;p>Use &lt;code>scp&lt;/code> from your local terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp openmower@&amp;lt;mower-ip&amp;gt;:recordings/&amp;lt;filename&amp;gt;.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code> with your mower&amp;rsquo;s IP address and &lt;code>&amp;lt;filename&amp;gt;&lt;/code> with the actual filename. The file downloads to your current directory.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
+&lt;p>&lt;strong>Windows 10 (build 1809 or later) and Windows 11&lt;/strong> include an OpenSSH client. Open &lt;strong>Command Prompt&lt;/strong> or &lt;strong>PowerShell&lt;/strong> and run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bat" data-lang="bat">&lt;span style="display:flex;">&lt;span>scp openmower@&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>mower-ip&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:recordings/&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>filename&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On &lt;strong>older Windows versions&lt;/strong>, use a graphical SFTP client instead:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="https://winscp.net" target="_blank" rel="noopener">WinSCP&lt;/a>
+&lt;/strong> — free, open source&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://cyberduck.io" target="_blank" rel="noopener">Cyberduck&lt;/a>
+&lt;/strong> — free, cross-platform&lt;/li>
+&lt;/ul>
+&lt;p>Connect with protocol &lt;strong>SFTP&lt;/strong>, host &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code>, user &lt;code>openmower&lt;/code>, and navigate to &lt;code>/home/openmower/recordings/&lt;/code> to download the file.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+&lt;code>.bag&lt;/code> files compress very well. Zipping before sharing can reduce the file size significantly:
+&lt;/div>
+&lt;p>Once you have the file, share it with whoever is helping you debug — via Discord, a file sharing service, or any other method that works in context.&lt;/p>
+&lt;h2 id="step-6-clean-up">Step 6: Clean up&lt;/h2>
+&lt;p>Once debugging is done, delete the recordings from the mower to free up disk space:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete a specific file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/&amp;lt;filename&amp;gt;.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete all recordings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/*.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
