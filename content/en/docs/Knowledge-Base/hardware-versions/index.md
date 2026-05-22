@@ -17,24 +17,6 @@ For v2 Hardware Platform, please check the corresponding repository for changes 
 - **SABO / John Deere:** [https://github.com/xtech/hw-openmower-sabo](https://github.com/xtech/hw-openmower-sabo)
 - **Universal:** [https://github.com/xtech/hw-openmower-universal](https://github.com/xtech/hw-openmower-universal)
 
-## 0.13.0 - Red
-
-{{< imgproc 0_13_b Fill "400x400 q99" />}}
-{{< imgproc 0_13_a Fill "400x400 q99" />}}
-
-### Notable changes
-
-* Custom CoverUI added to the kit
-* Dropped support for dfPlayer sound module
-
-### Known issues
-
-* 2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.
-* The first batch of 0.13 boards was mistakenly labeled "latest". No action needed.
-* [Outdated Firmware](https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/). Affect kits shipped before May'23.
-* [IC2 chip is wrong](https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/). Affect kits shipped before May'23.
-* [rain sensor cable is female, but needs to be male](https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/). Affect kits shipped before May'23.
-
 
 # Legacy Hardware (v1 Hardware Platform)
 {{% alert title="Information" color="info" %}}
