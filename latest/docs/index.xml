@@ -2581,11 +2581,11 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;p>These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to a PC for configuration via UPrecise). Some have a different antenna socket, which requires an &lt;em>SMA F&lt;/em> to &lt;em>MMCX M90&lt;/em> cable.&lt;/p>
 &lt;p>Compared to the &lt;em>ArduSimple simpleRTK2B&lt;/em>, they are a bit cheaper and support triple-band frequencies.&lt;/p>
 &lt;h2 id="configuration-via-uart-mainboard">Configuration via UART (mainboard)&lt;/h2>
-&lt;p>Use this method when the RPi is already installed and you want to wire the module directly to the mainboard UART header.&lt;/p>
+&lt;p>Use this method to wire the module directly to the mainboard UART header and configure it via the OpenMower CLI.&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
 &lt;li>Modified mower with replaced mainboard&lt;/li>
-&lt;li>RPi with &lt;code>openmower&lt;/code> service running&lt;/li>
+&lt;li>RPi with &lt;code>openmower&lt;/code> stack running&lt;/li>
 &lt;/ul>
 &lt;h3 id="step-1--solder-headers-on-the-um9xx">Step 1 — Solder headers on the UM9XX&lt;/h3>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/unicore-gps//images/wm9xx.png" alt="UM9XX module with header pins">&lt;/p>
@@ -2629,10 +2629,12 @@ is available as an alternative to manual wiring.&lt;/p>
 &lt;h3 id="step-3--configure-um9xx-over-uart">Step 3 — Configure UM9XX over UART&lt;/h3>
 &lt;p>Install miniterm (part of &lt;code>python3-serial&lt;/code>):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install python3-serial
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stop the openmower service so it does not occupy the UART bus:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl stop openmower
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Connect to the UART bus at the default baud rate (115200):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA2 &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stop the openmower stack so it does not occupy the GPS connection:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower stop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In a separate terminal, expose the GPS over TCP at the default baud rate (115200):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower expose-gps &lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Connect to the GPS:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm socket://localhost:2000 -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-info" role="alert">
 Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
@@ -2649,10 +2651,11 @@ Press &lt;kbd>Enter&lt;/kbd> after each command to send it to the receiver.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$devicename,COM1*67
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the baud rate to 460800:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CONFIG COM1 460800
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>, then reconnect at the new baud rate:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm /dev/ttyAMA2 &lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span> -e
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit miniterm with &lt;strong>Ctrl+]&lt;/strong>, then restart &lt;code>expose-gps&lt;/code> at the new baud rate and reconnect:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower expose-gps &lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m serial.tools.miniterm socket://localhost:2000 -e
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> If commands get no response, the baud rate or COM port is wrong. Reconnect at 115200, run &lt;code>FRESET&lt;/code>, and try again.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> If commands get no response, the baud rate or COM port is wrong. Restart &lt;code>expose-gps&lt;/code> at 115200, run &lt;code>FRESET&lt;/code>, and try again.&lt;/p>
 &lt;/blockquote>
 &lt;p>Configure NMEA output. Each &lt;code>GP*&lt;/code> command produces extra output — make sure &lt;code>SAVECONFIG&lt;/code> completes successfully at the end:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MODE ROVER UAV
