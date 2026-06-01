@@ -11,65 +11,18 @@ Several users have chosen alternative GPS RTK modules with chips by **Unicore**:
 - UM980
 - UM982
 
-These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to the Raspberry Pi). Some have a different antenna socket, which requires an *SMA F* to *MMCX M90* cable.
+These chips are sold in different variants. Some come with a USB-C socket (so they can be connected directly to a PC for configuration via UPrecise). Some have a different antenna socket, which requires an *SMA F* to *MMCX M90* cable.
 
 Compared to the *ArduSimple simpleRTK2B*, they are a bit cheaper and support triple-band frequencies.
 
-## Connection options
-
-| Connection | Notes |
-|---|---|
-| Module USB-C → RPi USB | e.g. with angle connector |
-| Module UART → MainBoard UART | requires header connectivity |
-
-## Configuration options
-
-| Method | When to use |
-|---|---|
-| Vendor software (UPrecise) on Windows | Before installing module into mower |
-| Over UART bus (terminal only) | When RPi is installed and operational |
-
-## Software
-
-The vendor offers [UPrecise](https://en.unicore.com/products/uprecise.html) to check all status details and configure the receiver. The UI is pleasing and has many features, but also quite some bugs. The download requires creating a free account.
-
-## Configuration via UPrecise (USB)
-
-### Receiver
-
-Connect to the receiver via UPrecise. COM3 is used when connected via USB. Paste the following commands into UPrecise:
-
-```
-FRESET
-CONFIG COM3 460800
-MODE ROVER UAV
-GPGGA 0.1
-GPGSV 1
-GPRMC 1
-GPGSA 1
-GPVTG 1
-GPGST 1
-SAVECONFIG
-```
-
-You can also connect directly to the receiver's TTY, but make sure to send CR+LF (`\r\n`) line endings — otherwise commands won't be recognized.
-
-### OpenMower (`mower_config.txt`)
-
-```bash
-export OM_GPS_PROTOCOL="NMEA"
-export OM_GPS_PORT="/dev/ttyUSB0"
-export OM_GPS_BAUDRATE="460800"
-```
-
 ## Configuration via UART (mainboard)
 
-Use this method when the RPi is already installed and you want to wire the module directly to the mainboard UART header.
+Use this method to wire the module directly to the mainboard UART header and configure it via the OpenMower CLI.
 
 ### Prerequisites
 
 - Modified mower with replaced mainboard
-- RPi with `openmower` service running
+- RPi with `openmower` stack running
 
 ### Step 1 — Solder headers on the UM9XX
 
@@ -103,16 +56,22 @@ Install miniterm (part of `python3-serial`):
 sudo apt-get install python3-serial
 ```
 
-Stop the openmower service so it does not occupy the UART bus:
+Stop the openmower stack so it does not occupy the GPS connection:
 
 ```bash
-sudo systemctl stop openmower
+openmower stop
 ```
 
-Connect to the UART bus at the default baud rate (115200):
+In a separate terminal, expose the GPS over TCP at the default baud rate (115200):
 
 ```bash
-python -m serial.tools.miniterm /dev/ttyAMA1 115200 -e
+openmower expose-gps 115200
+```
+
+Connect to the GPS:
+
+```bash
+python -m serial.tools.miniterm socket://localhost:2000 -e
 ```
 
 {{< alert color="info" >}}
@@ -141,13 +100,17 @@ Set the baud rate to 460800:
 CONFIG COM1 460800
 ```
 
-Exit miniterm with **Ctrl+]**, then reconnect at the new baud rate:
+Exit miniterm with **Ctrl+]**, then restart `expose-gps` at the new baud rate and reconnect:
 
 ```bash
-python -m serial.tools.miniterm /dev/ttyAMA1 460800 -e
+openmower expose-gps 460800
 ```
 
-> **Note:** If commands get no response, the baud rate or COM port is wrong. Reconnect at 115200, run `FRESET`, and try again.
+```bash
+python -m serial.tools.miniterm socket://localhost:2000 -e
+```
+
+> **Note:** If commands get no response, the baud rate or COM port is wrong. Restart `expose-gps` at 115200, run `FRESET`, and try again.
 
 Configure NMEA output. Each `GP*` command produces extra output — make sure `SAVECONFIG` completes successfully at the end:
 
