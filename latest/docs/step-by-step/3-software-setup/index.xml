@@ -409,7 +409,7 @@ Test with some higher duty settings. It will become more loud for sure, but shou
 &lt;/li>
 &lt;li>
 &lt;p>Check/Adjust blade rotation direction:&lt;br>
-We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like &amp;ldquo;D 0,08&amp;rdquo;.&lt;/p>
+We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like &amp;ldquo;D 0,02&amp;rdquo;.&lt;/p>
 &lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
@@ -419,7 +419,48 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_7_mow_settings2.jpg" alt="Limit RPM">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Limit battery current:&lt;br>
+Dependent on your Sabo-Carrier hardware version, you should limit the battery current:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Sabo-Carrier Version&lt;/th>
+&lt;th>VESC &lt;code>Battery Current max.&lt;/code> Setting&lt;/th>
+&lt;th>Battery Fuse&lt;/th>
+&lt;th>Mow Fuse&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>v0.2.x&lt;/td>
+&lt;td>6A&lt;/td>
+&lt;td>Conservative 4A Medium&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.4.x&lt;/td>
+&lt;td>4.5A&lt;/td>
+&lt;td>Conservative 4A Medium&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.5.x&lt;/td>
+&lt;td>9A&lt;/td>
+&lt;td>4A Medium but irrelevant&lt;/td>
+&lt;td>8A medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The &lt;code>Battery Current max.&lt;/code> settings listed above are theoretical design limits based on conservative track width calculations.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;strong>Warning:&lt;/strong> If you choose a value larger than the stock fuse, you&amp;rsquo;ve to expect that it may blow and need to be replaced with a higher-rated one.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
