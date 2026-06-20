@@ -131,7 +131,7 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 
 1. Test with "**D 0,08**" which should draw **<= 0.52A** (without assembled blade)
 1. Check/Adjust blade rotation direction:<br>
-   We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like "D 0,08".
+   We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like "D 0,02".
 
    If it rotates CW, change direction via: _Motor Settings → General → Tab General → Invert Motor Direction_. **Do not forget to do: "Write motor configuration" via `↧M`**
 
@@ -139,7 +139,21 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 
 1. Limit blade RPM:<br>
    It's important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away :skull:
-   ![Limit RPM]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_7_mow_settings2.jpg)
+   ![Limit RPM]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_8_mow_rpm.jpg)
+
+1. Limit battery current:<br>
+   Dependent on your Sabo-Carrier hardware version, you should limit the battery current:
+   | Sabo-Carrier Version | VESC `Battery Current max.` Setting | Battery Fuse             | Mow Fuse  |
+   | -------------------- | ----------------------------------- | ------------------------ | --------- |
+   | v0.2.x               | 6A                                  | Conservative 4A Medium   | -         |
+   | v0.4.x               | 4.5A                                | Conservative 4A Medium   | -         |
+   | v0.5.x               | 9A                                  | 4A Medium but irrelevant | 8A medium |
+   
+   > **Note:** The `Battery Current max.` settings listed above are theoretical design limits based on conservative track width calculations.  
+
+   > **Warning:** If you choose a value larger than the stock fuse, you've to expect that it may blow and need to be replaced with a higher-rated one.
+
+   ![Limit currents]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_9_mow_currents.jpg)
 
 {{% /tab %}}
 
