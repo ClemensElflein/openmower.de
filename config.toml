@@ -103,7 +103,6 @@ privacy_policy = "https://itrk.legal/zNs.8U.u9o.html"
 # Domains that get rel="nofollow noopener" on all markdown links
 nofollow_domains = [
   "amzn.to",
-  "shop.devops.care",
   "aliexpress.com",
   "witmotion-sensor.com",
   "uugear.com",
