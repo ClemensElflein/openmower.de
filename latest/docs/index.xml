@@ -1695,11 +1695,10 @@ Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-sta
 &lt;/tr>
 &lt;tr>
 &lt;td>Open Mower Hardware Kit&lt;/td>
-&lt;td>The electronics we will mount inside the robot and the charging station. Also includes goodies to make stuff easier to mount.&lt;/td>
+&lt;td>The electronics we will mount inside the robot. Consists of the mainboard (includes LiPo charger), xCore board, and 3x ESC.&lt;/td>
 &lt;td>1&lt;/td>
-&lt;td>&lt;b>Version 2 Hardware:&lt;/b>&lt;br/> (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>
-)&lt;br/>Contact @Apehaenger on Discord, he has Hardware available&lt;br/>&lt;br/>&lt;b>Version 1 Hardware:&lt;/b>&lt;br/>&lt;a href="https://shop.devops.care/10-openmower" target="_blank" rel="nofollow noopener">Vermut&amp;rsquo;s shop&lt;/a>
-&lt;/td>
+&lt;td>Contact @Apehaenger on Discord, he has Hardware available (see &lt;a href="https://openmower.de/latest/latest/updates/">Announcement&lt;/a>
+)&lt;/td>
 &lt;td>Alternatively you can source and solder most of these parts yourself. Check the repositories in the Links section for PCB designs and BOMs.&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -1718,7 +1717,7 @@ and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blan
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock" target="_blank" rel="noopener">RPi Locator&lt;/a>
 &lt;/td>
-&lt;td>Yes, it has to be the Raspberry Pi CM4, because we need all the UARTs and it goes into the xCore board.&lt;/td>
+&lt;td>Must plug into the xCore board — CM4 and CM5 are supported. Other CM-compatible boards may work but the pre-made OS image won&amp;rsquo;t.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>µSD Card&lt;/td>
@@ -1726,8 +1725,7 @@ and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blan
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3EeWBXj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
 or your local hardware store&lt;/td>
-&lt;td>A Gucci option would be a &lt;a href="https://www.uugear.com/product/raspikey-plug-and-play-emmc-module-for-raspberry-pi/" target="_blank" rel="nofollow noopener">RasPiKey&lt;/a>
-&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>Optional:&lt;/strong>&lt;/td>
