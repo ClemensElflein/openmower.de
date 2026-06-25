@@ -1342,7 +1342,57 @@ This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
 &lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
-&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
+&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Configuring the GPS Antenna Offset</title><link>https://openmower.de/latest/docs/knowledge-base/configure-antenna-offset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-antenna-offset/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>OpenMower tracks position using the GPS antenna. If the antenna is not mounted exactly at the center of the wheel axis, the mower&amp;rsquo;s computed position will be off by that physical offset. Configuring the antenna offset corrects for this.&lt;/p>
+&lt;h2 id="coordinate-system">Coordinate System&lt;/h2>
+&lt;p>The offset is expressed in the mower&amp;rsquo;s local coordinate frame:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Origin&lt;/strong>: center of the wheel axis (midpoint between the two drive wheels)&lt;/li>
+&lt;li>&lt;strong>X axis&lt;/strong>: points forward&lt;/li>
+&lt;li>&lt;strong>Y axis&lt;/strong>: points left&lt;/li>
+&lt;li>&lt;strong>Z axis&lt;/strong>: points up (right-handed coordinate system)&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Direction&lt;/th>
+&lt;th>Sign&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Forward&lt;/td>
+&lt;td>X positive&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Backward&lt;/td>
+&lt;td>X negative&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Left&lt;/td>
+&lt;td>Y positive&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Right&lt;/td>
+&lt;td>Y negative&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Antenna 10 cm forward, 5 cm to the right → &lt;code>antenna_offset_x: 0.1&lt;/code>, &lt;code>antenna_offset_y: -0.05&lt;/code>&lt;/li>
+&lt;li>Antenna 5 cm to the left → &lt;code>antenna_offset_x: 0.0&lt;/code>, &lt;code>antenna_offset_y: 0.05&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;p>Open the ROS parameter config file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the following section at the end of the file, adjusting the values to match your physical antenna position:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">xbot_positioning&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">0.15&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Values are in &lt;strong>meters&lt;/strong>.&lt;/p>
+&lt;p>Save the file. ROS will restart automatically and apply the new offset.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>

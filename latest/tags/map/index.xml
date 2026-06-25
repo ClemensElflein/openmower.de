@@ -4,18 +4,17 @@
 &lt;br>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
 &lt;p>The default location of the map can be found under&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/home/openmower/ros_home/map.json
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/home/openmower/ros/map.json
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .json file.&lt;/p>
 &lt;p>If you want to retrieve the file, you can use an SFTP client like WinSCP or Cyberduck.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /home/openmower/ros_home/map.json /home/openmower/ros_home/map.json.backup
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /home/openmower/ros/map.json /home/openmower/ros/map.json.backup
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To delete the map&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openmower stop
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /home/openmower/ros_home
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete maps (both .bag and .json)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm /home/openmower/ros_home/map.bag
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm /home/openmower/ros_home/map.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /home/openmower/ros
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete the map&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm /home/openmower/ros/map.json
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openmower stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openmower start
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
