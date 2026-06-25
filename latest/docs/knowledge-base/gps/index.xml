@@ -1,0 +1,285 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – GPS &amp; Positioning</title><link>https://openmower.de/latest/docs/knowledge-base/gps/</link><description>Recent content in GPS &amp; Positioning on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/gps/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</guid><description>
+&lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
+&lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
+&lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
+&lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-base-setup/</guid><description>
+&lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://amzn.to/48sGCVP" target="_blank" rel="nofollow noopener">Raspberry Pi 0W&lt;/a>
+&lt;/li>
+&lt;li>µSD card&lt;/li>
+&lt;li>Power supply for RPi&lt;/li>
+&lt;li>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">Ardusimple ZED-F9P&lt;/a>
+&lt;/li>
+&lt;li>A cable or combinatin of cables to connect micro usb male to micro usb male:
+&lt;ul>
+&lt;li>A) Direct like &lt;a href="https://amzn.to/3K7kfMs" target="_blank" rel="nofollow noopener">this&lt;/a>
+&lt;/li>
+&lt;li>B) Adapter (&lt;a href="https://amzn.to/4ifLYqG" target="_blank" rel="nofollow noopener">like this&lt;/a>
+) + micro usb to usb-a cable&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>A windows PC&lt;/li>
+&lt;li>Stable internet connection (no disconnection within one hour)&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>If you know about RPi and have already a functional OS, you may head on to &amp;ldquo;Software&amp;rdquo;, but in my case it did not work using an older image.&lt;/p>
+&lt;h3 id="preparing-sd-card">Preparing sd card&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Download &lt;a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">RPi Imager&lt;/a>
+for windows&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start Imager:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="Imager1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose your RPI (in my case RPi 0W, choosing wrong RPi will most probably result in many problems)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Choose Operating system &amp;ldquo;Raspberry Pi OS lite (legacy, 32bit)&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager3.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager4.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select your sd card:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager5.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press next so this will appear:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager6.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit settings like the following (and use your personal WiFi settings and country), where you set a good password for your Pi account. Username and password are case sensitive!&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>activate SSH:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press save to see this:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./OSCustom2.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on YES and allow to overwrite the data on your sd card (if you are sure, that you will not miss them). It will start downloading and writing the data:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Imager7.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wait until it is finished, it may take half an hour, depending on your internet connection ;-)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="start-your-rtkbase-rpi">Start your RTKBase RPi&lt;/h3>
+&lt;ul>
+&lt;li>Put your sd card into your RPi&lt;/li>
+&lt;li>Connect ZED-F9P via usb to your RPi (NOT after the installation, it will be configured during installation).&lt;/li>
+&lt;li>Power your RPi&lt;/li>
+&lt;/ul>
+&lt;h3 id="connect-to-rpi">Connect to RPi&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Get from your router the IP of your RPi&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start &lt;a href="https://putty.org" target="_blank" rel="noopener">PuTTY&lt;/a>
+and connect to RPi, where you enter the local IP of your RPi&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty1.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter your Username Pi, press enter and than enter your password:&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty2.png" width="120">&lt;/p>
+&lt;p>&lt;img src="" alt=""> &lt;img src="./Putty3.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="software">Software&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Is your ZED-F9P connected? Do it!&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We will use &lt;a href="https://github.com/Stefal/rtkbase" target="_blank" rel="noopener">RTKBase&lt;/a>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To install it, you can use the following lines, which you can copy and paste at once. The original recommendation is no sudo in front of chmod. That did not work for me.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://raw.githubusercontent.com/Stefal/rtkbase/master/tools/install.sh -O install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x install.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./install.sh --all release
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>A very long output should follow. It ends with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GNSS Configuration: &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>STARTING SERVICES
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Created symlink /etc/systemd/system/multi-user.target.wants/str2str_tcp.service → /etc/systemd/system/str2str_tcp.service.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Job &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> gpsd.service failed because the control process exited with error code.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>See &lt;span style="color:#4e9a06">&amp;#34;systemctl status gpsd.service&amp;#34;&lt;/span> and &lt;span style="color:#4e9a06">&amp;#34;journalctl -xe&amp;#34;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> details.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>END OF INSTALLATION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You can open your browser to http://192.168.178.34 &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>here the editor deleted IPV6&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Pi@RTKBase:~ $
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Installation finished, go on and configure your RTKBase&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;h2 id="configuring-your-rtkbase">Configuring your RTKBase&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Start a browser and enter the IP address of your RTKBase. You will get this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase01.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter as password admin. On the following site press the copy symbol right to PPP.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to settings and press &amp;ldquo;options&amp;rdquo; right to &amp;ldquo;Main Service&amp;rdquo;, than paste your coordinates to &amp;ldquo;Base coordinates&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on options again, than on options right to &amp;ldquo;Caster Service&amp;rdquo;&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase04.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Here you have to enter the setting set up in your mower, standard is: username gps and password gps. Select the right mount point. I have named it like my city, in mower config and here.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save the config&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Switch on &amp;ldquo;Caster Service&amp;rdquo; and &amp;ldquo;File Service&amp;rdquo;, it should look like this:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase05.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Eventually change your password below these options.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At logs you should find at least two files:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase06.png" width="120">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="find-the-position-of-your-rtkbase">Find the position of your RTKBase&lt;/h3>
+&lt;p>There are several ways to find your position. To use openmower you do not need the perfect position. Therefore the first option should be your choice, if you want a fast and good result for openmower.&lt;/p>
+&lt;h4 id="easy-and-good-way">Easy and good way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>Click on the symbol right to PPP to copy the values to the clipboard:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase02.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter these values to your options at MainService.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="more-complicated-and-more-exact-way">More complicated and more exact way&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>You have to set up the logging of your position as mentioned above by activating &amp;ldquo;file service&amp;rdquo;. You should wait for a day to average all the values to get a high precision position.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After midnight you find a zip-file at logs. This you can convert to a Rinex file. To understand this file you may check &lt;a href="http://walter.bislins.ch/bloge/index.asp?page=Understanding&amp;#43;GPS%2FGNSS&amp;#43;RINEX&amp;#43;Files&amp;#43;and&amp;#43;Relevant&amp;#43;Parameters" target="_blank" rel="noopener">RINEX-File&lt;/a>
+, but you don&amp;rsquo;t need it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Press on the pencil right to the zip-file:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase07.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;ldquo;Create Rinex file&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase08.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Download it when finished (may take a while, some minutes or longer)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Go to &lt;a href="https://rgp.ign.fr/SERVICES/calcul_online.php" target="_blank" rel="noopener">Calculator&lt;/a>
+, upload your Rinex file and enter your email address. Don&amp;rsquo;t forget to enter the &amp;ldquo;no robot&amp;rdquo;-verification.&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./ignfr.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you received the email, look at &amp;ldquo;ITRF2014&amp;rdquo; (or search for &amp;ldquo;longitude&amp;rdquo;) and see your values like LONGITUDE 6.XXXXXXXXX° LATITUDE 51.XXXXXXXXX° HELL 79.9041&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./averaged.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You enter these values to your options at MainService. Be aware that the order of LONGITUDE and LATITUDE is switched!&lt;/p>
+&lt;p>&lt;img src="" alt="">&lt;img src="./RTKBase03.png" width="120">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Save&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ReActivate Ntrip Service&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finished!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Configuring the GPS Antenna Offset</title><link>https://openmower.de/latest/docs/knowledge-base/gps/configure-antenna-offset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/configure-antenna-offset/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>OpenMower tracks position using the GPS antenna. If the antenna is not mounted exactly at the center of the wheel axis, the mower&amp;rsquo;s computed position will be off by that physical offset. Configuring the antenna offset corrects for this.&lt;/p>
+&lt;h2 id="coordinate-system">Coordinate System&lt;/h2>
+&lt;p>The offset is expressed in the mower&amp;rsquo;s local coordinate frame:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Origin&lt;/strong>: center of the wheel axis (midpoint between the two drive wheels)&lt;/li>
+&lt;li>&lt;strong>X axis&lt;/strong>: points forward&lt;/li>
+&lt;li>&lt;strong>Y axis&lt;/strong>: points left&lt;/li>
+&lt;li>&lt;strong>Z axis&lt;/strong>: points up (right-handed coordinate system)&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Direction&lt;/th>
+&lt;th>Sign&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Forward&lt;/td>
+&lt;td>X positive&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Backward&lt;/td>
+&lt;td>X negative&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Left&lt;/td>
+&lt;td>Y positive&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Right&lt;/td>
+&lt;td>Y negative&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Examples:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Antenna 10 cm forward, 5 cm to the right → &lt;code>antenna_offset_x: 0.1&lt;/code>, &lt;code>antenna_offset_y: -0.05&lt;/code>&lt;/li>
+&lt;li>Antenna 5 cm to the left → &lt;code>antenna_offset_x: 0.0&lt;/code>, &lt;code>antenna_offset_y: 0.05&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuration">Configuration&lt;/h2>
+&lt;p>Open the ROS parameter config file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the following section at the end of the file, adjusting the values to match your physical antenna position:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">xbot_positioning&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">0.15&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Values are in &lt;strong>meters&lt;/strong>.&lt;/p>
+&lt;p>Save the file. ROS will restart automatically and apply the new offset.&lt;/p></description></item></channel></rss>

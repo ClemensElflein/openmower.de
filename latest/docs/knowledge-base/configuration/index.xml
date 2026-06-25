@@ -1,0 +1,649 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Configuration</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/</link><description>Recent content in Configuration on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/</guid><description>
+&lt;p>The xESC motor controllers can be configured to work with many BLDC and DC motors.
+The firmware for the controllers is based on the open source VESC project and therefore, the controllers can be configured using the VESC Configuration Tool.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
+&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
+)&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/installation/firmware-update/">Firmware Update&lt;/a>
+guide.&lt;/li>
+&lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
+for the files suited for your mower. &lt;br/>You will need three files:
+&lt;ul>
+&lt;li>App configuration XML (sets the baud rate, etc. Same for all three xESC controllers)&lt;/li>
+&lt;li>Mower Motor configuration XML (motor parameters for the mower motor)&lt;/li>
+&lt;li>Drive Motor configuration XML (motor parameters for the wheel motors)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuration-process">Configuration Process&lt;/h3>
+&lt;h4 id="stop-ros-from-interfering-with-the-controllers">Stop ROS from interfering with the controllers&lt;/h4>
+&lt;p>&lt;code>openmower stop&lt;/code> to stop ROS from interfering with the controllers during configuration.&lt;/p>
+&lt;h4 id="expose-the-esc-to-the-network">Expose the ESC to the network&lt;/h4>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
+Run &lt;code>openmower expose-xesc [left|right|mower]&lt;/code> to expose the xESC controller (choose &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> or &lt;code>right&lt;/code>).&lt;br/>The controller is then reachable in your local network on &lt;code>openmower:65102&lt;/code> until you hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
+&lt;h4 id="connect-to-the-xesc">Connect to the xESC&lt;/h4>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
+Open the VESC Configuration Tool and connect to the xESC controllers by clicking:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Connection -&amp;gt; TCP&lt;/code> &lt;strong>[1]&lt;/strong>&lt;/li>
+&lt;li>Insert the IP address of your mower or &lt;code>openmower&lt;/code> into the Address field &lt;strong>[2]&lt;/strong>.&lt;/li>
+&lt;li>Set the port to &lt;code>65102&lt;/code> &lt;strong>[3]&lt;/strong>&lt;/li>
+&lt;li>Click &lt;code>Connect&lt;/code> &lt;strong>[4]&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Information&lt;/h4>
+&lt;p>If you encounter this warning message:&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
+&lt;p>you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.&lt;/p>
+&lt;/div>
+&lt;h4 id="configure-xesc">Configure xESC&lt;/h4>
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-04-00-tab" data-toggle="tab" href="#tabs-04-00" role="tab"
+aria-controls="tabs-04-00" aria-selected="false">
+&lt;strong>Choose your configuration path&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-04-01-tab" data-toggle="tab" href="#tabs-04-01" role="tab"
+aria-controls="tabs-04-01" aria-selected="false">
+Preset configs (Yard Force)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-02-tab" data-toggle="tab" href="#tabs-04-02" role="tab"
+aria-controls="tabs-04-02" aria-selected="false">
+SABO/John Deere (tuning)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-03-tab" data-toggle="tab" href="#tabs-04-03" role="tab"
+aria-controls="tabs-04-03" aria-selected="false">
+New model? Let’s dial it in
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-4-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-00" role="tabpanel" aria-labelled-by="tabs-04-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab">
+&lt;h4 id="upload-the-configurations">Upload the configurations&lt;/h4>
+&lt;div class="tab-gallery">&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 - Load Motor Configuration XML" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="1 - Load Motor Configuration XML"
+title="1 - Load Motor Configuration XML">
+&lt;span title="1 - Load Motor Configuration XML">1 - Load Motor Configuration XML&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 - Select Motor XML Config" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="2 - Select Motor XML Config"
+title="2 - Select Motor XML Config">
+&lt;span title="2 - Select Motor XML Config">2 - Select Motor XML Config&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 - Ignore Configuration Version Warning Message" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="3 - Ignore Configuration Version Warning Message"
+title="3 - Ignore Configuration Version Warning Message">
+&lt;span title="3 - Ignore Configuration Version Warning Message">3 - Ignore Configuration Version Warning Message&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 - Write Motor Configuration" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="4 - Write Motor Configuration"
+title="4 - Write Motor Configuration">
+&lt;span title="4 - Write Motor Configuration">4 - Write Motor Configuration&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 - Load App Config" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="5 - Load App Config"
+title="5 - Load App Config">
+&lt;span title="5 - Load App Config">5 - Load App Config&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 - Write App Config" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="6 - Write App Config"
+title="6 - Write App Config">
+&lt;span title="6 - Write App Config">6 - Write App Config&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>With the VESC Configuration Tool connected, you can now upload the configuration to your xESC controllers:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>[Image 1]&lt;/strong>: Click &lt;code>File -&amp;gt; Load Motor Configuration XML&lt;/code>&lt;/li>
+&lt;li>&lt;strong>[Image 2]&lt;/strong>: Select the motor configuration XML file for your motor (different for mowing motor and the drive motors)&lt;/li>
+&lt;li>&lt;strong>[Image 3]&lt;/strong>: Ignore the version message, if it appears&lt;/li>
+&lt;li>&lt;strong>[Image 4]&lt;/strong>: Click &lt;code>Write Motor configuration&lt;/code>. The green banner will appear on success.&lt;/li>
+&lt;li>&lt;strong>[Image 5]&lt;/strong>: Click &lt;code>File -&amp;gt; Load App Configuration XML&lt;/code>. Ignore the version message, if it appears&lt;/li>
+&lt;li>&lt;strong>[Image 6]&lt;/strong>: Click &lt;code>Write App configuration&lt;/code>. The green banner will appear on success.&lt;/li>
+&lt;li>&lt;strong>Hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>&lt;/strong> in the openmower terminal to stop exposing the xESC controller.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Repeat these steps for all three of the three xESC controllers.&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
+&lt;h4 id="required-preparations">Required preparations&lt;/h4>
+&lt;ol>
+&lt;li>Remove the mower blade.&lt;/li>
+&lt;li>Really, remove the blade! This is a huge mower with a strong motor and large blade! 💀&lt;/li>
+&lt;li>Lift the mower&amp;rsquo;s rear so wheels can spin freely (use a carton, block or stand).&lt;/li>
+&lt;li>Unmount the mower blade!&lt;/li>
+&lt;li>Use battery power for calibration (not dock power), and ensure the battery has sufficient charge.&lt;/li>
+&lt;li>Check if you disassembled the mower blade!&lt;/li>
+&lt;/ol>
+&lt;h4 id="drive-motor-calibration-left-then-right">Drive motor calibration (left then right)&lt;/h4>
+&lt;p>Perform calibration for left drive first, then repeat the procedure for the right drive.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;/li>
+&lt;li>
+&lt;p>Now that the calibration succeed, lets test the result:
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
+Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>As a last important step, load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Drive-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Done 😆&lt;br>
+&amp;hellip; &lt;strong>but not finished&lt;/strong> ✌️ &amp;hellip; you need to do the whole procedure again, but with the right drive side.&lt;/p>
+&lt;p>So, &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>c&lt;/kbd> your &lt;code>openmower expose-xesc left&lt;/code>, and do it again but with &lt;code>openmower expose-xesc right&lt;/code>.&lt;/p>
+&lt;h4 id="mow-motor-calibration">Mow Motor Calibration&lt;/h4>
+&lt;p>For the mow motor ESC calibration, you do the same workflow, but with adapted values:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>openmower expose-xesc mower&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>During FOC Calibration Wizard use the following values:&lt;/p>
+&lt;ul>
+&lt;li>Tab &amp;ldquo;Motor&amp;rdquo; = Medium Inrunner ~750g
+&lt;ul>
+&lt;li>Advanced: Max Power Loss = 200, Motor Poles = 8&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Battery&amp;rdquo;
+&lt;ul>
+&lt;li>Battery Capacity = 3.9Ah (same as before)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Setup&amp;rdquo;
+&lt;ul>
+&lt;li>Gear Ratio = Check Direct Drive&lt;/li>
+&lt;li>Motor Poles = 8&lt;/li>
+&lt;li>Motor Temp. Sensor = disabled&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Test with &amp;ldquo;&lt;strong>D 0,08&lt;/strong>&amp;rdquo; which should draw &lt;strong>&amp;lt;= 0.52A&lt;/strong> (without assembled blade)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Check/Adjust blade rotation direction:&lt;br>
+We need to ensure that the blade rotate CCW (when watching from downside onto the axis). Do this with a slow rotation speed like &amp;ldquo;D 0,02&amp;rdquo;.&lt;/p>
+&lt;p>If it rotates CW, change direction via: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Do not forget to do: &amp;ldquo;Write motor configuration&amp;rdquo; via &lt;code>↧M&lt;/code>&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Load the correct ESC-App config via: &lt;em>File → Load App Configuration XML&lt;/em>, choose &lt;code>SABO_Mower-App.xml&lt;/code> (see &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO ESCs configs&lt;/a>
+) and finally press the &lt;code>↧A&lt;/code> icon (Write app configuration) on the right side.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Limit blade RPM:&lt;br>
+It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Limit battery current:&lt;br>
+Dependent on your Sabo-Carrier hardware version, you should limit the battery current:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Sabo-Carrier Version&lt;/th>
+&lt;th>VESC &lt;code>Battery Current max.&lt;/code> Setting&lt;/th>
+&lt;th>Battery Fuse&lt;/th>
+&lt;th>Mow Fuse&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>v0.2.x&lt;/td>
+&lt;td>6A&lt;/td>
+&lt;td>Conservative 4A Medium&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.4.x&lt;/td>
+&lt;td>4.5A&lt;/td>
+&lt;td>Conservative 4A Medium&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.5.x&lt;/td>
+&lt;td>9A&lt;/td>
+&lt;td>4A Medium but irrelevant&lt;/td>
+&lt;td>8A medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> The &lt;code>Battery Current max.&lt;/code> settings listed above are theoretical design limits based on conservative track width calculations.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;strong>Warning:&lt;/strong> If you choose a value larger than the stock fuse, you&amp;rsquo;ve to expect that it may blow and need to be replaced with a higher-rated one.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
+&lt;p>Choose your adventure. Your build, your rules.&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>Docs: Configuring GPIO Inputs</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-gpio-inputs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-gpio-inputs/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>OpenMower supports configuring GPIO pins as digital inputs that can trigger emergency stops or other events. Common use cases include:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Wheel lift sensors&lt;/strong> — detect when the mower is lifted&lt;/li>
+&lt;li>&lt;strong>Stop buttons&lt;/strong> — physical emergency stop buttons on top of the mower&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-create-the-inputs-configuration-file">Step 1: Create the inputs configuration file&lt;/h2>
+&lt;p>Create &lt;code>/home/openmower/params/inputs.yaml&lt;/code> with your GPIO input definitions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gpio&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front left wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front right wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO11&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2500&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO12&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Top stop button 2&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO13&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">active&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">low&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">emergency&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reason&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stop&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">delay&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="configuration-fields">Configuration fields&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>name&lt;/code>&lt;/td>
+&lt;td>Human-readable label for the input&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>line&lt;/code>&lt;/td>
+&lt;td>GPIO pin name (e.g. &lt;code>GPIO10&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>active&lt;/code>&lt;/td>
+&lt;td>Logic level that triggers the event — &lt;code>low&lt;/code> or &lt;code>high&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>emergency.reason&lt;/code>&lt;/td>
+&lt;td>Emergency type — &lt;code>lift&lt;/code> for wheel lift, &lt;code>stop&lt;/code> for stop button&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>emergency.delay&lt;/code>&lt;/td>
+&lt;td>Debounce/delay in milliseconds before the emergency is triggered&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gpio-pin-mapping">GPIO Pin Mapping&lt;/h2>
+&lt;p>The example config above uses GPIO10–GPIO13. Here is how those map to physical connectors on each board.&lt;/p>
+&lt;h3 id="openmower-universal-board">OpenMower Universal Board&lt;/h3>
+&lt;p>Orientation: looking at the board with the ethernet ports facing you.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Position&lt;/th>
+&lt;th>GPIO&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Top left&lt;/td>
+&lt;td>GPIO13&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Top right&lt;/td>
+&lt;td>GPIO12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bottom right&lt;/td>
+&lt;td>GPIO11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bottom left&lt;/td>
+&lt;td>GPIO10&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="openmower-yardforce-board">OpenMower Yardforce Board&lt;/h3>
+&lt;p>Orientation: looking at the board with the ethernet ports at the bottom left, pins sorted top to bottom.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Position&lt;/th>
+&lt;th>GPIO&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1st (topmost)&lt;/td>
+&lt;td>GPIO10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2nd&lt;/td>
+&lt;td>GPIO11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3rd&lt;/td>
+&lt;td>GPIO12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4th&lt;/td>
+&lt;td>GPIO13&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="step-2-enable-the-input-service">Step 2: Enable the input service&lt;/h2>
+&lt;p>Add the following to your &lt;code>mower_params.yaml&lt;/code> (or &lt;code>custom_params.yaml&lt;/code> for Universal board builds):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">input&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">config_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/data/params/inputs.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To open the file for editing:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Path mapping on OSv2&lt;/h4>
+On OSv2, &lt;code>/home/openmower/params&lt;/code> is mapped to &lt;code>/data/params&lt;/code> inside the container. If you are on a different setup, adjust the &lt;code>config_file&lt;/code> path accordingly.
+&lt;/div>
+&lt;h2 id="step-3-restart-openmower">Step 3: Restart OpenMower&lt;/h2>
+&lt;p>After saving both files, restart the service to apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Universal Board Configuration</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/universal-board-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/universal-board-configuration/</guid><description>
+&lt;p>This guide is for &lt;strong>custom mower builds&lt;/strong> using the OpenMower Universal Board. Unlike supported mowers, custom builds require you to measure and set several hardware-specific parameters before the mower will operate correctly.&lt;/p>
+&lt;p>All custom parameters go into &lt;code>~/params/custom_params.yaml&lt;/code> on the mower.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Do not use openmower configure ros&lt;/h4>
+&lt;p>&lt;code>openmower configure ros&lt;/code> opens &lt;code>mower_params.yaml&lt;/code> by default — this is the &lt;strong>wrong file&lt;/strong> for custom builds. Always edit &lt;code>custom_params.yaml&lt;/code> directly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/params/custom_params.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All other &lt;code>openmower&lt;/code> commands (e.g. &lt;code>openmower configure env&lt;/code>) work as expected.&lt;/p>
+&lt;/div>
+&lt;h2 id="configuration-template">Configuration Template&lt;/h2>
+&lt;p>Download the template and place it at &lt;code>~/params/custom_params.yaml&lt;/code> on your mower as a starting point:&lt;/p>
+&lt;p>&lt;strong>&lt;a href="custom_params.yaml">Download custom_params.yaml&lt;/a>
+&lt;/strong>&lt;/p>
+&lt;p>The sections below explain every parameter marked &lt;code># TODO&lt;/code>.&lt;/p>
+&lt;hr>
+&lt;h3 id="differential-drive">Differential Drive&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">diff_drive&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">wheel_distance_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.325&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ticks_per_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1600.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>wheel_distance_m&lt;/code>&lt;/td>
+&lt;td>Distance in meters between the center of the left and right drive wheels. Measure with a tape measure.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>ticks_per_m&lt;/code>&lt;/td>
+&lt;td>Encoder ticks per meter of travel. Must be measured — see &lt;a href="#calibrating-wheel-ticks">Calibrating Wheel Ticks&lt;/a>
+below.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="imu-orientation">IMU Orientation&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">imu&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">axis_config&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;+X-Y-Z&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>axis_config&lt;/code>&lt;/td>
+&lt;td>Orientation of the mainboard relative to the mower chassis. &lt;code>+X-Y-Z&lt;/code> is correct for a flat, horizontal mounting with the board&amp;rsquo;s X axis pointing forward. Change this if your mainboard is mounted at an angle or rotated.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="battery-voltages">Battery Voltages&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">power&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_full_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">20.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_empty_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">18.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_critical_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">16.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">battery_critical_high_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">21.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">charge_critical_high_voltage&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">30.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">charge_critical_high_current&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look up the voltage spec for your battery pack and set accordingly.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>battery_full_voltage&lt;/code>&lt;/td>
+&lt;td>Voltage of a fully charged pack (from spec).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_empty_voltage&lt;/code>&lt;/td>
+&lt;td>Voltage at which the mower returns to dock.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_critical_voltage&lt;/code>&lt;/td>
+&lt;td>Emergency low-voltage cutoff. Set below empty but above damaging discharge.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>battery_critical_high_voltage&lt;/code>&lt;/td>
+&lt;td>Overvoltage protection threshold. Set slightly above full charge voltage.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>charge_critical_high_voltage&lt;/code>&lt;/td>
+&lt;td>Maximum acceptable charger output voltage.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>charge_critical_high_current&lt;/code>&lt;/td>
+&lt;td>Maximum acceptable charge current in amps.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="gps-antenna-offset">GPS Antenna Offset&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">xbot_positioning&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.0&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The positioning system needs to know where the GPS antenna is relative to the mower&amp;rsquo;s &lt;strong>center of rotation&lt;/strong> (the midpoint between the two drive wheels).&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>What to set&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>antenna_offset_x&lt;/code>&lt;/td>
+&lt;td>Forward/back offset in meters. Positive = antenna is in front of the rotation center. Measure from wheel midpoint to antenna.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>antenna_offset_y&lt;/code>&lt;/td>
+&lt;td>Left/right offset in meters. Positive = antenna is to the left. Usually 0 if the antenna is centered.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="gps-datum">GPS Datum&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">datum_lat&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">53.457452&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">datum_long&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">10.014737&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These are not marked &lt;code>TODO&lt;/code> in the template but &lt;strong>must be changed&lt;/strong>. Set them to coordinates near your docking station — this becomes the origin of your mower&amp;rsquo;s map. Use a GPS or map tool to get the coordinates.&lt;/p>
+&lt;hr>
+&lt;h3 id="ntrip-credentials">NTRIP Credentials&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ntrip_client&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">host&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;www.your-ntrip-caster.de&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">port&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2101&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">username&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntripuser&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">password&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntrippass&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">mountpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;ntripmount&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Fill in the credentials from your RTK correction provider.&lt;/p>
+&lt;hr>
+&lt;h3 id="emergency-sensors">Emergency Sensors&lt;/h3>
+&lt;p>Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-gpio-inputs/">Configuring GPIO Inputs&lt;/a>
+for the full setup guide.&lt;/p>
+&lt;h3 id="enable-mower-motor">Enable Mower Motor&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">mower_logic&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enable_mower&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set to &lt;code>true&lt;/code> only after all emergency sensors are wired, configured, and verified to work correctly. Running without functioning emergency sensors is unsafe.&lt;/p>
+&lt;hr>
+&lt;h2 id="calibrating-wheel-ticks">Calibrating Wheel Ticks&lt;/h2>
+&lt;p>This procedure measures the &lt;code>ticks_per_m&lt;/code> value for your specific mower&amp;rsquo;s wheel encoders.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>OpenMower is running&lt;/li>
+&lt;li>SSH or web terminal access&lt;/li>
+&lt;li>A flat surface with ~10 m of clear, straight space&lt;/li>
+&lt;li>Something to mark the start and end position (tape, chalk, etc.)&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-enter-recording-mode">Step 1: Enter recording mode&lt;/h3>
+&lt;p>Open the OpenMower app and activate &lt;strong>area recording mode&lt;/strong>. This ensures the drive motors and wheel encoders are active and publishing odometry data.&lt;/p>
+&lt;h3 id="step-2-record-start-tacho-values">Step 2: Record start tacho values&lt;/h3>
+&lt;p>Open the ROS shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Subscribe to the left ESC status topic and note the &lt;code>tacho&lt;/code> field:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/left_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Write down the value, then press &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>C&lt;/kbd>. Repeat for the right wheel:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/right_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-drive-a-10-m-straight-line">Step 3: Drive a 10 m straight line&lt;/h3>
+&lt;p>Mark the mower&amp;rsquo;s current position, then drive it in a straight line for exactly &lt;strong>10 meters&lt;/strong>. Drive slowly and steadily — the straighter the line, the more accurate the result.&lt;/p>
+&lt;h3 id="step-4-record-end-tacho-values">Step 4: Record end tacho values&lt;/h3>
+&lt;p>Subscribe to each topic again and note the new &lt;code>tacho&lt;/code> values:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/left_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rostopic &lt;span style="color:#204a87">echo&lt;/span> /ll/diff_drive/right_esc_status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-calculate-ticks_per_m">Step 5: Calculate ticks_per_m&lt;/h3>
+&lt;p>Compute the difference for each wheel. If negative, flip the sign:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>left_diff = |tacho_end_left - tacho_start_left|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>right_diff = |tacho_end_right - tacho_start_right|
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The two values should be approximately equal. Average them and divide by 10:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ticks_per_m = (left_diff + right_diff) / (2 * 10)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-6-apply-the-value">Step 6: Apply the value&lt;/h3>
+&lt;p>Edit &lt;code>custom_params.yaml&lt;/code> directly:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/params/custom_params.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set the value you calculated:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">diff_drive&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">ticks_per_m&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">&amp;lt;your_value&amp;gt;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save the file and restart OpenMower to apply.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tip&lt;/h4>
+Run the measurement two or three times and average the results for better accuracy. Small variations in how straight you drive will affect individual readings.
+&lt;/div></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-ros-parameters/</guid><description>
+&lt;h2 id="viewing-and-configuring-ros-parameters">Viewing and Configuring ROS Parameters&lt;/h2>
+&lt;p>OpenMower is built on ROS, which means much of its behavior is controlled through parameters. Understanding how to inspect and modify these parameters gives you fine-grained control over your mower’s operation.&lt;/p>
+&lt;h3 id="listing-all-parameters">Listing All Parameters&lt;/h3>
+&lt;p>To see all currently active ROS parameters, open the OpenMower shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rosparam list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will display a full list of parameters currently loaded in the system. It’s a useful first step when debugging or trying to understand how your mower is configured.&lt;/p>
+&lt;h3 id="overwriting-parameters">Overwriting Parameters&lt;/h3>
+&lt;p>All parameters can be customized using the &lt;code>mower_params.yaml&lt;/code> configuration file. This file acts as the central place to override default values.&lt;/p>
+&lt;p>The easiest way to edit it is with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example">Example&lt;/h3>
+&lt;p>In this example we will be overwriting the speed parameter.&lt;/p>
+&lt;h4 id="1-fetch-the-parameters-current-value">1. Fetch the Parameter&amp;rsquo;s current value&lt;/h4>
+&lt;p>After discovering a parameter you want to edit using &lt;code>rosparam list&lt;/code>, you can get the value using &lt;code>rosparam get &amp;lt;parameter&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this case, our speed is currently at 0.4 m/sec for mowing&lt;/p>
+&lt;h4 id="2-change-the-value-for-your-config">2. Change the value for your config&lt;/h4>
+&lt;p>On the host system call &lt;code>openmower configure ros&lt;/code> and translate the parameter name to YAML.
+This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space).&lt;/p>
+&lt;p>For our example it looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">move_base_flex&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">FTCPlanner&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">speed_fast&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.5&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="3-save-the-file-and-check-the-updated-value">3. Save the file and check the updated value&lt;/h4>
+&lt;p>After saving the file, ROS is automatically restarted and you can check, if the value is now updated:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>🚜 openmower@openmower-v2:~$ rosparam get /move_base_flex/FTCPlanner/speed_fast
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
+&lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
+&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item></channel></rss>

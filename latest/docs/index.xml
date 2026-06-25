@@ -178,7 +178,7 @@ CheckSpace -- No --> AskDiscord
 &lt;/div>
 &lt;h1 id="officially-supported-mowers">Officially Supported Mowers&lt;/h1>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
 &lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
 &lt;/p>
 &lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
@@ -206,16 +206,16 @@ The main reason is that the OpenMower mainboard does not fit in their chassis.
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">&lt;strong>Series-I (v0.1) @ John Deere Tango E5&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">&lt;strong>Series-II (v0.1) @ Sabo MOWiT 500F&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -230,7 +230,7 @@ Your browser does not support the video tag.
 &lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
 &lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
 &lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
 &lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
 &lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
 &lt;ul>
@@ -239,9 +239,9 @@ Your browser does not support the video tag.
 &lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Fuxtec and Redback mowers&lt;/li>
 &lt;/ul>
 &lt;h3 id="custom-hardware">Custom Hardware&lt;/h3>
-&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/compatible-mowers/</guid><description>
+&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</guid><description>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
 &lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
 &lt;/p>
 &lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
@@ -269,16 +269,16 @@ The main reason is that the OpenMower mainboard does not fit in their chassis.
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:center">&lt;strong>Series-I (v0.1) @ John Deere Tango E5&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">&lt;strong>Series-II (v0.1) @ Sabo MOWiT 500F&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -293,7 +293,7 @@ Your browser does not support the video tag.
 &lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
 &lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
 &lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
 &lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
 &lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
 &lt;ul>
@@ -382,7 +382,7 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;li>&lt;strong>Community:&lt;/strong> 2k+ members on Discord ready to help with reviews and troubleshooting&lt;/li>
 &lt;/ul>
 &lt;p>New to the project? Start with the &lt;a href="https://openmower.de/latest/latest/docs/overview/">Overview page&lt;/a>
-. Before building, read the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/architecture/">System Architecture&lt;/a>
+. Before building, read the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/architecture/">System Architecture&lt;/a>
 to understand how the app, ROS, firmware, and hardware fit together.&lt;/p>
 &lt;h2 id="important-warnings">Important Warnings&lt;/h2>
 &lt;div class="alert alert-warning" role="alert">
@@ -407,7 +407,7 @@ to understand how the app, ROS, firmware, and hardware fit together.&lt;/p>
 &lt;li>Many other models using the universal carrier board&lt;/li>
 &lt;li>If you want to build a mower from scratch, that&amp;rsquo;s also possible&lt;/li>
 &lt;/ul>
-&lt;p>See the full &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers List&lt;/a>
+&lt;p>See the full &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers/">Compatible Mowers List&lt;/a>
 for additional models and community builds.&lt;/p>
 &lt;h2 id="what-you-need-to-know">What You Need to Know&lt;/h2>
 &lt;h3 id="required-skills">Required Skills&lt;/h3>
@@ -450,7 +450,7 @@ Therefore, you will need one or two RTK GPS receivers:&lt;/p>
 &lt;p>&lt;img src="flow_chart.jpg" alt="Open Mower Build Overview">&lt;/p>
 &lt;p>Follow these steps in sequence:&lt;/p>
 &lt;h2 id="ready-to-shop">Ready to shop?&lt;/h2>
-&lt;p>&lt;strong>Check the detailed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Shopping List&lt;/a>
+&lt;p>&lt;strong>Check the detailed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/">Shopping List&lt;/a>
 .&lt;/strong>&lt;/p>
 &lt;h2 id="get-support">Get Support&lt;/h2>
 &lt;h3 id="discord-community">Discord Community&lt;/h3>
@@ -472,7 +472,7 @@ Therefore, you will need one or two RTK GPS receivers:&lt;/p>
 page for all resources.&lt;/p>
 &lt;h2 id="next-steps">Next Steps&lt;/h2>
 &lt;p>If you are ready to start building:&lt;/p>
-&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/shopping-list/">Review the Shopping List&lt;/a>
+&lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/">Review the Shopping List&lt;/a>
 &lt;/p>
 &lt;p>➡️ &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">Check the Step by Step Guide&lt;/a>
 &lt;/p></description></item><item><title>Docs: YardForce Classic 500(B)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500/</guid><description>
@@ -980,11 +980,11 @@ document.getElementById('step-3-2-0-player'),
 &lt;/script>
 &lt;h3 id="rename-your-host-optional">Rename your host (optional)&lt;/h3>
 &lt;p>If you are running multiple robots, it&amp;rsquo;s a good idea to rename your host to distinguish between them.&lt;/p>
-&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/change-hostname/">Change Hostname&lt;/a>
+&lt;p>You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/maintenance/change-hostname/">Change Hostname&lt;/a>
 &lt;/p>
 &lt;h3 id="enable-external-wifi-antenna-optional">Enable External WiFi Antenna (optional)&lt;/h3>
 &lt;p>If you have added an external WiFi antenna, you need to enable it.
-You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/external-wifi-antenna/">Enable External Antenna&lt;/a>
+You can do this by following the steps in the Knowledge Base: &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/installation/external-wifi-antenna/">Enable External Antenna&lt;/a>
 &lt;/p>
 &lt;h2 id="step-321-setup-environment-variables">Step 3.2.1: Setup Environment Variables&lt;/h2>
 &lt;p>Now we can start the configuration by setting the environment variables.&lt;/p>
@@ -1031,7 +1031,7 @@ document.getElementById('step-3-2-1-player'),
 &lt;/div>
 &lt;script>
 AsciinemaPlayer.create(
-'/latest/docs/knowledge-base/firmware-update//cast/openmower-update-firmware.cast',
+'/latest/docs/knowledge-base/installation/firmware-update//cast/openmower-update-firmware.cast',
 document.getElementById('step-3-2-2-player'),
 { cols: 110, rows: 24, autoplay: false, loop: true }
 );
@@ -1045,7 +1045,7 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
 &lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
 )&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
-&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/installation/firmware-update/">Firmware Update&lt;/a>
 guide.&lt;/li>
 &lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
 for the files suited for your mower. &lt;br/>You will need three files:
@@ -1060,10 +1060,10 @@ for the files suited for your mower. &lt;br/>You will need three files:
 &lt;h4 id="stop-ros-from-interfering-with-the-controllers">Stop ROS from interfering with the controllers&lt;/h4>
 &lt;p>&lt;code>openmower stop&lt;/code> to stop ROS from interfering with the controllers during configuration.&lt;/p>
 &lt;h4 id="expose-the-esc-to-the-network">Expose the ESC to the network&lt;/h4>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
 Run &lt;code>openmower expose-xesc [left|right|mower]&lt;/code> to expose the xESC controller (choose &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> or &lt;code>right&lt;/code>).&lt;br/>The controller is then reachable in your local network on &lt;code>openmower:65102&lt;/code> until you hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
 &lt;h4 id="connect-to-the-xesc">Connect to the xESC&lt;/h4>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
 Open the VESC Configuration Tool and connect to the xESC controllers by clicking:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>Connection -&amp;gt; TCP&lt;/code> &lt;strong>[1]&lt;/strong>&lt;/li>
@@ -1074,7 +1074,7 @@ Open the VESC Configuration Tool and connect to the xESC controllers by clicking
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Information&lt;/h4>
 &lt;p>If you encounter this warning message:&lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
 &lt;p>you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.&lt;/p>
 &lt;/div>
 &lt;h4 id="configure-xesc">Configure xESC&lt;/h4>
@@ -1119,49 +1119,49 @@ id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab">
 .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
 .image-gallery li a img {width: 100%; display: block;}
 &lt;/style>&lt;ul class="image-gallery">&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 - Load Motor Configuration XML" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 - Load Motor Configuration XML" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="1 - Load Motor Configuration XML"
 title="1 - Load Motor Configuration XML">
 &lt;span title="1 - Load Motor Configuration XML">1 - Load Motor Configuration XML&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 - Select Motor XML Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 - Select Motor XML Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="2 - Select Motor XML Config"
 title="2 - Select Motor XML Config">
 &lt;span title="2 - Select Motor XML Config">2 - Select Motor XML Config&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 - Ignore Configuration Version Warning Message" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 - Ignore Configuration Version Warning Message" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="3 - Ignore Configuration Version Warning Message"
 title="3 - Ignore Configuration Version Warning Message">
 &lt;span title="3 - Ignore Configuration Version Warning Message">3 - Ignore Configuration Version Warning Message&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 - Write Motor Configuration" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 - Write Motor Configuration" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="4 - Write Motor Configuration"
 title="4 - Write Motor Configuration">
 &lt;span title="4 - Write Motor Configuration">4 - Write Motor Configuration&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 - Load App Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 - Load App Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="5 - Load App Config"
 title="5 - Load App Config">
 &lt;span title="5 - Load App Config">5 - Load App Config&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 - Write App Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 - Write App Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="6 - Write App Config"
 title="6 - Write App Config">
 &lt;span title="6 - Write App Config">6 - Write App Config&lt;/span>
@@ -1197,24 +1197,24 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 &lt;/li>
 &lt;li>
 &lt;p>Now that the calibration succeed, lets test the result:
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
 &lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
@@ -1269,7 +1269,7 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Limit battery current:&lt;br>
@@ -1310,7 +1310,7 @@ Dependent on your Sabo-Carrier hardware version, you should limit the battery cu
 &lt;blockquote>
 &lt;p>&lt;strong>Warning:&lt;/strong> If you choose a value larger than the stock fuse, you&amp;rsquo;ve to expect that it may blow and need to be replaced with a higher-rated one.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
@@ -1571,7 +1571,7 @@ The modifications include:&lt;/p>
 &lt;p>This guide is for the &lt;strong>Lite&lt;/strong> version of the Raspberry Pi Compute module (the version &lt;strong>without&lt;/strong> eMMC storage).&lt;/p>
 &lt;p>If you have a compute module &lt;strong>with eMMC&lt;/strong>, you can safely skip this step for now and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>
 &lt;/p>
-&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/flash-cm4-emmc/">Here is the guide on how to do it&lt;/a>
+&lt;p>You can flash the CM4, once your mower is powered up. &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/installation/flash-cm4-emmc/">Here is the guide on how to do it&lt;/a>
 &lt;/p>
 &lt;/div>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
@@ -1666,7 +1666,7 @@ title="Pi Imager Step 7">
 &lt;p>When using an older version of the Raspberry Pi Imager, you can still configure the image as usual, but &lt;strong>renaming the user is not possible&lt;/strong>. The user will always be named &lt;code>openmower&lt;/code>.&lt;/p>
 &lt;h2 id="done-">Done 🎉&lt;/h2>
 &lt;p>You can now remove the SD card from your PC, it is ready to be used with the Open Mower software. Set it aside and continue with &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">preparing the mainboard.&lt;/a>
-.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>https://openmower.de/latest/docs/knowledge-base/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/shopping-list/</guid><description>
+.&lt;/p></description></item><item><title>Docs: Shopping List</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/shopping-list/</guid><description>
 &lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
@@ -1690,7 +1690,7 @@ Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-sta
 &lt;td>1&lt;/td>
 &lt;td>&lt;a href="https://amzn.to/3NWgIxk" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
 &lt;/td>
-&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/compatible-mowers/">Compatible Mowers&lt;/a>
+&lt;td>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers/">Compatible Mowers&lt;/a>
 &lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -1785,7 +1785,7 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
+&lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/gps/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
 &lt;/p></description></item><item><title>Docs: Step 3.3: Configure ROS</title><link>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
 &lt;h2 id="step-331-configure-ros-parameters">Step 3.3.1: Configure ROS Parameters&lt;/h2>
 &lt;p>The ROS parameters can be configured using similar to the environment above.
@@ -1813,7 +1813,7 @@ AsciinemaPlayer.create(
 document.getElementById('step-3-2-3-player'),
 { cols: 130, rows: 30, autoplay: false, loop: true }
 );
-&lt;/script></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/architecture/</guid><description>
+&lt;/script></description></item><item><title>Docs: System Architecture</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/architecture/</guid><description>
 &lt;p>OpenMower is split into distinct layers — each with a clear responsibility — connected by well-defined interfaces. This separation means you can work on navigation logic without touching firmware, or add a new robot platform without changing ROS.&lt;/p>
 &lt;p>&lt;img src="images/architecture.svg" alt="System Architecture diagram showing the OpenMower component layers">&lt;/p>
 &lt;h2 id="layers">Layers&lt;/h2>
@@ -1828,7 +1828,7 @@ document.getElementById('step-3-2-3-player'),
 &lt;h3 id="firmware--motor-control--sensors-xcore--stm32h723">Firmware — Motor Control &amp;amp; Sensors (xCore · STM32H723)&lt;/h3>
 &lt;p>The firmware runs on the xCore board and owns all low-level hardware: driving the motors via xESC controllers, reading the GPS and IMU, managing the battery and charger, and enforcing safety states (the emergency service can cut power independently of ROS). The same firmware codebase supports multiple robot platforms through compile-time configuration.&lt;/p>
 &lt;h3 id="rtk-base-station--centimetre-accurate-positioning">RTK Base Station — Centimetre-Accurate Positioning&lt;/h3>
-&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/hardware-versions/</guid><description>
+&lt;p>RTK GPS works by comparing signals between a rover (the GPS receiver on the mower) and a fixed base station at a known position. The base station sends &lt;strong>RTCM correction data&lt;/strong> to the mower&amp;rsquo;s GPS receiver — via radio or over the internet (NTRIP) — reducing positioning error from metres to centimetres. The base station must be external and stationary; this is a fundamental requirement of RTK, not an OpenMower limitation.&lt;/p></description></item><item><title>Docs: Hardware Versions / Known Issues</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/hardware-versions/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
@@ -1883,10 +1883,10 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;h2 id="0130---red">0.13.0 - Red&lt;/h2>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
 &lt;/figure>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
 &lt;/figure>
 &lt;/p>
 &lt;h3 id="notable-changes">Notable changes&lt;/h3>
@@ -1907,7 +1907,7 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;/ul>
 &lt;h2 id="0120---black">0.12.0 - Black&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
 &lt;h3 id="notable-changes-1">Notable changes&lt;/h3>
 &lt;ul>
@@ -1925,7 +1925,7 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;/ul>
 &lt;h2 id="0110---purple">0.11.0 - Purple&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
 &lt;h3 id="notable-changes-2">Notable changes&lt;/h3>
 &lt;ul>
@@ -1939,7 +1939,7 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;/ul>
 &lt;h2 id="0100---green">0.10.0 - Green&lt;/h2>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
 &lt;/figure>
 &lt;h3 id="notable-changes-3">Notable changes&lt;/h3>
 &lt;ul>
@@ -1953,10 +1953,10 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;h2 id="093---also-green">0.9.3 - Also Green&lt;/h2>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_9_3_hu06b4bcf8a4cb53a2adcbd38b3d75b4eb_245928_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_9_3_hu06b4bcf8a4cb53a2adcbd38b3d75b4eb_245928_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
-&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/hardware-versions/0_9_3_gps_huacf58bf9d1b8aad2e5aacd6c79ee4fbd_1066416_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_9_3_gps_huacf58bf9d1b8aad2e5aacd6c79ee4fbd_1066416_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
 &lt;/p>
 &lt;p>First build. Experimental xESC2040 instead of xESC-mini (STM32).&lt;/p></description></item><item><title>Docs: Step 2.3: Prepare the Mainboard</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</guid><description>
@@ -2144,7 +2144,7 @@ title="Step 3 - fix the core using screws">
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/using-a-gamepad/">USB gamepad&lt;/a>
 )&lt;/li>
 &lt;li>Modified robot connected to your network&lt;/li>
 &lt;li>OpenMower software running on the robot&lt;/li>
@@ -2152,7 +2152,7 @@ title="Step 3 - fix the core using screws">
 &lt;li>Mower fully charged&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-41-check-the-gps">Step 4.1: Check the GPS&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
 &lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
@@ -2163,7 +2163,7 @@ or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
 &lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/using-a-gamepad/">gamepad connected via USB&lt;/a>
 (hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
@@ -2191,7 +2191,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/ul>
 &lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
 &lt;h3 id="record-outline">Record Outline&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
 &lt;ul>
 &lt;li>Drive the robot to the outline. Make sure that the robot is facing in &lt;strong>counterclockwise direction&lt;/strong>.&lt;/li>
 &lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
@@ -2200,7 +2200,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The outline should now turn green. This means it&amp;rsquo;s done recording, and you can move on to recording exclusions.&lt;/li>
 &lt;/ul>
 &lt;h3 id="optional-record-exclusions">Optional: Record Exclusions&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
 &lt;p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:&lt;/p>
 &lt;ul>
 &lt;li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in &lt;strong>clockwise direction&lt;/strong>.&lt;/li>
@@ -2210,11 +2210,11 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The outline should now turn red. This means it&amp;rsquo;s done recording, and you can move on to recording more exclusions.&lt;/li>
 &lt;/ul>
 &lt;h3 id="save-area">Save Area&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
 &lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
 &lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
 &lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
 &lt;p>In order to record the docking position, do the following:&lt;/p>
 &lt;ul>
 &lt;li>Drive to a location about 2 m in front of your docking station.&lt;/li>
@@ -2224,7 +2224,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The app should move the &lt;strong>home&lt;/strong> icon to your current location. Now you can fully drive into the docking station.&lt;/li>
 &lt;/ul>
 &lt;h3 id="finish-recording">Finish Recording&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
 &lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: v1 Hardware Guide (Legacy)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce-classic-500-b-v1-hardware/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v1 Hardware Only!&lt;/h4>
@@ -2236,7 +2236,7 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;/ul>
 &lt;/div>
 &lt;h3 id="the-v1-guide-is-herehttpsopenmowerdearchivev102docs">The v1 guide is &lt;a href="https://openmower.de/archive/v1.0.2/docs" target="_blank" rel="noopener">here&lt;/a>
-.&lt;/h3></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/firmware-update/</guid><description>
+.&lt;/h3></description></item><item><title>Docs: Firmware Update</title><link>https://openmower.de/latest/docs/knowledge-base/installation/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/installation/firmware-update/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
 &lt;p>Early versions of the xCore board have a bug in the bootloader which sometimes prevents the board from being detected by the &lt;code>openmower&lt;/code> tool.&lt;/p>
@@ -2254,11 +2254,11 @@ You have &lt;strong>v1 hardware&lt;/strong>, if:&lt;/p>
 &lt;/div>
 &lt;script>
 AsciinemaPlayer.create(
-'/latest/docs/knowledge-base/firmware-update//cast/openmower-update-firmware.cast',
+'/latest/docs/knowledge-base/installation/firmware-update//cast/openmower-update-firmware.cast',
 document.getElementById('step-3-2-2-player'),
 { cols: 110, rows: 24, autoplay: false, loop: true }
 );
-&lt;/script></description></item><item><title>Docs: Flashing the CM4 eMMC</title><link>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/flash-cm4-emmc/</guid><description>
+&lt;/script></description></item><item><title>Docs: Flashing the CM4 eMMC</title><link>https://openmower.de/latest/docs/knowledge-base/installation/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/installation/flash-cm4-emmc/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">CM4 with eMMC only&lt;/h4>
 &lt;p>This guide applies &lt;strong>only to CM4 variants with onboard eMMC storage&lt;/strong>. The CM4 Lite variant has no eMMC — it uses a microSD card instead and does not require this process.&lt;/p>
@@ -2339,7 +2339,7 @@ If the device is not recognised, avoid USB hubs — connect the micro USB cable 
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress &lt;span style="color:#000">oflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sync
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>/dev/sdX&lt;/code> with the actual device path of the eMMC. Double-check this before running.&lt;/p>
 &lt;h2 id="step-4-boot-from-emmc">Step 4: Boot from eMMC&lt;/h2>
-&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: External Wifi Antenna</title><link>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/external-wifi-antenna/</guid><description>
+&lt;p>Once flashing is complete, disconnect the micro USB cable and power-cycle the board. The CM4 will boot from the newly flashed image.&lt;/p></description></item><item><title>Docs: External Wifi Antenna</title><link>https://openmower.de/latest/docs/knowledge-base/installation/external-wifi-antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/installation/external-wifi-antenna/</guid><description>
 &lt;p>After adding the external antenna, you need to tell the Raspberry Pi CM4 to use the external antenna instead of the built-in one.&lt;/p>
 &lt;h3 id="terminal-cast">Terminal Cast&lt;/h3>
 &lt;div class="container pb-3 pt-3">
@@ -2352,7 +2352,7 @@ If the device is not recognised, avoid USB hubs — connect the micro USB cable 
 &lt;/div>
 &lt;script>
 AsciinemaPlayer.create(
-'/latest/docs/knowledge-base/external-wifi-antenna//cast/change-antenna.cast',
+'/latest/docs/knowledge-base/installation/external-wifi-antenna//cast/change-antenna.cast',
 document.getElementById('external-wifi-player'),
 { cols: 110, rows: 24, autoplay: false, loop: true }
 );
@@ -2369,7 +2369,7 @@ document.getElementById('external-wifi-player'),
 &lt;/li>
 &lt;li>&lt;strong>Save&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>O&lt;/kbd> and &lt;strong>Exit Nano&lt;/strong> &lt;kbd>CTRL&lt;/kbd> + &lt;kbd>X&lt;/kbd>&lt;/li>
 &lt;li>&lt;strong>Reboot&lt;/strong> the OS by running &lt;code>sudo reboot&lt;/code>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-xesc/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Configuring xESC</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/</guid><description>
 &lt;p>The xESC motor controllers can be configured to work with many BLDC and DC motors.
 The firmware for the controllers is based on the open source VESC project and therefore, the controllers can be configured using the VESC Configuration Tool.&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
@@ -2377,7 +2377,7 @@ The firmware for the controllers is based on the open source VESC project and th
 &lt;li>&lt;strong>Windows or Linux computer&lt;/strong> to run the VESC Configuration Tool&lt;/li>
 &lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
 )&lt;/strong> You can download the tool for free by adding the &amp;ldquo;free&amp;rdquo; version in your cart and proceeding to checkout.&lt;/li>
-&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/firmware-update/">Firmware Update&lt;/a>
+&lt;li>&lt;strong>OpenMower Firmware&lt;/strong> needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven&amp;rsquo;t done it, follow the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/installation/firmware-update/">Firmware Update&lt;/a>
 guide.&lt;/li>
 &lt;li>&lt;strong>Optional (but makes your life easier):&lt;/strong>&lt;br/>Configuration files for the mower you are using.&lt;br/>Look in the &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower repository&lt;/a>
 for the files suited for your mower. &lt;br/>You will need three files:
@@ -2392,10 +2392,10 @@ for the files suited for your mower. &lt;br/>You will need three files:
 &lt;h4 id="stop-ros-from-interfering-with-the-controllers">Stop ROS from interfering with the controllers&lt;/h4>
 &lt;p>&lt;code>openmower stop&lt;/code> to stop ROS from interfering with the controllers during configuration.&lt;/p>
 &lt;h4 id="expose-the-esc-to-the-network">Expose the ESC to the network&lt;/h4>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/openmower-expose-xesc.png" alt="Expose ESC to the network">
 Run &lt;code>openmower expose-xesc [left|right|mower]&lt;/code> to expose the xESC controller (choose &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> or &lt;code>right&lt;/code>).&lt;br/>The controller is then reachable in your local network on &lt;code>openmower:65102&lt;/code> until you hit &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
 &lt;h4 id="connect-to-the-xesc">Connect to the xESC&lt;/h4>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/ConnectToTheESC.png" alt="Connect VESC tool to ESC">
 Open the VESC Configuration Tool and connect to the xESC controllers by clicking:&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>Connection -&amp;gt; TCP&lt;/code> &lt;strong>[1]&lt;/strong>&lt;/li>
@@ -2406,7 +2406,7 @@ Open the VESC Configuration Tool and connect to the xESC controllers by clicking
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Information&lt;/h4>
 &lt;p>If you encounter this warning message:&lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warning message">&lt;/p>
 &lt;p>you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.&lt;/p>
 &lt;/div>
 &lt;h4 id="configure-xesc">Configure xESC&lt;/h4>
@@ -2451,49 +2451,49 @@ id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab">
 .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
 .image-gallery li a img {width: 100%; display: block;}
 &lt;/style>&lt;ul class="image-gallery">&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 - Load Motor Configuration XML" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 - Load Motor Configuration XML" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="1 - Load Motor Configuration XML"
 title="1 - Load Motor Configuration XML">
 &lt;span title="1 - Load Motor Configuration XML">1 - Load Motor Configuration XML&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 - Select Motor XML Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 - Select Motor XML Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="2 - Select Motor XML Config"
 title="2 - Select Motor XML Config">
 &lt;span title="2 - Select Motor XML Config">2 - Select Motor XML Config&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 - Ignore Configuration Version Warning Message" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 - Ignore Configuration Version Warning Message" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="3 - Ignore Configuration Version Warning Message"
 title="3 - Ignore Configuration Version Warning Message">
 &lt;span title="3 - Ignore Configuration Version Warning Message">3 - Ignore Configuration Version Warning Message&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 - Write Motor Configuration" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 - Write Motor Configuration" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="4 - Write Motor Configuration"
 title="4 - Write Motor Configuration">
 &lt;span title="4 - Write Motor Configuration">4 - Write Motor Configuration&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 - Load App Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 - Load App Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="5 - Load App Config"
 title="5 - Load App Config">
 &lt;span title="5 - Load App Config">5 - Load App Config&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 - Write App Config" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 - Write App Config" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/knowledge-base/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
+src="https://openmower.de/latest/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
 alt="6 - Write App Config"
 title="6 - Write App Config">
 &lt;span title="6 - Write App Config">6 - Write App Config&lt;/span>
@@ -2529,24 +2529,24 @@ id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Enable realtime data:&lt;/strong> Later on, we wanna validate our calibration with a known reference value, but also during calibration it&amp;rsquo;s interesting to see the displayed values in the marked 2 window. That&amp;rsquo;s why we enable real-time data first:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Start the &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="Start FOC Calibration">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Now we need to provide some specs of our motor. &lt;strong>These are the specs for the left and right drive motors&lt;/strong>, for the mow motor, we need to use other specs:&lt;br>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Once calibration has been done, &lt;strong>do not change the direction&lt;/strong> (even though the left wheel turns forward during calibration, whereas the right one backwards):&lt;/p>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 &lt;/li>
 &lt;li>
 &lt;p>Now that the calibration succeed, lets test the result:
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Run Test">&lt;br>&lt;/p>
 &lt;p>Test with &amp;ldquo;&lt;strong>D 0,4&lt;/strong>&amp;rdquo; (1) and press the &amp;ldquo;Duty cycle&amp;rdquo; play button (2). If it draw &lt;strong>&amp;lt;= 0.15A&lt;/strong> (3) and sound healty, it is calibrated well.&lt;br>
 Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).&lt;/p>
 &lt;/li>
@@ -2601,7 +2601,7 @@ We need to ensure that the blade rotate CCW (when watching from downside onto th
 &lt;li>
 &lt;p>Limit blade RPM:&lt;br>
 It&amp;rsquo;s important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away 💀
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Limit RPM">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Limit battery current:&lt;br>
@@ -2642,7 +2642,7 @@ Dependent on your Sabo-Carrier hardware version, you should limit the battery cu
 &lt;blockquote>
 &lt;p>&lt;strong>Warning:&lt;/strong> If you choose a value larger than the stock fuse, you&amp;rsquo;ve to expect that it may blow and need to be replaced with a higher-rated one.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Limit currents">&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;/div>
@@ -2650,7 +2650,7 @@ Dependent on your Sabo-Carrier hardware version, you should limit the battery cu
 id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;p>Choose your adventure. Your build, your rules.&lt;/p>
 &lt;/div>
-&lt;/div></description></item><item><title>Docs: Configuring GPIO Inputs</title><link>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-gpio-inputs/</guid><description>
+&lt;/div></description></item><item><title>Docs: Configuring GPIO Inputs</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-gpio-inputs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-gpio-inputs/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>OpenMower supports configuring GPIO pins as digital inputs that can trigger emergency stops or other events. Common use cases include:&lt;/p>
 &lt;ul>
@@ -2792,7 +2792,7 @@ On OSv2, &lt;code>/home/openmower/params&lt;/code> is mapped to &lt;code>/data/p
 &lt;h2 id="step-3-restart-openmower">Step 3: Restart OpenMower&lt;/h2>
 &lt;p>After saving both files, restart the service to apply the changes:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Universal Board Configuration</title><link>https://openmower.de/latest/docs/knowledge-base/universal-board-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/universal-board-configuration/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your GPIO inputs are now active and will trigger the configured emergency events when the specified logic level is detected.&lt;/p></description></item><item><title>Docs: Universal Board Configuration</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/universal-board-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/universal-board-configuration/</guid><description>
 &lt;p>This guide is for &lt;strong>custom mower builds&lt;/strong> using the OpenMower Universal Board. Unlike supported mowers, custom builds require you to measure and set several hardware-specific parameters before the mower will operate correctly.&lt;/p>
 &lt;p>All custom parameters go into &lt;code>~/params/custom_params.yaml&lt;/code> on the mower.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
@@ -2935,7 +2935,7 @@ below.&lt;/td>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Fill in the credentials from your RTK correction provider.&lt;/p>
 &lt;hr>
 &lt;h3 id="emergency-sensors">Emergency Sensors&lt;/h3>
-&lt;p>Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/configure-gpio-inputs/">Configuring GPIO Inputs&lt;/a>
+&lt;p>Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-gpio-inputs/">Configuring GPIO Inputs&lt;/a>
 for the full setup guide.&lt;/p>
 &lt;h3 id="enable-mower-motor">Enable Mower Motor&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">mower_logic&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -2984,11 +2984,11 @@ for the full setup guide.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Run the measurement two or three times and average the results for better accuracy. Small variations in how straight you drive will affect individual readings.
-&lt;/div></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-gps/</guid><description>
+&lt;/div></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</guid><description>
 &lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
 &lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
-&lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>https://openmower.de/latest/docs/knowledge-base/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/rtk-base-setup/</guid><description>
+&lt;p>Open Mower uses a right-handed ENU coordinate system.&lt;/p></description></item><item><title>Docs: GPS Base Setup</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-base-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-base-setup/</guid><description>
 &lt;p>This part of the documentation is work in progress. There are many ways of setting up the RTK base, here is one using RPi 0W, ZED-F9P and a web based software RTKBase. On discord you may ask karl.ranseier for support.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
@@ -3218,7 +3218,7 @@ and connect to RPi, where you enter the local IP of your RPi&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;br>
-&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-ros-parameters/</guid><description>
+&lt;p>Thanks to Stefal and all the contributors of RTKBase and the used resources.&lt;/p></description></item><item><title>Docs: Managing ROS Parameters</title><link>https://openmower.de/latest/docs/knowledge-base/configuration/configure-ros-parameters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configuration/configure-ros-parameters/</guid><description>
 &lt;h2 id="viewing-and-configuring-ros-parameters">Viewing and Configuring ROS Parameters&lt;/h2>
 &lt;p>OpenMower is built on ROS, which means much of its behavior is controlled through parameters. Understanding how to inspect and modify these parameters gives you fine-grained control over your mower’s operation.&lt;/p>
 &lt;h3 id="listing-all-parameters">Listing All Parameters&lt;/h3>
@@ -3251,7 +3251,7 @@ This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0.5
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>🎉 Done!&lt;/p>
 &lt;h3 id="if-you-have-issues">If you have issues&lt;/h3>
-&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Configuring the GPS Antenna Offset</title><link>https://openmower.de/latest/docs/knowledge-base/configure-antenna-offset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/configure-antenna-offset/</guid><description>
+&lt;p>If some parameter isn&amp;rsquo;t overriding correctly, make sure you are on the latest version of OpenMower. If it still doesn&amp;rsquo;t work ask on Discord.&lt;/p></description></item><item><title>Docs: Configuring the GPS Antenna Offset</title><link>https://openmower.de/latest/docs/knowledge-base/gps/configure-antenna-offset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/configure-antenna-offset/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>OpenMower tracks position using the GPS antenna. If the antenna is not mounted exactly at the center of the wheel axis, the mower&amp;rsquo;s computed position will be off by that physical offset. Configuring the antenna offset corrects for this.&lt;/p>
 &lt;h2 id="coordinate-system">Coordinate System&lt;/h2>
@@ -3301,11 +3301,11 @@ This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space)
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_x&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0.05&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">antenna_offset_y&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">0.15&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Values are in &lt;strong>meters&lt;/strong>.&lt;/p>
-&lt;p>Save the file. ROS will restart automatically and apply the new offset.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/record-areas/</guid><description>
+&lt;p>Save the file. ROS will restart automatically and apply the new offset.&lt;/p></description></item><item><title>Docs: Record Areas</title><link>https://openmower.de/latest/docs/knowledge-base/operation/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/operation/record-areas/</guid><description>
 &lt;p>In this section, we finally drive the robot around and test if everything works as expected. Then we will record a map, and you can see the magic happen.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
-&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">USB gamepad&lt;/a>
+&lt;li>A smartphone or PC (or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/using-a-gamepad/">USB gamepad&lt;/a>
 )&lt;/li>
 &lt;li>Modified robot connected to your network&lt;/li>
 &lt;li>OpenMower software running on the robot&lt;/li>
@@ -3313,7 +3313,7 @@ This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space)
 &lt;li>Mower fully charged&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-41-check-the-gps">Step 4.1: Check the GPS&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/gps_quality_indicator.jpg" alt="GPS Quality Indicator">&lt;/p>
 &lt;p>For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.&lt;/p>
 &lt;p>It is important that the mower is out in the open for the RTK GPS to work. Don&amp;rsquo;t try this indoors and don&amp;rsquo;t cover the mower.&lt;/p>
 &lt;p>Open the OpenMower web app with any device by opening a browser and going to the following URL: &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
@@ -3324,7 +3324,7 @@ or &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
 &lt;h2 id="step-42-initialize-the-orientation">Step 4.2: Initialize the Orientation&lt;/h2>
 &lt;p>In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot&amp;rsquo;s orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.&lt;/p>
-&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/">gamepad connected via USB&lt;/a>
+&lt;p>You can either use the on-screen joystick in the Open Mower App or a &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/using-a-gamepad/">gamepad connected via USB&lt;/a>
 (hold the A button) to drive the robot.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
@@ -3352,7 +3352,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/ul>
 &lt;p>Now that the robot knows where it is located, and you know which areas we need to record, start recording your first map. In the following picture, you can see an example.&lt;/p>
 &lt;h3 id="record-outline">Record Outline&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_outline.jpg" alt="Record Outline">&lt;/p>
 &lt;ul>
 &lt;li>Drive the robot to the outline. Make sure that the robot is facing in &lt;strong>counterclockwise direction&lt;/strong>.&lt;/li>
 &lt;li>Start the recording by pressing &lt;strong>Start Recording&lt;/strong>.&lt;/li>
@@ -3361,7 +3361,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The outline should now turn green. This means it&amp;rsquo;s done recording, and you can move on to recording exclusions.&lt;/li>
 &lt;/ul>
 &lt;h3 id="optional-record-exclusions">Optional: Record Exclusions&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_obstacle.jpg" alt="Record Obstacle">&lt;/p>
 &lt;p>If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:&lt;/p>
 &lt;ul>
 &lt;li>Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in &lt;strong>clockwise direction&lt;/strong>.&lt;/li>
@@ -3371,11 +3371,11 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The outline should now turn red. This means it&amp;rsquo;s done recording, and you can move on to recording more exclusions.&lt;/li>
 &lt;/ul>
 &lt;h3 id="save-area">Save Area&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/save_mowing_area.jpg" alt="Save Area">&lt;/p>
 &lt;p>If you are happy with your recording, you can save the area. In order to do this, click the &lt;strong>Finish Area&lt;/strong> button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.&lt;/p>
 &lt;p>As soon as the area is saved, the area will turn solid. Mowing areas will be displayed in green, navigation areas will be shown in white.&lt;/p>
 &lt;h3 id="record-docking-position">Record Docking Position&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/record_docking_position.jpg" alt="Record Docking Position">&lt;/p>
 &lt;p>In order to record the docking position, do the following:&lt;/p>
 &lt;ul>
 &lt;li>Drive to a location about 2 m in front of your docking station.&lt;/li>
@@ -3385,8 +3385,8 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;li>The app should move the &lt;strong>home&lt;/strong> icon to your current location. Now you can fully drive into the docking station.&lt;/li>
 &lt;/ul>
 &lt;h3 id="finish-recording">Finish Recording&lt;/h3>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
-&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Using a Gamepad</title><link>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/using-a-gamepad/</guid><description>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas//images/start_mowing.jpg" alt="Start Mowing">&lt;/p>
+&lt;p>Finish the process by pressing &lt;strong>Exit Recording&lt;/strong>. Now the mower should go to &lt;strong>IDLE&lt;/strong> mode. You should be able to start mowing by pressing the &lt;strong>Start&lt;/strong> button. The mower will undock, wait for GPS and mow the area.&lt;/p></description></item><item><title>Docs: Using a Gamepad</title><link>https://openmower.de/latest/docs/knowledge-base/operation/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/operation/using-a-gamepad/</guid><description>
 &lt;p>Using a USB gamepad is the most intuitive way to control your OpenMower during the area recording process. Instead of relying on the on-screen joystick in the web app, a physical controller gives you precise control over the mower&amp;rsquo;s movement — making it much easier to drive clean outlines around your mowing areas.&lt;/p>
 &lt;p>Any Xbox-compatible USB gamepad works out of the box. Simply plug it into one of the USB ports on your Raspberry Pi and OpenMower will detect it automatically. No additional configuration is needed.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
@@ -3401,7 +3401,7 @@ Don&amp;rsquo;t pick up the mower or the orientation will be lost again!
 &lt;/div>
 &lt;h2 id="button-reference">Button Reference&lt;/h2>
 &lt;figure>
-&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/using-a-gamepad/images/gamepad_controls.png"
+&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/operation/using-a-gamepad/images/gamepad_controls.png"
 alt="OpenMower Gamepad Controls (image licensed from shutterstock.com)"/> &lt;figcaption>
 &lt;p>OpenMower Gamepad Controls (image licensed from shutterstock.com)&lt;/p>
 &lt;/figcaption>
@@ -3472,18 +3472,18 @@ alt="OpenMower Gamepad Controls (image licensed from shutterstock.com)"/> &lt;fi
 &lt;td>Record dock entry point at the edge of the station&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/the-map/</guid><description>
+&lt;/table></description></item><item><title>Docs: The Map</title><link>https://openmower.de/latest/docs/knowledge-base/operation/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/operation/the-map/</guid><description>
 &lt;h2 id="the-map">The Map&lt;/h2>
 &lt;p>The most important information for the Open Mower is its map. The map tells the robot in which areas the robot is allowed to drive &lt;strong>(= Navigation Area)&lt;/strong>, which areas need to be mowed &lt;strong>(= Mowing Area)&lt;/strong> and where the docking station is located. Using this information, the robot is able to do its work automatically.&lt;/p>
 &lt;p>Each area consists of &lt;strong>one outline&lt;/strong> and &lt;strong>multiple obstacles&lt;/strong>. The mower is allowed to drive inside the outline of all areas, except for the obstacles. This way you can exclude some parts of your lawn and prevent the mower from entering them.&lt;/p>
-&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/change-hostname/</guid><description>
+&lt;p>The map is stored in the &lt;code>map.json&lt;/code> file that is located on the mower at &lt;code>/home/openmower/ros_home&lt;/code>&lt;/p></description></item><item><title>Docs: Change Hostname</title><link>https://openmower.de/latest/docs/knowledge-base/maintenance/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/maintenance/change-hostname/</guid><description>
 &lt;p>Changing the hostname is simple, thanks to the &lt;code>raspi-config&lt;/code> tool:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Run&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
 &lt;li>&lt;strong>Select&lt;/strong> System Options -&amp;gt; Hostname&lt;/li>
 &lt;li>&lt;strong>Enter&lt;/strong> a new hostname and press &lt;kbd>Enter&lt;/kbd>`&lt;/li>
 &lt;li>&lt;strong>Finish and Reboot&lt;/strong>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Creating a Debug Recording</title><link>https://openmower.de/latest/docs/knowledge-base/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/debug-recording/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Creating a Debug Recording</title><link>https://openmower.de/latest/docs/knowledge-base/maintenance/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/maintenance/debug-recording/</guid><description>
 &lt;p>When investigating issues — especially positioning problems — a rosbag recording gives developers a full snapshot of sensor data to analyse. This guide walks you through recording one and retrieving it from your mower.&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Privacy notice&lt;/h4>
@@ -3600,7 +3600,7 @@ id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
 Even indoors next to the windows with antenna connected, you should see satellites and other info start appearing in u-center. In few minutes &lt;code>GPS Fix&lt;/code> led will start blinking on GPS board.&lt;/p>
 &lt;p>Deviation map (&lt;code>View -&amp;gt; Deviation Map, F12&lt;/code>) should stay in a ~1m, that what you expect from average GPS. If you got some existing garbage there already, clean it via &lt;code>File -&amp;gt; Database clean&lt;/code>.&lt;/p>
 &lt;p>Now let&amp;rsquo;s connect NTRIP. We assume that you either found a suitable &lt;a href="https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145" target="_blank" rel="noopener">NTRIP node somewhere nearby&lt;/a>
-(&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/rtk-base-setup/">base station&lt;/a>
+(&amp;lt;30km) or running your own &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/gps/rtk-base-setup/">base station&lt;/a>
 .&lt;/p>
 &lt;p>Go to &lt;code>Receiver -&amp;gt; NTRIP Client...&lt;/code> and configure your NTRIP settings. This will be the same settings that you will use in the ROS configuration file later.
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 510px">
@@ -3692,7 +3692,7 @@ you want a &lt;code>3&lt;/code> here since that means your rtk state is &amp;ldq
 this value is in meters so the example has a accuracy of ~2,5cm and that is great.&lt;br>
 It can be the case that this value is ok but the rtk state is not yet &amp;ldquo;fixed&amp;rdquo;&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Troubleshoot mapping/recording areas</title><link>https://openmower.de/latest/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/troubleshooting/map/</guid><description>
-&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/record-areas/">Record a map&lt;/a>
+&lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas/">Record a map&lt;/a>
 .&lt;/p>
 &lt;br>
 &lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
