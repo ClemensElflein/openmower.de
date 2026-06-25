@@ -7,7 +7,7 @@ resources:
     - src: "**.png"
 ---
 
-We assume that you at least followed [Record a map]({{< relref "/docs/Knowledge-Base/record-areas" >}}).
+We assume that you at least followed [Record a map]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}).
 
 <br>
 

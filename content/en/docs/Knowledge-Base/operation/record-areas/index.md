@@ -10,7 +10,7 @@ In this section, we finally drive the robot around and test if everything works 
 
 ## Prerequisites
 
-- A smartphone or PC (or a [USB gamepad]({{< relref "/docs/Knowledge-Base/using-a-gamepad" >}}))
+- A smartphone or PC (or a [USB gamepad]({{< relref "/docs/Knowledge-Base/operation/using-a-gamepad" >}}))
 - Modified robot connected to your network
 - OpenMower software running on the robot
 - Docking station powered up
@@ -19,7 +19,7 @@ In this section, we finally drive the robot around and test if everything works 
 
 ## Step 4.1: Check the GPS
 
-![GPS Quality Indicator]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/gps_quality_indicator.jpg)
+![GPS Quality Indicator]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/gps_quality_indicator.jpg)
 
 For this step, put the mower into the docking station and turn it on. It should boot up and get to a solid green status LED.
 
@@ -39,7 +39,7 @@ You can see the current GPS quality in the Open Mower app as shown in the graphi
 In addition to the position, the robot also needs to know its orientation. Since we are not using a compass, the robot's orientation is derived from its movement.
 In order to initialize the orientation, you need to drive the robot.
 
-You can either use the on-screen joystick in the Open Mower App or a [gamepad connected via USB]({{< relref "/docs/Knowledge-Base/using-a-gamepad" >}}) (hold the A button) to drive the robot.
+You can either use the on-screen joystick in the Open Mower App or a [gamepad connected via USB]({{< relref "/docs/Knowledge-Base/operation/using-a-gamepad" >}}) (hold the A button) to drive the robot.
 
 {{% alert title="Warning" color="warning" %}}
 Don't pick up the mower or the orientation will be lost again!
@@ -69,7 +69,7 @@ Now that the robot knows where it is located, and you know which areas we need t
 
 ### Record Outline
 
-![Record Outline]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/record_outline.jpg)
+![Record Outline]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/record_outline.jpg)
 
 - Drive the robot to the outline. Make sure that the robot is facing in **counterclockwise direction**.
 - Start the recording by pressing **Start Recording**.
@@ -80,7 +80,7 @@ Now that the robot knows where it is located, and you know which areas we need t
 
 ### Optional: Record Exclusions
 
-![Record Obstacle]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/record_obstacle.jpg)
+![Record Obstacle]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/record_obstacle.jpg)
 
 If your area has zones you want to exclude (e.g. static obstacles), you can record them like this:
 - Drive the robot to the edge of the exclusion zone. Make sure that the robot is facing in **clockwise direction**.
@@ -92,7 +92,7 @@ If your area has zones you want to exclude (e.g. static obstacles), you can reco
 
 ### Save Area
 
-![Save Area]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/save_mowing_area.jpg)
+![Save Area]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/save_mowing_area.jpg)
 
 If you are happy with your recording, you can save the area. In order to do this, click the **Finish Area** button. A dialog will appear asking if you want to save the area as mowing or navigation area. Alternatively, you can also discard the recording.
 
@@ -101,7 +101,7 @@ As soon as the area is saved, the area will turn solid. Mowing areas will be dis
 
 ### Record Docking Position
 
-![Record Docking Position]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/record_docking_position.jpg)
+![Record Docking Position]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/record_docking_position.jpg)
 
 In order to record the docking position, do the following:
 - Drive to a location about 2 m in front of your docking station.
@@ -113,6 +113,6 @@ In order to record the docking position, do the following:
 
 ### Finish Recording
 
-![Start Mowing]({{< relref "/docs/Knowledge-Base/record-areas" >}}/images/start_mowing.jpg)
+![Start Mowing]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/start_mowing.jpg)
 
 Finish the process by pressing **Exit Recording**. Now the mower should go to **IDLE** mode. You should be able to start mowing by pressing the **Start** button. The mower will undock, wait for GPS and mow the area.

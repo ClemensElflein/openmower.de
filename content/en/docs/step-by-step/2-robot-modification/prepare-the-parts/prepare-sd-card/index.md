@@ -21,7 +21,7 @@ This guide is for the **Lite** version of the Raspberry Pi Compute module (the v
 
 If you have a compute module **with eMMC**, you can safely skip this step for now and continue with [preparing the mainboard.]({{% relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/index.md" %}})
 
-You can flash the CM4, once your mower is powered up. [Here is the guide on how to do it]({{% relref "/docs/Knowledge-Base/flash-cm4-emmc/index.md" %}})
+You can flash the CM4, once your mower is powered up. [Here is the guide on how to do it]({{% relref "/docs/Knowledge-Base/installation/flash-cm4-emmc/index.md" %}})
 {{% /alert %}}
 
 ## Prerequisites

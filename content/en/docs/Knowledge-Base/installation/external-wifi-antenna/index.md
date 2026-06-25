@@ -19,7 +19,7 @@ After adding the external antenna, you need to tell the Raspberry Pi CM4 to use 
 </div>
 <script>
     AsciinemaPlayer.create(
-        '{{< relref "/docs/Knowledge-Base/external-wifi-antenna" >}}/cast/change-antenna.cast',
+        '{{< relref "/docs/Knowledge-Base/installation/external-wifi-antenna" >}}/cast/change-antenna.cast',
         document.getElementById('external-wifi-player'),
         { cols: 110, rows: 24, autoplay: false, loop: true }
     );

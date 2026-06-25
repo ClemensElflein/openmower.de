@@ -40,15 +40,15 @@ OpenMower works by replacing the stock electronics inside compatible chassis. Po
 - SABO MOWit 500F (Series I & II)
 - John Deere Tango E5 (Series I & II)
 
-Not sure whether your mower fits? Start with the [Compatible Mowers]({{% relref "/docs/knowledge-base/compatible-mowers" %}}) list and, if still unsure, ask in Discord before buying hardware. The universal carrier board also allows advanced builders to adapt additional models once basic requirements (wheel encoders, supported voltage, space for the mainboard) are met.
+Not sure whether your mower fits? Start with the [Compatible Mowers]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}) list and, if still unsure, ask in Discord before buying hardware. The universal carrier board also allows advanced builders to adapt additional models once basic requirements (wheel encoders, supported voltage, space for the mainboard) are met.
 
 ---
 
 ### Where to go next
 
 - [Getting Started]({{% relref "/docs/getting-started" %}}): Required skills, compatibility flowchart, and the full build sequence.
-- [Compatible Mowers]({{% relref "/docs/knowledge-base/compatible-mowers" %}}): Confirm your chassis before buying hardware.
-- [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}): Detailed bill of materials, including RTK components.
+- [Compatible Mowers]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}): Confirm your chassis before buying hardware.
+- [Shopping List]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}}): Detailed bill of materials, including RTK components.
 - [Links]({{% relref "/docs/links" %}}): GitHub repos, Discord invite, videos, and other resources.
 
 

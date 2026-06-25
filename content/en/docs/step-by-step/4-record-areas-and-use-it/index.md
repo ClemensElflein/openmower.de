@@ -6,4 +6,4 @@ description: >
   Finish your build by recording mowing areas and starting to use the mower.
 ---
 
-{{< include-markdown file="/docs/Knowledge-Base/record-areas/index.md" >}}
+{{< include-markdown file="/docs/Knowledge-Base/operation/record-areas/index.md" >}}

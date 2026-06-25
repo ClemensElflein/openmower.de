@@ -12,7 +12,7 @@ The firmware for the controllers is based on the open source VESC project and th
 ### Prerequisites
 - **Windows or Linux computer** to run the VESC Configuration Tool
 - **VESC Tool (https://vesc-project.com/vesc_tool)** You can download the tool for free by adding the "free" version in your cart and proceeding to checkout.
-- **OpenMower Firmware** needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven't done it, follow the [Firmware Update]({{< relref "/docs/Knowledge-Base/firmware-update" >}}) guide.
+- **OpenMower Firmware** needs to be successfully installed in the xCore board. This is needed because the xCore bridges the connection between your computer and the xESC. If you haven't done it, follow the [Firmware Update]({{< relref "/docs/Knowledge-Base/installation/firmware-update" >}}) guide.
 - **Optional (but makes your life easier):**<br/>Configuration files for the mower you are using.<br/>Look in the [OpenMower repository](https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC) for the files suited for your mower. <br/>You will need three files:
     - App configuration XML (sets the baud rate, etc. Same for all three xESC controllers)
     - Mower Motor configuration XML (motor parameters for the mower motor)
@@ -24,12 +24,12 @@ The firmware for the controllers is based on the open source VESC project and th
 
 
 #### Expose the ESC to the network
-![Expose ESC to the network]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/openmower-expose-xesc.png)
+![Expose ESC to the network]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/openmower-expose-xesc.png)
 Run `openmower expose-xesc [left|right|mower]` to expose the xESC controller (choose `left`, `mower` or `right`).<br/>The controller is then reachable in your local network on `openmower:65102` until you hit <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 
 #### Connect to the xESC
-![Connect VESC tool to ESC]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/ConnectToTheESC.png)
+![Connect VESC tool to ESC]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/ConnectToTheESC.png)
 Open the VESC Configuration Tool and connect to the xESC controllers by clicking:
 - `Connection -> TCP` **[1]**
 - Insert the IP address of your mower or `openmower` into the Address field **[2]**.
@@ -39,7 +39,7 @@ Open the VESC Configuration Tool and connect to the xESC controllers by clicking
 {{% alert title="Information" color="info" %}}
 If you encounter this warning message:
 
-![Warning message]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/Firmware_Version_Warning_Message.png)
+![Warning message]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/Firmware_Version_Warning_Message.png)
 
 you can safely ignore it. The VESC tool is backward compatible with the firmware version used on the xESC controller.
 {{% /alert %}}
@@ -88,20 +88,20 @@ With the VESC Configuration Tool connected, you can now upload the configuration
 Perform calibration for left drive first, then repeat the procedure for the right drive.
 
 1. **Enable realtime data:** Later on, we wanna validate our calibration with a known reference value, but also during calibration it's interesting to see the displayed values in the marked 2 window. That's why we enable real-time data first:<br>
-   ![RT Data]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_3_realtime_data.jpg)
+   ![RT Data]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_3_realtime_data.jpg)
 1. Start the **FOC Calibration Wizard**:<br>
-   ![Start FOC Calibration]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_1.jpg)<br>
+   ![Start FOC Calibration]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_1.jpg)<br>
 
 1. Now we need to provide some specs of our motor. **These are the specs for the left and right drive motors**, for the mow motor, we need to use other specs:<br>
-   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%"><br>
+   <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%"><br>
 
-   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%"><br>
+   <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%"><br>
 
 1. Once calibration has been done, **do not change the direction** (even though the left wheel turns forward during calibration, whereas the right one backwards):
 
-   <img src="{{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+   <img src="{{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
 9. Now that the calibration succeed, lets test the result:
-   ![Run Test]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_5_test.jpg)<br>
+   ![Run Test]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_5_test.jpg)<br>
 
    Test with "**D 0,4**" (1) and press the "Duty cycle" play button (2). If it draw **<= 0.15A** (3) and sound healty, it is calibrated well.<br>
    Test with some higher duty settings. It will become more loud for sure, but should always spin smooth and sound healty. If not, press the STOP sign (4).
@@ -139,7 +139,7 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 
 1. Limit blade RPM:<br>
    It's important to limit the max. RPM to the one like OEM is running it! Otherwise you risk your motor bearings or more dangerous: Your blade might fly away :skull:
-   ![Limit RPM]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_8_mow_rpm.jpg)
+   ![Limit RPM]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_8_mow_rpm.jpg)
 
 1. Limit battery current:<br>
    Dependent on your Sabo-Carrier hardware version, you should limit the battery current:
@@ -153,7 +153,7 @@ For the mow motor ESC calibration, you do the same workflow, but with adapted va
 
    > **Warning:** If you choose a value larger than the stock fuse, you've to expect that it may blow and need to be replaced with a higher-rated one.
 
-   ![Limit currents]({{< relref "/docs/Knowledge-Base/configure-xesc" >}}/images/sabo/vesc_9_mow_currents.jpg)
+   ![Limit currents]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_9_mow_currents.jpg)
 
 {{% /tab %}}
 

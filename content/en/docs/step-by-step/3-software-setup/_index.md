@@ -12,5 +12,5 @@ This can usually be done by placing it into the docking station while doing the 
 {{% /alert %}}
 
 {{% alert title="Using a CM4 with eMMC?" color="info" %}}
-If your Compute Module 4 has onboard eMMC storage (not the Lite variant), you need to flash OpenMower OS to it before proceeding. Now is the time to do that — follow the [Flash CM4 eMMC]({{< relref "/docs/knowledge-base/flash-cm4-emmc" >}}) guide, then come back here.
+If your Compute Module 4 has onboard eMMC storage (not the Lite variant), you need to flash OpenMower OS to it before proceeding. Now is the time to do that — follow the [Flash CM4 eMMC]({{< relref "/docs/knowledge-base/installation/flash-cm4-emmc" >}}) guide, then come back here.
 {{% /alert %}}

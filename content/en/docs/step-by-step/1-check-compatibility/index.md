@@ -73,4 +73,4 @@ Check your mower's battery label or manual to determine the series count.
 {{% /alert %}}
 
 # Officially Supported Mowers
-{{< include-markdown file="/docs/Knowledge-Base/compatible-mowers/index.md" >}}
+{{< include-markdown file="/docs/Knowledge-Base/getting-started/compatible-mowers/index.md" >}}

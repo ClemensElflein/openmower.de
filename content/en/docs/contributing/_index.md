@@ -8,7 +8,7 @@ description: >
 
 OpenMower is a community project and contributions of all kinds are welcome — bug reports, code, documentation improvements, or simply helping others on Discord.
 
-Not sure where to start? Read the [System Architecture]({{< relref "/docs/knowledge-base/architecture" >}}) overview to understand how the components fit together before diving into a specific repo.
+Not sure where to start? Read the [System Architecture]({{< relref "/docs/knowledge-base/getting-started/architecture" >}}) overview to understand how the components fit together before diving into a specific repo.
 
 ## Contributing to these Docs
 

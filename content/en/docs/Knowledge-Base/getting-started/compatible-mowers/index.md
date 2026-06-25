@@ -9,7 +9,7 @@ description: >
 
 
 ## Yard Force
-![OpenMower-V2 YardForce Carrierboard]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/yf-mainboard.jpg)
+![OpenMower-V2 YardForce Carrierboard]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/yf-mainboard.jpg)
 
 **Check out the Git Repo Here:** [https://github.com/xtech/hw-openmower-yardforce](https://github.com/xtech/hw-openmower-yardforce)
 
@@ -38,9 +38,9 @@ This Carrierboard is compatible with the following mower models:
 
 |                                                      Series-I Carrierboard (v0.2)                                                      |                                                     Series-II Carrierboard (v0.2)                                                      |
 | :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
-| ![OpenMower-V2 SABO Carrierboard Series-I v0.2]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/om-sabo-cb-s1-v02.jpg)  | ![OpenMower-V2 SABO Carrierboard Series-II v0.1]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/om-sabo-cb-s2-v02.jpg) |
+| ![OpenMower-V2 SABO Carrierboard Series-I v0.2]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s1-v02.jpg)  | ![OpenMower-V2 SABO Carrierboard Series-II v0.1]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s2-v02.jpg) |
 |                                               **Series-I (v0.1) @ John Deere Tango E5**                                                |                                                 **Series-II (v0.1) @ Sabo MOWiT 500F**                                                 |
-| ![V0.1 Carrierboard Series-I assembled]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/johndeere-s1-v01-assembled.jpg) |   ![V0.1 Carrierboard Series-II assembled]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/sabo-s2-v01-assembled.jpg)   |
+| ![V0.1 Carrierboard Series-I assembled]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/johndeere-s1-v01-assembled.jpg) |   ![V0.1 Carrierboard Series-II assembled]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/sabo-s2-v01-assembled.jpg)   |
 
 These mowers are **well supported**. Even the display controller was replaced by a fully functional, modern user interface!
 
@@ -59,7 +59,7 @@ The universal board contains all features needed for an Open Mower build (e.g., 
 
 **Check out the Git Repo Here:** [https://github.com/xtech/hw-openmower-universal](https://github.com/xtech/hw-openmower-universal)
 
-![V2 Universal Board with Modules]({{< relref "/docs/Knowledge-Base/compatible-mowers" >}}/images/BreakingTheBoard.jpg)
+![V2 Universal Board with Modules]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/BreakingTheBoard.jpg)
 
 
 ### Other Compatible Brands

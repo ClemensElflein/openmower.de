@@ -132,7 +132,7 @@ Fill in the credentials from your RTK correction provider.
 
 ### Emergency Sensors
 
-Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see [Configuring GPIO Inputs]({{< relref "/docs/Knowledge-Base/configure-gpio-inputs" >}}) for the full setup guide.
+Before enabling the mower motor, configure and verify all emergency sensors (lift detection, tilt detection, stop buttons). This is done via the GPIO input configuration — see [Configuring GPIO Inputs]({{< relref "/docs/Knowledge-Base/configuration/configure-gpio-inputs" >}}) for the full setup guide.
 
 ### Enable Mower Motor
 

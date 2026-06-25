@@ -15,7 +15,7 @@ description: >
 - **Skill level:** Intermediate electronics, Linux, and mechanical skills
 - **Community:** 2k+ members on Discord ready to help with reviews and troubleshooting
 
-New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}). Before building, read the [System Architecture]({{% relref "/docs/knowledge-base/architecture" %}}) to understand how the app, ROS, firmware, and hardware fit together.
+New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}). Before building, read the [System Architecture]({{% relref "/docs/knowledge-base/getting-started/architecture" %}}) to understand how the app, ROS, firmware, and hardware fit together.
 
 
 ## Important Warnings
@@ -44,7 +44,7 @@ The following mowers are fully supported with dedicated carrier boards:
 - Many other models using the universal carrier board
 - If you want to build a mower from scratch, that's also possible
 
-See the full [Compatible Mowers List]({{% relref "/docs/knowledge-base/compatible-mowers" %}}) for additional models and community builds.
+See the full [Compatible Mowers List]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}) for additional models and community builds.
 
 
 
@@ -97,7 +97,7 @@ Therefore, you will need one or two RTK GPS receivers:
 Follow these steps in sequence:
 
 ## Ready to shop? 
-**Check the detailed [Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}}).**
+**Check the detailed [Shopping List]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}}).**
 
 
 ## Get Support
@@ -124,6 +124,6 @@ See the [Links]({{% relref "/docs/links" %}}) page for all resources.
 
 If you are ready to start building:
 
-➡️ [Review the Shopping List]({{% relref "/docs/knowledge-base/shopping-list" %}})
+➡️ [Review the Shopping List]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}})
 
 ➡️ [Check the Step by Step Guide]({{% relref "/docs/step-by-step/" %}})

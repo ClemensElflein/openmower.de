@@ -82,11 +82,11 @@ Here is the expected output:
 ### Rename your host (optional)
 If you are running multiple robots, it's a good idea to rename your host to distinguish between them.
 
-You can do this by following the steps in the Knowledge Base: [Change Hostname]({{< relref "/docs/Knowledge-Base/change-hostname" >}})
+You can do this by following the steps in the Knowledge Base: [Change Hostname]({{< relref "/docs/Knowledge-Base/maintenance/change-hostname" >}})
 
 ### Enable External WiFi Antenna (optional)
 If you have added an external WiFi antenna, you need to enable it.
-You can do this by following the steps in the Knowledge Base: [Enable External Antenna]({{< relref "/docs/Knowledge-Base/external-wifi-antenna" >}})
+You can do this by following the steps in the Knowledge Base: [Enable External Antenna]({{< relref "/docs/Knowledge-Base/installation/external-wifi-antenna" >}})
 
 
 ## Step 3.2.1: Setup Environment Variables
@@ -125,12 +125,12 @@ The `openmower` tool will now fetch the selected ROS version. **This will take s
 
 ## Step 3.3.1: Install Firmware
 Now that the system knows which hardware you are using, we are ready to install the firmware to the xCore board.
-{{< include-markdown file="/docs/Knowledge-Base/firmware-update/index.md" >}}
+{{< include-markdown file="/docs/Knowledge-Base/installation/firmware-update/index.md" >}}
 
 
 
 ## Step 3.3.2: Configure xESC Motor Controllers
-{{< include-markdown file="/docs/Knowledge-Base/configure-xesc/index.md" >}}
+{{< include-markdown file="/docs/Knowledge-Base/configuration/configure-xesc/index.md" >}}
 
 
 ## Continue with Step 3.4: [Configure ROS Parameters]({{< relref "/docs/step-by-step/3-software-setup/setup-ros" >}})
