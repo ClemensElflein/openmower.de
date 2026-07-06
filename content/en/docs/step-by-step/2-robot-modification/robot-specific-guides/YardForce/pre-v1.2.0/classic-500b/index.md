@@ -1,10 +1,11 @@
 ---
-title: "YardForce Classic 500(B)"
-linkTitle: "YardForce Classic 500(B)"
-weight: 10
+title: "Classic 500(B)"
+linkTitle: "Classic 500(B)"
+weight: 30
 description: >
-  Modification Guide for YardForce Classic 500(B)
+  Modification Guide for YardForce Classic 500(B) with Mainboard ≤ 1.1.0-beta
 ---
+
 {{% alert title="v2 Hardware Only!" color="warning" %}}
 This guide here is for OpenMower v2.x Hardware!
 If you have v1 Hardware, follow the legacy docs [here](https://openmower.de/archive/v1.0.2/docs/), because for v1 hardware you will also need to modify the docking station!
@@ -12,6 +13,11 @@ If you have v1 Hardware, follow the legacy docs [here](https://openmower.de/arch
 You have **v1 hardware**, if:
 - You are using a full-size Raspberry Pi
 - Your mainboard shows version **v0.xx**
+{{% /alert %}}
+
+{{% alert title="Carrierboard 1.x – 1.1.0-beta only!" color="warning" %}}
+This guide is exclusively for **Carrierboard version 1.x – 1.1.0-beta**!<br>
+![v1.1.0-beta Carrierboard identification](../carrierboard_version_v1.1.0-beta.jpg)<br>
 {{% /alert %}}
 
 ## Prerequisites
