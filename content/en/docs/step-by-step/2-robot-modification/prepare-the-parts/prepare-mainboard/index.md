@@ -78,7 +78,7 @@ Finally, we can insert the remaining modules into the mainboard.
 
 Match the pins of the xESCs as well as the GPS board to the corresponding pins on the mainboard. Don't worry if some of the ESC pins don't have mating connectors, they are only used for initial firmware upload after the boards are manufactured.
 
-The resulting board will look similar to this (example shows a YardForce mainboard):
+The resulting board will look similar to this (example shows a YardForce Carrierboard v1.1.0-beta):
 ![Finished Mainboard](images/finished-mainboard.jpg)
 
 
