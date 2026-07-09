@@ -1,0 +1,223 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Advanced</title><link>https://openmower.de/latest/docs/knowledge-base/advanced/</link><description>Recent content in Advanced on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Running the Simulation</title><link>https://openmower.de/latest/docs/knowledge-base/advanced/run-simulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/advanced/run-simulation/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The simulation runs the &lt;strong>real&lt;/strong> &lt;code>open_mower_ros&lt;/code> logic and the OpenMower app against a
+simulated mower instead of real hardware. &lt;code>mower_logic&lt;/code>, navigation, the coverage
+planner, monitoring, etc. all run for real and unmodified — only the low-level board
+(drive, mower, IMU, power, GPS) is emulated by the &lt;code>mower_simulation&lt;/code> node.&lt;/p>
+&lt;p>This lets you:&lt;/p>
+&lt;ul>
+&lt;li>Try OpenMower before buying or building any hardware.&lt;/li>
+&lt;li>Test a specific combination of &lt;code>open_mower_ros&lt;/code> / app versions.&lt;/li>
+&lt;li>Reproduce and debug behaviour without a robot in the garden.&lt;/li>
+&lt;/ul>
+&lt;p>The whole thing runs in Docker and is controlled by a small wrapper script, &lt;code>sim.sh&lt;/code>.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Docker&lt;/strong> with the &lt;strong>Compose v2 plugin&lt;/strong> (&lt;code>docker compose&lt;/code>). Install from
+&lt;a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">https://docs.docker.com/get-docker/&lt;/a>
+.&lt;/li>
+&lt;li>The &lt;code>open_mower_ros&lt;/code> source checkout — the simulation stack lives in its
+&lt;code>docker-simulation/&lt;/code> directory.&lt;/li>
+&lt;/ul>
+&lt;p>No GPU is required; the simulation view uses software rendering by default and works on
+any host and OS (Linux, macOS, Windows).&lt;/p>
+&lt;h2 id="quick-start">Quick Start&lt;/h2>
+&lt;p>From the &lt;code>open_mower_ros/docker-simulation/&lt;/code> directory:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The first run builds the simulation image locally (this can take a few minutes).
+Subsequent runs reuse the built image and start in seconds.&lt;/p>
+&lt;p>Once the stack is up, give the simulation a minute to report healthy, then open in your
+browser:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>URL&lt;/th>
+&lt;th>What it is&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:6080&lt;/code>&lt;/td>
+&lt;td>Simulation view (RViz) via noVNC — no password, no VNC client needed&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:3000&lt;/code>&lt;/td>
+&lt;td>OpenMower app (newer, with map editor)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:8080&lt;/code>&lt;/td>
+&lt;td>OpenMower app (legacy Flutter &amp;ldquo;blue&amp;rdquo; version)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Replace &lt;code>localhost&lt;/code> with the host&amp;rsquo;s address if you run Docker on a different machine.&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row">
+&lt;div id="sim-up-terminal-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row">
+&lt;div>Starting the simulation with &lt;code>./sim.sh up&lt;/code>, then exploring a few other &lt;code>sim.sh&lt;/code> commands and &lt;code>rostopic echo&lt;/code>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/docs/knowledge-base/advanced/run-simulation//cast/sim-up-terminal.cast',
+document.getElementById('sim-up-terminal-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;p>The stack ships with a starter mowing area, docking point, and mower config already set
+up, so there is something to drive around immediately instead of an empty map.&lt;/p>
+&lt;h2 id="the-simulation-view-novnc">The Simulation View (noVNC)&lt;/h2>
+&lt;p>Open &lt;code>http://localhost:6080&lt;/code> to see RViz — the visualization of the simulated mower,
+its map. This is where you watch the mower move, follow
+paths, and dock.&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/advanced/run-simulation//images/novnc-rviz.png" alt="Simulation view in the browser (noVNC / RViz)">&lt;/p>
+&lt;p>If you prefer a native VNC client over the browser, connect it to &lt;code>&amp;lt;host&amp;gt;:5900&lt;/code> (no
+password) instead.&lt;/p>
+&lt;h2 id="the-openmower-app">The OpenMower App&lt;/h2>
+&lt;p>Open &lt;code>http://localhost:8080&lt;/code> for the app. This is the same interface you use with real
+hardware — status, manual driving, area recording, and starting/stopping mowing all work
+against the simulated mower.&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/advanced/run-simulation//images/app-status.png" alt="OpenMower app connected to the simulation">&lt;/p>
+&lt;p>From here you can start a mowing job on the pre-loaded area and watch the mower follow
+the coverage path over in the simulation view.&lt;/p>
+&lt;h2 id="driving-the-simulation-into-test-states">Driving the Simulation into Test States&lt;/h2>
+&lt;p>The simulation exposes a &lt;strong>sim-control&lt;/strong> layer: the app can push the simulated mower into
+specific situations that would be hard, slow, or destructive to reproduce on real
+hardware, and reads back a live sim-status stream. This is the main reason to test in the
+simulation rather than only in the garden.&lt;/p>
+&lt;p>You can:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Take manual control at any time&lt;/strong> — the starter config sets
+&lt;code>always_allow_joystick&lt;/code>, so manual velocity commands override the mower&amp;rsquo;s inputs
+regardless of what the software is doing. You can grab control mid-mow and drive it off
+course to see how it recovers.&lt;/li>
+&lt;li>&lt;strong>Trigger / clear an emergency&lt;/strong> — verify the mower stops and recovers correctly.&lt;/li>
+&lt;li>&lt;strong>Simulate a stuck mower&lt;/strong> — wheels keep reporting odometry while the true position
+freezes, so you can test stuck-detection and recovery.&lt;/li>
+&lt;li>&lt;strong>Set the battery voltage&lt;/strong> — drive it low to test undervoltage / go-home-to-charge
+behaviour, or simulate charging.&lt;/li>
+&lt;li>&lt;strong>Toggle GPS quality&lt;/strong> — switch between a good RTK fix (~2 cm) and no fix (~1 m) to test
+how navigation reacts to GPS loss.&lt;/li>
+&lt;li>&lt;strong>Jump / displace the position&lt;/strong> — teleport the mower or nudge its heading to test
+recovery from a bad GPS jump.&lt;/li>
+&lt;li>&lt;strong>Move the docking station&lt;/strong> to the mower&amp;rsquo;s current position.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/advanced/run-simulation//images/sim-control-panel.png" alt="Sim-control test-state panel in the app">&lt;/p>
+&lt;p>These controls live in the newer app (&lt;code>http://localhost:3000&lt;/code>); make sure &lt;code>APP_VERSION&lt;/code>
+in &lt;code>.env&lt;/code> is recent enough (&lt;code>edge&lt;/code> has them).&lt;/p>
+&lt;h2 id="choosing-versions">Choosing Versions&lt;/h2>
+&lt;p>Which versions run is controlled by &lt;code>.env&lt;/code> in the &lt;code>docker-simulation/&lt;/code> directory. The
+checked-in defaults work as-is; edit them to test a specific combination:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Variable&lt;/th>
+&lt;th>Controls&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>VERSION&lt;/code>&lt;/td>
+&lt;td>&lt;code>open_mower_ros&lt;/code> image tag — a release tag (e.g. &lt;code>v1.2.3&lt;/code>), &lt;code>edge&lt;/code> (latest main), or a PR/sha tag&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>APP_VERSION&lt;/code>&lt;/td>
+&lt;td>Newer app image tag (map editor / green style)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LEGACY_APP_VERSION&lt;/code>&lt;/td>
+&lt;td>Legacy Flutter app image tag&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>NOVNC_PORT&lt;/code> / &lt;code>VNC_PORT&lt;/code>&lt;/td>
+&lt;td>Host ports for the simulation view, if &lt;code>6080&lt;/code>/&lt;code>5900&lt;/code> are already taken&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DISPLAY_RESOLUTION&lt;/code>&lt;/td>
+&lt;td>Virtual display resolution for the simulation view&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>VERSION&lt;/code> sets both the &lt;code>open_mower_ros&lt;/code> image and the simulation image (built from that
+same tag), so the simulator&amp;rsquo;s message/service definitions always match the version under
+test.&lt;/p>
+&lt;p>After changing a version, rebuild so the change is picked up:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh rebuild
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Plain &lt;code>./sim.sh up&lt;/code> never rebuilds on its own — it reuses whatever was already built.&lt;/p>
+&lt;h2 id="common-commands">Common Commands&lt;/h2>
+&lt;p>&lt;code>./sim.sh&lt;/code> wraps &lt;code>docker compose&lt;/code> with friendlier errors. Run &lt;code>./sim.sh help&lt;/code> for the
+full list.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Does&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh up&lt;/code>&lt;/td>
+&lt;td>Pull latest images, then start the stack in the background&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh down&lt;/code>&lt;/td>
+&lt;td>Stop the stack and remove its containers&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh restart&lt;/code>&lt;/td>
+&lt;td>&lt;code>down&lt;/code> then &lt;code>up&lt;/code> (also pulls images)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh rebuild&lt;/code>&lt;/td>
+&lt;td>Force-rebuild from source, then start — use after changing code/config or &lt;code>VERSION&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh logs [service]&lt;/code>&lt;/td>
+&lt;td>Follow logs (e.g. &lt;code>./sim.sh logs open_mower_ros&lt;/code>)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh ps&lt;/code>&lt;/td>
+&lt;td>Show container status&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh reset&lt;/code>&lt;/td>
+&lt;td>Restore the checked-in starter map and params&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh clean&lt;/code>&lt;/td>
+&lt;td>&lt;strong>Destructive:&lt;/strong> wipe all simulation state back to empty (asks first)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resetting-the-map">Resetting the Map&lt;/h2>
+&lt;p>The map, params, and ROS home persist as plain files under &lt;code>./data/&lt;/code> (bind mounts), so
+they survive &lt;code>down&lt;/code> and restarts. To go back to the checked-in starter map:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh reset
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To wipe &lt;strong>everything&lt;/strong> under &lt;code>./data/&lt;/code> (map, params, ROS home, recordings) back to an
+empty state:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh clean
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;p>If the stack seems stuck, check that the simulation container is healthy and tail the
+logs:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh ps &lt;span style="color:#8f5902;font-style:italic"># mower_simulation_gui should be &amp;#34;healthy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./sim.sh logs mower_simulation_gui
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./sim.sh logs open_mower_ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>&lt;code>open_mower_ros&lt;/code> waits for the simulation.&lt;/strong> By design, &lt;code>mower_simulation_gui&lt;/code> starts
+first and owns the ROS master; &lt;code>open_mower_ros&lt;/code> only starts once it reports healthy.
+This mirrors a real boot, where the low-level board must be present before the ROS
+logic looks for it.&lt;/li>
+&lt;li>&lt;strong>A change isn&amp;rsquo;t showing up?&lt;/strong> If the stack was already running, you likely need
+&lt;code>./sim.sh rebuild&lt;/code> — plain &lt;code>up&lt;/code> never rebuilds on its own.&lt;/li>
+&lt;li>&lt;strong>Ports already in use?&lt;/strong> Change &lt;code>NOVNC_PORT&lt;/code> / &lt;code>VNC_PORT&lt;/code> in &lt;code>.env&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>GPU acceleration&lt;/strong> is off by default and not needed. If you have a GPU, uncomment the
+relevant block for &lt;code>mower_simulation_gui&lt;/code> in &lt;code>docker-compose.yaml&lt;/code>; the container
+auto-detects it and falls back to software rendering if it can&amp;rsquo;t be used.&lt;/li>
+&lt;/ul>
+&lt;h2 id="testing-local-source-changes">Testing Local Source Changes&lt;/h2>
+&lt;p>To run &lt;code>open_mower_ros&lt;/code> from your local checkout instead of a published image, build it
+once:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh build-from-source
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then set &lt;code>BASE_IMAGE=local/open_mower_ros:local&lt;/code> in &lt;code>.env&lt;/code> and run &lt;code>./sim.sh rebuild&lt;/code>.&lt;/p></description></item></channel></rss>
