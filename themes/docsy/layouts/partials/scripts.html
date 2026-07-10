@@ -62,7 +62,8 @@ window.markmap = {
 {{ $jsPlantuml := resources.Get "js/plantuml.js" | resources.ExecuteAsTemplate "js/plantuml.js" . -}}
 {{ $jsDrawio := resources.Get "js/drawio.js" | resources.ExecuteAsTemplate "js/drawio.js" . -}}
 {{ if .Site.Params.offlineSearch -}}
-  {{ $jsSearch = resources.Get "js/offline-search.js" -}}
+  {{/* Lunr must come before offline-search.js, which expects a global `lunr`. Self-hosted to avoid CDN dependency. */ -}}
+  {{ $jsSearch = slice (resources.Get "js/lunr.min.js") (resources.Get "js/offline-search.js") | resources.Concat "js/offline-search-bundle.js" -}}
 {{ end -}}
 {{ $js := (slice $jsBs $jsBase $jsAnchor $jsSearch $jsMermaid $jsPlantuml $jsMarkmap $jsDrawio) | resources.Concat "js/main.js" -}}
 {{ if hugo.IsProduction -}}

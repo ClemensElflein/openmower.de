@@ -87,25 +87,35 @@
                 return;
             }
 
-            const results = idx
-                .query((q) => {
-                    const tokens = lunr.tokenizer(searchQuery.toLowerCase());
-                    tokens.forEach((token) => {
-                        const queryString = token.toString();
-                        q.term(queryString, {
-                            boost: 100,
-                        });
-                        q.term(queryString, {
-                            wildcard:
-                                lunr.Query.wildcard.LEADING |
-                                lunr.Query.wildcard.TRAILING,
-                            boost: 10,
-                        });
-                        q.term(queryString, {
-                            editDistance: 2,
-                        });
+            const rawResults = idx.query((q) => {
+                const tokens = lunr.tokenizer(searchQuery.toLowerCase());
+                tokens.forEach((token) => {
+                    const queryString = token.toString();
+                    q.term(queryString, {
+                        boost: 100,
                     });
-                })
+                    q.term(queryString, {
+                        wildcard:
+                            lunr.Query.wildcard.LEADING |
+                            lunr.Query.wildcard.TRAILING,
+                        boost: 10,
+                    });
+                    // Fuzzy matching on short tokens produces mostly false
+                    // positives (e.g. "mqtt"~2 matches "mate"), so allow
+                    // only one typo and only for longer words.
+                    if (queryString.length >= 5) {
+                        q.term(queryString, {
+                            editDistance: 1,
+                        });
+                    }
+                });
+            });
+
+            // Drop the low-relevance tail: fuzzy/wildcard-only matches score
+            // orders of magnitude below real hits.
+            const topScore = rawResults.length > 0 ? rawResults[0].score : 0;
+            const results = rawResults
+                .filter((r) => r.score > topScore * 0.05)
                 .slice(
                     0,
                     $targetSearchInput.data('offline-search-max-results')

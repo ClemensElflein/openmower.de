@@ -150,7 +150,11 @@ github_branch= "main"
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
+# Length of the excerpt shown in search results
+offlineSearchSummaryLength = 200
+# Maximum number of results shown in the search popover
+offlineSearchMaxResults = 25
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false

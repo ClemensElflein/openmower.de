@@ -60,6 +60,16 @@
                 @include placeholder {
                     color: $navbar-dark-color;
                 }
+
+                // On focus the input gets an opaque light background, so the
+                // light navbar text/placeholder colors become unreadable.
+                &:focus {
+                    color: $input-color;
+
+                    @include placeholder {
+                        color: $input-placeholder-color;
+                    }
+                }
             }
         }
 
