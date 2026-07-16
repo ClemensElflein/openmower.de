@@ -99,10 +99,10 @@ Now you can install the OpenMower mainboard and the GPS antenna holder we prepar
 3. Power Connector
 4. Charging Contacts
 5. USB Connector on the Rear of the Robot
-6. CoverUI Board via 16pin IDC plug
+6. OEM CoverUI Board (Emergency sensors, rain sensor, LEDs, buttons)
 7. GPS Antenna
 
-
+![Mainboard Connections](./images/MainboardConnections.jpg)
 
 ## Step 2.4.5: Install external WiFi Antenna (optional)
 If you want to use an external WiFi antenna for better reception, installation is simple.
