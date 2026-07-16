@@ -80,9 +80,31 @@ Keep the battery in place.
 
 ## Step 2.4.3: Small Preparations
 
-### Assemble GPS Antenna Holder _(when using Ardusimple RTK2B)_
+{{< tabpane text=true >}}
+{{% tab header="**Choose your option**:" disabled=true /%}}
+
+{{% tab header="Witmotion UM9xx/ByNav-Mxx" text=true %}}
+
+### Assemble Witmotion GPS Module
+
+<img class="special-img-class" style="width:50%" src="./images/WTRTK-GPS.jpg" />
+
+Install your Witmotion UM9xx or ByNav-Mxx GPS module and the included Witmotion pigtail-cable as shown in the illustration.
+
+{{% /tab %}}
+
+
+{{% tab header="Ardusimple RTK2B" text=true %}}
+
+### Assemble GPS Antenna Holder
+
 ![GPSHolder.jpg](images/GPSHolder.jpg)
 Take the GPS antenna holder and assemble it as shown in the picture.
+
+{{% /tab %}}
+
+{{< /tabpane >}}
+
 
 
 ## Step 2.4.4: Install OpenMower Electronics
