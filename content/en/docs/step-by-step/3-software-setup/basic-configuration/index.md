@@ -94,7 +94,8 @@ Now we can start the configuration by setting the environment variables.
 
 - **Start the configuration** by running `openmower configure env`
 - **Select** your favorite editor (e.g. `nano`)
-- **Edit the environment variables**, the comments tell you what to do
+- **Edit the environment variables**, the comments tell you what to do<br>
+  If you are running an older version of OpenMowerOS, the latest `.env` file may contain additional comments or options not present in your local copy. You can find the current version here: [OpenMower OS .env file](https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/opt/stacks/openmower/.env)
 - **Save the file** (<kbd>Ctrl</kbd> + <kbd>O</kbd>, <kbd>Enter</kbd> to save followed by <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Enter</kbd> to exit nano)
 
 Here is a screncast showing the whole process:
