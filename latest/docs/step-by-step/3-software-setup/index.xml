@@ -141,7 +141,9 @@ You can do this by following the steps in the Knowledge Base: &lt;a href="https:
 &lt;ul>
 &lt;li>&lt;strong>Start the configuration&lt;/strong> by running &lt;code>openmower configure env&lt;/code>&lt;/li>
 &lt;li>&lt;strong>Select&lt;/strong> your favorite editor (e.g. &lt;code>nano&lt;/code>)&lt;/li>
-&lt;li>&lt;strong>Edit the environment variables&lt;/strong>, the comments tell you what to do&lt;/li>
+&lt;li>&lt;strong>Edit the environment variables&lt;/strong>, the comments tell you what to do&lt;br>
+If you are running an older version of OpenMowerOS, the latest &lt;code>.env&lt;/code> file may contain additional comments or options not present in your local copy. You can find the current version here: &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/opt/stacks/openmower/.env" target="_blank" rel="noopener">OpenMower OS .env file&lt;/a>
+&lt;/li>
 &lt;li>&lt;strong>Save the file&lt;/strong> (&lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>O&lt;/kbd>, &lt;kbd>Enter&lt;/kbd> to save followed by &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>X&lt;/kbd>, &lt;kbd>Enter&lt;/kbd> to exit nano)&lt;/li>
 &lt;/ul>
 &lt;p>Here is a screncast showing the whole process:&lt;/p>

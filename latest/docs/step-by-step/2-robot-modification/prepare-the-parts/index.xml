@@ -409,7 +409,7 @@ title="Step 3 - fix the core using screws">
 &lt;h2 id="step-234-insert-xescs-and-gps-into-the-mainboard">Step 2.3.4: Insert xESCs and GPS into the Mainboard&lt;/h2>
 &lt;p>Finally, we can insert the remaining modules into the mainboard.&lt;/p>
 &lt;p>Match the pins of the xESCs as well as the GPS board to the corresponding pins on the mainboard. Don&amp;rsquo;t worry if some of the ESC pins don&amp;rsquo;t have mating connectors, they are only used for initial firmware upload after the boards are manufactured.&lt;/p>
-&lt;p>The resulting board will look similar to this (example shows a YardForce mainboard):
+&lt;p>The resulting board will look similar to this (example shows a YardForce Carrierboard v1.1.0-beta):
 &lt;img src="images/finished-mainboard.jpg" alt="Finished Mainboard">&lt;/p>
 &lt;h2 id="step-235-done-">Step 2.3.5: Done 🎉&lt;/h2>
 &lt;p>You have now finished the preparation of the mainboard. You can now proceed with the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/">mower-specific guide&lt;/a>
