@@ -285,9 +285,14 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;ul>
 &lt;li>&lt;strong>Wheel lift sensors&lt;/strong> — detect when the mower is lifted&lt;/li>
 &lt;li>&lt;strong>Stop buttons&lt;/strong> — physical emergency stop buttons on top of the mower&lt;/li>
+&lt;li>&lt;strong>Collision sensors&lt;/strong> — detect when the mower hits an obstacle&lt;/li>
 &lt;/ul>
 &lt;h2 id="step-1-create-the-inputs-configuration-file">Step 1: Create the inputs configuration file&lt;/h2>
-&lt;p>Create &lt;code>/home/openmower/params/inputs.yaml&lt;/code> with your GPIO input definitions:&lt;/p>
+&lt;p>Instead of writing your &lt;code>inputs.yaml&lt;/code> from scratch, we recommend starting from a ready-made hardware-specific configuration and adjusting it to your wiring. You can find pre-built configs for your Carrierboard at:&lt;/p>
+&lt;p>&lt;a href="https://github.com/ClemensElflein/open_mower_ros/tree/main/src/open_mower/params/hardware_specific" target="_blank" rel="noopener">https://github.com/ClemensElflein/open_mower_ros/tree/main/src/open_mower/params/hardware_specific&lt;/a>
+&lt;/p>
+&lt;p>Download the appropriate &lt;code>inputs.yaml&lt;/code> and place it at &lt;code>/home/openmower/params/inputs.yaml&lt;/code>.&lt;/p>
+&lt;p>Here is a minimal example for reference:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gpio&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#204a87;font-weight:bold">name&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">Front left wheel lift&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">line&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">GPIO10&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -339,7 +344,7 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>emergency.reason&lt;/code>&lt;/td>
-&lt;td>Emergency type — &lt;code>lift&lt;/code> for wheel lift, &lt;code>stop&lt;/code> for stop button&lt;/td>
+&lt;td>Emergency type — &lt;code>lift&lt;/code> for wheel lift, &lt;code>stop&lt;/code> for stop button, &lt;code>collision&lt;/code> for obstacle detection&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>emergency.delay&lt;/code>&lt;/td>
@@ -349,6 +354,95 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;/table>
 &lt;h2 id="gpio-pin-mapping">GPIO Pin Mapping&lt;/h2>
 &lt;p>The example config above uses GPIO10–GPIO13. Here is how those map to physical connectors on each board.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>Choose your OpenMower Carrierboard&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+Yardforce as of v1.2.0
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+aria-controls="tabs-00-02" aria-selected="false">
+Yardforce up to v1.1.0-beta
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-03-tab" data-toggle="tab" href="#tabs-00-03" role="tab"
+aria-controls="tabs-00-03" aria-selected="false">
+Universal
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-04-tab" data-toggle="tab" href="#tabs-00-04" role="tab"
+aria-controls="tabs-00-04" aria-selected="false">
+SABO/John Deere
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;h3 id="openmower-yardforce-board-as-of-v120">OpenMower Yardforce Board as of v1.2.0&lt;/h3>
+&lt;p>As of this Yardforce Board version, you may choose between the previous OM JST-XH connectors, which mainly exist for HWv1 upgraders, or the OEM cabling via the CoverUI, which is targeted at new installations.
+For this selection to work properly, the board has a Hall-Multiplexer (MUX) which is configured in &lt;code>inputs.yaml&lt;/code> as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>yf_cover_ui:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # ---- Hall Inputs Source Selector ----
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # &amp;#34;om&amp;#34; when the hall sensors get connected to the XHST plugs of the OpenMower board
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # (or the robot-adapter-pinheader)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # &amp;#34;oem_idc&amp;#34; when the hall sensors get connected to the (non-modded) OEM CoverUI board
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # (and CoverUI get connected via the 16pin IDC cable to the OpenMower board)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Hall Inputs Source Selector
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> id: hall_mux
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value: oem_idc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;br>Depending on how you switch the Hall-MUX, the GPIOs are mapped as shown in this image:
+&lt;img src="./YF_asof_1.2.0.jpg" alt="YF Hall-MUX GPIOs">
+&lt;br>
+The green-highlighted plugs/GPIOs are those for Hall-MUX &lt;code>om&lt;/code>, whereas the orange-highlighted plugs are the ones for Hall-MUX &lt;code>oem_idc&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;h3 id="openmower-yardforce-board-up-to-v110-beta">OpenMower Yardforce Board up to v.1.1.0-beta&lt;/h3>
+&lt;p>Orientation: looking at the board with the ethernet ports at the bottom left, pins sorted top to bottom.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Position&lt;/th>
+&lt;th>GPIO&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1st (topmost)&lt;/td>
+&lt;td>GPIO10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2nd&lt;/td>
+&lt;td>GPIO11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3rd&lt;/td>
+&lt;td>GPIO12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4th&lt;/td>
+&lt;td>GPIO13&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-03" role="tabpanel" aria-labelled-by="tabs-00-03-tab">
 &lt;h3 id="openmower-universal-board">OpenMower Universal Board&lt;/h3>
 &lt;p>Orientation: looking at the board with the ethernet ports facing you.&lt;/p>
 &lt;table>
@@ -377,34 +471,14 @@ id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h3 id="openmower-yardforce-board">OpenMower Yardforce Board&lt;/h3>
-&lt;p>Orientation: looking at the board with the ethernet ports at the bottom left, pins sorted top to bottom.&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Position&lt;/th>
-&lt;th>GPIO&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>1st (topmost)&lt;/td>
-&lt;td>GPIO10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>2nd&lt;/td>
-&lt;td>GPIO11&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>3rd&lt;/td>
-&lt;td>GPIO12&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>4th&lt;/td>
-&lt;td>GPIO13&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-04" role="tabpanel" aria-labelled-by="tabs-00-04-tab">
+&lt;h3 id="openmower-sabo--john-deere-board">OpenMower SABO / John Deere Board&lt;/h3>
+&lt;p>For changes to the default inputs config of the SABO / John Deere Carrierboard, we recommend downloading the &lt;a href="https://github.com/ClemensElflein/open_mower_ros/blob/main/src/open_mower/params/hardware_specific/Sabo/inputs.yaml" target="_blank" rel="noopener">default &lt;code>inputs.yaml&lt;/code>&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
 &lt;h2 id="step-2-enable-the-input-service">Step 2: Enable the input service&lt;/h2>
 &lt;p>Add the following to your &lt;code>mower_params.yaml&lt;/code> (or &lt;code>custom_params.yaml&lt;/code> for Universal board builds):&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">

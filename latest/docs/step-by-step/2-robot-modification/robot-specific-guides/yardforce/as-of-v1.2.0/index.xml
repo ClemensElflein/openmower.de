@@ -373,4 +373,13 @@ This guide is exclusively for &lt;strong>Carrierboard version ≥ 1.2.0&lt;/stro
 &lt;h4 class="alert-heading">Coming Soon&lt;/h4>
 This guide is currently being written. Check back soon or ask on &lt;a href="https://discord.gg/jE7QNaSxW7" target="_blank" rel="noopener">Discord&lt;/a>
 for the latest information.
-&lt;/div></description></item></channel></rss>
+&lt;/div>
+&lt;h2 id="configuring-gpio-inputs">Configuring GPIO Inputs&lt;/h2>
+&lt;p>The YardForce NX types use GPIO-based sensors for wheel lift detection, stop buttons, and collision detection.
+These must be configured before the robot is operational.&lt;/p>
+&lt;p>There is currently no dedicated hardware-specific &lt;code>inputs.yaml&lt;/code> for NX types yet.
+As a starting point, use the &lt;a href="https://github.com/ClemensElflein/open_mower_ros/blob/main/src/open_mower/params/hardware_specific/YardForceSA_OEM/inputs.yaml" target="_blank" rel="noopener">SA/SC types definition&lt;/a>
+as a template and adjust it to your wiring.&lt;/p>
+&lt;p>Refer to &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/configuration/configure-gpio-inputs/">Configuring GPIO Inputs&lt;/a>
+for detailed instructions
+– including the Hall-MUX selection required for Carrierboard ≥ 1.2.0.&lt;/p></description></item></channel></rss>
