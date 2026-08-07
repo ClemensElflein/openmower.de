@@ -1,0 +1,54 @@
+
+/* CAROUSEL CSS */
+.carousel {position: relative;}
+.carousel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: inset 0px 0px 120px 30px rgba(0,0,0,0.35);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.carousel ul {
+    overflow: auto;
+    display: flex;
+    height: 40vw;
+    max-height: 500px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-points-y: repeat(100%);
+    scroll-behavior: smooth;
+    background: white;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    width: 100%;
+}
+.carousel ul::-webkit-scrollbar {display: none; /* Hide scrollbar for Chrome, Safari and Opera */}
+.carousel ul li {
+    width: 100%;
+    min-width: 100%;
+    list-style: none;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #30638e;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+}
+.carousel ul li div {z-index: 9;}
+.carousel ul li div a {color: #30638e; display: inline-block; background: white; text-shadow: none; color: black; padding: 5px 15px; font-size: 18px; text-decoration: none; border-radius: 4px; margin-top: 10px;}
+.carousel ol {position: absolute; bottom: 15px; display: flex; justify-content: center; left: 50%; transform: translateX(-50%); z-index: 9;}
+.carousel ol li {list-style: none; padding: 0 5px;}
+.carousel ol li a {display: block; height: 10px; width: 10px; border: 2px solid #30638e; background: transparent; border-radius: 100%;}
+.carousel ol li.selected a {background: black;}
+.carousel .prev, .carousel .next {user-select:none; cursor: pointer; font-size: 50px; color: #30638e; position: absolute; left: 0; padding: 15px; top: 50%; transform: translateY(-50%); z-index: 9;}
+.carousel .next {left: auto; right: 0;}
+
+/* RESPONSIVE CSS */
+@media only screen and (max-width: 600px) {
+    .carousel ul li div {display: none;}
+}
