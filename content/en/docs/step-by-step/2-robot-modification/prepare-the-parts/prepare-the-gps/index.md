@@ -112,7 +112,9 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 
 <div class="prep-gps-um9xx-tab">
   
-# Version A use USB cable and usb to serial with cutecom terminal program - standard version
+# Version A 
+
+## use USB cable and usb to serial with cutecom terminal program - standard version
 
 1. Connect your M10 to your PC using the supplied USB-C cable
 1. Open the recommended terminal program cutecom
@@ -161,7 +163,9 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 
 <div class="prep-gps-um9xx-tab">
   
-# Version B use TCP serial client with by_comm terminal program for online changes
+# Version B 
+
+## use TCP serial client with by_comm terminal program for online changes
 
 1. mount the M10 to the CarrierBoard (solder required headers first if required)
 2. adapt the baud rate in the "openmower config ros"
