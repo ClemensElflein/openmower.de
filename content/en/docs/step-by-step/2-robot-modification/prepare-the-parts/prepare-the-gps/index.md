@@ -108,6 +108,105 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 </div>
 
 {{< /tab >}}
+{{% tab header="WitMotion BY-Nav M10 USB offline" %}}
+
+<div class="prep-gps-um9xx-tab">
+  
+# Version A use USB cable and usb to serial with cutecom terminal program - standard version
+
+1. Connect your M10 to your PC using the supplied USB-C cable
+1. Open the recommended terminal program cutecom
+2. Connect at 115200 baud
+3. You should see readable key/value style output. If not, check cable, port, and permissions.
+1. Take attention that your line-end termination has to be CR/LF
+2. in cutecom you may switch off the disturbing output, running still but not on screen
+3. For Factory Reset and cyclic outputs off - entering the following commands, line by line:
+   > FRESET<kbd>↵ Enter</kbd><br> (After `FRESET` the module may take a few seconds to respond.)<br>
+   > UNLOGALL<kbd>↵ Enter</kbd>
+1. in cutecom you may switch on the output now
+1. Re-check connection with the simple
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd> command. You should see readable output <br>
+1. Apply the rover configuration by entering the following commands, line by line:
+    > SERIALCONFIG COM1 460800
+1. Re-check connection with the simple
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd><br> command. You should see readable output, because we are on Com3 connected. If not check connection and baud rate<br>
+1. go ahead with the rover configuration
+    > LOG COMCONFIG ONCE<kbd>↵ Enter</kbd>      (COM1 should have the 460800 now) <br>
+    > RTKTYPE ROVER<kbd>↵ Enter</kbd><br>
+    > RTKTYPE<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT 5<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT<kbd>↵ Enter</kbd><br>
+1. go ahead to define the cyclic output
+    > LOG COM1 GPGSV ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPRMC ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGSA ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPVTG ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGST ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGGA ONTIME 0.1<kbd>↵ Enter</kbd><br>
+1. finally save the changes on flash memory
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+   Take attention to the `SAVECONFIG` command, which stores settings so they survive power cycles.
+1. Unplug the USB cable from the M10 module and mount it to the CarrierBoard (solder required headers first if required).
+2. remember to adapt the baud rate in the "openmower config ros"
+   > gps:
+   >  > baud_rate: 460800 <br>
+   >  > protocol: "NMEA"
+
+
+</div>
+
+{{< /tab >}}
+
+{{% tab header="WitMotion BY-Nav M10 TCP online" %}}
+
+<div class="prep-gps-um9xx-tab">
+  
+# Version B use TCP serial client with by_comm terminal program for online changes
+
+1. mount the M10 to the CarrierBoard (solder required headers first if required)
+2. adapt the baud rate in the "openmower config ros"
+   > gps:<br>
+   >>   baud_rate: 115200 <br>
+   >>   protocol: "NMEA" <br>
+1. Connect your M10 to TCP-serial by "openmower expose-gps" from your openmower ssh terminal
+1. Open the recommended terminal program on your PC "by_connect" (download from www.bynav.com) - for Linux use wine to start this windows program
+2. Connect use TCP-Client Openmower 2000, no baudrate needed
+3. You should see readable key/value style output. If not, check cable, port, and permissions.
+1. Take attention that your line-end termination has to be CR/LF
+2. in by_connect you may switch off the disturbing output, running still but not on screen
+3. Factory Reset and cyclic outputs off - entering the following commands, line by line:
+   > FRESET<kbd>↵ Enter</kbd><br> (After `FRESET` the module may take a few seconds to respond.)<br>
+   > UNLOGALL<kbd>↵ Enter</kbd><br>
+1. in by_connect you may switch on the output now
+1. Re-check connection with the simple
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd> command. You should see readable output <br>
+1. Apply the rover configuration by entering the following commands, line by line:
+    > SERIALCONFIG COM1 460800
+1. Re-check connection with the simple
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd> command. <br>You should see readable output. If not close the actual connection and adapt the baud rate of your connection to 460800 in "openmower config ros" now<br>
+1. go ahead with the rover configuration
+    > LOG COMCONFIG ONCE<kbd>↵ Enter</kbd>     (COM1 should have the 460800 now)<br>
+    > RTKTYPE ROVER<kbd>↵ Enter</kbd><br>
+    > RTKTYPE<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT 5<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT<kbd>↵ Enter</kbd><br>
+1. save the changes on flash memory
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+1. go ahead to define the cyclic output
+    > LOG COM1 GPGSV ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPRMC ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGSA ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPVTG ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGST ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGGA ONTIME 0.1<kbd>↵ Enter</kbd><br>
+1. finally save the changes on flash memory
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+
+Take attention to the `SAVECONFIG` command, which stores settings so they survive power cycles.
+
+</div>
+
+{{< /tab >}}
 
 {{< /tabpane >}}
 
