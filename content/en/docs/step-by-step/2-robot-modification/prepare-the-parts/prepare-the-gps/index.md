@@ -108,13 +108,15 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 </div>
 
 {{< /tab >}}
-{{% tab header="WitMotion BY-Nav M10 USB offline" %}}
+{{% tab header="WitMotion BY-Nav M10(M20) USB offline" %}}
 
 <div class="prep-gps-um9xx-tab">
   
 # Version A 
 
 ## use USB cable and usb to serial with cutecom terminal program - standard version
+
+**_For using it with M20 you need to replace each COM1 by COM2_**
 
 1. Connect your M10 to your PC using the supplied USB-C cable
 1. Open the recommended terminal program cutecom
@@ -159,7 +161,7 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 
 {{< /tab >}}
 
-{{% tab header="WitMotion BY-Nav M10 TCP online" %}}
+{{% tab header="WitMotion BY-Nav M10(M20) TCP online" %}}
 
 <div class="prep-gps-um9xx-tab">
   
@@ -175,6 +177,8 @@ This part is useable for Linux and Windows, where the windows-software by_connec
 * A Windows or Linux PC
 * Latest version of [www.bynav.com "by_connect" software](https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip) <br>
 * [www.bynav.com "interface protocol" description as pdf](https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf) This is valid for all By-nav modules like M10, M20 and so on.
+
+**_For using it with M20 you need to replace each COM1 by COM2_**
 
 1. mount the M10 to the CarrierBoard (solder required headers first if required)
 2. adapt the baud rate in the "openmower config ros"
