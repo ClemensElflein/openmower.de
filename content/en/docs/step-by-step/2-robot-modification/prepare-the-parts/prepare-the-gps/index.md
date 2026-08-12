@@ -167,17 +167,34 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 
 ## use TCP serial client with by_comm terminal program for online changes
 
+This part is useable for Linux and Windows, where the windows-software by_connect runs under wine in Linux. You need to pstpone this step until your openmower system is running. The configuration will be done remote over TCP
+### Prerequisites
+
+* A Witmotion Bynav M10 GPS board original runs at 115200baud
+* A openmower full prepared with openmower os
+* A Windows or Linux PC
+* Latest version of [www.bynav.com "by_connect" software](https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip) <br>
+
 1. mount the M10 to the CarrierBoard (solder required headers first if required)
 2. adapt the baud rate in the "openmower config ros"
-   > gps:<br>
-   >>   baud_rate: 115200 <br>
-   >>   protocol: "NMEA" <br>
-1. Connect your M10 to TCP-serial by "openmower expose-gps" from your openmower ssh terminal
-1. Open the recommended terminal program on your PC "by_connect" (download from www.bynav.com) - for Linux use wine to start this windows program
-2. Connect use TCP-Client Openmower 2000, no baudrate needed
+
+```
+
+   gps:
+	   baud_rate: 115200 
+	   protocol: "NMEA" 
+```   	
+
+3. Connect your M10 to TCP-serial by "openmower expose-gps" from your openmower ssh terminal
+![openmower expose](openmower_expose-gps.png)
+
+4. Open the recommended terminal program on your PC "by_connect" (download from www.bynav.com) - for Linux use wine to start this windows program
+1. Connect use TCP-Client Openmower 2000, no baudrate needed
+![](by_connect_tcp_client.png)
 3. You should see readable key/value style output. If not, check cable, port, and permissions.
 1. Take attention that your line-end termination has to be CR/LF
 2. in by_connect you may switch off the disturbing output, running still but not on screen
+![](by_connect_input.png)
 3. Factory Reset and cyclic outputs off - entering the following commands, line by line:
    > FRESET<kbd>↵ Enter</kbd><br> (After `FRESET` the module may take a few seconds to respond.)<br>
    > UNLOGALL<kbd>↵ Enter</kbd><br>
@@ -187,14 +204,15 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 1. Apply the rover configuration by entering the following commands, line by line:
     > SERIALCONFIG COM1 460800
 1. Re-check connection with the simple
-    > LOG VERSION ONCE<kbd>↵ Enter</kbd> command. <br>You should see readable output. If not close the actual connection and adapt the baud rate of your connection to 460800 in "openmower config ros" now<br>
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd> command. <br>
+1. you will see unreadable output due to changed baud rate (1) close the actual connection and adapt the baud rate of your connection to 460800 in "openmower config ros" now<br> 
+![](changeBaud1.png)
+openmower expose-gps again, close the PC program "by_connect" reopen it and connect as tcp-client again. Now you see readable content after requesting the following output
+   > LOG COMCONFIG ONCE<kbd>↵ Enter
 1. go ahead with the rover configuration
-    > LOG COMCONFIG ONCE<kbd>↵ Enter</kbd>     (COM1 should have the 460800 now)<br>
     > RTKTYPE ROVER<kbd>↵ Enter</kbd><br>
-    > RTKTYPE<kbd>↵ Enter</kbd><br>
     > RTKTIMEOUT 5<kbd>↵ Enter</kbd><br>
-    > RTKTIMEOUT<kbd>↵ Enter</kbd><br>
-1. save the changes on flash memory
+1. if all worked as expected (answers like ok) then save the changes on flash memory of the M10 Module - else disconnect, power down openmower power up and try again from begin
     > SAVECONFIG<kbd>↵ Enter</kbd><br>
 1. go ahead to define the cyclic output
     > LOG COM1 GPGSV ONTIME 1<kbd>↵ Enter</kbd><br>
