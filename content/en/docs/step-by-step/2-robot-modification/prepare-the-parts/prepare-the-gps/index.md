@@ -174,6 +174,7 @@ This part is useable for Linux and Windows, where the windows-software by_connec
 * A openmower full prepared with openmower os
 * A Windows or Linux PC
 * Latest version of [www.bynav.com "by_connect" software](https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip) <br>
+* [www.bynav.com "interface protocol" description as pdf](https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf) This is valid for all By-nav modules like M10, M20 and so on.
 
 1. mount the M10 to the CarrierBoard (solder required headers first if required)
 2. adapt the baud rate in the "openmower config ros"
