@@ -109,6 +109,177 @@ Your GPS is now configured for use with the Open Mower software. You can disconn
 
 {{< /tab >}}
 
+
+{{% tab header="By-Nav M10+M20 USB offline" %}}
+
+<div class="prep-gps-um9xx-tab">
+  
+## Using USB (cutecom)
+
+**For using it with the M20, replace every COM1 with COM2.**
+
+1. Connect your M10 to your PC using the supplied USB-C cable.
+2. Open the recommended terminal program, cutecom.
+3. Connect at 115200 baud.
+4. You should see readable key/value style output. If not, check cable, port, and permissions.
+5. Make sure your line-end termination is set to **CR/LF**.
+6. In cutecom, you may switch off the output — it keeps running but won't be displayed.
+7. Factory reset and disable cyclic outputs by entering the following commands, line by line:
+
+   > FRESET<kbd>↵ Enter</kbd><br>
+   > (After `FRESET` the module may take a few seconds to respond.)<br>
+
+   > UNLOGALL<kbd>↵ Enter</kbd><br>
+
+8. Switch the output back on in cutecom.
+9. Re-check the connection with the simple command:
+
+   > LOG VERSION ONCE<kbd>↵ Enter</kbd><br>
+
+   You should see readable output.
+
+10. Apply the rover configuration:
+
+    > SERIALCONFIG COM1 460800<kbd>↵ Enter</kbd><br>
+
+11. Re-check the connection using:
+
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd><br>
+
+    You should still see readable output because we are connected on COM3. If not, check the connection and baud rate.
+
+12. Continue with the rover configuration:
+
+    > LOG COMCONFIG ONCE<kbd>↵ Enter</kbd><br>   (COM1 should show 460800 now)<br>
+    > RTKTYPE ROVER<kbd>↵ Enter</kbd><br>
+    > RTKTYPE<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT 5<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT<kbd>↵ Enter</kbd><br>
+
+13. Define the cyclic output:
+
+    > LOG COM1 GPGSV ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPRMC ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGSA ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPVTG ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGST ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGGA ONTIME 0.1<kbd>↵ Enter</kbd><br>
+
+14. Finally, save the changes to flash memory:
+
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+
+    **Pay attention to the `SAVECONFIG` command** — it stores settings so they survive power cycles.
+
+15. Unplug the USB cable from the M10 module and mount it to the CarrierBoard (solder headers first if needed).
+
+16. Remember to adapt the baud rate in the OpenMower ROS configuration:
+
+```yaml
+gps:
+  baud_rate: 460800
+  protocol: "NMEA"
+```
+
+</div>
+
+{{< /tab >}}
+
+{{% tab header="By-Nav M10+M20 TCP online" %}}
+
+<div class="prep-gps-um9xx-tab">
+
+## Using TCP (by_connect)
+
+This section works on Linux and Windows (on Linux, run by_connect under Wine). You need to postpone this step until your OpenMower system is running. The configuration is done remotely over TCP.
+
+### Prerequisites
+
+- A WitMotion ByNav M10 GPS board (default baud rate: 115200)
+- An OpenMower with OpenMowerOS installed
+- A Windows or Linux PC
+- [by_connect software](https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip) from bynav.com
+- [Interface protocol description (PDF)](https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf) — valid for all ByNav modules (M10, M20, etc.)
+
+**For using it with the M20, replace every COM1 with COM2.**
+
+1. Mount the M10 to the CarrierBoard (solder headers first if needed).
+2. Set the baud rate in the OpenMower ROS configuration to 115200:
+
+```yaml
+gps:
+  baud_rate: 115200
+  protocol: "NMEA"
+```
+
+3. Connect your M10 via TCP-serial by running `openmower expose-gps` from your OpenMower SSH terminal:
+   ![openmower expose](openmower_expose-gps.png)
+
+4. Open by_connect on your PC (download from bynav.com; on Linux, start it with Wine) — connect as **TCP Client** to OpenMower port 2000 (no baud rate needed):
+   ![by_connect TCP Client](by_connect_tcp_client.png)
+
+5. You should see readable key/value style output. If not, check the connection.
+6. Make sure your line-end termination is set to **CR/LF**.
+7. In by_connect, you may switch off the output — it keeps running but won't be displayed:
+   ![by_connect input](by_connect_input.png)
+
+8. Factory reset and disable cyclic outputs by entering the following commands, line by line:
+
+   > FRESET<kbd>↵ Enter</kbd><br>
+   > (After `FRESET` the module may take a few seconds to respond.)<br>
+
+   > UNLOGALL<kbd>↵ Enter</kbd><br>
+
+9. Switch the output back on in by_connect.
+10. Re-check the connection with:
+
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd><br>
+
+    You should see readable output.
+
+11. Apply the rover configuration:
+
+    > SERIALCONFIG COM1 460800<kbd>↵ Enter</kbd><br>
+
+12. Re-check the connection:
+
+    > LOG VERSION ONCE<kbd>↵ Enter</kbd><br>
+
+    The output will be unreadable now because the baud rate has changed. Close the connection, update the baud rate to **460800** in the OpenMower ROS configuration, and reconnect via `openmower expose-gps`:
+    ![change baud rate](changeBaud1.png)
+
+13. Reopen by_connect, connect as TCP Client again, and verify readable output with:
+
+    > LOG COMCONFIG ONCE<kbd>↵ Enter</kbd><br>
+
+14. Continue with the rover configuration:
+
+    > RTKTYPE ROVER<kbd>↵ Enter</kbd><br>
+    > RTKTIMEOUT 5<kbd>↵ Enter</kbd><br>
+
+15. If all worked as expected (you receive `ok` responses), save the settings to flash memory — otherwise disconnect, power cycle the OpenMower, and start over:
+
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+
+16. Define the cyclic output:
+
+    > LOG COM1 GPGSV ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPRMC ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGSA ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPVTG ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGST ONTIME 1<kbd>↵ Enter</kbd><br>
+    > LOG COM1 GPGGA ONTIME 0.1<kbd>↵ Enter</kbd><br>
+
+17. Save the changes to flash memory:
+
+    > SAVECONFIG<kbd>↵ Enter</kbd><br>
+
+**Pay attention to the `SAVECONFIG` command** — it stores settings so they survive power cycles.
+
+</div>
+
+{{< /tab >}}
+
 {{< /tabpane >}}
 
 Continue with [Step 2.2: Prepare the SD Card]({{< relref "/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card" >}})
