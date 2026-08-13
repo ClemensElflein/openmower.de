@@ -18,6 +18,18 @@ id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
 aria-controls="tabs-00-02" aria-selected="false">
 WitMotion Unicore UM9xx
 &lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-03-tab" data-toggle="tab" href="#tabs-00-03" role="tab"
+aria-controls="tabs-00-03" aria-selected="false">
+By-Nav M10+M20 USB offline
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-04-tab" data-toggle="tab" href="#tabs-00-04" role="tab"
+aria-controls="tabs-00-04" aria-selected="false">
+By-Nav M10+M20 TCP online
+&lt;/a>
 &lt;/li>
 &lt;/ul>
 &lt;div class="tab-content" id="tabs-0-content">
@@ -117,6 +129,219 @@ SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
 &lt;p>Unplug the USB cable from the UM9x module and mount it to the CarrierBoard (solder required headers first if required).&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-03" role="tabpanel" aria-labelled-by="tabs-00-03-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="using-usb-cutecom">Using USB (cutecom)&lt;/h2>
+&lt;p>&lt;strong>For using it with the M20, replace every COM1 with COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Connect your M10 to your PC using the supplied USB-C cable.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open the recommended terminal program, cutecom.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Connect at 115200 baud.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should see readable key/value style output. If not, check cable, port, and permissions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make sure your line-end termination is set to &lt;strong>CR/LF&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In cutecom, you may switch off the output — it keeps running but won&amp;rsquo;t be displayed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Factory reset and disable cyclic outputs by entering the following commands, line by line:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(After &lt;code>FRESET&lt;/code> the module may take a few seconds to respond.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Switch the output back on in cutecom.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Re-check the connection with the simple command:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>You should see readable output.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply the rover configuration:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Re-check the connection using:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>You should still see readable output because we are connected on COM3. If not, check the connection and baud rate.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continue with the rover configuration:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br> (COM1 should show 460800 now)&lt;br>
+RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTYPE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Define the cyclic output:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Finally, save the changes to flash memory:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>Pay attention to the &lt;code>SAVECONFIG&lt;/code> command&lt;/strong> — it stores settings so they survive power cycles.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Unplug the USB cable from the M10 module and mount it to the CarrierBoard (solder headers first if needed).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Remember to adapt the baud rate in the OpenMower ROS configuration:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-04" role="tabpanel" aria-labelled-by="tabs-00-04-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="using-tcp-by_connect">Using TCP (by_connect)&lt;/h2>
+&lt;p>This section works on Linux and Windows (on Linux, run by_connect under Wine). You need to postpone this step until your OpenMower system is running. The configuration is done remotely over TCP.&lt;/p>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;ul>
+&lt;li>A WitMotion ByNav M10 GPS board (default baud rate: 115200)&lt;/li>
+&lt;li>An OpenMower with OpenMowerOS installed&lt;/li>
+&lt;li>A Windows or Linux PC&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip" target="_blank" rel="noopener">by_connect software&lt;/a>
+from bynav.com&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf" target="_blank" rel="noopener">Interface protocol description (PDF)&lt;/a>
+— valid for all ByNav modules (M10, M20, etc.)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>For using it with the M20, replace every COM1 with COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Mount the M10 to the CarrierBoard (solder headers first if needed).&lt;/li>
+&lt;li>Set the baud rate in the OpenMower ROS configuration to 115200:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>
+&lt;p>Connect your M10 via TCP-serial by running &lt;code>openmower expose-gps&lt;/code> from your OpenMower SSH terminal:
+&lt;img src="openmower_expose-gps.png" alt="openmower expose">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open by_connect on your PC (download from bynav.com; on Linux, start it with Wine) — connect as &lt;strong>TCP Client&lt;/strong> to OpenMower port 2000 (no baud rate needed):
+&lt;img src="by_connect_tcp_client.png" alt="by_connect TCP Client">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should see readable key/value style output. If not, check the connection.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make sure your line-end termination is set to &lt;strong>CR/LF&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In by_connect, you may switch off the output — it keeps running but won&amp;rsquo;t be displayed:
+&lt;img src="by_connect_input.png" alt="by_connect input">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Factory reset and disable cyclic outputs by entering the following commands, line by line:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(After &lt;code>FRESET&lt;/code> the module may take a few seconds to respond.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Switch the output back on in by_connect.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Re-check the connection with:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>You should see readable output.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply the rover configuration:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Re-check the connection:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>The output will be unreadable now because the baud rate has changed. Close the connection, update the baud rate to &lt;strong>460800&lt;/strong> in the OpenMower ROS configuration, and reconnect via &lt;code>openmower expose-gps&lt;/code>:
+&lt;img src="changeBaud1.png" alt="change baud rate">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Reopen by_connect, connect as TCP Client again, and verify readable output with:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Continue with the rover configuration:&lt;/p>
+&lt;blockquote>
+&lt;p>RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>If all worked as expected (you receive &lt;code>ok&lt;/code> responses), save the settings to flash memory — otherwise disconnect, power cycle the OpenMower, and start over:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Define the cyclic output:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Save the changes to flash memory:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Pay attention to the &lt;code>SAVECONFIG&lt;/code> command&lt;/strong> — it stores settings so they survive power cycles.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
