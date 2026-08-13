@@ -11,14 +11,22 @@ ll:
       language: "en"
       volume: -1
     gps:
+      # TODO: Uncomment your used GPS module, but uncomment only one of these
+      #
+      # For Ardusimple RTK2B:
+      port_index: 6
+      protocol: "UBX"
+      #
+      # For Witmotion UM9xx or ByNav-Mxx:
+      #port_index: 8
+      #protocol: "NMEA"
+      #
       baud_rate: 921600
-      protocol: "NMEA"
       datum_height: 0
       absolute_coords: true
       # Set to coordinates near your docking station, this will be your map origin
       datum_lat: 53.457452
       datum_long: 10.014737
-      port_index: 8
     imu:
       # TODO: Set according to your mainboard orientation. This value is correct for "flat mainboard"
       axis_config: "+X-Y-Z"
