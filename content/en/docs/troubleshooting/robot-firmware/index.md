@@ -29,7 +29,7 @@ openmower configure ros
 ```
 <br>
 
-Set the `ll.board` field to the board type that matches your hardware:
+Set the `board:` value under `ll:` field to the board type that matches your hardware:
 
 ```yaml
 ll:
