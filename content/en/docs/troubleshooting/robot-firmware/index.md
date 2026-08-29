@@ -5,6 +5,7 @@ description: >-
   Fix the 'Robot firmware ... invalid for this hardware' error by setting the
   correct board type in mower_params.yaml.
 tags: [troubleshooting, firmware, board, mower_params]
+aliases: ["/ll/board/"]
 ---
 
 The firmware logs the following error repeatedly and the status LED blinks red:
