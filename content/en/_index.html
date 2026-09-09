@@ -14,10 +14,10 @@ cascade:
 ---
 
 {{< blocks/cover image_anchor="top" height="auto" color="dark" >}}
-<h1 class="om-hero-tagline">Smart. <span class="om-hero-green">Open.</span> Autonomous.</h1>
-<p class="om-hero-desc">A GPL-licensed ROS and RTOS-based robotic mower platform — free from manufacturer lock-in, built by the community, and open for anyone to study, modify, and improve.</p>
+<h1 class="om-hero-tagline">Build an open-source robot lawn mower with <span class="om-hero-green">RTK GPS.</span></h1>
+<p class="om-hero-desc">Convert a compatible robotic mower into a GPS-guided machine that follows mapped mowing areas without a perimeter wire. Built for people who enjoy electronics, Linux, and making their own hardware work.</p>
 <div class="om-hero-buttons">
-	<a class="btn btn-lg btn-primary mr-3 mb-4" href='{{< relref "docs/_index.md" >}}'>
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href='{{< relref "docs/getting-started" >}}'>
 		Get Started
 	</a>
 	<a class="btn btn-lg btn-secondary mr-3 mb-4 lightbox-youtube" href="https://www.youtube.com/watch?v=BSF04i3zNGw" data-id="BSF04i3zNGw">
@@ -28,6 +28,46 @@ cascade:
 	</a>
 </div>
 {{< /blocks/cover >}}
+
+
+{{< blocks/section color="white" >}}
+<div class="col-12 col-lg-8 offset-lg-2">
+<h2>From an existing mower to a mapped lawn</h2>
+<p>OpenMower replaces the mower's control electronics while reusing its chassis and motors. RTK GPS provides precise positioning, and you record the lawn boundaries, fixed obstacles, and routes between areas in the app. The mower then follows planned paths inside that map.</p>
+<p>RTK needs satellite reception and correction data from a base station or an NTRIP service. Trees, buildings, and unreliable connectivity can limit operation. Check reception in your garden before committing to a build; mapped obstacles do not mean the mower can detect every new object in its path.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/gps/rtk-gps" >}}'>How RTK GPS works</a> · <a href='{{< relref "docs/troubleshooting/gps-rtk" >}}'>GPS reception and troubleshooting</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>Which mowers can I convert?</h2>
+<p>The documentation includes YardForce Classic 500(B), SABO MOWit 500F, and John Deere Tango E5 builds. Compatibility depends on the exact model, chassis, and carrier board. Universal-board conversions need additional design and wiring work.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/getting-started/compatible-mowers" >}}'>Check your mower's compatibility</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>What should I budget?</h2>
+<p>Budget for the mower, OpenMower electronics, compute module, GPS receiver and antenna, and installation parts. A local RTK base station or a paid correction service can add to the total. Get current prices for your chosen hardware before ordering.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/getting-started/shopping-list" >}}'>Plan your parts and build cost</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>What does the build involve?</h2>
+<p>You will disassemble the mower, install electronics and antennas, configure the software and GPS corrections, then record and test your mowing areas. Allow time for troubleshooting beyond assembly. You should be comfortable with electronics, Linux commands, and mechanical work.</p>
+<p><a href='{{< relref "docs/step-by-step" >}}'>Follow the step-by-step build guide</a></p>
+</div>
+{{< /blocks/section >}}
+
+{{< blocks/section color="light" >}}
+<div class="col-12 col-lg-6">
+<h2>See the hardware and mowing in action</h2>
+<p>The project introduction shows the original conversion and GPS-guided mowing. The documentation also includes photos of installed carrier boards and the assembly process, so you can see what the work involves.</p>
+<p><a class="btn btn-primary lightbox-youtube" href="https://www.youtube.com/watch?v=BSF04i3zNGw" data-id="BSF04i3zNGw">Watch the mowing demonstration</a></p>
+<p><a href='{{< relref "docs/getting-started" >}}'>Start planning your conversion</a></p>
+</div>
+<div class="col-12 col-lg-6">
+<figure>
+<img class="img-fluid nozoom" loading="lazy" width="800" height="600" src='{{< relref "docs/Knowledge-Base/getting-started/compatible-mowers" >}}images/johndeere-s1-v01-assembled.jpg' alt="OpenMower carrier board and wiring installed in a John Deere Tango E5 mower">
+<figcaption>OpenMower carrier board installed in a John Deere Tango E5 (Series I).</figcaption>
+</figure>
+</div>
+{{< /blocks/section >}}
 
 
 {{< blocks/section image="featured-background.jpg" >}}
