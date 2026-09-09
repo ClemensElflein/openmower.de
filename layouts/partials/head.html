@@ -20,8 +20,8 @@
     {{ .Site.Title -}}
   {{ else -}}
     {{ with .Title }}{{ . }} | {{ end -}}
-    {{ .Site.Title -}}
-  {{ end -}}
+    OpenMower
+  {{- end -}}
 </title>
 <meta name="description" content="{{ template "partials/page-description.html" . }}">
 {{ partial "opengraph.html" . | replaceRE (printf `content="%s"` .Permalink) (printf `content="%s"` (partial "canonical-url.html" .)) | safeHTML -}}

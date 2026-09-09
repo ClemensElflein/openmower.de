@@ -1,5 +1,5 @@
 ---
-title: "GPS / Coordinate System"
+title: "RTK GPS Navigation and Coordinate System"
 linkTitle: "GPS / Coordinate System"
 weight: 300
 description: >

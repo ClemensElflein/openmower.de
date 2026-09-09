@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: "Build Your First OpenMower"
 linkTitle: "Getting Started"
 weight: 10
 description: >
