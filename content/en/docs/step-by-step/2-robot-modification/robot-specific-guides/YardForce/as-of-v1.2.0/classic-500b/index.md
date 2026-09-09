@@ -1,5 +1,5 @@
 ---
-title: "Classic 500(B)"
+title: "YardForce Classic 500(B): Carrier Board v1.2.0 and Later"
 linkTitle: "Classic 500(B)"
 weight: 10
 description: >
