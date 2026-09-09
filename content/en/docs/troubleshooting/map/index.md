@@ -2,7 +2,7 @@
 title: Troubleshoot mapping/recording areas
 linkTitle: Map
 description: "Troubleshoot OpenMower mapping and area-recording issues. Covers map backup, deletion, and re-recording mowing areas via SSH."
-tags: [map, mapping, maps]
+tags: [mapping]
 resources:
     - src: "**.png"
 ---
