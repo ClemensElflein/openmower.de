@@ -6,7 +6,7 @@
 {{ end -}}
 
 {{ $outputFormat := partial "outputformat.html" . -}}
-{{ if or .Site.Params.archived_version (strings.Contains .RelPermalink "/archive/") -}}
+{{ if partial "noindex.html" . -}}
 <meta name="robots" content="noindex, follow">
 {{ else if and hugo.IsProduction (ne $outputFormat "print") -}}
 <meta name="robots" content="index, follow">

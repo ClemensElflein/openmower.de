@@ -1,0 +1,1 @@
+{{- return (or .Site.Params.archived_version (strings.Contains .RelPermalink "/archive/") .Params.noindex (in (slice "taxonomy" "term" "404") .Kind)) -}}
