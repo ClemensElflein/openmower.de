@@ -76,6 +76,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: python3 scripts/prepare-pages.py --origin "${{ env.base_url }}"
 
+      - name: Check translation coverage and technical examples
+        if: github.ref == 'refs/heads/main'
+        run: python3 scripts/check-translations.py
+
       - name: Check generated pages and historical redirects
         if: github.ref == 'refs/heads/main'
         run: python3 scripts/check-pages.py --origin "${{ env.base_url }}"

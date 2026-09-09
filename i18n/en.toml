@@ -1,0 +1,51 @@
+[language_select]
+other = "Select language"
+
+[footer_privacy_policy]
+other = "Privacy Policy"
+
+[footer_imprint]
+other = "Imprint"
+
+[cookie_preferences]
+other = "Cookie Preferences"
+
+[project_by]
+other = "OpenMower is a project by"
+
+[not_found_title]
+other = "Not found"
+
+[not_found_text]
+other = "Oops! This page doesn't exist. Try going back to our"
+
+[home_link]
+other = "home page"
+
+[search_results]
+other = "Search results"
+
+[search_empty]
+other = "No results found for query \"{query}\""
+
+[search_close]
+other = "Close search results"
+
+[ui_search]
+other = "Search this site…"
+
+[schema_description]
+other = "Open-source RTK GPS robotic lawn mower platform built on ROS and RTOS. GPL-licensed, community-driven, free from manufacturer lock-in."
+
+
+[taxonomy_tags]
+other = "Tags"
+
+[taxonomy_categories]
+other = "Categories"
+
+[taxonomy_tag]
+other = "Tag"
+
+[taxonomy_category]
+other = "Category"

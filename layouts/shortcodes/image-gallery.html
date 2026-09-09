@@ -8,20 +8,18 @@
 
 {{- $dir := .Get "gallery_dir" -}}                 {{/* e.g. "images/vermut-0.13/connect-bottom-wires" */}}
 {{- $page := .Page -}}
-{{- $pageDir := path.Dir $page.File.Path -}}       {{/* e.g. "docs/robot-assembly/assemble-the-robot/photo-guide" */}}
-
-{{- $fsDir := printf "content/%s/%s/%s" $page.Lang $pageDir $dir | path.Clean -}}
-
 <ul class="image-gallery">
-    {{- range (readDir $fsDir) }}
-    {{- if not .IsDir }}
+    {{- range sort ($page.Resources.Match (printf "%s/*" (strings.TrimSuffix "/" $dir))) "Name" }}
+    {{- $image := . -}}
     {{- $name := .Name -}}
-    {{- $relPath := path.Join $dir $name -}}     {{/* path inside bundle, e.g. "images/.../file.jpg" */}}
-    {{- $image := $page.Resources.GetMatch $relPath -}}
+    {{- $relPath := .Name -}}
 
     {{- $basename := path.Base $name -}}
     {{- $imagetitle := replace $basename (path.Ext $basename) "" -}}
 
+    {{- if eq $page.Language.Lang "de" -}}
+      {{- with index (resources.Get "json/gallery-captions-de.json" | transform.Unmarshal) $imagetitle -}}{{- $imagetitle = . -}}{{- end -}}
+    {{- end -}}
     {{- with $image }}
     {{- $full  := .Fit  "1600x1600 q99" -}}
     {{- $thumb := .Fill "400x400 q95"  -}}
@@ -38,6 +36,5 @@
     {{- errorf "image-gallery: page %q does not expose %q as a resource. Use a leaf bundle (index.md) so Hugo can publish the images." $page.File.Path $relPath -}}
     {{- end }}
 
-    {{- end }}
     {{- end }}
 </ul>

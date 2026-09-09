@@ -1,0 +1,88 @@
+---
+title: "OpenMower — Open-Source-Mähroboter mit RTK-GPS"
+linkTitle: "OpenMower"
+description: "OpenMower ist eine GPL-lizenzierte Mähroboter-Plattform auf ROS-Basis mit zentimetergenauem RTK-GPS. Offene Hard- und Software, ohne Herstellerbindung. Bau dir deinen eigenen smarten Mähroboter."
+images: ["featured-background.jpg"]
+cascade:
+  - _build:
+      list: never
+      render: link
+      publishResources: false
+    _target:
+      environment: docs-only
+      path: /_index.html
+---
+{{< blocks/cover image_anchor="top" height="auto" color="dark" >}}
+<h1 class="om-hero-tagline">Bau dir einen Open-Source-Mähroboter mit <span class="om-hero-green">RTK-GPS.</span></h1>
+<p class="om-hero-desc">Rüste einen kompatiblen Mähroboter so um, dass er per GPS durch die von dir erfassten Mähflächen navigiert – ganz ohne Begrenzungskabel. Für alle, die Spaß an Elektronik und Linux haben und ihre Hardware gerne selbst zum Laufen bringen.</p>
+<div class="om-hero-buttons">
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href='{{< relref "docs/getting-started" >}}'>
+		Los geht’s
+	</a>
+	<a class="btn btn-lg btn-secondary mr-3 mb-4 lightbox-youtube" href="https://www.youtube.com/watch?v=BSF04i3zNGw" data-id="BSF04i3zNGw">
+		Vorstellung im Video <i class="fab fa-youtube ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-outline-light mr-3 mb-4" href="https://github.com/ClemensElflein/OpenMower">
+		Auf GitHub ansehen <i class="fab fa-github ml-2"></i>
+	</a>
+</div>
+{{< /blocks/cover >}}
+
+
+{{< blocks/section color="white" >}}
+<div class="col-12 col-lg-8 offset-lg-2">
+<h2>Vom vorhandenen Mäher zur eigenen Gartenkarte</h2>
+<p>OpenMower ersetzt die Steuerelektronik des Mähers. Gehäuse, Fahrwerk und Motoren werden weiterverwendet. RTK-GPS liefert die genaue Position; Rasengrenzen, feste Hindernisse und Verbindungswege zwischen den Flächen erfasst du in der App. Anschließend fährt der Mäher geplante Bahnen innerhalb dieser Karte ab.</p>
+<p>RTK braucht Satellitenempfang und Korrekturdaten von einer Basisstation oder einem NTRIP-Dienst. Bäume, Gebäude und eine unzuverlässige Datenverbindung können den Betrieb einschränken. Prüfe deshalb den Empfang in deinem Garten, bevor du dich für den Umbau entscheidest. Dass Hindernisse in der Karte eingetragen sind, bedeutet nicht, dass der Mäher jedes neu hinzugekommene Objekt auf seinem Weg erkennt.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/gps/rtk-gps" >}}'>So funktioniert RTK-GPS</a> · <a href='{{< relref "docs/troubleshooting/gps-rtk" >}}'>GPS-Empfang und Fehlerbehebung</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>Welche Mäher kann ich umbauen?</h2>
+<p>Die Dokumentation beschreibt Umbauten des YardForce Classic 500(B), SABO MOWit 500F und John Deere Tango E5. Ob ein Mäher kompatibel ist, hängt vom genauen Modell, dem Chassis und der Trägerplatine ab. Bei Umbauten mit dem Universal-Board musst du zusätzliche Anpassungen und die Verkabelung selbst planen und umsetzen.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/getting-started/compatible-mowers" >}}'>Prüfe, ob dein Mäher geeignet ist</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>Mit welchen Kosten muss ich rechnen?</h2>
+<p>Plane die Kosten für den Mäher, die OpenMower-Elektronik, das Compute Module, den GPS-Empfänger mit Antenne und das Montagematerial ein. Eine eigene RTK-Basisstation oder ein kostenpflichtiger Korrekturdienst können dazukommen. Informiere dich vor der Bestellung über die aktuellen Preise deiner ausgewählten Hardware.</p>
+<p><a href='{{< relref "docs/Knowledge-Base/getting-started/shopping-list" >}}'>Plane Bauteile und Gesamtkosten</a></p>
+</div>
+<div class="col-12 col-lg-4 mt-4">
+<h2>Was kommt beim Umbau auf mich zu?</h2>
+<p>Du zerlegst den Mäher, baust Elektronik und Antennen ein und richtest die Software sowie die GPS-Korrekturdaten ein. Danach erfasst und testest du deine Mähflächen. Plane neben dem Zusammenbau auch Zeit für die Fehlersuche ein. Mit Elektronik, Linux-Befehlen und mechanischen Arbeiten solltest du vertraut sein.</p>
+<p><a href='{{< relref "docs/step-by-step" >}}'>Zur Schritt-für-Schritt-Anleitung</a></p>
+</div>
+{{< /blocks/section >}}
+
+{{< blocks/section color="light" >}}
+<div class="col-12 col-lg-6">
+<h2>So sieht der Umbau aus – und so mäht OpenMower</h2>
+<p>Im Vorstellungsvideo siehst du den ursprünglichen Umbau und das GPS-gesteuerte Mähen. In der Dokumentation findest du außerdem Fotos eingebauter Trägerplatinen und der einzelnen Montageschritte. So kannst du dir vorab ein Bild vom Aufwand machen.</p>
+<p><a class="btn btn-primary lightbox-youtube" href="https://www.youtube.com/watch?v=BSF04i3zNGw" data-id="BSF04i3zNGw">OpenMower beim Mähen ansehen</a></p>
+<p><a href='{{< relref "docs/getting-started" >}}'>Plane deinen Umbau</a></p>
+</div>
+<div class="col-12 col-lg-6">
+<figure>
+<img class="img-fluid nozoom" loading="lazy" width="799" height="479" src='{{< relref "docs/Knowledge-Base/getting-started/compatible-mowers" >}}images/johndeere-s1-v01-assembled.jpg' alt="OpenMower-Trägerplatine mit Verkabelung in einem John Deere Tango E5">
+<figcaption>OpenMower-Trägerplatine in einem John Deere Tango E5 (Serie I).</figcaption>
+</figure>
+</div>
+{{< /blocks/section >}}
+
+
+{{< blocks/section image="featured-background.jpg" >}}
+<div class="col-12 text-center om-section-lead">
+<p>OpenMower ist eine vollständige Eigenentwicklung aus Software, Firmware und größtenteils offener Hardware. Sie ersetzt das geschlossene, vom Hersteller kontrollierte System eines Mähroboters durch eine GPL-lizenzierte Plattform auf Basis von ROS und RTOS. Ohne Bindung an proprietäre Systeme und ohne undurchsichtige Blackbox.</p>
+<p>Das Ergebnis: zentimetergenaue Navigation mit RTK-GPS, effiziente Routenplanung und ein Quellcode, über den du selbst bestimmen kannst. Du kannst ihn lesen, anpassen und deine eigene Version veröffentlichen.</p>
+</div>
+{{% blocks/feature icon="fa-heart" title="Unterstütze Open Mower!" url="https://patreon.com/ClemensElflein" %}}
+Open Mower ist ein sehr komplexes Projekt. Entwicklung und Pflege kosten deshalb viel Zeit. Wenn du das Projekt unterstützen möchtest, freue ich mich über deine Unterstützung auf Patreon.
+{{% /blocks/feature %}}
+{{% blocks/feature icon="fab fa-github" title="Mach mit!" url="https://github.com/ClemensElflein/OpenMower" %}}
+Beiträge zum Projekt nehmen wir über [Pull Requests](https://github.com/ClemensElflein/OpenMower/pulls) auf **GitHub** entgegen. Neue Mitstreiter sind jederzeit willkommen!
+{{% /blocks/feature %}}
+{{% blocks/feature icon="fab fa-discord" title="Komm auf unseren Discord!" url="https://discord.gg/jE7QNaSxW7" %}}
+Auf unserem Discord-Server erfährst du von neuen Funktionen und anderen Neuigkeiten. Dort findet auch der Großteil des Austauschs rund um das Projekt statt.
+{{% /blocks/feature %}}
+{{< /blocks/section >}}
+
+

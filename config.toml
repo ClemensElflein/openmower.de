@@ -67,12 +67,27 @@ anchor = "smart"
 
 [languages]
 [languages.en]
+contentDir = "content/en"
+languageCode = "en"
 title = "OpenMower — Open Source RTK GPS Robotic Mower"
 description = "OpenMower is an open-source RTK GPS robotic lawn mower platform built on ROS and RTOS. GPL-licensed, community-driven, and free from manufacturer lock-in. Developed by x-tech UG."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
 
+[languages.de]
+contentDir = "content/de"
+languageCode = "de"
+languageName = "Deutsch"
+title = "OpenMower — Open-Source-Mähroboter mit RTK-GPS"
+description = "OpenMower ist eine Open-Source-Plattform für Mähroboter mit RTK-GPS auf Basis von ROS und RTOS. GPL-lizenziert, von der Community getragen und ohne Herstellerbindung. Entwickelt von x-tech UG."
+weight = 2
+[languages.de.params]
+version_menu = "Versionen"
+time_format_default = "2. January 2006"
+time_format_blog = "2. January 2006"
+[languages.de.params.taxonomy]
+taxonomyCloudTitle = ["Schlagwörter", "Kategorien"]
 
 [markup]
   [markup.goldmark]
@@ -219,3 +234,33 @@ enable = false
   [module.hugoVersion]
     extended = true
     min = "0.75.0"
+
+[[module.mounts]]
+source = "content/en"
+target = "content"
+lang = "en"
+[[module.mounts]]
+source = "content/de"
+target = "content"
+lang = "de"
+[[module.mounts]]
+source = "content/en"
+target = "content"
+lang = "de"
+excludeFiles = ["**.md", "**.html"]
+
+[[languages.de.params.links.developer]]
+name = "GitHub"
+url = "https://github.com/ClemensElflein/OpenMower"
+icon = "fab fa-github"
+desc = "Hier findet die Entwicklung statt."
+[[languages.de.params.links.developer]]
+name = "Discord"
+url = "https://discord.gg/jE7QNaSxW7"
+icon = "fab fa-discord"
+desc = "Tausch dich mit Entwicklern und Nutzern aus."
+[[languages.de.params.links.developer]]
+name = "Auf Patreon unterstützen"
+url = "https://patreon.com/ClemensElflein"
+icon = "fa-brands fa-patreon"
+desc = "Unterstütze das Projekt!"

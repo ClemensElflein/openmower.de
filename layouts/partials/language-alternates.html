@@ -1,0 +1,10 @@
+{{- if and .IsTranslated (not (partial "noindex.html" .)) -}}
+  {{- range .AllTranslations -}}
+    {{- if not (partial "noindex.html" .) -}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ partial "canonical-url.html" . }}">
+      {{- if eq .Language.Lang "en" -}}
+<link rel="alternate" hreflang="x-default" href="{{ partial "canonical-url.html" . }}">
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

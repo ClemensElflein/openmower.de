@@ -14,6 +14,7 @@
 <meta name="robots" content="noindex, nofollow">
 {{ end -}}
 
+{{ partial "language-alternates.html" . }}
 {{ partialCached "favicons.html" . }}
 <title>
   {{- if .IsHome -}}

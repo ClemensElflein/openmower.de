@@ -77,3 +77,7 @@ This error occurs if you have not installed the `go` programming language on you
 See this [section](https://www.docsy.dev/docs/get-started/docsy-as-module/installation-prerequisites/#install-go-language) of the user guide for instructions on how to install `go`.
 
 
+
+## Languages
+
+The site supports English and German. See [the multilingual editing and validation guide](docs/multilanguage.md).
