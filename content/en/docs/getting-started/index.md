@@ -11,7 +11,7 @@ description: >
 ## Quick Facts
 
 - **Build time:** A weekend for a YardForce-class mower; longer for custom chassis
-- **Estimated cost:** ~€700 (excluding the mower and RTK base station)
+- **Budget:** The earlier ~€700 conversion estimate excludes the mower and RTK base station; [price your selected parts and extras]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}) before buying.
 - **Skill level:** Intermediate electronics, Linux, and mechanical skills
 - **Community:** 2k+ members on Discord ready to help with reviews and troubleshooting
 
@@ -94,7 +94,7 @@ Therefore, you will need one or two RTK GPS receivers:
 
 ![Open Mower Build Overview](flow_chart.jpg)
 
-Follow these steps in sequence:
+Start by [checking compatibility]({{% relref "/docs/step-by-step/1-check-compatibility" %}}), then follow the [robot modification and software setup guide]({{% relref "/docs/step-by-step" %}}). Finish by [recording and testing your mowing areas]({{% relref "/docs/step-by-step/4-record-areas-and-use-it" %}}).
 
 ## Ready to shop? 
 **Check the detailed [Shopping List]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}}).**
