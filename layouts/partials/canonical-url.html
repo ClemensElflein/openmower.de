@@ -1,0 +1,5 @@
+{{- $url := .Permalink -}}
+{{- if and .IsHome (not .Site.Params.archived_version) (eq (urls.Parse .Site.BaseURL).Path "/latest/") -}}
+  {{- $url = replaceRE "/latest/$" "/" .Permalink -}}
+{{- end -}}
+{{- return $url -}}

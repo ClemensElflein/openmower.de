@@ -47,6 +47,7 @@ def prepare(latest, root, origin, inventory):
     root.mkdir(parents=True, exist_ok=True)
     for name in ('index.html', 'sitemap.xml', 'robots.txt'):
         shutil.copyfile(latest / name, root / name)
+    (latest / "index.html").write_text(redirect_page(origin + "/"))
     for output, target in planned:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(redirect_page(target))
