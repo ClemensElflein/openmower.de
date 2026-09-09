@@ -1,4 +1,5 @@
 ---
+asciinema: true
 title: "Step 3.3: Configure ROS"
 linkTitle: "Configure ROS"
 weight: 30

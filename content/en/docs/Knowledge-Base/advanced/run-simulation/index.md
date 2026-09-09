@@ -1,4 +1,5 @@
 ---
+asciinema: true
 title: "Running the Simulation"
 linkTitle: "Run the Simulation"
 weight: 50

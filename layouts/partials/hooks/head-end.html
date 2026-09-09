@@ -24,27 +24,28 @@
 </script>
 {{ end }}
 
-<script src="{{ "js/medium-zoom.min.js" | relURL }}"></script>
+{{ if .Params.asciinema }}
 <script src="{{ "js/asciinema-player.min.js" | relURL }}"></script>
-<script src="{{ "js/carousel.js" | relURL }}"></script>
-
 <link rel="stylesheet" href="{{ "css/asciinema-player.css" | relURL }}">
+{{ end }}
+{{ if .HasShortcode "carousel" }}
+<script defer src="{{ "js/carousel.js" | relURL }}"></script>
 <link rel="stylesheet" href="{{ "css/carousel.css" | relURL }}">
-
-
+{{ end }}
+{{ $zoom := false }}
+{{ range findRE `<img\b[^>]*>` .Content }}
+  {{ if not (findRE `class=["'][^"']*\bnozoom\b` .) }}
+    {{ $zoom = true }}
+  {{ end }}
+{{ end }}
+{{ if $zoom }}
+<script defer src="{{ "js/medium-zoom.min.js" | relURL }}"></script>
 <script>
-    $(function () {
-    const images = Array.from(document.querySelectorAll("img:not(.nozoom)"));
-        images.forEach(img => {
-        mediumZoom(img, {
-            margin: 80, /* The space outside the zoomed image */
-            container: null, /* The viewport to render the zoom in */
-            template: null, /* The template element to display on zoom */
-            background: "#ffffff"
-        });
-    });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    mediumZoom(".td-content img:not(.nozoom)", {margin: 80, background: "#ffffff"});
+});
 </script>
+{{ end }}
 {{- if hugo.IsProduction }}
 {{- with .Site.Params.googleAnalyticsID }}
 <link rel="stylesheet" href="{{ "css/cookieconsent.css" | relURL }}">

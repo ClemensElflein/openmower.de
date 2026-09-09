@@ -1,4 +1,5 @@
 ---
+asciinema: true
 title: "Firmware Update"
 linkTitle: "Firmware Update"
 weight: 100

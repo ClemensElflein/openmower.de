@@ -1,4 +1,5 @@
 ---
+asciinema: true
 title: "Step 3.2: Basic Configuration (Environment, Firmware Installation, xESC configuration)"
 linkTitle: "Basic Configuration"
 weight: 20

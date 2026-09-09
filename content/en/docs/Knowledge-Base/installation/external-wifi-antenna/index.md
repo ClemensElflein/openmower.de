@@ -1,4 +1,5 @@
 ---
+asciinema: true
 title: "External Wifi Antenna"
 linkTitle: "External Wifi Antenna"
 weight: 120
