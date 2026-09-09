@@ -28,14 +28,17 @@ class PageMetadata(HTMLParser):
             self.canonical = attrs.get('href')
 
 
-def redirect_page(target):
+def redirect_page(target, language="en"):
+    title, message, link = (("Seite verschoben", "Diese Seite wurde verschoben.", "Weiter zu OpenMower")
+                            if language == "de" else
+                            ("Page moved", "This page has moved.", "Continue to OpenMower"))
     target = html.escape(target, quote=True)
-    return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
-            '<title>Page moved | OpenMower</title>'
+    return (f'<!doctype html><html lang="{language}"><head><meta charset="utf-8">'
+            f'<title>{title} | OpenMower</title>'
             f'<link rel="canonical" href="{target}">'
             f'<meta http-equiv="refresh" content="0; url={target}">'
-            f'</head><body><p>This page has moved. <a href="{target}">'
-            'Continue to OpenMower</a>.</p></body></html>\n')
+            f'</head><body><p>{message} <a href="{target}">'
+            f'{link}</a>.</p></body></html>\n')
 
 
 def prepare(latest, root, origin, inventory):
@@ -46,6 +49,13 @@ def prepare(latest, root, origin, inventory):
     home = PageMetadata(latest / "index.html")
     if home.redirect or home.canonical != origin + "/":
         raise ValueError("Expected a fresh latest build with the root homepage canonical")
+    # Hugo generates each secondary-language homepage under /latest/<lang>/.
+    # Like the English homepage, publish it at the origin and redirect the duplicate.
+    translated_homes = []
+    for path in sorted(latest.glob('*/index.html')):
+        language = path.parent.name
+        if PageMetadata(path).canonical == f'{origin}/{language}/':
+            translated_homes.append((path, language))
     planned = []
     seen = set()
     with inventory.open() as source:
@@ -71,6 +81,11 @@ def prepare(latest, root, origin, inventory):
     for name in ('index.html', 'sitemap.xml', 'robots.txt'):
         shutil.copyfile(latest / name, root / name)
     (latest / "index.html").write_text(redirect_page(origin + "/"))
+    for path, language in translated_homes:
+        destination = root / language / 'index.html'
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(path, destination)
+        path.write_text(redirect_page(f'{origin}/{language}/', language))
     for output, target in planned:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(redirect_page(target))

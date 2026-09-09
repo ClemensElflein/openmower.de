@@ -1,0 +1,74 @@
+[language_select]
+other = "Sprache auswählen"
+
+[footer_privacy_policy]
+other = "Datenschutzerklärung"
+
+[footer_imprint]
+other = "Impressum"
+
+[cookie_preferences]
+other = "Cookie-Einstellungen"
+
+[project_by]
+other = "OpenMower ist ein Projekt von"
+
+[not_found_title]
+other = "Seite nicht gefunden"
+
+[not_found_text]
+other = "Diese Seite gibt es leider nicht. Hier geht es zurück zur"
+
+[home_link]
+other = "Startseite"
+
+[search_results]
+other = "Suchergebnisse"
+
+[search_empty]
+other = "Keine Ergebnisse für „{query}“ gefunden"
+
+[search_close]
+other = "Suchergebnisse schließen"
+
+[ui_search]
+other = "Website durchsuchen …"
+
+[schema_description]
+other = "Open-Source-Plattform für Mähroboter mit RTK-GPS auf Basis von ROS und RTOS. GPL-lizenziert, von der Community getragen und ohne Herstellerbindung."
+
+[community_join]
+other = "Werde Teil der OpenMower-Community"
+
+[community_introduce]
+other = "OpenMower ist ein Open-Source-Projekt, das alle nutzen und weiterentwickeln können. Wir freuen uns, wenn du mitmachst! Hier erfährst du, was es Neues gibt und wie du dich einbringen kannst."
+
+[community_learn]
+other = "Austausch und Hilfe"
+
+[community_using]
+other = "Du nutzt OpenMower oder möchtest damit anfangen? Hier findest du Hilfe und weitere Infos:"
+
+[community_develop]
+other = "Mitentwickeln und beitragen"
+
+[community_contribute]
+other = "Du möchtest OpenMower mitgestalten? Hier kannst du mitmachen:"
+
+[community_how_to]
+other = "Wie du zu OpenMower beitragen kannst, erfährst du in unseren"
+
+[community_guideline]
+other = "Hinweisen zum Mitmachen"
+
+[taxonomy_tags]
+other = "Schlagwörter"
+
+[taxonomy_categories]
+other = "Kategorien"
+
+[taxonomy_tag]
+other = "Schlagwort"
+
+[taxonomy_category]
+other = "Kategorie"

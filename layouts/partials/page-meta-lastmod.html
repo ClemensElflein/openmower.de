@@ -1,0 +1,10 @@
+{{ if and (.GitInfo) (.Site.Params.github_repo) -}}
+<div class="text-muted mt-5 pt-3 border-top">
+  {{ T "post_last_mod" }} {{ time.Format (.Site.Params.time_format_default | default "January 2, 2006") .Lastmod -}}
+  {{ with .GitInfo }}: {{/* Trim WS */ -}}
+    <a href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">
+      {{- .Subject }} ({{ .AbbreviatedHash }}) {{- /* Trim WS */ -}}
+    </a>
+  {{- end }}
+</div>
+{{ end -}}
