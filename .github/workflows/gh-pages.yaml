@@ -72,6 +72,10 @@ jobs:
 
           hugo --minify --environment docs-only --config config.toml,config/_generated_versions.toml,config/_ci_override.toml
 
+      - name: Prepare root files and historical redirects
+        if: github.ref == 'refs/heads/main'
+        run: python3 scripts/prepare-pages.py --origin "${{ env.base_url }}"
+
       # Deploy main build to /latest
       - name: Deploy latest (main)
         if: github.ref == 'refs/heads/main'
@@ -89,15 +93,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: archive/${{ github.ref_name }}
-
-      # Prepare a root index.html that is just the Hugo-generated homepage
-      - name: Prepare root index
-        if: github.ref == 'refs/heads/main'
-        run: |
-          mkdir -p public-root
-          cp public/index.html public-root/index.html
-          cp public/sitemap.xml public-root/sitemap.xml
-          cp public/robots.txt public-root/robots.txt
 
       # Deploy root index and CNAME, keeping /latest and /archive/*
       - name: Deploy root index and CNAME
