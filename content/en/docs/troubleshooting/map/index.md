@@ -11,7 +11,7 @@ We assume that you at least followed [Record a map]({{< relref "/docs/Knowledge-
 
 <br>
 
-# Making a backup and/or removing a map.
+## Back up or remove a map
 
 The default location of the map can be found under
 ```bash
