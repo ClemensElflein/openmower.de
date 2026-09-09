@@ -1,0 +1,35 @@
+name: Image metadata
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+  merge_group:
+    types: [checks_requested]
+
+permissions:
+  contents: read
+
+jobs:
+  check-image-exif:
+    # Keep this name stable: it is the required status check in branch rules.
+    name: No EXIF in changed images
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out the proposed changes
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install ExifTool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libimage-exiftool-perl
+
+      # Do not add path filters: this required check must report on every PR.
+      - name: Check added and modified images
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+        run: python3 .github/check-image-exif.py --base "$BASE_SHA"
