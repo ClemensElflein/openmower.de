@@ -2,8 +2,7 @@
 title: "Compatible Mowers"
 linkTitle: "Compatible Mowers"
 weight: 10
-description: >
- These are the mowers that are compatible with the OpenMower project
+description: "Check YardForce, SABO MOWit 500F, and John Deere Tango E5 compatibility, carrier board options, and requirements for custom OpenMower conversions."
 ---
 
 

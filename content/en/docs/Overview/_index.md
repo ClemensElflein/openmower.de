@@ -2,7 +2,7 @@
 title: "Overview"
 linkTitle: "Overview"
 weight: 1
-description: General information about the Open Mower project.
+description: "See how OpenMower converts robotic mowers to RTK GPS navigation, with app screenshots, supported hardware, smart home integration, and build resources."
 carousel:
   - image: open_mower_app_1.jpg
   - image: open_mower_app_2.jpg

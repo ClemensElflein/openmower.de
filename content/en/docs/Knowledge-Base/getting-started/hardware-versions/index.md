@@ -2,8 +2,7 @@
 title: Hardware Versions / Known Issues
 linkTitle: Hardware Versions
 weight: 40
-description: >
-  Version History, Release Notes and Known Errors
+description: "Identify OpenMower v1 and v2 hardware, find carrier board repositories, and review legacy release notes, known faults, and errata."
 resources:
   - src: "**.jpg"
 ---
