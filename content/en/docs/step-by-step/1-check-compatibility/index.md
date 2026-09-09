@@ -72,5 +72,5 @@ The voltage range **18.5V - 29.6V** corresponds to **5S-8S lithium battery packs
 Check your mower's battery label or manual to determine the series count.
 {{% /alert %}}
 
-# Officially Supported Mowers
-{{< include-markdown file="/docs/Knowledge-Base/getting-started/compatible-mowers/index.md" >}}
+## Supported mower models
+The [compatible mowers guide]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}) lists YardForce, SABO, and John Deere models, with carrier board photos and requirements for universal-board conversions. Check your exact model and board revision before proceeding.

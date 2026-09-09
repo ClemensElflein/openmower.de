@@ -9,7 +9,7 @@ resources:
 
 {{% toc %}}
 
-# Current Hardware (v2 Hardware Platform)
+## Current Hardware (v2 Hardware Platform)
 
 For v2 Hardware Platform, please check the corresponding repository for changes and known issues:
 - **YardForce:** [https://github.com/xtech/hw-openmower-yardforce](https://github.com/xtech/hw-openmower-yardforce) 
@@ -17,7 +17,7 @@ For v2 Hardware Platform, please check the corresponding repository for changes 
 - **Universal:** [https://github.com/xtech/hw-openmower-universal](https://github.com/xtech/hw-openmower-universal)
 
 
-# Legacy Hardware (v1 Hardware Platform)
+## Legacy Hardware (v1 Hardware Platform)
 {{% alert title="Information" color="info" %}}
 
 V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
@@ -26,17 +26,17 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 {{% /alert %}}
 
 
-## 0.13.0 - Red
+### 0.13.0 - Red
 
 {{< imgproc 0_13_b Fill "400x400 q99" />}}
 {{< imgproc 0_13_a Fill "400x400 q99" />}}
 
-### Notable changes
+#### Notable changes
 
  * Custom CoverUI added to the kit
  * Dropped support for dfPlayer sound module 
 
-### Known issues
+#### Known issues
 
  * 2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.
  * The first batch of 0.13 boards was mistakenly labeled "latest". No action needed.
@@ -45,15 +45,15 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
  * [rain sensor cable is female, but needs to be male](https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/). Affect kits shipped before May'23.
 
 
-## 0.12.0 - Black
+### 0.12.0 - Black
 
 {{< imgproc 0_12_x Resize "400x q99" />}}
 
-### Notable changes
+#### Notable changes
 
  * IMU: LSM6DSO instead of WT901
 
-### Known issues
+#### Known issues
 
  * SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.
  * [Outdated Firmware](https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/)
@@ -61,34 +61,34 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
  * [rain sensor cable is female, but needs to be male](https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/)
 
 
-## 0.11.0 - Purple
+### 0.11.0 - Purple
 
 {{< imgproc 0_11_x Resize "400x q99" />}}
 
-### Notable changes
+#### Notable changes
 
  * Connected WT901 via I2C freeing pins for dfPlayer
  * Upgraded dock station PCB with extra holes and terminals (red)
 
-### Known issues
+#### Known issues
 
 * [IC2 chip is wrong](https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/)
 
 
-## 0.10.0 - Green
+### 0.10.0 - Green
 
 {{< imgproc 0_10_x Resize "400x q99" />}}
 
-### Notable changes
+#### Notable changes
 
  * Added dock station PCB (green)
 
-### Known issues
+#### Known issues
 
 * [IC2 chip is wrong](https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/)
 
 
-## 0.9.3 - Also Green
+### 0.9.3 - Also Green
 
 {{< imgproc 0_9_3 Resize "400x q99" />}}
 {{< imgproc 0_9_3_gps Resize "400x q99" />}}
