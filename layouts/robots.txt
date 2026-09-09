@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: {{ partial "canonical-url.html" .Site.Home }}sitemap.xml
