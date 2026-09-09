@@ -2,8 +2,7 @@
 title: "Knowledge Base"
 linkTitle: "Knowledge Base"
 weight: 97
-description: >
-  A collection of information that can be useful at times.
+description: "Find OpenMower hardware, GPS, configuration, installation, mapping, maintenance, and simulation guides for your robotic mower build."
 resources:
 - src: "**.png"
 ---

@@ -2,8 +2,7 @@
 title: "Shopping List"
 linkTitle: "Shopping List"
 weight: 20
-description: >
-  A shopping list for your Open Mower build.	
+description: "Plan the parts and costs for an OpenMower conversion: mower, electronics, compute module, GPS receiver, antennas, and RTK base station options."
 ---
 
 _If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!_

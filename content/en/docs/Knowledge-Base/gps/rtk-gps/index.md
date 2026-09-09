@@ -2,8 +2,7 @@
 title: "RTK GPS Navigation and Coordinate System"
 linkTitle: "GPS / Coordinate System"
 weight: 300
-description: >
-  Information about the RTK modes and the coordinate system used by OpenMower.
+description: "Understand RTK GPS mowing without perimeter wire, correction data and reception requirements, and the local coordinate system used by OpenMower."
 ---
 
 ## How RTK GPS replaces the perimeter wire

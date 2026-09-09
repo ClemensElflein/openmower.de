@@ -2,8 +2,7 @@
 title: "Build Your First OpenMower"
 linkTitle: "Getting Started"
 weight: 10
-description: >
-  How to get started with the Open Mower project.
+description: "Plan your first OpenMower conversion: required skills, mower compatibility, electronics, RTK corrections, costs, and the build sequence."
 ---
 
 {{% toc %}}
