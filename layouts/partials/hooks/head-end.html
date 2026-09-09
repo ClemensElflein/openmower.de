@@ -1,5 +1,5 @@
 
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ partial "canonical-url.html" . }}">
 {{ if strings.Contains .RelPermalink "/archive/" -}}
 <meta name="robots" content="noindex, follow">
 {{- end }}
@@ -10,7 +10,7 @@
   "@type": "SoftwareApplication",
   "name": "OpenMower",
   "description": "Open-source RTK GPS robotic lawn mower platform built on ROS and RTOS. GPL-licensed, community-driven, free from manufacturer lock-in.",
-  "url": "https://openmower.de",
+  "url": {{ partial "canonical-url.html" . | jsonify | safeJS }},
   "applicationCategory": "Robotics",
   "operatingSystem": "Linux (ROS)",
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
