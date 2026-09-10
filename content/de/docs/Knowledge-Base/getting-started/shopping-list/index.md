@@ -13,7 +13,7 @@ Lies zuerst die [wichtigen Hinweise]({{% relref "/docs/getting-started#important
 
 ## Gesamtkosten planen {#plan-the-total-build-cost}
 
-Die in der Einstiegsanleitung genannten rund 700 € sind eine frühere Kostenschätzung für den Umbau, ohne Mäher und RTK-Basisstation. Es handelt sich nicht um ein aktuelles Händlerangebot. Die Gesamtkosten hängen von der Hardware-Version, dem gewählten GPS-Empfänger sowie Versandkosten und Steuern ab. Ermittle deshalb vor dem Kauf die Preise der folgenden Teile für deinen konkreten Mäher.
+Plane für den Umbau etwa **700 €** ein, zuzüglich Mäher und gegebenenfalls RTK-Basisstation. Die Gesamtkosten hängen von der Hardware-Version, dem gewählten GPS-Empfänger sowie Versandkosten und Steuern ab. Prüfe vor dem Kauf die Preise der Teile für deinen konkreten Mäher.
 
 Berücksichtige in deinem Budget:
 

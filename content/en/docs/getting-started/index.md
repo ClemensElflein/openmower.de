@@ -10,9 +10,9 @@ description: "Plan your first OpenMower conversion: required skills, mower compa
 ## Quick Facts
 
 - **Build time:** A weekend for a YardForce-class mower; longer for custom chassis
-- **Budget:** The earlier ~€700 conversion estimate excludes the mower and RTK base station; [price your selected parts and extras]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}) before buying.
+- **Budget:** Allow around **€700** for the conversion, plus the mower and an RTK base station if needed. See the [shopping list]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}) for details.
 - **Skill level:** Intermediate electronics, Linux, and mechanical skills
-- **Community:** 2k+ members on Discord ready to help with reviews and troubleshooting
+- **Community:** Around 9,000 members on Discord ready to help with reviews and troubleshooting
 
 New to the project? Start with the [Overview page]({{% relref "/docs/overview/" %}}). Before building, read the [System Architecture]({{% relref "/docs/knowledge-base/getting-started/architecture" %}}) to understand how the app, ROS, firmware, and hardware fit together.
 

@@ -16,6 +16,7 @@ tags: [gps, gps-rtk, simplertk2b, zed-f9p, ntrip, unicore, um9x, um9xx, um960, u
 {{% alert title="Info" color="info" %}}
 Für diesen Schritt gibt es eine Videoanleitung! <br/>
 Hier findest du mein YouTube-Video: [<i class="fa fa-brands fa-youtube"></i> Video](https://youtu.be/_bImqD-pQSA?t=981)
+
 (Abschnitt 16:21 bis 17:15)
 {{% /alert %}}
 

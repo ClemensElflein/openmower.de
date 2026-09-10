@@ -9,9 +9,9 @@ description: "Plane deinen ersten OpenMower-Umbau: benötigte Kenntnisse, passen
 ## Das Wichtigste auf einen Blick
 
 - **Bauzeit:** Ein Wochenende für einen Mäher der YardForce-Klasse; bei individuell angepassten Chassis entsprechend länger
-- **Budget:** Die frühere Schätzung von etwa 700 € für den Umbau enthält weder den Mäher noch die RTK-Basisstation. [Ermittle vor dem Kauf die Kosten deiner ausgewählten Teile und Extras]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}).
+- **Budget:** Plane für den Umbau etwa **700 €** ein, zuzüglich Mäher und gegebenenfalls RTK-Basisstation. Details findest du in der [Einkaufsliste]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}).
 - **Kenntnisse:** Solide Grundkenntnisse in Elektronik, Linux und Mechanik
-- **Community:** Über 2.000 Mitglieder auf Discord helfen beim Prüfen deines Aufbaus und bei der Fehlersuche
+- **Community:** Rund 9.000 Mitglieder auf Discord helfen beim Prüfen deines Aufbaus und bei der Fehlersuche
 
 Du bist neu beim Projekt? Starte mit der [Übersicht]({{% relref "/docs/overview/" %}}). Lies vor dem Umbau auch die Seite zur [Systemarchitektur]({{% relref "/docs/knowledge-base/getting-started/architecture" %}}), um zu verstehen, wie App, ROS, Firmware und Hardware zusammenspielen.
 
