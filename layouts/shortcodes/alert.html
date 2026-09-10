@@ -1,0 +1,11 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "primary" }}
+<div class="alert alert-{{ $color }}" role="alert">
+{{ with .Get "title" }}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+{{/* Keep content unindented: enclosing tabs render it as Markdown again. */}}
+{{ if eq .Page.File.Ext "md" }}
+{{ .Inner | markdownify }}
+{{ else }}
+{{ .Inner | htmlUnescape | safeHTML }}
+{{ end }}
+</div>

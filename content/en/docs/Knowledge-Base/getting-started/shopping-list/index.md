@@ -14,7 +14,7 @@ Read this first: [Important Info]({{% relref "/docs/getting-started#important-wa
 
 ## Plan the total build cost
 
-The getting-started guide's approximately €700 figure is an earlier planning estimate for the conversion, excluding the mower and RTK base station. It is not a current supplier quote. Hardware revision, receiver choice, shipping, and taxes can change the total; price the parts below for your exact mower before buying.
+Allow around **€700** for the conversion, plus the mower and an RTK base station if needed. Hardware revision, receiver choice, shipping, and taxes can change the total; check the prices of the parts for your mower before buying.
 
 Include these items in your budget:
 
