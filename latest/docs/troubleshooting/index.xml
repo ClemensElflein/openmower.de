@@ -102,7 +102,7 @@ It can be the case that this value is ok but the rtk state is not yet &amp;ldquo
 &lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas/">Record a map&lt;/a>
 .&lt;/p>
 &lt;br>
-&lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
+&lt;h2 id="back-up-or-remove-a-map">Back up or remove a map&lt;/h2>
 &lt;p>The default location of the map can be found under&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/home/openmower/ros/map.json
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .json file.&lt;/p>

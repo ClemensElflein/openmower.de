@@ -401,70 +401,9 @@ CheckSpace -- No --> AskDiscord
 &lt;/ul>
 &lt;p>Check your mower&amp;rsquo;s battery label or manual to determine the series count.&lt;/p>
 &lt;/div>
-&lt;h1 id="officially-supported-mowers">Officially Supported Mowers&lt;/h1>
-&lt;h2 id="yard-force">Yard Force&lt;/h2>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
-&lt;/p>
-&lt;p>The project got started on a YardForce Classic 500(B), and there are photo guides in this documentation on how to disassemble and reassemble it. From a user&amp;rsquo;s perspective, the YardForce Classic 500(B) is the &amp;ldquo;best supported&amp;rdquo; mower.&lt;/p>
-&lt;p>&lt;strong>However, there are more mowers from the YardForce brand that are compatible:&lt;/strong>&lt;/p>
-&lt;p>In theory, every YardForce model with the Core + Outer Frame Chassis (SA, SC, LUV, N and NX Line) that has a production year of 2019+ has compatible electronics to replace the stock mainboard with an OpenMower one.&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-As of today the YardForce Amiro, Compact, EasyMow, MowBest, XPower and MB series models are not (yet) compatible.&lt;br>
-The main reason is that the OpenMower mainboard does not fit in their chassis.
-&lt;/div>
-&lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
-&lt;p>There is a dedicated mainboard for &lt;strong>SABO MOWit 500F&lt;/strong> (Series-I &amp;amp; II) and &lt;strong>John Deere Tango E5&lt;/strong> (Series-I &amp;amp; II) mowers.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
-&lt;/p>
-&lt;p>This Carrierboard is compatible with the following mower models:&lt;/p>
-&lt;ul>
-&lt;li>SABO MOWit 500F (Series-I &amp;amp; II)&lt;/li>
-&lt;li>John Deere Tango E5 (Series-I &amp;amp; II)&lt;/li>
-&lt;/ul>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">Series-I Carrierboard (v0.2)&lt;/th>
-&lt;th style="text-align:center">Series-II Carrierboard (v0.2)&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-I v0.2">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="OpenMower-V2 SABO Carrierboard Series-II v0.1">&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">&lt;strong>Series-I (v0.1) @ John Deere Tango E5&lt;/strong>&lt;/td>
-&lt;td style="text-align:center">&lt;strong>Series-II (v0.1) @ Sabo MOWiT 500F&lt;/strong>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="V0.1 Carrierboard Series-I assembled">&lt;/td>
-&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="V0.1 Carrierboard Series-II assembled">&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>These mowers are &lt;strong>well supported&lt;/strong>. Even the display controller was replaced by a fully functional, modern user interface!&lt;/p>
-&lt;div style="padding-bottom: 2.5rem">
-&lt;video width="640" height="360" controls>
-&lt;source src="https://www.shbe.net/openmower/sabo/Sabo_LCD_20251212.mp4" type="video/mp4">
-Your browser does not support the video tag.
-&lt;/video>
-&lt;/div>
-&lt;h2 id="universal-board">Universal Board&lt;/h2>
-&lt;p>The universal board contains all features needed for an Open Mower build (e.g., three BLDC/DC motor controllers, a LiPo charger on board, connectors for GPS, emergency sensors, etc.). It has screw terminals for easy connections and can be broken into smaller modules if it doesn&amp;rsquo;t fit as a whole board.&lt;/p>
-&lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
-&lt;/p>
-&lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/BreakingTheBoard.jpg" alt="V2 Universal Board with Modules">&lt;/p>
-&lt;h3 id="other-compatible-brands">Other Compatible Brands&lt;/h3>
-&lt;p>The following mower brands are known to have compatible hardware with the Universal mainboard. If you want to check your specific model, ask on Discord. The probability is high that it will work:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Husqvarna&lt;/strong>: Most Husqvarna mowers&lt;/li>
-&lt;li>&lt;strong>Gardena&lt;/strong>: Most Gardena mowers&lt;/li>
-&lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Fuxtec and Redback mowers&lt;/li>
-&lt;/ul>
-&lt;h3 id="custom-hardware">Custom Hardware&lt;/h3>
-&lt;p>If you have a custom chassis, there is a good chance you can get it to work with the Universal board. Ask on Discord for guidance on your specific setup.&lt;/p></description></item><item><title>Docs: Classic 500(B)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/as-of-v1.2.0/classic-500b/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/as-of-v1.2.0/classic-500b/</guid><description>
+&lt;h2 id="supported-mower-models">Supported mower models&lt;/h2>
+&lt;p>The &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers/">compatible mowers guide&lt;/a>
+lists YardForce, SABO, and John Deere models, with carrier board photos and requirements for universal-board conversions. Check your exact model and board revision before proceeding.&lt;/p></description></item><item><title>Docs: YardForce Classic 500(B): Carrier Board v1.2.0 and Later</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/as-of-v1.2.0/classic-500b/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/as-of-v1.2.0/classic-500b/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Carrierboard ≥ 1.2.0 only!&lt;/h4>
 This guide is exclusively for &lt;strong>Carrierboard version ≥ 1.2.0&lt;/strong>!&lt;br>
@@ -922,7 +861,7 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;li>Check, if you can reach the mower via SSH (&lt;code>ssh openmower@openmower.local&lt;/code>, password &lt;code>openmower&lt;/code>).&lt;/li>
 &lt;li>Check, if you can reach the mower&amp;rsquo;s terminal in a browser. Navigate to &lt;a href="http://openmower.local:7681/" target="_blank" rel="noopener">http://openmower.local:7681/&lt;/a>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: Getting Started</title><link>https://openmower.de/latest/docs/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/getting-started/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Build Your First OpenMower</title><link>https://openmower.de/latest/docs/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/getting-started/</guid><description>
 &lt;div class="toc">
 &lt;h2>Table of Contents&lt;/h2>
 &lt;ul>
@@ -957,7 +896,8 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;h2 id="quick-facts">Quick Facts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;strong>Build time:&lt;/strong> A weekend for a YardForce-class mower; longer for custom chassis&lt;/li>
-&lt;li>&lt;strong>Estimated cost:&lt;/strong> ~€700 (excluding the mower and RTK base station)&lt;/li>
+&lt;li>&lt;strong>Budget:&lt;/strong> The earlier ~€700 conversion estimate excludes the mower and RTK base station; &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/#plan-the-total-build-cost">price your selected parts and extras&lt;/a>
+before buying.&lt;/li>
 &lt;li>&lt;strong>Skill level:&lt;/strong> Intermediate electronics, Linux, and mechanical skills&lt;/li>
 &lt;li>&lt;strong>Community:&lt;/strong> 2k+ members on Discord ready to help with reviews and troubleshooting&lt;/li>
 &lt;/ul>
@@ -1028,7 +968,10 @@ Therefore, you will need one or two RTK GPS receivers:&lt;/p>
 &lt;/ul>
 &lt;h2 id="build-overview">Build Overview&lt;/h2>
 &lt;p>&lt;img src="flow_chart.jpg" alt="Open Mower Build Overview">&lt;/p>
-&lt;p>Follow these steps in sequence:&lt;/p>
+&lt;p>Start by &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/1-check-compatibility/">checking compatibility&lt;/a>
+, then follow the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">robot modification and software setup guide&lt;/a>
+. Finish by &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/4-record-areas-and-use-it/">recording and testing your mowing areas&lt;/a>
+.&lt;/p>
 &lt;h2 id="ready-to-shop">Ready to shop?&lt;/h2>
 &lt;p>&lt;strong>Check the detailed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/">Shopping List&lt;/a>
 .&lt;/strong>&lt;/p>
@@ -1849,8 +1792,21 @@ title="Pi Imager Step 7">
 &lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-info">Important Info&lt;/a>
+Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-warnings">Important Info&lt;/a>
 &lt;/div>
+&lt;h2 id="plan-the-total-build-cost">Plan the total build cost&lt;/h2>
+&lt;p>The getting-started guide&amp;rsquo;s approximately €700 figure is an earlier planning estimate for the conversion, excluding the mower and RTK base station. It is not a current supplier quote. Hardware revision, receiver choice, shipping, and taxes can change the total; price the parts below for your exact mower before buying.&lt;/p>
+&lt;p>Include these items in your budget:&lt;/p>
+&lt;ul>
+&lt;li>A compatible mower and any necessary battery, motor, or chassis repairs.&lt;/li>
+&lt;li>The OpenMower hardware kit and compute module; confirm what the kit includes to avoid buying parts twice.&lt;/li>
+&lt;li>A rover GPS receiver, antenna, cables, mounts, and storage where needed.&lt;/li>
+&lt;li>Either a local base station with receiver, antenna, power, and mounting, or access to a suitable correction service. Check service coverage and fees.&lt;/li>
+&lt;li>Tools, connectors, weatherproofing, delivery charges, and taxes.&lt;/li>
+&lt;/ul>
+&lt;p>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers/">compatibility list&lt;/a>
+and read the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">build guide&lt;/a>
+before ordering.&lt;/p>
 &lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -1965,7 +1921,7 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;/tbody>
 &lt;/table>
 &lt;p>For the setup check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/gps/rtk-base-setup/">GPS Base Setup Guide&lt;/a>
-&lt;/p></description></item><item><title>Docs: Classic 500(B)</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/pre-v1.2.0/classic-500b/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/pre-v1.2.0/classic-500b/</guid><description>
+&lt;/p></description></item><item><title>Docs: YardForce Classic 500(B): Carrier Board Before v1.2.0</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/pre-v1.2.0/classic-500b/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/pre-v1.2.0/classic-500b/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">v2 Hardware Only!&lt;/h4>
 &lt;p>This guide here is for OpenMower v2.x Hardware!
@@ -2450,36 +2406,21 @@ for detailed instructions
 &lt;ul>
 &lt;nav id="TableOfContents">
 &lt;ul>
-&lt;li>&lt;a href="#0130---red">0.13.0 - Red&lt;/a>
+&lt;li>&lt;a href="#current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="#notable-changes">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-1">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-1">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-2">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-2">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-3">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-3">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
+&lt;li>&lt;a href="#0130---red">0.13.0 - Red&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#093---also-green">0.9.3 - Also Green&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/ul>
 &lt;/div>
-&lt;h1 id="current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/h1>
+&lt;h2 id="current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/h2>
 &lt;p>For v2 Hardware Platform, please check the corresponding repository for changes and known issues:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>YardForce:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
@@ -2489,14 +2430,14 @@ for detailed instructions
 &lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h1 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h1>
+&lt;h2 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Information&lt;/h4>
 V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
 If you currently own a v1 hardware kit, this is nothing to worry, the kit will continue to work with your mower,
 there is no real benefit of upgrading it to a v2 hardware kit. For new builds, the v2 hardware platform is recommended.
 &lt;/div>
-&lt;h2 id="0130---red">0.13.0 - Red&lt;/h2>
+&lt;h3 id="0130---red">0.13.0 - Red&lt;/h3>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
@@ -2505,12 +2446,12 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
 &lt;/figure>
 &lt;/p>
-&lt;h3 id="notable-changes">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Custom CoverUI added to the kit&lt;/li>
 &lt;li>Dropped support for dfPlayer sound module&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues">Known issues&lt;/h3>
+&lt;h4 id="known-issues">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.&lt;/li>
 &lt;li>The first batch of 0.13 boards was mistakenly labeled &amp;ldquo;latest&amp;rdquo;. No action needed.&lt;/li>
@@ -2521,15 +2462,15 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
 . Affect kits shipped before May'23.&lt;/li>
 &lt;/ul>
-&lt;h2 id="0120---black">0.12.0 - Black&lt;/h2>
+&lt;h3 id="0120---black">0.12.0 - Black&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-1">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-1">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>IMU: LSM6DSO instead of WT901&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-1">Known issues&lt;/h3>
+&lt;h4 id="known-issues-1">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.&lt;/li>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
@@ -2539,34 +2480,34 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="0110---purple">0.11.0 - Purple&lt;/h2>
+&lt;h3 id="0110---purple">0.11.0 - Purple&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-2">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-2">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Connected WT901 via I2C freeing pins for dfPlayer&lt;/li>
 &lt;li>Upgraded dock station PCB with extra holes and terminals (red)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-2">Known issues&lt;/h3>
+&lt;h4 id="known-issues-2">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="0100---green">0.10.0 - Green&lt;/h2>
+&lt;h3 id="0100---green">0.10.0 - Green&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
 &lt;/figure>
-&lt;h3 id="notable-changes-3">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-3">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Added dock station PCB (green)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-3">Known issues&lt;/h3>
+&lt;h4 id="known-issues-3">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="093---also-green">0.9.3 - Also Green&lt;/h2>
+&lt;h3 id="093---also-green">0.9.3 - Also Green&lt;/h3>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_9_3_hu06b4bcf8a4cb53a2adcbd38b3d75b4eb_245928_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
@@ -3896,7 +3837,17 @@ for the full setup guide.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Tip&lt;/h4>
 Run the measurement two or three times and average the results for better accuracy. Small variations in how straight you drive will affect individual readings.
-&lt;/div></description></item><item><title>Docs: GPS / Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</guid><description>
+&lt;/div></description></item><item><title>Docs: RTK GPS Navigation and Coordinate System</title><link>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/gps/rtk-gps/</guid><description>
+&lt;h2 id="how-rtk-gps-replaces-the-perimeter-wire">How RTK GPS replaces the perimeter wire&lt;/h2>
+&lt;p>RTK (Real-Time Kinematic) positioning combines satellite measurements at the mower with correction data from a fixed reference station or an NTRIP service. With a good RTK fix, OpenMower can use centimetre-level positioning to follow the mowing areas you record in the app.&lt;/p>
+&lt;p>The map defines lawn boundaries, fixed obstacles, and connecting paths. You still need to &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas/">record those areas&lt;/a>
+and test them in your garden.&lt;/p>
+&lt;h3 id="reception-and-correction-data">Reception and correction data&lt;/h3>
+&lt;p>The mower needs reliable satellite reception and a continuing supply of correction data. Nearby buildings and trees can interfere with reception; an ordinary GPS position without an RTK fix is not enough for precise mowing. Review the &lt;a href="https://openmower.de/latest/latest/docs/troubleshooting/gps-rtk/">GPS troubleshooting guide&lt;/a>
+when evaluating your garden.&lt;/p>
+&lt;p>You can &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/gps/rtk-base-setup/">set up a local base station&lt;/a>
+or use a suitable correction service. Include the required receiver, antenna, connectivity, and any service fees in your &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/">parts budget&lt;/a>
+.&lt;/p>
 &lt;h2 id="positioning--coordinate-system">Positioning / Coordinate System&lt;/h2>
 &lt;p>Positioning in the Open Mower project is done in a local 2D coordinate system. This means that the robot&amp;rsquo;s current position can be described by the coordinates (X / Y) of the VRP and the current orientation.&lt;/p>
 &lt;p>The origin of the coordinate system can either be chosen freely by the user or can be set to the base station. If an external correction service is used, the origin has to be specified manually.&lt;/p>
@@ -4607,7 +4558,7 @@ It can be the case that this value is ok but the rtk state is not yet &amp;ldquo
 &lt;p>We assume that you at least followed &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/operation/record-areas/">Record a map&lt;/a>
 .&lt;/p>
 &lt;br>
-&lt;h1 id="making-a-backup-andor-removing-a-map">Making a backup and/or removing a map.&lt;/h1>
+&lt;h2 id="back-up-or-remove-a-map">Back up or remove a map&lt;/h2>
 &lt;p>The default location of the map can be found under&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/home/openmower/ros/map.json
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can always back up your current map by logging in via SSH and copying the .json file.&lt;/p>

@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Getting Started</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/</link><description>Recent content in Getting Started on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – OpenMower Hardware and Compatibility</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/</link><description>Recent content in OpenMower Hardware and Compatibility on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/knowledge-base/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Compatible Mowers</title><link>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/knowledge-base/getting-started/compatible-mowers/</guid><description>
 &lt;h2 id="yard-force">Yard Force&lt;/h2>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers//images/yf-mainboard.jpg" alt="OpenMower-V2 YardForce Carrierboard">&lt;/p>
 &lt;p>&lt;strong>Check out the Git Repo Here:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
@@ -65,8 +65,21 @@ Your browser does not support the video tag.
 &lt;p>&lt;em>If you make a purchase through the links marked with an Asterisk (*), I may earn a small commission at no extra cost to you. Thank you for supporting this project!&lt;/em>&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-info">Important Info&lt;/a>
+Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-warnings">Important Info&lt;/a>
 &lt;/div>
+&lt;h2 id="plan-the-total-build-cost">Plan the total build cost&lt;/h2>
+&lt;p>The getting-started guide&amp;rsquo;s approximately €700 figure is an earlier planning estimate for the conversion, excluding the mower and RTK base station. It is not a current supplier quote. Hardware revision, receiver choice, shipping, and taxes can change the total; price the parts below for your exact mower before buying.&lt;/p>
+&lt;p>Include these items in your budget:&lt;/p>
+&lt;ul>
+&lt;li>A compatible mower and any necessary battery, motor, or chassis repairs.&lt;/li>
+&lt;li>The OpenMower hardware kit and compute module; confirm what the kit includes to avoid buying parts twice.&lt;/li>
+&lt;li>A rover GPS receiver, antenna, cables, mounts, and storage where needed.&lt;/li>
+&lt;li>Either a local base station with receiver, antenna, power, and mounting, or access to a suitable correction service. Check service coverage and fees.&lt;/li>
+&lt;li>Tools, connectors, weatherproofing, delivery charges, and taxes.&lt;/li>
+&lt;/ul>
+&lt;p>Check the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/compatible-mowers/">compatibility list&lt;/a>
+and read the &lt;a href="https://openmower.de/latest/latest/docs/step-by-step/">build guide&lt;/a>
+before ordering.&lt;/p>
 &lt;h2 id="parts-for-the-robot-and-the-charging-station">Parts for the Robot and the Charging Station&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -202,36 +215,21 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;ul>
 &lt;nav id="TableOfContents">
 &lt;ul>
-&lt;li>&lt;a href="#0130---red">0.13.0 - Red&lt;/a>
+&lt;li>&lt;a href="#current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="#notable-changes">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-1">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-1">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-2">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-2">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#notable-changes-3">Notable changes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#known-issues-3">Known issues&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
+&lt;li>&lt;a href="#0130---red">0.13.0 - Red&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0120---black">0.12.0 - Black&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0110---purple">0.11.0 - Purple&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0100---green">0.10.0 - Green&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#093---also-green">0.9.3 - Also Green&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/ul>
 &lt;/div>
-&lt;h1 id="current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/h1>
+&lt;h2 id="current-hardware-v2-hardware-platform">Current Hardware (v2 Hardware Platform)&lt;/h2>
 &lt;p>For v2 Hardware Platform, please check the corresponding repository for changes and known issues:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>YardForce:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
@@ -241,14 +239,14 @@ You only need a GPS base station if you don&amp;rsquo;t have access to an extern
 &lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h1 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h1>
+&lt;h2 id="legacy-hardware-v1-hardware-platform">Legacy Hardware (v1 Hardware Platform)&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Information&lt;/h4>
 V1 hardware used a completely different architecture to v2 hardware which makes it hard to port to new mower models.
 If you currently own a v1 hardware kit, this is nothing to worry, the kit will continue to work with your mower,
 there is no real benefit of upgrading it to a v2 hardware kit. For new builds, the v2 hardware platform is recommended.
 &lt;/div>
-&lt;h2 id="0130---red">0.13.0 - Red&lt;/h2>
+&lt;h3 id="0130---red">0.13.0 - Red&lt;/h3>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
@@ -257,12 +255,12 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
 &lt;/figure>
 &lt;/p>
-&lt;h3 id="notable-changes">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Custom CoverUI added to the kit&lt;/li>
 &lt;li>Dropped support for dfPlayer sound module&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues">Known issues&lt;/h3>
+&lt;h4 id="known-issues">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>2.5mm screws were missing (used to fasten RPi4). Affect kits shipped before June'23.&lt;/li>
 &lt;li>The first batch of 0.13 boards was mistakenly labeled &amp;ldquo;latest&amp;rdquo;. No action needed.&lt;/li>
@@ -273,15 +271,15 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
 . Affect kits shipped before May'23.&lt;/li>
 &lt;/ul>
-&lt;h2 id="0120---black">0.12.0 - Black&lt;/h2>
+&lt;h3 id="0120---black">0.12.0 - Black&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-1">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-1">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>IMU: LSM6DSO instead of WT901&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-1">Known issues&lt;/h3>
+&lt;h4 id="known-issues-1">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>SPI tracks from Pico were misplaced, already fixed in firmware. No action needed.&lt;/li>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Outdated Firmware&lt;/a>
@@ -291,34 +289,34 @@ there is no real benefit of upgrading it to a v2 hardware kit. For new builds, t
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">rain sensor cable is female, but needs to be male&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="0110---purple">0.11.0 - Purple&lt;/h2>
+&lt;h3 id="0110---purple">0.11.0 - Purple&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
 &lt;/figure>
-&lt;h3 id="notable-changes-2">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-2">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Connected WT901 via I2C freeing pins for dfPlayer&lt;/li>
 &lt;li>Upgraded dock station PCB with extra holes and terminals (red)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-2">Known issues&lt;/h3>
+&lt;h4 id="known-issues-2">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="0100---green">0.10.0 - Green&lt;/h2>
+&lt;h3 id="0100---green">0.10.0 - Green&lt;/h3>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
 &lt;/figure>
-&lt;h3 id="notable-changes-3">Notable changes&lt;/h3>
+&lt;h4 id="notable-changes-3">Notable changes&lt;/h4>
 &lt;ul>
 &lt;li>Added dock station PCB (green)&lt;/li>
 &lt;/ul>
-&lt;h3 id="known-issues-3">Known issues&lt;/h3>
+&lt;h4 id="known-issues-3">Known issues&lt;/h4>
 &lt;ul>
 &lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">IC2 chip is wrong&lt;/a>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="093---also-green">0.9.3 - Also Green&lt;/h2>
+&lt;h3 id="093---also-green">0.9.3 - Also Green&lt;/h3>
 &lt;p>
 &lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
 &lt;img class="card-img-top" src="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/hardware-versions/0_9_3_hu06b4bcf8a4cb53a2adcbd38b3d75b4eb_245928_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
