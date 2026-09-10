@@ -15,6 +15,7 @@
 {{ end -}}
 
 {{ partial "language-alternates.html" . }}
+{{ partial "language-preference.html" . }}
 {{ partialCached "favicons.html" . }}
 <title>
   {{- if .IsHome -}}

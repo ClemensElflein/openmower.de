@@ -10,7 +10,7 @@
       {{ range $page.Translations }}
         {{ if eq .Language.Lang $language }}{{ $target = . }}{{ end }}
       {{ end }}
-      <a class="dropdown-item" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}" href="{{ partial "canonical-url.html" $target }}">{{ .Language.LanguageName }}</a>
+      <a class="dropdown-item" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}" href="{{ partial "canonical-url.html" $target }}?lang={{ .Language.Lang }}">{{ .Language.LanguageName }}</a>
     {{ end }}
   {{ end }}
 </div>

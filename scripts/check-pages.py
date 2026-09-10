@@ -15,6 +15,7 @@ class Page(HTMLParser):
         super().__init__()
         self.language = None
         self.alternates = {}
+        self.language_targets = None
         self.ids = set()
         self.search_indexes = []
         self.canonical = []
@@ -39,6 +40,10 @@ class Page(HTMLParser):
         if tag == 'link' and a.get('rel') == 'alternate' and a.get('hreflang'):
             assert a['hreflang'] not in self.alternates, a
             self.alternates[a['hreflang']] = a['href']
+        if tag == 'script' and 'data-language-targets' in a:
+            assert self.language_targets is None, 'Duplicate language selection script'
+            assert a['data-page-language'] == self.language, a
+            self.language_targets = json.loads(a['data-language-targets'])
         if tag == 'h1':
             self.h1 += 1
         if tag == 'title':
@@ -101,6 +106,10 @@ def check(latest, root, origin, inventory):
         assert set(page.alternates) == {'en', 'de', 'x-default'}, (url, page.alternates)
         assert page.alternates[page.language] == url, url
         assert page.alternates['x-default'] == page.alternates['en'], url
+        assert page.language_targets == {
+            lang: urlsplit(target).path for lang, target in page.alternates.items()
+            if lang != 'x-default'
+        }, (url, page.language_targets)
         for lang, target in page.alternates.items():
             assert target in pages, (url, target)
             assert pages[target].language == ('en' if lang == 'x-default' else lang), (url, target)

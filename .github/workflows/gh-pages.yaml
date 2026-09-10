@@ -44,6 +44,9 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Check automatic language selection
+        run: node scripts/check-language-preference.cjs
+
       - run: npm install
       - run: scripts/gen-doc-versions.sh
 
