@@ -24,7 +24,7 @@ description: "GPS über TCP, Regenerkennung, schräges Abdocken, Drehzahlüberwa
 
 **Mehr als zehn Andockversuche einstellbar** – Die Zahl der Andockversuche ist nicht mehr auf zehn begrenzt. Danke an [@jeremysalwen](https://github.com/jeremysalwen).
 
-**Umgebungsvariable OM_NO_COMMS** – Eine neue Umgebungsvariable deaktiviert den Kommunikationsknoten vollständig. Das ist nützlich, wenn die Software ohne angeschlossene Hardware der unteren Ebene laufen soll. Danke an [@jeremysalwen](https://github.com/jeremysalwen).
+**Umgebungsvariable OM_NO_COMMS** – Eine neue Umgebungsvariable deaktiviert den Kommunikationsknoten vollständig. Das ist nützlich, wenn die Software ohne angeschlossene Mäherhardware laufen soll. Danke an [@jeremysalwen](https://github.com/jeremysalwen).
 
 **Größere Abstände zwischen Mähbahnen** – Der slic3r-Flächenplaner unterstützt jetzt weiter auseinanderliegende Bahnen und damit weniger dichte Mähmuster. Danke an [@ClemensElflein](https://github.com/ClemensElflein).
 
@@ -40,7 +40,7 @@ Diese Version enthält erste Grundlagen für die v2-Hardwareschnittstelle, eine 
 - Absturz des Planers bei bestimmten Sonderfällen der Kartengeometrie behoben.
 - Ständiges Starten und Stoppen des Mähmotors bei Verlust des GPS-Fix behoben.
 - Speicherzugriffsfehler in slic3r korrigiert.
-- Verbinden von Randbahnen bei vorhandenen Inseln repariert.
+- Fehler beim Verbinden von Randbahnen um Inseln in der Karte behoben.
 - NTRIP-Client aktualisiert, um IP-Sperren durch RTK2GO zu verhindern.
 - Gleichmäßigeres Abdocken.
 

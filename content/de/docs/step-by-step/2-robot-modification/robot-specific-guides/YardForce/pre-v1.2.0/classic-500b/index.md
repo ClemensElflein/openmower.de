@@ -33,7 +33,7 @@ Diese Anleitung gilt ausschließlich für **Trägerplatinen der Versionen 1.x bi
 
 ## Schritt 2.4.1: Roboter zerlegen
 Zerlege zuerst den Roboter.
-Einige Stellen sind etwas knifflig. Schau dir dazu am besten mein Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt ist 2:25 bis 5:08.
+Einige Stellen sind etwas knifflig. Schau dir dazu am besten mein Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt reicht von Minute 2:25 bis 5:08.
 Folge dem Video danach **nicht** weiter, da die übrigen Schritte veraltet sind.
 
 Alternativ findest du hier eine bebilderte Anleitung zum Zerlegen:
@@ -45,7 +45,7 @@ Alternativ findest du hier eine bebilderte Anleitung zum Zerlegen:
 
 ### Abdeckung vorsichtig aufhebeln
 
-Einige Stellen sind etwas knifflig. Schau dir dazu am besten dieses Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt ist 2:25 bis 5:08.
+Einige Stellen sind etwas knifflig. Schau dir dazu am besten dieses Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt reicht von Minute 2:25 bis 5:08.
 
 {{< image-gallery gallery_dir="images/disassemble-mower/pry-the-cover" >}}
 
@@ -94,33 +94,33 @@ Lass den Akku eingebaut.
 ### 3.1 Kunststofflaschen im Deckel entfernen
 Bei manchen YardForce-Classic-500-Modellen sitzen im Deckel Kunststofflaschen, die dem OpenMower-Mainboard im Weg sind.
 Diese müssen entfernt werden. Ich habe einen großen Seitenschneider verwendet. Ein Dremel oder ein anderes geeignetes Werkzeug geht ebenfalls.
-![CuttingTheTabs.jpg](images/CuttingTheTabs.jpg)
+![Kunststofflaschen im Deckel entfernen](images/CuttingTheTabs.jpg)
 
 Wenn dein Deckel keine solchen Laschen hat, musst du hier nichts tun.
 
 ### 3.2 GPS-Antennenhalterung zusammenbauen
-![GPSHolder.jpg](images/GPSHolder.jpg)
+![Zusammengebaute GPS-Antennenhalterung](images/GPSHolder.jpg)
 Baue die GPS-Antennenhalterung wie auf dem Bild zusammen.
 
 ### 3.3 Neue Stecker an die Not-Aus-Kabel crimpen
 Das OpenMower-Mainboard verwendet für jeden Not-Aus-Sensor einen eigenen JST-XH-Stecker. Beim ursprünglichen YardForce Classic 500 laufen dagegen alle Not-Aus-Taster auf einem großen Stecker zusammen.
 Das folgende Bild zeigt das Originalkabel.
-![EmergencyCables1.jpg](images/EmergencyCables1.jpg)
+![Originalkabel der Not-Aus-Sensoren](images/EmergencyCables1.jpg)
 
 Fertige jetzt **vier** Kabel an, eines pro Not-Aus-Sensor:
 - Schneide das Kabel wie abgebildet **ganz nah am großen Stecker** ab. Du brauchst die volle Länge der Not-Aus-Kabel.
 - Crimpe wie unten gezeigt XH-Stecker an die freien Kabelenden. **Prüfe unbedingt die Pinbelegung! Die Leitungen sind am Stecker verdreht!**
 - **Wiederhole das für alle vier Not-Aus-Sensoren**, sodass jeder einen XH-Stecker erhält. Die Pinbelegung ist bei allen gleich.
-![EmergencyCables2.jpg](images/EmergencyCables2.jpg)
+![Neue XH-Stecker an den Not-Aus-Kabeln](images/EmergencyCables2.jpg)
 
 Am Ende hast du vier Kabel mit **unterschiedlichen Längen, aber identischer Pinbelegung**.
 
 ### 3.4 Kabel für die CoverUI anfertigen
 Wenn du eine eigene CoverUI-Platine verwendest, brauchst du ein Verbindungskabel zum Mainboard.
 - Nimm vier Leitungen mit etwa 20 cm Länge.
-- Crimpe wie abgebildet XH-Stecker an beide Enden. Die Verbindung ist gerade durchverbunden: Pin 1 geht auf Pin 1 der Gegenseite und so weiter.
+- Crimpe wie abgebildet XH-Stecker an beide Enden. Verbinde die Pins eins zu eins: Pin 1 mit Pin 1 am anderen Stecker, Pin 2 mit Pin 2 und so weiter.
 
-![CoverUICable.jpg](images/CoverUICable.jpg)
+![Verbindungskabel zwischen CoverUI und Mainboard](images/CoverUICable.jpg)
 
 
 
@@ -132,11 +132,11 @@ Jetzt kannst du das OpenMower-Mainboard und die vorbereitete GPS-Antennenhalteru
 - Schließe alle Kabel entsprechend dem Bild und der folgenden Liste an.
 
 Fertig sollte es so aussehen:
-![Connections.jpg](images/Connections.jpg)
+![Angeschlossene Kabel am OpenMower-Mainboard](images/Connections.jpg)
 
 **Die Anschlüsse sind wie folgt belegt:**
 1. Mähmotorsensor
-2. Haupt-Motoranschluss: Fahrmotoren, Mähmotoren und Sensoren
+2. Hauptanschluss für Motoren: Fahrmotoren, Mähmotoren und Sensoren
 3. Stromanschluss
 4. Ladekontakte
 5. Not-Aus-Taster im Deckel: links/rechts ist beliebig
@@ -153,7 +153,7 @@ Fertig sollte es so aussehen:
 ## Schritt 2.4.5: Externe WLAN-Antenne einbauen (optional)
 Eine externe WLAN-Antenne für besseren Empfang lässt sich einfach einbauen.
 
-![ExternalAntenna.jpg](images/ExternalAntenna.jpg)
+![Externe WLAN-Antenne mit Halterung im Mäher](images/ExternalAntenna.jpg)
 
 ## Voraussetzungen
 
@@ -183,7 +183,7 @@ Dazu gehören unter anderem:
   {{% /alert %}}
 
 
-Manche Akkupacks schalten sich wegen des Einschaltstroms sofort ab. Falls das passiert, kannst du versuchen, den Schalter aus- und wieder einzuschalten. Danach sollte es funktionieren.
+Manche Akkupacks schalten sich wegen des Einschaltstroms sofort ab. Falls das passiert, kannst du versuchen, den Mäher aus- und wieder einzuschalten. Danach sollte es funktionieren.
 
 Nach dem Einschalten sollten die LEDs an ESCs, GPS, xCore-Board und Mainboard blinken.
 **Lass den Roboter mindestens fünf Minuten eingeschaltet, damit das CM4 vollständig startet. Beim ersten Start führt es Einrichtungsschritte aus.**

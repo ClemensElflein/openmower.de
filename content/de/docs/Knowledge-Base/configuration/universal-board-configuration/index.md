@@ -78,7 +78,7 @@ Lies die Spannungsangaben deines Akkupacks nach und trage die passenden Werte ei
 |---|---|
 | `battery_full_voltage` | Spannung des vollständig geladenen Akkupacks laut Spezifikation. |
 | `battery_empty_voltage` | Spannung, bei der der Mäher zur Ladestation zurückkehrt. |
-| `battery_critical_voltage` | Notabschaltung bei Unterspannung. Unterhalb der Leer-Schwelle einstellen, aber oberhalb einer schädlichen Tiefentladung. |
+| `battery_critical_voltage` | Notabschaltung bei Unterspannung. Unterhalb der Rückkehrschwelle (`battery_empty_voltage`) einstellen, aber so hoch, dass keine schädliche Tiefentladung eintritt. |
 | `battery_critical_high_voltage` | Überspannungsschutz. Etwas oberhalb der Spannung bei voller Ladung einstellen. |
 | `charge_critical_high_voltage` | Höchste zulässige Ausgangsspannung des Ladegeräts. |
 | `charge_critical_high_current` | Höchster zulässiger Ladestrom in Ampere. |
@@ -110,7 +110,7 @@ Die Positionsbestimmung muss wissen, wo die GPS-Antenne relativ zum **Drehmittel
       datum_long: 10.014737
 ```
 
-Diese Werte sind in der Vorlage nicht mit `TODO` markiert, **müssen aber geändert werden**. Trage Koordinaten nahe deiner Ladestation ein. Dieser Punkt wird zum Ursprung der Mäherkarte. Die Koordinaten kannst du mit einem GPS- oder Kartenwerkzeug ermitteln.
+Diese Werte sind in der Vorlage nicht mit `TODO` markiert. **Du musst sie trotzdem ändern.** Trage Koordinaten nahe deiner Ladestation ein. Dieser Punkt wird zum Ursprung der Mäherkarte. Die Koordinaten kannst du mit einem GPS- oder Kartenwerkzeug ermitteln.
 
 ---
 
@@ -159,7 +159,7 @@ Mit diesem Verfahren ermittelst du `ticks_per_m` für die Radencoder deines Mäh
 
 Öffne die OpenMower-App und aktiviere den **Modus zur Flächenerfassung**. So sind Fahrmotoren und Radencoder aktiv und veröffentlichen Odometriedaten.
 
-### Schritt 2: Anfangswerte des Tachos notieren
+### Schritt 2: Anfangswerte der Encoderzähler notieren {#schritt-2-anfangswerte-des-tachos-notieren}
 
 Öffne die ROS-Shell:
 
@@ -173,7 +173,7 @@ Abonniere das Status-Topic des linken ESC und notiere den Wert von `tacho`:
 rostopic echo /ll/diff_drive/left_esc_status
 ```
 
-Schreibe den Wert auf und drücke <kbd>Ctrl</kbd>+<kbd>C</kbd>. Wiederhole das für das rechte Rad:
+Schreibe den Wert auf und drücke <kbd>Strg</kbd>+<kbd>C</kbd>. Wiederhole das für das rechte Rad:
 
 ```bash
 rostopic echo /ll/diff_drive/right_esc_status
@@ -183,7 +183,7 @@ rostopic echo /ll/diff_drive/right_esc_status
 
 Markiere die aktuelle Position des Mähers und fahre genau **10 Meter** geradeaus. Fahre langsam und gleichmäßig. Je gerader die Strecke, desto genauer das Ergebnis.
 
-### Schritt 4: Endwerte des Tachos notieren
+### Schritt 4: Endwerte der Encoderzähler notieren {#schritt-4-endwerte-des-tachos-notieren}
 
 Abonniere beide Topics erneut und notiere die neuen `tacho`-Werte:
 

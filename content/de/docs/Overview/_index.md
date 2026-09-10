@@ -2,7 +2,7 @@
 title: "Überblick"
 linkTitle: "Überblick"
 weight: 1
-description: "So rüstest du Mähroboter mit OpenMower auf RTK-GPS-Navigation um: App-Einblicke, unterstützte Hardware, Smart-Home-Anbindung und Informationen zum Umbau."
+description: "So rüstest du Mähroboter mit OpenMower auf RTK-GPS-Navigation um: Einblicke in die App, unterstützte Hardware, Smart-Home-Anbindung und Informationen zum Umbau."
 carousel:
   - image: open_mower_app_1.jpg
   - image: open_mower_app_2.jpg
@@ -23,7 +23,7 @@ Das ursprüngliche Vorstellungsvideo gibt dir einen schnellen Einblick in das Ko
 
 - **Navigation ohne Begrenzungskabel:** Die präzise Positionsbestimmung mit RTK-GPS ersetzt das Begrenzungskabel und ermöglicht mehrere Mähzonen.
 - **Moderne App:** Über die Weboberfläche kannst du OpenMower am Computer oder Smartphone einrichten, Mähzeiten planen und den Mäher manuell steuern.
-- **Smart-Home-Anbindung:** Die native Home-Assistant-Integration stellt Live-Daten zu Akku, Motoren und Sensoren bereit. Damit kannst du zum Beispiel automatisch bei Regen pausieren.
+- **Smart-Home-Anbindung:** Die native Home-Assistant-Integration stellt Live-Daten zu Akku, Motoren und Sensoren bereit. Damit kannst du den Mäher zum Beispiel bei Regen automatisch pausieren lassen.
 - **Von der Community erprobte Elektronik:** Die modulare v2-Hardware kombiniert ein Core-Board auf CM4- und STM32-Basis mit Trägerplatinen für verbreitete Mäher-Chassis.
 - **Offen und anpassbar:** Die Quelltexte von Firmware, App und ROS-Software sind offen zugänglich. Du kannst sie nachvollziehen, anpassen und eigene Beiträge einreichen.
 - **Sicherheit im Blick:** Eigene Not-Aus-Schleifen und Watchdogs sichern Mähwerk und Antrieb ab.
@@ -39,7 +39,7 @@ OpenMower ersetzt die Originalelektronik in kompatiblen Chassis. Zu den häufig 
 - SABO MOWit 500F (Serie I und II)
 - John Deere Tango E5 (Serie I und II)
 
-Du bist unsicher, ob dein Mäher geeignet ist? Schau zuerst in die Liste der [kompatiblen Mäher]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}) und frag bei offenen Fragen vor dem Hardwarekauf auf Discord nach. Mit der universellen Trägerplatine können erfahrene Bastler auch weitere Modelle umrüsten, sofern die Grundvoraussetzungen erfüllt sind: Radencoder, eine unterstützte Spannung und genügend Platz für das Mainboard.
+Du bist unsicher, ob dein Mäher geeignet ist? Schau zuerst in die Liste der [kompatiblen Mäher]({{% relref "/docs/knowledge-base/getting-started/compatible-mowers" %}}) und kläre offene Fragen vor dem Hardwarekauf auf Discord. Mit der universellen Trägerplatine können erfahrene Bastler auch weitere Modelle umrüsten, sofern die Grundvoraussetzungen erfüllt sind: Radencoder, eine unterstützte Spannung und genügend Platz für das Mainboard.
 
 ---
 

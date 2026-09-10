@@ -11,4 +11,4 @@ Die wichtigste Grundlage für OpenMower ist seine Karte. Sie legt fest, wo der R
 
 Jede Fläche besteht aus **einer Umrandung** und **mehreren Hindernissen**. Der Mäher darf innerhalb der Umrandungen aller Flächen fahren, mit Ausnahme der Hindernisse. So kannst du Teile deines Rasens ausschließen und verhindern, dass der Mäher dort hineinfährt.
 
-Die Karte wird in der Datei `map.json` gespeichert. Sie liegt auf dem Mäher unter `/home/openmower/ros_home`
+Die Karte wird in der Datei `map.json` gespeichert. Sie liegt auf dem Mäher unter `/home/openmower/ros_home`.

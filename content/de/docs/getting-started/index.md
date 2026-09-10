@@ -8,12 +8,12 @@ description: "Plane deinen ersten OpenMower-Umbau: benötigte Kenntnisse, passen
 
 ## Das Wichtigste auf einen Blick
 
-- **Bauzeit:** Ein Wochenende für einen Mäher der YardForce-Klasse; bei eigenen Chassis entsprechend länger
+- **Bauzeit:** Ein Wochenende für einen Mäher der YardForce-Klasse; bei individuell angepassten Chassis entsprechend länger
 - **Budget:** Die frühere Schätzung von etwa 700 € für den Umbau enthält weder den Mäher noch die RTK-Basisstation. [Ermittle vor dem Kauf die Kosten deiner ausgewählten Teile und Extras]({{% relref "/docs/knowledge-base/getting-started/shopping-list#plan-the-total-build-cost" %}}).
 - **Kenntnisse:** Solide Grundkenntnisse in Elektronik, Linux und Mechanik
 - **Community:** Über 2.000 Mitglieder auf Discord helfen beim Prüfen deines Aufbaus und bei der Fehlersuche
 
-Du bist neu beim Projekt? Starte mit der [Übersicht]({{% relref "/docs/overview/" %}}). Lies vor dem Umbau auch die Seite zur [Systemarchitektur]({{% relref "/docs/knowledge-base/getting-started/architecture" %}}) um zu verstehen, wie App, ROS, Firmware und Hardware zusammenspielen.
+Du bist neu beim Projekt? Starte mit der [Übersicht]({{% relref "/docs/overview/" %}}). Lies vor dem Umbau auch die Seite zur [Systemarchitektur]({{% relref "/docs/knowledge-base/getting-started/architecture" %}}), um zu verstehen, wie App, ROS, Firmware und Hardware zusammenspielen.
 
 
 ## Wichtige Warnhinweise {#important-warnings}
@@ -22,7 +22,7 @@ Du bist neu beim Projekt? Starte mit der [Übersicht]({{% relref "/docs/overview
 - **Laufende Entwicklung**: OpenMower wird ständig weiterentwickelt. Stell dich darauf ein, Fehler zu suchen und Software zu aktualisieren.
 - **Sicherheit bei Lithium-Akkus**: Du baust deine eigene Ladeelektronik. Mach dich mit den Risiken beim Umgang mit Lithium-Akkus vertraut.
 - **Deine Verantwortung**: Vergewissere dich vor jedem Umbauschritt, dass du ihn verstanden hast.
-- **Lies** die gesamte Dokumentation und **verschaffe dir einen Überblick**: Verstehe alle Schritte des Umbaus, bevor du anfängst.
+- **Lies die gesamte Dokumentation**, bevor du anfängst, und stelle sicher, dass du alle Umbauschritte verstanden hast.
 - **Die Dokumentation wächst mit**: Wir verbessern diese Dokumentation laufend. Wenn du Fehler findest oder Fragen hast, **frag auf Discord nach**.
   {{% /alert %}}
 
@@ -65,7 +65,7 @@ Die OpenMower-App erleichtert die Einrichtung. Trotzdem kann es nötig sein, per
 Für OpenMower brauchst du diese Hauptkomponenten:
 
 #### 1. Der Roboter
-Einen kompatiblen Mähroboter samt Gehäuse und Motoren. Seine Elektronik ersetzt du durch die OpenMower-Hardware.
+Du brauchst einen kompatiblen Mähroboter samt Gehäuse und Motoren. Seine Elektronik ersetzt du durch die OpenMower-Hardware.
 Manche bauen sich auch ein eigenes Mäher-Chassis von Grund auf.
 
 #### 2. OpenMower-Hardware
@@ -76,6 +76,7 @@ Die OpenMower-v2-Hardware ist verfügbar und wird für alle neuen Umbauten empfo
 {{% /alert %}}
 
 Die eigens entwickelte Elektronik besteht aus:
+
 - **Core-Board**: Universelles Rechenmodul mit Raspberry Pi CM4, STM32-Controller und IMU
 - **Trägerplatine**: Modellspezifische Platine (YardForce, SABO/John Deere oder Universal)
 - **3× xESC-Board**: Motorcontroller für BLDC- oder DC-Motoren mit Positionsrückmeldung und geregelter Drehzahl
@@ -84,6 +85,7 @@ Die eigens entwickelte Elektronik besteht aus:
 #### 3. RTK-GPS-System
 RTK-GPS ermöglicht eine Genauigkeit im Zentimeterbereich. Dazu werden Korrekturdaten per WLAN oder Funk an den Roboter gesendet.
 Du brauchst dafür einen oder zwei RTK-GPS-Empfänger:
+
 - **Rover (erforderlich)**: GPS-Modul auf dem Roboter
 - **Basisstation (optional)**: Ein fest installiertes GPS-Modul, das Korrekturdaten liefert, **ODER** Zugang zu einem externen NTRIP-Dienst, der diese Daten über das Internet bereitstellt. In einigen Ländern gibt es kostenlose RTK-Dienste.
 

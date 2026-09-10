@@ -1,6 +1,6 @@
 ---
-title: "Schritt 3.1: WLAN verbinden"
-linkTitle: "WLAN verbinden"
+title: "Schritt 3.1: Mit dem WLAN verbinden"
+linkTitle: "Mit dem WLAN verbinden"
 weight: 10
 description: >
   Verbinde den Mäher mit dem WLAN.
@@ -21,7 +21,7 @@ Falls dein Mobilgerät meldet, dass das Netzwerk keinen Internetzugang hat, wäh
 </div>
 <div class="col-3">
 
-![connect_wifi_screen_1.png](images/connect_wifi_screen_1.png)
+![WLAN-Hotspot des OpenMower auf dem Smartphone](images/connect_wifi_screen_1.png)
 
 </div>
 </div>
@@ -37,7 +37,7 @@ Falls dein Gerät das nicht tut, öffne den Browser auf deinem Smartphone und ru
 </div>
 <div class="col-3">
 
-![connect_wifi_screen_1.png](images/connect_wifi_screen_1.png)
+![WLAN-Hotspot des OpenMower auf dem Smartphone](images/connect_wifi_screen_1.png)
 
 </div>
 </div>
@@ -46,7 +46,7 @@ Falls dein Gerät das nicht tut, öffne den Browser auf deinem Smartphone und ru
 ### Schritt 3.3: WLAN-Zugangsdaten eingeben
 Wähle auf der Konfigurationsseite dein WLAN aus und gib das Passwort ein. Klicke dann auf „Connect“.
 
-Das OpenMower-WLAN sollte verschwinden. Der Roboter verbindet sich nun mit deinem Heimnetzwerk.
+Der OpenMower-Hotspot sollte jetzt aus der Liste der WLAN-Netze verschwinden. Der Roboter verbindet sich mit deinem Heimnetzwerk.
 
 
 ### Schritt 3.4: Verbindung prüfen

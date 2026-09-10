@@ -7,7 +7,7 @@ description: >
 ---
 OpenMower ist ein Community-Projekt. Jeder Beitrag ist willkommen: Fehlermeldungen, Code, Verbesserungen an der Dokumentation oder einfach Hilfe für andere auf Discord.
 
-Du weißt noch nicht, wo du anfangen sollst? Lies den Überblick zur [Systemarchitektur]({{< relref "/docs/knowledge-base/getting-started/architecture" >}}) um das Zusammenspiel der Komponenten zu verstehen, bevor du in ein bestimmtes Repository einsteigst.
+Du weißt noch nicht, wo du anfangen sollst? Lies den Überblick zur [Systemarchitektur]({{< relref "/docs/knowledge-base/getting-started/architecture" >}}), um das Zusammenspiel der Komponenten zu verstehen, bevor du in ein bestimmtes Repository einsteigst.
 
 ## An dieser Dokumentation mitarbeiten
 
@@ -27,7 +27,7 @@ Die Dokumentation zu verbessern ist eine der einfachsten Möglichkeiten, etwas b
    ```bash
    docker compose up
    ```
-4. Öffne [http://localhost:8080](http://localhost:8080) im Browser. Beim Speichern von Dateien wird die Website automatisch neu gebaut. Falls `502 Bad Gateway` erscheint, warte kurz – der Server startet noch.
+4. Öffne [http://localhost:8080](http://localhost:8080) im Browser. Wenn du eine Datei speicherst, wird die Website automatisch neu erstellt. Falls `502 Bad Gateway` erscheint, warte kurz – der Server startet noch.
 5. Wenn du mit deinen Änderungen zufrieden bist, beende den Server mit <kbd>Strg</kbd>+<kbd>C</kbd>. Erstelle einen Commit, pushe ihn und öffne einen Pull Request im Haupt-Repository.
 
 Die Dokumentation ist in Markdown geschrieben und verwendet das Theme [Hugo Docsy](https://www.docsy.dev/).
@@ -40,7 +40,7 @@ Die Dokumentation ist in Markdown geschrieben und verwendet das Theme [Hugo Docs
 Du kannst deine Idee auch im Kanal **#software** auf [Discord](https://discord.gg/jE7QNaSxW7) besprechen, bevor du mit dem Programmieren beginnst.
 {{% /alert %}}
 
-OpenMower ist nach Aufgaben auf mehrere Repositories aufgeteilt. So bleibt jedes Repository übersichtlich, und Hardware, Firmware und Software können sich unabhängig weiterentwickeln, ohne dass Änderungen in einem Bereich andere, nicht betroffene Teile beschädigen.
+OpenMower ist nach Aufgaben auf mehrere Repositories aufgeteilt. So bleibt jedes Repository übersichtlich, und Hardware, Firmware und Software können sich unabhängig weiterentwickeln, ohne dass Änderungen in einem Bereich andere, nicht betroffene Teile beeinträchtigen.
 
 ### Software
 
@@ -99,7 +99,7 @@ Diskussionen sollten sich auf OpenMower und das jeweilige Thema beziehen. Gespr�
 
 ### Geh von guten Absichten aus
 
-Die meisten möchten helfen. Wenn etwas unhöflich oder unverständlich klingt, bedenke vor einer Eskalation, dass es an sprachlichen Unterschieden oder einem anderen Kommunikationsstil liegen kann.
+Die meisten möchten helfen. Wenn etwas unhöflich oder unverständlich klingt, bedenke, dass sprachliche Unterschiede oder ein anderer Kommunikationsstil die Ursache sein können, bevor du den Konflikt verschärfst.
 
 ### Umgang mit Verstößen
 

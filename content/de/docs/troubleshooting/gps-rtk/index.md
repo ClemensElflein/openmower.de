@@ -15,20 +15,20 @@ Prüfe, ob rechts unten in der Statusleiste bei `Protocol of received messages` 
 Schließe die Antenne an die Platine an und geh nach draußen, um zu prüfen, ob GPS grundsätzlich funktioniert. Ist der Mäher schon zusammengebaut und die Antenne angeschlossen, nimm einfach den ganzen Mäher mit.
 Mit angeschlossener Antenne sollten selbst drinnen am Fenster erste Satelliten und weitere Informationen in u-center erscheinen. Nach einigen Minuten beginnt die LED `GPS Fix` auf der GPS-Platine zu blinken.
 
-In der Abweichungskarte (`View -> Deviation Map, F12`) sollten die Werte innerhalb von ungefähr 1 m bleiben. Das entspricht der üblichen GPS-Genauigkeit. Alte, unbrauchbare Daten kannst du über `File -> Database clean` löschen.
+In der Ansicht `View -> Deviation Map, F12` sollten die angezeigten Positionen innerhalb eines Bereichs von ungefähr 1 m liegen. Das entspricht der üblichen GPS-Genauigkeit. Alte, unbrauchbare Daten kannst du über `File -> Database clean` löschen.
 
 Richte jetzt die NTRIP-Verbindung ein. Wir gehen davon aus, dass du entweder einen geeigneten [NTRIP-Knoten in der Nähe](https://discord.com/channels/958476543846412329/980099128879108137/980100319700742145) (<30 km) gefunden hast oder eine eigene [Basisstation]({{< relref "/docs/Knowledge-Base/gps/rtk-base-setup" >}}) betreibst.
 
 Öffne `Receiver -> NTRIP Client...` und trage deine NTRIP-Zugangsdaten ein. Dieselben Einstellungen verwendest du später in der ROS-Konfigurationsdatei.
 {{< imgproc ntrip-client Resize 500x />}}
 
-Der NTRIP-Client sollte die Verbindung in der Statusleiste grün anzeigen. Die Abweichungskarte (`View -> Deviation Map, F12`) sollte genau in der Mitte bleiben. Die LED `No RTK` beginnt zu blinken oder erlischt ganz.
+Der NTRIP-Client sollte die Verbindung in der Statusleiste grün anzeigen. In der Ansicht `View -> Deviation Map, F12` sollten die angezeigten Positionen jetzt genau in der Mitte liegen. Die LED `No RTK` beginnt zu blinken oder erlischt ganz.
 {{< imgproc gps-fix-and-deviation Resize 800x />}}
 
 
 ## GPS am Mainboard testen
 
-GPS funktioniert für sich genommen. Prüfe jetzt das Zusammenspiel mit dem Mainboard: Stecke das GPS-Modul auf das Mainboard. Die Anzeigen sollten aufleuchten und anfangen zu blinken.  
+Wenn das GPS-Modul unabhängig vom Mainboard funktioniert, prüfe als Nächstes das Zusammenspiel beider Komponenten: Stecke das GPS-Modul auf das Mainboard. Die Anzeigen sollten aufleuchten und anfangen zu blinken.<br>
 Warte, bis die LED GRÜN oder GRÜN/ROT leuchtet.
 
 {{% alert title="🔋 Stromversorgung des Mainboards" color="info" %}}

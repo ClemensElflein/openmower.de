@@ -30,7 +30,7 @@ Hier findest du mein YouTube-Video: [<i class="fa fa-brands fa-youtube"></i> Vid
   Lade nicht u-center V2 herunter. Für den F9P brauchst du u-center v1.
 - **Die GPS-Konfigurationsdatei**<br/>
   🔗&nbsp;<a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt</a><br/>
-  Der Link öffnet sich in einem neuen Browser-Tab. Verwende <kbd>Ctrl</kbd>+<kbd>S</kbd> um die Datei herunterzuladen.
+  Der Link öffnet sich in einem neuen Browser-Tab. Verwende <kbd>Strg</kbd>+<kbd>S</kbd>, um die Datei herunterzuladen.
 
 
 ### Schritt 2.1.0: Firmware aktualisieren
@@ -109,7 +109,7 @@ Dein GPS-Modul ist jetzt für OpenMower eingerichtet. Du kannst es vom Windows-P
 {{< /tab >}}
 
 
-{{% tab header="By-Nav M10+M20 USB offline" %}}
+{{% tab header="By-Nav M10/M20 – direkt per USB" %}}
 
 <div class="prep-gps-um9xx-tab">
   
@@ -184,7 +184,7 @@ gps:
 
 {{< /tab >}}
 
-{{% tab header="By-Nav M10+M20 TCP online" %}}
+{{% tab header="By-Nav M10/M20 – über das Netzwerk" %}}
 
 <div class="prep-gps-um9xx-tab">
 
@@ -212,7 +212,7 @@ gps:
 ```
 
 3. Stelle eine serielle Verbindung zum M10 über TCP her, indem du im SSH-Terminal deines OpenMower `openmower expose-gps` ausführst:
-   ![openmower expose](openmower_expose-gps.png)
+   ![GPS-Verbindung mit openmower expose-gps freigeben](openmower_expose-gps.png)
 
 4. Öffne by_connect auf deinem PC, unter Linux mit Wine. Den Download findest du auf bynav.com. Verbinde dich als **TCP Client** mit Port 2000 des OpenMower. Eine Baudrate musst du hier nicht angeben:
    ![by_connect TCP Client](by_connect_tcp_client.png)
@@ -220,7 +220,7 @@ gps:
 5. Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe die Verbindung.
 6. Stelle sicher, dass das Zeilenende auf **CR/LF** eingestellt ist.
 7. Du kannst die Ausgabe in by_connect ausblenden. Sie läuft weiter, wird aber nicht angezeigt:
-   ![by_connect input](by_connect_input.png)
+   ![Eingabefeld in by_connect](by_connect_input.png)
 
 8. Setze das Modul auf Werkseinstellungen zurück und deaktiviere die zyklischen Ausgaben mit diesen Befehlen, jeweils zeilenweise:
 

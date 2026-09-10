@@ -5,7 +5,7 @@ weight: 10
 description: "Prüfe die Kompatibilität von YardForce, SABO MOWit 500F und John Deere Tango E5. Hier findest du passende Trägerplatinen und Voraussetzungen für eigene OpenMower-Umbauten."
 ---
 ## Yard Force
-![OpenMower-V2 YardForce Trägerplatine]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/yf-mainboard.jpg)
+![YardForce-Trägerplatine für OpenMower v2]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/yf-mainboard.jpg)
 
 **Hier geht es zum Git-Repository:** [https://github.com/xtech/hw-openmower-yardforce](https://github.com/xtech/hw-openmower-yardforce)
 
@@ -34,9 +34,9 @@ Diese Trägerplatine ist mit folgenden Mähermodellen kompatibel:
 
 |                                                      Trägerplatine Serie I (v0.2)                                                      |                                                     Trägerplatine Serie II (v0.2)                                                      |
 | :------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
-| ![OpenMower-V2 SABO Trägerplatine Serie I v0.2]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s1-v02.jpg)  | ![OpenMower-V2 SABO Trägerplatine Serie II v0.1]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s2-v02.jpg) |
-|                                               **Serie I (v0.1) @ John Deere Tango E5**                                                |                                                 **Serie II (v0.1) @ Sabo MOWiT 500F**                                                 |
-| ![V0.1 Trägerplatine Serie I eingebaut]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/johndeere-s1-v01-assembled.jpg) |   ![V0.1 Trägerplatine Serie II eingebaut]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/sabo-s2-v01-assembled.jpg)   |
+| ![SABO-Trägerplatine für OpenMower v2, Serie I v0.2]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s1-v02.jpg)  | ![SABO-Trägerplatine für OpenMower v2, Serie II v0.1]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/om-sabo-cb-s2-v02.jpg) |
+|                                               **Serie I (v0.1) im John Deere Tango E5**                                                |                                                 **Serie II (v0.1) im SABO MOWiT 500F**                                                 |
+| ![Eingebaute Trägerplatine v0.1, Serie I]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/johndeere-s1-v01-assembled.jpg) |   ![Eingebaute Trägerplatine v0.1, Serie II]({{< relref "/docs/Knowledge-Base/getting-started/compatible-mowers" >}}/images/sabo-s2-v01-assembled.jpg)   |
 
 Diese Mäher werden **gut unterstützt**. Sogar die Displaysteuerung wurde durch eine voll funktionsfähige, moderne Benutzeroberfläche ersetzt!
 

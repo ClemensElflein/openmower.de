@@ -22,12 +22,12 @@ flowchart TD
     %% Nodes
     Start([Start])
     CheckList{"Steht der Mäher auf der<br/>Liste kompatibler Mäher?"}
-    Compatible(["<b>Kompatibel</b><br/>Standardinstallation durchführen"])
+    Compatible(["<b>Kompatibel</b><br/>Umbauanleitung für das Modell verwenden"])
     CheckEncoders{"Hat der Mäher<br/>Radencoder?"}
     Incompatible(["<b>Nicht kompatibel</b><br/>Zur Bestätigung auf Discord nachfragen"])
     CheckBattery{"Akkuspannung prüfen<br/>(Zellen in Reihe: 5S - 8S)"}
     CheckSpace{"Genügend Platz für<br/>das Universal-Mainboard?"}
-    UniversalMainboard(["<b>Universal-Mainboard</b><br/>Hardware sieht geeignet aus"])
+    UniversalMainboard(["<b>Universal-Mainboard</b><br/>Hardware scheint geeignet zu sein"])
     AskDiscord(["<b>Kompatibilität unklar</b><br/>Auf Discord nachfragen"])
 
     %% Classes
@@ -54,8 +54,8 @@ flowchart TD
     
     %% Voltage Calculation: 
     %% 5S (5 * 3.6V = 18V) to 8S (8 * 4.2V = 33.6V)
-    CheckBattery -- "Ja: 18.5V - 29.6V" --> CheckSpace
-    CheckBattery -- "Nein: < 18.5V oder > 29.6V" --> AskDiscord
+    CheckBattery -- "Ja: 18,5 V – 29,6 V" --> CheckSpace
+    CheckBattery -- "Nein: < 18,5 V oder > 29,6 V" --> AskDiscord
 
     CheckSpace -- Ja --> UniversalMainboard
     CheckSpace -- Nein --> AskDiscord

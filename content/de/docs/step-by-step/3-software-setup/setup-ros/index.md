@@ -4,7 +4,7 @@ title: "Schritt 3.3: ROS konfigurieren"
 linkTitle: "ROS konfigurieren"
 weight: 30
 description: >
-  Richte ROS so ein, dass es weiß, auf welchem Mähermodell es läuft.
+  Passe die ROS-Parameter an deinen Mäher an: GPS-Modul, Kartenursprung und NTRIP-Verbindung.
 ---
 ## Schritt 3.3.1: ROS-Parameter einstellen
 Die ROS-Parameter stellst du ähnlich wie zuvor die Umgebungsvariablen ein.

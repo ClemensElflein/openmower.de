@@ -31,5 +31,5 @@ Gehe so vor:
 - **Scrolle nach unten** zum Abschnitt `[cm4]` und:
   - Kommentiere `# dtparam=ant1` aus
   - Entferne das Kommentarzeichen vor `dtparam=ant2`
-- **Speichern:** <kbd>CTRL</kbd> + <kbd>O</kbd> und **Nano beenden:** <kbd>CTRL</kbd> + <kbd>X</kbd>
+- **Speichern:** <kbd>Strg</kbd> + <kbd>O</kbd> und **Nano beenden:** <kbd>Strg</kbd> + <kbd>X</kbd>
 - **Starte das Betriebssystem neu** mit `sudo reboot`

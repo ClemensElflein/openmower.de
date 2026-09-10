@@ -6,7 +6,7 @@ description: >
   Umbauanleitung für YardForce Classic 500(B) mit Trägerplatine ab Version 1.2.0
 ---
 {{% alert title="Nur für Trägerplatinen ab 1.2.0!" color="warning" %}}
-Diese Anleitung gilt ausschließlich für **Trägerplatine ab Version 1.2.0**!<br>
+Diese Anleitung gilt ausschließlich für **Trägerplatinen ab Version 1.2.0**!<br>
 ![Erkennungsmerkmale der Trägerplatine v1.2.0](../carrierboard_version_v1.2.0.jpg)<br>
 {{% /alert %}}
 
@@ -23,7 +23,7 @@ Diese Anleitung gilt ausschließlich für **Trägerplatine ab Version 1.2.0**!<b
 
 ## Schritt 2.4.1: Roboter zerlegen
 Zerlege zuerst den Roboter.
-Einige Stellen sind etwas knifflig. Schau dir dazu am besten mein Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt ist 2:25 bis 5:08.
+Einige Stellen sind etwas knifflig. Schau dir dazu am besten mein Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt reicht von Minute 2:25 bis 5:08.
 Folge dem Video danach **nicht** weiter, da die übrigen Schritte veraltet sind.
 
 Alternativ findest du hier eine bebilderte Anleitung zum Zerlegen:
@@ -35,7 +35,7 @@ Alternativ findest du hier eine bebilderte Anleitung zum Zerlegen:
 
 ### Abdeckung vorsichtig aufhebeln
 
-Einige Stellen sind etwas knifflig. Schau dir dazu am besten dieses Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt ist 2:25 bis 5:08.
+Einige Stellen sind etwas knifflig. Schau dir dazu am besten dieses Video an: [<i class="fa fa-brands fa-youtube"></i> YouTube-Video](https://youtu.be/_bImqD-pQSA?t=148). Der relevante Abschnitt reicht von Minute 2:25 bis 5:08.
 
 {{< image-gallery gallery_dir="images/disassemble-mower/pry-the-cover" >}}
 
@@ -86,7 +86,7 @@ Montiere dein Witmotion-UM9xx- oder ByNav-Mxx-GPS-Modul und das mitgelieferte Wi
 
 ### GPS-Antennenhalterung zusammenbauen
 
-![GPSHolder.jpg](images/GPSHolder.jpg)
+![Zusammengebaute GPS-Antennenhalterung](images/GPSHolder.jpg)
 Baue die GPS-Antennenhalterung wie auf dem Bild zusammen.
 
 {{% /tab %}}
@@ -105,7 +105,7 @@ Jetzt kannst du das OpenMower-Mainboard und die vorbereitete GPS-Antennenhalteru
 
 **Die Anschlüsse sind wie folgt belegt:**
 1. Mähmotorsensor
-2. Haupt-Motoranschluss: Fahrmotoren, Mähmotoren und Sensoren
+2. Hauptanschluss für Motoren: Fahrmotoren, Mähmotoren und Sensoren
 3. Stromanschluss
 4. Ladekontakte
 5. USB-Anschluss an der Rückseite des Roboters
@@ -117,7 +117,7 @@ Jetzt kannst du das OpenMower-Mainboard und die vorbereitete GPS-Antennenhalteru
 ## Schritt 2.4.5: Externe WLAN-Antenne einbauen (optional)
 Eine externe WLAN-Antenne für besseren Empfang lässt sich einfach einbauen.
 
-![ExternalAntenna.jpg](images/ExternalAntenna.jpg)
+![Externe WLAN-Antenne mit Halterung im Mäher](images/ExternalAntenna.jpg)
 
 ## Voraussetzungen
 
@@ -147,7 +147,7 @@ Dazu gehören unter anderem:
   {{% /alert %}}
 
 
-Manche Akkupacks schalten sich wegen des Einschaltstroms sofort ab. Falls das passiert, kannst du versuchen, den Schalter aus- und wieder einzuschalten. Danach sollte es funktionieren.
+Manche Akkupacks schalten sich wegen des Einschaltstroms sofort ab. Falls das passiert, kannst du versuchen, den Mäher aus- und wieder einzuschalten. Danach sollte es funktionieren.
 
 Nach dem Einschalten sollten die LEDs an ESCs, GPS, xCore-Board und Mainboard blinken.
 **Lass den Roboter mindestens fünf Minuten eingeschaltet, damit das CM4 vollständig startet. Beim ersten Start führt es Einrichtungsschritte aus.**

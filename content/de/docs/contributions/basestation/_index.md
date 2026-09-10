@@ -6,9 +6,9 @@ description: >
   verschiebt sich wahrscheinlich die Position deiner Karte. Der Mäher kann dann nicht mehr
   wie gewohnt eingesetzt werden, da er nicht mehr genau mäht.
 ---
-Mit den DATUM-Feldern OM_DATUM_LAT und OM_DATUM_LONG in der mower_config.txt kannst du die Karte verschieben.
+Mit den DATUM-Feldern `OM_DATUM_LAT` und `OM_DATUM_LONG` in der Datei `mower_config.txt` kannst du die Karte verschieben.
 
-Nach einem Wechsel der NTRIP-Basis passt du die DATUM-Felder in der mower_config.txt an: `OM_DATUM_LAT` für links und rechts,
+Nach einem Wechsel der NTRIP-Basis passt du die DATUM-Felder in der Datei `mower_config.txt` an: `OM_DATUM_LAT` für links und rechts,
 `OM_DATUM_LONG` für oben und unten. Damit verschiebst du die gesamte Karte in die jeweilige Richtung.
 
 Als festen Bezugspunkt zum Ausrichten der Karte kannst du die Andockposition des Mähers verwenden. Docke den Mäher dafür
@@ -23,7 +23,7 @@ Wenn du die Karte nach unten verschiebst, wandert die Mäherposition auf der Kar
 Vergiss nicht, die exportierten Variablen neu zu laden. Am einfachsten geht das mit einem Neustart des Pi, wenn du etwas Zeit hast.
 Fahre anschließend über die Bedienelemente zur Flächenerfassung wieder ein Stück umher und docke erneut manuell an.
 So hast du beim Anpassen der Karte einen verlässlichen Bezugspunkt. Wenn alles passt, starte einen Mähvorgang
-und schicke den Mäher sofort zur Ladestation zurück. Prüfe, ob er genau und selbstständig korrekt andockt.
+und schicke den Mäher sofort zur Ladestation zurück. Prüfe, ob er selbstständig und mit der richtigen Ausrichtung an der vorgesehenen Position andockt.
 
 Starte dann das Mähen. Der Mäher fährt zuerst den Rand ab, normalerweise in vier Runden. Prüfe besonders die vierte Runde
 sorgfältig, da sie am nächsten am Rand liegt. Wenn alles passt, kannst du den Mäher wie gewohnt einsetzen.

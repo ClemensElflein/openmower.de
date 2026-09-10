@@ -11,7 +11,7 @@ Ihre Firmware basiert auf dem Open-Source-Projekt VESC. Deshalb kannst du sie mi
 ### Voraussetzungen
 - **Windows- oder Linux-Computer** für das VESC Configuration Tool
 - **VESC Tool (https://vesc-project.com/vesc_tool)** Du kannst das Tool kostenlos herunterladen, indem du die „free“-Version in den Warenkorb legst und den Bestellvorgang abschließt.
-- Die **OpenMower-Firmware** muss erfolgreich auf dem xCore-Board installiert sein. Das xCore stellt die Verbindung zwischen deinem Computer und dem xESC her. Falls das noch fehlt, folge der Anleitung [Firmware aktualisieren]({{< relref "/docs/Knowledge-Base/installation/firmware-update" >}}).
+- Die **OpenMower-Firmware** muss erfolgreich auf dem xCore-Board installiert sein. Das xCore-Board stellt die Verbindung zwischen deinem Computer und dem xESC her. Falls die Firmware noch nicht installiert ist, folge der Anleitung [Firmware aktualisieren]({{< relref "/docs/Knowledge-Base/installation/firmware-update" >}}).
 - **Optional, aber hilfreich:**<br/>Konfigurationsdateien für deinen Mäher.<br/>Suche im [OpenMower-Repository](https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC) nach den passenden Dateien für deinen Mäher. <br/>Du brauchst drei Dateien:
     - App-Konfiguration als XML: legt unter anderem die Baudrate fest und ist für alle drei xESC-Controller gleich
     - Mähmotor-Konfiguration als XML: Parameter des Mähmotors
@@ -24,7 +24,7 @@ Führe `openmower stop` aus, damit ROS während der Konfiguration nicht auf die 
 
 #### ESC im Netzwerk bereitstellen
 ![ESC im Netzwerk bereitstellen]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/openmower-expose-xesc.png)
-Führe `openmower expose-xesc [left|right|mower]` aus, um den gewünschten xESC-Controller bereitzustellen. Wähle `left`, `mower` oder `right`.<br/>Der Controller ist dann im lokalen Netzwerk unter `openmower:65102` erreichbar, bis du folgende Tastenkombination drückst: <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+Führe `openmower expose-xesc [left|right|mower]` aus, um den gewünschten xESC-Controller bereitzustellen. Wähle `left`, `mower` oder `right`.<br/>Der Controller ist dann im lokalen Netzwerk unter `openmower:65102` erreichbar, bis du folgende Tastenkombination drückst: <kbd>Strg</kbd> + <kbd>C</kbd>.
 
 
 #### Mit dem xESC verbinden
@@ -47,7 +47,7 @@ kannst du sie ignorieren. Das VESC Tool ist mit der Firmware-Version auf dem xES
 #### xESC konfigurieren
 
 {{< tabpane text=true >}}
-{{% tab header="**Wähle deinen Konfigurationsweg**:" disabled=true /%}}
+{{% tab header="**Wähle die passende Konfiguration**:" disabled=true /%}}
 {{% tab header="Fertige Konfigurationen (YardForce)" text=true %}}
 
 
@@ -70,7 +70,7 @@ Wenn das VESC Configuration Tool verbunden ist, übertrage die Konfiguration auf
 {{% /tab %}}
 
 
-{{% tab header="SABO/John Deere (Abstimmung)" text=true %}}
+{{% tab header="SABO/John Deere (Kalibrierung)" text=true %}}
 
 #### Notwendige Vorbereitungen
 
@@ -78,7 +78,7 @@ Wenn das VESC Configuration Tool verbunden ist, übertrage die Konfiguration auf
 2. Wirklich: Nimm das Messer ab! Das ist ein großer Mäher mit einem starken Motor und einem großen Messer! :skull:
 3. Bocke den Mäher hinten so auf, dass sich die Räder frei drehen können. Verwende dafür einen Karton, Klotz oder Ständer.
 4. Baue das Mähmesser ab!
-6. Kalibriere mit Akkustrom, nicht mit Strom aus der Ladestation. Achte auf einen ausreichend geladenen Akku.
+6. Versorge den Mäher während der Kalibrierung über den Akku, nicht über die Ladestation. Achte auf einen ausreichend geladenen Akku.
 7. Prüfe, ob du das Mähmesser wirklich abgebaut hast!
 
 
@@ -86,7 +86,7 @@ Wenn das VESC Configuration Tool verbunden ist, übertrage die Konfiguration auf
 
 Kalibriere zuerst den linken Antrieb und wiederhole den Vorgang danach rechts.
 
-1. **Echtzeitdaten aktivieren:** Später prüfen wir die Kalibrierung anhand eines bekannten Referenzwerts. Auch während der Kalibrierung sind die Werte im mit 2 markierten Fenster hilfreich. Aktiviere deshalb zuerst die Echtzeitdaten:<br>
+1. **Echtzeitdaten aktivieren:** Später prüfen wir die Kalibrierung anhand eines bekannten Referenzwerts. Auch während der Kalibrierung sind die Werte im Fenster mit der Markierung 2 hilfreich. Aktiviere deshalb zuerst die Echtzeitdaten:<br>
    ![RT Data]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_3_realtime_data.jpg)
 1. Starte den **FOC Calibration Wizard**:<br>
    ![FOC-Kalibrierung starten]({{< relref "/docs/Knowledge-Base/configuration/configure-xesc" >}}/images/sabo/vesc_4_voc_1.jpg)<br>
@@ -159,7 +159,7 @@ Für den ESC des Mähmotors verwendest du denselben Ablauf mit angepassten Werte
 
 {{% tab header="Neues Modell? Finden wir die passenden Werte" %}}
 
-Such dir deinen Weg. Dein Umbau, deine Regeln.
+Bei anderen Mähermodellen musst du die passenden Einstellungen für deinen Umbau selbst ermitteln.
 
 {{% /tab %}}
 

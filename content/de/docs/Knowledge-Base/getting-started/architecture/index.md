@@ -18,7 +18,7 @@ Die OpenMower-App läuft auf dem Smartphone oder im Browser. Damit kannst du den
 
 ### ROS – Navigation und Planung (Raspberry Pi CM4)
 
-Auf dem Raspberry Pi Compute Module 4 läuft die gesamte ROS-Navigationssoftware. Hier fallen die übergeordneten Entscheidungen: Wohin soll der Mäher fahren, wie soll er eine Fläche abdecken und wann soll er andocken? ROS erhält Sensordaten zu Position, Ausrichtung und Odometrie von der Firmware und sendet Fahrbefehle zurück.
+Auf dem Raspberry Pi Compute Module 4 läuft die gesamte ROS-Navigationssoftware. Hier fallen die übergeordneten Entscheidungen: Wohin soll der Mäher fahren, wie soll er eine Fläche mähen und wann soll er andocken? ROS erhält Sensordaten zu Position, Ausrichtung und Odometrie von der Firmware und sendet Fahrbefehle zurück.
 
 ROS ist bewusst von der Hardware entkoppelt und spricht Motoren oder Sensoren nie direkt an.
 
@@ -28,7 +28,7 @@ ROS und Firmware kommunizieren über **Ethernet** mithilfe von [xbot_framework](
 
 ### Firmware – Motorsteuerung und Sensoren (xCore · STM32H723)
 
-Die Firmware läuft auf dem xCore-Board und steuert die gesamte hardwarenahe Ebene: Sie betreibt die Motoren über xESC-Controller, liest GPS und IMU aus, verwaltet Akku und Ladeelektronik und setzt Sicherheitszustände durch. Der Not-Aus-Dienst kann die Stromversorgung unabhängig von ROS unterbrechen. Über die Konfiguration beim Kompilieren unterstützt derselbe Firmware-Quellcode mehrere Roboterplattformen.
+Die Firmware läuft auf dem xCore-Board und steuert die Hardware direkt: Sie regelt die Motoren über xESC-Controller, liest GPS und IMU aus, verwaltet Akku und Ladeelektronik und sorgt dafür, dass die vorgesehenen Sicherheitszustände eingehalten werden. Der Not-Aus-Dienst kann die Stromversorgung unabhängig von ROS unterbrechen. Welche Roboterplattform der Firmware-Quellcode unterstützt, wird beim Kompilieren über die Konfiguration festgelegt.
 
 ### RTK-Basisstation – zentimetergenaue Positionsbestimmung
 

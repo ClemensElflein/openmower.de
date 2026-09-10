@@ -80,4 +80,4 @@ See this [section](https://www.docsy.dev/docs/get-started/docsy-as-module/instal
 
 ## Languages
 
-The site supports English and German. See [the multilingual editing and validation guide](docs/multilanguage.md).
+The site supports English and German.

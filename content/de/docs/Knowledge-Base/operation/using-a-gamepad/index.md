@@ -4,7 +4,7 @@ linkTitle: "Gamepad verwenden"
 weight: 510
 description: "Verbinde ein USB-Gamepad mit OpenMower, steuere damit den Roboter und erfasse deine Mähflächen."
 ---
-Mit einem USB-Gamepad lässt sich OpenMower während der Flächenerfassung besonders intuitiv steuern. Ein physischer Controller gibt dir präzise Kontrolle über die Bewegung des Mähers. Damit kannst du die Umrandungen deiner Mähflächen leichter sauber abfahren als mit dem Bildschirm-Joystick der Web-App.
+Mit einem USB-Gamepad kannst du OpenMower während der Flächenerfassung intuitiv und präzise steuern. Die Analogsticks helfen dir, die Umrandungen deiner Mähflächen sauber abzufahren. Das fällt damit leichter als mit dem Bildschirm-Joystick der Web-App.
 
 Jedes Xbox-kompatible USB-Gamepad funktioniert ohne weitere Einrichtung. Stecke es einfach in einen USB-Anschluss deines Raspberry Pi. OpenMower erkennt es automatisch.
 
@@ -45,7 +45,7 @@ Die Tabellen beschreiben alle Tasten für die normale Bedienung und Flächenerfa
 
 Zum Erfassen der Ladestation brauchst du zwei getrennte Positionspunkte, die die Anfahrtrichtung festlegen. Die Verbindungslinie zeigt dem Mäher, wie er sich bei der Rückkehr zur Ladestation ausrichten soll.
 
-1. Fahre zu einem Punkt etwa **1,5 m vor der Ladestation**, mit Blickrichtung auf die Station. Drücke **X**, um den ersten Punkt zu erfassen.
+1. Fahre zu einem Punkt etwa **1,5 m vor der Ladestation**, sodass der Mäher zur Station zeigt. Drücke **X**, um den ersten Punkt zu erfassen.
 2. Fahre vorwärts, bis die **Vorderräder gerade am Rand der Ladestation stehen**. Fahre noch nicht ganz hinein. Drücke erneut **X**, um den zweiten Punkt zu erfassen.
 
 | Eingabe | Aktion |

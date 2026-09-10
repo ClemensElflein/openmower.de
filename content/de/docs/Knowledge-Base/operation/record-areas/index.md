@@ -4,7 +4,7 @@ linkTitle: "Flächen erfassen"
 weight: 500
 description: "Schließe deinen Umbau ab, indem du Mähflächen erfasst und den Mäher in Betrieb nimmst."
 ---
-Jetzt fahren wir den Roboter endlich herum und prüfen, ob alles wie erwartet funktioniert. Danach erfassen wir eine Karte, damit der Mäher selbstständig loslegen kann.
+Jetzt kannst du die ersten Testfahrten machen und prüfen, ob alles wie erwartet funktioniert. Danach erfasst du die Mähflächen in einer Karte, damit der Mäher selbstständig arbeiten kann.
 
 ## Voraussetzungen
 
@@ -18,7 +18,7 @@ Jetzt fahren wir den Roboter endlich herum und prüfen, ob alles wie erwartet fu
 
 ![Anzeige der GPS-Qualität]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/gps_quality_indicator.jpg)
 
-Stelle den Mäher in die Ladestation und schalte ihn ein. Er sollte starten und die Status-LED anschließend dauerhaft grün leuchten.
+Stelle den Mäher in die Ladestation und schalte ihn ein. Nach dem Start sollte die Status-LED dauerhaft grün leuchten.
 
 Damit RTK-GPS funktioniert, muss der Mäher unter freiem Himmel stehen. Versuche es nicht drinnen und decke den Mäher nicht ab.
 
@@ -32,7 +32,7 @@ Die aktuelle GPS-Qualität siehst du in der OpenMower-App, wie oben abgebildet.
 
 ## Schritt 4.2: Ausrichtung initialisieren
 
-Neben seiner Position muss der Roboter auch seine Ausrichtung kennen. Da wir keinen Kompass verwenden, wird sie aus seiner Bewegung abgeleitet. Du musst den Roboter deshalb fahren, um die Ausrichtung zu initialisieren.
+Neben seiner Position muss der Roboter auch seine Ausrichtung kennen. Da wir keinen Kompass verwenden, wird sie aus seiner Bewegung abgeleitet. Fahre deshalb zunächst ein Stück mit dem Roboter, damit er seine Ausrichtung bestimmen kann.
 
 Dafür kannst du den Bildschirm-Joystick der OpenMower-App oder ein [per USB angeschlossenes Gamepad]({{< relref "/docs/Knowledge-Base/operation/using-a-gamepad" >}}) verwenden. Halte beim Gamepad die A-Taste gedrückt.
 
@@ -44,8 +44,8 @@ Fahre nun mindestens 50 m mit dem Mäher, teils geradeaus und teils in Achterfig
 
 Die Ausrichtung ist korrekt initialisiert, wenn:
 
-- die Darstellung bei Geradeausfahrt ebenfalls geradeaus fährt und nicht springt
-- die Darstellung beim Drehen auf der Stelle an derselben Position bleibt und nicht springt
+- sich das Mähersymbol in der App bei Geradeausfahrt ebenfalls geradeaus bewegt und nicht springt
+- das Mähersymbol beim Drehen auf der Stelle an derselben Position bleibt und nicht springt
 
 ## Schritt 4.3: Eine einfache Karte erfassen
 
@@ -63,7 +63,7 @@ Der Roboter kennt jetzt seine Position, und du weißt, welche Bereiche du erfass
 
 ![Umrandung erfassen]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/record_outline.jpg)
 
-- Fahre den Roboter an den Rand der Fläche und richte ihn so aus, dass du **gegen den Uhrzeigersinn** fahren kannst.
+- Steuere den Roboter an den Rand der Fläche und richte ihn so aus, dass du **gegen den Uhrzeigersinn** fahren kannst.
 - Starte die Aufzeichnung mit **Start Recording**.
 - Fahre um die Mähfläche herum. Achte darauf, dass der GPS-Status durchgehend „Fixed“ bleibt.
 - Beende die Aufzeichnung mit **Stop Recording**.
@@ -85,7 +85,7 @@ Wenn du Bereiche ausschließen möchtest, zum Beispiel feste Hindernisse, gehe s
 
 ![Fläche speichern]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/save_mowing_area.jpg)
 
-Wenn du mit der Aufzeichnung zufrieden bist, klicke auf **Finish Area**. Ein Dialog fragt, ob du die Fläche als Mäh- oder Navigationsfläche speichern möchtest. Du kannst die Aufzeichnung dort auch verwerfen.
+Wenn du mit der Aufzeichnung zufrieden bist, klicke auf **Finish Area**. Im Dialog kannst du auswählen, ob du die Fläche als Mäh- oder Navigationsfläche speichern möchtest. Du kannst die Aufzeichnung dort auch verwerfen.
 
 Nach dem Speichern wird die Fläche ausgefüllt dargestellt: Mähflächen grün, Navigationsflächen weiß.
 
@@ -105,4 +105,4 @@ So erfasst du die Andockposition:
 
 ![Mähen starten]({{< relref "/docs/Knowledge-Base/operation/record-areas" >}}/images/start_mowing.jpg)
 
-Beende die Flächenerfassung mit **Exit Recording**. Der Mäher sollte in den Modus **IDLE** wechseln. Mit **Start** kannst du nun das Mähen beginnen. Der Mäher dockt ab, wartet auf GPS und mäht die Fläche.
+Beende die Flächenerfassung mit **Exit Recording**. Der Mäher sollte in den Modus **IDLE** wechseln. Mit **Start** startest du den Mähvorgang. Der Mäher dockt ab, wartet auf ein GPS-Signal und mäht die Fläche.

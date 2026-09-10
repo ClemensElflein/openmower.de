@@ -19,7 +19,7 @@ Zwischen v1.0.0 und v1.0.2 erschienen drei Edge-Vorabversionen. Hier findest du 
 
 - **Besseres Andocken** – Optionale Verzögerung nach der Spannungserkennung beim Andocken; der Grund jedes Andockvorgangs wird protokolliert.
 - **Not-Aus-Zustand über die App zurücksetzen** – Die OpenMower-App kann den Not-Aus-Zustand jetzt aus der Ferne zurücksetzen.
-- **Konfiguration als JSON Schema** – Die Mäherkonfiguration wird jetzt durch ein JSON Schema beschrieben. Das erleichtert Validierung und passende Werkzeuge.
+- **Konfiguration als JSON Schema** – Die Mäherkonfiguration wird jetzt durch ein JSON Schema beschrieben. Damit lässt sich die Konfiguration leichter auf Fehler prüfen, und passende Konfigurationswerkzeuge lassen sich einfacher entwickeln.
 - **Entwicklungsumgebung in Docker** – Eine vollständig containerisierte Entwicklungsumgebung wurde ergänzt.
 
 ### v1.0.1-edge.0 – 2024-05-31
@@ -27,4 +27,4 @@ Zwischen v1.0.0 und v1.0.2 erschienen drei Edge-Vorabversionen. Hier findest du 
 - **Zuverlässigeres Andocken** – Kurze Spannungseinbrüche durch Stromspitzen beim Mähen werden jetzt toleriert, ohne eine Rückkehr zur Ladestation auszulösen.
 - **Vorzeichen bei NMEA-GPS korrigiert** – Falsches Vorzeichen im Bewegungsvektor bei NMEA-GPS-Geräten behoben.
 - **Slic3r-Absturz behoben** – Speicherzugriffsfehler im Flächenplaner korrigiert.
-- **Randbahnen korrigiert** – Das Verbinden von Randbahnen bei Inseln in der Karte wurde repariert.
+- **Randbahnen korrigiert** – Ein Fehler beim Verbinden von Randbahnen um Inseln in der Karte wurde behoben.
