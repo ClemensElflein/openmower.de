@@ -24,7 +24,7 @@
   {{- end -}}
 </title>
 <meta name="description" content="{{ template "partials/page-description.html" . }}">
-{{ partial "opengraph.html" . | replaceRE (printf `content="%s"` .Permalink) (printf `content="%s"` (partial "canonical-url.html" .)) | safeHTML -}}
+{{ replace (partial "opengraph.html" .) (printf `content="%s"` .Permalink) (printf `content="%s"` (partial "canonical-url.html" .)) | safeHTML -}}
 {{ template "_internal/schema.html" . -}}
 {{ template "_internal/twitter_cards.html" . -}}
 {{ partialCached "head-css.html" . "" -}}
