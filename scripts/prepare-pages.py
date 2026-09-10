@@ -8,8 +8,24 @@ import argparse
 import csv
 import html
 import shutil
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
+
+
+class PageMetadata(HTMLParser):
+    def __init__(self, path):
+        super().__init__()
+        self.redirect = False
+        self.canonical = None
+        self.feed(path.read_text())
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == 'meta' and attrs.get('http-equiv', '').lower() == 'refresh':
+            self.redirect = True
+        if tag == 'link' and attrs.get('rel') == 'canonical':
+            self.canonical = attrs.get('href')
 
 
 def redirect_page(target):
@@ -27,7 +43,11 @@ def prepare(latest, root, origin, inventory):
     parsed = urlsplit(origin)
     if parsed.scheme not in ('http', 'https') or not parsed.netloc or parsed.path:
         raise ValueError('origin must be an HTTP(S) origin without a path')
+    home = PageMetadata(latest / "index.html")
+    if home.redirect or home.canonical != origin + "/":
+        raise ValueError("Expected a fresh latest build with the root homepage canonical")
     planned = []
+    seen = set()
     with inventory.open() as source:
         for row in csv.DictReader(source):
             old, target = row['old_path'], row['replacement_path']
@@ -37,10 +57,13 @@ def prepare(latest, root, origin, inventory):
             if not target.startswith('/latest/') or old == target:
                 raise ValueError(f'Invalid redirect: {old} -> {target}')
             replacement = latest / target.removeprefix('/latest/') / 'index.html'
-            if not replacement.is_file() or 'http-equiv="refresh"' in replacement.read_text():
+            if not replacement.is_file() or PageMetadata(replacement).redirect:
                 raise ValueError(f'Missing or non-final target: {target}')
             output = (latest / old.removeprefix('/latest/') if old.startswith('/latest/')
                       else root / old.lstrip('/')) / 'index.html'
+            if output in seen:
+                raise ValueError(f"Duplicate redirect destination: {output}")
+            seen.add(output)
             if output.exists():
                 raise ValueError(f'Redirect would overwrite an existing page: {output}')
             planned.append((output, origin + target))
