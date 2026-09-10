@@ -80,4 +80,6 @@ See this [section](https://www.docsy.dev/docs/get-started/docsy-as-module/instal
 
 ## Languages
 
-The site supports English and German.
+The site supports English and German. On the first visit, it selects a supported
+browser language (English by default). A choice in the language menu is remembered.
+Pages without a matching translation stay in their original language.

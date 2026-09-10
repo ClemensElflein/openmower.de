@@ -1,0 +1,6 @@
+{{- $targets := dict .Language.Lang (urls.Parse (partial "canonical-url.html" .)).Path -}}
+{{- range .Translations -}}
+  {{- $targets = merge $targets (dict .Language.Lang (urls.Parse (partial "canonical-url.html" .)).Path) -}}
+{{- end -}}
+{{- $script := resources.Get "js/language-preference.js" | minify -}}
+<script data-page-language="{{ .Language.Lang }}" data-language-targets="{{ $targets | jsonify }}">{{ $script.Content | safeJS }}</script>
