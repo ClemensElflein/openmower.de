@@ -6,6 +6,9 @@ description: >
   Connect the mower to WiFi.
 ---
 
+{{% alert title="Running OpenMowerOS v3+?" color="info" %}}
+As of OpenMowerOS v3, WiFi setup uses Bluetooth or USB (Improv Wi-Fi) instead of the hotspot method below. Use the [WiFi Setup via Bluetooth or USB]({{< relref "/docs/Knowledge-Base/installation/wifi-setup-ble" >}}) guide instead.
+{{% /alert %}}
 
 ## Step 3.0: Ensure the Robot has Power
 Make sure that the Robot does not drain the battery, it probably will be empty until your setup is finished.
