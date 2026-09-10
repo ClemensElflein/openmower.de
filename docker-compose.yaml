@@ -1,10 +1,18 @@
-version: "3"
-
 services:
   website:
     image: klakegg/hugo:0.111.3-ext-ubuntu
     restart: on-failure
-    entrypoint: /bin/bash -c "mkdir -p /tmp/.npm && chown -R 1000:1000 /tmp/.npm && npm install --no-bin-links && scripts/gen-doc-versions.sh && hugo server --config config.toml,config/_generated_versions.toml,config/_ci_override.toml --poll 1s"
+    entrypoint:
+      - /bin/bash
+      - -ec
+      - |
+        mkdir -p /tmp/.npm
+        chown -R 1000:1000 /tmp/.npm
+        # Hugo is supplied by the image; only install the theme's runtime assets.
+        npm install --ignore-scripts
+        npm --prefix themes/docsy install --omit=dev --ignore-scripts
+        scripts/gen-doc-versions.sh
+        exec hugo server --config config.toml,config/_generated_versions.toml --bind 0.0.0.0 --liveReloadPort 8080 --poll 1s
     volumes:
       - .:/src
     ports:
