@@ -14,9 +14,9 @@ Die Schritte im Überblick:
  * Spikes von innen befestigen
  * Alles wieder zusammenbauen
 
-Auswirkungen:
+Was sich dadurch ändert:
  * Deutlich bessere Haftung auf Gras
  * Geräusche auf Pflaster
- * Fliesen können wahrscheinlich beschädigt werden
+ * Fliesen könnten dabei beschädigt werden
 
 {{< image-gallery gallery_dir="images" >}}

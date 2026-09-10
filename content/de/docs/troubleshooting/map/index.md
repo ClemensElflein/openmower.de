@@ -17,14 +17,14 @@ Die Karte liegt standardmäßig unter
 /home/openmower/ros/map.json
 ```
 
-Du kannst deine aktuelle Karte jederzeit sichern, indem du dich per SSH anmeldest und die .json-Datei kopierst.
+Du kannst deine aktuelle Karte jederzeit sichern, indem du dich per SSH anmeldest und die `map.json`-Datei kopierst.
 
 Zum Herunterladen der Datei kannst du einen SFTP-Client wie WinSCP oder Cyberduck verwenden.
 ```bash
 sudo cp /home/openmower/ros/map.json /home/openmower/ros/map.json.backup
 ```
 
-So löschst du die Karte
+So löschst du die Karte:
 ```bash
 # stop the openmower service so that it doesnt access the map anymore
 openmower stop

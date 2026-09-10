@@ -4,7 +4,7 @@ date: 2025-06-07
 author: "Clemens Elflein"
 description: "Die modulare, mäherunabhängige v2-Hardwareplattform ist da: drei Trägerplatinen-Entwürfe, neu geschriebene Firmware und vollständig offene Software."
 ---
-Seit dem letzten ausführlichen OpenMower-Update ist eine Weile vergangen – tatsächlich drei Jahre. Damals war das Projekt kaum mehr als ein Prototyp. Keine Kits, keine ausgereifte Bedienung, nur ein paar gelötete Platinen und Befehle im Terminal.
+Seit dem letzten ausführlichen OpenMower-Update ist eine Weile vergangen – tatsächlich drei Jahre. Damals war das Projekt kaum mehr als ein Prototyp. Es gab weder Kits noch eine komfortable Bedienoberfläche, nur ein paar gelötete Platinen und Befehle im Terminal.
 
 Inzwischen hat sich OpenMower deutlich weiterentwickelt.
 
@@ -17,7 +17,7 @@ Die Community ist drangeblieben, und gemeinsam haben wir viel geschafft:
 - ✅ **Fertige Hardware-Kits** sind erhältlich.
 - ✅ **Bessere Dokumentation** erleichtert den Einstieg erheblich.
 - ✅ Ein **einsatzbereites Betriebssystem-Image** lädt die aktuelle Software über Docker. Danke an [@DocGalaxyBlock](https://github.com/docgalaxyblock)!
-- ✅ Eine **eigene App** ermöglicht es, Mähflächen einzulernen, Aufträge zu starten und den Fortschritt zu verfolgen.
+- ✅ Eine **eigene App** ermöglicht es, Mähflächen zu erfassen, Aufträge zu starten und den Fortschritt zu verfolgen.
 - ✅ Die **Software läuft deutlich stabiler.**
 - ✅ Es gibt sogar eine **Home-Assistant-Integration** aus der Community!
 
@@ -36,7 +36,7 @@ Das wollten wir ändern – mit einer **modularen Hardwareplattform, die unabhä
 
 ##### **Das neue Hardwarekonzept**
 
-Über ein Jahr lang habe ich die Hardware von Grund auf neu entworfen, um OpenMower weiterzubringen. Die neue Architektur teilt die Hardware in zwei Teile:
+Über ein Jahr lang habe ich die Hardware von Grund auf neu entworfen, um OpenMower weiterzubringen. Die neue Hardware besteht aus zwei Hauptkomponenten:
 
 - **Ein universelles Core-Board**
 - **Einfache, modellspezifische Trägerplatinen**
@@ -52,13 +52,13 @@ Das **Core-Board** ist die zentrale Recheneinheit. Es enthält:
 
 Dieses Core-Board bleibt bei allen Mähern gleich.
 
-Die **Trägerplatinen** sind dagegen auf das jeweilige Mähermodell zugeschnitten. Sie übernehmen:
+Die **Trägerplatinen** sind dagegen auf das jeweilige Mähermodell zugeschnitten. Sie stellen folgende Funktionen und Anschlüsse bereit:
 
 - Stromversorgung
 - LiPo-Ladeschaltung mit Konfiguration und Überwachung per Software
 - Motortreiber
 - Physische Anschlüsse
-- EEPROM, damit das Core-Board den Mäher, auf dem die Software läuft, automatisch erkennen kann
+- EEPROM, über das das Core-Board das Mähermodell automatisch erkennen kann
 - Außerdem sind ein I2S-Soundchip, eine 12-V-Versorgung und ein Anschluss für eigene Erweiterungen vorhanden
 
 Die Trägerplatinen sollen möglichst einfach bleiben, damit sie sich leicht an neue Mäher anpassen lassen.
@@ -127,8 +127,8 @@ Eine kleine **Beta-Testrunde** haben wir ebenfalls abgeschlossen, mit guten Erge
 Wir sind noch nicht fertig. Das steht als Nächstes an:
 
 - 🚀 **Umstieg auf ROS2** – ROS1 hat sein Supportende erreicht
-- 📅 **Visuelle Zeitplanung**
-- 🧠 **Hindernisvermeidung**
+- 📅 **Mähzeiten über eine grafische Oberfläche planen**
+- 🧠 **Hindernisse erkennen und umfahren**
 - 🛠️ **Allgemeine Verbesserungen der Bedienbarkeit**
 
 An vielen dieser Themen arbeitet die Community bereits. Es ist spannend zu sehen, wie aus dem praktischen Einsatz neue Funktionen entstehen.
@@ -159,4 +159,4 @@ Doch. Die Software bleibt mit der bisherigen Hardware kompatibel.
 Das neue Kit kostet fast genauso viel wie das bisherige, obwohl es mehr kann.
 
 #### Brauche ich die neue Hardware, um die OpenMower-Software zu verwenden?
-Nein. Es gibt eine klar definierte Schnittstelle zur unteren Kommunikationsebene. Eigene Umbauten mit per Reverse Engineering erschlossener Originalhardware oder anderer eigener Hardware sind weiterhin möglich.
+Nein. Die Software kommuniziert über eine klar definierte Schnittstelle mit der Hardware. Du kannst weiterhin die Originalelektronik eines Mähers per Reverse Engineering an diese Schnittstelle anbinden oder eigene Hardware verwenden.

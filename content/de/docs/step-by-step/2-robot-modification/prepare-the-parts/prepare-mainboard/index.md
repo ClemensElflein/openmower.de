@@ -40,7 +40,7 @@ Montiere nun das CM4 auf dem xCore:
 
 ## Schritt 2.3.2: CM4-Kühlkörper montieren
 
-**__(Optional, außer den Abstandshaltern am Ende)__**
+**Der Kühlkörper ist optional. Die am Ende gezeigten Abstandshalter musst du aber auch ohne Kühlkörper einsetzen.**
 
 {{% alert title="Hinweis" color="info" %}}
 Dieser Schritt hängt von deinem Kühlkörper ab. Die Bilder zeigen den Kühlkörper von Berry Base; bei anderen Modellen ist das Vorgehen ähnlich.

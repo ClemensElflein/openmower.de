@@ -4,14 +4,14 @@ linkTitle: "GPIO-Eingänge konfigurieren"
 weight: 220
 description: >-
   Richte mit dem OpenMower-Eingabedienst GPIO-Eingänge für Not-Aus-Taster,
-  Radanhebesensoren und weitere Hardwaretasten ein.
+  Sensoren zum Erkennen angehobener Räder und weitere Taster ein.
 ---
 ## Überblick
 
 In OpenMower kannst du GPIO-Pins als digitale Eingänge konfigurieren, die einen Not-Aus oder andere Ereignisse auslösen. Typische Anwendungen sind:
 
-- **Radanhebesensoren**: erkennen, wenn der Mäher angehoben wird
-- **Stopptasten**: physische Not-Aus-Tasten auf dem Mäher
+- **Sensoren an den Rädern**: erkennen, wenn der Mäher angehoben wird
+- **Stopptasten**: Not-Aus-Tasten am Mäher
 - **Kollisionssensoren**: erkennen, wenn der Mäher gegen ein Hindernis fährt
 
 ## Schritt 1: Konfigurationsdatei für die Eingänge anlegen
@@ -100,7 +100,7 @@ Die grün markierten Stecker/GPIOs gehören zur Hall-MUX-Einstellung `om`, die o
 
 ### OpenMower-YardForce-Platine bis v1.1.0-beta
 
-Blick auf die Platine mit den Ethernet-Ports unten links. Die Pins sind von oben nach unten aufgelistet.
+Halte die Platine so, dass die Ethernet-Ports unten links liegen. Die Pins sind von oben nach unten aufgelistet.
 
 | Position      | GPIO   |
 | ------------- | ------ |
@@ -116,7 +116,7 @@ Blick auf die Platine mit den Ethernet-Ports unten links. Die Pins sind von oben
 
 ### OpenMower-Universal-Board
 
-Blick auf die Platine mit den Ethernet-Ports zu dir hin.
+Halte die Platine so, dass die Ethernet-Ports zu dir zeigen.
 
 | Position     | GPIO   |
 | ------------ | ------ |

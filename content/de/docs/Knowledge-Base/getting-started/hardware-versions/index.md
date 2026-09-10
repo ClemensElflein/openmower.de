@@ -2,7 +2,7 @@
 title: "Hardware-Versionen und bekannte Probleme"
 linkTitle: "Hardware-Versionen"
 weight: 40
-description: "Unterscheide OpenMower-v1- und v2-Hardware, finde die Repositories der Trägerplatinen und informiere dich über ältere Versionen, bekannte Fehler und Korrekturen."
+description: "Unterschiede zwischen OpenMower-v1- und v2-Hardware, Repositories der Trägerplatinen sowie Informationen zu älteren Versionen, bekannten Fehlern und Korrekturen."
 resources:
   - src: "**.jpg"
 ---
@@ -54,7 +54,7 @@ Ein Umstieg auf v2 bringt dir in diesem Fall keinen wirklichen Vorteil. Für neu
 
 #### Bekannte Probleme
 
- * Die SPI-Leiterbahnen vom Pico waren falsch verlegt. Das ist bereits in der Firmware behoben. Du musst nichts unternehmen.
+ * Die SPI-Leiterbahnen vom Pico waren falsch verlegt. Die Firmware gleicht diesen Fehler bereits aus. Du musst nichts unternehmen.
  * [Veraltete Firmware](https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/)
  * [Falscher IC2-Chip](https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/)
  * [Regensensorkabel hat eine Buchse, benötigt aber einen Stecker](https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/)

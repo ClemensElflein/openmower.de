@@ -25,7 +25,7 @@ description: "Umbauanleitung für SABO MOWiT 500F / John Deere Tango E5"
 1. Lege den Mäher auf den Rücken und entferne die sechs 10-mm-Schrauben am Gehäuse.
 2. Entferne das Messer mit dem 5-mm-Inbusschlüssel. Es hat ein Rechtsgewinde. Trage Handschuhe und halte das Messer beim Lösen sicher fest.
 3. Halte das Gehäuse mit beiden Händen zusammen und stelle den Mäher wieder auf die Räder.
-4. Öffne die Abdeckung auf der Griffseite hinten um einige Zentimeter.
+4. Öffne die Abdeckung hinten an der Griffseite um einige Zentimeter.
 5. Leuchte mit einer Taschenlampe hinein und löse die Display-Flachbandkabel:
    - Serie I: Zwei Flachbandkabel führen zur CoverUI. Jeder Stecker hat kleine seitliche Verriegelungen. Drücke sie zum Entriegeln und ziehe die Stecker dann vom Mainboard ab.
    - Serie II: Ein Flachbandkabel. Ziehe es gerade aus dem Mainboard-Anschluss. Es hat keine Verriegelung.
@@ -65,12 +65,12 @@ Die WLAN-Klebeantenne kannst du wie gezeigt platzieren:
 
 ## Schritt 2.4.5: GPS-Antenne, zum Beispiel HA/HX-901, auf der Abdeckung montieren 🛰️
 
-Eine alternative Halterung für den Innenraum, die ohne Eingriffe ins Gehäuse auskommt, hat [STS entworfen](https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808). Weitere Details und gegebenenfalls STL-Dateien findest du in der Discord-Diskussion.
+Eine alternative Halterung für die Montage im Gehäuse, bei der du das Gehäuse nicht bearbeiten musst, hat [STS entworfen](https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808). Weitere Details und gegebenenfalls STL-Dateien findest du in der Discord-Diskussion.
 
 1. Bohre ein Loch mit 6,5 bis 7 mm Durchmesser ungefähr an der auf den Bildern gezeigten Stelle in die Abdeckung.
 2. Montiere das mitgelieferte 30–40 cm lange SMA-Verlängerungskabel. Der SMA-Durchführungsanschluss muss weit genug herausragen, damit sich die HA/HX-901 vollständig aufschrauben lässt und guten Kontakt hat. Lass im Zweifel innen eine Unterlegscheibe oder einen Abstandshalter weg, um mehr Gewindelänge zu erhalten.<br>
    Dichte den Anschluss von oben mit Silikon oder einem ähnlichen Dichtmittel ab. Verwende oben nicht zu viel, damit sich die HA/HX-901 später noch aufschrauben lässt.
-3. Dichte auch die Innenseite gründlich ab, damit kein Wasser eindringen kann. Innen gilt beim Dichtmittel: *Mehr ist besser.*
+3. Dichte auch die Innenseite gründlich ab, damit kein Wasser eindringen kann. Verwende auf der Innenseite großzügig Dichtmittel.
 4. Lass das Dichtmittel ausreichend aushärten, bevor du weitermachst.
 
 {{< image-gallery gallery_dir="images/gps-antenna" >}}

@@ -14,7 +14,7 @@ Die Karte legt Rasengrenzen, feste Hindernisse und Verbindungswege fest. Du muss
 
 Der Mäher braucht zuverlässigen Satellitenempfang und fortlaufend Korrekturdaten. Gebäude und Bäume in der Nähe können den Empfang stören. Eine normale GPS-Position ohne RTK-Fix reicht für präzises Mähen nicht aus. Lies die [Anleitung zur GPS-Fehlersuche]({{% relref "/docs/troubleshooting/gps-rtk" %}}), wenn du die Eignung deines Gartens prüfst.
 
-Du kannst eine [eigene Basisstation einrichten]({{% relref "/docs/knowledge-base/gps/rtk-base-setup" %}}) oder einen geeigneten Korrekturdienst nutzen. Berücksichtige Empfänger, Antenne, Datenverbindung und mögliche Dienstgebühren in deinem [Budget für die Bauteile]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}}).
+Du kannst eine [eigene Basisstation einrichten]({{% relref "/docs/knowledge-base/gps/rtk-base-setup" %}}) oder einen geeigneten Korrekturdienst nutzen. Berücksichtige Empfänger, Antenne, Datenverbindung und mögliche Gebühren des Korrekturdienstes bei deiner [Kostenplanung]({{% relref "/docs/knowledge-base/getting-started/shopping-list" %}}).
 
 ## Positionsbestimmung / Koordinatensystem
 

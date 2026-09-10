@@ -4,7 +4,7 @@ date: 2026-03-16
 author: "Clemens Elflein"
 description: "Korrekturversion: Inaktive Flächen überspringen, chronologische Echtzeit-Logs, Parameter über MQTT und Filter für Meta-RPC-Anfragen."
 ---
-[v1.1.1](https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.1.1) ist eine gezielte Korrekturversion auf Basis von v1.1.0.
+[v1.1.1](https://github.com/ClemensElflein/open_mower_ros/releases/tag/v1.1.1) baut auf v1.1.0 auf und behebt mehrere Fehler.
 
 ### Was ist neu?
 

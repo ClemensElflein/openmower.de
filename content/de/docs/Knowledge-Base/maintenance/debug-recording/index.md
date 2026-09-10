@@ -2,12 +2,12 @@
 title: "Diagnoseaufzeichnung erstellen"
 linkTitle: "Diagnoseaufzeichnung"
 weight: 610
-description: "So zeichnest du ein rosbag zur Untersuchung von Positionsproblemen und anderen Fehlern auf und lädst es zum Teilen vom Mäher herunter."
+description: "So erstellst du mit rosbag eine Aufzeichnung zur Untersuchung von Positionsproblemen und anderen Fehlern und lädst sie vom Mäher herunter."
 ---
 Bei der Fehlersuche, besonders bei Positionsproblemen, liefert eine rosbag-Aufzeichnung den Entwicklern eine vollständige Momentaufnahme der Sensordaten. Diese Anleitung zeigt dir, wie du sie erstellst und vom Mäher herunterlädst.
 
 {{% alert title="Hinweis zum Datenschutz" color="warning" %}}
-Ein rosbag enthält rohe Sensordaten, darunter die **GPS-Position deines Mähers**. Wenn du die Datei teilst, gibst du damit den Standort deines Gartens preis. Teile sie nur mit Personen, denen du vertraust.
+Eine rosbag-Datei enthält unverarbeitete Sensordaten, darunter die **GPS-Position deines Mähers**. Wenn du die Datei teilst, gibst du damit den Standort deines Gartens preis. Teile sie nur mit Personen, denen du vertraust.
 {{% /alert %}}
 
 ## Voraussetzungen
@@ -34,7 +34,7 @@ Damit werden **alle** aktiven ROS-Topics aufgezeichnet. Lass das Terminal offen.
 
 ## Schritt 2: Flächenerfassung aktivieren
 
-Öffne die OpenMower-App und aktiviere den **Modus zur Flächenerfassung**, den du auch zum Aufzeichnen der Mähflächen verwendest. Dadurch senden alle relevanten Topics für GPS, IMU und Radodometrie mit voller Rate.
+Öffne die OpenMower-App und aktiviere den **Modus zur Flächenerfassung**, den du auch zum Aufzeichnen der Mähflächen verwendest. Dadurch werden die Daten für GPS, IMU und Radodometrie auf den jeweiligen Topics mit der vollen Aktualisierungsrate veröffentlicht.
 
 {{% alert title="GPS-Fix erforderlich" color="warning" %}}
 Das GPS-Symbol in der App muss **grün** sein, bevor du losfährst. Daten einer Aufzeichnung ohne Fix lassen sich für die Analyse nicht verwenden.
@@ -42,7 +42,7 @@ Das GPS-Symbol in der App muss **grün** sein, bevor du losfährst. Daten einer 
 
 ## Schritt 3: Testmuster fahren
 
-Fahre die folgenden Muster ab. Jedes prüft einen anderen Aspekt der Positionsbestimmung:
+Fahre die folgenden Muster ab. Mit jedem prüfst du einen anderen Aspekt der Positionsbestimmung:
 
 | Muster | Zweck |
 |---|---|
@@ -93,7 +93,7 @@ Verwende auf **älteren Windows-Versionen** stattdessen einen grafischen SFTP-Cl
 - **[WinSCP](https://winscp.net)** – kostenlos und quelloffen
 - **[Cyberduck](https://cyberduck.io)** – kostenlos und plattformübergreifend
 
-Verbinde dich mit Protokoll **SFTP**, Host `<mower-ip>` und Benutzer `openmower`. Öffne `/home/openmower/recordings/`, um die Datei herunterzuladen.
+Wähle als Protokoll **SFTP**, als Host `<mower-ip>` und als Benutzer `openmower`. Öffne `/home/openmower/recordings/`, um die Datei herunterzuladen.
 {{% /tab %}}
 
 {{< /tabpane >}}

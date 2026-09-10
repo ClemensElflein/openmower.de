@@ -16,7 +16,7 @@ description: "3,3-V-Versorgung des EEPROM korrigiert, SATA durch XH-Steckverbind
 
 **I2C4-EEPROM-Pins** – Pins für die I2C4-EEPROM-Schnittstelle wurden ergänzt.
 
-**Stückliste korrigiert** – Korrekturen an der Stückliste.
+**Fehler in der Stückliste korrigiert.**
 
 ### Download
 

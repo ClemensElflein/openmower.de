@@ -10,7 +10,7 @@ Du findest sie hier: **[github.com/xtech/openmower-app](https://github.com/xtech
 
 ### Was sie bisher kann
 
-Aktuell enthält die App einen **Karteneditor** und einige Diagnoseinformationen. Den Karteneditor wollten wir euch zuerst zur Verfügung stellen: Er ist der nützlichste Einstieg und ermöglicht es, Mähflächen direkt im Browser zu verwalten.
+Aktuell enthält die App einen **Karteneditor** und einige Diagnoseinformationen. Wir veröffentlichen zunächst den Karteneditor, weil er schon jetzt besonders nützlich ist: Damit kannst du deine Mähflächen direkt im Browser verwalten.
 
 Wenn du **OpenMowerOS v2** nutzt, ist die Einrichtung unkompliziert:
 
@@ -47,4 +47,4 @@ Du solltest **ROS v1.1.1** verwenden, das [zeitgleich veröffentlicht wurde]({{<
 
 Nach einigem Überlegen haben wir uns für **OpenMower-App** entschieden, obwohl die bisherige App bereits so heißt. Sobald die neue App ausgereift ist, wird die alte abgelöst. Damit erledigt sich auch die Verwechslungsgefahr.
 
-Weitere Funktionen sind unterwegs. Tolle Arbeit, rovo89 – das ist erst der Anfang!
+Weitere Funktionen folgen. Tolle Arbeit, rovo89 – das ist erst der Anfang!

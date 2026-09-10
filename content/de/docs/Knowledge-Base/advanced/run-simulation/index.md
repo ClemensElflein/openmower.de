@@ -7,13 +7,13 @@ description: "Starte die vollständige OpenMower-Software mit einem simulierten 
 ---
 ## Überblick
 
-Die Simulation betreibt die **echte** `open_mower_ros`-Logik und die OpenMower-App mit einem simulierten Mäher. `mower_logic`, Navigation, Flächenplanung, Überwachung und die übrigen Komponenten laufen unverändert. Nur die untere Hardwareebene mit Antrieb, Mähmotor, IMU, Stromversorgung und GPS wird durch den Knoten `mower_simulation` nachgebildet.
+In der Simulation laufen die **echte** `open_mower_ros`-Software und die OpenMower-App mit einem simulierten Mäher. `mower_logic`, Navigation, Flächenplanung, Überwachung und die übrigen Komponenten laufen unverändert. Der Knoten `mower_simulation` bildet dabei die Funktionen des Mainboards nach: Antrieb, Mähmotor, IMU, Stromversorgung und GPS.
 
 Damit kannst du:
 
 - OpenMower ausprobieren, bevor du Hardware kaufst oder umbaust.
 - Bestimmte Kombinationen von `open_mower_ros`- und App-Versionen testen.
-- Verhalten nachstellen und Fehler untersuchen, ohne einen Roboter im Garten zu brauchen.
+- Das Verhalten des Mähers nachstellen und Fehler untersuchen, ohne dafür einen Roboter im Garten fahren zu lassen.
 
 Alles läuft in Docker und wird über das kleine Hilfsskript `sim.sh` gesteuert.
 
@@ -34,7 +34,7 @@ Führe im Verzeichnis `open_mower_ros/docker-simulation/` aus:
 
 Beim ersten Start wird das Simulations-Image lokal gebaut. Das kann einige Minuten dauern. Spätere Starts verwenden das fertige Image und dauern nur Sekunden.
 
-Gib der Simulation nach dem Start etwa eine Minute, bis sie als funktionsfähig gemeldet wird. Öffne dann im Browser:
+Warte nach dem Start etwa eine Minute, bis die Simulation als betriebsbereit gemeldet wird. Öffne dann im Browser:
 
 | URL | Inhalt |
 |---|---|
@@ -60,11 +60,11 @@ Wenn Docker auf einem anderen Rechner läuft, ersetze `localhost` durch dessen A
     );
 </script>
 
-Eine Beispiel-Mähfläche, ein Andockpunkt und eine Mäherkonfiguration sind bereits eingerichtet. Du kannst sofort losfahren und startest nicht mit einer leeren Karte.
+Eine Beispielkarte mit Mähfläche und Andockpunkt sowie eine passende Mäherkonfiguration sind bereits eingerichtet. Du kannst sofort losfahren.
 
 ## Simulationsansicht (noVNC)
 
-Unter `http://localhost:6080` öffnest du RViz, die Darstellung des simulierten Mähers und seiner Karte. Hier kannst du beobachten, wie der Mäher fährt, Bahnen folgt und andockt.
+Unter `http://localhost:6080` öffnest du RViz, die Darstellung des simulierten Mähers und seiner Karte. Hier kannst du beobachten, wie der Mäher seine Bahnen abfährt und an der Ladestation andockt.
 
 ![Simulationsansicht im Browser mit noVNC / RViz]({{< relref "/docs/Knowledge-Base/advanced/run-simulation" >}}/images/novnc-rviz.png)
 
@@ -80,13 +80,13 @@ Du kannst einen Mähauftrag auf der vorbereiteten Fläche starten und in der Sim
 
 ## Testzustände in der Simulation erzeugen
 
-Die Simulation stellt eine **sim-control**-Ebene bereit. Über die App lässt sich der Mäher damit in Situationen versetzen, die auf echter Hardware nur schwer, langsam oder mit Beschädigungsrisiko nachzustellen wären. Gleichzeitig empfängt die App einen laufenden Simulationsstatus. Das ist ein wesentlicher Grund, zusätzlich zum Test im Garten die Simulation zu verwenden.
+Über die **sim-control**-Schnittstelle kannst du in der App gezielt bestimmte Situationen erzeugen. Mit einem echten Mäher wäre das oft aufwendig, zeitintensiv oder mit dem Risiko verbunden, die Hardware zu beschädigen. Die App zeigt den Zustand der Simulation dabei laufend an. So ergänzt die Simulation die Tests im Garten.
 
 Du kannst:
 
-- **Jederzeit manuell eingreifen** – In der Beispielkonfiguration ist `always_allow_joystick` gesetzt. Manuelle Geschwindigkeitsbefehle überschreiben die Eingaben des Mähers unabhängig davon, was die Software gerade tut. Du kannst ihn mitten beim Mähen vom Kurs abbringen und beobachten, wie er zurückfindet.
+- **Jederzeit manuell eingreifen** – In der Beispielkonfiguration ist `always_allow_joystick` gesetzt. Deine manuellen Fahrbefehle haben damit Vorrang, unabhängig davon, was die Software gerade tut. Du kannst ihn mitten beim Mähen vom Kurs abbringen und beobachten, wie er zurückfindet.
 - **Not-Aus auslösen und zurücksetzen** – Prüfe, ob der Mäher korrekt stoppt und den Betrieb wieder aufnimmt.
-- **Einen festgefahrenen Mäher simulieren** – Die Räder melden weiter Odometriedaten, während die tatsächliche Position stehen bleibt. So kannst du die Erkennung und Befreiung aus dieser Situation testen.
+- **Einen festgefahrenen Mäher simulieren** – Die Räder melden weiter Odometriedaten, während der Mäher tatsächlich auf der Stelle bleibt. So kannst du testen, ob er erkennt, dass er feststeckt, und sich wieder befreien kann.
 - **Die Akkuspannung einstellen** – Senke sie ab, um Unterspannung und die Rückkehr zum Laden zu testen, oder simuliere einen Ladevorgang.
 - **Die GPS-Qualität umschalten** – Wechsle zwischen einem guten RTK-Fix mit etwa 2 cm Genauigkeit und einem Zustand ohne Fix mit etwa 1 m Genauigkeit. So prüfst du, wie die Navigation auf GPS-Verlust reagiert.
 - **Die Position versetzen oder springen lassen** – Versetze den Mäher oder ändere seine Ausrichtung leicht, um die Reaktion auf einen fehlerhaften GPS-Sprung zu testen.
@@ -131,7 +131,7 @@ Baue nach einer Versionsänderung neu, damit sie übernommen wird:
 | `./sim.sh logs [service]` | Logs mitlesen, zum Beispiel `./sim.sh logs open_mower_ros` |
 | `./sim.sh ps` | Containerstatus anzeigen |
 | `./sim.sh reset` | Mitgelieferte Beispielkarte und Parameter wiederherstellen |
-| `./sim.sh clean` | **Löscht Daten:** Gesamten Simulationszustand leeren; fragt vorher nach |
+| `./sim.sh clean` | **Löscht Daten:** Alle gespeicherten Simulationsdaten löschen; fragt vorher nach |
 
 ## Karte zurücksetzen
 
@@ -157,7 +157,7 @@ Wenn die Umgebung festzuhängen scheint, prüfe den Zustand des Simulationsconta
 ./sim.sh logs open_mower_ros
 ```
 
-- **`open_mower_ros` wartet auf die Simulation.** `mower_simulation_gui` startet absichtlich zuerst und stellt den ROS-Master bereit. `open_mower_ros` startet erst, wenn der Container als funktionsfähig gemeldet wird. Das entspricht dem echten Startablauf, bei dem die untere Hardwareebene vorhanden sein muss, bevor die ROS-Logik sie anspricht.
+- **`open_mower_ros` wartet auf die Simulation.** `mower_simulation_gui` startet absichtlich zuerst und stellt den ROS-Master bereit. `open_mower_ros` startet erst, wenn der Container als funktionsfähig gemeldet wird. Das entspricht dem echten Startablauf, bei dem das Mainboard bereit sein muss, bevor die ROS-Software darauf zugreift.
 - **Eine Änderung erscheint nicht?** Wenn die Umgebung schon lief, brauchst du wahrscheinlich `./sim.sh rebuild`. `up` allein baut nie selbstständig neu.
 - **Ports bereits belegt?** Ändere `NOVNC_PORT` / `VNC_PORT` in `.env`.
 - **GPU-Beschleunigung** ist standardmäßig ausgeschaltet und nicht nötig. Wenn du eine GPU hast, entferne die Kommentarzeichen des entsprechenden Blocks für `mower_simulation_gui` in `docker-compose.yaml`. Der Container erkennt die GPU automatisch und fällt auf Software-Rendering zurück, wenn sie nicht nutzbar ist.

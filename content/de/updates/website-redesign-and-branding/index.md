@@ -8,13 +8,13 @@ Die Dokumentation auf openmower.de hat ein komplett neues Erscheinungsbild bekom
 
 ### **Was sich auf der Website geändert hat**
 
-Die Website verwendet jetzt ein eigens angepasstes Theme, das direkt auf den OpenMower-Design-Tokens aufbaut: lokal bereitgestellte Schriften DM Sans und DM Mono, eine einheitliche Farbpalette aus Grün auf dunklem Hintergrund und eine Startseite, die klar zeigt, was das Projekt ist: eine GPL-lizenzierte Plattform auf Basis von ROS und RTOS, die die geschlossene, herstellerkontrollierte Firmware von Mährobotern ersetzt. Ohne Herstellerbindung und ohne undurchsichtige Blackbox.
+Die Website verwendet jetzt ein eigens angepasstes Theme auf Basis der OpenMower-Design-Tokens. Dazu gehören die lokal bereitgestellten Schriften DM Sans und DM Mono sowie eine einheitliche Farbpalette mit Grün auf dunklem Hintergrund. Die neue Startseite erklärt, was OpenMower bietet: eine GPL-lizenzierte Plattform auf Basis von ROS und RTOS, die die geschlossene Firmware von Mährobotern ersetzt. So lässt sich nachvollziehen, wie der Mäher funktioniert, ohne an das System eines Herstellers gebunden zu sein.
 
 ### **Das OpenMower-Designsystem**
 
 Mit [`design-openmower-branding`](https://github.com/ClemensElflein/OpenMower) haben wir jetzt ein versioniertes Designsystem, das dem Projekt auf jeder Plattform einen einheitlichen Auftritt gibt:
 
-- **Farbpalette** – Primärgrün `#1B9D52`, dunkle Graphitflächen und bernsteinfarbene Code-Akzente
+- **Farbpalette** – Primärgrün `#1B9D52`, graphitfarbene Hintergründe und bernsteinfarbene Code-Akzente
 - **Typografie** – DM Sans Variable und DM Mono in allen Schriftstärken
 - **Komponentenbibliothek** – Buttons, Karten, Hinweise, Tabellen und Eingabefelder, alle auf Tokens aufgebaut und dokumentiert
 - **Logodateien** – Vollständiger Schriftzug als SVG und quadratische Bildmarke, nutzbar für Kopfzeilen, Favicons und Marketing

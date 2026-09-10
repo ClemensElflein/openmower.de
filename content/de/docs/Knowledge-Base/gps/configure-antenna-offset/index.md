@@ -26,8 +26,8 @@ Der Versatz wird im lokalen Koordinatensystem des Mähers angegeben:
 
 **Beispiele:**
 
-- Antenne 10 cm vorne und 5 cm rechts → `antenna_offset_x: 0.1`, `antenna_offset_y: -0.05`
-- Antenne 5 cm links → `antenna_offset_x: 0.0`, `antenna_offset_y: 0.05`
+- Antenne 10 cm vor und 5 cm rechts von der Mitte der Radachse → `antenna_offset_x: 0.1`, `antenna_offset_y: -0.05`
+- Antenne 5 cm links von der Mitte der Radachse → `antenna_offset_x: 0.0`, `antenna_offset_y: 0.05`
 
 ## Konfiguration
 

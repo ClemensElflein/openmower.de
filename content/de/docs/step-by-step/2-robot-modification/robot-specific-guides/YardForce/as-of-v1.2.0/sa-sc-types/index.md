@@ -1,9 +1,9 @@
 ---
-title: "SA/SC Modelle"
-linkTitle: "SA/SC Modelle"
+title: "SA-/SC-Modelle"
+linkTitle: "SA-/SC-Modelle"
 weight: 20
 description: >
-  Umbauanleitung für YardForce SA und SC Mäher mit Trägerplatine ab Version 1.2.0
+  Umbauanleitung für YardForce-Mäher der SA- und SC-Reihe mit Trägerplatine ab Version 1.2.0
 ---
 {{% alert title="Nur für Trägerplatinen ab 1.2.0!" color="warning" %}}
 Diese Anleitung gilt ausschließlich für **Trägerplatinen ab Version 1.2.0**!<br>

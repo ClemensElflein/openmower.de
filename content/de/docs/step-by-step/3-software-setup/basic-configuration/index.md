@@ -8,14 +8,14 @@ description: >
 ---
 {{% toc %}}
 
-## Überblick:
+## Überblick
 ### Arten von Einstellungen
 Die Roboterkonfiguration besteht aus zwei Teilen:
 - **Umgebungsvariablen:** Sie legen Mähermodell, Hardware-Version und die zu verwendende ROS-Version fest. **Diese richten wir zuerst ein.**
 - **ROS-Parameter:** Sie bestimmen das Verhalten von ROS im Betrieb, etwa GPS-Einstellungen, Mähverhalten und MQTT-Konfiguration für das Smart Home.
 
 ### Das Kommandozeilenwerkzeug `openmower`
-Das von uns entwickelte Kommandozeilenwerkzeug `openmower` hilft dir beim Betrieb, bei der Einrichtung und bei der Fehlersuche der OpenMower-Software.
+Das von uns entwickelte Kommandozeilenwerkzeug `openmower` hilft dir beim Betrieb, bei der Einrichtung und bei der Fehlersuche in der OpenMower-Software.
 
 Das Tool ist auf OpenMowerOS vorinstalliert und bietet unter anderem diese Funktionen:
 - ROS-Konfiguration und Umgebungsvariablen bearbeiten
@@ -44,7 +44,7 @@ Das Terminal im Browser benötigt keine Zugangsdaten und ist hier erreichbar: [h
 Bei OpenMowerOS kommt es derzeit gelegentlich vor, dass das Dateisystem nicht korrekt vergrößert wird.
 Führe `df -h /` aus und prüfe, ob die Spalte `Use %` fast 100 % anzeigt. Daran erkennst du das Problem.
 
-![full-file-system.png](images/full-file-system.png)
+![df-Ausgabe mit fast vollständig belegtem Dateisystem](images/full-file-system.png)
 
 {{% /alert %}}
 
@@ -53,7 +53,7 @@ Führe `df -h /` aus und prüfe, ob die Spalte `Use %` fast 100 % anzeigt. Daran
 - **Führe aus:** `sudo raspi-config`
 - **Wähle** Advanced Options -> Expand Filesystem
 - **Beende die Einrichtung und starte neu**
-- **Führe aus:** erneut `df -h /`. In der Spalte `Use %` sollte jetzt ein niedriger Wert stehen, abhängig von der Größe deiner SD-Karte
+- **Führe erneut `df -h /` aus.** In der Spalte `Use %` sollte jetzt ein niedriger Wert stehen, abhängig von der Größe deiner SD-Karte
 
 ### Das Tool `openmower` aktualisieren
 Aktualisiere das Tool `openmower`, damit du die neueste Version verwendest.
@@ -95,8 +95,8 @@ Beginne jetzt mit der Konfiguration der Umgebungsvariablen.
 - **Starte die Konfiguration** mit `openmower configure env`
 - **Wähle** deinen bevorzugten Editor, zum Beispiel `nano`
 - **Bearbeite die Umgebungsvariablen.** Die Kommentare erklären, was du tun musst<br>
-  Wenn du eine ältere OpenMowerOS-Version verwendest, enthält die aktuelle `.env`-Datei möglicherweise zusätzliche Kommentare oder Optionen, die in deiner lokalen Kopie fehlen. Die aktuelle Version findest du hier: [OpenMower-OS-.env-Datei](https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/opt/stacks/openmower/.env)
-- **Speichere die Datei** (<kbd>Ctrl</kbd> + <kbd>O</kbd>, <kbd>Enter</kbd> zum Speichern, danach <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Enter</kbd> zum Beenden von nano)
+  Wenn du eine ältere OpenMowerOS-Version verwendest, enthält die aktuelle `.env`-Datei möglicherweise zusätzliche Kommentare oder Optionen, die in deiner lokalen Kopie fehlen. Die aktuelle Version findest du hier: [Aktuelle `.env`-Datei von OpenMowerOS](https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/opt/stacks/openmower/.env)
+- **Speichere die Datei** (<kbd>Strg</kbd> + <kbd>O</kbd>, <kbd>Enter</kbd> zum Speichern, danach <kbd>Strg</kbd> + <kbd>X</kbd>, <kbd>Enter</kbd> zum Beenden von nano)
 
 Diese Bildschirmaufzeichnung zeigt den gesamten Ablauf:
 <div class="container pb-3 pt-3">

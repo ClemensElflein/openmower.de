@@ -87,7 +87,7 @@ Wenn du dich mit dem RPi auskennst und bereits ein funktionierendes Betriebssyst
 
 - Ist der ZED-F9P angeschlossen? Falls nicht, schließe ihn jetzt an!
 - Wir verwenden [RTKBase](https://github.com/Stefal/rtkbase)
-- Zur Installation kannst du die folgenden Zeilen zusammen kopieren und einfügen. Die ursprüngliche Empfehlung sieht kein sudo vor chmod vor. Bei mir hat das so aber nicht funktioniert.
+- Zur Installation kannst du die folgenden Zeilen zusammen kopieren und einfügen. In der ursprünglichen Anleitung wird `chmod` ohne `sudo` ausgeführt. Bei mir hat das so aber nicht funktioniert.
 
   ```bash
   cd ~
@@ -95,7 +95,7 @@ Wenn du dich mit dem RPi auskennst und bereits ein funktionierendes Betriebssyst
   sudo chmod +x install.sh
   sudo ./install.sh --all release
   ```
-- Es folgt eine sehr lange Ausgabe. Sie endet mit:
+- Es folgen zahlreiche Meldungen im Terminal. Am Ende steht:
   ```bash
   GNSS Configuration: done
   ################################
@@ -120,7 +120,7 @@ Wenn du dich mit dem RPi auskennst und bereits ein funktionierendes Betriebssyst
 
   ![]()<img src="./RTKBase01.png" width="120">
 
-- Gib als Passwort admin ein. Klicke auf der nächsten Seite auf das Kopiersymbol rechts neben PPP.
+- Gib als Passwort `admin` ein. Klicke auf der nächsten Seite auf das Kopiersymbol rechts neben PPP.
 
   ![]()<img src="./RTKBase02.png" width="120">
 
@@ -131,7 +131,7 @@ Wenn du dich mit dem RPi auskennst und bereits ein funktionierendes Betriebssyst
 - Klicke erneut auf „options“ und dann auf „options“ rechts neben „Caster Service“
 
   ![]()<img src="./RTKBase04.png" width="120">
-- Trage hier dieselben Einstellungen wie im Mäher ein. Standardmäßig lauten Benutzername und Passwort jeweils gps. Wähle den passenden Mountpoint. Ich habe ihn hier und in der Mäherkonfiguration nach meiner Stadt benannt.
+- Trage hier dieselben Einstellungen wie im Mäher ein. Standardmäßig lauten Benutzername und Passwort jeweils `gps`. Wähle den passenden Mountpoint. Ich habe ihn hier und in der Mäherkonfiguration nach meiner Stadt benannt.
 - Speichere die Konfiguration
 - Schalte „Caster Service“ und „File Service“ ein. Es sollte so aussehen:
 
@@ -145,7 +145,7 @@ Wenn du dich mit dem RPi auskennst und bereits ein funktionierendes Betriebssyst
 
 ### Position der RTKBase bestimmen
 
-Es gibt mehrere Wege, die Position zu bestimmen. Für OpenMower muss sie nicht absolut perfekt sein. Die erste Variante ist deshalb eine gute Wahl, wenn du schnell ein brauchbares Ergebnis möchtest.
+Es gibt mehrere Wege, die Position zu bestimmen. Für OpenMower muss die Position nicht mit höchster Genauigkeit bestimmt werden. Die erste Variante ist deshalb eine gute Wahl, wenn du schnell ein brauchbares Ergebnis möchtest.
 
 
 #### Einfacher Weg mit gutem Ergebnis
@@ -164,16 +164,16 @@ Es gibt mehrere Wege, die Position zu bestimmen. Für OpenMower muss sie nicht a
 #### Aufwendigerer, genauerer Weg
 
 - Aktiviere wie oben beschrieben den „File Service“, um deine Position aufzuzeichnen. Warte einen Tag, damit die Werte für eine hochgenaue Position gemittelt werden können.
-- Nach Mitternacht findest du unter „Logs“ eine ZIP-Datei. Diese kannst du in eine RINEX-Datei umwandeln. Wenn du das Format verstehen möchtest, lies [RINEX-Datei](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters) . Das ist für die Einrichtung aber nicht nötig.
+- Nach Mitternacht findest du unter „Logs“ eine ZIP-Datei. Diese kannst du in eine RINEX-Datei umwandeln. Eine Erklärung des Formats findest du im [Artikel über RINEX-Dateien](http://walter.bislins.ch/bloge/index.asp?page=Understanding+GPS%2FGNSS+RINEX+Files+and+Relevant+Parameters). Das ist für die Einrichtung aber nicht nötig.
 - Klicke auf den Stift rechts neben der ZIP-Datei:
 
   ![]()<img src="./RTKBase07.png" width="120">
 
-- "Create Rinex file":
+- Klicke auf „Create Rinex file“:
 
   ![]()<img src="./RTKBase08.png" width="120">
 - Lade die Datei herunter, sobald sie fertig ist. Das kann einige Minuten oder länger dauern
-- Öffne den [Rechner](https://rgp.ign.fr/SERVICES/calcul_online.php), lade die RINEX-Datei hoch und gib deine E-Mail-Adresse ein. Vergiss die „Kein Roboter“-Bestätigung nicht.
+- Öffne den [Rechner](https://rgp.ign.fr/SERVICES/calcul_online.php), lade die RINEX-Datei hoch und gib deine E-Mail-Adresse ein. Bestätige auch, dass du kein Roboter bist.
 
   ![]()<img src="./ignfr.png" width="120">
 

@@ -31,9 +31,9 @@ cascade:
 
 {{< blocks/section color="white" >}}
 <div class="col-12 col-lg-8 offset-lg-2">
-<h2>Vom vorhandenen Mäher zur eigenen Gartenkarte</h2>
-<p>OpenMower ersetzt die Steuerelektronik des Mähers. Gehäuse, Fahrwerk und Motoren werden weiterverwendet. RTK-GPS liefert die genaue Position; Rasengrenzen, feste Hindernisse und Verbindungswege zwischen den Flächen erfasst du in der App. Anschließend fährt der Mäher geplante Bahnen innerhalb dieser Karte ab.</p>
-<p>RTK braucht Satellitenempfang und Korrekturdaten von einer Basisstation oder einem NTRIP-Dienst. Bäume, Gebäude und eine unzuverlässige Datenverbindung können den Betrieb einschränken. Prüfe deshalb den Empfang in deinem Garten, bevor du dich für den Umbau entscheidest. Dass Hindernisse in der Karte eingetragen sind, bedeutet nicht, dass der Mäher jedes neu hinzugekommene Objekt auf seinem Weg erkennt.</p>
+<h2>So wird dein Mähroboter zum OpenMower</h2>
+<p>Beim Umbau ersetzt du die Steuerelektronik deines Mähroboters durch OpenMower-Hardware. Gehäuse, Fahrwerk und Motoren verwendest du weiter. Anschließend erfasst du in der App die Grenzen deiner Mähflächen, feste Hindernisse und die Wege zwischen den Flächen. Mit RTK-GPS bestimmt der Mäher seine Position zentimetergenau und mäht die erfassten Flächen in geplanten Bahnen.</p>
+<p>RTK braucht Satellitenempfang und Korrekturdaten von einer Basisstation oder einem NTRIP-Dienst. Bäume, Gebäude und eine unzuverlässige Datenverbindung können den Betrieb einschränken. Prüfe deshalb den Empfang in deinem Garten, bevor du dich für den Umbau entscheidest. Die Karte hilft dem Mäher, eingetragene Hindernisse zu umfahren. Neu hinzugekommene Gegenstände auf seinem Weg erkennt er dadurch aber nicht automatisch.</p>
 <p><a href='{{< relref "docs/Knowledge-Base/gps/rtk-gps" >}}'>So funktioniert RTK-GPS</a> · <a href='{{< relref "docs/troubleshooting/gps-rtk" >}}'>GPS-Empfang und Fehlerbehebung</a></p>
 </div>
 <div class="col-12 col-lg-4 mt-4">
@@ -44,7 +44,7 @@ cascade:
 <div class="col-12 col-lg-4 mt-4">
 <h2>Mit welchen Kosten muss ich rechnen?</h2>
 <p>Plane die Kosten für den Mäher, die OpenMower-Elektronik, das Compute Module, den GPS-Empfänger mit Antenne und das Montagematerial ein. Eine eigene RTK-Basisstation oder ein kostenpflichtiger Korrekturdienst können dazukommen. Informiere dich vor der Bestellung über die aktuellen Preise deiner ausgewählten Hardware.</p>
-<p><a href='{{< relref "docs/Knowledge-Base/getting-started/shopping-list" >}}'>Plane Bauteile und Gesamtkosten</a></p>
+<p><a href='{{< relref "docs/Knowledge-Base/getting-started/shopping-list" >}}'>Zur Teileliste und Kostenplanung</a></p>
 </div>
 <div class="col-12 col-lg-4 mt-4">
 <h2>Was kommt beim Umbau auf mich zu?</h2>
@@ -71,16 +71,16 @@ cascade:
 
 {{< blocks/section image="featured-background.jpg" >}}
 <div class="col-12 text-center om-section-lead">
-<p>OpenMower ist eine vollständige Eigenentwicklung aus Software, Firmware und größtenteils offener Hardware. Sie ersetzt das geschlossene, vom Hersteller kontrollierte System eines Mähroboters durch eine GPL-lizenzierte Plattform auf Basis von ROS und RTOS. Ohne Bindung an proprietäre Systeme und ohne undurchsichtige Blackbox.</p>
-<p>Das Ergebnis: zentimetergenaue Navigation mit RTK-GPS, effiziente Routenplanung und ein Quellcode, über den du selbst bestimmen kannst. Du kannst ihn lesen, anpassen und deine eigene Version veröffentlichen.</p>
+<p>OpenMower umfasst Software, Firmware und größtenteils offene Hardware aus eigener Entwicklung. Es ersetzt das geschlossene, vom Hersteller kontrollierte System eines Mähroboters durch eine GPL-lizenzierte Plattform auf Basis von ROS und RTOS. So kannst du selbst nachvollziehen, wie dein Mäher funktioniert, und bist nicht an das System eines Herstellers gebunden.</p>
+<p>OpenMower bietet zentimetergenaue Navigation mit RTK-GPS und eine effiziente Routenplanung. Der Quellcode ist offen: Du kannst ihn lesen, anpassen und deine eigene Version veröffentlichen.</p>
 </div>
-{{% blocks/feature icon="fa-heart" title="Unterstütze Open Mower!" url="https://patreon.com/ClemensElflein" %}}
-Open Mower ist ein sehr komplexes Projekt. Entwicklung und Pflege kosten deshalb viel Zeit. Wenn du das Projekt unterstützen möchtest, freue ich mich über deine Unterstützung auf Patreon.
+{{% blocks/feature icon="fa-heart" title="Unterstütze OpenMower!" url="https://patreon.com/ClemensElflein" %}}
+Die Entwicklung und Pflege von OpenMower kosten viel Zeit. Wenn du dabei helfen möchtest, das Projekt weiterzuentwickeln, freue ich mich über deine Unterstützung auf Patreon.
 {{% /blocks/feature %}}
 {{% blocks/feature icon="fab fa-github" title="Mach mit!" url="https://github.com/ClemensElflein/OpenMower" %}}
 Beiträge zum Projekt nehmen wir über [Pull Requests](https://github.com/ClemensElflein/OpenMower/pulls) auf **GitHub** entgegen. Neue Mitstreiter sind jederzeit willkommen!
 {{% /blocks/feature %}}
-{{% blocks/feature icon="fab fa-discord" title="Komm auf unseren Discord!" url="https://discord.gg/jE7QNaSxW7" %}}
+{{% blocks/feature icon="fab fa-discord" title="Komm auf unseren Discord-Server!" url="https://discord.gg/jE7QNaSxW7" %}}
 Auf unserem Discord-Server erfährst du von neuen Funktionen und anderen Neuigkeiten. Dort findet auch der Großteil des Austauschs rund um das Projekt statt.
 {{% /blocks/feature %}}
 {{< /blocks/section >}}
