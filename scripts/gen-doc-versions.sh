@@ -15,12 +15,13 @@ mkdir -p "$(dirname "$OUT")"
 
 # Use a simple custom delimiter ":::"
 # refname:short = tag name
-# contents:subject = first line of tag message (for annotated tags)
+# Only annotated tags have a release description; lightweight tags expose
+# the commit subject through contents:subject, which is not a version label.
 mapfile -t TAG_LINES < <(
   git -C "$PROJECT_ROOT" for-each-ref \
     refs/tags \
     --sort=-creatordate \
-    --format='%(refname:short):::%(contents:subject)' \
+    --format='%(refname:short):::%(if:equals=tag)%(objecttype)%(then)%(contents:subject)%(end)' \
   || true
 )
 
@@ -63,7 +64,7 @@ EOF
     # Skip nonsense / empty tags
     [[ -z "$tag" ]] && continue
 
-    # Display title: prefer message, fallback to tag name
+    # Display title: prefer annotation, fallback to tag name
     title="$tag"
     if [[ -n "$msg" ]]; then
       title="$msg"

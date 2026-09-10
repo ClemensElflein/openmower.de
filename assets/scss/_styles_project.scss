@@ -466,3 +466,23 @@ footer.d-print-none {
     }
   }
 }
+
+// Keep the demonstration button readable over Docsy's section link styles.
+.td-box .btn.om-demo-button {
+  color: #fff;
+  background: $om-green-deep;
+  border-color: $om-green-deep;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background: darken($om-green-deep, 8%);
+    border-color: darken($om-green-deep, 8%);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $om-text;
+    outline-offset: 3px;
+  }
+}
