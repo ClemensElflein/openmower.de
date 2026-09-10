@@ -1,0 +1,638 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Bauteile vorbereiten</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/</link><description>Recent content in Bauteile vorbereiten on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Schritt 2.1: GPS vorbereiten</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>GPS-Modul&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+Ardusimple F9P
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+aria-controls="tabs-00-02" aria-selected="false">
+WitMotion Unicore UM9xx
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-03-tab" data-toggle="tab" href="#tabs-00-03" role="tab"
+aria-controls="tabs-00-03" aria-selected="false">
+By-Nav M10/M20 – direkt per USB
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-04-tab" data-toggle="tab" href="#tabs-00-04" role="tab"
+aria-controls="tabs-00-04" aria-selected="false">
+By-Nav M10/M20 – über das Netzwerk
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;h2 id="firmware-aktualisieren-und-gps-platine-konfigurieren">Firmware aktualisieren und GPS-Platine konfigurieren&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+&lt;p>Für diesen Schritt gibt es eine Videoanleitung! &lt;br/>
+Hier findest du mein YouTube-Video: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+&lt;/p>
+&lt;p>(Abschnitt 16:21 bis 17:15)&lt;/p>
+&lt;/div>
+&lt;h3 id="voraussetzungen">Voraussetzungen&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Eine Ardusimple-F9P-GPS-Platine&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Ein Micro-USB-Kabel&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Ein Windows-PC&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Die aktuelle v1-Version von u-center:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center" target="_blank" rel="noopener">https://www.u-blox.com/en/product/u-center&lt;/a>
+&lt;br/>
+Lade nicht u-center V2 herunter. Für den F9P brauchst du u-center v1.&lt;/li>
+&lt;li>&lt;strong>Die GPS-Konfigurationsdatei&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
+Der Link öffnet sich in einem neuen Browser-Tab. Verwende &lt;kbd>Strg&lt;/kbd>+&lt;kbd>S&lt;/kbd>, um die Datei herunterzuladen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="schritt-210-firmware-aktualisieren">Schritt 2.1.0: Firmware aktualisieren&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Den F9P gibt es inzwischen in mehreren Varianten. Die unten verlinkte Firmware ist für die L1+L2-Version. Prüfe, ob auf dem u-blox-Chip eine dieser Bezeichnungen steht: &lt;strong>ZED-F9P-02B, ZED-F9P-04B oder ZED-F9P-05B!&lt;/strong>&lt;/p>
+&lt;p>Bei einer anderen Platine darfst du die verlinkte Firmware &lt;strong>nicht&lt;/strong> verwenden. Lade die passende Version direkt von u-blox.com herunter.&lt;/p>
+&lt;/div>
+&lt;p>Aktualisiere die Firmware deiner Ardusimple-Platine auf &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin" target="_blank" rel="noopener">&lt;code>ZED-F9P HPG 1.51&lt;/code> – &lt;em>Download&lt;/em>&lt;/a>
+. Eine Anleitung findest du auf der &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/" target="_blank" rel="nofollow noopener">Ardusimple-Website&lt;/a>
+.&lt;/p>
+&lt;h3 id="schritt-211-u-center-öffnen-und-gps-verbinden">Schritt 2.1.1: u-center öffnen und GPS verbinden&lt;/h3>
+&lt;p>Verbinde nach der Installation von u-center die Ardusimple-Platine über ihre USB-Buchse „Power+GPS“ mit deinem Windows-PC. Die blauen LEDs sollten aufleuchten, und Windows sollte das Gerät als COM-Port erkennen.
+Öffne anschließend u-center.&lt;/p>
+&lt;p>Wähle in u-center unter &lt;code>Receiver -&amp;gt; Connection&lt;/code> den passenden COM-Port, um die Verbindung zur Platine herzustellen.&lt;/p>
+&lt;h3 id="schritt-212-konfiguration-auf-das-gps-modul-übertragen">Schritt 2.1.2: Konfiguration auf das GPS-Modul übertragen&lt;/h3>
+&lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Einstellungen mit u-center übertragen">&lt;/p>
+&lt;p>Öffne nach erfolgreicher Verbindung &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>.
+Wähle dort über &lt;code>...&lt;/code> die zuvor heruntergeladene Datei &lt;code>robot-fw-1_51.txt&lt;/code> aus. Übertrage die Konfiguration mit &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> auf das GPS-Modul.&lt;/p>
+&lt;h3 id="schritt-213-konfiguration-im-flash-speichern">Schritt 2.1.3: Konfiguration im Flash speichern&lt;/h3>
+&lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Einstellungen im Flash speichern">&lt;/p>
+&lt;p>Damit die Konfiguration nach dem Ausschalten erhalten bleibt, musst du sie im Flash-Speicher sichern. Öffne &lt;code>View -&amp;gt; Configuration View&lt;/code>, wähle links &lt;code>CFG (Configuration)&lt;/code> und aktiviere &lt;code>Save current configuration&lt;/code>. Rechts müssen sowohl &lt;code>0 - BBR&lt;/code> als auch &lt;code>1 - FLASH&lt;/code> ausgewählt sein. Klicke danach in der unteren Werkzeugleiste auf &lt;code>Send&lt;/code>.&lt;/p>
+&lt;p>Rechts oben erscheint ein Zähler für die Zeit seit der letzten an die GPS-Platine gesendeten Nachricht. Direkt nach dem Klick auf &lt;code>Send&lt;/code> sollte er &lt;code>0s&lt;/code> anzeigen.&lt;/p>
+&lt;h3 id="schritt-214-fertig-">Schritt 2.1.4: Fertig 🎉&lt;/h3>
+&lt;p>Dein GPS-Modul ist jetzt für OpenMower eingerichtet. Du kannst es vom Windows-PC trennen.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;ol>
+&lt;li>
+&lt;p>Verbinde dein UM9xx mit dem mitgelieferten USB-C-Kabel mit dem PC&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne ein serielles Terminal wie minicom, miniterm oder CuteCom mit 115200 Baud&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Achte darauf, dass als Zeilenende CR/LF eingestellt ist&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Sende &lt;code>CONFIG&lt;/code>&lt;kbd>↵ Enter&lt;/kbd>, um die Verbindung zu prüfen. Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe Kabel, Port und Berechtigungen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul zurück und stelle die Baudrate auf 921600, indem du diese Befehle zeilenweise eingibst:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+CONFIG COM1 921600&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit &lt;code>CONFIG&lt;/code>. Falls die Ausgabe nicht wie zuvor aussieht, stelle dein serielles Terminal auf 921600 Baud um und öffne die Verbindung bei Bedarf neu. Führe &lt;code>CONFIG&lt;/code> erneut aus, bis eine sinnvolle Antwort erscheint&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover mit diesen Befehlen ein, jeweils eine Zeile nach der anderen:&lt;/p>
+&lt;blockquote>
+&lt;p>MODE ROVER UAV&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSV COM1 2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPRMC COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSA COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPVTG COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGST COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGGA COM1 0.2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>Vergiss &lt;code>SAVECONFIG&lt;/code> nicht. Der Befehl speichert die Einstellungen dauerhaft, sodass sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trenne das USB-Kabel vom UM9x-Modul und setze es auf die Trägerplatine. Löte vorher bei Bedarf die benötigten Stiftleisten an.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-03" role="tabpanel" aria-labelled-by="tabs-00-03-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="einrichtung-über-usb-cutecom">Einrichtung über USB (cutecom)&lt;/h2>
+&lt;p>&lt;strong>Beim M20 ersetzt du jedes COM1 durch COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Verbinde dein M10 über das mitgelieferte USB-C-Kabel mit dem PC.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne das empfohlene Terminalprogramm cutecom.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Verbinde dich mit 115200 Baud.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe Kabel, Port und Berechtigungen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stelle sicher, dass das Zeilenende auf &lt;strong>CR/LF&lt;/strong> eingestellt ist.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Du kannst die Ausgabe in cutecom ausblenden. Sie läuft weiter, wird aber nicht angezeigt.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul auf Werkseinstellungen zurück und deaktiviere die zyklischen Ausgaben mit diesen Befehlen, jeweils zeilenweise:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Blende die Ausgabe in cutecom wieder ein.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Es sollte eine lesbare Ausgabe erscheinen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover ein:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Die Ausgabe sollte weiterhin lesbar sein, da wir über COM3 verbunden sind. Falls nicht, prüfe Verbindung und Baudrate.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze die Rover-Konfiguration fort:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br> (COM1 sollte jetzt 460800 anzeigen)&lt;br>
+RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTYPE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Lege die zyklischen Ausgaben fest:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Speichere die Änderungen zum Schluss im Flash-Speicher:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>Vergiss den Befehl &lt;code>SAVECONFIG&lt;/code> nicht.&lt;/strong> Er speichert die Einstellungen dauerhaft, damit sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trenne das USB-Kabel vom M10-Modul und setze es auf die Trägerplatine. Löte vorher bei Bedarf die Stiftleisten an.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Passe auch die Baudrate in der OpenMower-ROS-Konfiguration an:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-04" role="tabpanel" aria-labelled-by="tabs-00-04-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="einrichtung-über-tcp-by_connect">Einrichtung über TCP (by_connect)&lt;/h2>
+&lt;p>Diese Methode funktioniert unter Linux und Windows. Unter Linux verwendest du by_connect mit Wine. Führe diesen Schritt erst durch, wenn dein OpenMower-System läuft. Die Konfiguration erfolgt aus der Ferne über TCP.&lt;/p>
+&lt;h3 id="voraussetzungen">Voraussetzungen&lt;/h3>
+&lt;ul>
+&lt;li>Eine WitMotion-ByNav-M10-GPS-Platine (Standardbaudrate: 115200)&lt;/li>
+&lt;li>Einen OpenMower mit installiertem OpenMowerOS&lt;/li>
+&lt;li>Einen Windows- oder Linux-PC&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip" target="_blank" rel="noopener">by_connect-Software&lt;/a>
+von bynav.com&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf" target="_blank" rel="noopener">Beschreibung des Schnittstellenprotokolls (PDF)&lt;/a>
+— gültig für alle ByNav-Module (M10, M20 usw.)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Beim M20 ersetzt du jedes COM1 durch COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Setze das M10 auf die Trägerplatine. Löte vorher bei Bedarf die Stiftleisten an.&lt;/li>
+&lt;li>Stelle die Baudrate in der OpenMower-ROS-Konfiguration auf 115200:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>
+&lt;p>Stelle eine serielle Verbindung zum M10 über TCP her, indem du im SSH-Terminal deines OpenMower &lt;code>openmower expose-gps&lt;/code> ausführst:
+&lt;img src="openmower_expose-gps.png" alt="GPS-Verbindung mit openmower expose-gps freigeben">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne by_connect auf deinem PC, unter Linux mit Wine. Den Download findest du auf bynav.com. Verbinde dich als &lt;strong>TCP Client&lt;/strong> mit Port 2000 des OpenMower. Eine Baudrate musst du hier nicht angeben:
+&lt;img src="by_connect_tcp_client.png" alt="by_connect TCP Client">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe die Verbindung.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stelle sicher, dass das Zeilenende auf &lt;strong>CR/LF&lt;/strong> eingestellt ist.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Du kannst die Ausgabe in by_connect ausblenden. Sie läuft weiter, wird aber nicht angezeigt:
+&lt;img src="by_connect_input.png" alt="Eingabefeld in by_connect">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul auf Werkseinstellungen zurück und deaktiviere die zyklischen Ausgaben mit diesen Befehlen, jeweils zeilenweise:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Blende die Ausgabe in by_connect wieder ein.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Es sollte eine lesbare Ausgabe erscheinen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover ein:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Die Ausgabe ist jetzt unlesbar, weil sich die Baudrate geändert hat. Schließe die Verbindung, stelle in der OpenMower-ROS-Konfiguration die Baudrate auf &lt;strong>460800&lt;/strong> und verbinde dich erneut über &lt;code>openmower expose-gps&lt;/code>:
+&lt;img src="changeBaud1.png" alt="Baudrate ändern">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne by_connect erneut, verbinde dich wieder als TCP Client und prüfe die Lesbarkeit der Ausgabe mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Setze die Rover-Konfiguration fort:&lt;/p>
+&lt;blockquote>
+&lt;p>RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Wenn alles wie erwartet funktioniert und du &lt;code>ok&lt;/code>-Antworten erhältst, speichere die Einstellungen im Flash. Andernfalls trenne die Verbindung, schalte den OpenMower aus und wieder ein und beginne von vorne:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Lege die zyklischen Ausgaben fest:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Speichere die Änderungen im Flash-Speicher:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Vergiss den Befehl &lt;code>SAVECONFIG&lt;/code> nicht.&lt;/strong> Er speichert die Einstellungen dauerhaft, damit sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Weiter mit &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Schritt 2.2: SD-Karte vorbereiten&lt;/a>
+&lt;/p></description></item><item><title>Docs: Schritt 2.2: SD-Karte vorbereiten</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/</guid><description>
+&lt;p>Wir haben ein Raspberry-Pi-Image speziell für OpenMower angepasst. Dazu gehören:&lt;/p>
+&lt;ul>
+&lt;li>Netzwerkkonfiguration für das interne Roboternetzwerk&lt;/li>
+&lt;li>Ein Hotspot, mit dem du den Roboter einfach mit deinem Heimnetz verbindest&lt;/li>
+&lt;li>Docker für die einfache Verwaltung der Container&lt;/li>
+&lt;li>Zugriff auf das Terminal des Roboters im Browser&lt;/li>
+&lt;li>… und mehr!&lt;/li>
+&lt;/ul>
+&lt;p>In diesem Schritt spielen wir das Image auf und nehmen die ersten Einstellungen vor.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Hinweis&lt;/h4>
+&lt;p>Diese Anleitung gilt für das Raspberry Pi Compute Module &lt;strong>Lite&lt;/strong>, also die Version &lt;strong>ohne&lt;/strong> eMMC-Speicher.&lt;/p>
+&lt;p>Wenn du ein Compute Module &lt;strong>mit eMMC&lt;/strong> hast, kannst du diesen Schritt zunächst überspringen und mit der &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">Vorbereitung des Mainboards&lt;/a>
+weitermachen.&lt;/p>
+&lt;p>Du kannst das CM4 flashen, sobald dein Mäher mit Strom versorgt wird. &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/installation/flash-cm4-emmc/">Hier findest du die Anleitung dazu&lt;/a>
+.&lt;/p>
+&lt;/div>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;p>Du brauchst:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Raspberry Pi CM4 Lite ohne eingebauten Speicher&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>MicroSD-Karte mit mindestens 16 GB&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Einen PC mit installiertem Raspberry Pi Imager:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">https://www.raspberrypi.com/software/&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>Das aktuelle OpenMowerOS-Image:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/releases" target="_blank" rel="noopener">https://github.com/ClemensElflein/OpenMowerOS/releases&lt;/a>
+&lt;br/>
+Du findest es im Bereich &lt;code>Assets&lt;/code>. Du musst das Image nicht entpacken.&lt;/li>
+&lt;li>&lt;strong>Ein SD-Kartenlesegerät&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="image-auf-die-sd-karte-schreiben">Image auf die SD-Karte schreiben&lt;/h2>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%201_hu1de76bd80b40549393acca8d29bd6f6b_110416_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 1" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%201_hu1de76bd80b40549393acca8d29bd6f6b_110416_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 1"
+title="Pi Imager – Schritt 1">
+&lt;span title="Pi Imager – Schritt 1">Pi Imager – Schritt 1&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%202_hub42f6dcdbe2d1fcfc36de647d7f7e668_87995_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 2" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%202_hub42f6dcdbe2d1fcfc36de647d7f7e668_87995_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 2"
+title="Pi Imager – Schritt 2">
+&lt;span title="Pi Imager – Schritt 2">Pi Imager – Schritt 2&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%203_hud3ac4c7e0311dd22127e1e605dad4733_56769_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 3" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%203_hud3ac4c7e0311dd22127e1e605dad4733_56769_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 3"
+title="Pi Imager – Schritt 3">
+&lt;span title="Pi Imager – Schritt 3">Pi Imager – Schritt 3&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%204_hu1ce7c76f2f94c52961fa743c0746d11a_70164_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 4" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%204_hu1ce7c76f2f94c52961fa743c0746d11a_70164_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 4"
+title="Pi Imager – Schritt 4">
+&lt;span title="Pi Imager – Schritt 4">Pi Imager – Schritt 4&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%205_hu5bf4049654f7e2755e71076874386743_77276_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 5" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%205_hu5bf4049654f7e2755e71076874386743_77276_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 5"
+title="Pi Imager – Schritt 5">
+&lt;span title="Pi Imager – Schritt 5">Pi Imager – Schritt 5&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%206_hu8855d455d7e7d85636d5e38993b2b2e0_49906_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 6" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%206_hu8855d455d7e7d85636d5e38993b2b2e0_49906_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 6"
+title="Pi Imager – Schritt 6">
+&lt;span title="Pi Imager – Schritt 6">Pi Imager – Schritt 6&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%207_hu06f43e6f1db1c1c4dcc7d09aca1d6254_76444_1600x1600_fit_q99_catmullrom_3.png" title="Pi Imager – Schritt 7" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/images/imager/Pi%20Imager%20Step%207_hu06f43e6f1db1c1c4dcc7d09aca1d6254_76444_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="Pi Imager – Schritt 7"
+title="Pi Imager – Schritt 7">
+&lt;span title="Pi Imager – Schritt 7">Pi Imager – Schritt 7&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;ul>
+&lt;li>Starte Raspberry Pi Imager.&lt;/li>
+&lt;li>Wähle &lt;code>Raspberry Pi 4&lt;/code> und klicke auf „Next“.&lt;/li>
+&lt;li>Klicke auf &lt;code>Use Custom&lt;/code>, um die zuvor heruntergeladene Image-Datei zu öffnen. Klicke auf „Next“.&lt;/li>
+&lt;li>Wähle deine SD-Karte aus. &lt;strong>Vergewissere dich, dass du wirklich die richtige Karte ausgewählt hast. Alle Daten auf dem ausgewählten Gerät werden gelöscht!&lt;/strong> Klicke auf „Next“.&lt;/li>
+&lt;li>Prüfe die Angaben und klicke auf &lt;code>WRITE&lt;/code>. Du musst den Vorgang noch einmal bestätigen und eventuell dein Administratorpasswort eingeben.&lt;/li>
+&lt;li>Warte, bis der Vorgang abgeschlossen ist.&lt;/li>
+&lt;/ul>
+&lt;h3 id="image-konfigurieren">Image konfigurieren&lt;/h3>
+&lt;p>Ältere Versionen von Raspberry Pi Imager konnten das Image direkt im Programm konfigurieren. In der aktuellen Version ist das nicht mehr möglich.&lt;/p>
+&lt;p>Mit einer älteren Imager-Version kannst du das Image weiterhin wie gewohnt konfigurieren. &lt;strong>Der Benutzername lässt sich jedoch nicht ändern.&lt;/strong> Er lautet immer &lt;code>openmower&lt;/code>.&lt;/p>
+&lt;h2 id="fertig-">Fertig 🎉&lt;/h2>
+&lt;p>Du kannst die SD-Karte jetzt aus dem PC entfernen. Sie ist für OpenMower vorbereitet. Lege sie beiseite und mache mit der &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/">Vorbereitung des Mainboards&lt;/a>
+weiter.&lt;/p></description></item><item><title>Docs: Schritt 2.3: Mainboard vorbereiten</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/</guid><description>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;p>Du brauchst:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Ein OpenMower-v2-Mainboard&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1× xCore-Board&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1× Raspberry Pi 4 CM4&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>3× xESC-Motorcontroller&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>1× GPS-Modul&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Befestigungshalter für das xCore&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Optional: CM4-Kühlkörper&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-231-cm4-auf-dem-xcore-montieren">Schritt 2.3.1: CM4 auf dem xCore montieren&lt;/h2>
+&lt;h3 id="wenn-du-einen-cm4-kühlkörper-verwendest">Wenn du einen CM4-Kühlkörper verwendest&lt;/h3>
+&lt;p>Lege die Abstandshalter wie auf dem Bild auf die beiden unteren Befestigungslöcher des CM4. Auf die beiden oberen Löcher kommen &lt;strong>keine&lt;/strong> Abstandshalter:&lt;/p>
+&lt;p>&lt;img src="images/CM4-spacer.jpg" alt="Abstandshalter am CM4">&lt;/p>
+&lt;p>Meine Abstandshalter sind 1,7 mm dick und lagen dem Kühlkörper bei.&lt;/p>
+&lt;p>Wenn du keinen CM4-Kühlkörper verwendest, kannst du diesen Schritt überspringen.&lt;/p>
+&lt;h3 id="cm4-auf-dem-xcore-montieren">CM4 auf dem xCore montieren&lt;/h3>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%201%20-%20Align%20CM4_hub634c694023f2eb4baae5bb7e214b74b_1627011_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 1 – CM4 ausrichten" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%201%20-%20Align%20CM4_hub634c694023f2eb4baae5bb7e214b74b_1627011_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 1 – CM4 ausrichten"
+title="Schritt 1 – CM4 ausrichten">
+&lt;span title="Schritt 1 – CM4 ausrichten">Schritt 1 – CM4 ausrichten&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%202%20-%20Grab%20the%20CM4%20at%20the%20connectors_huaf49570b7772666ea7f9b331e735ebc6_1500070_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 2 – CM4 an den Steckverbindern halten" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%202%20-%20Grab%20the%20CM4%20at%20the%20connectors_huaf49570b7772666ea7f9b331e735ebc6_1500070_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 2 – CM4 an den Steckverbindern halten"
+title="Schritt 2 – CM4 an den Steckverbindern halten">
+&lt;span title="Schritt 2 – CM4 an den Steckverbindern halten">Schritt 2 – CM4 an den Steckverbindern halten&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%203%20-%20Press%20until%20you%20hear%20it%20click_hu30438f3efe2ce1ab54a632fefe1d1810_1352974_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 3 – Drücken, bis die Steckverbinder hörbar einrasten" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-cm4/Step%203%20-%20Press%20until%20you%20hear%20it%20click_hu30438f3efe2ce1ab54a632fefe1d1810_1352974_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 3 – Drücken, bis die Steckverbinder hörbar einrasten"
+title="Schritt 3 – Drücken, bis die Steckverbinder hörbar einrasten">
+&lt;span title="Schritt 3 – Drücken, bis die Steckverbinder hörbar einrasten">Schritt 3 – Drücken, bis die Steckverbinder hörbar einrasten&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>Montiere nun das CM4 auf dem xCore:&lt;/p>
+&lt;ol>
+&lt;li>Richte das CM4 wie auf dem Bild am xCore-Board aus.&lt;/li>
+&lt;li>Lege zwei Finger über die Steckverbinder von xCore und CM4.&lt;/li>
+&lt;li>Drücke vorsichtig nach unten, bis beide Steckverbinder hörbar und fühlbar einrasten.&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-232-cm4-kühlkörper-montieren">Schritt 2.3.2: CM4-Kühlkörper montieren&lt;/h2>
+&lt;p>&lt;strong>Der Kühlkörper ist optional. Die am Ende gezeigten Abstandshalter musst du aber auch ohne Kühlkörper einsetzen.&lt;/strong>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Hinweis&lt;/h4>
+&lt;p>Dieser Schritt hängt von deinem Kühlkörper ab. Die Bilder zeigen den Kühlkörper von Berry Base; bei anderen Modellen ist das Vorgehen ähnlich.&lt;/p>
+&lt;p>Verwende unbedingt Abstandshalter zwischen den Platinen. Sonst üben die Schrauben zu viel Druck auf die Steckverbinder aus.&lt;/p>
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%201%20-%20Mount%20spacers%20to%20heat%20sink_hu68361f3eb43b139baeb93fd43e157ca7_1267618_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 1 – Abstandshalter am Kühlkörper montieren" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%201%20-%20Mount%20spacers%20to%20heat%20sink_hu68361f3eb43b139baeb93fd43e157ca7_1267618_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 1 – Abstandshalter am Kühlkörper montieren"
+title="Schritt 1 – Abstandshalter am Kühlkörper montieren">
+&lt;span title="Schritt 1 – Abstandshalter am Kühlkörper montieren">Schritt 1 – Abstandshalter am Kühlkörper montieren&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%202%20-%20Stick%20thermal%20pads%20onto%20the%20chips_hu3c3738134403feecf6e3bfa44ec9f8b1_1663938_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 2 – Wärmeleitpads auf die Chips kleben" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%202%20-%20Stick%20thermal%20pads%20onto%20the%20chips_hu3c3738134403feecf6e3bfa44ec9f8b1_1663938_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 2 – Wärmeleitpads auf die Chips kleben"
+title="Schritt 2 – Wärmeleitpads auf die Chips kleben">
+&lt;span title="Schritt 2 – Wärmeleitpads auf die Chips kleben">Schritt 2 – Wärmeleitpads auf die Chips kleben&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%203%20-%20Align%20heat%20sink%20with%20mounting%20holes_hu45fbcf3baf4dbe2e50fd5aef786cd1b7_1425740_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 3 – Kühlkörper an den Befestigungslöchern ausrichten" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%203%20-%20Align%20heat%20sink%20with%20mounting%20holes_hu45fbcf3baf4dbe2e50fd5aef786cd1b7_1425740_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 3 – Kühlkörper an den Befestigungslöchern ausrichten"
+title="Schritt 3 – Kühlkörper an den Befestigungslöchern ausrichten">
+&lt;span title="Schritt 3 – Kühlkörper an den Befestigungslöchern ausrichten">Schritt 3 – Kühlkörper an den Befestigungslöchern ausrichten&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%204%20-%20Fix%20the%20heat%20sink%20using%20the%20lower%20two%20screws_hu4798fe58a1add070814da39e4db3a257_1371078_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 4 – Kühlkörper mit den beiden unteren Schrauben befestigen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%204%20-%20Fix%20the%20heat%20sink%20using%20the%20lower%20two%20screws_hu4798fe58a1add070814da39e4db3a257_1371078_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 4 – Kühlkörper mit den beiden unteren Schrauben befestigen"
+title="Schritt 4 – Kühlkörper mit den beiden unteren Schrauben befestigen">
+&lt;span title="Schritt 4 – Kühlkörper mit den beiden unteren Schrauben befestigen">Schritt 4 – Kühlkörper mit den beiden unteren Schrauben befestigen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%205%20-%20Insert%20spacers%20on%20the%20upper%20holes_hu615571c45aff6795800f6160f8fe02f1_1329070_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 5 – Abstandshalter an den oberen Löchern einsetzen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%205%20-%20Insert%20spacers%20on%20the%20upper%20holes_hu615571c45aff6795800f6160f8fe02f1_1329070_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 5 – Abstandshalter an den oberen Löchern einsetzen"
+title="Schritt 5 – Abstandshalter an den oberen Löchern einsetzen">
+&lt;span title="Schritt 5 – Abstandshalter an den oberen Löchern einsetzen">Schritt 5 – Abstandshalter an den oberen Löchern einsetzen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%206%20-%20Insert%20SD%20Card_hu8d9a3531e802627df05d3b46dfcdcd98_1821889_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 6 – SD-Karte einsetzen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/mount-heat-sink/Step%206%20-%20Insert%20SD%20Card_hu8d9a3531e802627df05d3b46dfcdcd98_1821889_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 6 – SD-Karte einsetzen"
+title="Schritt 6 – SD-Karte einsetzen">
+&lt;span title="Schritt 6 – SD-Karte einsetzen">Schritt 6 – SD-Karte einsetzen&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;p>So montierst du den Kühlkörper auf dem CM4:&lt;/p>
+&lt;ol>
+&lt;li>Befestige die Abstandshalter wie auf dem Bild am Kühlkörper.&lt;/li>
+&lt;li>Lege alle Wärmeleitpads auf die passenden Chips.&lt;br />&lt;strong>Wichtig:&lt;/strong> Die Pads haben &lt;strong>oben eine durchsichtige Schutzfolie&lt;/strong> und unten eine Klebeschicht.&lt;br />&lt;strong>Vergiss nicht, auch die obere Schutzfolie abzuziehen!&lt;/strong>&lt;/li>
+&lt;li>Richte den Kühlkörper wie auf dem Bild am CM4 aus.&lt;/li>
+&lt;li>Befestige ihn mit den &lt;strong>beiden unteren Schrauben&lt;/strong>. Die oberen beiden Löcher bleiben &lt;strong>frei&lt;/strong>.&lt;/li>
+&lt;li>Drücke den 3D-gedruckten Abstandshalter wie auf dem Bild zwischen CM4 und xCore-Board.&lt;/li>
+&lt;li>Setze jetzt am besten die SD-Karte ein, außer bei der Version mit eMMC.&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-233-xcore-in-das-mainboard-einsetzen">Schritt 2.3.3: xCore in das Mainboard einsetzen&lt;/h2>
+&lt;p>Das xCore-Board ist jetzt zusammengebaut und kann in das Mainboard eingesetzt werden.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Hinweis&lt;/h4>
+Prüfe vorher, ob die SD-Karte im CM4 steckt. Bei der Version mit eMMC entfällt dieser Schritt.
+Je nach Mainboard-Layout kommst du später nur noch schwer an den SD-Kartensteckplatz.
+&lt;/div>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%201%20-%20Insert%20xCore%20in%2045%20degree%20angle_hu1e929e22648a795cb4c68ba225f09fc6_1425091_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 1 – xCore im 45-Grad-Winkel einsetzen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%201%20-%20Insert%20xCore%20in%2045%20degree%20angle_hu1e929e22648a795cb4c68ba225f09fc6_1425091_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 1 – xCore im 45-Grad-Winkel einsetzen"
+title="Schritt 1 – xCore im 45-Grad-Winkel einsetzen">
+&lt;span title="Schritt 1 – xCore im 45-Grad-Winkel einsetzen">Schritt 1 – xCore im 45-Grad-Winkel einsetzen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/_huca419582850eab59ed3cc66a984d4873_2579551_da7d9e9cfded513aa83a07719a215660.jpg" title="Schritt 2 – Halteklammern links und rechts einrasten lassen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/_huca419582850eab59ed3cc66a984d4873_2579551_88f371cde38e0342b596ed3d1b7a6269.jpg"
+alt="Schritt 2 – Halteklammern links und rechts einrasten lassen"
+title="Schritt 2 – Halteklammern links und rechts einrasten lassen">
+&lt;span title="Schritt 2 – Halteklammern links und rechts einrasten lassen">Schritt 2 – Halteklammern links und rechts einrasten lassen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%203%20-%20fix%20the%20core%20using%20screws_hu9b5852c29b80039105f3fad5bfdfcc42_1601654_1600x1600_fit_q99_catmullrom.jpg" title="Schritt 3 – Core-Board mit Schrauben befestigen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-mainboard/images/insert-xcore-into-mainboard/Step%203%20-%20fix%20the%20core%20using%20screws_hu9b5852c29b80039105f3fad5bfdfcc42_1601654_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="Schritt 3 – Core-Board mit Schrauben befestigen"
+title="Schritt 3 – Core-Board mit Schrauben befestigen">
+&lt;span title="Schritt 3 – Core-Board mit Schrauben befestigen">Schritt 3 – Core-Board mit Schrauben befestigen&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Setze das xCore-Board in einem Winkel von etwa 45 Grad in den Steckplatz des Mainboards ein.&lt;/li>
+&lt;li>Drücke die Platine nach unten, bis sie parallel zum Mainboard liegt. Achte darauf, dass die seitlichen Halteklammern am xCore einrasten.&lt;/li>
+&lt;li>Sichere das xCore-Board mit zwei Schrauben am Mainboard. &lt;strong>Verwende hier keine Abstandshalter oder Ähnliches. Sonst passt das Mainboard nicht in den Mäher, zumindest beim YardForce Classic 500.&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-234-xescs-und-gps-in-das-mainboard-einsetzen">Schritt 2.3.4: xESCs und GPS in das Mainboard einsetzen&lt;/h2>
+&lt;p>Zum Schluss setzt du die übrigen Module auf das Mainboard.&lt;/p>
+&lt;p>Richte die Pins der xESCs und der GPS-Platine an den passenden Anschlüssen des Mainboards aus. Es ist in Ordnung, wenn manche ESC-Pins keinen Gegenstecker haben: Sie werden nur zum erstmaligen Aufspielen der Firmware nach der Herstellung verwendet.&lt;/p>
+&lt;p>Das fertige Board sieht ungefähr so aus. Das Beispiel zeigt eine YardForce-Trägerplatine v1.1.0-beta:&lt;/p>
+&lt;p>&lt;img src="images/finished-mainboard.jpg" alt="Fertiges Mainboard">&lt;/p>
+&lt;h2 id="schritt-235-fertig-">Schritt 2.3.5: Fertig 🎉&lt;/h2>
+&lt;p>Das Mainboard ist vorbereitet. Fahre jetzt mit der &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/">Anleitung für dein Mähermodell&lt;/a>
+fort.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,328 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – OpenMower-Hardware und Kompatibilität</title><link>https://openmower.de/latest/de/docs/knowledge-base/getting-started/</link><description>Recent content in OpenMower-Hardware und Kompatibilität on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/knowledge-base/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Kompatible Mäher</title><link>https://openmower.de/latest/de/docs/knowledge-base/getting-started/compatible-mowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/getting-started/compatible-mowers/</guid><description>
+&lt;h2 id="yard-force">Yard Force&lt;/h2>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/yf-mainboard.jpg" alt="YardForce-Trägerplatine für OpenMower v2">&lt;/p>
+&lt;p>&lt;strong>Hier geht es zum Git-Repository:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/p>
+&lt;p>Das Projekt begann mit einem YardForce Classic 500(B). In dieser Dokumentation findest du bebilderte Anleitungen zum Zerlegen und Zusammenbauen. Aus Anwendersicht ist der YardForce Classic 500(B) der „am besten unterstützte“ Mäher.&lt;/p>
+&lt;p>&lt;strong>Es sind aber auch weitere Mäher von YardForce kompatibel:&lt;/strong>&lt;/p>
+&lt;p>Theoretisch lässt sich bei jedem YardForce-Modell ab Baujahr 2019 mit innerem Chassis und äußerem Rahmen (SA-, SC-, LUV-, N- und NX-Reihe) das Original-Mainboard durch ein OpenMower-Mainboard ersetzen, da die Elektronik kompatibel ist.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+Die YardForce-Modelle der Reihen Amiro, Compact, EasyMow, MowBest, XPower und MB sind derzeit (noch) nicht kompatibel.&lt;br>
+Der Hauptgrund ist, dass das OpenMower-Mainboard nicht in ihr Chassis passt.
+&lt;/div>
+&lt;h2 id="sabo--john-deere">SABO / John Deere&lt;/h2>
+&lt;p>Für &lt;strong>SABO MOWit 500F&lt;/strong> (Serie I und II) und &lt;strong>John Deere Tango E5&lt;/strong> (Serie I und II) gibt es ein eigenes Mainboard.&lt;/p>
+&lt;p>&lt;strong>Hier geht es zum Git-Repository:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/p>
+&lt;p>Diese Trägerplatine ist mit folgenden Mähermodellen kompatibel:&lt;/p>
+&lt;ul>
+&lt;li>SABO MOWit 500F (Serie I und II)&lt;/li>
+&lt;li>John Deere Tango E5 (Serie I und II)&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Trägerplatine Serie I (v0.2)&lt;/th>
+&lt;th style="text-align:center">Trägerplatine Serie II (v0.2)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s1-v02.jpg" alt="SABO-Trägerplatine für OpenMower v2, Serie I v0.2">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/om-sabo-cb-s2-v02.jpg" alt="SABO-Trägerplatine für OpenMower v2, Serie II v0.1">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;strong>Serie I (v0.1) im John Deere Tango E5&lt;/strong>&lt;/td>
+&lt;td style="text-align:center">&lt;strong>Serie II (v0.1) im SABO MOWiT 500F&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/johndeere-s1-v01-assembled.jpg" alt="Eingebaute Trägerplatine v0.1, Serie I">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/sabo-s2-v01-assembled.jpg" alt="Eingebaute Trägerplatine v0.1, Serie II">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Diese Mäher werden &lt;strong>gut unterstützt&lt;/strong>. Sogar die Displaysteuerung wurde durch eine voll funktionsfähige, moderne Benutzeroberfläche ersetzt!&lt;/p>
+&lt;div style="padding-bottom: 2.5rem">
+&lt;video width="640" height="360" controls>
+&lt;source src="https://www.shbe.net/openmower/sabo/Sabo_LCD_20251212.mp4" type="video/mp4">
+Dein Browser unterstützt die Videowiedergabe nicht.
+&lt;/video>
+&lt;/div>
+&lt;h2 id="universal-board">Universal-Board&lt;/h2>
+&lt;p>Das Universal-Board enthält alles, was du für einen OpenMower-Umbau brauchst, etwa drei BLDC/DC-Motorcontroller, eine integrierte LiPo-Ladeelektronik sowie Anschlüsse für GPS und Sicherheitssensoren. Schraubklemmen erleichtern den Anschluss. Falls die Platine als Ganzes nicht hineinpasst, lässt sie sich in kleinere Module zerlegen.&lt;/p>
+&lt;p>&lt;strong>Hier geht es zum Git-Repository:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers//images/BreakingTheBoard.jpg" alt="v2-Universal-Board mit Modulen">&lt;/p>
+&lt;h3 id="weitere-kompatible-marken">Weitere kompatible Marken&lt;/h3>
+&lt;p>Von den folgenden Marken sind Mäher bekannt, deren Hardware mit dem Universal-Mainboard kompatibel ist. Frag auf Discord nach, wenn du ein bestimmtes Modell prüfen möchtest. Die Chancen stehen gut, dass es funktioniert:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Husqvarna&lt;/strong>: Die meisten Husqvarna-Mäher&lt;/li>
+&lt;li>&lt;strong>Gardena&lt;/strong>: Die meisten Gardena-Mäher&lt;/li>
+&lt;li>&lt;strong>Fuxtec / Redback&lt;/strong>: Mäher von Fuxtec und Redback&lt;/li>
+&lt;/ul>
+&lt;h3 id="eigene-hardware">Eigene Hardware&lt;/h3>
+&lt;p>Wenn du ein eigenes Chassis hast, stehen die Chancen gut, dass du es mit dem Universal-Board betreiben kannst. Frag auf Discord nach Hilfe für deinen konkreten Aufbau.&lt;/p></description></item><item><title>Docs: Einkaufsliste</title><link>https://openmower.de/latest/de/docs/knowledge-base/getting-started/shopping-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/getting-started/shopping-list/</guid><description>
+&lt;p>&lt;em>Wenn du über einen mit Sternchen (*) gekennzeichneten Link einkaufst, erhalte ich möglicherweise eine kleine Provision. Für dich entstehen keine Mehrkosten. Danke, dass du dieses Projekt unterstützt!&lt;/em>&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+Lies zuerst die &lt;a href="https://openmower.de/latest/latest/de/docs/getting-started/#important-warnings">wichtigen Hinweise&lt;/a>
+&lt;/div>
+&lt;h2 id="plan-the-total-build-cost">Gesamtkosten planen&lt;/h2>
+&lt;p>Plane für den Umbau etwa &lt;strong>700 €&lt;/strong> ein, zuzüglich Mäher und gegebenenfalls RTK-Basisstation. Die Gesamtkosten hängen von der Hardware-Version, dem gewählten GPS-Empfänger sowie Versandkosten und Steuern ab. Prüfe vor dem Kauf die Preise der Teile für deinen konkreten Mäher.&lt;/p>
+&lt;p>Berücksichtige in deinem Budget:&lt;/p>
+&lt;ul>
+&lt;li>Einen kompatiblen Mäher sowie eventuell nötige Reparaturen an Akku, Motoren oder Chassis.&lt;/li>
+&lt;li>Das OpenMower-Hardware-Kit und das Compute Module. Prüfe den Lieferumfang des Kits, damit du keine Teile doppelt kaufst.&lt;/li>
+&lt;li>Einen Rover-GPS-Empfänger, eine Antenne, Kabel, Halterungen und bei Bedarf ein Speichermedium.&lt;/li>
+&lt;li>Entweder eine eigene Basisstation mit Empfänger, Antenne, Stromversorgung und Befestigung oder den Zugang zu einem geeigneten Korrekturdienst. Prüfe dessen Abdeckung und Gebühren.&lt;/li>
+&lt;li>Werkzeug, Steckverbinder, Wetterschutz, Versandkosten und Steuern.&lt;/li>
+&lt;/ul>
+&lt;p>Prüfe die &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers/">Kompatibilitätsliste&lt;/a>
+und lies die &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/">Umbauanleitung&lt;/a>
+vor der Bestellung.&lt;/p>
+&lt;h2 id="teile-für-den-roboter-und-die-ladestation">Teile für den Roboter und die Ladestation&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;th>Benötigte Anzahl&lt;/th>
+&lt;th>Bezugsquelle&lt;/th>
+&lt;th>Hinweise&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mäher&lt;br>(YardForce Classic 500(B))&lt;/td>
+&lt;td>Der Mäher für den Umbau.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3NWgIxk" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+&lt;/td>
+&lt;td>Siehe &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/compatible-mowers/">kompatible Mäher&lt;/a>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenMower-Hardware-Kit&lt;/td>
+&lt;td>Die Elektronik für den Einbau in den Roboter. Besteht aus Mainboard (mit LiPo-Ladeelektronik), xCore-Board und 3× ESC.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>Wende dich auf Discord an @Apehaenger. Bei ihm ist Hardware erhältlich (siehe &lt;a href="https://openmower.de/latest/latest/de/updates/">Ankündigung&lt;/a>
+)&lt;/td>
+&lt;td>Alternativ kannst du die meisten Teile selbst beschaffen und löten. Platinenlayouts und Stücklisten findest du in den Repositories auf der Seite „Links“.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenne&lt;/td>
+&lt;td>Positionsbestimmung für den Roboter&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
+&lt;td>Manche nutzen alternativ UM9XX-Chips (erhältlich bei &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
+und &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
+). Sie sind etwas günstiger als ArduSimple und unterstützen drei Frequenzbänder.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Raspberry Pi Compute Module 4 mit WLAN&lt;/td>
+&lt;td>Der Rechner des Roboters.&lt;br>&lt;br>RAM: mindestens 2 GB für den Betrieb&lt;br>mindestens 4 GB für die Entwicklung&lt;br>&lt;br>Mindestens 16 GB Speicher (eMMC oder µSD-Karte)&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://rpilocator.com/?cat=CM4&amp;amp;instock" target="_blank" rel="noopener">RPi Locator&lt;/a>
+&lt;/td>
+&lt;td>Muss auf das xCore-Board passen. CM4 und CM5 werden unterstützt. Andere CM-kompatible Boards funktionieren möglicherweise ebenfalls, allerdings nicht mit dem fertigen Betriebssystem-Image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>µSD-Karte&lt;/td>
+&lt;td>Nur für RPi CM4 Lite. Mindestens 16 GB Kapazität; besser ist eine Karte mit 32 GB&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3EeWBXj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+oder im Fachhandel vor Ort&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Optionale Teile:&lt;/strong>&lt;/td>
+&lt;td>&lt;strong>Optionale Teile:&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>USB-WLAN-Adapter&lt;/td>
+&lt;td>Für besseren WLAN-Empfang&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Auf Linux-Unterstützung achten&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Nach links abgewinkelter USB-Adapter&lt;/td>
+&lt;td>Wenn der WLAN-Adapter im Mäher bleiben soll. Der USB-Anschluss des RPi sitzt sehr nah an der Gehäusewand&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/3ukNAIj" target="_blank" rel="nofollow noopener">Amazon*&lt;/a>
+oder im Fachhandel vor Ort&lt;/td>
+&lt;td>Das Kit enthält ein Kabel für einen externen USB-Anschluss. Das kann ausreichen, wenn der WLAN-Adapter wasserdicht ist.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="teile-für-die-gps-basisstation">Teile für die GPS-Basisstation&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+Eine GPS-Basisstation brauchst du nur, wenn du keinen externen NTRIP-Dienst nutzen kannst. Es gibt mehrere kostenlose Dienste. Prüfe deshalb vor dem Kauf, ob einer davon für dich infrage kommt.
+&lt;/div>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;th>Benötigte Anzahl&lt;/th>
+&lt;th>Bezugsquelle&lt;/th>
+&lt;th>Hinweise&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Raspberry Pi&lt;br>+ SD-Karte&lt;br>+ Netzteil&lt;/td>
+&lt;td>Du kannst dafür grundsätzlich jeden Raspberry Pi verwenden. Es gibt keine besonderen Anforderungen.&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://amzn.to/4a904YP" target="_blank" rel="nofollow noopener">z. B. Raspberry Pi 4&lt;/a>
+&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ardusimple RTK2B GPS + Antenne&lt;/td>
+&lt;td>Positionsbestimmung für die Basisstation&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>&lt;a href="https://www.ardusimple.com/product/simplertk2b-basic-starter-kit-ip65/" target="_blank" rel="nofollow noopener">ArduSimple&lt;/a>
+&lt;/td>
+&lt;td>Siehe oben&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Die Einrichtung beschreibt die &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/gps/rtk-base-setup/">Anleitung für die GPS-Basisstation&lt;/a>
+.&lt;/p></description></item><item><title>Docs: Systemarchitektur</title><link>https://openmower.de/latest/de/docs/knowledge-base/getting-started/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/getting-started/architecture/</guid><description>
+&lt;p>OpenMower ist in mehrere Ebenen mit klaren Aufgaben aufgeteilt, die über definierte Schnittstellen miteinander verbunden sind. Dadurch kannst du an der Navigation arbeiten, ohne die Firmware anzufassen, oder eine neue Roboterplattform hinzufügen, ohne ROS zu ändern.&lt;/p>
+&lt;p>&lt;img src="images/architecture.svg" alt="Diagramm der Systemarchitektur mit den einzelnen OpenMower-Ebenen">&lt;/p>
+&lt;h2 id="die-einzelnen-ebenen">Die einzelnen Ebenen&lt;/h2>
+&lt;h3 id="app--benutzeroberfläche">App – Benutzeroberfläche&lt;/h3>
+&lt;p>Die OpenMower-App läuft auf dem Smartphone oder im Browser. Damit kannst du den Mäher steuern, Flächen erfassen und seinen Status verfolgen. Sie kommuniziert im lokalen Netzwerk über &lt;strong>MQTT&lt;/strong> mit ROS. Ein eigener ROS-Knoten vermittelt dabei zwischen MQTT-Nachrichten und ROS-Topics.&lt;/p>
+&lt;h3 id="ros--navigation-und-planung-raspberry-pi-cm4">ROS – Navigation und Planung (Raspberry Pi CM4)&lt;/h3>
+&lt;p>Auf dem Raspberry Pi Compute Module 4 läuft die gesamte ROS-Navigationssoftware. Hier fallen die übergeordneten Entscheidungen: Wohin soll der Mäher fahren, wie soll er eine Fläche mähen und wann soll er andocken? ROS erhält Sensordaten zu Position, Ausrichtung und Odometrie von der Firmware und sendet Fahrbefehle zurück.&lt;/p>
+&lt;p>ROS ist bewusst von der Hardware entkoppelt und spricht Motoren oder Sensoren nie direkt an.&lt;/p>
+&lt;h3 id="xbot_framework--die-verbindung">xbot_framework – die Verbindung&lt;/h3>
+&lt;p>ROS und Firmware kommunizieren über &lt;strong>Ethernet&lt;/strong> mithilfe von &lt;a href="https://github.com/xtech/xbot_framework" target="_blank" rel="noopener">xbot_framework&lt;/a>
+– einer Middleware, die Nachrichten zwischen den beiden Ebenen austauscht und sie voneinander entkoppelt. Die Navigationssoftware muss deshalb nichts über die konkrete Hardwareplattform wissen.&lt;/p>
+&lt;h3 id="firmware--motorsteuerung-und-sensoren-xcore--stm32h723">Firmware – Motorsteuerung und Sensoren (xCore · STM32H723)&lt;/h3>
+&lt;p>Die Firmware läuft auf dem xCore-Board und steuert die Hardware direkt: Sie regelt die Motoren über xESC-Controller, liest GPS und IMU aus, verwaltet Akku und Ladeelektronik und sorgt dafür, dass die vorgesehenen Sicherheitszustände eingehalten werden. Der Not-Aus-Dienst kann die Stromversorgung unabhängig von ROS unterbrechen. Welche Roboterplattform der Firmware-Quellcode unterstützt, wird beim Kompilieren über die Konfiguration festgelegt.&lt;/p>
+&lt;h3 id="rtk-basisstation--zentimetergenaue-positionsbestimmung">RTK-Basisstation – zentimetergenaue Positionsbestimmung&lt;/h3>
+&lt;p>RTK-GPS vergleicht die Signale eines Rovers – des GPS-Empfängers auf dem Mäher – mit denen einer fest installierten Basisstation an einer bekannten Position. Die Basisstation sendet &lt;strong>RTCM-Korrekturdaten&lt;/strong> per Funk oder über das Internet (NTRIP) an den GPS-Empfänger des Mähers. So sinkt der Positionsfehler von Metern auf Zentimeter. Die Basisstation muss außerhalb des Mähers stehen und ortsfest sein. Das ist eine grundlegende Voraussetzung von RTK und keine Einschränkung von OpenMower.&lt;/p></description></item><item><title>Docs: Hardware-Versionen und bekannte Probleme</title><link>https://openmower.de/latest/de/docs/knowledge-base/getting-started/hardware-versions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/getting-started/hardware-versions/</guid><description>
+&lt;div class="toc">
+&lt;h2>Table of Contents&lt;/h2>
+&lt;ul>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#aktuelle-hardware-v2-plattform">Aktuelle Hardware (v2-Plattform)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ältere-hardware-v1-plattform">Ältere Hardware (v1-Plattform)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#0130--rot">0.13.0 – Rot&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0120--schwarz">0.12.0 – Schwarz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0110--violett">0.11.0 – Violett&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#0100--grün">0.10.0 – Grün&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#093--ebenfalls-grün">0.9.3 – Ebenfalls grün&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/ul>
+&lt;/div>
+&lt;h2 id="aktuelle-hardware-v2-plattform">Aktuelle Hardware (v2-Plattform)&lt;/h2>
+&lt;p>Änderungen und bekannte Probleme der v2-Plattform findest du im jeweiligen Repository:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>YardForce:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-yardforce" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-yardforce&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>SABO / John Deere:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-sabo" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-sabo&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>Universal:&lt;/strong> &lt;a href="https://github.com/xtech/hw-openmower-universal" target="_blank" rel="noopener">https://github.com/xtech/hw-openmower-universal&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ältere-hardware-v1-plattform">Ältere Hardware (v1-Plattform)&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Information&lt;/h4>
+Die v1-Hardware verwendet eine völlig andere Architektur als die v2-Hardware. Deshalb lässt sie sich nur schwer an neue Mähermodelle anpassen.
+Wenn du bereits ein v1-Kit hast, ist das kein Grund zur Sorge: Es funktioniert weiterhin mit deinem Mäher.
+Ein Umstieg auf v2 bringt dir in diesem Fall keinen wirklichen Vorteil. Für neue Umbauten wird die v2-Plattform empfohlen.
+&lt;/div>
+&lt;h3 id="0130--rot">0.13.0 – Rot&lt;/h3>
+&lt;p>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_13_b_hud8caa6e944d50688b274f3b562da2ed7_107995_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
+&lt;/figure>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_13_a_hucf7ddfef5d0ec1d511b55a6238cecbdb_1194312_400x400_fill_q99_catmullrom_smart1.jpg" width="400" height="400">
+&lt;/figure>
+&lt;/p>
+&lt;h4 id="wichtige-änderungen">Wichtige Änderungen&lt;/h4>
+&lt;ul>
+&lt;li>Eigene CoverUI zum Kit hinzugefügt&lt;/li>
+&lt;li>Unterstützung für das dfPlayer-Soundmodul entfernt&lt;/li>
+&lt;/ul>
+&lt;h4 id="bekannte-probleme">Bekannte Probleme&lt;/h4>
+&lt;ul>
+&lt;li>Die 2,5-mm-Schrauben zur Befestigung des RPi4 fehlten. Betrifft Kits, die vor Juni 2023 verschickt wurden.&lt;/li>
+&lt;li>Die erste Charge der 0.13-Platinen wurde versehentlich mit „latest“ beschriftet. Du musst nichts unternehmen.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Veraltete Firmware&lt;/a>
+. Betrifft Kits, die vor Mai 2023 verschickt wurden.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">Falscher IC2-Chip&lt;/a>
+. Betrifft Kits, die vor Mai 2023 verschickt wurden.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">Regensensorkabel hat eine Buchse, benötigt aber einen Stecker&lt;/a>
+. Betrifft Kits, die vor Mai 2023 verschickt wurden.&lt;/li>
+&lt;/ul>
+&lt;h3 id="0120--schwarz">0.12.0 – Schwarz&lt;/h3>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_12_x_hu852cc7bf07bde5f673cb173046f198e3_105342_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;/figure>
+&lt;h4 id="wichtige-änderungen-1">Wichtige Änderungen&lt;/h4>
+&lt;ul>
+&lt;li>IMU: LSM6DSO statt WT901&lt;/li>
+&lt;/ul>
+&lt;h4 id="bekannte-probleme-1">Bekannte Probleme&lt;/h4>
+&lt;ul>
+&lt;li>Die SPI-Leiterbahnen vom Pico waren falsch verlegt. Die Firmware gleicht diesen Fehler bereits aus. Du musst nichts unternehmen.&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/outdated-firmware/" target="_blank" rel="noopener">Veraltete Firmware&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">Falscher IC2-Chip&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/wrong-rain-sensor-cable/" target="_blank" rel="noopener">Regensensorkabel hat eine Buchse, benötigt aber einen Stecker&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0110--violett">0.11.0 – Violett&lt;/h3>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_11_x_hud065a97029026eee637f866edb8cab94_105715_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;/figure>
+&lt;h4 id="wichtige-änderungen-2">Wichtige Änderungen&lt;/h4>
+&lt;ul>
+&lt;li>WT901 über I2C angebunden, um Pins für den dfPlayer freizugeben&lt;/li>
+&lt;li>Ladestationsplatine um zusätzliche Bohrungen und Klemmen erweitert (rot)&lt;/li>
+&lt;/ul>
+&lt;h4 id="bekannte-probleme-2">Bekannte Probleme&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">Falscher IC2-Chip&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="0100--grün">0.10.0 – Grün&lt;/h3>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_10_x_hu24d4ab11dbc115a5038818757321b1b6_201660_400x0_resize_q99_catmullrom.jpg" width="400" height="400">
+&lt;/figure>
+&lt;h4 id="wichtige-änderungen-3">Wichtige Änderungen&lt;/h4>
+&lt;ul>
+&lt;li>Ladestationsplatine hinzugefügt (grün)&lt;/li>
+&lt;/ul>
+&lt;h4 id="bekannte-probleme-3">Bekannte Probleme&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://openmower.de/archive/v1.0.2/docs/versions/errata/ic2-is-wrong/" target="_blank" rel="noopener">Falscher IC2-Chip&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="093--ebenfalls-grün">0.9.3 – Ebenfalls grün&lt;/h3>
+&lt;p>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_9_3_hu06b4bcf8a4cb53a2adcbd38b3d75b4eb_245928_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;/figure>
+&lt;figure class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+&lt;img class="card-img-top" src="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/0_9_3_gps_huacf58bf9d1b8aad2e5aacd6c79ee4fbd_1066416_400x0_resize_q99_catmullrom.jpg" width="400" height="300">
+&lt;/figure>
+&lt;/p>
+&lt;p>Erste Version. Experimenteller xESC2040 statt xESC-mini (STM32).&lt;/p></description></item></channel></rss>

@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – troubleshooting</title><link>https://openmower.de/latest/de/tags/troubleshooting/</link><description>Recent content in troubleshooting on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Fehlerbehebung: Ungültige Roboter-Firmware</title><link>https://openmower.de/latest/de/docs/troubleshooting/robot-firmware/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/troubleshooting/robot-firmware/</guid><description>
+&lt;p>Die Firmware gibt wiederholt folgenden Fehler aus und die Status-LED blinkt rot:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Robot firmware &amp;#39;&amp;lt;name&amp;gt;&amp;#39; invalid for this hardware...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Das bedeutet, dass der Wert von &lt;code>board:&lt;/code> in deiner &lt;code>mower_params.yaml&lt;/code> nicht zum
+tatsächlich eingebauten Mainboard passt. Die Firmware lehnt den Namen ab und wartet
+weiter auf einen gültigen Wert.&lt;/p>
+&lt;h2 id="lösung">Lösung&lt;/h2>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+Unterstützter Mäher
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+Universal / Eigenbau (MOWER=CUSTOM)
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;p>Öffne die ROS-Konfiguration. Dadurch wird &lt;code>mower_params.yaml&lt;/code> geöffnet:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;p>Trage unter &lt;code>ll:&lt;/code> bei &lt;code>board:&lt;/code> den Platinentyp ein, der zu deiner Hardware passt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">board&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;YardForce&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;p>Nach dem Speichern startet OpenMower automatisch neu. Die Status-LED sollte
+anschließend grün leuchten.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;p>Bearbeite &lt;code>~/params/custom_params.yaml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/params/custom_params.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;p>Setze unter &lt;code>ll:&lt;/code> den Wert für &lt;code>board:&lt;/code>. Bei einem Universal-Board verwendest du
+je nach Akku &lt;code>Universal-5S&lt;/code>, &lt;code>Universal-7S&lt;/code> oder &lt;code>Universal-8S&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">board&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;Universal-7S&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;p>Beim Bearbeiten von &lt;code>custom_params.yaml&lt;/code> wird die Software nicht automatisch
+neu gestartet. Übernimm die Änderung deshalb mit:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;br>
+&lt;p>Die vollständige Referenz für eigene Umbauten findest du unter &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/universal-board-configuration/">Universal-Board konfigurieren&lt;/a>
+.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="gültige-platinentypen">Gültige Platinentypen&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Platinentyp&lt;/th>
+&lt;th>Hardware&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>YardForce&lt;/code>&lt;/td>
+&lt;td>Standard-YardForce-Platine&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>YardForce-V4&lt;/code>&lt;/td>
+&lt;td>YardForce-Platine mit YFR4-xESC (alter Rev.4-Mähmotor)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Universal-5S&lt;/code>&lt;/td>
+&lt;td>Universal-Board mit 5S-Akku&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Universal-7S&lt;/code>&lt;/td>
+&lt;td>Universal-Board mit 7S-Akku&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Universal-8S&lt;/code>&lt;/td>
+&lt;td>Universal-Board mit 8S-Akku&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Worx&lt;/code>&lt;/td>
+&lt;td>Universal-Board mit Worx-Funktionalität&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Lyfco-E1600&lt;/code>&lt;/td>
+&lt;td>Universal-Board mit Lyfco-E1600-Funktionalität&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Husq310MKII&lt;/code>&lt;/td>
+&lt;td>Husqvarna-310-MKII-Platine&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Der Wert muss exakt übereinstimmen, einschließlich Groß- und Kleinschreibung.&lt;/p>
+&lt;p>Die Standardvorlage mit allen gültigen Werten findest du im OpenMowerOS-Repository:
+&lt;a href="https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/home/openmower/params/mower_params.yaml" target="_blank" rel="noopener">mower_params.yaml&lt;/a>
+.&lt;/p></description></item></channel></rss>

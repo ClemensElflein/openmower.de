@@ -1,0 +1,183 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Für Fortgeschrittene</title><link>https://openmower.de/latest/de/docs/knowledge-base/advanced/</link><description>Recent content in Für Fortgeschrittene on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/knowledge-base/advanced/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Simulation starten</title><link>https://openmower.de/latest/de/docs/knowledge-base/advanced/run-simulation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/advanced/run-simulation/</guid><description>
+&lt;h2 id="überblick">Überblick&lt;/h2>
+&lt;p>In der Simulation laufen die &lt;strong>echte&lt;/strong> &lt;code>open_mower_ros&lt;/code>-Software und die OpenMower-App mit einem simulierten Mäher. &lt;code>mower_logic&lt;/code>, Navigation, Flächenplanung, Überwachung und die übrigen Komponenten laufen unverändert. Der Knoten &lt;code>mower_simulation&lt;/code> bildet dabei die Funktionen des Mainboards nach: Antrieb, Mähmotor, IMU, Stromversorgung und GPS.&lt;/p>
+&lt;p>Damit kannst du:&lt;/p>
+&lt;ul>
+&lt;li>OpenMower ausprobieren, bevor du Hardware kaufst oder umbaust.&lt;/li>
+&lt;li>Bestimmte Kombinationen von &lt;code>open_mower_ros&lt;/code>- und App-Versionen testen.&lt;/li>
+&lt;li>Das Verhalten des Mähers nachstellen und Fehler untersuchen, ohne dafür einen Roboter im Garten fahren zu lassen.&lt;/li>
+&lt;/ul>
+&lt;p>Alles läuft in Docker und wird über das kleine Hilfsskript &lt;code>sim.sh&lt;/code> gesteuert.&lt;/p>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Docker&lt;/strong> mit dem &lt;strong>Compose-v2-Plugin&lt;/strong> (&lt;code>docker compose&lt;/code>). Installation über &lt;a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener">https://docs.docker.com/get-docker/&lt;/a>
+.&lt;/li>
+&lt;li>Einen lokalen Checkout des Quellcodes von &lt;code>open_mower_ros&lt;/code>. Die Simulation liegt dort im Verzeichnis &lt;code>docker-simulation/&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>Eine GPU ist nicht nötig. Die Simulationsansicht verwendet standardmäßig Software-Rendering und funktioniert auf jedem Host und Betriebssystem: Linux, macOS und Windows.&lt;/p>
+&lt;h2 id="schnellstart">Schnellstart&lt;/h2>
+&lt;p>Führe im Verzeichnis &lt;code>open_mower_ros/docker-simulation/&lt;/code> aus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Beim ersten Start wird das Simulations-Image lokal gebaut. Das kann einige Minuten dauern. Spätere Starts verwenden das fertige Image und dauern nur Sekunden.&lt;/p>
+&lt;p>Warte nach dem Start etwa eine Minute, bis die Simulation als betriebsbereit gemeldet wird. Öffne dann im Browser:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>URL&lt;/th>
+&lt;th>Inhalt&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:6080&lt;/code>&lt;/td>
+&lt;td>Simulationsansicht (RViz) über noVNC, ohne Passwort und ohne eigenen VNC-Client&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:3000&lt;/code>&lt;/td>
+&lt;td>Neue OpenMower-App mit Karteneditor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>http://localhost:8080&lt;/code>&lt;/td>
+&lt;td>Ältere, „blaue“ OpenMower-App auf Flutter-Basis&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Wenn Docker auf einem anderen Rechner läuft, ersetze &lt;code>localhost&lt;/code> durch dessen Adresse.&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row">
+&lt;div id="sim-up-terminal-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row">
+&lt;div>Die Simulation mit &lt;code>./sim.sh up&lt;/code> starten und weitere Befehle von &lt;code>sim.sh&lt;/code> sowie &lt;code>rostopic echo&lt;/code> ausprobieren.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/de/docs/knowledge-base/advanced/run-simulation//cast/sim-up-terminal.cast',
+document.getElementById('sim-up-terminal-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;p>Eine Beispielkarte mit Mähfläche und Andockpunkt sowie eine passende Mäherkonfiguration sind bereits eingerichtet. Du kannst sofort losfahren.&lt;/p>
+&lt;h2 id="simulationsansicht-novnc">Simulationsansicht (noVNC)&lt;/h2>
+&lt;p>Unter &lt;code>http://localhost:6080&lt;/code> öffnest du RViz, die Darstellung des simulierten Mähers und seiner Karte. Hier kannst du beobachten, wie der Mäher seine Bahnen abfährt und an der Ladestation andockt.&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/advanced/run-simulation//images/novnc-rviz.png" alt="Simulationsansicht im Browser mit noVNC / RViz">&lt;/p>
+&lt;p>Wenn du lieber einen nativen VNC-Client verwendest, verbinde ihn ohne Passwort mit &lt;code>&amp;lt;host&amp;gt;:5900&lt;/code>.&lt;/p>
+&lt;h2 id="die-openmower-app">Die OpenMower-App&lt;/h2>
+&lt;p>Öffne die App unter &lt;code>http://localhost:8080&lt;/code>. Sie bietet dieselbe Oberfläche wie bei echter Hardware: Statusanzeige, manuelles Fahren, Flächenerfassung sowie Starten und Stoppen des Mähens funktionieren mit dem simulierten Mäher.&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/advanced/run-simulation//images/app-status.png" alt="OpenMower-App mit der Simulation verbunden">&lt;/p>
+&lt;p>Du kannst einen Mähauftrag auf der vorbereiteten Fläche starten und in der Simulationsansicht beobachten, wie der Mäher die geplanten Bahnen abfährt.&lt;/p>
+&lt;h2 id="testzustände-in-der-simulation-erzeugen">Testzustände in der Simulation erzeugen&lt;/h2>
+&lt;p>Über die &lt;strong>sim-control&lt;/strong>-Schnittstelle kannst du in der App gezielt bestimmte Situationen erzeugen. Mit einem echten Mäher wäre das oft aufwendig, zeitintensiv oder mit dem Risiko verbunden, die Hardware zu beschädigen. Die App zeigt den Zustand der Simulation dabei laufend an. So ergänzt die Simulation die Tests im Garten.&lt;/p>
+&lt;p>Du kannst:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Jederzeit manuell eingreifen&lt;/strong> – In der Beispielkonfiguration ist &lt;code>always_allow_joystick&lt;/code> gesetzt. Deine manuellen Fahrbefehle haben damit Vorrang, unabhängig davon, was die Software gerade tut. Du kannst ihn mitten beim Mähen vom Kurs abbringen und beobachten, wie er zurückfindet.&lt;/li>
+&lt;li>&lt;strong>Not-Aus auslösen und zurücksetzen&lt;/strong> – Prüfe, ob der Mäher korrekt stoppt und den Betrieb wieder aufnimmt.&lt;/li>
+&lt;li>&lt;strong>Einen festgefahrenen Mäher simulieren&lt;/strong> – Die Räder melden weiter Odometriedaten, während der Mäher tatsächlich auf der Stelle bleibt. So kannst du testen, ob er erkennt, dass er feststeckt, und sich wieder befreien kann.&lt;/li>
+&lt;li>&lt;strong>Die Akkuspannung einstellen&lt;/strong> – Senke sie ab, um Unterspannung und die Rückkehr zum Laden zu testen, oder simuliere einen Ladevorgang.&lt;/li>
+&lt;li>&lt;strong>Die GPS-Qualität umschalten&lt;/strong> – Wechsle zwischen einem guten RTK-Fix mit etwa 2 cm Genauigkeit und einem Zustand ohne Fix mit etwa 1 m Genauigkeit. So prüfst du, wie die Navigation auf GPS-Verlust reagiert.&lt;/li>
+&lt;li>&lt;strong>Die Position versetzen oder springen lassen&lt;/strong> – Versetze den Mäher oder ändere seine Ausrichtung leicht, um die Reaktion auf einen fehlerhaften GPS-Sprung zu testen.&lt;/li>
+&lt;li>&lt;strong>Die Ladestation&lt;/strong> an die aktuelle Mäherposition &lt;strong>verschieben&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/advanced/run-simulation//images/sim-control-panel.png" alt="Bedienfeld für Simulationszustände in der App">&lt;/p>
+&lt;p>Diese Bedienelemente findest du in der neuen App unter &lt;code>http://localhost:3000&lt;/code>. &lt;code>APP_VERSION&lt;/code> in &lt;code>.env&lt;/code> muss dafür aktuell genug sein; &lt;code>edge&lt;/code> enthält sie.&lt;/p>
+&lt;h2 id="versionen-auswählen">Versionen auswählen&lt;/h2>
+&lt;p>Welche Versionen laufen, legst du in &lt;code>.env&lt;/code> im Verzeichnis &lt;code>docker-simulation/&lt;/code> fest. Die mitgelieferten Standardwerte funktionieren direkt. Passe sie an, um eine bestimmte Kombination zu testen:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Variable&lt;/th>
+&lt;th>Bedeutung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>VERSION&lt;/code>&lt;/td>
+&lt;td>Image-Tag von &lt;code>open_mower_ros&lt;/code>: Release-Tag wie &lt;code>v1.2.3&lt;/code>, &lt;code>edge&lt;/code> für den aktuellen main-Stand oder ein PR-/SHA-Tag&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>APP_VERSION&lt;/code>&lt;/td>
+&lt;td>Image-Tag der neuen App mit Karteneditor und grünem Design&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>LEGACY_APP_VERSION&lt;/code>&lt;/td>
+&lt;td>Image-Tag der älteren Flutter-App&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>NOVNC_PORT&lt;/code> / &lt;code>VNC_PORT&lt;/code>&lt;/td>
+&lt;td>Host-Ports der Simulationsansicht, falls &lt;code>6080&lt;/code>/&lt;code>5900&lt;/code> schon belegt sind&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>DISPLAY_RESOLUTION&lt;/code>&lt;/td>
+&lt;td>Virtuelle Bildschirmauflösung der Simulationsansicht&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>VERSION&lt;/code> legt sowohl das &lt;code>open_mower_ros&lt;/code>-Image als auch das daraus gebaute Simulations-Image fest. So passen die Nachrichten- und Dienstdefinitionen des Simulators immer zur getesteten Version.&lt;/p>
+&lt;p>Baue nach einer Versionsänderung neu, damit sie übernommen wird:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh rebuild
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>./sim.sh up&lt;/code> baut nie von selbst neu, sondern verwendet das bereits gebaute Image.&lt;/p>
+&lt;h2 id="häufige-befehle">Häufige Befehle&lt;/h2>
+&lt;p>&lt;code>./sim.sh&lt;/code> ruft &lt;code>docker compose&lt;/code> auf und ergänzt verständlichere Fehlermeldungen. Die vollständige Liste erhältst du mit &lt;code>./sim.sh help&lt;/code>.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Befehl&lt;/th>
+&lt;th>Wirkung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh up&lt;/code>&lt;/td>
+&lt;td>Aktuelle Images herunterladen und die Umgebung im Hintergrund starten&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh down&lt;/code>&lt;/td>
+&lt;td>Umgebung stoppen und ihre Container entfernen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh restart&lt;/code>&lt;/td>
+&lt;td>&lt;code>down&lt;/code>, dann &lt;code>up&lt;/code>; lädt auch Images herunter&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh rebuild&lt;/code>&lt;/td>
+&lt;td>Neubau aus dem Quellcode erzwingen und starten; nach Änderungen an Code, Konfiguration oder &lt;code>VERSION&lt;/code> verwenden&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh logs [service]&lt;/code>&lt;/td>
+&lt;td>Logs mitlesen, zum Beispiel &lt;code>./sim.sh logs open_mower_ros&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh ps&lt;/code>&lt;/td>
+&lt;td>Containerstatus anzeigen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh reset&lt;/code>&lt;/td>
+&lt;td>Mitgelieferte Beispielkarte und Parameter wiederherstellen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>./sim.sh clean&lt;/code>&lt;/td>
+&lt;td>&lt;strong>Löscht Daten:&lt;/strong> Alle gespeicherten Simulationsdaten löschen; fragt vorher nach&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="karte-zurücksetzen">Karte zurücksetzen&lt;/h2>
+&lt;p>Karte, Parameter und ROS-Home-Verzeichnis bleiben als normale Dateien unter &lt;code>./data/&lt;/code> erhalten. Sie sind per Bind-Mount eingebunden und überstehen daher &lt;code>down&lt;/code> und Neustarts. So stellst du die mitgelieferte Beispielkarte wieder her:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh reset
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Um &lt;strong>alles&lt;/strong> unter &lt;code>./data/&lt;/code> zu löschen, also Karte, Parameter, ROS-Home und Aufzeichnungen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh clean
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="fehlerbehebung">Fehlerbehebung&lt;/h2>
+&lt;p>Wenn die Umgebung festzuhängen scheint, prüfe den Zustand des Simulationscontainers und lies die Logs mit:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh ps &lt;span style="color:#8f5902;font-style:italic"># mower_simulation_gui should be &amp;#34;healthy&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./sim.sh logs mower_simulation_gui
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./sim.sh logs open_mower_ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>&lt;code>open_mower_ros&lt;/code> wartet auf die Simulation.&lt;/strong> &lt;code>mower_simulation_gui&lt;/code> startet absichtlich zuerst und stellt den ROS-Master bereit. &lt;code>open_mower_ros&lt;/code> startet erst, wenn der Container als funktionsfähig gemeldet wird. Das entspricht dem echten Startablauf, bei dem das Mainboard bereit sein muss, bevor die ROS-Software darauf zugreift.&lt;/li>
+&lt;li>&lt;strong>Eine Änderung erscheint nicht?&lt;/strong> Wenn die Umgebung schon lief, brauchst du wahrscheinlich &lt;code>./sim.sh rebuild&lt;/code>. &lt;code>up&lt;/code> allein baut nie selbstständig neu.&lt;/li>
+&lt;li>&lt;strong>Ports bereits belegt?&lt;/strong> Ändere &lt;code>NOVNC_PORT&lt;/code> / &lt;code>VNC_PORT&lt;/code> in &lt;code>.env&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>GPU-Beschleunigung&lt;/strong> ist standardmäßig ausgeschaltet und nicht nötig. Wenn du eine GPU hast, entferne die Kommentarzeichen des entsprechenden Blocks für &lt;code>mower_simulation_gui&lt;/code> in &lt;code>docker-compose.yaml&lt;/code>. Der Container erkennt die GPU automatisch und fällt auf Software-Rendering zurück, wenn sie nicht nutzbar ist.&lt;/li>
+&lt;/ul>
+&lt;h2 id="lokale-quellcodeänderungen-testen">Lokale Quellcodeänderungen testen&lt;/h2>
+&lt;p>Um &lt;code>open_mower_ros&lt;/code> aus deinem lokalen Checkout statt aus einem veröffentlichten Image zu starten, baue es einmal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./sim.sh build-from-source
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setze danach &lt;code>BASE_IMAGE=local/open_mower_ros:local&lt;/code> in &lt;code>.env&lt;/code> und führe &lt;code>./sim.sh rebuild&lt;/code> aus.&lt;/p></description></item></channel></rss>

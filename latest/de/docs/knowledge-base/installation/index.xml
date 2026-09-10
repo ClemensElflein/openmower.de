@@ -1,0 +1,134 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Installation</title><link>https://openmower.de/latest/de/docs/knowledge-base/installation/</link><description>Recent content in Installation on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/knowledge-base/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Firmware aktualisieren</title><link>https://openmower.de/latest/de/docs/knowledge-base/installation/firmware-update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/installation/firmware-update/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Frühe Versionen des xCore-Boards haben einen Fehler im Bootloader. Dadurch wird das Board manchmal nicht vom Tool &lt;code>openmower&lt;/code> erkannt.&lt;/p>
+&lt;p>Falls bei der Firmware-Installation Timeout-Fehler auftreten, aktualisiere den Bootloader mit &lt;code>openmower update-bootloader&lt;/code> und versuche es erneut.&lt;/p>
+&lt;/div>
+&lt;p>Führe &lt;code>openmower update-firmware&lt;/code> aus, um die Firmware auf dem xCore-Board zu installieren. Das Tool &lt;code>openmower&lt;/code> liest deine Umgebungsvariablen, lädt die passende Firmware-Datei herunter und überträgt sie per Ethernet auf das xCore-Board.&lt;/p>
+&lt;p>Die Ausgabe sollte ungefähr so aussehen:&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-2-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Beispielausgabe des Befehls &lt;code>openmower update-firmware&lt;/code>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/de/docs/knowledge-base/installation/firmware-update//cast/openmower-update-firmware.cast',
+document.getElementById('step-3-2-2-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script></description></item><item><title>Docs: CM4-eMMC flashen</title><link>https://openmower.de/latest/de/docs/knowledge-base/installation/flash-cm4-emmc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/installation/flash-cm4-emmc/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Nur für CM4 mit eMMC&lt;/h4>
+&lt;p>Diese Anleitung gilt &lt;strong>nur für CM4-Varianten mit eingebautem eMMC-Speicher&lt;/strong>. Das CM4 Lite hat keinen eMMC-Speicher, sondern verwendet eine microSD-Karte. Dieser Vorgang ist dafür nicht nötig.&lt;/p>
+&lt;p>Prüfe die Modellnummer deines CM4: Bei Varianten mit eMMC ist die Speichergröße im Namen enthalten, zum Beispiel CM4008032 für 32 GB eMMC. Lite-Varianten sind ausdrücklich als „Lite“ gekennzeichnet, zum Beispiel CM4008000.&lt;/p>
+&lt;/div>
+&lt;p>Das CM4 mit eMMC nutzt eingebauten Flash-Speicher statt einer microSD-Karte. Um ein neues Image aufzuspielen, musst du es in den USB-Bootmodus versetzen. Dann erscheint es auf deinem Computer als Massenspeicher.&lt;/p>
+&lt;p>Diese Anleitung beschreibt die OpenMower-spezifischen Schritte. Weitere Details findest du in der &lt;a href="https://www.raspberrypi.com/documentation/computers/compute-module.html#flash-compute-module-emmc" target="_blank" rel="noopener">offiziellen Raspberry-Pi-Dokumentation&lt;/a>
+.&lt;/p>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;ul>
+&lt;li>Einen Computer mit Linux, Windows oder macOS&lt;/li>
+&lt;li>Ein Micro-USB-Kabel zum USB-Anschluss des xCore-Boards&lt;/li>
+&lt;li>Das Betriebssystem-Image, das du aufspielen möchtest, zum Beispiel OpenMower OS&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-1-usb-bootmodus-aktivieren">Schritt 1: USB-Bootmodus aktivieren&lt;/h2>
+&lt;p>Das xCore-Board hat eine Taste &lt;strong>Rpi Boot&lt;/strong>. Es ist die linke der beiden Tasten; die Beschriftung befindet sich unter dem CM4-Steckplatz.&lt;/p>
+&lt;p>&lt;img src="images/rpi-boot-button.png" alt="Position der Taste Rpi Boot auf dem xCore-Board">&lt;/p>
+&lt;ol>
+&lt;li>Halte &lt;strong>Rpi Boot&lt;/strong> gedrückt.&lt;/li>
+&lt;li>Schließe dabei die Stromversorgung an das xCore-Board an oder verbinde das Micro-USB-Kabel mit deinem Computer.&lt;/li>
+&lt;li>Lass die Taste los, sobald das Board mit Strom versorgt wird.&lt;/li>
+&lt;/ol>
+&lt;p>Das CM4 ist jetzt im USB-Bootmodus.&lt;/p>
+&lt;h2 id="schritt-2-rpiboot-auf-dem-computer-installieren">Schritt 2: rpiboot auf dem Computer installieren&lt;/h2>
+&lt;ul class="nav nav-tabs" id="tabs-1" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-01-00-tab" data-toggle="tab" href="#tabs-01-00" role="tab"
+aria-controls="tabs-01-00" aria-selected="false">
+Linux
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-01-tab" data-toggle="tab" href="#tabs-01-01" role="tab"
+aria-controls="tabs-01-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-01-02-tab" data-toggle="tab" href="#tabs-01-02" role="tab"
+aria-controls="tabs-01-02" aria-selected="false">
+macOS
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-1-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-01-00" role="tabpanel" aria-labelled-by="tabs-01-00-tab">
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install rpiboot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo rpiboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-01" role="tabpanel" aria-labelled-by="tabs-01-01-tab">
+&lt;ol>
+&lt;li>Lade das Installationsprogramm von der &lt;a href="https://github.com/raspberrypi/usbboot/releases" target="_blank" rel="noopener">usbboot-Release-Seite&lt;/a>
+herunter und führe es aus.&lt;/li>
+&lt;li>Starte den Computer nach der Installation neu.&lt;/li>
+&lt;li>Öffne bei aktiviertem USB-Bootmodus des CM4 &lt;strong>Start → rpiboot - Mass Storage Gadget&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-01-02" role="tabpanel" aria-labelled-by="tabs-01-02-tab">
+&lt;p>Baue rpiboot aus dem Quellcode und führe dann aus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rpiboot -d mass-storage-gadget64
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Die Anleitung zum Bauen findest du im &lt;a href="https://github.com/raspberrypi/usbboot" target="_blank" rel="noopener">usbboot-Repository&lt;/a>
+.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;p>Nach wenigen Sekunden erscheint der eMMC-Speicher des CM4 auf deinem Computer als USB-Massenspeicher.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tipp&lt;/h4>
+Wenn das Gerät nicht erkannt wird, verzichte auf USB-Hubs und verbinde das Micro-USB-Kabel direkt mit dem Computer.
+&lt;/div>
+&lt;h2 id="schritt-3-image-aufspielen">Schritt 3: Image aufspielen&lt;/h2>
+&lt;p>Schreibe das Betriebssystem-Image mit &lt;strong>Raspberry Pi Imager&lt;/strong> auf das eMMC-Gerät. Wähle den eMMC-Speicher als Ziel aus. Er wird wie jedes andere USB-Laufwerk angezeigt.&lt;/p>
+&lt;p>Unter Linux/macOS kannst du alternativ &lt;code>dd&lt;/code> verwenden:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>your-image.img &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/sdX &lt;span style="color:#000">bs&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>4MiB &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress &lt;span style="color:#000">oflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sync
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ersetze &lt;code>/dev/sdX&lt;/code> durch den tatsächlichen Gerätepfad des eMMC-Speichers. Prüfe ihn vor dem Ausführen sorgfältig.&lt;/p>
+&lt;h2 id="schritt-4-vom-emmc-starten">Schritt 4: Vom eMMC starten&lt;/h2>
+&lt;p>Wenn das Schreiben abgeschlossen ist, trenne das Micro-USB-Kabel und schalte die Stromversorgung des Boards aus und wieder ein. Das CM4 startet jetzt mit dem neu aufgespielten Image.&lt;/p></description></item><item><title>Docs: Externe WLAN-Antenne</title><link>https://openmower.de/latest/de/docs/knowledge-base/installation/external-wifi-antenna/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/installation/external-wifi-antenna/</guid><description>
+&lt;p>Nach dem Anschließen der externen Antenne musst du den Raspberry Pi CM4 so einstellen, dass er diese anstelle der eingebauten Antenne verwendet.&lt;/p>
+&lt;h3 id="terminal-aufzeichnung">Terminal-Aufzeichnung&lt;/h3>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="external-wifi-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>So änderst du die Antennenkonfiguration&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/de/docs/knowledge-base/installation/external-wifi-antenna//cast/change-antenna.cast',
+document.getElementById('external-wifi-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;h3 id="anleitung">Anleitung&lt;/h3>
+&lt;p>Gehe so vor:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Führe aus:&lt;/strong> &lt;code>sudo nano /boot/firmware/config.txt&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Scrolle nach unten&lt;/strong> zum Abschnitt &lt;code>[cm4]&lt;/code> und:
+&lt;ul>
+&lt;li>Kommentiere &lt;code># dtparam=ant1&lt;/code> aus&lt;/li>
+&lt;li>Entferne das Kommentarzeichen vor &lt;code>dtparam=ant2&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Speichern:&lt;/strong> &lt;kbd>Strg&lt;/kbd> + &lt;kbd>O&lt;/kbd> und &lt;strong>Nano beenden:&lt;/strong> &lt;kbd>Strg&lt;/kbd> + &lt;kbd>X&lt;/kbd>&lt;/li>
+&lt;li>&lt;strong>Starte das Betriebssystem neu&lt;/strong> mit &lt;code>sudo reboot&lt;/code>&lt;/li>
+&lt;/ul></description></item></channel></rss>

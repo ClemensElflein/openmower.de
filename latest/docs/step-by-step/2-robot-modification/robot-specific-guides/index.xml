@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Robot Specific Guides</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/</link><description>Recent content in Robot Specific Guides on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: YardForce</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</guid><description/></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Robot Specific Guides</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/</link><description>Recent content in Robot Specific Guides on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: YardForce</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</guid><description/></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;h3 id="things-you-will-need">Things you will need:&lt;/h3>
 &lt;ul>
@@ -20,12 +20,12 @@ title="John Deere Tango E5">
 &lt;span title="John Deere Tango E5">John Deere Tango E5&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Series-II" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO carrier board assembled" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
-alt="SABO MOWiT 500F Series-II"
-title="SABO MOWiT 500F Series-II">
-&lt;span title="SABO MOWiT 500F Series-II">SABO MOWiT 500F Series-II&lt;/span>
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="SABO carrier board assembled"
+title="SABO carrier board assembled">
+&lt;span title="SABO carrier board assembled">SABO carrier board assembled&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
 &lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_1600x1600_fit_q99_h2_catmullrom_2.webp" title="SABO MOWit 500F Series-I" class="lightbox-image">
@@ -36,12 +36,12 @@ title="SABO MOWit 500F Series-I">
 &lt;span title="SABO MOWit 500F Series-I">SABO MOWit 500F Series-I&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO carrier board assembled" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Series-II" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
-alt="SABO carrier board assembled"
-title="SABO carrier board assembled">
-&lt;span title="SABO carrier board assembled">SABO carrier board assembled&lt;/span>
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="SABO MOWiT 500F Series-II"
+title="SABO MOWiT 500F Series-II">
+&lt;span title="SABO MOWiT 500F Series-II">SABO MOWiT 500F Series-II&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;/ul>

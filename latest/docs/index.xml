@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Documentation</title><link>https://openmower.de/latest/docs/</link><description>Recent content in Documentation on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://openmower.de/latest/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step 2.1: Prepare the GPS</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open Source RTK GPS Robotic Mower – Documentation</title><link>https://openmower.de/latest/docs/</link><description>Recent content in Documentation on OpenMower — Open Source RTK GPS Robotic Mower</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://openmower.de/latest/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Step 2.1: Prepare the GPS</title><link>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
 &lt;li class="nav-item">
 &lt;a class="nav-link disabled"
@@ -41,10 +41,10 @@ id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
 &lt;h2 id="update-firmware-and-configure-the-gps-board">Update Firmware and configure the GPS board&lt;/h2>
 &lt;div class="alert alert-info" role="alert">
 &lt;h4 class="alert-heading">Info&lt;/h4>
-&lt;pre>&lt;code>&amp;lt;p&amp;gt;There is a tutorial video available for this step of the process! &amp;lt;br/&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>&lt;/p>
-&lt;p>(time 16:21 - 17:15)&lt;/p>&lt;/p>
+&lt;p>There is a tutorial video available for this step of the process! &lt;br/>
+Check my YouTube video here: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+&lt;/p>
+&lt;p>(time 16:21 - 17:15)&lt;/p>
 &lt;/div>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;ul>
@@ -62,8 +62,7 @@ This will open in a new browser tab. Use &lt;kbd>Ctrl&lt;/kbd>+&lt;kbd>S&lt;/kbd
 &lt;h3 id="step-210-update-firmware">Step 2.1.0: Update Firmware&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-&lt;pre>&lt;code>&amp;lt;p&amp;gt;The F9P now exists in multiple variants. The firmware below is for the L1 + L2 version. Make sure that on the u-blox chip, it says one of the following: &amp;lt;strong&amp;gt;ZED-F9P-02B, ZED-F9P-04B or ZED-F9P-05B!&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
-&lt;/code>&lt;/pre>
+&lt;p>The F9P now exists in multiple variants. The firmware below is for the L1 + L2 version. Make sure that on the u-blox chip, it says one of the following: &lt;strong>ZED-F9P-02B, ZED-F9P-04B or ZED-F9P-05B!&lt;/strong>.&lt;/p>
 &lt;p>If it&amp;rsquo;s a different board, &lt;strong>don&amp;rsquo;t&lt;/strong> use the linked firmware, get it from u-blox.com directly.&lt;/p>
 &lt;/div>
 &lt;p>Update the firmware of your Ardusimple board to version &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin" target="_blank" rel="noopener">&lt;code>ZED-F9P HPG 1.51&lt;/code> - &lt;em>link here&lt;/em>&lt;/a>
@@ -896,10 +895,10 @@ Some devices will detect that the hotspot does not provide internet connectivity
 &lt;h2 id="quick-facts">Quick Facts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;strong>Build time:&lt;/strong> A weekend for a YardForce-class mower; longer for custom chassis&lt;/li>
-&lt;li>&lt;strong>Budget:&lt;/strong> The earlier ~€700 conversion estimate excludes the mower and RTK base station; &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/#plan-the-total-build-cost">price your selected parts and extras&lt;/a>
-before buying.&lt;/li>
+&lt;li>&lt;strong>Budget:&lt;/strong> Allow around &lt;strong>€700&lt;/strong> for the conversion, plus the mower and an RTK base station if needed. See the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/shopping-list/#plan-the-total-build-cost">shopping list&lt;/a>
+for details.&lt;/li>
 &lt;li>&lt;strong>Skill level:&lt;/strong> Intermediate electronics, Linux, and mechanical skills&lt;/li>
-&lt;li>&lt;strong>Community:&lt;/strong> 2k+ members on Discord ready to help with reviews and troubleshooting&lt;/li>
+&lt;li>&lt;strong>Community:&lt;/strong> Around 9,000 members on Discord ready to help with reviews and troubleshooting&lt;/li>
 &lt;/ul>
 &lt;p>New to the project? Start with the &lt;a href="https://openmower.de/latest/latest/docs/overview/">Overview page&lt;/a>
 . Before building, read the &lt;a href="https://openmower.de/latest/latest/docs/knowledge-base/getting-started/architecture/">System Architecture&lt;/a>
@@ -1464,12 +1463,12 @@ title="John Deere Tango E5">
 &lt;span title="John Deere Tango E5">John Deere Tango E5&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Series-II" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO carrier board assembled" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
-alt="SABO MOWiT 500F Series-II"
-title="SABO MOWiT 500F Series-II">
-&lt;span title="SABO MOWiT 500F Series-II">SABO MOWiT 500F Series-II&lt;/span>
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="SABO carrier board assembled"
+title="SABO carrier board assembled">
+&lt;span title="SABO carrier board assembled">SABO carrier board assembled&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
 &lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_1600x1600_fit_q99_h2_catmullrom_2.webp" title="SABO MOWit 500F Series-I" class="lightbox-image">
@@ -1480,12 +1479,12 @@ title="SABO MOWit 500F Series-I">
 &lt;span title="SABO MOWit 500F Series-I">SABO MOWit 500F Series-I&lt;/span>
 &lt;/a>
 &lt;/li>&lt;li>
-&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO carrier board assembled" class="lightbox-image">
+&lt;a href="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Series-II" class="lightbox-image">
 &lt;img class="nozoom"
-src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
-alt="SABO carrier board assembled"
-title="SABO carrier board assembled">
-&lt;span title="SABO carrier board assembled">SABO carrier board assembled&lt;/span>
+src="https://openmower.de/latest/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="SABO MOWiT 500F Series-II"
+title="SABO MOWiT 500F Series-II">
+&lt;span title="SABO MOWiT 500F Series-II">SABO MOWiT 500F Series-II&lt;/span>
 &lt;/a>
 &lt;/li>
 &lt;/ul>
@@ -1795,7 +1794,7 @@ title="Pi Imager Step 7">
 Read this first: &lt;a href="https://openmower.de/latest/latest/docs/getting-started/#important-warnings">Important Info&lt;/a>
 &lt;/div>
 &lt;h2 id="plan-the-total-build-cost">Plan the total build cost&lt;/h2>
-&lt;p>The getting-started guide&amp;rsquo;s approximately €700 figure is an earlier planning estimate for the conversion, excluding the mower and RTK base station. It is not a current supplier quote. Hardware revision, receiver choice, shipping, and taxes can change the total; price the parts below for your exact mower before buying.&lt;/p>
+&lt;p>Allow around &lt;strong>€700&lt;/strong> for the conversion, plus the mower and an RTK base station if needed. Hardware revision, receiver choice, shipping, and taxes can change the total; check the prices of the parts for your mower before buying.&lt;/p>
 &lt;p>Include these items in your budget:&lt;/p>
 &lt;ul>
 &lt;li>A compatible mower and any necessary battery, motor, or chassis repairs.&lt;/li>

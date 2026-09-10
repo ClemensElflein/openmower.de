@@ -1,0 +1,502 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Schritt 3: Software einrichten</title><link>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/</link><description>Recent content in Schritt 3: Software einrichten on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/step-by-step/3-software-setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Schritt 3.1: Mit dem WLAN verbinden</title><link>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/connect-wifi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/connect-wifi/</guid><description>
+&lt;h2 id="schritt-30-stromversorgung-sicherstellen">Schritt 3.0: Stromversorgung sicherstellen&lt;/h2>
+&lt;p>Sorge dafür, dass der Akku während der Einrichtung nicht leer wird. Ohne Stromversorgung ist er wahrscheinlich leer, bevor du fertig bist.
+Normalerweise kannst du den Roboter dafür in die Ladestation stellen, außer beim Universal-Board.&lt;/p>
+&lt;h2 id="schritt-31-hotspot-suchen">Schritt 3.1: Hotspot suchen&lt;/h2>
+&lt;div class="container-fluid m-0 p-0">
+&lt;div class="row">
+&lt;div class="col">
+Schalte den Mäher ein und suche auf deinem Mobilgerät nach WLAN-Netzen.
+OpenMowerOS erstellt automatisch einen Hotspot mit dem Namen `OpenMower-&lt;Some Number>`, wobei am Ende eine Zahl steht. Verbinde dich mit diesem Hotspot.
+&lt;p>Falls dein Mobilgerät meldet, dass das Netzwerk keinen Internetzugang hat, wähle aus, dass du es trotzdem verwenden möchtest.&lt;/p>
+&lt;/div>
+&lt;div class="col-3">
+&lt;p>&lt;img src="images/connect_wifi_screen_1.png" alt="WLAN-Hotspot des OpenMower auf dem Smartphone">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="schritt-32-konfigurationsseite-im-browser-öffnen">Schritt 3.2: Konfigurationsseite im Browser öffnen&lt;/h2>
+&lt;div class="container-fluid m-0 p-0">
+&lt;div class="row">
+&lt;div class="col">
+Manche Geräte erkennen, dass der Hotspot keinen Internetzugang bietet, und öffnen automatisch eine Konfigurationsseite.
+&lt;p>Falls dein Gerät das nicht tut, öffne den Browser auf deinem Smartphone und rufe diese Adresse auf: &lt;a href="http://10.41.0.1/" target="_blank" rel="noopener">http://10.41.0.1/&lt;/a>
+.&lt;/p>
+&lt;/div>
+&lt;div class="col-3">
+&lt;p>&lt;img src="images/connect_wifi_screen_1.png" alt="WLAN-Hotspot des OpenMower auf dem Smartphone">&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="schritt-33-wlan-zugangsdaten-eingeben">Schritt 3.3: WLAN-Zugangsdaten eingeben&lt;/h3>
+&lt;p>Wähle auf der Konfigurationsseite dein WLAN aus und gib das Passwort ein. Klicke dann auf „Connect“.&lt;/p>
+&lt;p>Der OpenMower-Hotspot sollte jetzt aus der Liste der WLAN-Netze verschwinden. Der Roboter verbindet sich mit deinem Heimnetzwerk.&lt;/p>
+&lt;h3 id="schritt-34-verbindung-prüfen">Schritt 3.4: Verbindung prüfen&lt;/h3>
+&lt;p>Prüfe nun, ob der Mäher erfolgreich gestartet ist:&lt;/p>
+&lt;ul>
+&lt;li>Teste die Verbindung von einem anderen PC in deinem Netzwerk mit &lt;code>ping openmower.local&lt;/code>. Das sollte funktionieren. Alternativ kannst du in der Routeroberfläche nachsehen, ob das Gerät verbunden ist.&lt;/li>
+&lt;li>Prüfe, ob du den Mäher per SSH erreichst: &lt;code>ssh openmower@openmower.local&lt;/code>, Passwort &lt;code>openmower&lt;/code>.&lt;/li>
+&lt;li>Prüfe, ob sich das Terminal des Mähers im Browser öffnen lässt. Rufe dazu diese Adresse auf: &lt;a href="http://openmower.local:7681/" target="_blank" rel="noopener">http://openmower.local:7681/&lt;/a>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Schritt 3.2: Grundeinrichtung (Umgebungsvariablen, Firmware und xESC)</title><link>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/basic-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/basic-configuration/</guid><description>
+&lt;div class="toc">
+&lt;h2>Table of Contents&lt;/h2>
+&lt;ul>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#überblick">Überblick&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#arten-von-einstellungen">Arten von Einstellungen&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#das-kommandozeilenwerkzeug-openmower">Das Kommandozeilenwerkzeug &lt;code>openmower&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zugriff-auf-das-terminal">Zugriff auf das Terminal&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#schritt-320-grundlegende-prüfungen">Schritt 3.2.0: Grundlegende Prüfungen&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#prüfen-ob-das-dateisystem-korrekt-vergrößert-wurde">Prüfen, ob das Dateisystem korrekt vergrößert wurde&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#das-tool-openmower-aktualisieren">Das Tool &lt;code>openmower&lt;/code> aktualisieren&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hostnamen-ändern-optional">Hostnamen ändern (optional)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#externe-wlan-antenne-aktivieren-optional">Externe WLAN-Antenne aktivieren (optional)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#schritt-321-umgebungsvariablen-einrichten">Schritt 3.2.1: Umgebungsvariablen einrichten&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#schritt-331-firmware-installieren">Schritt 3.3.1: Firmware installieren&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#schritt-332-xesc-motorcontroller-konfigurieren">Schritt 3.3.2: xESC-Motorcontroller konfigurieren&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#weiter-mit-schritt-34-ros-parameter-konfigurierenhahahugoshortcodes6hbhb">Weiter mit Schritt 3.4: &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/3-software-setup/setup-ros/">ROS-Parameter konfigurieren&lt;/a>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/ul>
+&lt;/div>
+&lt;h2 id="überblick">Überblick&lt;/h2>
+&lt;h3 id="arten-von-einstellungen">Arten von Einstellungen&lt;/h3>
+&lt;p>Die Roboterkonfiguration besteht aus zwei Teilen:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Umgebungsvariablen:&lt;/strong> Sie legen Mähermodell, Hardware-Version und die zu verwendende ROS-Version fest. &lt;strong>Diese richten wir zuerst ein.&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>ROS-Parameter:&lt;/strong> Sie bestimmen das Verhalten von ROS im Betrieb, etwa GPS-Einstellungen, Mähverhalten und MQTT-Konfiguration für das Smart Home.&lt;/li>
+&lt;/ul>
+&lt;h3 id="das-kommandozeilenwerkzeug-openmower">Das Kommandozeilenwerkzeug &lt;code>openmower&lt;/code>&lt;/h3>
+&lt;p>Das von uns entwickelte Kommandozeilenwerkzeug &lt;code>openmower&lt;/code> hilft dir beim Betrieb, bei der Einrichtung und bei der Fehlersuche in der OpenMower-Software.&lt;/p>
+&lt;p>Das Tool ist auf OpenMowerOS vorinstalliert und bietet unter anderem diese Funktionen:&lt;/p>
+&lt;ul>
+&lt;li>ROS-Konfiguration und Umgebungsvariablen bearbeiten&lt;/li>
+&lt;li>Firmware auf dem xCore-Board installieren und aktualisieren&lt;/li>
+&lt;li>ROS-Software starten und stoppen&lt;/li>
+&lt;li>ROS-Logs anzeigen&lt;/li>
+&lt;li>Eine ROS-Shell zur Fehlersuche öffnen&lt;/li>
+&lt;/ul>
+&lt;h3 id="zugriff-auf-das-terminal">Zugriff auf das Terminal&lt;/h3>
+&lt;p>Für alle folgenden Schritte brauchst du Zugriff auf das Terminal.
+Du kannst dafür SSH oder das Terminal im Browser verwenden.&lt;/p>
+&lt;p>Für SSH gelten diese Zugangsdaten:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>username: openmower
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname: openmower
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password: openmower
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Das Terminal im Browser benötigt keine Zugangsdaten und ist hier erreichbar: &lt;a href="http://openmower:7681" target="_blank" rel="noopener">http://openmower:7681&lt;/a>
+&lt;/p>
+&lt;h2 id="schritt-320-grundlegende-prüfungen">Schritt 3.2.0: Grundlegende Prüfungen&lt;/h2>
+&lt;h3 id="prüfen-ob-das-dateisystem-korrekt-vergrößert-wurde">Prüfen, ob das Dateisystem korrekt vergrößert wurde&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Bei OpenMowerOS kommt es derzeit gelegentlich vor, dass das Dateisystem nicht korrekt vergrößert wird.
+Führe &lt;code>df -h /&lt;/code> aus und prüfe, ob die Spalte &lt;code>Use %&lt;/code> fast 100 % anzeigt. Daran erkennst du das Problem.&lt;/p>
+&lt;p>&lt;img src="images/full-file-system.png" alt="df-Ausgabe mit fast vollständig belegtem Dateisystem">&lt;/p>
+&lt;/div>
+&lt;p>&lt;strong>Wenn dein Dateisystem fast voll ist&lt;/strong>, vergrößere es mit diesen Schritten:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Führe aus:&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Wähle&lt;/strong> Advanced Options -&amp;gt; Expand Filesystem&lt;/li>
+&lt;li>&lt;strong>Beende die Einrichtung und starte neu&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Führe erneut &lt;code>df -h /&lt;/code> aus.&lt;/strong> In der Spalte &lt;code>Use %&lt;/code> sollte jetzt ein niedriger Wert stehen, abhängig von der Größe deiner SD-Karte&lt;/li>
+&lt;/ul>
+&lt;h3 id="das-tool-openmower-aktualisieren">Das Tool &lt;code>openmower&lt;/code> aktualisieren&lt;/h3>
+&lt;p>Aktualisiere das Tool &lt;code>openmower&lt;/code>, damit du die neueste Version verwendest.
+Es hat eine eingebaute Update-Funktion. Führe dazu aus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo openmower update-self
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So sollte die Ausgabe aussehen:&lt;/p>
+&lt;div class="container pb-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-0-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Beispielausgabe nach einem erfolgreichen Update.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'cast/openmower-update-self.cast',
+document.getElementById('step-3-2-0-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;h3 id="hostnamen-ändern-optional">Hostnamen ändern (optional)&lt;/h3>
+&lt;p>Wenn du mehrere Roboter betreibst, helfen unterschiedliche Hostnamen dabei, sie auseinanderzuhalten.&lt;/p>
+&lt;p>Folge dazu der Anleitung in der Wissensdatenbank: &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/maintenance/change-hostname/">Hostnamen ändern&lt;/a>
+&lt;/p>
+&lt;h3 id="externe-wlan-antenne-aktivieren-optional">Externe WLAN-Antenne aktivieren (optional)&lt;/h3>
+&lt;p>Wenn du eine externe WLAN-Antenne angeschlossen hast, musst du sie aktivieren.
+Folge dazu der Anleitung in der Wissensdatenbank: &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/installation/external-wifi-antenna/">Externe Antenne aktivieren&lt;/a>
+&lt;/p>
+&lt;h2 id="schritt-321-umgebungsvariablen-einrichten">Schritt 3.2.1: Umgebungsvariablen einrichten&lt;/h2>
+&lt;p>Beginne jetzt mit der Konfiguration der Umgebungsvariablen.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Starte die Konfiguration&lt;/strong> mit &lt;code>openmower configure env&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Wähle&lt;/strong> deinen bevorzugten Editor, zum Beispiel &lt;code>nano&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Bearbeite die Umgebungsvariablen.&lt;/strong> Die Kommentare erklären, was du tun musst&lt;br>
+Wenn du eine ältere OpenMowerOS-Version verwendest, enthält die aktuelle &lt;code>.env&lt;/code>-Datei möglicherweise zusätzliche Kommentare oder Optionen, die in deiner lokalen Kopie fehlen. Die aktuelle Version findest du hier: &lt;a href="https://github.com/ClemensElflein/OpenMowerOS/blob/main/stage-openmower/40-openmower/files/opt/stacks/openmower/.env" target="_blank" rel="noopener">Aktuelle &lt;code>.env&lt;/code>-Datei von OpenMowerOS&lt;/a>
+&lt;/li>
+&lt;li>&lt;strong>Speichere die Datei&lt;/strong> (&lt;kbd>Strg&lt;/kbd> + &lt;kbd>O&lt;/kbd>, &lt;kbd>Enter&lt;/kbd> zum Speichern, danach &lt;kbd>Strg&lt;/kbd> + &lt;kbd>X&lt;/kbd>, &lt;kbd>Enter&lt;/kbd> zum Beenden von nano)&lt;/li>
+&lt;/ul>
+&lt;p>Diese Bildschirmaufzeichnung zeigt den gesamten Ablauf:&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-1-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Im Beispiel wird ein YardForce Classic 500 mit v2-Hardware verwendet.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'cast/openmower-configure-env.cast',
+document.getElementById('step-3-2-1-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;p>Danach weiß das System, welche ROS-Version und welches Mähermodell verwendet werden.&lt;/p>
+&lt;p>Das Tool &lt;code>openmower&lt;/code> lädt nun die ausgewählte ROS-Version. &lt;strong>Das dauert eine Weile, etwa 30 Minuten.&lt;/strong> Zeit für einen ☕.&lt;/p>
+&lt;h2 id="schritt-331-firmware-installieren">Schritt 3.3.1: Firmware installieren&lt;/h2>
+&lt;p>Da das System jetzt deine Hardware kennt, kannst du die Firmware auf dem xCore-Board installieren.
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Frühe Versionen des xCore-Boards haben einen Fehler im Bootloader. Dadurch wird das Board manchmal nicht vom Tool &lt;code>openmower&lt;/code> erkannt.&lt;/p>
+&lt;p>Falls bei der Firmware-Installation Timeout-Fehler auftreten, aktualisiere den Bootloader mit &lt;code>openmower update-bootloader&lt;/code> und versuche es erneut.&lt;/p>
+&lt;/div>
+&lt;p>Führe &lt;code>openmower update-firmware&lt;/code> aus, um die Firmware auf dem xCore-Board zu installieren. Das Tool &lt;code>openmower&lt;/code> liest deine Umgebungsvariablen, lädt die passende Firmware-Datei herunter und überträgt sie per Ethernet auf das xCore-Board.&lt;/p>
+&lt;p>Die Ausgabe sollte ungefähr so aussehen:&lt;/p>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-2-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Beispielausgabe des Befehls &lt;code>openmower update-firmware&lt;/code>.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'/latest/de/docs/knowledge-base/installation/firmware-update//cast/openmower-update-firmware.cast',
+document.getElementById('step-3-2-2-player'),
+{ cols: 110, rows: 24, autoplay: false, loop: true }
+);
+&lt;/script>
+&lt;/p>
+&lt;h2 id="schritt-332-xesc-motorcontroller-konfigurieren">Schritt 3.3.2: xESC-Motorcontroller konfigurieren&lt;/h2>
+&lt;p>Die xESC-Motorcontroller lassen sich für viele BLDC- und DC-Motoren konfigurieren.
+Ihre Firmware basiert auf dem Open-Source-Projekt VESC. Deshalb kannst du sie mit dem VESC Configuration Tool einstellen.&lt;/p>
+&lt;h3 id="voraussetzungen">Voraussetzungen&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Windows- oder Linux-Computer&lt;/strong> für das VESC Configuration Tool&lt;/li>
+&lt;li>&lt;strong>VESC Tool (&lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">https://vesc-project.com/vesc_tool&lt;/a>
+)&lt;/strong> Du kannst das Tool kostenlos herunterladen, indem du die „free“-Version in den Warenkorb legst und den Bestellvorgang abschließt.&lt;/li>
+&lt;li>Die &lt;strong>OpenMower-Firmware&lt;/strong> muss erfolgreich auf dem xCore-Board installiert sein. Das xCore-Board stellt die Verbindung zwischen deinem Computer und dem xESC her. Falls die Firmware noch nicht installiert ist, folge der Anleitung &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/installation/firmware-update/">Firmware aktualisieren&lt;/a>
+.&lt;/li>
+&lt;li>&lt;strong>Optional, aber hilfreich:&lt;/strong>&lt;br/>Konfigurationsdateien für deinen Mäher.&lt;br/>Suche im &lt;a href="https://github.com/ClemensElflein/OpenMower/tree/main/configs/xESC" target="_blank" rel="noopener">OpenMower-Repository&lt;/a>
+nach den passenden Dateien für deinen Mäher. &lt;br/>Du brauchst drei Dateien:
+&lt;ul>
+&lt;li>App-Konfiguration als XML: legt unter anderem die Baudrate fest und ist für alle drei xESC-Controller gleich&lt;/li>
+&lt;li>Mähmotor-Konfiguration als XML: Parameter des Mähmotors&lt;/li>
+&lt;li>Fahrmotor-Konfiguration als XML: Parameter der Radmotoren&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="konfigurationsablauf">Konfigurationsablauf&lt;/h3>
+&lt;h4 id="zugriffe-von-ros-auf-die-controller-stoppen">Zugriffe von ROS auf die Controller stoppen&lt;/h4>
+&lt;p>Führe &lt;code>openmower stop&lt;/code> aus, damit ROS während der Konfiguration nicht auf die Controller zugreift.&lt;/p>
+&lt;h4 id="esc-im-netzwerk-bereitstellen">ESC im Netzwerk bereitstellen&lt;/h4>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/openmower-expose-xesc.png" alt="ESC im Netzwerk bereitstellen">
+Führe &lt;code>openmower expose-xesc [left|right|mower]&lt;/code> aus, um den gewünschten xESC-Controller bereitzustellen. Wähle &lt;code>left&lt;/code>, &lt;code>mower&lt;/code> oder &lt;code>right&lt;/code>.&lt;br/>Der Controller ist dann im lokalen Netzwerk unter &lt;code>openmower:65102&lt;/code> erreichbar, bis du folgende Tastenkombination drückst: &lt;kbd>Strg&lt;/kbd> + &lt;kbd>C&lt;/kbd>.&lt;/p>
+&lt;h4 id="mit-dem-xesc-verbinden">Mit dem xESC verbinden&lt;/h4>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/ConnectToTheESC.png" alt="VESC Tool mit dem ESC verbinden">
+Öffne das VESC Configuration Tool und verbinde dich mit dem xESC:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Connection -&amp;gt; TCP&lt;/code> &lt;strong>[1]&lt;/strong>&lt;/li>
+&lt;li>Trage die IP-Adresse des Mähers oder &lt;code>openmower&lt;/code> in das Feld „Address“ ein &lt;strong>[2]&lt;/strong>.&lt;/li>
+&lt;li>Setze den Port auf &lt;code>65102&lt;/code> &lt;strong>[3]&lt;/strong>&lt;/li>
+&lt;li>Klicke auf &lt;code>Connect&lt;/code> &lt;strong>[4]&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Information&lt;/h4>
+&lt;p>Falls diese Warnmeldung erscheint:&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/Firmware_Version_Warning_Message.png" alt="Warnmeldung">&lt;/p>
+&lt;p>kannst du sie ignorieren. Das VESC Tool ist mit der Firmware-Version auf dem xESC-Controller rückwärtskompatibel.&lt;/p>
+&lt;/div>
+&lt;h4 id="xesc-konfigurieren">xESC konfigurieren&lt;/h4>
+&lt;ul class="nav nav-tabs" id="tabs-4" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-04-00-tab" data-toggle="tab" href="#tabs-04-00" role="tab"
+aria-controls="tabs-04-00" aria-selected="false">
+&lt;strong>Wähle die passende Konfiguration&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-04-01-tab" data-toggle="tab" href="#tabs-04-01" role="tab"
+aria-controls="tabs-04-01" aria-selected="false">
+Fertige Konfigurationen (YardForce)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-02-tab" data-toggle="tab" href="#tabs-04-02" role="tab"
+aria-controls="tabs-04-02" aria-selected="false">
+SABO/John Deere (Kalibrierung)
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-04-03-tab" data-toggle="tab" href="#tabs-04-03" role="tab"
+aria-controls="tabs-04-03" aria-selected="false">
+Neues Modell? Finden wir die passenden Werte
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-4-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-00" role="tabpanel" aria-labelled-by="tabs-04-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab">
+&lt;h4 id="konfigurationen-übertragen">Konfigurationen übertragen&lt;/h4>
+&lt;div class="tab-gallery">&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_1600x1600_fit_q99_catmullrom_3.png" title="1 – Motor-Konfiguration als XML laden" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/1%20-%20Load%20Motor%20Configuration%20XML_hu0eb09337d9fc523d6b24212fe2fcb3d8_166698_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="1 – Motor-Konfiguration als XML laden"
+title="1 – Motor-Konfiguration als XML laden">
+&lt;span title="1 – Motor-Konfiguration als XML laden">1 – Motor-Konfiguration als XML laden&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_1600x1600_fit_q99_catmullrom_3.png" title="2 – Motor-Konfigurationsdatei auswählen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/2%20-%20Select%20Motor%20XML%20Config_hu2b2ce675b08900813ce00c64727145e1_214179_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="2 – Motor-Konfigurationsdatei auswählen"
+title="2 – Motor-Konfigurationsdatei auswählen">
+&lt;span title="2 – Motor-Konfigurationsdatei auswählen">2 – Motor-Konfigurationsdatei auswählen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_1600x1600_fit_q99_catmullrom_3.png" title="3 – Warnung zur Konfigurationsversion ignorieren" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/3%20-%20Ignore%20Configuration%20Version%20Warning%20Message_huf0970ccf74f2234a8e533e5627fa8d04_188960_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="3 – Warnung zur Konfigurationsversion ignorieren"
+title="3 – Warnung zur Konfigurationsversion ignorieren">
+&lt;span title="3 – Warnung zur Konfigurationsversion ignorieren">3 – Warnung zur Konfigurationsversion ignorieren&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_1600x1600_fit_q99_catmullrom_3.png" title="4 – Motor-Konfiguration schreiben" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/4%20-%20Write%20Motor%20Configuration_hu81be6b3f54ede5385c5d307c4ffd1418_165908_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="4 – Motor-Konfiguration schreiben"
+title="4 – Motor-Konfiguration schreiben">
+&lt;span title="4 – Motor-Konfiguration schreiben">4 – Motor-Konfiguration schreiben&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_1600x1600_fit_q99_catmullrom_3.png" title="5 – App-Konfiguration laden" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/5%20-%20Load%20App%20Config_hu958e648c383bac8982d55fff917b9920_171326_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="5 – App-Konfiguration laden"
+title="5 – App-Konfiguration laden">
+&lt;span title="5 – App-Konfiguration laden">5 – App-Konfiguration laden&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_1600x1600_fit_q99_catmullrom_3.png" title="6 – App-Konfiguration schreiben" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/knowledge-base/configuration/configure-xesc/images/upload-configurations/6%20-%20Write%20App%20Config_huc9635877522a0f61a37b4ccc6225d372_161627_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="6 – App-Konfiguration schreiben"
+title="6 – App-Konfiguration schreiben">
+&lt;span title="6 – App-Konfiguration schreiben">6 – App-Konfiguration schreiben&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>Wenn das VESC Configuration Tool verbunden ist, übertrage die Konfiguration auf die xESC-Controller:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>[Bild 1]&lt;/strong>: Klicke auf &lt;code>File -&amp;gt; Load Motor Configuration XML&lt;/code>&lt;/li>
+&lt;li>&lt;strong>[Bild 2]&lt;/strong>: Wähle die Motor-Konfigurationsdatei für den jeweiligen Motor. Mähmotor und Fahrmotoren verwenden unterschiedliche Dateien&lt;/li>
+&lt;li>&lt;strong>[Bild 3]&lt;/strong>: Ignoriere die Versionsmeldung, falls sie erscheint&lt;/li>
+&lt;li>&lt;strong>[Bild 4]&lt;/strong>: Klicke auf &lt;code>Write Motor configuration&lt;/code>. Bei Erfolg erscheint ein grüner Hinweis.&lt;/li>
+&lt;li>&lt;strong>[Bild 5]&lt;/strong>: Klicke auf &lt;code>File -&amp;gt; Load App Configuration XML&lt;/code>. Ignoriere die Versionsmeldung, falls sie erscheint&lt;/li>
+&lt;li>&lt;strong>[Bild 6]&lt;/strong>: Klicke auf &lt;code>Write App configuration&lt;/code>. Bei Erfolg erscheint ein grüner Hinweis.&lt;/li>
+&lt;li>Drücke im OpenMower-Terminal &lt;strong>&lt;kbd>Strg&lt;/kbd> + &lt;kbd>C&lt;/kbd>&lt;/strong>, um die Netzwerkfreigabe des xESC-Controllers zu beenden.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Wiederhole diese Schritte für alle drei xESC-Controller.&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab">
+&lt;h4 id="notwendige-vorbereitungen">Notwendige Vorbereitungen&lt;/h4>
+&lt;ol>
+&lt;li>Baue das Mähmesser ab.&lt;/li>
+&lt;li>Wirklich: Nimm das Messer ab! Das ist ein großer Mäher mit einem starken Motor und einem großen Messer! 💀&lt;/li>
+&lt;li>Bocke den Mäher hinten so auf, dass sich die Räder frei drehen können. Verwende dafür einen Karton, Klotz oder Ständer.&lt;/li>
+&lt;li>Baue das Mähmesser ab!&lt;/li>
+&lt;li>Versorge den Mäher während der Kalibrierung über den Akku, nicht über die Ladestation. Achte auf einen ausreichend geladenen Akku.&lt;/li>
+&lt;li>Prüfe, ob du das Mähmesser wirklich abgebaut hast!&lt;/li>
+&lt;/ol>
+&lt;h4 id="fahrmotoren-kalibrieren-erst-links-dann-rechts">Fahrmotoren kalibrieren: erst links, dann rechts&lt;/h4>
+&lt;p>Kalibriere zuerst den linken Antrieb und wiederhole den Vorgang danach rechts.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Echtzeitdaten aktivieren:&lt;/strong> Später prüfen wir die Kalibrierung anhand eines bekannten Referenzwerts. Auch während der Kalibrierung sind die Werte im Fenster mit der Markierung 2 hilfreich. Aktiviere deshalb zuerst die Echtzeitdaten:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_3_realtime_data.jpg" alt="RT Data">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Starte den &lt;strong>FOC Calibration Wizard&lt;/strong>:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_1.jpg" alt="FOC-Kalibrierung starten">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Gib nun die Motordaten ein. &lt;strong>Diese Werte gelten für den linken und rechten Fahrmotor.&lt;/strong> Für den Mähmotor verwenden wir andere Werte:&lt;br>
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_2.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_3.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_4.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_5.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_6.jpg" style="vertical-align: middle; width:31%"> 🡆 &lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_7.jpg" style="vertical-align: middle; width:31%">&lt;br>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ändere nach der Kalibrierung &lt;strong>nicht die Drehrichtung&lt;/strong>, auch wenn sich das linke Rad bei der Kalibrierung vorwärts und das rechte rückwärts dreht:&lt;/p>
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_4_voc_8.jpg" style="vertical-align: middle; width:31%">
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe nach erfolgreicher Kalibrierung das Ergebnis:
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_5_test.jpg" alt="Test ausführen">&lt;br>&lt;/p>
+&lt;p>Teste mit „&lt;strong>D 0,4&lt;/strong>“ (1) und drücke die Wiedergabetaste für „Duty cycle“ (2). Wenn die Stromaufnahme &lt;strong>≤ 0,15 A&lt;/strong> (3) beträgt und der Motor unauffällig klingt, ist die Kalibrierung gut.&lt;br>
+Teste auch höhere Tastgrade. Der Motor wird dabei lauter, sollte aber gleichmäßig laufen und unauffällig klingen. Falls nicht, drücke STOP (4).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lade als letzten wichtigen Schritt über &lt;em>File → Load App Configuration XML&lt;/em> die passende ESC-App-Konfiguration &lt;code>SABO_Drive-App.xml&lt;/code> (siehe &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO-ESC-Konfigurationen&lt;/a>
+) und drücke rechts auf &lt;code>↧A&lt;/code> („Write app configuration“).&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Geschafft 😆&lt;br>
+… &lt;strong>aber noch nicht fertig&lt;/strong> ✌️ … Wiederhole den gesamten Vorgang für den rechten Antrieb.&lt;/p>
+&lt;p>Beende &lt;code>openmower expose-xesc left&lt;/code> mit &lt;kbd>Strg&lt;/kbd>+&lt;kbd>C&lt;/kbd> und mache mit &lt;code>openmower expose-xesc right&lt;/code> weiter.&lt;/p>
+&lt;h4 id="mähmotor-kalibrieren">Mähmotor kalibrieren&lt;/h4>
+&lt;p>Für den ESC des Mähmotors verwendest du denselben Ablauf mit angepassten Werten:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>openmower expose-xesc mower&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Verwende im FOC Calibration Wizard diese Werte:&lt;/p>
+&lt;ul>
+&lt;li>Tab &amp;ldquo;Motor&amp;rdquo; = Medium Inrunner ~750g
+&lt;ul>
+&lt;li>Advanced: Max Power Loss = 200, Motor Poles = 8&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Battery&amp;rdquo;
+&lt;ul>
+&lt;li>Battery Capacity = 3.9Ah (wie zuvor)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tab &amp;ldquo;Setup&amp;rdquo;
+&lt;ul>
+&lt;li>Gear Ratio = Check Direct Drive&lt;/li>
+&lt;li>Motor Poles = 8&lt;/li>
+&lt;li>Motor Temp. Sensor = disabled&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Teste mit „&lt;strong>D 0,08&lt;/strong>“. Die Stromaufnahme sollte &lt;strong>≤ 0,52 A&lt;/strong> betragen, bei abgebautem Messer&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Drehrichtung des Messers prüfen/anpassen:&lt;br>
+Das Messer muss sich gegen den Uhrzeigersinn drehen, wenn du von unten auf die Achse schaust. Prüfe das bei niedriger Drehzahl, zum Beispiel mit „D 0,02“.&lt;/p>
+&lt;p>Wenn es sich im Uhrzeigersinn dreht, ändere die Richtung über: &lt;em>Motor Settings → General → Tab General → Invert Motor Direction&lt;/em>. &lt;strong>Vergiss nicht, die Änderung mit „Write motor configuration“ über &lt;code>↧M&lt;/code> zu speichern!&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Lade über &lt;em>File → Load App Configuration XML&lt;/em> die passende ESC-App-Konfiguration &lt;code>SABO_Mower-App.xml&lt;/code> (siehe &lt;a href="https://github.com/xtech/hw-openmower-sabo/tree/main/Configs/xESC" target="_blank" rel="noopener">SABO-ESC-Konfigurationen&lt;/a>
+) und drücke rechts auf &lt;code>↧A&lt;/code> („Write app configuration“).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Messerdrehzahl begrenzen:&lt;br>
+Begrenze die maximale Drehzahl unbedingt auf den Wert des Originalmähers! Sonst können die Motorlager beschädigt werden. Noch gefährlicher: Das Messer könnte sich lösen und wegfliegen. 💀
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_8_mow_rpm.jpg" alt="Drehzahl begrenzen">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Akkustrom begrenzen:&lt;br>
+Begrenze den Akkustrom passend zur Hardware-Version deiner SABO-Trägerplatine:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>SABO-Trägerplatinen-Version&lt;/th>
+&lt;th>VESC-Einstellung &lt;code>Battery Current max.&lt;/code>&lt;/th>
+&lt;th>Akkusicherung&lt;/th>
+&lt;th>Mähmotorsicherung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>v0.2.x&lt;/td>
+&lt;td>6A&lt;/td>
+&lt;td>Konservativ: 4 A mittelträge&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.4.x&lt;/td>
+&lt;td>4.5A&lt;/td>
+&lt;td>Konservativ: 4 A mittelträge&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>v0.5.x&lt;/td>
+&lt;td>9A&lt;/td>
+&lt;td>4 A mittelträge, hier aber nicht maßgeblich&lt;/td>
+&lt;td>8 A mittelträge&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>&lt;strong>Hinweis:&lt;/strong> Die oben angegebenen Werte für &lt;code>Battery Current max.&lt;/code> sind theoretische Auslegungsgrenzen auf Grundlage konservativer Berechnungen der Leiterbahnbreiten.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;strong>Warnung:&lt;/strong> Wenn du einen Wert oberhalb des Nennstroms der Originalsicherung wählst, musst du damit rechnen, dass sie durchbrennt und durch eine Sicherung mit höherem Nennstrom ersetzt werden muss.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/configuration/configure-xesc//images/sabo/vesc_9_mow_currents.jpg" alt="Ströme begrenzen">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-04-03" role="tabpanel" aria-labelled-by="tabs-04-03-tab">
+&lt;p>Bei anderen Mähermodellen musst du die passenden Einstellungen für deinen Umbau selbst ermitteln.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="weiter-mit-schritt-34-ros-parameter-konfigurierenhahahugoshortcodes6hbhb">Weiter mit Schritt 3.4: &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/3-software-setup/setup-ros/">ROS-Parameter konfigurieren&lt;/a>
+&lt;/h2></description></item><item><title>Docs: Schritt 3.3: ROS konfigurieren</title><link>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/setup-ros/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/3-software-setup/setup-ros/</guid><description>
+&lt;h2 id="schritt-331-ros-parameter-einstellen">Schritt 3.3.1: ROS-Parameter einstellen&lt;/h2>
+&lt;p>Die ROS-Parameter stellst du ähnlich wie zuvor die Umgebungsvariablen ein.
+Führe &lt;code>openmower configure ros&lt;/code> aus und passe die Parameter an deinen Aufbau an.&lt;/p>
+&lt;p>Bei der ersten Einrichtung kannst du die meisten Parameter auf ihren Standardwerten belassen.&lt;/p>
+&lt;p>&lt;strong>Diese Parameter musst du einstellen:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>gps/baud_rate&lt;/strong>: Die Baudrate des GPS-Moduls. Wenn du Ardusimple GPS mit der bereitgestellten Konfigurationsdatei verwendest, belasse sie bei 921600.&lt;/li>
+&lt;li>&lt;strong>gps/protocol&lt;/strong>: Das verwendete GPS-Protokoll. Wenn du Ardusimple GPS mit der bereitgestellten Konfigurationsdatei verwendest, belasse es bei „UBX“.&lt;/li>
+&lt;li>&lt;strong>gps/datum_lat, gps/datum_long&lt;/strong>: Verwende Koordinaten nahe dem geplanten Standort der Ladestation. &lt;strong>Tipp:&lt;/strong> Öffne &lt;a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps&lt;/a>
+und klicke mit der rechten Maustaste auf einen Ort, um die Koordinaten abzulesen. Der Punkt sollte nur wenige Meter von der Ladestation entfernt sein; besonders genau muss er hier nicht sein.&lt;/li>
+&lt;li>&lt;strong>ntrip_client/*&lt;/strong>: Trage die NTRIP-Parameter für deine GPS-Basisstation ein.&lt;/li>
+&lt;/ul>
+&lt;div class="container pb-3 pt-3">
+&lt;div class="row justify-content-md-center">
+&lt;div id="step-3-2-3-player" class="">&lt;/div>
+&lt;/div>
+&lt;div class="row justify-content-md-center">
+&lt;div>Beispiel einer ROS-Konfiguration.&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+AsciinemaPlayer.create(
+'cast/openmower-configure-ros.cast',
+document.getElementById('step-3-2-3-player'),
+{ cols: 130, rows: 30, autoplay: false, loop: true }
+);
+&lt;/script></description></item></channel></rss>

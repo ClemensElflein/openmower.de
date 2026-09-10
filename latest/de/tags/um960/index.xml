@@ -1,0 +1,348 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – um960</title><link>https://openmower.de/latest/de/tags/um960/</link><description>Recent content in um960 on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/tags/um960/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Schritt 2.1: GPS vorbereiten</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-the-gps/</guid><description>
+&lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link disabled"
+id="tabs-00-00-tab" data-toggle="tab" href="#tabs-00-00" role="tab"
+aria-controls="tabs-00-00" aria-selected="false">
+&lt;strong>GPS-Modul&lt;/strong>:
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-00-01-tab" data-toggle="tab" href="#tabs-00-01" role="tab"
+aria-controls="tabs-00-01" aria-selected="false">
+Ardusimple F9P
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-02-tab" data-toggle="tab" href="#tabs-00-02" role="tab"
+aria-controls="tabs-00-02" aria-selected="false">
+WitMotion Unicore UM9xx
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-03-tab" data-toggle="tab" href="#tabs-00-03" role="tab"
+aria-controls="tabs-00-03" aria-selected="false">
+By-Nav M10/M20 – direkt per USB
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-00-04-tab" data-toggle="tab" href="#tabs-00-04" role="tab"
+aria-controls="tabs-00-04" aria-selected="false">
+By-Nav M10/M20 – über das Netzwerk
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-0-content">
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-00" role="tabpanel" aria-labelled-by="tabs-00-00-tab">
+&lt;/div>
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab">
+&lt;h2 id="firmware-aktualisieren-und-gps-platine-konfigurieren">Firmware aktualisieren und GPS-Platine konfigurieren&lt;/h2>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Info&lt;/h4>
+&lt;p>Für diesen Schritt gibt es eine Videoanleitung! &lt;br/>
+Hier findest du mein YouTube-Video: &lt;a href="https://youtu.be/_bImqD-pQSA?t=981" target="_blank" rel="noopener">&lt;i class="fa fa-brands fa-youtube">&lt;/i> Video&lt;/a>
+&lt;/p>
+&lt;p>(Abschnitt 16:21 bis 17:15)&lt;/p>
+&lt;/div>
+&lt;h3 id="voraussetzungen">Voraussetzungen&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Eine Ardusimple-F9P-GPS-Platine&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Ein Micro-USB-Kabel&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Ein Windows-PC&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Die aktuelle v1-Version von u-center:&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://www.u-blox.com/en/product/u-center" target="_blank" rel="noopener">https://www.u-blox.com/en/product/u-center&lt;/a>
+&lt;br/>
+Lade nicht u-center V2 herunter. Für den F9P brauchst du u-center v1.&lt;/li>
+&lt;li>&lt;strong>Die GPS-Konfigurationsdatei&lt;/strong>&lt;br/>
+🔗 &lt;a href="https://raw.githubusercontent.com/ClemensElflein/OpenMower/refs/heads/main/configs/GPSConfig/robot-fw-1_51.txt" target="_blank">robot-fw-1_51.txt&lt;/a>&lt;br/>
+Der Link öffnet sich in einem neuen Browser-Tab. Verwende &lt;kbd>Strg&lt;/kbd>+&lt;kbd>S&lt;/kbd>, um die Datei herunterzuladen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="schritt-210-firmware-aktualisieren">Schritt 2.1.0: Firmware aktualisieren&lt;/h3>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Den F9P gibt es inzwischen in mehreren Varianten. Die unten verlinkte Firmware ist für die L1+L2-Version. Prüfe, ob auf dem u-blox-Chip eine dieser Bezeichnungen steht: &lt;strong>ZED-F9P-02B, ZED-F9P-04B oder ZED-F9P-05B!&lt;/strong>&lt;/p>
+&lt;p>Bei einer anderen Platine darfst du die verlinkte Firmware &lt;strong>nicht&lt;/strong> verwenden. Lade die passende Version direkt von u-blox.com herunter.&lt;/p>
+&lt;/div>
+&lt;p>Aktualisiere die Firmware deiner Ardusimple-Platine auf &lt;a href="https://content.u-blox.com/sites/default/files/2024-11/UBX_F9_100_HPG151_ZED_F9P.6c43b30ccfed539322eccedfb96ad933.bin" target="_blank" rel="noopener">&lt;code>ZED-F9P HPG 1.51&lt;/code> – &lt;em>Download&lt;/em>&lt;/a>
+. Eine Anleitung findest du auf der &lt;a href="https://www.ardusimple.com/zed-f9p-firmware-update-with-simplertk2b/" target="_blank" rel="nofollow noopener">Ardusimple-Website&lt;/a>
+.&lt;/p>
+&lt;h3 id="schritt-211-u-center-öffnen-und-gps-verbinden">Schritt 2.1.1: u-center öffnen und GPS verbinden&lt;/h3>
+&lt;p>Verbinde nach der Installation von u-center die Ardusimple-Platine über ihre USB-Buchse „Power+GPS“ mit deinem Windows-PC. Die blauen LEDs sollten aufleuchten, und Windows sollte das Gerät als COM-Port erkennen.
+Öffne anschließend u-center.&lt;/p>
+&lt;p>Wähle in u-center unter &lt;code>Receiver -&amp;gt; Connection&lt;/code> den passenden COM-Port, um die Verbindung zur Platine herzustellen.&lt;/p>
+&lt;h3 id="schritt-212-konfiguration-auf-das-gps-modul-übertragen">Schritt 2.1.2: Konfiguration auf das GPS-Modul übertragen&lt;/h3>
+&lt;p>&lt;img src="transfer-gps-settings.jpg" alt="Einstellungen mit u-center übertragen">&lt;/p>
+&lt;p>Öffne nach erfolgreicher Verbindung &lt;code>Tools -&amp;gt; Receiver Configuration ...&lt;/code>.
+Wähle dort über &lt;code>...&lt;/code> die zuvor heruntergeladene Datei &lt;code>robot-fw-1_51.txt&lt;/code> aus. Übertrage die Konfiguration mit &lt;code>Transfer File -&amp;gt; GNSS&lt;/code> auf das GPS-Modul.&lt;/p>
+&lt;h3 id="schritt-213-konfiguration-im-flash-speichern">Schritt 2.1.3: Konfiguration im Flash speichern&lt;/h3>
+&lt;p>&lt;img src="save-settings-to-flash.jpg" alt="Einstellungen im Flash speichern">&lt;/p>
+&lt;p>Damit die Konfiguration nach dem Ausschalten erhalten bleibt, musst du sie im Flash-Speicher sichern. Öffne &lt;code>View -&amp;gt; Configuration View&lt;/code>, wähle links &lt;code>CFG (Configuration)&lt;/code> und aktiviere &lt;code>Save current configuration&lt;/code>. Rechts müssen sowohl &lt;code>0 - BBR&lt;/code> als auch &lt;code>1 - FLASH&lt;/code> ausgewählt sein. Klicke danach in der unteren Werkzeugleiste auf &lt;code>Send&lt;/code>.&lt;/p>
+&lt;p>Rechts oben erscheint ein Zähler für die Zeit seit der letzten an die GPS-Platine gesendeten Nachricht. Direkt nach dem Klick auf &lt;code>Send&lt;/code> sollte er &lt;code>0s&lt;/code> anzeigen.&lt;/p>
+&lt;h3 id="schritt-214-fertig-">Schritt 2.1.4: Fertig 🎉&lt;/h3>
+&lt;p>Dein GPS-Modul ist jetzt für OpenMower eingerichtet. Du kannst es vom Windows-PC trennen.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;ol>
+&lt;li>
+&lt;p>Verbinde dein UM9xx mit dem mitgelieferten USB-C-Kabel mit dem PC&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne ein serielles Terminal wie minicom, miniterm oder CuteCom mit 115200 Baud&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Achte darauf, dass als Zeilenende CR/LF eingestellt ist&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Sende &lt;code>CONFIG&lt;/code>&lt;kbd>↵ Enter&lt;/kbd>, um die Verbindung zu prüfen. Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe Kabel, Port und Berechtigungen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul zurück und stelle die Baudrate auf 921600, indem du diese Befehle zeilenweise eingibst:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+CONFIG COM1 921600&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit &lt;code>CONFIG&lt;/code>. Falls die Ausgabe nicht wie zuvor aussieht, stelle dein serielles Terminal auf 921600 Baud um und öffne die Verbindung bei Bedarf neu. Führe &lt;code>CONFIG&lt;/code> erneut aus, bis eine sinnvolle Antwort erscheint&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover mit diesen Befehlen ein, jeweils eine Zeile nach der anderen:&lt;/p>
+&lt;blockquote>
+&lt;p>MODE ROVER UAV&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSV COM1 2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPRMC COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGSA COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPVTG COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGST COM1 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+GPGGA COM1 0.2&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;/p>
+&lt;/blockquote>
+&lt;p>Vergiss &lt;code>SAVECONFIG&lt;/code> nicht. Der Befehl speichert die Einstellungen dauerhaft, sodass sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trenne das USB-Kabel vom UM9x-Modul und setze es auf die Trägerplatine. Löte vorher bei Bedarf die benötigten Stiftleisten an.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-03" role="tabpanel" aria-labelled-by="tabs-00-03-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="einrichtung-über-usb-cutecom">Einrichtung über USB (cutecom)&lt;/h2>
+&lt;p>&lt;strong>Beim M20 ersetzt du jedes COM1 durch COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Verbinde dein M10 über das mitgelieferte USB-C-Kabel mit dem PC.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne das empfohlene Terminalprogramm cutecom.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Verbinde dich mit 115200 Baud.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe Kabel, Port und Berechtigungen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stelle sicher, dass das Zeilenende auf &lt;strong>CR/LF&lt;/strong> eingestellt ist.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Du kannst die Ausgabe in cutecom ausblenden. Sie läuft weiter, wird aber nicht angezeigt.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul auf Werkseinstellungen zurück und deaktiviere die zyklischen Ausgaben mit diesen Befehlen, jeweils zeilenweise:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Blende die Ausgabe in cutecom wieder ein.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Es sollte eine lesbare Ausgabe erscheinen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover ein:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Die Ausgabe sollte weiterhin lesbar sein, da wir über COM3 verbunden sind. Falls nicht, prüfe Verbindung und Baudrate.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze die Rover-Konfiguration fort:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br> (COM1 sollte jetzt 460800 anzeigen)&lt;br>
+RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTYPE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Lege die zyklischen Ausgaben fest:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Speichere die Änderungen zum Schluss im Flash-Speicher:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>Vergiss den Befehl &lt;code>SAVECONFIG&lt;/code> nicht.&lt;/strong> Er speichert die Einstellungen dauerhaft, damit sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Trenne das USB-Kabel vom M10-Modul und setze es auf die Trägerplatine. Löte vorher bei Bedarf die Stiftleisten an.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Passe auch die Baudrate in der OpenMower-ROS-Konfiguration an:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">460800&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-00-04" role="tabpanel" aria-labelled-by="tabs-00-04-tab">
+&lt;div class="prep-gps-um9xx-tab">
+&lt;h2 id="einrichtung-über-tcp-by_connect">Einrichtung über TCP (by_connect)&lt;/h2>
+&lt;p>Diese Methode funktioniert unter Linux und Windows. Unter Linux verwendest du by_connect mit Wine. Führe diesen Schritt erst durch, wenn dein OpenMower-System läuft. Die Konfiguration erfolgt aus der Ferne über TCP.&lt;/p>
+&lt;h3 id="voraussetzungen">Voraussetzungen&lt;/h3>
+&lt;ul>
+&lt;li>Eine WitMotion-ByNav-M10-GPS-Platine (Standardbaudrate: 115200)&lt;/li>
+&lt;li>Einen OpenMower mit installiertem OpenMowerOS&lt;/li>
+&lt;li>Einen Windows- oder Linux-PC&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/LargeFile/BY_Connect.zip" target="_blank" rel="noopener">by_connect-Software&lt;/a>
+von bynav.com&lt;/li>
+&lt;li>&lt;a href="https://www.bynav.com/media/upload/cms_15/UG017_Interface%20Protocol_Bynav.pdf" target="_blank" rel="noopener">Beschreibung des Schnittstellenprotokolls (PDF)&lt;/a>
+— gültig für alle ByNav-Module (M10, M20 usw.)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Beim M20 ersetzt du jedes COM1 durch COM2.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Setze das M10 auf die Trägerplatine. Löte vorher bei Bedarf die Stiftleisten an.&lt;/li>
+&lt;li>Stelle die Baudrate in der OpenMower-ROS-Konfiguration auf 115200:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">gps&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">baud_rate&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#0000cf;font-weight:bold">115200&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">protocol&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;NMEA&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>
+&lt;p>Stelle eine serielle Verbindung zum M10 über TCP her, indem du im SSH-Terminal deines OpenMower &lt;code>openmower expose-gps&lt;/code> ausführst:
+&lt;img src="openmower_expose-gps.png" alt="GPS-Verbindung mit openmower expose-gps freigeben">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne by_connect auf deinem PC, unter Linux mit Wine. Den Download findest du auf bynav.com. Verbinde dich als &lt;strong>TCP Client&lt;/strong> mit Port 2000 des OpenMower. Eine Baudrate musst du hier nicht angeben:
+&lt;img src="by_connect_tcp_client.png" alt="by_connect TCP Client">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Es sollte eine lesbare Ausgabe aus Schlüsseln und Werten erscheinen. Falls nicht, prüfe die Verbindung.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stelle sicher, dass das Zeilenende auf &lt;strong>CR/LF&lt;/strong> eingestellt ist.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Du kannst die Ausgabe in by_connect ausblenden. Sie läuft weiter, wird aber nicht angezeigt:
+&lt;img src="by_connect_input.png" alt="Eingabefeld in by_connect">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze das Modul auf Werkseinstellungen zurück und deaktiviere die zyklischen Ausgaben mit diesen Befehlen, jeweils zeilenweise:&lt;/p>
+&lt;blockquote>
+&lt;p>FRESET&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+(Nach &lt;code>FRESET&lt;/code> kann es einige Sekunden dauern, bis das Modul wieder antwortet.)&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>UNLOGALL&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Blende die Ausgabe in by_connect wieder ein.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Es sollte eine lesbare Ausgabe erscheinen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Richte den Rover ein:&lt;/p>
+&lt;blockquote>
+&lt;p>SERIALCONFIG COM1 460800&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Prüfe die Verbindung erneut:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG VERSION ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;p>Die Ausgabe ist jetzt unlesbar, weil sich die Baudrate geändert hat. Schließe die Verbindung, stelle in der OpenMower-ROS-Konfiguration die Baudrate auf &lt;strong>460800&lt;/strong> und verbinde dich erneut über &lt;code>openmower expose-gps&lt;/code>:
+&lt;img src="changeBaud1.png" alt="Baudrate ändern">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Öffne by_connect erneut, verbinde dich wieder als TCP Client und prüfe die Lesbarkeit der Ausgabe mit:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COMCONFIG ONCE&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Setze die Rover-Konfiguration fort:&lt;/p>
+&lt;blockquote>
+&lt;p>RTKTYPE ROVER&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+RTKTIMEOUT 5&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Wenn alles wie erwartet funktioniert und du &lt;code>ok&lt;/code>-Antworten erhältst, speichere die Einstellungen im Flash. Andernfalls trenne die Verbindung, schalte den OpenMower aus und wieder ein und beginne von vorne:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Lege die zyklischen Ausgaben fest:&lt;/p>
+&lt;blockquote>
+&lt;p>LOG COM1 GPGSV ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPRMC ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGSA ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPVTG ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGST ONTIME 1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>
+LOG COM1 GPGGA ONTIME 0.1&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;li>
+&lt;p>Speichere die Änderungen im Flash-Speicher:&lt;/p>
+&lt;blockquote>
+&lt;p>SAVECONFIG&lt;kbd>↵ Enter&lt;/kbd>&lt;br>&lt;/p>
+&lt;/blockquote>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Vergiss den Befehl &lt;code>SAVECONFIG&lt;/code> nicht.&lt;/strong> Er speichert die Einstellungen dauerhaft, damit sie nach dem Aus- und Einschalten erhalten bleiben.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;p>Weiter mit &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/prepare-sd-card/">Schritt 2.2: SD-Karte vorbereiten&lt;/a>
+&lt;/p></description></item></channel></rss>

@@ -1,0 +1,129 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Beiträge aus der Community</title><link>https://openmower.de/latest/de/docs/contributions/</link><description>Recent content in Beiträge aus der Community on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/contributions/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Mähmotorstrom auf 6 A erhöhen</title><link>https://openmower.de/latest/de/docs/contributions/increase-mower-motor-current/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/contributions/increase-mower-motor-current/</guid><description>
+&lt;p>Autor: ow@discord&lt;/p>
+&lt;p>YardForce-Classic-Mähmotor: &lt;a href="https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66" target="_blank" rel="noopener">https://gist.github.com/olliewalsh/fcc2e6d7852cad5c1f64ce0837306a66&lt;/a>
+&lt;/p>
+&lt;p>Eine alternative Konfiguration stammt von Tomm: &lt;a href="https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698" target="_blank" rel="noopener">https://discord.com/channels/958476543846412329/961803746399101008/1110669606038806698&lt;/a>
+&lt;/p>
+&lt;p>Der Akkustrom ist auf 3 A begrenzt, der Motorstrom auf 6 A. Die Drehzahl ist auf 3.500 U/min begrenzt. Die Leistungsreduzierung bei steigender Temperatur oder sinkender Spannung ist deaktiviert. Ich würde eine 6-A-Sicherung verwenden, da die Fahrmotoren manchmal mehr als 1 A melden.&lt;/p>
+&lt;p>Anleitung:
+Abdeckung öffnen, Sicherung ersetzen und die Konfiguration des mittleren xESC mit folgendem Tool übertragen: &lt;a href="https://vesc-project.com/vesc_tool" target="_blank" rel="noopener">VESC-TOOL&lt;/a>
+.&lt;/p></description></item><item><title>Docs: RoboClaws-Radspikes montieren</title><link>https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/</guid><description>
+&lt;p>Autoren: prigor@discord, Vermut@discord&lt;/p>
+&lt;p>YardForce-Spikes gibt es bei Amazon und auf anderen Plattformen wie Etsy. Diese Fotoanleitung zeigt die Montage von RoboClaws.&lt;/p>
+&lt;p>Die Schritte im Überblick:&lt;/p>
+&lt;ul>
+&lt;li>Räder abnehmen&lt;/li>
+&lt;li>Löcher bei Bedarf vorbohren; laut Erfahrungsberichten funktioniert es auch ohne Vorbohren&lt;/li>
+&lt;li>Spikes von innen befestigen&lt;/li>
+&lt;li>Alles wieder zusammenbauen&lt;/li>
+&lt;/ul>
+&lt;p>Was sich dadurch ändert:&lt;/p>
+&lt;ul>
+&lt;li>Deutlich bessere Haftung auf Gras&lt;/li>
+&lt;li>Geräusche auf Pflaster&lt;/li>
+&lt;li>Fliesen könnten dabei beschädigt werden&lt;/li>
+&lt;/ul>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_1600x1600_fit_q99_catmullrom.jpg" title="1 Abdeckung entfernen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/1%20Remove%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_2979120_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1 Abdeckung entfernen"
+title="1 Abdeckung entfernen">
+&lt;span title="1 Abdeckung entfernen">1 Abdeckung entfernen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_1600x1600_fit_q99_catmullrom.jpg" title="2 Radkappen vorsichtig abhebeln" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/2%20Pry%20the%20wheel%20covers_hu1c42841d2e1e62251d8e576f03379ee4_3309384_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="2 Radkappen vorsichtig abhebeln"
+title="2 Radkappen vorsichtig abhebeln">
+&lt;span title="2 Radkappen vorsichtig abhebeln">2 Radkappen vorsichtig abhebeln&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_1600x1600_fit_q99_catmullrom.jpg" title="3 Mutter lösen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/3%20Unscrew%20the%20nut_hue53a9d4ee58724b03ef68b50029c80ff_3036209_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="3 Mutter lösen"
+title="3 Mutter lösen">
+&lt;span title="3 Mutter lösen">3 Mutter lösen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_1600x1600_fit_q99_catmullrom.jpg" title="4 Rad abziehen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/4%20Pull%20the%20wheel%20to%20remove%20it_hue53a9d4ee58724b03ef68b50029c80ff_1987685_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="4 Rad abziehen"
+title="4 Rad abziehen">
+&lt;span title="4 Rad abziehen">4 Rad abziehen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_c6a59a6ed6aac85518adb3cb5b191747.jpg" title="5 Spikes von innen so ausrichten, dass in allen Löchern Kunststoff zu sehen ist" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/_hue53a9d4ee58724b03ef68b50029c80ff_4259951_225e4db38a082ecb14b107d64ff7b388.jpg"
+alt="5 Spikes von innen so ausrichten, dass in allen Löchern Kunststoff zu sehen ist"
+title="5 Spikes von innen so ausrichten, dass in allen Löchern Kunststoff zu sehen ist">
+&lt;span title="5 Spikes von innen so ausrichten, dass in allen Löchern Kunststoff zu sehen ist">5 Spikes von innen so ausrichten, dass in allen Löchern Kunststoff zu sehen ist&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_1600x1600_fit_q99_catmullrom.jpg" title="6 Kunststoff bedeckt ungefähr die Hälfte des Lochs" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/6%20Plastic%20will%20cover%20approximately%20half%20of%20the%20hole_hu1c42841d2e1e62251d8e576f03379ee4_3323691_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="6 Kunststoff bedeckt ungefähr die Hälfte des Lochs"
+title="6 Kunststoff bedeckt ungefähr die Hälfte des Lochs">
+&lt;span title="6 Kunststoff bedeckt ungefähr die Hälfte des Lochs">6 Kunststoff bedeckt ungefähr die Hälfte des Lochs&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_491de1abb23a47659ca288767b94d2a0.jpg" title="7 Bei Bedarf mit einem 2-mm-Bohrer vorbohren und dabei nur in den Kunststoff bohren" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/_hu1c42841d2e1e62251d8e576f03379ee4_3595863_745a41cc1dc9b5f55d180796e57ff396.jpg"
+alt="7 Bei Bedarf mit einem 2-mm-Bohrer vorbohren und dabei nur in den Kunststoff bohren"
+title="7 Bei Bedarf mit einem 2-mm-Bohrer vorbohren und dabei nur in den Kunststoff bohren">
+&lt;span title="7 Bei Bedarf mit einem 2-mm-Bohrer vorbohren und dabei nur in den Kunststoff bohren">7 Bei Bedarf mit einem 2-mm-Bohrer vorbohren und dabei nur in den Kunststoff bohren&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_1600x1600_fit_q99_catmullrom.jpg" title="8 Schrauben eindrehen, nicht zu fest anziehen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/8%20Screw%20the%20screws,%20don%27t%20overtight_hu1c42841d2e1e62251d8e576f03379ee4_3974105_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="8 Schrauben eindrehen, nicht zu fest anziehen"
+title="8 Schrauben eindrehen, nicht zu fest anziehen">
+&lt;span title="8 Schrauben eindrehen, nicht zu fest anziehen">8 Schrauben eindrehen, nicht zu fest anziehen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_1600x1600_fit_q99_catmullrom.jpg" title="9 Alles wieder zusammenbauen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/9%20Assemble%20them%20back_hu1c42841d2e1e62251d8e576f03379ee4_3757518_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="9 Alles wieder zusammenbauen"
+title="9 Alles wieder zusammenbauen">
+&lt;span title="9 Alles wieder zusammenbauen">9 Alles wieder zusammenbauen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_1600x1600_fit_q99_catmullrom.jpg" title="A Abdeckung schließen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/contributions/mount-wheel-spikes/images/A%20Close%20the%20cover_hue53a9d4ee58724b03ef68b50029c80ff_1997649_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="A Abdeckung schließen"
+title="A Abdeckung schließen">
+&lt;span title="A Abdeckung schließen">A Abdeckung schließen&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Kartenposition nach einem Wechsel der Basisstation anpassen</title><link>https://openmower.de/latest/de/docs/contributions/basestation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/contributions/basestation/</guid><description>
+&lt;p>Mit den DATUM-Feldern &lt;code>OM_DATUM_LAT&lt;/code> und &lt;code>OM_DATUM_LONG&lt;/code> in der Datei &lt;code>mower_config.txt&lt;/code> kannst du die Karte verschieben.&lt;/p>
+&lt;p>Nach einem Wechsel der NTRIP-Basis passt du die DATUM-Felder in der Datei &lt;code>mower_config.txt&lt;/code> an: &lt;code>OM_DATUM_LAT&lt;/code> für links und rechts,
+&lt;code>OM_DATUM_LONG&lt;/code> für oben und unten. Damit verschiebst du die gesamte Karte in die jeweilige Richtung.&lt;/p>
+&lt;p>Als festen Bezugspunkt zum Ausrichten der Karte kannst du die Andockposition des Mähers verwenden. Docke den Mäher dafür
+über die Bedienelemente zur Flächenerfassung ab, fahre ein Stück umher, damit seine Position genau bestimmt wird,
+und docke ihn anschließend mit denselben Bedienelementen manuell wieder an.&lt;/p>
+&lt;p>Nach dem Andocken siehst du in der Weboberfläche, dass der Mäher etwas neben der Andockposition liegt. Passe die Karte
+nun in kleinen Schritten an: &lt;code>OM_DATUM_LAT&lt;/code> verschiebt sie waagerecht, &lt;code>OM_DATUM_LONG&lt;/code> senkrecht.
+Die Genauigkeit hängt von deinem Standort auf der Erde ab; eine Änderung der siebten Stelle um eins entspricht ungefähr 1 cm.
+Wenn du die Karte nach unten verschiebst, wandert die Mäherposition auf der Karte nach oben und umgekehrt.&lt;/p>
+&lt;p>Vergiss nicht, die exportierten Variablen neu zu laden. Am einfachsten geht das mit einem Neustart des Pi, wenn du etwas Zeit hast.
+Fahre anschließend über die Bedienelemente zur Flächenerfassung wieder ein Stück umher und docke erneut manuell an.
+So hast du beim Anpassen der Karte einen verlässlichen Bezugspunkt. Wenn alles passt, starte einen Mähvorgang
+und schicke den Mäher sofort zur Ladestation zurück. Prüfe, ob er selbstständig und mit der richtigen Ausrichtung an der vorgesehenen Position andockt.&lt;/p>
+&lt;p>Starte dann das Mähen. Der Mäher fährt zuerst den Rand ab, normalerweise in vier Runden. Prüfe besonders die vierte Runde
+sorgfältig, da sie am nächsten am Rand liegt. Wenn alles passt, kannst du den Mäher wie gewohnt einsetzen.&lt;/p></description></item></channel></rss>

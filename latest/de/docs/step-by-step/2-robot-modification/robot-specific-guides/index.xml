@@ -1,0 +1,230 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Modellspezifische Anleitungen</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/</link><description>Recent content in Modellspezifische Anleitungen on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: YardForce</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/yardforce/</guid><description/></item><item><title>Docs: SABO / John Deere</title><link>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/</guid><description>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;h3 id="benötigte-teile">Benötigte Teile&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>SABO MOWiT 500F oder John Deere Tango E5&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>OpenMower-v2-Trägerplatine für SABO&lt;/strong> mit allen eingesetzten Modulen: xCore, CM4, GPS und 3× ESC&lt;/li>
+&lt;/ul>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/John%20Deere%20Tango%20E5_hu0ce3284194a3d660b12015accd1cf5dc_10238_1600x1600_fit_q99_h2_catmullrom_2.webp" title="John Deere Tango E5" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/John%20Deere%20Tango%20E5_hu0ce3284194a3d660b12015accd1cf5dc_10238_400x400_fill_q95_h2_catmullrom_smart1_2.webp"
+alt="John Deere Tango E5"
+title="John Deere Tango E5">
+&lt;span title="John Deere Tango E5">John Deere Tango E5&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_1600x1600_fit_q99_catmullrom.jpg" title="SABO-Trägerplatine mit eingesetzten Modulen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20carrier%20board%20assembled_hud446efde19cd3a84311ff58fe6b7b8fe_1346261_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="SABO-Trägerplatine mit eingesetzten Modulen"
+title="SABO-Trägerplatine mit eingesetzten Modulen">
+&lt;span title="SABO-Trägerplatine mit eingesetzten Modulen">SABO-Trägerplatine mit eingesetzten Modulen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_1600x1600_fit_q99_h2_catmullrom_2.webp" title="SABO MOWit 500F Serie I" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWit%20500F%20Series-I_hubcfecabd2cdcbc54bfdeeb88adc2704b_9700_400x400_fill_q95_h2_catmullrom_smart1_2.webp"
+alt="SABO MOWit 500F Serie I"
+title="SABO MOWit 500F Serie I">
+&lt;span title="SABO MOWit 500F Serie I">SABO MOWit 500F Serie I&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_1600x1600_fit_q99_catmullrom_3.png" title="SABO MOWiT 500F Serie II" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/prerequisites/SABO%20MOWiT%20500F%20Series-II_hu401adb45839156b6fac0568423735efc_207365_400x400_fill_q95_catmullrom_smart1_3.png"
+alt="SABO MOWiT 500F Serie II"
+title="SABO MOWiT 500F Serie II">
+&lt;span title="SABO MOWiT 500F Serie II">SABO MOWiT 500F Serie II&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="benötigtes-werkzeug">Benötigtes Werkzeug&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Ratsche mit 10-mm-Nuss&lt;/strong> für das Gehäuse&lt;/li>
+&lt;li>&lt;strong>5-mm-Inbusschlüssel&lt;/strong> für das Messer&lt;/li>
+&lt;li>&lt;strong>Torx T30&lt;/strong> für den Mainboard-Halter&lt;/li>
+&lt;li>&lt;strong>Torx T20&lt;/strong> für das Mainboard&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-241-mäher-öffnen-und-original-mainboard-ausbauen-">Schritt 2.4.1: Mäher öffnen und Original-Mainboard ausbauen 🔓&lt;/h2>
+&lt;ol>
+&lt;li>Lege den Mäher auf den Rücken und entferne die sechs 10-mm-Schrauben am Gehäuse.&lt;/li>
+&lt;li>Entferne das Messer mit dem 5-mm-Inbusschlüssel. Es hat ein Rechtsgewinde. Trage Handschuhe und halte das Messer beim Lösen sicher fest.&lt;/li>
+&lt;li>Halte das Gehäuse mit beiden Händen zusammen und stelle den Mäher wieder auf die Räder.&lt;/li>
+&lt;li>Öffne die Abdeckung hinten an der Griffseite um einige Zentimeter.&lt;/li>
+&lt;li>Leuchte mit einer Taschenlampe hinein und löse die Display-Flachbandkabel:
+&lt;ul>
+&lt;li>Serie I: Zwei Flachbandkabel führen zur CoverUI. Jeder Stecker hat kleine seitliche Verriegelungen. Drücke sie zum Entriegeln und ziehe die Stecker dann vom Mainboard ab.&lt;/li>
+&lt;li>Serie II: Ein Flachbandkabel. Ziehe es gerade aus dem Mainboard-Anschluss. Es hat keine Verriegelung.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Jetzt kannst du die Abdeckung weiter öffnen. Ein einzelnes Kabel führt von den Ladekontakten der Abdeckung zum Mainboard. Davor sitzt ein zweipoliger Molex-Stecker. Drücke die Verriegelung und trenne ihn. Lege die Abdeckung für den späteren Umbau und Zusammenbau beiseite.&lt;/li>
+&lt;li>Trenne alle übrigen Kabel vom Original-Mainboard. Viele Stecker haben eine Rastnase. Drücke sie vor dem Abziehen.&lt;/li>
+&lt;li>Das Original-Mainboard sitzt auf einem schwarzen Kunststoffhalter. An dessen Rückseite befinden sich zwei größere Torx-T30-Schrauben. Entferne sie und nimm das Mainboard zusammen mit dem Halter heraus.&lt;/li>
+&lt;li>Löse die Torx-T20-Schrauben, um das Original-Mainboard vom Halter zu entfernen.&lt;/li>
+&lt;/ol>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/1-2%20Release%20the%20cover%20and%20remove%20the%20mower%20blade_hu0fc2ab289d94344d5844c617919b6d71_371754_1600x1600_fit_q99_catmullrom.jpg" title="1–2 Abdeckung lösen und Mähmesser entfernen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/1-2%20Release%20the%20cover%20and%20remove%20the%20mower%20blade_hu0fc2ab289d94344d5844c617919b6d71_371754_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1–2 Abdeckung lösen und Mähmesser entfernen"
+title="1–2 Abdeckung lösen und Mähmesser entfernen">
+&lt;span title="1–2 Abdeckung lösen und Mähmesser entfernen">1–2 Abdeckung lösen und Mähmesser entfernen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/4-7%20Slightly%20open%20the%20cover%20and%20disconnect%20cables_hu0e712b4557157b65fcbd2e3ed270d0a1_226389_1600x1600_fit_q99_catmullrom.jpg" title="4–7 Abdeckung leicht öffnen und Kabel trennen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/4-7%20Slightly%20open%20the%20cover%20and%20disconnect%20cables_hu0e712b4557157b65fcbd2e3ed270d0a1_226389_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="4–7 Abdeckung leicht öffnen und Kabel trennen"
+title="4–7 Abdeckung leicht öffnen und Kabel trennen">
+&lt;span title="4–7 Abdeckung leicht öffnen und Kabel trennen">4–7 Abdeckung leicht öffnen und Kabel trennen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/8%20Release%20mainboard%20holder_huf6a8b7466ce4bab395f7e80fe18ff6ed_294522_1600x1600_fit_q99_catmullrom.jpg" title="8 Mainboard-Halter lösen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/disassemble-mower/8%20Release%20mainboard%20holder_huf6a8b7466ce4bab395f7e80fe18ff6ed_294522_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="8 Mainboard-Halter lösen"
+title="8 Mainboard-Halter lösen">
+&lt;span title="8 Mainboard-Halter lösen">8 Mainboard-Halter lösen&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-242-vorbereitete-teile-montieren">Schritt 2.4.2: Vorbereitete Teile montieren&lt;/h2>
+&lt;p>Baue die zuvor &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/2-robot-modification/prepare-the-parts/">vorbereiteten Teile&lt;/a>
+ein:&lt;/p>
+&lt;ol>
+&lt;li>Montiere das vorbereitete UM9x-GPS-Modul auf der Trägerplatine und schließe das IPEX/SMA-Kabel wie gezeigt an. Es liegt dem UM9x normalerweise bei.&lt;br>
+&lt;img src="images/UM9x-IPEX-SMA-Cable.jpg" alt="UM9x-IPEX/SMA-Kabel">&lt;/li>
+&lt;li>Setze die Kombination aus xCore, CM4 und optionalem Kühlkörper auf die Trägerplatine, falls noch nicht geschehen.&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-243-optional-wlan-klebeantenne-anbringen-">Schritt 2.4.3 (optional): WLAN-Klebeantenne anbringen 📶&lt;/h2>
+&lt;p>Die WLAN-Klebeantenne kannst du wie gezeigt platzieren:&lt;/p>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/1%20Fix%20it%20to%20the%20mainboard%20holder_hud055a1f3368372fa623422641d791dd2_25431_1600x1600_fit_q99_catmullrom.jpg" title="1 Am Mainboard-Halter befestigen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/1%20Fix%20it%20to%20the%20mainboard%20holder_hud055a1f3368372fa623422641d791dd2_25431_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1 Am Mainboard-Halter befestigen"
+title="1 Am Mainboard-Halter befestigen">
+&lt;span title="1 Am Mainboard-Halter befestigen">1 Am Mainboard-Halter befestigen&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/2%20Route%20cable%20and%20connect%20it_hud1046dc7cbc5098d684b17f4df80587b_39166_1600x1600_fit_q99_catmullrom.jpg" title="2 Kabel verlegen und anschließen" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/wifi-adhesive-antenna/2%20Route%20cable%20and%20connect%20it_hud1046dc7cbc5098d684b17f4df80587b_39166_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="2 Kabel verlegen und anschließen"
+title="2 Kabel verlegen und anschließen">
+&lt;span title="2 Kabel verlegen und anschließen">2 Kabel verlegen und anschließen&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-244-trägerplatine-und-mainboard-halter-montieren-">Schritt 2.4.4: Trägerplatine und Mainboard-Halter montieren 🔩&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Wenn alle Module vorbereitet und aufgesteckt sind, befestige die Trägerplatine am Mainboard-Halter.&lt;br>
+&lt;strong>Wenn du weniger Schrauben als Löcher hast, verwende zuerst die Löcher in der Nähe der größeren Steckverbinder!&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setze die Trägerplatine mit dem Halter wieder in den Mäher ein und befestige sie mit den beiden T30-Schrauben.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Schließe alle Stecker vorsichtig an. Manche passen in mehrere Buchsen. Prüfe deshalb die Beschriftungen oder verwende diese Anschlussübersicht:&lt;br>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Anschlüsse Serie I&lt;/th>
+&lt;th style="text-align:center">Anschlüsse Serie II&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">&lt;img src="images/om-sabo-cb-s1-v02-plugs.jpg" alt="Anschlüsse Serie I">&lt;/td>
+&lt;td style="text-align:center">&lt;img src="images/om-sabo-cb-s2-v02-plugs.jpg" alt="Anschlüsse Serie II">&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Hinweis: Manche Stecker sind gedreht angeordnet. Verwende keine Gewalt!&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-245-gps-antenne-zum-beispiel-hahx-901-auf-der-abdeckung-montieren-">Schritt 2.4.5: GPS-Antenne, zum Beispiel HA/HX-901, auf der Abdeckung montieren 🛰️&lt;/h2>
+&lt;p>Eine alternative Halterung für die Montage im Gehäuse, bei der du das Gehäuse nicht bearbeiten musst, hat &lt;a href="https://discord.com/channels/958476543846412329/1355300774523174922/1426287736356077808" target="_blank" rel="noopener">STS entworfen&lt;/a>
+. Weitere Details und gegebenenfalls STL-Dateien findest du in der Discord-Diskussion.&lt;/p>
+&lt;ol>
+&lt;li>Bohre ein Loch mit 6,5 bis 7 mm Durchmesser ungefähr an der auf den Bildern gezeigten Stelle in die Abdeckung.&lt;/li>
+&lt;li>Montiere das mitgelieferte 30–40 cm lange SMA-Verlängerungskabel. Der SMA-Durchführungsanschluss muss weit genug herausragen, damit sich die HA/HX-901 vollständig aufschrauben lässt und guten Kontakt hat. Lass im Zweifel innen eine Unterlegscheibe oder einen Abstandshalter weg, um mehr Gewindelänge zu erhalten.&lt;br>
+Dichte den Anschluss von oben mit Silikon oder einem ähnlichen Dichtmittel ab. Verwende oben nicht zu viel, damit sich die HA/HX-901 später noch aufschrauben lässt.&lt;/li>
+&lt;li>Dichte auch die Innenseite gründlich ab, damit kein Wasser eindringen kann. Verwende auf der Innenseite großzügig Dichtmittel.&lt;/li>
+&lt;li>Lass das Dichtmittel ausreichend aushärten, bevor du weitermachst.&lt;/li>
+&lt;/ol>
+&lt;style>
+.image-gallery {overflow: auto; margin-left: -1%!important;}
+.image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 24%;}
+.image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+.image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+.image-gallery li a img {width: 100%; display: block;}
+&lt;/style>&lt;ul class="image-gallery">&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/1%20Drill%20hole%20location_hu8069cf3c520d3e276c280f433e42eb95_35320_1600x1600_fit_q99_catmullrom.jpg" title="1 Position der Bohrung" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/1%20Drill%20hole%20location_hu8069cf3c520d3e276c280f433e42eb95_35320_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="1 Position der Bohrung"
+title="1 Position der Bohrung">
+&lt;span title="1 Position der Bohrung">1 Position der Bohrung&lt;/span>
+&lt;/a>
+&lt;/li>&lt;li>
+&lt;a href="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/2%20Seal%20rule%20more%20is%20better%20at%20inside_hu6baefd0d29b5c0ce65240988872bb88e_28437_1600x1600_fit_q99_catmullrom.jpg" title="2 Innen großzügig abdichten" class="lightbox-image">
+&lt;img class="nozoom"
+src="https://openmower.de/latest/de/docs/step-by-step/2-robot-modification/robot-specific-guides/sabo/images/gps-antenna/2%20Seal%20rule%20more%20is%20better%20at%20inside_hu6baefd0d29b5c0ce65240988872bb88e_28437_400x400_fill_q95_catmullrom_smart1.jpg"
+alt="2 Innen großzügig abdichten"
+title="2 Innen großzügig abdichten">
+&lt;span title="2 Innen großzügig abdichten">2 Innen großzügig abdichten&lt;/span>
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-246-gehäuse-schließen-">Schritt 2.4.6: Gehäuse schließen ✅&lt;/h2>
+&lt;ol>
+&lt;li>Setze die Abdeckung wieder auf den Mäher. Lass sie vorne leicht einrasten, halte sie hinten aber noch weit genug offen, um nacheinander das GPS-Antennenkabel an die Trägerplatine, das Ladekontaktkabel und zuletzt die CoverUI-Flachbandkabel anzuschließen.&lt;/li>
+&lt;li>Schließe die Abdeckung vollständig, sodass sie rundum gleichmäßig sitzt und einrastet.&lt;/li>
+&lt;li>Halte das Gehäuse mit beiden Händen zusammen und drehe den Mäher wieder auf den Rücken.&lt;/li>
+&lt;li>Setze die sechs 10-mm-Sechskantschrauben ein und ziehe sie fest.&lt;/li>
+&lt;li>&lt;strong>Montiere das Messer noch nicht.&lt;/strong>&lt;/li>
+&lt;li>Stelle den Mäher wieder auf seine Räder.&lt;/li>
+&lt;li>Schraube zum Schluss die HA/HX-901-Antenne auf die Abdeckung.&lt;/li>
+&lt;/ol>
+&lt;h2 id="schritt-247-zum-ersten-mal-einschalten">Schritt 2.4.7: Zum ersten Mal einschalten&lt;/h2>
+&lt;p>Schalte den Roboter mit dem Schalter an seiner Rückseite ein.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+&lt;p>Wenn du etwas Ungewöhnliches siehst oder riechst, schalte &lt;strong>sofort aus!&lt;/strong>&lt;/p>
+&lt;p>Dazu gehören unter anderem:&lt;/p>
+&lt;ul>
+&lt;li>Rauch oder Feuer&lt;/li>
+&lt;li>Geruch nach heißer Elektronik&lt;/li>
+&lt;li>Durchgebrannte Sicherungen&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;p>Nach dem Einschalten dauert es etwa zehn Sekunden, bis LEDs und LCD erste Lebenszeichen zeigen.
+&lt;strong>Lass den Roboter mindestens fünf Minuten eingeschaltet, damit das CM4 vollständig startet. Beim ersten Start führt es Einrichtungsschritte aus.&lt;/strong>&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Hinweis&lt;/h4>
+Stelle den Mäher am besten in die Ladestation, damit der Akku nicht leer wird und laden kann.
+&lt;/div>
+&lt;p>Wenn alles in Ordnung aussieht, mache mit der &lt;a href="https://openmower.de/latest/latest/de/docs/step-by-step/3-software-setup/">Software-Einrichtung&lt;/a>
+weiter.&lt;/p>
+&lt;p>Andernfalls &lt;strong>höre hier auf und bitte auf dem Discord-Server um Hilfe&lt;/strong>.&lt;/p></description></item></channel></rss>

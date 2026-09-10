@@ -1,0 +1,20 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Kartierung</title><link>https://openmower.de/latest/de/tags/mapping/</link><description>Recent content in Kartierung on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/tags/mapping/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Probleme beim Kartieren und Erfassen von Flächen beheben</title><link>https://openmower.de/latest/de/docs/troubleshooting/map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/troubleshooting/map/</guid><description>
+&lt;p>Diese Anleitung setzt voraus, dass du &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas/">eine Karte erfasst&lt;/a>
+hast.&lt;/p>
+&lt;br>
+&lt;h2 id="karte-sichern-oder-löschen">Karte sichern oder löschen&lt;/h2>
+&lt;p>Die Karte liegt standardmäßig unter&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/home/openmower/ros/map.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Du kannst deine aktuelle Karte jederzeit sichern, indem du dich per SSH anmeldest und die &lt;code>map.json&lt;/code>-Datei kopierst.&lt;/p>
+&lt;p>Zum Herunterladen der Datei kannst du einen SFTP-Client wie WinSCP oder Cyberduck verwenden.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo cp /home/openmower/ros/map.json /home/openmower/ros/map.json.backup
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So löschst du die Karte:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># stop the openmower service so that it doesnt access the map anymore&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openmower stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># check, if the map file is indeed there.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls /home/openmower/ros
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete the map&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm /home/openmower/ros/map.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># restart OM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>openmower start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

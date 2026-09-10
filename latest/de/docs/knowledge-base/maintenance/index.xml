@@ -1,0 +1,116 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Wartung</title><link>https://openmower.de/latest/de/docs/knowledge-base/maintenance/</link><description>Recent content in Wartung on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/knowledge-base/maintenance/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hostnamen ändern</title><link>https://openmower.de/latest/de/docs/knowledge-base/maintenance/change-hostname/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/maintenance/change-hostname/</guid><description>
+&lt;p>Mit &lt;code>raspi-config&lt;/code> lässt sich der Hostname einfach ändern:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Führe aus:&lt;/strong> &lt;code>sudo raspi-config&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Wähle&lt;/strong> System Options -&amp;gt; Hostname&lt;/li>
+&lt;li>&lt;strong>Gib&lt;/strong> einen neuen Hostnamen ein und drücke &lt;kbd>Enter&lt;/kbd>&lt;/li>
+&lt;li>&lt;strong>Beende die Einrichtung und starte neu&lt;/strong>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Diagnoseaufzeichnung erstellen</title><link>https://openmower.de/latest/de/docs/knowledge-base/maintenance/debug-recording/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/maintenance/debug-recording/</guid><description>
+&lt;p>Bei der Fehlersuche, besonders bei Positionsproblemen, liefert eine rosbag-Aufzeichnung den Entwicklern eine vollständige Momentaufnahme der Sensordaten. Diese Anleitung zeigt dir, wie du sie erstellst und vom Mäher herunterlädst.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Hinweis zum Datenschutz&lt;/h4>
+Eine rosbag-Datei enthält unverarbeitete Sensordaten, darunter die &lt;strong>GPS-Position deines Mähers&lt;/strong>. Wenn du die Datei teilst, gibst du damit den Standort deines Gartens preis. Teile sie nur mit Personen, denen du vertraust.
+&lt;/div>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;ul>
+&lt;li>OpenMower läuft und der Mäher hat einen GPS-Fix: grünes GPS-Symbol in der App&lt;/li>
+&lt;li>Du kannst per SSH oder Webterminal auf den Mäher zugreifen&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-1-aufzeichnung-starten">Schritt 1: Aufzeichnung starten&lt;/h2>
+&lt;p>Verbinde dich per SSH oder Webterminal mit dem Mäher und öffne die ROS-Shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wechsle in das Aufzeichnungsverzeichnis und starte die Aufzeichnung aller Topics:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> /data/recordings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rosbag record -a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Damit werden &lt;strong>alle&lt;/strong> aktiven ROS-Topics aufgezeichnet. Lass das Terminal offen. Die Aufzeichnung läuft, bis du sie mit &lt;kbd>Strg&lt;/kbd>+&lt;kbd>C&lt;/kbd> stoppst.&lt;/p>
+&lt;h2 id="schritt-2-flächenerfassung-aktivieren">Schritt 2: Flächenerfassung aktivieren&lt;/h2>
+&lt;p>Öffne die OpenMower-App und aktiviere den &lt;strong>Modus zur Flächenerfassung&lt;/strong>, den du auch zum Aufzeichnen der Mähflächen verwendest. Dadurch werden die Daten für GPS, IMU und Radodometrie auf den jeweiligen Topics mit der vollen Aktualisierungsrate veröffentlicht.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">GPS-Fix erforderlich&lt;/h4>
+Das GPS-Symbol in der App muss &lt;strong>grün&lt;/strong> sein, bevor du losfährst. Daten einer Aufzeichnung ohne Fix lassen sich für die Analyse nicht verwenden.
+&lt;/div>
+&lt;h2 id="schritt-3-testmuster-fahren">Schritt 3: Testmuster fahren&lt;/h2>
+&lt;p>Fahre die folgenden Muster ab. Mit jedem prüfst du einen anderen Aspekt der Positionsbestimmung:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Muster&lt;/th>
+&lt;th>Zweck&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Gerade Strecken&lt;/td>
+&lt;td>Lineare Odometrie und Übereinstimmung mit GPS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Eine Acht&lt;/td>
+&lt;td>Kombination aus Kurvenfahrt und Geradeausfahrt&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auf der Stelle im Uhrzeigersinn drehen&lt;/td>
+&lt;td>Schätzung des Gierwinkels, Ausrichtung laut IMU im Vergleich zu GPS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Auf der Stelle gegen den Uhrzeigersinn drehen&lt;/td>
+&lt;td>Dasselbe in Gegenrichtung&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Ein bis zwei Minuten pro Muster reichen aus. Du brauchst keine große Fläche; ein kleines freies Rasenstück genügt.&lt;/p>
+&lt;h2 id="schritt-4-aufzeichnung-stoppen">Schritt 4: Aufzeichnung stoppen&lt;/h2>
+&lt;p>Kehre zum Terminal zurück und drücke &lt;kbd>Strg&lt;/kbd>+&lt;kbd>C&lt;/kbd>. Gib dann &lt;code>exit&lt;/code> ein, um die ROS-Shell zu verlassen.&lt;/p>
+&lt;p>Die &lt;code>.bag&lt;/code>-Datei liegt jetzt unter &lt;code>~/recordings/&lt;/code> auf dem Mäher. Den Dateinamen findest du mit:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls -lh ~/recordings/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Der Name enthält einen Zeitstempel, zum Beispiel &lt;code>2024-06-01-12-34-56.bag&lt;/code>.&lt;/p>
+&lt;h2 id="schritt-5-datei-herunterladen">Schritt 5: Datei herunterladen&lt;/h2>
+&lt;p>Kopiere die &lt;code>.bag&lt;/code>-Datei aus &lt;code>~/recordings/&lt;/code> vom Mäher auf deinen Computer.&lt;/p>
+&lt;ul class="nav nav-tabs" id="tabs-2" role="tablist">
+&lt;li class="nav-item">
+&lt;a class="nav-link active"
+id="tabs-02-00-tab" data-toggle="tab" href="#tabs-02-00" role="tab"
+aria-controls="tabs-02-00" aria-selected="false">
+Linux / macOS
+&lt;/a>
+&lt;/li>&lt;li class="nav-item">
+&lt;a class="nav-link"
+id="tabs-02-01-tab" data-toggle="tab" href="#tabs-02-01" role="tab"
+aria-controls="tabs-02-01" aria-selected="false">
+Windows
+&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;div class="tab-content" id="tabs-2-content">
+&lt;div class="tab-body tab-pane fade show active"
+id="tabs-02-00" role="tabpanel" aria-labelled-by="tabs-02-00-tab">
+&lt;p>Verwende &lt;code>scp&lt;/code> in deinem lokalen Terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>scp openmower@&amp;lt;mower-ip&amp;gt;:recordings/&amp;lt;filename&amp;gt;.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ersetze &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code> durch die IP-Adresse des Mähers und &lt;code>&amp;lt;filename&amp;gt;&lt;/code> durch den tatsächlichen Dateinamen. Die Datei wird in dein aktuelles Verzeichnis heruntergeladen.&lt;/p>
+&lt;/div>
+&lt;div class="tab-body tab-pane fade"
+id="tabs-02-01" role="tabpanel" aria-labelled-by="tabs-02-01-tab">
+&lt;p>&lt;strong>Windows 10 ab Build 1809 und Windows 11&lt;/strong> enthalten einen OpenSSH-Client. Öffne die &lt;strong>Eingabeaufforderung&lt;/strong> oder &lt;strong>PowerShell&lt;/strong> und führe aus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bat" data-lang="bat">&lt;span style="display:flex;">&lt;span>scp openmower@&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>mower-ip&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>:recordings/&lt;span style="color:#000;font-weight:bold">&amp;lt;&lt;/span>filename&lt;span style="color:#000;font-weight:bold">&amp;gt;&lt;/span>.bag .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Verwende auf &lt;strong>älteren Windows-Versionen&lt;/strong> stattdessen einen grafischen SFTP-Client:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a href="https://winscp.net" target="_blank" rel="noopener">WinSCP&lt;/a>
+&lt;/strong> – kostenlos und quelloffen&lt;/li>
+&lt;li>&lt;strong>&lt;a href="https://cyberduck.io" target="_blank" rel="noopener">Cyberduck&lt;/a>
+&lt;/strong> – kostenlos und plattformübergreifend&lt;/li>
+&lt;/ul>
+&lt;p>Wähle als Protokoll &lt;strong>SFTP&lt;/strong>, als Host &lt;code>&amp;lt;mower-ip&amp;gt;&lt;/code> und als Benutzer &lt;code>openmower&lt;/code>. Öffne &lt;code>/home/openmower/recordings/&lt;/code>, um die Datei herunterzuladen.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Tipp&lt;/h4>
+&lt;code>.bag&lt;/code>-Dateien lassen sich sehr gut komprimieren. Wenn du sie vor dem Teilen als ZIP packst, kann das die Dateigröße deutlich reduzieren.
+&lt;/div>
+&lt;p>Teile die heruntergeladene Datei mit der Person, die dir bei der Fehlersuche hilft, etwa über Discord, einen Dateifreigabedienst oder einen anderen passenden Weg.&lt;/p>
+&lt;h2 id="schritt-6-aufräumen">Schritt 6: Aufräumen&lt;/h2>
+&lt;p>Lösche nach der Fehlersuche die Aufzeichnungen vom Mäher, um Speicherplatz freizugeben:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete a specific file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/&amp;lt;filename&amp;gt;.bag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># delete all recordings&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm ~/recordings/*.bag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

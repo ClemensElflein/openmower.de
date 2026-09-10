@@ -1,0 +1,169 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenMower — Open-Source-Mähroboter mit RTK-GPS – Bedienung</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/</link><description>Recent content in Bedienung on OpenMower — Open-Source-Mähroboter mit RTK-GPS</description><generator>Hugo -- gohugo.io</generator><language>de</language><atom:link href="https://openmower.de/latest/de/docs/knowledge-base/operation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Flächen erfassen</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/record-areas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/operation/record-areas/</guid><description>
+&lt;p>Jetzt kannst du die ersten Testfahrten machen und prüfen, ob alles wie erwartet funktioniert. Danach erfasst du die Mähflächen in einer Karte, damit der Mäher selbstständig arbeiten kann.&lt;/p>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;ul>
+&lt;li>Ein Smartphone oder PC, alternativ ein &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/using-a-gamepad/">USB-Gamepad&lt;/a>
+&lt;/li>
+&lt;li>Der umgebaute Roboter ist mit deinem Netzwerk verbunden&lt;/li>
+&lt;li>Die OpenMower-Software läuft auf dem Roboter&lt;/li>
+&lt;li>Die Ladestation ist eingeschaltet&lt;/li>
+&lt;li>Der Mäher ist vollständig geladen&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-41-gps-prüfen">Schritt 4.1: GPS prüfen&lt;/h2>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/gps_quality_indicator.jpg" alt="Anzeige der GPS-Qualität">&lt;/p>
+&lt;p>Stelle den Mäher in die Ladestation und schalte ihn ein. Nach dem Start sollte die Status-LED dauerhaft grün leuchten.&lt;/p>
+&lt;p>Damit RTK-GPS funktioniert, muss der Mäher unter freiem Himmel stehen. Versuche es nicht drinnen und decke den Mäher nicht ab.&lt;/p>
+&lt;p>Öffne die OpenMower-Web-App auf einem beliebigen Gerät im Browser unter &lt;a href="http://openmower.local:8080/" target="_blank" rel="noopener">&lt;code>http://openmower.local:8080&lt;/code>&lt;/a>
+oder &lt;code>http://&amp;lt;your-openmower-IP&amp;gt;:8080&lt;/code>.&lt;/p>
+&lt;p>Warte, bis GPS eine Position ermittelt hat. Das kann bis zu 30 Minuten dauern.&lt;/p>
+&lt;p>Die aktuelle GPS-Qualität siehst du in der OpenMower-App, wie oben abgebildet.&lt;/p>
+&lt;p>&lt;strong>Für die folgenden Schritte brauchst du RTK Fixed.&lt;/strong> Wenn du keinen guten GPS-Fix bekommst, prüfe deinen RTK-Aufbau und die Konfiguration.&lt;/p>
+&lt;h2 id="schritt-42-ausrichtung-initialisieren">Schritt 4.2: Ausrichtung initialisieren&lt;/h2>
+&lt;p>Neben seiner Position muss der Roboter auch seine Ausrichtung kennen. Da wir keinen Kompass verwenden, wird sie aus seiner Bewegung abgeleitet. Fahre deshalb zunächst ein Stück mit dem Roboter, damit er seine Ausrichtung bestimmen kann.&lt;/p>
+&lt;p>Dafür kannst du den Bildschirm-Joystick der OpenMower-App oder ein &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/using-a-gamepad/">per USB angeschlossenes Gamepad&lt;/a>
+verwenden. Halte beim Gamepad die A-Taste gedrückt.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warnung&lt;/h4>
+Hebe den Mäher nicht an. Sonst geht die ermittelte Ausrichtung wieder verloren!
+&lt;/div>
+&lt;p>Fahre nun mindestens 50 m mit dem Mäher, teils geradeaus und teils in Achterfiguren. Der Roboter kann die Qualität seiner Ausrichtungsschätzung derzeit nicht selbst beurteilen. Du kannst sie aber beim Fahren in der App prüfen.&lt;/p>
+&lt;p>Die Ausrichtung ist korrekt initialisiert, wenn:&lt;/p>
+&lt;ul>
+&lt;li>sich das Mähersymbol in der App bei Geradeausfahrt ebenfalls geradeaus bewegt und nicht springt&lt;/li>
+&lt;li>das Mähersymbol beim Drehen auf der Stelle an derselben Position bleibt und nicht springt&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-43-eine-einfache-karte-erfassen">Schritt 4.3: Eine einfache Karte erfassen&lt;/h2>
+&lt;p>Für die ersten Tests erfassen wir eine einfache Karte. Halte sie zunächst übersichtlich. Zeichne deine eigentliche Karte auf, sobald du sicher bist, dass alles wie erwartet funktioniert.&lt;/p>
+&lt;p>Die Karte besteht aus drei Teilen: der &lt;strong>Andockposition&lt;/strong>, mindestens einer &lt;strong>Mähfläche&lt;/strong> und optionalen &lt;strong>Navigationsflächen&lt;/strong>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Mähflächen&lt;/strong> sind die Bereiche, die gemäht werden sollen. Jede Mähfläche hat eine Umrandung und kann ausgeschlossene Bereiche enthalten, zum Beispiel feste Hindernisse.&lt;/li>
+&lt;li>&lt;strong>Andockposition&lt;/strong> bezeichnet Position und Ausrichtung der Ladestation. Sie muss nahe an einer Mäh- oder Navigationsfläche liegen, damit der Roboter den Weg zur Ladestation findet.&lt;/li>
+&lt;li>&lt;strong>Navigationsflächen&lt;/strong> bestehen wie Mähflächen aus einer Umrandung und optionalen Ausschlussbereichen. Der Mäher darf hier fahren, &lt;strong>mäht aber nicht&lt;/strong>. Damit kannst du Mähflächen verbinden. Wenn die Ladestation nicht nahe genug an einer Mähfläche liegt, ermöglicht eine Navigationsfläche auch den Weg dorthin.&lt;/li>
+&lt;/ul>
+&lt;p>Der Roboter kennt jetzt seine Position, und du weißt, welche Bereiche du erfassen musst. Beginne mit deiner ersten Karte. Die folgenden Bilder zeigen ein Beispiel.&lt;/p>
+&lt;h3 id="umrandung-erfassen">Umrandung erfassen&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/record_outline.jpg" alt="Umrandung erfassen">&lt;/p>
+&lt;ul>
+&lt;li>Steuere den Roboter an den Rand der Fläche und richte ihn so aus, dass du &lt;strong>gegen den Uhrzeigersinn&lt;/strong> fahren kannst.&lt;/li>
+&lt;li>Starte die Aufzeichnung mit &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Fahre um die Mähfläche herum. Achte darauf, dass der GPS-Status durchgehend „Fixed“ bleibt.&lt;/li>
+&lt;li>Beende die Aufzeichnung mit &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>Die Umrandung sollte jetzt grün werden. Sie ist damit fertig erfasst, und du kannst Ausschlussbereiche aufnehmen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="optional-ausschlussbereiche-erfassen">Optional: Ausschlussbereiche erfassen&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/record_obstacle.jpg" alt="Hindernis erfassen">&lt;/p>
+&lt;p>Wenn du Bereiche ausschließen möchtest, zum Beispiel feste Hindernisse, gehe so vor:&lt;/p>
+&lt;ul>
+&lt;li>Fahre an den Rand des Ausschlussbereichs und richte den Roboter für die Fahrt &lt;strong>im Uhrzeigersinn&lt;/strong> aus.&lt;/li>
+&lt;li>Starte die Aufzeichnung mit &lt;strong>Start Recording&lt;/strong>.&lt;/li>
+&lt;li>Fahre um den auszuschließenden Bereich herum. Achte darauf, dass der GPS-Status durchgehend „Fixed“ bleibt.&lt;/li>
+&lt;li>Beende die Aufzeichnung mit &lt;strong>Stop Recording&lt;/strong>.&lt;/li>
+&lt;li>Die Umrandung sollte jetzt rot werden. Sie ist fertig erfasst, und du kannst weitere Ausschlussbereiche aufnehmen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="fläche-speichern">Fläche speichern&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/save_mowing_area.jpg" alt="Fläche speichern">&lt;/p>
+&lt;p>Wenn du mit der Aufzeichnung zufrieden bist, klicke auf &lt;strong>Finish Area&lt;/strong>. Im Dialog kannst du auswählen, ob du die Fläche als Mäh- oder Navigationsfläche speichern möchtest. Du kannst die Aufzeichnung dort auch verwerfen.&lt;/p>
+&lt;p>Nach dem Speichern wird die Fläche ausgefüllt dargestellt: Mähflächen grün, Navigationsflächen weiß.&lt;/p>
+&lt;h3 id="andockposition-erfassen">Andockposition erfassen&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/record_docking_position.jpg" alt="Andockposition erfassen">&lt;/p>
+&lt;p>So erfasst du die Andockposition:&lt;/p>
+&lt;ul>
+&lt;li>Fahre zu einem Punkt etwa 2 m vor der Ladestation.&lt;/li>
+&lt;li>Prüfe, ob du einen GPS-Fix hast, und drücke &lt;strong>Record Docking&lt;/strong>.&lt;/li>
+&lt;li>Fahre dicht an die Ladestation heran. Die Vorderräder sollten am Rand der Station stehen. &lt;strong>Fahre noch nicht vollständig in die Ladestation!&lt;/strong>&lt;/li>
+&lt;li>Prüfe erneut den GPS-Fix und drücke &lt;strong>Record Docking&lt;/strong>.&lt;/li>
+&lt;li>Die App sollte das &lt;strong>Home-Symbol&lt;/strong> an deine aktuelle Position verschieben. Jetzt kannst du vollständig in die Ladestation fahren.&lt;/li>
+&lt;/ul>
+&lt;h3 id="aufzeichnung-abschließen">Aufzeichnung abschließen&lt;/h3>
+&lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/start_mowing.jpg" alt="Mähen starten">&lt;/p>
+&lt;p>Beende die Flächenerfassung mit &lt;strong>Exit Recording&lt;/strong>. Der Mäher sollte in den Modus &lt;strong>IDLE&lt;/strong> wechseln. Mit &lt;strong>Start&lt;/strong> startest du den Mähvorgang. Der Mäher dockt ab, wartet auf ein GPS-Signal und mäht die Fläche.&lt;/p></description></item><item><title>Docs: Gamepad verwenden</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</guid><description>
+&lt;p>Mit einem USB-Gamepad kannst du OpenMower während der Flächenerfassung intuitiv und präzise steuern. Die Analogsticks helfen dir, die Umrandungen deiner Mähflächen sauber abzufahren. Das fällt damit leichter als mit dem Bildschirm-Joystick der Web-App.&lt;/p>
+&lt;p>Jedes Xbox-kompatible USB-Gamepad funktioniert ohne weitere Einrichtung. Stecke es einfach in einen USB-Anschluss deines Raspberry Pi. OpenMower erkennt es automatisch.&lt;/p>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Aufzeichnungsmodus erforderlich&lt;/h4>
+&lt;p>Die Gamepad-Steuerung funktioniert nur im &lt;strong>Aufzeichnungsmodus&lt;/strong>. Aktiviere diesen Modus in der OpenMower-App, bevor du die unten beschriebenen Tasten verwendest.&lt;/p>
+&lt;p>Wenn noch keine Karte erfasst wurde, startet OpenMower automatisch im Aufzeichnungsmodus. Du musst dann nichts weiter tun.&lt;/p>
+&lt;/div>
+&lt;h2 id="videoanleitung">Videoanleitung&lt;/h2>
+&lt;p>Das folgende Video zeigt die gesamte Flächenerfassung, einschließlich der Steuerung per Gamepad und des Speicherns der Mähflächen.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/j7qkwuoHJpI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;h2 id="tastenbelegung">Tastenbelegung&lt;/h2>
+&lt;figure>
+&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/using-a-gamepad/images/gamepad_controls.png"
+alt="OpenMower-Gamepad-Steuerung (Bild von shutterstock.com lizenziert)"/> &lt;figcaption>
+&lt;p>OpenMower-Gamepad-Steuerung (Bild von shutterstock.com lizenziert)&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>Die Tabellen beschreiben alle Tasten für die normale Bedienung und Flächenerfassung. Meist hältst du &lt;strong>A&lt;/strong> zum Fahren gedrückt und verwendest &lt;strong>B&lt;/strong>, um Aufzeichnungen zu starten und zu stoppen.&lt;/p>
+&lt;h3 id="fahren">Fahren&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Eingabe&lt;/th>
+&lt;th>Aktion&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>A&lt;/strong> gedrückt halten + linker Analogstick&lt;/td>
+&lt;td>Mäher fahren&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>RB&lt;/strong>&lt;/td>
+&lt;td>Turbomodus: schneller fahren&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="flächen-erfassen">Flächen erfassen&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Eingabe&lt;/th>
+&lt;th>Aktion&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>B&lt;/strong>&lt;/td>
+&lt;td>Aufzeichnung des aktuellen Polygons starten / stoppen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Y&lt;/strong> + &lt;strong>Steuerkreuz oben&lt;/strong>&lt;/td>
+&lt;td>Aktuelle Fläche abschließen und als &lt;strong>Navigationsfläche&lt;/strong> speichern: Der Mäher darf hier fahren, mäht aber nicht&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Y&lt;/strong> + &lt;strong>Steuerkreuz unten&lt;/strong>&lt;/td>
+&lt;td>Aktuelle Fläche abschließen und als &lt;strong>Mähfläche&lt;/strong> speichern: Mindestens eine ist erforderlich&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="ladestation">Ladestation&lt;/h3>
+&lt;p>Zum Erfassen der Ladestation brauchst du zwei getrennte Positionspunkte, die die Anfahrtrichtung festlegen. Die Verbindungslinie zeigt dem Mäher, wie er sich bei der Rückkehr zur Ladestation ausrichten soll.&lt;/p>
+&lt;ol>
+&lt;li>Fahre zu einem Punkt etwa &lt;strong>1,5 m vor der Ladestation&lt;/strong>, sodass der Mäher zur Station zeigt. Drücke &lt;strong>X&lt;/strong>, um den ersten Punkt zu erfassen.&lt;/li>
+&lt;li>Fahre vorwärts, bis die &lt;strong>Vorderräder gerade am Rand der Ladestation stehen&lt;/strong>. Fahre noch nicht ganz hinein. Drücke erneut &lt;strong>X&lt;/strong>, um den zweiten Punkt zu erfassen.&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Eingabe&lt;/th>
+&lt;th>Aktion&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>X&lt;/strong> beim ersten Drücken&lt;/td>
+&lt;td>Anfahrpunkt etwa 1,5 m vor der Ladestation erfassen&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>X&lt;/strong> beim zweiten Drücken&lt;/td>
+&lt;td>Einfahrtspunkt am Rand der Ladestation erfassen&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Die Karte</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/the-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/operation/the-map/</guid><description>
+&lt;h2 id="die-karte">Die Karte&lt;/h2>
+&lt;p>Die wichtigste Grundlage für OpenMower ist seine Karte. Sie legt fest, wo der Roboter fahren darf &lt;strong>(= Navigationsfläche)&lt;/strong>, welche Flächen er mähen soll &lt;strong>(= Mähfläche)&lt;/strong> und wo die Ladestation steht. Mit diesen Informationen kann der Roboter selbstständig arbeiten.&lt;/p>
+&lt;p>Jede Fläche besteht aus &lt;strong>einer Umrandung&lt;/strong> und &lt;strong>mehreren Hindernissen&lt;/strong>. Der Mäher darf innerhalb der Umrandungen aller Flächen fahren, mit Ausnahme der Hindernisse. So kannst du Teile deines Rasens ausschließen und verhindern, dass der Mäher dort hineinfährt.&lt;/p>
+&lt;p>Die Karte wird in der Datei &lt;code>map.json&lt;/code> gespeichert. Sie liegt auf dem Mäher unter &lt;code>/home/openmower/ros_home&lt;/code>.&lt;/p></description></item></channel></rss>
