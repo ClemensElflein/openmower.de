@@ -71,7 +71,9 @@ Some people are building a custom mower chassis from scratch.
 
 #### 2. OpenMower Hardware
 {{% alert title="Hardware Version 2" color="success" %}}
-OpenMower v2 hardware is now available and recommended for all new builds. v1 hardware is deprecated. See the [v2 Announcement]({{% relref "/updates" %}}) for details.
+OpenMower v2 is the newer, modular hardware platform and is recommended for new builds. See the [v2 Announcement]({{% relref "/updates" %}}) for details.
+
+The previous-generation v1 hardware remains a stable, supported option for compatible YardForce mowers. Existing v1 builds do not need a hardware upgrade simply because v2 is available. See [Hardware Versions]({{% relref "/docs/knowledge-base/getting-started/hardware-versions" %}}) for the differences and known issues.
 
 **To purchase v2 hardware:** Contact @Apehaenger on Discord.
 {{% /alert %}}
