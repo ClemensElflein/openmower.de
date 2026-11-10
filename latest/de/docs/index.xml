@@ -786,7 +786,9 @@ Manche bauen sich auch ein eigenes Mäher-Chassis von Grund auf.&lt;/p>
 &lt;h4 id="2-openmower-hardware">2. OpenMower-Hardware&lt;/h4>
 &lt;div class="alert alert-success" role="alert">
 &lt;h4 class="alert-heading">Hardware-Version 2&lt;/h4>
-&lt;p>Die OpenMower-v2-Hardware ist verfügbar und wird für alle neuen Umbauten empfohlen. Die v1-Hardware ist veraltet. Einzelheiten findest du in der &lt;a href="https://openmower.de/latest/latest/de/updates/">v2-Ankündigung&lt;/a>
+&lt;p>Die OpenMower-v2-Hardware ist die neuere, modulare Plattform und wird für alle neuen Umbauten empfohlen. Einzelheiten findest du in der &lt;a href="https://openmower.de/latest/latest/de/updates/">v2-Ankündigung&lt;/a>
+.&lt;/p>
+&lt;p>Die v1-Hardware der vorherigen Generation bleibt eine stabile, unterstützte Option für kompatible YardForce-Mäher. Ein bestehender v1-Umbau muss nicht allein deshalb aufgerüstet werden, weil es v2 gibt. Die Unterschiede und bekannten Probleme stehen unter &lt;a href="https://openmower.de/latest/latest/de/docs/knowledge-base/getting-started/hardware-versions/">Hardware-Versionen&lt;/a>
 .&lt;/p>
 &lt;p>&lt;strong>Wenn du v2-Hardware kaufen möchtest:&lt;/strong> Wende dich auf Discord an @Apehaenger.&lt;/p>
 &lt;/div>
@@ -4180,7 +4182,174 @@ Hebe den Mäher nicht an. Sonst geht die ermittelte Ausrichtung wieder verloren!
 &lt;/ul>
 &lt;h3 id="aufzeichnung-abschließen">Aufzeichnung abschließen&lt;/h3>
 &lt;p>&lt;img src="https://openmower.de/latest/latest/de/docs/knowledge-base/operation/record-areas//images/start_mowing.jpg" alt="Mähen starten">&lt;/p>
-&lt;p>Beende die Flächenerfassung mit &lt;strong>Exit Recording&lt;/strong>. Der Mäher sollte in den Modus &lt;strong>IDLE&lt;/strong> wechseln. Mit &lt;strong>Start&lt;/strong> startest du den Mähvorgang. Der Mäher dockt ab, wartet auf ein GPS-Signal und mäht die Fläche.&lt;/p></description></item><item><title>Docs: Gamepad verwenden</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</guid><description>
+&lt;p>Beende die Flächenerfassung mit &lt;strong>Exit Recording&lt;/strong>. Der Mäher sollte in den Modus &lt;strong>IDLE&lt;/strong> wechseln. Mit &lt;strong>Start&lt;/strong> startest du den Mähvorgang. Der Mäher dockt ab, wartet auf ein GPS-Signal und mäht die Fläche.&lt;/p></description></item><item><title>Docs: Sound</title><link>https://openmower.de/latest/de/docs/knowledge-base/configuration/sound/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/configuration/sound/</guid><description>
+&lt;h2 id="übersicht">Übersicht&lt;/h2>
+&lt;p>Ein v2-OpenMower kann Töne, Notenfolgen und MP3-Dateien abspielen - entweder eine
+Aufnahme oder einen Satz, den eine gehostete Text-to-Speech-Engine spricht. Was wann
+erklingt, steht in einer Definitionsdatei, die im Image mitgeliefert wird
+(&lt;code>sounds_en.yaml&lt;/code>, &lt;code>sounds_de.yaml&lt;/code>). Die gesprochenen Teile rendert der Roboter selbst
+und schiebt das Ergebnis zum Low Level - von Hand vorbereiten musst du nichts.&lt;/p>
+&lt;p>Standardmäßig ist das System &lt;strong>abgeschaltet&lt;/strong>: ein Parameter schaltet es ein (siehe
+&lt;a href="#schritt-1-den-sound-service-aktivieren">Schritt 1&lt;/a>
+).&lt;/p>
+&lt;h2 id="voraussetzungen">Voraussetzungen&lt;/h2>
+&lt;p>Das Soundsystem braucht einen &lt;strong>Verstärker&lt;/strong> und einen &lt;strong>Lautsprecher&lt;/strong>.
+Der Verstärker ist bei den YardForce- und SABO-Boards an Bord.
+Das Universal-Board kommt ohne daher und wird deshalb &lt;strong>nicht&lt;/strong> unterstützt!&lt;/p>
+&lt;p>Den Lautsprecher baust du selbst ein. Er sitzt in einem kleinen Gehäuse, und ein
+&amp;ldquo;offizielles&amp;rdquo; gibt es nicht: die Community hat mehrere 3D-druckbare Designs
+veröffentlicht, gesammelt unter der
+&lt;a href="https://www.printables.com/search/models?ctx=models&amp;amp;q=openmower&amp;#43;speaker" target="_blank" rel="noopener">Suche nach &amp;ldquo;openmower speaker&amp;rdquo; auf Printables&lt;/a>
+.&lt;/p>
+&lt;p>Die Gehäuse sind für die verschiedenen Mäher-Modelle gemacht, nicht für eine bestimmte
+Board-Revision - prüfe vor dem Druck, für welches Modell ein Design gedacht ist. Unter
+v1 wurde oft ein 2W/8Ω Lautsprecher verbaut; für v2 sollte es mindestens &lt;strong>≥ 3W bei 4Ω&lt;/strong> sein.&lt;/p>
+&lt;h2 id="so-funktioniert-es">So funktioniert es&lt;/h2>
+&lt;p>Das Image liefert eine Definition pro Sprache mit (&lt;code>sounds_en.yaml&lt;/code>, &lt;code>sounds_de.yaml&lt;/code>).
+Eine Definition listet die Ereignisse, die der Mäher ansagen kann - &lt;code>EMERGENCY&lt;/code>,
+&lt;code>MOWING_START&lt;/code>, &lt;code>LOW_BATTERY&lt;/code> und so weiter - und dazu jeweils entweder eine fertige
+MP3 oder den zu sprechenden Text. Welcher Ton, wie laut, welche Aufnahme: all das steht
+dort.&lt;/p>
+&lt;div class="mermaid">%%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
+flowchart TD
+subgraph HL["&lt;b>High Level - Raspberry Pi&lt;/b>"]
+Y["sounds_en.yaml / sounds_de.yaml&lt;br/>Texte + Einstellungen"]
+T["soundctl tts&lt;br/>rendert was fehlt"]
+O["/data/sounds/ Overlay&lt;br/>MP3 + .json-Cache"]
+S["soundctl sync"]
+R["Mäher-Status&lt;br/>IDLE / MOWING / PAUSED"]
+end
+subgraph LL["&lt;b>Low Level - Firmware&lt;/b>"]
+F["/sounds/ im Flash&lt;br/>erster Sync dauert Minuten"]
+M["Sound-State-Machine&lt;br/>entscheidet was wann läuft"]
+P["Lautsprecher"]
+end
+Y --> T
+T --> O
+Y --> S
+O --> S
+S -->|"geänderte MP3s + die Definition"| F
+R -->|"meldet seinen Status"| M
+F --> M
+M --> P
+classDef hl fill:#e8f0fe,stroke:#1a73e8,color:#0b2e6f
+classDef ll fill:#e6f4ea,stroke:#137333,color:#0b3d1c
+class Y,T,O,S,R hl
+class F,M,P ll
+style HL fill:#f4f8ff,stroke:#1a73e8,stroke-width:2px
+style LL fill:#f3fbf5,stroke:#137333,stroke-width:2px
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;strong>&lt;code>soundctl tts&lt;/code>&lt;/strong> schickt nur die Texte an die TTS-Engine, deren Render fehlt oder
+veraltet ist, und kodiert das Ergebnis als 16-kHz-Mono-MP3. Die Images kommen mit
+fertig gerenderten Ansagen, deshalb ist das ein No-op, solange kein Text geändert
+wurde - und genau das ist der einzige Fall, der einen API-Key braucht (siehe
+&lt;a href="#eigene-sounds">Eigene Sounds&lt;/a>
+).&lt;/li>
+&lt;li>&lt;strong>&lt;code>soundctl sync&lt;/code>&lt;/strong> lädt die MP3-Dateien hoch, die die Definition referenziert, und
+schiebt die Definition selbst zum Low Level. Dateien mit gleichem Inhalt werden
+übersprungen.&lt;/li>
+&lt;li>&lt;strong>Der Upload ist nicht schnell.&lt;/strong> Das Low Level schreibt die Dateien in 256-Byte-
+Blöcken in seinen eigenen Flash, über dieselbe Verbindung, die es auch für alles
+andere nutzt - ein erster Sync des ganzen Satzes kann deshalb mehrere Minuten dauern.
+Spätere Syncs schicken nur geänderte Dateien.&lt;/li>
+&lt;li>&lt;strong>Das High Level spielt nichts von sich aus ab.&lt;/strong> Im Normalbetrieb meldet es den
+Zustand des Mähers, und die Sound-State-Machine im Low Level entscheidet, welcher
+Sound dazu gehört und wann er läuft. Um einen Sound von Hand auszulösen - zum Testen,
+nicht für den Normalbetrieb - siehe &lt;a href="#schritt-2-pr%c3%bcfen-ob-es-funktioniert">Schritt 2&lt;/a>
+.&lt;/li>
+&lt;li>Beide Befehle laufen bei jedem Start und bei jedem Reconnect zum Low Level, eine
+geänderte Definition erreicht den Mäher also ohne manuellen Schritt.&lt;/li>
+&lt;/ul>
+&lt;h2 id="schritt-1-den-sound-service-aktivieren">Schritt 1: Den Sound-Service aktivieren&lt;/h2>
+&lt;p>Öffne die ROS-Konfiguration:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower configure ros
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Setze &lt;code>enabled&lt;/code> auf &lt;code>true&lt;/code> und (wenn du willst) eine Master-Lautstärke:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">ll&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">services&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">sound&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Master Volume: -1 = keep LL stored volume, 0-100 = override on HL start&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">volume&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>-&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># HW v2 only&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">config_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># HW v1 only&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">language&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;en&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Parameter&lt;/th>
+&lt;th>Bedeutung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>enabled&lt;/code>&lt;/td>
+&lt;td>Schaltet das Soundsystem für diesen Mäher ein. &lt;code>false&lt;/code> (der Standard) lässt das Low Level still und überspringt den Sync beim Start.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>config_file&lt;/code>&lt;/td>
+&lt;td>Die zu verwendende Definition, &lt;strong>nur v2&lt;/strong>. Zeig sie für Deutsch auf &lt;code>sounds_de.yaml&lt;/code>. Eine Kopie in &lt;code>/data/sounds/&lt;/code> funktioniert auch (und übersteht ein Image-Update, solange dieses Overlay gemountet ist).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>volume&lt;/code>&lt;/td>
+&lt;td>&lt;code>-1&lt;/code> behält die Lautstärke, die das Low Level gespeichert hat; &lt;code>0&lt;/code>..&lt;code>100&lt;/code> setzt sie bei jedem Start.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>language&lt;/code>&lt;/td>
+&lt;td>Wird nur von &lt;strong>v1&lt;/strong>-Hardware genutzt. Lass den Wert stehen; auf v2 entscheidet &lt;code>config_file&lt;/code>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="alert alert-info" role="alert">
+&lt;h4 class="alert-heading">Wo die Definitionen liegen&lt;/h4>
+Die mitgelieferten Definitionen liegen im Image unter
+&lt;code>/opt/open_mower_ros/src/open_mower/params/&lt;/code>. Lass &lt;code>config_file&lt;/code> dorthin zeigen, außer
+du willst eine eigene Kopie - siehe &lt;a href="#eigene-sounds">Eigene Sounds&lt;/a>
+.
+&lt;/div>
+&lt;p>Speichern genügt: erkennt &lt;code>openmower configure ros&lt;/code> eine Änderung, startet es OpenMower
+selbst neu. Beim nächsten Verbindungsaufbau zum Low Level synct der Roboter dann alle
+fehlenden Ansagen in dessen Flash.&lt;/p>
+&lt;h2 id="schritt-2-prüfen-ob-es-funktioniert">Schritt 2: Prüfen, ob es funktioniert&lt;/h2>
+&lt;p>Öffne eine Shell auf dem Mäher und löse direkt einen Sound aus:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openmower shell
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>soundctl sync
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>soundctl play sound EMERGENCY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>soundctl play tone &lt;span style="color:#0000cf;font-weight:bold">1000&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">500&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>soundctl stop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>sync&lt;/code> ist derselbe Schritt, den der Start von sich aus macht; von Hand ausgeführt
+sparst du dir den Neustart nach einer Änderung. &lt;code>play sound&lt;/code> löst einen konfigurierten
+Sound über seinen Namen aus, &lt;code>play tone&lt;/code> einen synthetisierten (hier 1000 Hz für
+500 ms), und &lt;code>stop&lt;/code> beendet die Wiedergabe. &lt;code>soundctl&lt;/code> ist im Image installiert.
+Wenn nichts zu hören ist: &lt;code>soundctl discover&lt;/code> listet die Dienste, die das Low Level
+annonciert - der erste Blick, wenn der Sync das Board nicht erreicht.
+&lt;code>soundctl validate --check-mp3&lt;/code> prüft die Definition und die Audiodateien, und
+&lt;code>soundctl tts --check&lt;/code> meldet Ansagen, die noch fehlen.&lt;/p>
+&lt;h2 id="eigene-sounds">Eigene Sounds&lt;/h2>
+&lt;p>Zwei Dinge solltest du wissen, bevor du eine Definition änderst:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Deine eigenen Aufnahmen und der TTS-API-Key gehören nach &lt;code>/data/sounds/&lt;/code>&lt;/strong>, nicht
+ins Image. Der Key ist das, was den Roboter &lt;em>deine&lt;/em> Texte mit &lt;em>deiner&lt;/em> Stimme rendern
+lässt - die mitgelieferten Ansagen sind bereits gerendert, du brauchst ihn also erst,
+wenn du eine davon änderst. Auf einem Serienmäher ist dieses Verzeichnis &lt;em>nicht&lt;/em>
+persistent - es lebt im Container und ist nach einem Neustart weg. Mounte es vom Host,
+wenn du deine Dateien und den Key behalten willst. Der Kopf von &lt;code>sounds_en.yaml&lt;/code> zeigt
+die genauen Schritte.&lt;/li>
+&lt;li>&lt;strong>Ein geänderter Text rendert nur diese eine Datei neu.&lt;/strong> Jeder Render schreibt eine
+kleine &lt;code>.json&lt;/code> neben die MP3, die Text, Stimme und Einstellungen festhält; der Sync
+weigert sich, eine Datei hochzuladen, deren Text nicht mehr zur Definition passt.&lt;/li>
+&lt;/ul>
+&lt;p>Die vollständige Referenz - jede Sound-ID, das Format der Definition, die Varianten, die
+beiden TTS-Engines und das Kommandozeilenwerkzeug - steht in
+&lt;a href="https://github.com/ClemensElflein/open_mower_ros/blob/main/sounds/README.md" target="_blank" rel="noopener">&lt;code>sounds/README.md&lt;/code>&lt;/a>
+und &lt;a href="https://github.com/ClemensElflein/open_mower_ros/blob/main/utils/soundctl/README.md" target="_blank" rel="noopener">&lt;code>utils/soundctl/README.md&lt;/code>&lt;/a>
+.&lt;/p></description></item><item><title>Docs: Gamepad verwenden</title><link>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openmower.de/latest/de/docs/knowledge-base/operation/using-a-gamepad/</guid><description>
 &lt;p>Mit einem USB-Gamepad kannst du OpenMower während der Flächenerfassung intuitiv und präzise steuern. Die Analogsticks helfen dir, die Umrandungen deiner Mähflächen sauber abzufahren. Das fällt damit leichter als mit dem Bildschirm-Joystick der Web-App.&lt;/p>
 &lt;p>Jedes Xbox-kompatible USB-Gamepad funktioniert ohne weitere Einrichtung. Stecke es einfach in einen USB-Anschluss deines Raspberry Pi. OpenMower erkennt es automatisch.&lt;/p>
 &lt;div class="alert alert-info" role="alert">
