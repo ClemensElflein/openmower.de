@@ -70,7 +70,9 @@ Manche bauen sich auch ein eigenes Mäher-Chassis von Grund auf.
 
 #### 2. OpenMower-Hardware
 {{% alert title="Hardware-Version 2" color="success" %}}
-Die OpenMower-v2-Hardware ist verfügbar und wird für alle neuen Umbauten empfohlen. Die v1-Hardware ist veraltet. Einzelheiten findest du in der [v2-Ankündigung]({{% relref "/updates" %}}).
+Die OpenMower-v2-Hardware ist die neuere, modulare Plattform und wird für alle neuen Umbauten empfohlen. Einzelheiten findest du in der [v2-Ankündigung]({{% relref "/updates" %}}).
+
+Die v1-Hardware der vorherigen Generation bleibt eine stabile, unterstützte Option für kompatible YardForce-Mäher. Ein bestehender v1-Umbau muss nicht allein deshalb aufgerüstet werden, weil es v2 gibt. Die Unterschiede und bekannten Probleme stehen unter [Hardware-Versionen]({{% relref "/docs/knowledge-base/getting-started/hardware-versions" %}}).
 
 **Wenn du v2-Hardware kaufen möchtest:** Wende dich auf Discord an @Apehaenger.
 {{% /alert %}}
