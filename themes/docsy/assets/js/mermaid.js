@@ -23,7 +23,13 @@
         return;
     }
 
-    var params = {{ . | jsonify | safeJS }};
+    // Docsy 0.5.1 serialises the page here (a jsonify of the page object) to pick up
+    // site-wide Mermaid defaults. On Hugo >= 0.111 that overflows the stack, because
+    // Page now carries circular references - the build dies with "fatal error: stack
+    // overflow". We do not use site-wide defaults anyway (a diagram configures itself
+    // with an init directive), so an empty object keeps this working on both versions.
+    // NOTE: this file is a Hugo template, so do not write template delimiters here.
+    var params = {};
 
     // site params are stored with lowercase keys; lookup correct casing
     // from Mermaid default config.
@@ -41,7 +47,7 @@
         }
         return result;
     };
-    var settings = norm(mermaid.mermaidAPI.defaultConfig, params);
+    var settings = norm((mermaid.mermaidAPI || mermaid).defaultConfig, params);
     settings.startOnLoad = true;
     mermaid.initialize(settings);
 })(jQuery);

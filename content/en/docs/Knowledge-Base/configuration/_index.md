@@ -3,5 +3,5 @@ title: "Configuration"
 linkTitle: "Configuration"
 weight: 30
 description: >
-  Motor controllers, GPIO inputs, and ROS parameter tuning.
+  Motor controllers, GPIO inputs, sound, and ROS parameter tuning.
 ---
