@@ -139,18 +139,19 @@ Open a shell on the mower and trigger a sound directly:
 
 ```bash
 openmower shell
-soundctl sync                     # push changed MP3s + the definition right now
-soundctl play sound EMERGENCY     # a configured sound by name
-soundctl play tone 1000 500       # one synthesised tone (1000 Hz, 500 ms)
-soundctl stop                     # stop playback
+soundctl sync
+soundctl play sound EMERGENCY
+soundctl play tone 1000 500
+soundctl stop
 ```
 
 `sync` is the same step the startup does on its own; running it by hand saves you the
-restart after a change. `soundctl` is installed in the image. If nothing is heard,
-`soundctl discover` lists the services the low level advertises - the first thing to
-look at when the sync cannot reach the board. `soundctl validate --check-mp3` checks
-the definition and the audio files, `soundctl tts --check` reports announcements that
-are still missing.
+restart after a change. `play sound` triggers a configured sound by its name,
+`play tone` a synthesised one (1000 Hz for 500 ms here), and `stop` ends playback.
+`soundctl` is installed in the image. If nothing is heard, `soundctl discover` lists
+the services the low level advertises - the first thing to look at when the sync
+cannot reach the board. `soundctl validate --check-mp3` checks the definition and the
+audio files, `soundctl tts --check` reports announcements that are still missing.
 
 ## Custom sounds
 

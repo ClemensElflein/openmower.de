@@ -142,14 +142,16 @@ fehlenden Ansagen in dessen Flash.
 
 ```bash
 openmower shell
-soundctl sync                     # geänderte MP3s + die Definition sofort hochladen
-soundctl play sound EMERGENCY     # ein konfigurierter Sound nach Namen
-soundctl play tone 1000 500       # ein synthetisierter Ton (1000 Hz, 500 ms)
-soundctl stop                     # Wiedergabe stoppen
+soundctl sync
+soundctl play sound EMERGENCY
+soundctl play tone 1000 500
+soundctl stop
 ```
 
 `sync` ist derselbe Schritt, den der Start von sich aus macht; von Hand ausgeführt
-sparst du dir den Neustart nach einer Änderung. `soundctl` ist im Image installiert.
+sparst du dir den Neustart nach einer Änderung. `play sound` löst einen konfigurierten
+Sound über seinen Namen aus, `play tone` einen synthetisierten (hier 1000 Hz für
+500 ms), und `stop` beendet die Wiedergabe. `soundctl` ist im Image installiert.
 Wenn nichts zu hören ist: `soundctl discover` listet die Dienste, die das Low Level
 annonciert - der erste Blick, wenn der Sync das Board nicht erreicht.
 `soundctl validate --check-mp3` prüft die Definition und die Audiodateien, und
