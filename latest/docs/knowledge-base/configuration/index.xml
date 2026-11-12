@@ -724,9 +724,9 @@ This is done by replacing each &lt;code>/&lt;/code> into indentations (2x space)
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>A v2 OpenMower can play tones, note sequences and MP3 files - either a recording or
 a sentence spoken by a hosted text-to-speech engine. What is played, and when, comes
-from a definition file that ships with the image (&lt;code>sounds_en.yaml&lt;/code>, &lt;code>sounds_de.yaml&lt;/code>).
-The robot renders the spoken parts itself and pushes the result to the low level, so
-nothing has to be prepared by hand.&lt;/p>
+from a definition file that ships with the image (&lt;code>sounds_*.yaml&lt;/code>, one per language).
+The announcements are already spoken and ship with the image; the robot only pushes
+them to the low level at startup, so nothing has to be prepared by hand.&lt;/p>
 &lt;p>It is &lt;strong>disabled by default&lt;/strong>: one parameter turns it on (see
 &lt;a href="#step-1-enable-the-sound-service">Step 1&lt;/a>
 ).&lt;/p>
@@ -743,36 +743,47 @@ under the
 revision - check which model a design is for before printing. Under v1 a 2W/8Ω
 speaker was common; for v2 it should be at least &lt;strong>≥ 3W at 4Ω&lt;/strong>.&lt;/p>
 &lt;h2 id="how-it-works">How it works&lt;/h2>
-&lt;p>The image ships one definition per language (&lt;code>sounds_en.yaml&lt;/code>, &lt;code>sounds_de.yaml&lt;/code>). A
-definition lists the events the mower can announce - &lt;code>EMERGENCY&lt;/code>, &lt;code>MOWING_START&lt;/code>,
-&lt;code>LOW_BATTERY&lt;/code> and so on - and for each one either a ready MP3 or the text to speak.
-Which tone, how loud, which take: all of it is described there.&lt;/p>
+&lt;p>The image ships one definition per language (&lt;code>sounds_*.yaml&lt;/code>). A definition lists the
+events the mower can announce - &lt;code>EMERGENCY&lt;/code>, &lt;code>MOWING_START&lt;/code>, &lt;code>LOW_BATTERY&lt;/code> and so on -
+and for each one either a ready MP3 or the text to speak. Which tone, how loud, which
+take: all of it is described there.&lt;/p>
 &lt;div class="mermaid">%%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
-subgraph HL["&lt;b>High level - Raspberry Pi&lt;/b>"]
-Y["sounds_en.yaml / sounds_de.yaml&lt;br/>texts + settings"]
+Y["sounds_*.yaml&lt;br/>texts + settings&lt;br/>&lt;i>the definition both sides use&lt;/i>"]
+subgraph BUILD["&lt;b>Build - CI&lt;/b>"]
 T["soundctl tts&lt;br/>renders what is missing"]
-O["/data/sounds/ overlay&lt;br/>MP3 + .json cache"]
+O["MP3s in the image"]
+end
+subgraph HL["&lt;b>High level - Raspberry Pi&lt;/b>"]
+OV["/data/sounds/ overlay&lt;br/>your own recordings + the key"]
 S["soundctl sync"]
 R["mower state&lt;br/>IDLE / MOWING / PAUSED"]
 end
 subgraph LL["&lt;b>Low level - firmware&lt;/b>"]
 F["/sounds/ in the flash&lt;br/>first sync can take minutes"]
+IN["its own inputs&lt;br/>link up/down, charging, blade&lt;br/>emergency, stop button&lt;br/>lift, collision, mower rpm"]
 M["sound state machine&lt;br/>decides what plays, and when"]
 P["speaker"]
 end
-Y --> T
+Y -.->|"renders from"| T
+Y -.->|"sends the definition"| S
 T --> O
-Y --> S
 O --> S
+OV --> S
 S -->|"changed MP3s + the definition"| F
 R -->|"reports its state"| M
+IN -->|"sensors and safety"| M
 F --> M
 M --> P
+classDef src fill:#f5f5f5,stroke:#666666,color:#222222
+classDef build fill:#fef7e0,stroke:#b06000,color:#5b3a00
 classDef hl fill:#e8f0fe,stroke:#1a73e8,color:#0b2e6f
 classDef ll fill:#e6f4ea,stroke:#137333,color:#0b3d1c
-class Y,T,O,S,R hl
-class F,M,P ll
+class Y src
+class T,O build
+class OV,S,R hl
+class F,IN,M,P ll
+style BUILD fill:#fffdf5,stroke:#b06000,stroke-width:2px
 style HL fill:#f4f8ff,stroke:#1a73e8,stroke-width:2px
 style LL fill:#f3fbf5,stroke:#137333,stroke-width:2px
 &lt;/div>
@@ -790,8 +801,11 @@ skipped.&lt;/li>
 the whole set can take several minutes. Later syncs only send changed files.&lt;/li>
 &lt;li>&lt;strong>The high level does not play anything on its own.&lt;/strong> During normal operation it
 reports the mower&amp;rsquo;s state, and the low level&amp;rsquo;s sound state machine decides which
-sound that implies and when to play it. To trigger a sound by hand - for a test,
-not for normal operation - see &lt;a href="#step-2-check-that-it-works">Step 2&lt;/a>
+sound that implies and when to play it. The same state machine watches its own inputs
+as well - link up/down, charging, blade, emergency and stop button, lift, collision and
+mower rpm - so those announcements work even while nothing talks to the high level. To
+trigger a sound by hand - for a test, not for normal operation - see
+&lt;a href="#step-2-check-that-it-works">Step 2&lt;/a>
 .&lt;/li>
 &lt;li>Both commands run on every start and every reconnect to the low level, so an updated
 definition reaches the mower without any manual step.&lt;/li>
@@ -810,6 +824,7 @@ definition reaches the mower without any manual step.&lt;/li>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">true&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># Currently available sound languages: en, de, fr, nl, pl, sv.&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">config_file&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#8f5902;font-style:italic"># HW v1 only&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -829,7 +844,7 @@ definition reaches the mower without any manual step.&lt;/li>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>config_file&lt;/code>&lt;/td>
-&lt;td>The definition to use, &lt;strong>v2 only&lt;/strong>. Point it at &lt;code>sounds_de.yaml&lt;/code> for German. A copy you keep in &lt;code>/data/sounds/&lt;/code> also works (and survives an image update, as long as that overlay is mounted).&lt;/td>
+&lt;td>The definition to use, &lt;strong>v2 only&lt;/strong>. Point it at the file of the language you want - &lt;code>en&lt;/code>, &lt;code>de&lt;/code>, &lt;code>fr&lt;/code>, &lt;code>nl&lt;/code>, &lt;code>pl&lt;/code> or &lt;code>sv&lt;/code>. A copy you keep in &lt;code>/data/sounds/&lt;/code> also works (and survives an image update, as long as that overlay is mounted).&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;code>volume&lt;/code>&lt;/td>
@@ -873,7 +888,7 @@ image. The key is what lets the robot render &lt;em>your&lt;/em> texts with &lt;
 shipped announcements are already rendered, so nothing needs it until you change
 one. On a stock mower that directory is &lt;em>not&lt;/em> persistent - it lives inside the
 container and is gone after a restart. Mount it from the host if you want to keep
-your files and the key. The header of &lt;code>sounds_en.yaml&lt;/code> shows the exact steps.&lt;/li>
+your files and the key. The header of any &lt;code>sounds_*.yaml&lt;/code> shows the exact steps.&lt;/li>
 &lt;li>&lt;strong>A changed text only re-renders that one file.&lt;/strong> Every render writes a small
 &lt;code>.json&lt;/code> next to the MP3 that records the text, the voice and the settings; the sync
 refuses to upload a file whose text no longer matches the definition.&lt;/li>
