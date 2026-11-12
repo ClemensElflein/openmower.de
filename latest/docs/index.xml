@@ -1845,7 +1845,7 @@ before ordering.&lt;/p>
 &lt;/td>
 &lt;td>Some users use UM9XX chips (available from &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
 and &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
-) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies. Pleas note: 4psc 11mm standoff/spacers are needed, M2.5 or M3&lt;/td>
+) as alternative. Compared to ArduSimple, they&amp;rsquo;re a bit cheaper and support triple-band frequencies.&lt;br>Note: The WitMotion receivers need 2 or 4 spacers (11 mm, M2.5 or M3).&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi Compute Module 4 with WiFi&lt;/td>

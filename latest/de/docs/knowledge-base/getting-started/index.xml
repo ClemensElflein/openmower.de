@@ -117,7 +117,7 @@ vor der Bestellung.&lt;/p>
 &lt;/td>
 &lt;td>Manche nutzen alternativ UM9XX-Chips (erhältlich bei &lt;a href="https://witmotion-sensor.com/products/rtk-gps-gnss-modules-centimeter-level-um982-um980-um960" target="_blank" rel="nofollow noopener">WitMotion&lt;/a>
 und &lt;a href="https://aliexpress.com/item/1005007177629130.html" target="_blank" rel="nofollow noopener">AliExpress&lt;/a>
-). Sie sind etwas günstiger als ArduSimple und unterstützen drei Frequenzbänder.&lt;/td>
+). Sie sind etwas günstiger als ArduSimple und unterstützen drei Frequenzbänder.&lt;br>Hinweis: Für die WitMotion-Empfänger brauchst du 2 oder 4 Abstandshalter (11 mm, M2,5 oder M3).&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Raspberry Pi Compute Module 4 mit WLAN&lt;/td>
