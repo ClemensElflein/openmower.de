@@ -44,30 +44,41 @@ sprechenden Text. Welcher Ton, wie laut, welche Aufnahme: all das steht dort.
 ```mermaid
 %%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
-    subgraph HL["<b>High Level - Raspberry Pi</b>"]
-        Y["sounds_*.yaml<br/>Texte + Einstellungen"]
+    Y["sounds_*.yaml<br/>Texte + Einstellungen<br/><i>die Definition, die beide nutzen</i>"]
+    subgraph BUILD["<b>Build - CI</b>"]
         T["soundctl tts<br/>rendert was fehlt"]
-        O["/data/sounds/ Overlay<br/>MP3 + .json-Cache"]
+        O["MP3s im Image"]
+    end
+    subgraph HL["<b>High Level - Raspberry Pi</b>"]
+        OV["/data/sounds/ Overlay<br/>deine eigenen Aufnahmen + der Key"]
         S["soundctl sync"]
         R["Mäher-Status<br/>IDLE / MOWING / PAUSED"]
     end
     subgraph LL["<b>Low Level - Firmware</b>"]
         F["/sounds/ im Flash<br/>erster Sync dauert Minuten"]
+        IN["eigene Eingänge<br/>Link auf/ab, Laden, Mähwerk<br/>Not-Stop, Stopp-Taste<br/>Heben, Kollision, Messerdrehzahl"]
         M["Sound-State-Machine<br/>entscheidet was wann läuft"]
         P["Lautsprecher"]
     end
-    Y --> T
+    Y -.->|"rendert daraus"| T
+    Y -.->|"schickt die Definition"| S
     T --> O
-    Y --> S
     O --> S
+    OV --> S
     S -->|"geänderte MP3s + die Definition"| F
     R -->|"meldet seinen Status"| M
+    IN -->|"Sensorik und Sicherheit"| M
     F --> M
     M --> P
+    classDef src fill:#f5f5f5,stroke:#666666,color:#222222
+    classDef build fill:#fef7e0,stroke:#b06000,color:#5b3a00
     classDef hl fill:#e8f0fe,stroke:#1a73e8,color:#0b2e6f
     classDef ll fill:#e6f4ea,stroke:#137333,color:#0b3d1c
-    class Y,T,O,S,R hl
-    class F,M,P ll
+    class Y src
+    class T,O build
+    class OV,S,R hl
+    class F,IN,M,P ll
+    style BUILD fill:#fffdf5,stroke:#b06000,stroke-width:2px
     style HL fill:#f4f8ff,stroke:#1a73e8,stroke-width:2px
     style LL fill:#f3fbf5,stroke:#137333,stroke-width:2px
 ```
@@ -86,8 +97,12 @@ flowchart TD
   Spätere Syncs schicken nur geänderte Dateien.
 * **Das High Level spielt nichts von sich aus ab.** Im Normalbetrieb meldet es den
   Zustand des Mähers, und die Sound-State-Machine im Low Level entscheidet, welcher
-  Sound dazu gehört und wann er läuft. Um einen Sound von Hand auszulösen - zum Testen,
-  nicht für den Normalbetrieb - siehe [Schritt 2](#schritt-2-prüfen-ob-es-funktioniert).
+  Sound dazu gehört und wann er läuft. Dieselbe State-Machine beobachtet auch ihre
+  eigenen Eingänge - Link auf/ab, Laden, Mähwerk, Not-Stop und Stopp-Taste, Heben,
+  Kollision und Messerdrehzahl. Diese Ansagen funktionieren also auch dann, wenn gerade
+  nichts mit dem High Level spricht. Um einen Sound von Hand auszulösen - zum Testen,
+  nicht für den Normalbetrieb - siehe
+  [Schritt 2](#schritt-2-prüfen-ob-es-funktioniert).
 * Beide Befehle laufen bei jedem Start und bei jedem Reconnect zum Low Level, eine
   geänderte Definition erreicht den Mäher also ohne manuellen Schritt.
 

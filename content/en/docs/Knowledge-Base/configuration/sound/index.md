@@ -43,30 +43,41 @@ take: all of it is described there.
 ```mermaid
 %%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
-    subgraph HL["<b>High level - Raspberry Pi</b>"]
-        Y["sounds_*.yaml<br/>texts + settings"]
+    Y["sounds_*.yaml<br/>texts + settings<br/><i>the definition both sides use</i>"]
+    subgraph BUILD["<b>Build - CI</b>"]
         T["soundctl tts<br/>renders what is missing"]
-        O["/data/sounds/ overlay<br/>MP3 + .json cache"]
+        O["MP3s in the image"]
+    end
+    subgraph HL["<b>High level - Raspberry Pi</b>"]
+        OV["/data/sounds/ overlay<br/>your own recordings + the key"]
         S["soundctl sync"]
         R["mower state<br/>IDLE / MOWING / PAUSED"]
     end
     subgraph LL["<b>Low level - firmware</b>"]
         F["/sounds/ in the flash<br/>first sync can take minutes"]
+        IN["its own inputs<br/>link up/down, charging, blade<br/>emergency, stop button<br/>lift, collision, mower rpm"]
         M["sound state machine<br/>decides what plays, and when"]
         P["speaker"]
     end
-    Y --> T
+    Y -.->|"renders from"| T
+    Y -.->|"sends the definition"| S
     T --> O
-    Y --> S
     O --> S
+    OV --> S
     S -->|"changed MP3s + the definition"| F
     R -->|"reports its state"| M
+    IN -->|"sensors and safety"| M
     F --> M
     M --> P
+    classDef src fill:#f5f5f5,stroke:#666666,color:#222222
+    classDef build fill:#fef7e0,stroke:#b06000,color:#5b3a00
     classDef hl fill:#e8f0fe,stroke:#1a73e8,color:#0b2e6f
     classDef ll fill:#e6f4ea,stroke:#137333,color:#0b3d1c
-    class Y,T,O,S,R hl
-    class F,M,P ll
+    class Y src
+    class T,O build
+    class OV,S,R hl
+    class F,IN,M,P ll
+    style BUILD fill:#fffdf5,stroke:#b06000,stroke-width:2px
     style HL fill:#f4f8ff,stroke:#1a73e8,stroke-width:2px
     style LL fill:#f3fbf5,stroke:#137333,stroke-width:2px
 ```
@@ -83,8 +94,11 @@ flowchart TD
   the whole set can take several minutes. Later syncs only send changed files.
 * **The high level does not play anything on its own.** During normal operation it
   reports the mower's state, and the low level's sound state machine decides which
-  sound that implies and when to play it. To trigger a sound by hand - for a test,
-  not for normal operation - see [Step 2](#step-2-check-that-it-works).
+  sound that implies and when to play it. The same state machine watches its own inputs
+  as well - link up/down, charging, blade, emergency and stop button, lift, collision and
+  mower rpm - so those announcements work even while nothing talks to the high level. To
+  trigger a sound by hand - for a test, not for normal operation - see
+  [Step 2](#step-2-check-that-it-works).
 * Both commands run on every start and every reconnect to the low level, so an updated
   definition reaches the mower without any manual step.
 
