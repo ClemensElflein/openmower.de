@@ -11,9 +11,9 @@ description: >-
 
 A v2 OpenMower can play tones, note sequences and MP3 files - either a recording or
 a sentence spoken by a hosted text-to-speech engine. What is played, and when, comes
-from a definition file that ships with the image (`sounds_en.yaml`, `sounds_de.yaml`).
-The robot renders the spoken parts itself and pushes the result to the low level, so
-nothing has to be prepared by hand.
+from a definition file that ships with the image (`sounds_*.yaml`, one per language).
+The announcements are already spoken and ship with the image; the robot only pushes
+them to the low level at startup, so nothing has to be prepared by hand.
 
 It is **disabled by default**: one parameter turns it on (see
 [Step 1](#step-1-enable-the-sound-service)).
@@ -35,38 +35,49 @@ speaker was common; for v2 it should be at least **&ge; 3W at 4Ω**.
 
 ## How it works
 
-The image ships one definition per language (`sounds_en.yaml`, `sounds_de.yaml`). A
-definition lists the events the mower can announce - `EMERGENCY`, `MOWING_START`,
-`LOW_BATTERY` and so on - and for each one either a ready MP3 or the text to speak.
-Which tone, how loud, which take: all of it is described there.
+The image ships one definition per language (`sounds_*.yaml`). A definition lists the
+events the mower can announce - `EMERGENCY`, `MOWING_START`, `LOW_BATTERY` and so on -
+and for each one either a ready MP3 or the text to speak. Which tone, how loud, which
+take: all of it is described there.
 
 ```mermaid
 %%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
-    subgraph HL["<b>High level - Raspberry Pi</b>"]
-        Y["sounds_en.yaml / sounds_de.yaml<br/>texts + settings"]
+    Y["sounds_*.yaml<br/>texts + settings<br/><i>the definition both sides use</i>"]
+    subgraph BUILD["<b>Build - CI</b>"]
         T["soundctl tts<br/>renders what is missing"]
-        O["/data/sounds/ overlay<br/>MP3 + .json cache"]
+        O["MP3s in the image"]
+    end
+    subgraph HL["<b>High level - Raspberry Pi</b>"]
+        OV["/data/sounds/ overlay<br/>your own recordings + the key"]
         S["soundctl sync"]
         R["mower state<br/>IDLE / MOWING / PAUSED"]
     end
     subgraph LL["<b>Low level - firmware</b>"]
         F["/sounds/ in the flash<br/>first sync can take minutes"]
+        IN["its own inputs<br/>link up/down, charging, blade<br/>emergency, stop button<br/>lift, collision, mower rpm"]
         M["sound state machine<br/>decides what plays, and when"]
         P["speaker"]
     end
-    Y --> T
+    Y -.->|"renders from"| T
+    Y -.->|"sends the definition"| S
     T --> O
-    Y --> S
     O --> S
+    OV --> S
     S -->|"changed MP3s + the definition"| F
     R -->|"reports its state"| M
+    IN -->|"sensors and safety"| M
     F --> M
     M --> P
+    classDef src fill:#f5f5f5,stroke:#666666,color:#222222
+    classDef build fill:#fef7e0,stroke:#b06000,color:#5b3a00
     classDef hl fill:#e8f0fe,stroke:#1a73e8,color:#0b2e6f
     classDef ll fill:#e6f4ea,stroke:#137333,color:#0b3d1c
-    class Y,T,O,S,R hl
-    class F,M,P ll
+    class Y src
+    class T,O build
+    class OV,S,R hl
+    class F,IN,M,P ll
+    style BUILD fill:#fffdf5,stroke:#b06000,stroke-width:2px
     style HL fill:#f4f8ff,stroke:#1a73e8,stroke-width:2px
     style LL fill:#f3fbf5,stroke:#137333,stroke-width:2px
 ```
@@ -83,8 +94,11 @@ flowchart TD
   the whole set can take several minutes. Later syncs only send changed files.
 * **The high level does not play anything on its own.** During normal operation it
   reports the mower's state, and the low level's sound state machine decides which
-  sound that implies and when to play it. To trigger a sound by hand - for a test,
-  not for normal operation - see [Step 2](#step-2-check-that-it-works).
+  sound that implies and when to play it. The same state machine watches its own inputs
+  as well - link up/down, charging, blade, emergency and stop button, lift, collision and
+  mower rpm - so those announcements work even while nothing talks to the high level. To
+  trigger a sound by hand - for a test, not for normal operation - see
+  [Step 2](#step-2-check-that-it-works).
 * Both commands run on every start and every reconnect to the low level, so an updated
   definition reaches the mower without any manual step.
 
@@ -109,6 +123,7 @@ ll:
       #
       # Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup
       enabled: true
+      # Currently available sound languages: en, de, fr, nl, pl, sv.
       config_file: "/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml"
       #
       # HW v1 only
@@ -116,12 +131,12 @@ ll:
       language: "en"
 ```
 
-| Parameter     | Meaning                                                                                                                                                                                        |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enabled`     | Turns the sound system on for this mower. `false` (the default) leaves the low level silent and skips the startup sync.                                                                        |
-| `config_file` | The definition to use, **v2 only**. Point it at `sounds_de.yaml` for German. A copy you keep in `/data/sounds/` also works (and survives an image update, as long as that overlay is mounted). |
-| `volume`      | `-1` keeps the volume the low level has stored; `0`..`100` sets it on every start.                                                                                                             |
-| `language`    | Only used by **v1** hardware. Leave it as it is; `config_file` decides on v2.                                                                                                                  |
+| Parameter     | Meaning                                                                                                                                                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`     | Turns the sound system on for this mower. `false` (the default) leaves the low level silent and skips the startup sync.                                                                                                                     |
+| `config_file` | The definition to use, **v2 only**. Point it at the file of the language you want - `en`, `de`, `fr`, `nl`, `pl` or `sv`. A copy you keep in `/data/sounds/` also works (and survives an image update, as long as that overlay is mounted). |
+| `volume`      | `-1` keeps the volume the low level has stored; `0`..`100` sets it on every start.                                                                                                                                                          |
+| `language`    | Only used by **v1** hardware. Leave it as it is; `config_file` decides on v2.                                                                                                                                                               |
 
 {{% alert title="Where the definitions live" color="info" %}}
 The shipped definitions are inside the image at
@@ -162,7 +177,7 @@ Two things are worth knowing before changing a definition:
   shipped announcements are already rendered, so nothing needs it until you change
   one. On a stock mower that directory is *not* persistent - it lives inside the
   container and is gone after a restart. Mount it from the host if you want to keep
-  your files and the key. The header of `sounds_en.yaml` shows the exact steps.
+  your files and the key. The header of any `sounds_*.yaml` shows the exact steps.
 * **A changed text only re-renders that one file.** Every render writes a small
   `.json` next to the MP3 that records the text, the voice and the settings; the sync
   refuses to upload a file whose text no longer matches the definition.
