@@ -12,8 +12,9 @@ description: >-
 Ein v2-OpenMower kann Töne, Notenfolgen und MP3-Dateien abspielen - entweder eine
 Aufnahme oder einen Satz, den eine gehostete Text-to-Speech-Engine spricht. Was wann
 erklingt, steht in einer Definitionsdatei, die im Image mitgeliefert wird
-(`sounds_en.yaml`, `sounds_de.yaml`). Die gesprochenen Teile rendert der Roboter selbst
-und schiebt das Ergebnis zum Low Level - von Hand vorbereiten musst du nichts.
+(`sounds_*.yaml`, eine pro Sprache). Die Ansagen sind bereits gesprochen und liegen dem
+Image bei; der Roboter schiebt sie beim Start zum Low Level - von Hand vorbereiten musst
+du nichts.
 
 Standardmäßig ist das System **abgeschaltet**: ein Parameter schaltet es ein (siehe
 [Schritt 1](#schritt-1-den-sound-service-aktivieren)).
@@ -35,17 +36,16 @@ v1 wurde oft ein 2W/8Ω Lautsprecher verbaut; für v2 sollte es mindestens **&ge
 
 ## So funktioniert es
 
-Das Image liefert eine Definition pro Sprache mit (`sounds_en.yaml`, `sounds_de.yaml`).
-Eine Definition listet die Ereignisse, die der Mäher ansagen kann - `EMERGENCY`,
-`MOWING_START`, `LOW_BATTERY` und so weiter - und dazu jeweils entweder eine fertige
-MP3 oder den zu sprechenden Text. Welcher Ton, wie laut, welche Aufnahme: all das steht
-dort.
+Das Image liefert eine Definition pro Sprache mit (`sounds_*.yaml`). Eine Definition
+listet die Ereignisse, die der Mäher ansagen kann - `EMERGENCY`, `MOWING_START`,
+`LOW_BATTERY` und so weiter - und dazu jeweils entweder eine fertige MP3 oder den zu
+sprechenden Text. Welcher Ton, wie laut, welche Aufnahme: all das steht dort.
 
 ```mermaid
 %%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
     subgraph HL["<b>High Level - Raspberry Pi</b>"]
-        Y["sounds_en.yaml / sounds_de.yaml<br/>Texte + Einstellungen"]
+        Y["sounds_*.yaml<br/>Texte + Einstellungen"]
         T["soundctl tts<br/>rendert was fehlt"]
         O["/data/sounds/ Overlay<br/>MP3 + .json-Cache"]
         S["soundctl sync"]
@@ -112,6 +112,7 @@ ll:
       #
       # Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup
       enabled: true
+      # Currently available sound languages: en, de, fr, nl, pl, sv.
       config_file: "/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml"
       #
       # HW v1 only
@@ -119,12 +120,12 @@ ll:
       language: "en"
 ```
 
-| Parameter     | Bedeutung                                                                                                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enabled`     | Schaltet das Soundsystem für diesen Mäher ein. `false` (der Standard) lässt das Low Level still und überspringt den Sync beim Start.                                                                          |
-| `config_file` | Die zu verwendende Definition, **nur v2**. Zeig sie für Deutsch auf `sounds_de.yaml`. Eine Kopie in `/data/sounds/` funktioniert auch (und übersteht ein Image-Update, solange dieses Overlay gemountet ist). |
-| `volume`      | `-1` behält die Lautstärke, die das Low Level gespeichert hat; `0`..`100` setzt sie bei jedem Start.                                                                                                          |
-| `language`    | Wird nur von **v1**-Hardware genutzt. Lass den Wert stehen; auf v2 entscheidet `config_file`.                                                                                                                 |
+| Parameter     | Bedeutung                                                                                                                                                                                                                                       |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`     | Schaltet das Soundsystem für diesen Mäher ein. `false` (der Standard) lässt das Low Level still und überspringt den Sync beim Start.                                                                                                            |
+| `config_file` | Die zu verwendende Definition, **nur v2**. Zeig sie auf die Datei der gewünschten Sprache (en, de, fr, nl, pl oder sv). Eine Kopie in `/data/sounds/` funktioniert auch (und übersteht ein Image-Update, solange dieses Overlay gemountet ist). |
+| `volume`      | `-1` behält die Lautstärke, die das Low Level gespeichert hat; `0`..`100` setzt sie bei jedem Start.                                                                                                                                            |
+| `language`    | Wird nur von **v1**-Hardware genutzt. Lass den Wert stehen; auf v2 entscheidet `config_file`.                                                                                                                                                   |
 
 {{% alert title="Wo die Definitionen liegen" color="info" %}}
 Die mitgelieferten Definitionen liegen im Image unter
@@ -166,7 +167,7 @@ Zwei Dinge solltest du wissen, bevor du eine Definition änderst:
   lässt - die mitgelieferten Ansagen sind bereits gerendert, du brauchst ihn also erst,
   wenn du eine davon änderst. Auf einem Serienmäher ist dieses Verzeichnis *nicht*
   persistent - es lebt im Container und ist nach einem Neustart weg. Mounte es vom Host,
-  wenn du deine Dateien und den Key behalten willst. Der Kopf von `sounds_en.yaml` zeigt
+  wenn du deine Dateien und den Key behalten willst. Der Kopf jeder `sounds_*.yaml` zeigt
   die genauen Schritte.
 * **Ein geänderter Text rendert nur diese eine Datei neu.** Jeder Render schreibt eine
   kleine `.json` neben die MP3, die Text, Stimme und Einstellungen festhält; der Sync

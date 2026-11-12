@@ -11,9 +11,9 @@ description: >-
 
 A v2 OpenMower can play tones, note sequences and MP3 files - either a recording or
 a sentence spoken by a hosted text-to-speech engine. What is played, and when, comes
-from a definition file that ships with the image (`sounds_en.yaml`, `sounds_de.yaml`).
-The robot renders the spoken parts itself and pushes the result to the low level, so
-nothing has to be prepared by hand.
+from a definition file that ships with the image (`sounds_*.yaml`, one per language).
+The announcements are already spoken and ship with the image; the robot only pushes
+them to the low level at startup, so nothing has to be prepared by hand.
 
 It is **disabled by default**: one parameter turns it on (see
 [Step 1](#step-1-enable-the-sound-service)).
@@ -35,16 +35,16 @@ speaker was common; for v2 it should be at least **&ge; 3W at 4Ω**.
 
 ## How it works
 
-The image ships one definition per language (`sounds_en.yaml`, `sounds_de.yaml`). A
-definition lists the events the mower can announce - `EMERGENCY`, `MOWING_START`,
-`LOW_BATTERY` and so on - and for each one either a ready MP3 or the text to speak.
-Which tone, how loud, which take: all of it is described there.
+The image ships one definition per language (`sounds_*.yaml`). A definition lists the
+events the mower can announce - `EMERGENCY`, `MOWING_START`, `LOW_BATTERY` and so on -
+and for each one either a ready MP3 or the text to speak. Which tone, how loud, which
+take: all of it is described there.
 
 ```mermaid
 %%{init: {"flowchart": {"subGraphTitleMargin": {"top": 8, "bottom": 10}}}}%%
 flowchart TD
     subgraph HL["<b>High level - Raspberry Pi</b>"]
-        Y["sounds_en.yaml / sounds_de.yaml<br/>texts + settings"]
+        Y["sounds_*.yaml<br/>texts + settings"]
         T["soundctl tts<br/>renders what is missing"]
         O["/data/sounds/ overlay<br/>MP3 + .json cache"]
         S["soundctl sync"]
@@ -109,6 +109,7 @@ ll:
       #
       # Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup
       enabled: true
+      # Currently available sound languages: en, de, fr, nl, pl, sv.
       config_file: "/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml"
       #
       # HW v1 only
@@ -116,12 +117,12 @@ ll:
       language: "en"
 ```
 
-| Parameter     | Meaning                                                                                                                                                                                        |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `enabled`     | Turns the sound system on for this mower. `false` (the default) leaves the low level silent and skips the startup sync.                                                                        |
-| `config_file` | The definition to use, **v2 only**. Point it at `sounds_de.yaml` for German. A copy you keep in `/data/sounds/` also works (and survives an image update, as long as that overlay is mounted). |
-| `volume`      | `-1` keeps the volume the low level has stored; `0`..`100` sets it on every start.                                                                                                             |
-| `language`    | Only used by **v1** hardware. Leave it as it is; `config_file` decides on v2.                                                                                                                  |
+| Parameter     | Meaning                                                                                                                                                                                                                                     |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enabled`     | Turns the sound system on for this mower. `false` (the default) leaves the low level silent and skips the startup sync.                                                                                                                     |
+| `config_file` | The definition to use, **v2 only**. Point it at the file of the language you want - `en`, `de`, `fr`, `nl`, `pl` or `sv`. A copy you keep in `/data/sounds/` also works (and survives an image update, as long as that overlay is mounted). |
+| `volume`      | `-1` keeps the volume the low level has stored; `0`..`100` sets it on every start.                                                                                                                                                          |
+| `language`    | Only used by **v1** hardware. Leave it as it is; `config_file` decides on v2.                                                                                                                                                               |
 
 {{% alert title="Where the definitions live" color="info" %}}
 The shipped definitions are inside the image at
@@ -162,7 +163,7 @@ Two things are worth knowing before changing a definition:
   shipped announcements are already rendered, so nothing needs it until you change
   one. On a stock mower that directory is *not* persistent - it lives inside the
   container and is gone after a restart. Mount it from the host if you want to keep
-  your files and the key. The header of `sounds_en.yaml` shows the exact steps.
+  your files and the key. The header of any `sounds_*.yaml` shows the exact steps.
 * **A changed text only re-renders that one file.** Every render writes a small
   `.json` next to the MP3 that records the text, the voice and the settings; the sync
   refuses to upload a file whose text no longer matches the definition.
