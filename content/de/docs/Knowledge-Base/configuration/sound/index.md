@@ -168,6 +168,8 @@ Wenn nichts zu hören ist: `soundctl discover` listet die Dienste, die das Low L
 annonciert - der erste Blick, wenn der Sync das Board nicht erreicht.
 `soundctl validate --check-mp3` prüft die Definition und die Audiodateien, und
 `soundctl tts --check` meldet Ansagen, die noch fehlen.
+Hakt ein Sync, zeigt `soundctl sync --debug` jede einzelne Datei (übersprungen,
+hochgeladen, entfernt); ohne das Flag bleibt das Log bei einer Zeile pro Phase.
 
 ## Eigene Sounds
 

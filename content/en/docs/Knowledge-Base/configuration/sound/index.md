@@ -164,6 +164,8 @@ restart after a change. `play sound` triggers a configured sound by its name,
 the services the low level advertises - the first thing to look at when the sync
 cannot reach the board. `soundctl validate --check-mp3` checks the definition and the
 audio files, `soundctl tts --check` reports announcements that are still missing.
+When a sync misbehaves, `soundctl sync --debug` shows every single file (skipped,
+uploaded, removed); without the flag the log stays at one line per phase.
 
 ## Custom sounds
 
