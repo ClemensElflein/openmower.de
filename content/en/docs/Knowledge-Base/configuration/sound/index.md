@@ -54,7 +54,7 @@ flowchart TD
         R["mower state<br/>IDLE / MOWING / PAUSED"]
     end
     subgraph LL["<b>Low level - firmware</b>"]
-        F["/sounds/ in the flash<br/>first sync can take minutes"]
+        F["/sounds/ in the flash<br/>first sync may take 1 minute"]
         IN["its own inputs<br/>link up/down, charging, blade<br/>emergency, stop button<br/>lift, collision, mower rpm"]
         M["sound state machine<br/>decides what plays, and when"]
         P["speaker"]
@@ -89,9 +89,6 @@ flowchart TD
 * **`soundctl sync`** uploads the MP3 files the definition references and pushes the
   definition itself to the low level. Files whose content already matches are
   skipped.
-* **The upload is not fast.** The low level writes the files into its own flash in
-  256-byte chunks over the same link it uses for everything else, so a first sync of
-  the whole set can take several minutes. Later syncs only send changed files.
 * **The high level does not play anything on its own.** During normal operation it
   reports the mower's state, and the low level's sound state machine decides which
   sound that implies and when to play it. The same state machine watches its own inputs

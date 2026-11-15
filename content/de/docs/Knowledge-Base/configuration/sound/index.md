@@ -55,7 +55,7 @@ flowchart TD
         R["Mäher-Status<br/>IDLE / MOWING / PAUSED"]
     end
     subgraph LL["<b>Low Level - Firmware</b>"]
-        F["/sounds/ im Flash<br/>erster Sync dauert Minuten"]
+        F["/sounds/ im Flash<br/>kompletter Satz unter einer Minute"]
         IN["eigene Eingänge<br/>Link auf/ab, Laden, Mähwerk<br/>Not-Stop, Stopp-Taste<br/>Heben, Kollision, Messerdrehzahl"]
         M["Sound-State-Machine<br/>entscheidet was wann läuft"]
         P["Lautsprecher"]
@@ -91,10 +91,6 @@ flowchart TD
 * **`soundctl sync`** lädt die MP3-Dateien hoch, die die Definition referenziert, und
   schiebt die Definition selbst zum Low Level. Dateien mit gleichem Inhalt werden
   übersprungen.
-* **Der Upload ist nicht schnell.** Das Low Level schreibt die Dateien in 256-Byte-
-  Blöcken in seinen eigenen Flash, über dieselbe Verbindung, die es auch für alles
-  andere nutzt - ein erster Sync des ganzen Satzes kann deshalb mehrere Minuten dauern.
-  Spätere Syncs schicken nur geänderte Dateien.
 * **Das High Level spielt nichts von sich aus ab.** Im Normalbetrieb meldet es den
   Zustand des Mähers, und die Sound-State-Machine im Low Level entscheidet, welcher
   Sound dazu gehört und wann er läuft. Dieselbe State-Machine beobachtet auch ihre
