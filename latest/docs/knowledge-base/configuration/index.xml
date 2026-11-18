@@ -463,11 +463,11 @@ id="tabs-00-03" role="tabpanel" aria-labelled-by="tabs-00-03-tab">
 &lt;/tr>
 &lt;tr>
 &lt;td>Bottom right&lt;/td>
-&lt;td>GPIO11&lt;/td>
+&lt;td>GPIO10&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Bottom left&lt;/td>
-&lt;td>GPIO10&lt;/td>
+&lt;td>GPIO11&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
