@@ -123,8 +123,8 @@ Orientation: looking at the board with the ethernet ports facing you.
 | ------------ | ------ |
 | Top left     | GPIO13 |
 | Top right    | GPIO12 |
-| Bottom right | GPIO11 |
-| Bottom left  | GPIO10 |
+| Bottom right | GPIO10 |
+| Bottom left  | GPIO11 |
 
 {{% /tab %}}
 
