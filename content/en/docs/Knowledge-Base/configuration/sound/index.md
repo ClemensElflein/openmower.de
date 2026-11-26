@@ -118,7 +118,8 @@ ll:
       #
       # HW v2 only
       #
-      # Set to true on boards with a sound amplifier/speaker, will call `soundctl sync` on startup
+      # Set to true on boards with a sound amplifier and an attached speaker
+      # (e.g. YardForce or Sabo, but NOT Universal); calls `soundctl sync` on startup.
       enabled: true
       # Currently available sound languages: en, de, fr, nl, pl, sv.
       config_file: "/opt/open_mower_ros/src/open_mower/params/sounds_en.yaml"
