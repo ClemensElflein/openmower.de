@@ -4290,7 +4290,7 @@ S["soundctl sync"]
 R["mower state&lt;br/>IDLE / MOWING / PAUSED"]
 end
 subgraph LL["&lt;b>Low level - firmware&lt;/b>"]
-F["/sounds/ in the flash&lt;br/>first sync can take minutes"]
+F["/sounds/ in the flash&lt;br/>first sync may take 1 minute"]
 IN["its own inputs&lt;br/>link up/down, charging, blade&lt;br/>emergency, stop button&lt;br/>lift, collision, mower rpm"]
 M["sound state machine&lt;br/>decides what plays, and when"]
 P["speaker"]
@@ -4326,9 +4326,6 @@ only case that needs an API key (see &lt;a href="#custom-sounds">Custom sounds&l
 &lt;li>&lt;strong>&lt;code>soundctl sync&lt;/code>&lt;/strong> uploads the MP3 files the definition references and pushes the
 definition itself to the low level. Files whose content already matches are
 skipped.&lt;/li>
-&lt;li>&lt;strong>The upload is not fast.&lt;/strong> The low level writes the files into its own flash in
-256-byte chunks over the same link it uses for everything else, so a first sync of
-the whole set can take several minutes. Later syncs only send changed files.&lt;/li>
 &lt;li>&lt;strong>The high level does not play anything on its own.&lt;/strong> During normal operation it
 reports the mower&amp;rsquo;s state, and the low level&amp;rsquo;s sound state machine decides which
 sound that implies and when to play it. The same state machine watches its own inputs
@@ -4409,7 +4406,9 @@ restart after a change. &lt;code>play sound&lt;/code> triggers a configured soun
 &lt;code>soundctl&lt;/code> is installed in the image. If nothing is heard, &lt;code>soundctl discover&lt;/code> lists
 the services the low level advertises - the first thing to look at when the sync
 cannot reach the board. &lt;code>soundctl validate --check-mp3&lt;/code> checks the definition and the
-audio files, &lt;code>soundctl tts --check&lt;/code> reports announcements that are still missing.&lt;/p>
+audio files, &lt;code>soundctl tts --check&lt;/code> reports announcements that are still missing.
+When a sync misbehaves, &lt;code>soundctl sync --debug&lt;/code> shows every single file (skipped,
+uploaded, removed); without the flag the log stays at one line per phase.&lt;/p>
 &lt;h2 id="custom-sounds">Custom sounds&lt;/h2>
 &lt;p>Two things are worth knowing before changing a definition:&lt;/p>
 &lt;ul>

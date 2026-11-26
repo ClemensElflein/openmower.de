@@ -4223,7 +4223,7 @@ S["soundctl sync"]
 R["Mäher-Status&lt;br/>IDLE / MOWING / PAUSED"]
 end
 subgraph LL["&lt;b>Low Level - Firmware&lt;/b>"]
-F["/sounds/ im Flash&lt;br/>erster Sync dauert Minuten"]
+F["/sounds/ im Flash&lt;br/>kompletter Satz unter einer Minute"]
 IN["eigene Eingänge&lt;br/>Link auf/ab, Laden, Mähwerk&lt;br/>Not-Stop, Stopp-Taste&lt;br/>Heben, Kollision, Messerdrehzahl"]
 M["Sound-State-Machine&lt;br/>entscheidet was wann läuft"]
 P["Lautsprecher"]
@@ -4260,10 +4260,6 @@ wurde - und genau das ist der einzige Fall, der einen API-Key braucht (siehe
 &lt;li>&lt;strong>&lt;code>soundctl sync&lt;/code>&lt;/strong> lädt die MP3-Dateien hoch, die die Definition referenziert, und
 schiebt die Definition selbst zum Low Level. Dateien mit gleichem Inhalt werden
 übersprungen.&lt;/li>
-&lt;li>&lt;strong>Der Upload ist nicht schnell.&lt;/strong> Das Low Level schreibt die Dateien in 256-Byte-
-Blöcken in seinen eigenen Flash, über dieselbe Verbindung, die es auch für alles
-andere nutzt - ein erster Sync des ganzen Satzes kann deshalb mehrere Minuten dauern.
-Spätere Syncs schicken nur geänderte Dateien.&lt;/li>
 &lt;li>&lt;strong>Das High Level spielt nichts von sich aus ab.&lt;/strong> Im Normalbetrieb meldet es den
 Zustand des Mähers, und die Sound-State-Machine im Low Level entscheidet, welcher
 Sound dazu gehört und wann er läuft. Dieselbe State-Machine beobachtet auch ihre
@@ -4346,7 +4342,9 @@ Sound über seinen Namen aus, &lt;code>play tone&lt;/code> einen synthetisierten
 Wenn nichts zu hören ist: &lt;code>soundctl discover&lt;/code> listet die Dienste, die das Low Level
 annonciert - der erste Blick, wenn der Sync das Board nicht erreicht.
 &lt;code>soundctl validate --check-mp3&lt;/code> prüft die Definition und die Audiodateien, und
-&lt;code>soundctl tts --check&lt;/code> meldet Ansagen, die noch fehlen.&lt;/p>
+&lt;code>soundctl tts --check&lt;/code> meldet Ansagen, die noch fehlen.
+Hakt ein Sync, zeigt &lt;code>soundctl sync --debug&lt;/code> jede einzelne Datei (übersprungen,
+hochgeladen, entfernt); ohne das Flag bleibt das Log bei einer Zeile pro Phase.&lt;/p>
 &lt;h2 id="eigene-sounds">Eigene Sounds&lt;/h2>
 &lt;p>Zwei Dinge solltest du wissen, bevor du eine Definition änderst:&lt;/p>
 &lt;ul>
